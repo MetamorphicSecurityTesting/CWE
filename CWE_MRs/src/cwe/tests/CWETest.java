@@ -10,7 +10,6 @@ import org.junit.Test;
 
 import smrl.mr.crawljax.WebOperationsProvider;
 import smrl.mr.language.MRBaseTest;
-import smrl.mr.owasp.OTG_AUTHZ_002;
 
 public class CWETest extends MRBaseTest {
 	

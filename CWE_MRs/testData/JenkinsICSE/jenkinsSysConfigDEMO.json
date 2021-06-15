@@ -5,6 +5,7 @@
 	"outputStore": "./testData/JenkinsICSE/outputStore",
 	"randomFilePathFile": "./testData/JenkinsICSE/filePaths.txt",
 	"randomAdminFilePathFile": "./testData/JenkinsICSE/adminFilePaths.txt",
+	"RandomCookiePath": "./testData/JenkinsICSE/cookiePaths.txt",
 	"actionsChangedUrlFileName": "./testData/JenkinsICSE/jenkinsActionsChangedUrl.json",
 	"loginParams": [
 		{
