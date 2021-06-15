@@ -23,7 +23,7 @@ path = /domain.myapp/
  
  */
 
-MR CWE_30a{
+MR CWE_302a{
 	{
    for (Action action: Input(1).actions()){
       var pos = action.getPosition();
