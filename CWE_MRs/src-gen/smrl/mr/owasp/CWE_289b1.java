@@ -7,7 +7,7 @@ import smrl.mr.language.Operations;
 import smrl.mr.language.MR;
 
 @SuppressWarnings("all")
-public class CWE_289b extends MR{
+public class CWE_289b1 extends MR{
   public boolean mr() {
     String sep = "/";
     String hashed_sep = "%5C";

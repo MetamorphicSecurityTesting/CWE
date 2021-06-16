@@ -12,7 +12,7 @@ Protection mechanism that restricts URL access can be bypassed using URL encodin
 
  */
 
-MR CWE_289b{
+MR CWE_289b2{
 	{
 var sep="/";
 var hashed_sep = "%5C";
@@ -25,7 +25,7 @@ var hashed_sep = "%5C";
 			var hashed_sep_newUrl =  action.urlPath + hashed_sep + RandomFilePath();
 			IMPLIES( 
 				!isAdmin(action.user) &&						
-				afterLogin(action) &&							
+				 notAvailableWithoutLoggingIn(action) &&		/// The action should not be visible by using the hashed separator					
 				EQUAL( Input(2), Input(1) ) &&					
 			  	Input(2).actions().get(pos).setUrl( newUrl ) &&	
 			  	notTried( action.getUser(), newUrl ) &&
@@ -34,15 +34,16 @@ var hashed_sep = "%5C";
 			  	Input(3).actions().get(pos).setUrl( hashed_sep_newUrl ) &&	
 			  	notTried( action.getUser(), hashed_sep_newUrl )			
 			    ,
-			    AND(
-			    	AND(
+			    
+			  AND(
+			  /*    	AND(
 			   			 different ( Output(Input(2),pos),Output(Input(1),pos)),
 			    		 different ( Output(Input(3),pos),Output(Input(1),pos))),
-			       AND(
+			       AND(*/ 
 			     		isError( Output(Input(2) , pos) ),
 			      		isError( Output(Input(3) , pos) ))
 			    
-			      )
+			   //  )
 			);//end-IMPLIES
 		}//end-for
 		
