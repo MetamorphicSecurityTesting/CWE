@@ -10,7 +10,6 @@ import org.junit.Test;
 
 import smrl.mr.crawljax.WebOperationsProvider;
 import smrl.mr.language.MRBaseTest;
-import smrl.mr.test.TEST_INVALID_COOKIE_TAG;
 import smrl.mr.test.TEST_RANDOM_COOKIE_PATH;
 
 public class SystemTests extends MRBaseTest {
@@ -46,12 +45,12 @@ public class SystemTests extends MRBaseTest {
 		super.test(provider,TEST_RANDOM_COOKIE_PATH.class);
 	}
 
-	@Test
+	/*@Test
 	public void test_CWE302b() {
 		super.test(provider,TEST_INVALID_COOKIE_TAG.class);
 	}
 
-
+*/
 
 	public static String getCurrentTime() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
