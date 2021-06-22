@@ -4,8 +4,9 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp {
  
 /**
- * 
- * 
+ * Authentication Bypass by Capture-replay
+ * Utilize some sequence or time stamping functionality along with a checksum which takes this into account 
+ * in order to ensure that messages can be parsed only once.
  * 
  */
  
