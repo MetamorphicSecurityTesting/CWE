@@ -9,6 +9,8 @@ package smrl.mr.owasp {
  * sniffing, attackers typically attempt to locate themselves on the same subnet as the victim machine. Attackers may be able to circumvent this requirement by
  * using source routing, but source routing is disabled across much of the Internet today. In summary, IP address verification can be a useful part of 
  * an authentication scheme, but it should not be the single factor required for authentication.
+ * 
+ * verify the Certificate as well as the IP address
  */
  
 MR CWE_291 { 
