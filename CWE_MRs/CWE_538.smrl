@@ -1,0 +1,32 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/**
+ * The product places sensitive information into files or directories that are accessible 
+ * to actors who are allowed to have access to the files, but not to the sensitive information.
+ */ 
+ 
+MR CWE_538 {
+ {
+ 		 
+		for ( Action action : Input(1).actions() ){
+			 
+			var pos = action.getPosition();
+			
+			IMPLIES( 
+				!isAdmin(action.user) &&						
+				afterLogin(action) &&							
+				EQUAL( Input(2), Input(1) ) &&					
+			  	Input(2).actions().get(pos).setAccessibleUrlWithSensInfo()
+			    ,
+			    TRUE ( 	
+			    	   !accessToSensitiveElement(action.getUser(),Output(Input(2),pos).file()) || 								 
+					Output(Input(2),pos).isError()  
+				)
+			);//end-IMPLIES
+	}//end-for
+ }
+}//end-MR
+}
