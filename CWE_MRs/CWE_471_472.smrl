@@ -1,0 +1,31 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp {
+ 
+/*
+ *
+ * The software does not properly protect an assumed-immutable element from being modified by an attacker.
+ */
+
+MR CWE_471_472{
+	{
+   for (Action action: Input(1).actions()){
+      var pos = action.getPosition();
+      IMPLIES(             
+               afterLogin(action)
+               && EQUAL(Input(2), Input(1))
+               && Input(2).actions.get(action.position).setCookie(randomCookieElement())// change the cookie
+             ,
+              
+        isError( Output(Input(2) , pos))
+		);//end-IMPLIES
+	}//end-for
+	}
+}//end-MR
+}//end-package
+
+
+
+
+
