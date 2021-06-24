@@ -18,8 +18,10 @@ MR CWE_291 {
     for ( Action action : Input(1).actions() ) {
 	  	var pos = action.getPosition();
 	   IMPLIES(
-	        isLogin(action) 										
-	          &&  EQUAL ( Input(2), Input(1) )				    			
+	        isLogin(action)	
+	        || afterLogin(action) // need to be determined								
+	          &&  EQUAL ( Input(2), Input(1) )	
+	          && Input(2).actions.get(action.position).setValidIpNode()	    			
 	    	  &&  Input(2).actions.get(action.position).setIPCertificate(invalidCertificate())
 		    ,  
 		    AND(
