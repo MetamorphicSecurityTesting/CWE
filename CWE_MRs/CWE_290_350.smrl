@@ -23,7 +23,7 @@ MR CWE_290_350{
 									
 				 notAvailableWithoutLoggingIn(action) &&					
 				EQUAL( Input(2), Input(1) ) &&					
-			  	Input(2).actions().get(pos).setHostName(validHostName())	
+			  	Input(2).actions().get(pos).setHostName(anotherHostName())	
 			    ,
 			    
 			  AND(

@@ -10,6 +10,9 @@ package smrl.mr.owasp{
  
 MR CWE_538 {
  {
+ 		 /// we can check the file that is accessible by the admin(any user) and find the information that is only accessbile by that user from GUI
+ 		 // and for other user we need to check that can not see that (string of) specific information in the same file
+ 		 // iterate over all files
  		 
 		for ( Action action : Input(1).actions() ){
 			 

@@ -12,15 +12,15 @@ MR CWE_471_472{
 	{
    for (Action action: Input(1).actions()){
       var pos = action.getPosition();
-      for (entry: action.getCookie().getParameters().entrySet()){
-      	var parameter = entry.getKey()
+      var entry = action.getCookie()
+      for (var i  = 0; i< entry.length(); i++) {
+      	
+      	var parameter = entry.indent(i)
       IMPLIES(             
                afterLogin(action)
                && EQUAL(Input(2), Input(1))
-               && Input(2).actions.get(action.position).getCookie(
-               ).getParameters().set(
-               	parameter, RandomValue(entry.getValue())
-               )// change the cookie
+               && Input(2).actions.get(action.position).getCookie().setValue(parameter, randomValue()) // need to be 
+               
              ,
               
         isError( Output(Input(2) , pos))
