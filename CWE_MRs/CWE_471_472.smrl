@@ -12,16 +12,21 @@ MR CWE_471_472{
 	{
    for (Action action: Input(1).actions()){
       var pos = action.getPosition();
+      for (entry: action.getCookie().getParameters().entrySet()){
+      	var parameter = entry.getKey()
       IMPLIES(             
                afterLogin(action)
                && EQUAL(Input(2), Input(1))
-               && Input(2).actions.get(action.position).setCookie(randomCookieElement())// change the cookie
+               && Input(2).actions.get(action.position).getCookie(
+               ).getParameters().set(
+               	parameter, RandomValue(entry.getValue())
+               )// change the cookie
              ,
               
         isError( Output(Input(2) , pos))
 		);//end-IMPLIES
 	}//end-for
-	}
+	}}
 }//end-MR
 }//end-package
 
