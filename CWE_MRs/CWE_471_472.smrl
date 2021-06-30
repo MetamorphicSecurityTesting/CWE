@@ -19,9 +19,8 @@ MR CWE_471_472{
       IMPLIES(             
                afterLogin(action)
                && EQUAL(Input(2), Input(1))
-               && Input(2).actions.get(action.position).getCookie().setValue(parameter, randomValue()) // need to be 
-               
-             ,
+               && Input(2).actions.get(action.position).setCookie(action.setCookieValue(parameter, randomValue()))
+                ,
               
         isError( Output(Input(2) , pos))
 		);//end-IMPLIES
