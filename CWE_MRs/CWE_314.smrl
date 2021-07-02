@@ -1,0 +1,39 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp {
+ 
+/*
+ * /*
+ Attackers can read the information by accessing the registry key. 
+ Even if the information is encoded in a way that is not human-readable,
+ certain techniques could determine which encoding is being used, 
+ then decode the information.
+ * 
+ * registry key should not be accessible
+ */
+
+ 
+
+MR CWE_314{
+	{
+   for (Action action: Input(1).actions()){
+      var pos = action.getPosition();
+      IMPLIES(             
+               !isAdmin(Input(1))
+               && EQUAL(Input(2), Input(1))
+               && Input(2).actions.get(action.position).readRegistryKey()
+               //WindowsUtils.readStringRegistryValue
+             ,
+              different( Output( Input(1), pos) , Output(Input(2) , pos) )
+&&        isError( Output(Input(2) , pos))
+		);//end-IMPLIES
+	}//end-for
+	}
+}//end-MR
+}//end-package
+
+
+
+
+
