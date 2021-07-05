@@ -1,0 +1,36 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import sun.security.util.Password
+
+package smrl.mr.owasp {
+ 
+/**
+ * The product uses a cryptographic key or password past its expiration date,
+ *  which diminishes its safety significantly by increasing the timing window for cracking attacks against that key.
+ */
+ 
+MR CWE_324 { 
+ { 
+    for ( Action action : Input(1).actions() ) {
+	  	var pos = action.getPosition();
+	  
+	   IMPLIES(
+	        isLogin(action) 									
+	          &&  EQUAL ( Input(2), Input(1) )		    			
+	    	  &&  Input(2).actions.get(action.position).setPasswordAge("password", 180)
+	    	  //Where the first attribute is the input type in HTML and the second parameter is the value to be set. 
+	    	  
+		    ,  
+		    
+		    	isError(Output(Input(2), pos))
+		    	
+		);//end-IMPLIES
+	}//end-for
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+
