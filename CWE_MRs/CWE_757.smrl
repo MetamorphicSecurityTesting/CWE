@@ -1,0 +1,43 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import sun.security.util.Password
+
+package smrl.mr.owasp {
+ 
+/**
+ * A protocol or its implementation supports interaction between multiple actors and allows those actors
+ * to negotiate which algorithm should be used as a protection mechanism such as encryption or authentication,
+ * but it does not select the strongest algorithm that is available to both parties.
+ * 
+ * check if a user can choose a weak encryption suite for the SSL connection
+ * 
+ * The user should not have access to the page with different ssl certificate
+ */
+ 
+MR CWE_757 { 
+ { 
+    for ( Action action : Input(1).actions() ) {
+	  	var pos = action.getPosition();
+	  
+	   IMPLIES(
+	           EQUAL ( Input(2), Input(1) )				    			
+	    	  &&  Input(2).actions.get(action.position).setOtherSSLCertificate("SSLCERTIFICATE", randomSSL())
+	    	  //randomSSL will try to set other certificates from a provided list.
+	    	  
+		    ,  
+		    
+		    	isError(Output(Input(2), pos))
+		    	//different ( Output(Input(1),pos),  Output(Input(2),pos))
+		    	
+		    	
+		    	
+		);//end-IMPLIES
+	}//end-for
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+
