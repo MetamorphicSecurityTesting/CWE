@@ -31,6 +31,7 @@ MR CWE_291 {
 	          &&  EQUAL ( Input(2), Input(1) )	
 	          && Input(2).actions.get(action.position).setValidIpNode()	    			
 	    	  &&  Input(2).actions.get(action.position).setIPCertificate(invalidCertificate()) 
+	    	  
 		    ,  
 		    OR(
 		    	isError(Output(Input(2), pos)),
