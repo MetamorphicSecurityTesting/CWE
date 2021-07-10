@@ -1,5 +1,11 @@
 {
 	"SUT":	"Jenkins",
+	"VMadmin": "jenkinsuser",
+	"VMadminPwd": "123",
+	"VMsshPort": "22",
+	"IP": "192.168.56.102",
+	"VMname": "UbuntuJenkins 2.121.1",
+	"REAL_WAIT_THRESHOLD": "60000", 
 	"inputFile": "./testData/JenkinsICSE/input_small.json",
 	"outputFile": "./testData/JenkinsICSE/outFolder/jenkinsResult.txt",
 	"outputStore": "./testData/JenkinsICSE/outputStore",

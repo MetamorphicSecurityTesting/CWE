@@ -11,6 +11,7 @@ import org.junit.Test;
 import smrl.mr.crawljax.WebOperationsProvider;
 import smrl.mr.language.MRBaseTest;
 import smrl.mr.test.TEST_RANDOM_COOKIE_PATH;
+import smrl.mr.test.TEST_WAIT;
 
 public class SystemTests extends MRBaseTest {
 
@@ -42,7 +43,8 @@ public class SystemTests extends MRBaseTest {
 
 	@Test
 	public void test_() {
-		super.test(provider,TEST_RANDOM_COOKIE_PATH.class);
+//		super.test(provider,TEST_RANDOM_COOKIE_PATH.class);
+		super.test(provider,TEST_WAIT.class);
 	}
 
 	/*@Test

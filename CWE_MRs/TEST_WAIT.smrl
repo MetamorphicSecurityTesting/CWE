@@ -1,0 +1,23 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.test {
+ 
+
+MR TEST_WAIT { 
+ { 
+ 	{
+ 		//manual test, we check that after teh second action th etie is 10 minutes ahead and that in the next iteraton, for teh first actin, the time is correct
+    	//Object randomCookiePath = RandomCookiePath();
+    	System.out.println( Output( Input ( Wait(30000), Wait(600000), Wait(50000) ) ) );
+    	
+	} 	
+	
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+
