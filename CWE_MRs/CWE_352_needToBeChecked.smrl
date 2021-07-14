@@ -1,0 +1,45 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/**
+ * 
+ * CSRF attack
+ * 
+ * Input(1) = The user that is authenticated to access an action
+ * Input(2) = The user that is not authenticated to access actions that require to be logged in
+ * Input(3) is the same as Input(2) with the session of validated user(which is Input(1))
+ * and the system should not allow the input(3) to access the action that requires to be authenticated.
+ * 
+ */ 
+MR CWE_352 {
+	{
+		
+		for ( Action action : Input(1).actions() ){
+			var pos = action.getPosition();
+			for (Action action2 : Input(2).actions()){
+				var pos2 = action2.getPosition();
+				IMPLIES(
+				notAvailableWithoutLoggingIn( action ) &&
+				availableWithoutLoggingIn(action2) &&
+				!isAdmin(Input(2)) &&
+				!isSupervisorOf(Input(2),Input(1))&&
+				NOT ( NULL ( Output(Input(1)).getSession() ) ) &&	
+				//NOT ( NULL ( Output(Input(2)).getSession() ) )	&&
+				EQUAL(Input(3), Input(2)) &&
+				Input(3).actions.get(pos2).setSession(Output(Input(1)).getSession())	
+				
+				, OR(different ( Output( Input(1), pos ), Output( Input(3), pos ) ),
+				isError(Output( Input(3), pos ))
+				));	
+			}
+		}
+	}
+}
+}
+
+
+
+
+
