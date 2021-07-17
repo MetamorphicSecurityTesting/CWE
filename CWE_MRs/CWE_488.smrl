@@ -9,10 +9,9 @@ MR CWE_488b {
 		
 		for(var x = 0; (x < Input(1).actions().size() ); x++){
 			for (var y = x+1; (isLogin(Input(1).actions().get(x)) && y < Input(1).actions().size()); y++) 
-				{		
+				{ // these two for loops are going to interate over all actions that input(1) will do after the login		
 				IMPLIES(
 	  				isResetPassword(Input(1).actions().get(x) )&&
-	  				
 	  				EQUAL(Input(2), changeCredentials(Input(1), User())) &&
 	  				EQUAL(Input(3), addAction(Input(2), y, Input(1).actions().get(x)))
 	  				,
