@@ -4,21 +4,26 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp{
 
  
-MR CWE_488b {
+MR CWE_488 {
 	{
 		
 		for(var x = 0; (x < Input(1).actions().size() ); x++){
 			for (var y = x+1; (isLogin(Input(1).actions().get(x)) && y < Input(1).actions().size()); y++) 
 				{ // these two for loops are going to interate over all actions that input(1) will do after the login		
 				IMPLIES(
-	  				isResetPassword(Input(1).actions().get(x) )&&
+	  				
+	  				!isSupervisorOf(User(),Input (1).actions().get(y).user)&&
+	  				// if admin can change a data it's fine, it should not be an abnormal behaviour in system
+	  				
 	  				EQUAL(Input(2), changeCredentials(Input(1), User())) &&
-	  				EQUAL(Input(3), addAction(Input(2), y, Input(1).actions().get(x)))
+	  				EQUAL(Input(3), addAction(Input(2), y+1, Input(1).actions().get(x+1))) // copy the actions after the login
 	  				,
 	  			
 	  				OR(
 	  					
-	  					different(Output(Input(1), y+1),Output(Input(3), y+1))
+	  					different(Output(Input(1), y+2),Output(Input(3), y+2))
+	  					//The problem here is that only some specific part of the page may be similar(the information leakage reveal the data for a specific entry and all other parts of the page is already different)
+	  					// how we can restrict the comparison to the information revealing part?
 	  					,
 	  					//userCanRetrieveContent(Input(3).actions().get(y+2).getUser(), Output(Input(3), y+2))
 	  					
@@ -34,3 +39,16 @@ MR CWE_488b {
 
 
 
+/*for ( Action action : Input(1).actions() ){
+			var pos = action.getPosition();
+			
+			IMPLIES(
+				 
+				notAvailableWithoutLoggingIn( action ) &&
+				NOT ( NULL ( Output(Input(1)).getSession() ) ) &&	
+				EQUAL(Input(2), Input(1)) &&
+				Input(2).actions().get(pos).setRandomSession() /// a list of different session IDs
+				
+				
+				, different ( Output( Input(1), pos ), Output( Input(2), pos ) )
+				 ); */
