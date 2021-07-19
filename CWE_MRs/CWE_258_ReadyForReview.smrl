@@ -5,22 +5,31 @@ import sun.security.util.Password
 package smrl.mr.owasp {
  
 /**
+ * CWE Definition:
  * Using an empty string as a password is insecure.
+ * 
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1)
+ * (2) Store the parameters of each action in a variable
+ * (3) It checks if the current action of the Input(1) is reseting the password.
+ * (4) Creates Input(2) as a copy of the Input(1)
+ * (5) Set the empty value for the password value of the Input(2)
+ * (6) The Input(2) should not be able to login with empty password.
  */
  
 MR CWE_258 { 
  { 
-    for ( Action action : Input(1).actions() ) {
-	  	var pos = action.getPosition();
+    for ( Action action : Input(1).actions() ) { //(1)
+	  	var pos = action.getPosition(); //(2)
 	  
 	   IMPLIES(
-	        isResetPassword(action) 									
-	          &&  EQUAL ( Input(2), Input(1) )				    			
-	    	  &&  Input(2).actions.get(action.position).setValueForParametersOfType("password", "")
+	        isResetPassword(action) 	// (3)							
+	          &&  EQUAL ( Input(2), Input(1) )	//(4)			    			
+	    	  &&  Input(2).actions.get(action.position).setValueForParametersOfType("password", "") //(5)
 	    	  //Where the first attribute is the input type in HTML and the second parameter is the value to be set. 
 	    	  
 		    ,  
-		    OR(
+		    OR( //(6)
 		    	isError(Output(Input(2), pos)),
 		    	different ( Output(Input(1),pos),  Output(Input(2),pos))
 		    	
