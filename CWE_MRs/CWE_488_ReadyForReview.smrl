@@ -15,7 +15,7 @@ package smrl.mr.owasp{
  * 
  * (1),(2)  Two for loops iterate over all actions that input(1) will do after the login
  * (3) It checks whether the user in User() is not a supervisor of the user performing the y-th action. // if Admin can change a data it's fine, it should not be an abnormal behaviour in system
- * (4) Create a copy of the Input(1) with different credentials
+ * (4) Create the follow-up Input by copying Input(1) with different credentials
  * (5) Copy the action y+1 (the action after the login) from Input(1), and now the Input(3) will do the same action as input(1)
  * 
  * There is a OR condition between the results of (6) and (7)

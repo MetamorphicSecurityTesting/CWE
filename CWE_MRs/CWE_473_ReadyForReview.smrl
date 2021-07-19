@@ -16,7 +16,7 @@ package smrl.mr.owasp {
    * (4) Retrieving the current URL that Input(1) has access to
    * (5) Creating a new URL by modifying the current URL (adding the attacker's session path to it).
    * (6) Making sure that Input(1) is taking an action that requires to be logged in.
-   * (7) Creating a copy of Input(1) but with different credential values.
+   * (7) Creating the follow-up Input by copying Input(1) but with different credential values.
    * (8) Setting the new URL which is going to change the user's session
    * (9) If the system is well designed, then it will show an error page or
    * it may show the same session for the next action (it means it the attacker was not successful to change the session)

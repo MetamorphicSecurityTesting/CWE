@@ -16,7 +16,7 @@ package smrl.mr.owasp {
  * (3) Stores the URL of the current action in a variable.
  * (4) It checks that the current action is only available for authenticated users i.e. available only after log in.
  * (5) It considers users that only have lower or similar access level to Input(1).
- * (6) Creates a copy of Input(1) with different credentials, named Input(2).
+ * (6) Creates the follow-up Input by copying Input(1) with different credentials, named Input(2).
  * (7) It encode the URL for input(2) to check that the url action which is not accessible to the Input(2) would be accessible if it is encoded or not.
  * (8) The system should show an error page or different outputs for two inputs. 
  */

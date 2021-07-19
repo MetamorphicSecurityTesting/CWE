@@ -12,7 +12,7 @@ package smrl.mr.owasp {
  * (1) For loop iterates over all actions of the Input(1)
  * (2) Store the parameters of the current action in a variable
  * (3) It checks if the current action of the Input(1) is reseting the password.
- * (4) Creates Input(2) as a copy of the Input(1)
+ * (4) Creates Input(2) as the follow-up input.
  * (5) Set the empty value for the password value of the Input(2)
  * (6) The Input(2) should not be able to login with empty password.
  */

@@ -13,7 +13,7 @@ package smrl.mr.owasp{
  * (2) It checks whether the current action X is doing "log out".
  * (3) It checks that the next action of the Input(1) is "log in".
  * (4) It also makes sure that the user previously did not access to the current URL address
- * (5) Creates a copy of the Input(1), named Input(2)
+ * (5) Creates the follow-up Input by copying the Input(1), named Input(2)
  * (6) Add an action to Input(1) and moves time forward for a year i.e. the expected time for reseting the password (password aging).
  * (7) Set the action to Input(2) to perform after a year, which is expected to ask the user to reset the password instead of perfroming the action.
  * 
