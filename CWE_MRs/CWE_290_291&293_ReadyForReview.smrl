@@ -20,7 +20,7 @@ package smrl.mr.owasp {
  * Idea: To verify the Certificate as well as the IP address
  * 
  * Comments:
- * (1) For loop iterate over all Input(1)'s actions
+ * (1) For loop iterates over all Input(1)'s actions
  * (2) The parameters of the current action is stored in the variable.
  * (3) It makes sure that the action is available after the login.
  * (4) Creates the follow-up input by copying the Input(1), named Input(2).
