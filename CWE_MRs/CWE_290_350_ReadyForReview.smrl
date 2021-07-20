@@ -26,8 +26,7 @@ package smrl.mr.owasp {
 * (4) Checks that follow-up user does not have a higher access to the system.
 * (5) Creates the follow-up input by copying the Input(1) with different credentials, named Input(2).
 * (6) Sets a different host name for the follow-up input that ends with the valid host name.
-* (7) Checks that the output of the Input(1) and the follow-up Input is different
-* 	  Or the system shows an error page for the user with different host name.
+* (7) The system should show an error page for the user with different host name.
 * 
  */
 
@@ -46,11 +45,12 @@ MR CWE_290_350{
 			  	 Input(2).actions().get(pos).setHostName(anotherHostName())	//(6) 
 			    ,
 			    
-			  AND(  //(7)
-			   		 different ( Output(Input(2),pos),Output(Input(1),pos)),
-			    	 isError( Output(Input(2) , pos))      		
+			 // AND(  
+			   		// different ( Output(Input(2),pos),Output(Input(1),pos)),
+			    	 isError( Output(Input(2) , pos))     //(7) 		
 			  
-			));//end-IMPLIES	
+			//)
+			);//end-IMPLIES	
 	}//end-for
  }
 }//end-MR
