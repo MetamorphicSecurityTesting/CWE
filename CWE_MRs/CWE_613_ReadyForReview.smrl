@@ -1,0 +1,47 @@
+import static smrl.mr.language.Operations.*;
+
+package smrl.mr.owasp{
+
+/**
+ * CWE Definition:
+ * According to WASC, "Insufficient Session Expiration is when a web site permits an attacker to 
+ * reuse old session credentials or session IDs for authorization."
+ * The lack of proper session expiration may improve the likely success of certain attacks. 
+ * For example, an attacker may intercept a session ID, possibly via a network sniffer or 
+ * Cross-site Scripting attack. Although short session expiration times do not help if a stolen token
+ * is immediately used, they will protect against ongoing replaying of the session ID. In another 
+ * scenario, a user might access a web site from a shared computer (such as at a library, Internet cafe).
+ * Insufficient Session Expiration could allow an attacker to use the browser's back button to access web pages previously accessed by the victim.
+ * 
+ * Comments: 
+ * (1) The first loop iterates over all the actions to find a logout action.
+ * (2) The second loop iterates over all the actions to find an action performed after login.
+ * (3) Checks if the current action x is a logout operation.
+ * (4) Checks that the action y is performed after a login. 
+ * (5) Checks that the action y is not a login.
+ * (6) Defines a follow-up input with the logout action being duplicated in position y.
+ * (7) Verifies if the session ID before and after executing the logout is different.
+ *   
+ */ 
+	MR CWE_613 {
+		{
+			for ( var x=0; x < Input(1).actions().size() ; x++ ){   //(1)
+				for ( var y=0; y < x ; y++ ){                       //(2)
+					IMPLIES ( 
+						isLogout( Input(1).actions().get(x) ) &&    //(3)
+						afterLogin( Input(1).actions().get(y) ) &&  //(4)
+						! isLogin( Input(1).actions().get(y) ) &&   //(5)
+						EQUAL ( Input(2) , copyActionTo( Input(1), x, y ) )       //(6)
+						, 
+						different ( Session(Input(2),y-1),  Session(Input(2),y) ) //(7)
+					); //end-IMPLIES
+				} //end-for
+			} //end-for
+		}
+	} //end-MR
+} //end-package
+
+
+
+
+
