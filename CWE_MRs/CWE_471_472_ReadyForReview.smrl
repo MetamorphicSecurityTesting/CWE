@@ -1,0 +1,50 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp {
+ 
+/*
+ *CWE Definition:
+ * The software does not properly protect an assumed-immutable element from being modified by an attacker.
+ * 
+ * Comments:
+ * (1) For loop iterates over the all actions performed by Input(1).
+ * (2) Stores the parameters of the action in a variable.
+ * (3) Stores the cookie information in a variable.
+ * (4) for loop iterates over all elements in the cookie.
+ * (5) Stores each element of the cookie in a variable.
+ * (6) checks that the action is perfomed after the log in.
+ * (7) Creates the follow-up input by copying the Input(1).
+ * (8) set a cookie with modified value for the follow-up input.
+ * (9) Verifies that the system should not allow the user to retrieve the content or it should show the error page.
+ */
+
+MR CWE_471_472{
+	{
+   for (Action action: Input(1).actions()){      //(1)
+      var pos = action.getPosition();            //(2)
+      var entry = action.getCookie()             //(3)
+      for (var i  = 0; i< entry.length(); i++) { //(4)
+      	
+      	var parameter = entry.indent(i)          //(5)
+      IMPLIES(             
+               afterLogin(action)                //(6)
+               && EQUAL(Input(2), Input(1))      //(7)
+               && Input(2).actions.get(action.position).setCookie(action.setCookieValue(parameter, randomValue()))  //(8)
+                ,
+              
+        OR(  //(9)
+        	!userCanRetrieveContent( Input(2), Output(Input(2),pos))
+        	,
+        	isError( Output(Input(2) , pos))
+        )
+		);//end-IMPLIES
+	}//end-for
+	}}
+}//end-MR
+}//end-package
+
+
+
+
+

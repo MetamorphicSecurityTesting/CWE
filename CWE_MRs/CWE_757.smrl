@@ -5,13 +5,17 @@ import sun.security.util.Password
 package smrl.mr.owasp {
  
 /**
+ * CWE Definition:
  * A protocol or its implementation supports interaction between multiple actors and allows those actors
  * to negotiate which algorithm should be used as a protection mechanism such as encryption or authentication,
  * but it does not select the strongest algorithm that is available to both parties.
  * 
  * check if a user can choose a weak encryption suite for the SSL connection
- * 
  * The user should not have access to the page with different ssl certificate
+ * 
+ * Comments:
+ * 
+ * 
  */
  
 MR CWE_757 { 
