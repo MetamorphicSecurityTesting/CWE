@@ -1,0 +1,51 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/**
+ * CWE Definition:
+ * Authenticating a user, or otherwise establishing a new user session, without invalidating any
+ * existing session identifier gives an attacker the opportunity to steal authenticated sessions.
+ * 
+ * A web application authenticates a user without first invalidating the existing session, thereby
+ * continuing to use the session already associated with the user. An attacker is able to force a known
+ * session identifier on a user so that, once the user authenticates, the attacker has access to the 
+ * authenticated session. The application or container uses predictable session identifiers. In the 
+ * generic exploit of session fixation vulnerabilities, an attacker creates a new session on a web 
+ * application and records the associated session identifier. The attacker then causes the victim to 
+ * associate, and possibly authenticate, against the server using that session identifier, giving the 
+ * attacker access to the user's account through the active session.
+ * 
+ * Comments: 
+ * (1) The first loop iterates over all the actions to find a logout action.
+ * (2) The second loop iterates over all the actions to find an action performed after login.
+ * (3) Checks if the current action x is a logout operation.
+ * (4) Checks that the action y is performed after a login. 
+ * (5) Checks that the action y is not a login.
+ * (6) Defines a follow-up input with the logout action being duplicated in position y.
+ * (7) Verifies if the session ID before and after executing the logout is different,
+ *     and the previous session is not valid anymore.
+ *   
+ */ 
+MR CWE_384_610 {
+		{
+			for ( var x=0; x < Input(1).actions().size() ; x++ ){   //(1)
+				for ( var y=0; y < x ; y++ ){                       //(2)
+					IMPLIES ( 
+						isLogout( Input(1).actions().get(x) ) &&    //(3)
+						afterLogin( Input(1).actions().get(y) ) &&  //(4)
+						! isLogin( Input(1).actions().get(y) ) &&   //(5)
+						EQUAL ( Input(2) , copyActionTo( Input(1), x, y ) )       //(6)
+						, 
+						AND( different ( Session(Input(2),y-1),  Session(Input(2),y) ) //(7)
+						,
+						inValid( Session(Input(2),y-1))
+						)
+					); //end-IMPLIES
+				} //end-for
+			} //end-for
+		}
+	} //end-MR
+} //end-package
+
