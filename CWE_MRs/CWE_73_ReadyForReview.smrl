@@ -1,0 +1,39 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/**
+ * CWE Definition:
+ * A file path passed in a parameter should never enable a 
+ * user to access data that is not provided by the user interface.
+ *
+ * Comments: 
+ * (1),(2) This metamorphic relation contains two nested loops; the first iterates over the actions 
+ * in the input sequence, the second iterates over the parameters of the action.
+ * (3) Stores the parameters of the actions in the variable.
+ * (4) Defines a follow-up input that is a copy of the source input.
+ * (5) Sets the value of a parameter to a random file path.
+ * (6) Verifies that the follow-up input leads to an error page
+ *     Or the returned content is something that the user has the right to access.
+ * 
+ */ 
+MR CWE_73 {
+ {
+	for ( Action action : Input(1).actions() ){ //(1)
+		for ( var par=0; par < action.getParameters().size(); par++ ){ //(2)
+			var pos = action.getPosition();  //(3)
+			IMPLIES( 
+				EQUAL( Input(2), Input(1) )	//(4)
+			  	  && Input(2).actions().get(pos).setParameterValue(par, RandomFilePath())//(5)
+			    ,
+			    OR( 	//(6)
+			      isError( Output(Input(2),pos) ) 	
+			      ,
+			      userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) )
+			);//end-IMPLIES
+		}//end-for
+	}//end-for
+ }
+}//end-MR
+}
