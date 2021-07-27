@@ -36,13 +36,15 @@ MR CWE_384_610 {
 						isLogout( Input(1).actions().get(x) ) &&    //(3)
 						afterLogin( Input(1).actions().get(y) ) &&  //(4)
 						! isLogin( Input(1).actions().get(y) ) &&   //(5)
-						EQUAL ( Input(2) , copyActionTo( Input(1), x, y ) )       //(6)
+						EQUAL ( Input(2) , copyActionTo( Input(1), x, y ) )    &&   //(6)
+						EQUAL ( Input(3) , Input(Input(1).actions().get(y) ) ) && 
+						Input(3).actions().get(0).session = Session(Input(2),y) //
 						, 
-						AND( different ( Session(Input(2),y-1),  Session(Input(2),y) ) //(7)
-						,
-						inValid( Session(Input(2),y-1))
+						 different ( Session(Input(2),y-1),  Session(Input(2),y) ) //(7)
 						
-						)
+						//inValid( Session(Input(2),y-1))
+						
+						
 					); //end-IMPLIES
 				} //end-for
 			} //end-for
