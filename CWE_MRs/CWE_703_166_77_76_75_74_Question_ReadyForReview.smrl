@@ -1,0 +1,51 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp {
+ 
+/**
+ * CWE Definition:
+ * The software receives input from an upstream component, but it does not handle or incorrectly
+ * handles when an expected special element is missing.
+ * 
+ * Extra Details:
+ * Developers should anticipate that special elements will be removed in the input vectors of their 
+ * software system. Use an appropriate combination of denylists and allowlists to ensure only valid,
+ * expected and appropriate input is processed by the system.
+ * 
+ * (1) For loop iterates over all actions of the Input(1).
+ * (2) Stores the parameters of the action in the variable.
+ * (3) Iterates over a list of all possible special characters to check all possible combinations of the input value.
+ * (4) Creates the follow-up input by copying the Input(1)
+ * (5) Sets the new input value for the follow-up input.
+ * (6) Verifies that the system should show an error page.
+ * 
+ */
+ 
+MR CWE_703_166_77_76_75_74 { 
+ { 
+    for ( Action action : Input(1).actions() ) { //(1)
+	  	var pos = action.getPosition();          //(2)
+	  	//var input_value = action.getAttribute() //https://www.tutorialspoint.com/using-selenium-web-driver-to-retrieve-value-of-a-html-input
+	  	var input_value = action.getInput();
+	    for (var indx =0; indx < action.getSpecialChars().length; indx ++){ //(3)
+	        // var newInputValue = input_value + getSpecialChars(indx)
+	        IMPLIES(
+	            action.containFormInput()	&&							
+	            EQUAL ( Input(2), Input(1) ) &&		//(4)		    			
+	    	    Input(2).actions.get(action.position).setInputValue(indx , input_value) //(5) 
+	    	  //  Input(2).actions.get(action.position).setInputValue(newInputValue)  
+	    	  		    ,  
+		    
+		    	isError(Output(Input(2), pos)) //(6)
+		    	
+		);//end-IMPLIES
+	}}//end-for
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+

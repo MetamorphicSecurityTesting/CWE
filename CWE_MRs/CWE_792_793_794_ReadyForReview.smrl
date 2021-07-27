@@ -22,18 +22,23 @@ package smrl.mr.owasp {
  * 
  */
  
-MR CWE_703_166 { 
+MR CWE_792_793_794 { 
+	// This is exactly the same as  CWE_703_166_77_76_75_74 
+	// The idea is when the system has an input validation mechanism that does not allow any special characters
+	// then it will detect the multiple occurrence of it as well.
  { 
     for ( Action action : Input(1).actions() ) { //(1)
 	  	var pos = action.getPosition();          //(2)
 	  	//var input_value = action.getAttribute() //https://www.tutorialspoint.com/using-selenium-web-driver-to-retrieve-value-of-a-html-input
-	  	
+	  	var input_value = action.getInput();
+	    
 	    for (var indx =0; indx < action.getSpecialChars().length; indx ++){ //(3)
 	        // var newInputValue = input_value + getSpecialChars(indx)
+	        
 	        IMPLIES(
-	        									
+	            action.containFormInput()	&&							
 	            EQUAL ( Input(2), Input(1) ) &&		//(4)		    			
-	    	    Input(2).actions.get(action.position).setInputValue(indx , action.getInput()) //(5) 
+	    	    Input(2).actions.get(action.position).setInputValue(indx , input_value) //(5) 
 	    	  //  Input(2).actions.get(action.position).setInputValue(newInputValue)  
 	    	  		    ,  
 		    

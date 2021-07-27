@@ -41,6 +41,7 @@ MR CWE_384_610 {
 						AND( different ( Session(Input(2),y-1),  Session(Input(2),y) ) //(7)
 						,
 						inValid( Session(Input(2),y-1))
+						
 						)
 					); //end-IMPLIES
 				} //end-for
