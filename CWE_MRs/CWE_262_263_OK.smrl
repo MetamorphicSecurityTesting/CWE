@@ -4,19 +4,21 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp{
 
 /**
+ * To Do: 
+ * 1- We shall improve the crawler to perform logout at least once.
  * 
  * CWE Definition:
- * Allowing password aging to occur unchecked can result in the possibility of diminished password integrity.
+ * Allowing password aging to occur may result in the possibility of diminished password integrity.
  * 
  * Comments:
  * (1) To keep track of actions that Input(1) can do, two for loops are implemented.
  * (2) It checks whether the current action X is doing "log out".
- * (3) It checks that the next action of the Input(1) is "log in".
- * (4) It also makes sure that the user previously did not access to the current URL address
+ * (3) It checks that the action-y of the Input(1) is "log in".
+ * (4) It also makes sure that we did not tried this MR with the login action-y.
  * (5) Creates the follow-up Input by copying the Input(1), named Input(2)
- * (6) Add an action to Input(1) and moves time forward for a year i.e. the expected time for reseting the password (password aging).
- * (7) Set the action to Input(2) to perform after a year, which is expected to ask the user to reset the password instead of perfroming the action.
- * 
+ * (6) Add a wait action to Input(2) that moves time forward for a year i.e. the expected time for reseting the password (password aging).
+ * (7) Add a login action to Input(2) to perform a login after a year, which is expected to ask the user to reset the password instead of performing the action.
+ * (8) Based on the above description the results should be different; it shall prompt a password update request 
  */ 
 	MR CWE_262_263 {
 		{
@@ -32,7 +34,7 @@ package smrl.mr.owasp{
 						Input(2).addAction ( x+1, Wait( 60*60*24*30*12*1000 ) ) &&  //(6)
 						Input(2).addAction ( x+2, Input(1).actions().get(y) )       //(7)
 						,
-						different ( Output(Input(2),y),  Output(Input(2),x+2) ) //it shall prompt a password update request 
+						different ( Output(Input(2),y),  Output(Input(2),x+2) ) //(8)
 					); //end-IMPLIES
 				} //end-for
 			} //end-for

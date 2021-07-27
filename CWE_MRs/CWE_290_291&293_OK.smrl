@@ -4,6 +4,8 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp {
  
 /**
+ * Hint: re-write the comments.
+ * 
  * CWE Definition:
  * The software uses an IP address for authentication.
  * 
@@ -38,13 +40,15 @@ MR CWE_291 {
  { 
     for ( Action action : Input(1).actions() ) {  //(1)
 	  	var pos = action.getPosition();           //(2)
+	  	
 	   IMPLIES(
 	   	
 	       
 	         afterLogin(action) // (3)   //need to be determined for forged IP							
 	          &&  EQUAL ( Input(2), Input(1) )	//(4)
 	          && Input(2).actions.get(action.position).setValidIpNode()	    //(5)			
-	    	  &&  Input(2).actions.get(action.position).setIPCertificate(invalidCertificate()) //(6)
+	    	  //&&  Input(2).actions.get(action.position).setIPCertificate(invalidCertificate()) 
+	    	  && Input(2).actions.get(action.position).setSession(null) //(6)
 	    	  
 		    ,  
 		    OR( //(7)
