@@ -1,0 +1,69 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/**
+ * CWE_definition:
+ * 
+ * The software constructs all or part of an SQL command using externally-influenced input 
+ * from an upstream component, but it does not neutralize or incorrectly neutralizes special
+ * elements that could modify the intended SQL command when it is sent to a downstream component. 
+ * 
+ * 
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1).
+ * (2) Stores the parameters of the current action in a variable.
+ * (3),(4) It creates a new URL address with our defined seperators 
+ * (5) Checks if the current action has been performed as a login.
+ * (6) Defines a follow-up input that is a copy of the source input.
+ * (7) Sets a relative path to a file
+ * (8) Verifies that the given path was not tried in a previous execution of the loop (to speed up). 
+ * (9) The same process for the other user with another modified URL (9),(10),(11).
+ * (12) The system should not allow the new URL to be accessible, or it should show an error page.
+ * 
+ */ 
+MR CWE_89 {
+ {
+ 	var sep="/";
+ 	for ( var par=0; par < 3; par++ ){
+ 		 
+		for ( Action action : Input(1).actions() ){  //(1)
+			 
+			var pos = action.getPosition();          //(2)
+			var newUrl = action.urlPath+sep+"*";     //(3)
+			var newUrlinOracle = action.urlPath+sep+"--";  //(4)
+			IMPLIES( 
+										
+				isLogin(action) &&			                             //(5)				
+				EQUAL( Input(2), Input(1) ) &&			                 //(6)		
+			  	Input(2).actions().get(pos).setUrl( newUrl ) &&	         //(7)
+			  	notTried( Input(2), newUrl )   &&                        //(8)
+			  	EQUAL( Input(3), Input(1) ) &&					         //(9)
+			  	Input(3).actions().get(pos).setUrl( newUrl )&&	         //(10)
+			  	notTried( Input(3), newUrl )                             //(11)
+			    ,
+			    OR( TRUE ( 	
+			    	Output(Input(2),pos).noFile() ||	
+				    userCanRetrieveContent(				
+				    	action.getUser(), 
+				    	Output(Input(2),pos).file()
+				    ) || 								 
+					Output(Input(2),pos).isError()  	
+				),
+			    TRUE ( 	
+			    	Output(Input(3),pos).noFile() ||	
+				    userCanRetrieveContent(				
+				    	action.getUser(), 
+				    	Output(Input(3),pos).file()
+				    ) || 								 
+					Output(Input(3),pos).isError()  	
+				))
+			);//end-IMPLIES
+		}//end-for
+		
+		sep=sep+"../";
+	}//end-for
+ }
+}//end-MR
+}
