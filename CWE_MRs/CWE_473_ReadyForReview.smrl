@@ -6,6 +6,7 @@ package smrl.mr.owasp {
    /**
     * ADD Description of attack.
     * 
+    * 
    * CWE Definition:
    * A PHP application does not properly protect against the modification of variables from external sources, such as
    * query parameters or cookies. This can expose the application to numerous weaknesses that would not exist otherwise.
@@ -34,6 +35,7 @@ package smrl.mr.owasp {
 	  	for(Action action: Input(1).actions()){ //(2)
 	  		var pos = action.getPosition() //(3)
 	  		var current_url = Input(1).actions().get(pos).getUrl()  //(4)
+	  		//FABRIZIO: you shall find a real case; I'm afraid this is not how the attack is performed
 	  		var new_url = current_url + global; //(5)
 	  			
   			IMPLIES(

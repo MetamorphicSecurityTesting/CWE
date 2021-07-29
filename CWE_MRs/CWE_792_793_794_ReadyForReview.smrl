@@ -42,7 +42,7 @@ MR CWE_792_793_794 {
 	    	  //  Input(2).actions.get(action.position).setInputValue(newInputValue)  
 	    	  		    ,  
 		    
-		    	isError(Output(Input(2), pos)) //(6)
+		    	isError(Output(Input(2), pos)) //(6) FABRIZIO: the "Extra Details" seem to indicate that special chars should be simply ignored, not lead to an error. Please find a concrete case.
 		    	
 		);//end-IMPLIES
 	}}//end-for

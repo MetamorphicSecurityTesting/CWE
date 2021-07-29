@@ -4,6 +4,8 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp {
  
 /**
+ * FABRIZIO: It seems ok, not clear why you wrote Question in the title
+ * 
  * CWE Definition:
  * The software receives input from an upstream component, but it does not handle or incorrectly
  * handles when an expected special element is missing.
