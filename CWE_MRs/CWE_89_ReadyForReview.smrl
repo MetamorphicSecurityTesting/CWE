@@ -45,8 +45,7 @@ MR CWE_89 {
 			    ,
 			    OR( TRUE ( 	
 			    	Output(Input(2),pos).noFile() ||	
-				    userCanRetrieveContent(				
-				    	action.getUser(), 
+				    userCanRetrieveContent(	 	action.getUser(), 
 				    	Output(Input(2),pos).file()
 				    ) || 								 
 					Output(Input(2),pos).isError()  	
