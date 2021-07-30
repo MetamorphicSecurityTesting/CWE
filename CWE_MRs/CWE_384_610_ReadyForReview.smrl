@@ -21,6 +21,9 @@ package smrl.mr.owasp{
  * (1) The first loop iterates over all the actions to find a logout action.
  * (2) The second loop iterates over all the actions to find an action performed after login.
  * (3) Checks if the current action x is a logout operation.
+ * 
+ * FABRIZIO: In my opinion we shall simply perform a login within another logged in session. No logout is needed.
+ * 
  * (4) Checks that the action y is performed after a login. 
  * (5) Checks that the action y is not a login.
  * (6) Defines a follow-up input with the logout action being duplicated in position y.
@@ -42,7 +45,7 @@ MR CWE_384_610 {
 						, 
 						AND( different ( Session(Input(2),y-1),  Session(Input(2),y) ) //(7)
 						,
-						inValid( Session(Input(2),y-1))
+						inValid( Session(Input(2),y-1)) //FABRIZIO: what is this supposed to do?
 						
 						)
 					); //end-IMPLIES
