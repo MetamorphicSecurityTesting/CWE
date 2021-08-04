@@ -18,34 +18,31 @@ package smrl.mr.owasp{
  * attacker access to the user's account through the active session.
  * 
  * Comments: 
- * (1) The first loop iterates over all the actions to find a logout action.
+ * (1) The first loop iterates over all the actions to find a login action.
  * (2) The second loop iterates over all the actions to find an action performed after login.
- * (3) Checks if the current action x is a logout operation.
+ * (3) Checks if the current action y is a login operation.
  * 
  * FABRIZIO: In my opinion we shall simply perform a login within another logged in session. No logout is needed.
  * 
- * (4) Checks that the action y is performed after a login. 
- * (5) Checks that the action y is not a login.
- * (6) Defines a follow-up input with the logout action being duplicated in position y.
- * (7) Verifies if the session ID before and after executing the logout is different,
- *     and the previous session is not valid anymore.
+ * (4) Defines a follow-up input with the sequence of two logins.
+ * (5) Verifies that the system assigns different session IDs after the login,
+ * (6) Checks that the previous session ID is not valid anymore.
  *   
  */ 
 MR CWE_384_610 {
 		{
-			for ( var x=0; x < Input(1).actions().size() ; x++ ){   //(1)
-				for ( var y=0; y < x ; y++ ){                       //(2)
+			for ( var x = 0; x < Input(1).actions().size(); x++ ){   //(1)
+				for ( var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){  //(2)
 					IMPLIES ( 
-						isLogout( Input(1).actions().get(x) ) &&    //(3)
-						afterLogin( Input(1).actions().get(y) ) &&  //(4)
-						! isLogin( Input(1).actions().get(y) ) &&   //(5)
-						EQUAL ( Input(2) , copyActionTo( Input(1), x, y ) )    &&   //(6)
-						EQUAL ( Input(3) , Input(Input(1).actions().get(y) ) ) && 
-						Input(3).actions().get(0).session = Session(Input(2),y) //
+						isLogin( Input(1).actions().get(y) ) &&       //(3)        
+						EQUAL ( Input(2) , copyActionTo( Input(1), x, y ) ) //(4)
+						
+						//EQUAL(Input(3), addAction(Input(2), y+1, Input(1).actions().get(y)))
+						 
 						, 
-						AND( different ( Session(Input(2),y-1),  Session(Input(2),y) ) //(7)
+						AND( different ( Output(Input(2),x+1).getSession(),  Output(Input(2),y+1).getSession() ) //(5)
 						,
-						inValid( Session(Input(2),y-1)) //FABRIZIO: what is this supposed to do?
+						inValid( Output(Input(2),x+1).getSession()) //(6)  //FABRIZIO: what is this supposed to do? checks that the previous login(x) session has been invalidated (terminated).
 						
 						)
 					); //end-IMPLIES
