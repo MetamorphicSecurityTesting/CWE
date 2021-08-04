@@ -29,7 +29,7 @@ package smrl.mr.owasp{
  * (6) Checks that the previous session ID is not valid anymore.
  *   
  */ 
-MR CWE_384_610 {
+MR CWE_610_384 {
 		{
 			for ( var x = 0; x < Input(1).actions().size(); x++ ){   //(1)
 				for ( var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){  //(2)
