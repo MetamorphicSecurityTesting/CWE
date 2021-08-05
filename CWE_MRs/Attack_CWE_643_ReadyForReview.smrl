@@ -7,13 +7,21 @@ package smrl.mr.owasp {
 /**
  * FABRIZIO: we need a concrete case to test with
  * 
+ * Nazanin: 
+ * Cases that I have checked:
+ * http://projects.webappsec.org/w/page/13247005/XPath%20Injection
+ * https://www.exploit-db.com/exploits/10372
+ * 
+ * It can be merged to CWE_703, if we also filter the "' or 1=1 or ''='" and single quotation mark as special characters.
+ * 
+ * 
  * CWE Definition:
  * The software uses external input to dynamically construct an XPath expression 
  * used to retrieve data from an XML database, but it does not neutralize or incorrectly 
  * neutralizes that input. This allows an attacker to control the structure of the query.
  * 
  * OWASP hint:
- * with XPath injection, the first step is to insert a single quote (�) in the field to 
+ * with XPath injection, the first step is to insert a single quote (') in the field to 
  * be tested, introducing a syntax error in the query, and to check whether the application 
  * returns an error message.
  * 
@@ -22,8 +30,9 @@ package smrl.mr.owasp {
  * (2) Store the parameters of the current action in a variable
  * (3) It checks if the current action of the Input(1) is login.
  * (4) Creates Input(2) as the follow-up input.
- * (5) Set the (') value for the password value of the Input(2)
- * (6) The Input(2) should not be able to login, it should show an error message.
+ * (5) Set the specific value for the username of the Input(2)
+ * (6) Set the (') value for the password of the Input(2)
+ * (7) The Input(2) should not be able to login, it should show an error message.
  */
  
 MR CWE_643 { 
@@ -32,14 +41,17 @@ MR CWE_643 {
 	  	var pos = action.getPosition(); //(2)
 	  
 	   IMPLIES(
-	        isLogin(action) 	// (3)							
-	          &&  EQUAL ( Input(2), Input(1) )	//(4)			    			
-	    	  &&  Input(2).actions.get(action.position).setValueForParametersOfType("password", "'") //(5) or "username"
+	          isLogin(action) 	// (3)							
+	          && EQUAL ( Input(2), Input(1) )	//(4)	
+	          && Input(2).actions.get(action.position).setValueForParametersOfType("username", "' or 1=1 or ''='") //(5)
+	          //Bases on http://projects.webappsec.org/w/page/13247005/XPath%20Injection
+	          		    			
+	    	  && Input(2).actions.get(action.position).setValueForParametersOfType("password", "'") //(6) 
 	    	  //Where the first attribute is the input type in HTML and the second parameter is the value to be set. 
 	    	  
 		    ,  
-		     //(6)
-		    isError(Output(Input(2), pos))
+		     
+		    isError(Output(Input(2), pos))//(7)
 		    	
 		    	
 		);//end-IMPLIES
