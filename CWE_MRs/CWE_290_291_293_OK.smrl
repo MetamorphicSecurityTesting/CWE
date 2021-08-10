@@ -4,7 +4,6 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp {
  
 /**
- * Hint: re-write the comments.
  * 
  * CWE Definition:
  * The software uses an IP address for authentication.
@@ -19,7 +18,6 @@ package smrl.mr.owasp {
  * 
  * In summary, IP address verification can be a useful part of an authentication scheme, but it should not be the single factor required for authentication.
  * 
- * Idea: To verify the Certificate as well as the IP address
  * 
  * Comments:
  * (1) For loop iterates over all Input(1)'s actions
@@ -27,16 +25,13 @@ package smrl.mr.owasp {
  * (3) It makes sure that the action is available after the login.
  * (4) Creates the follow-up input by copying the Input(1), named Input(2).
  * (5) Checks that the user has a valid IP.
- * (6) Sets an invalid IP Certificate for the Follow-up input.
- * (7) If the system only verify the IP address will let the Input(2) to perform the action,
- *     But the system should check the validity of the IP Certificate as well. Then, The results
- *     of the performing the same action by Input(1) and Input(2) should be different,
- *     Or the system shows an error page for Input(2).
- * 
+ * (6) Sets a null session for the follow-up input.
+ * (7) The results of the performing the same action by Input(1) and Input(2) 
+ *     should be different, or the system shows an error page for Input(2).
  * 
  */
  
-MR CWE_291 { 
+MR CWE_290_291_293 { 
  { 
     for ( Action action : Input(1).actions() ) {  //(1)
 	  	var pos = action.getPosition();           //(2)
