@@ -42,7 +42,8 @@ MR CWE_610_384 {
 						, 
 						AND( different ( Output(Input(2),x+1).getSession(),  Output(Input(2),y+1).getSession() ) //(5)
 						,
-						inValid( Output(Input(2),x+1).getSession()) //(6)  //FABRIZIO: what is this supposed to do? checks that the previous login(x) session has been invalidated (terminated).
+						inValid( Output(Input(2),x+1).getSession()) //(6)  //FABRIZIO: what is this supposed to do? 
+						                                                   //Nazanin: checks that the previous login(x) session has been invalidated (terminated).
 						
 						)
 					); //end-IMPLIES
