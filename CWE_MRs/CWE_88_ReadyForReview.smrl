@@ -4,6 +4,9 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp {
  
 /**
+ * 
+ * FABRIZIO: we need a concrete case
+ * 
  * CWE Definition:
  * The software constructs a string for a command to executed by a separate component in another 
  * control sphere, but it does not properly delimit the intended arguments, options, or switches
@@ -32,9 +35,12 @@ MR CWE_88 {
 	            EQUAL ( Input(2), Input(1) ) &&	  //(5)		    			
 	    	    Input(2).actions.get(action.position).setInputValue(0 , RandomFilePath()) //(6) WHAT IS THE PATH FORMAT OF THE RandomFilePath?
 	    	  //  Input(2).actions.get(action.position).setInput(newInputValue)  
-	    	  		    ,  
-		    
-		    	different(Output(Input(1), pos),Output(Input(2), pos))   //(7) FABRIZIO: I do not like the abuse of isError, MT is about differences between outputs
+	    	  		    ,  //FABRIZIO: why did you introduce a new API method called "setInputValue" ? Why aren't you using setParameter value, which was introduced by Phu?
+	    	  		    	//In general whenever you introduce an API method please verify that a method with the same purpose is not already implemented.
+	    	  		    	//Also, in this case th eterminology you are using is not consistent with the terminology of MST. AN input is a sequence of actions. You are using the term input to indicate a parameter value.
+		    				//Finally, I think you shall simply iterate over all the available parameters; I think we already have a MR doing that.
+		    				
+		    	different(Output(Input(1), pos),Output(Input(2), pos))   
 		    	
 		);//end-IMPLIES
 	}//end-for

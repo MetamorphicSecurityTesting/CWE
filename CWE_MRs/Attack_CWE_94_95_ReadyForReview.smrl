@@ -34,6 +34,13 @@ MR CWE_94_95 {
 	  	var new_url = "http://site.com/[yoxel_v1.23beta]/itpm/itpm_estimate.php?a=LOCAL_OR_REMOTE_FILE&rid=1&proj_id=);include($_GET[a]);die(2"
 	  	// We need to define a.
 	  
+	  //FABRIZIO: it is not clear to me what you are trying to do in this case.
+	  //The vulnerability is about code injection. In the example you report, they replace an assignment to a variable (proj_id) 
+	  //with a set of instructions (i.e., ');include($_GET[a]);die(2') that in the specific case of this system lead to a vulnerability.
+	  //Clearly, with the current implementation of MST we will never be able to deal with such cases. 
+	  //HOwever, we may simply try to introduce commands that show a potential vulnerability. 
+	  //For example, what if we replace the value of a variable with ');die('. The system is vulnerable if it provides a result that was never observed before (e.g., a broken page). 
+	   
 	   IMPLIES(
 	   			afterLogin(action)&&                                 //(4)
 	   			EQUAL ( Input(2), Input(1) ) &&                      //(5)

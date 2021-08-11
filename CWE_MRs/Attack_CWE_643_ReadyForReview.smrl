@@ -32,6 +32,10 @@ package smrl.mr.owasp {
  * (4) Creates Input(2) as the follow-up input.
  * (5) Set the specific value for the username of the Input(2)
  * (6) Set the (') value for the password of the Input(2)
+ * //FABRIZIO: based on the description in http://projects.webappsec.org/w/page/13247005/XPath%20Injection
+ * 				if you replace the username with "' or 1=1 or ''='"
+ * 				you shall not replace also the password field, no?
+ * 
  * (7) The Input(2) should not be able to login, it should show an error message.
  */
  
