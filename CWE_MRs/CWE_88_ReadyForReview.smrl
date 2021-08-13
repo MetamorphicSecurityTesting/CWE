@@ -6,6 +6,8 @@ package smrl.mr.owasp {
 /**
  * 
  * FABRIZIO: we need a concrete case
+ * e.g., https://cve.circl.lu/cve/CVE-2017-1000392 (but is 79)
+ * 
  * 
  * CWE Definition:
  * The software constructs a string for a command to executed by a separate component in another 
@@ -27,6 +29,7 @@ package smrl.mr.owasp {
  //Nazanin: two points here: 1- if the weakness is based on the command line execution, we cannot define a follow-up input which execute a command, right?
  //                          2- if so, then the input validation is implemented in another MRs, this can be omitted.
  
+ //";echo HELLO;"
  
 MR CWE_88 { 
  { 
