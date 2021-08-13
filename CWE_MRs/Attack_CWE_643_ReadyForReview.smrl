@@ -51,7 +51,7 @@ MR CWE_643 {
 	          && Input(2).actions.get(action.position).setValueForParametersOfType("username", "' or 1=1 or ''='") //(5)
 	          //Bases on http://projects.webappsec.org/w/page/13247005/XPath%20Injection
 	          		    			
-	    	  && Input(2).actions.get(action.position).setValueForParametersOfType("password", "'") //(6) 
+	    	  && Input(2).actions.get(action.position).setValueForParametersOfType("password", "INCORRECT_PWD") //(6) 
 	    	  //Where the first attribute is the input type in HTML and the second parameter is the value to be set. 
 	    	  
 		    ,  
