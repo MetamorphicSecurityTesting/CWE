@@ -36,28 +36,45 @@ MR CWE_610_384 {
 				for ( var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){  //(2)
 					
 					//var sessionID =  Output(Input(1),x).getSession()
+					setResetBrowserBetweenInputs( false );
+					//TODO: automating he invocation of setResetBrowserBetweenInputs( false ) could be an improvement to the language
+					//but the problem is also that, to specify the follow-up input, we need to partially execute it (we execute Input(2) before specifying Input(3)
+					//For this reaosn it might not be straightforward
+					//Event better, we may provide a feature to specify which browser to use in order to execute an input. That way we will be able to simulate parallel execution
+					//For that, we need to check if we can start two drivers
+					 
+					//Input(1) L A B C D
 					
+					//Input(2) L A B 
+					//Input(3) L C D
 					
 					IMPLIES ( 
-						isLogin( Input(1).actions().get(y) ) &&       //(3)        
-						EQUAL ( Input(2) , copyActionTo( Input(1), x, y ) ) //(4)
-						EQUAL ( Input(3) , copyActionTo( Input(2), x, y ) )
+						EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, y ) ) ) && //(4)
+						EQUAL ( Input(3) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  && //(4)
+						Input(3).addAction(0,Input(1).actions().get(x)) && //we start with a login
+						Input(3).actions().get(1).setSession( Output(Input(2),x).getSession() ) //however, after the login we are forcing the browser to reuse the old session ID
+						
+						
 						
 						//EQUAL(Input(3), addAction(Input(2), y+1, Input(1).actions().get(y)))
 						 // configure the system to do not reset the state of selenium 
 						, 
-						AND( different ( Output(Input(2),x+1).getSession(),  Output(Input(2),y+1).getSession() ) //(5)
+						//FABRIZIO: nou sure if it is "x" or "x+1"
+						AND( different ( Output(Input(2),x).getSession(),  Output(Input(3),0).getSession() ) //(5)
 						,
-						TRUE(Output(Input(2),x+1).getSession().isInvalid()) //(6)  //FABRIZIO: what is this supposed to do? 
+						TRUE(Output(Input(3),1).getSession().isInvalid()) //(6)  //FABRIZIO: what is this supposed to do? 
 						                                                   //Nazanin: checks that the previous login(x) session has been invalidated (terminated).
 																		   //FABRIZIO: from technical perspect it does not appear to be feasible. MST work at the client side. You have no easy way to check if the session is valid, how do you plan to do it, concretely?
 																		   //Nazanin: Actually from the following website I assume that we can use the session.status to be "failed" or "timeout".
 																		   // https://www.browserstack.com/docs/automate/api-reference/selenium/session#get-session-list
 																		   // I also saw this on webdriver api documentation:
 																		   // exception selenium.common.exceptions.InvalidSessionIdException(msg=None, screen=None, stacktrace=None) //Bases: selenium.common.exceptions.WebDriverException
-																		   //Occurs if the given session id is not in the list of active sessions, meaning the session either does not exist or that it’s not active.
+																		   //Occurs if the given session id is not in the list of active sessions, meaning the session either does not exist or that itï¿½s not active.
 						)
 					); //end-IMPLIES
+					
+					setResetBrowserBetweenInputs( true ); //FIXME: shall this be automatically performed by the framework?
+					
 				} //end-for
 			} //end-for
 		}
