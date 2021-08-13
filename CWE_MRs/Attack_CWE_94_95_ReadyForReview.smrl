@@ -60,11 +60,11 @@ MR CWE_95 {
 	   
 	   for ( var x =0; go && x < action.parameters.size; x++){
 	   
-	   var attackKey = ");die(2"; //Fabrizi: instead of ths, please itroduce another "generator" of sourc einput like the Random...
+	   //var attackKey = ");die(2"; //Fabrizi: instead of ths, please itroduce another "generator" of sourc einput like the Random...
 	   IMPLIES(
 	   			//afterLogin(action)&&                                 //(4)
 	   			EQUAL ( Input(2), Input(1) ) &&                      //(5)
-	   			Input(2).actions().get(pos).setParameterValue( x, attackKey ) 	     //(6)	
+	   			Input(2).actions().get(pos).setParameterValue( x, EvalInjectionString() ) 	     //(6)	
 	   			    			
 		    ,  
 		    
