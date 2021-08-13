@@ -17,8 +17,12 @@ package smrl.mr.owasp{
  * (3) It creates a new URL address and add the known special characters for SQL injection weakness.
  * (4) Checks if the current action has been performed as a login.
  * (5) Defines a follow-up input that is a copy of the source input.
- * (6) Sets a relative path to a file
+ * (6) Sets the modified URL for the follow-up input
  * //FABRIZIO: I cannot understand how SQL injection relates to a relative path to a file, we need a concrete case
+ * 
+ * //Nazanin: By relative path I mean the new URL with added special characters.
+ * 
+ * 
  * (7) Verifies that the given path was not tried in a previous execution of the loop (to speed up). 
  * (8) The system should not allow the new URL to be accessible, or it should show an error page.
  * 

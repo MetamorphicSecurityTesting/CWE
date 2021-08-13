@@ -35,6 +35,7 @@ package smrl.mr.owasp {
  * //FABRIZIO: based on the description in http://projects.webappsec.org/w/page/13247005/XPath%20Injection
  * 				if you replace the username with "' or 1=1 or ''='"
  * 				you shall not replace also the password field, no?
+ * // Nazanin: In the example they replaced the password with a string value 'foobar', as a point from OWASP, I replaced a single quotation for password. it is possible to even divide it into two MRs.
  * 
  * (7) The Input(2) should not be able to login, it should show an error message.
  */
