@@ -32,17 +32,23 @@ package smrl.mr.owasp{
 MR CWE_610_384 {
 		{
 			for ( var x = 0; x < Input(1).actions().size(); x++ ){   //(1)
+		
 				for ( var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){  //(2)
+					
+					//var sessionID =  Output(Input(1),x).getSession()
+					
+					
 					IMPLIES ( 
 						isLogin( Input(1).actions().get(y) ) &&       //(3)        
 						EQUAL ( Input(2) , copyActionTo( Input(1), x, y ) ) //(4)
+						EQUAL ( Input(3) , copyActionTo( Input(2), x, y ) )
 						
 						//EQUAL(Input(3), addAction(Input(2), y+1, Input(1).actions().get(y)))
-						 
+						 // configure the system to do not reset the state of selenium 
 						, 
 						AND( different ( Output(Input(2),x+1).getSession(),  Output(Input(2),y+1).getSession() ) //(5)
 						,
-						inValid( Output(Input(2),x+1).getSession()) //(6)  //FABRIZIO: what is this supposed to do? 
+						TRUE(Output(Input(2),x+1).getSession().isInvalid()) //(6)  //FABRIZIO: what is this supposed to do? 
 						                                                   //Nazanin: checks that the previous login(x) session has been invalidated (terminated).
 																		   //FABRIZIO: from technical perspect it does not appear to be feasible. MST work at the client side. You have no easy way to check if the session is valid, how do you plan to do it, concretely?
 																		   //Nazanin: Actually from the following website I assume that we can use the session.status to be "failed" or "timeout".
