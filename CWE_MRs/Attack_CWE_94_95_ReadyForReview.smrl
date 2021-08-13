@@ -26,7 +26,7 @@ package smrl.mr.owasp {
  * 
  */
  
-MR CWE_94_95 { 
+MR CWE_95 { 
  { 	
  	
     for ( Action action : Input(1).actions() ) {                     //(1)
@@ -45,7 +45,8 @@ MR CWE_94_95 {
 	   // Nazanin:
 	   // CWE_95: I kept the new_url value exactly like the example from exploit-db because my problem is if we want to pass a value to eval() 
 	   // we should know some information i.e. the name of the parameter that passes the value to eval command.
-	   // in some cases, eval executes an echo command in some other it assigns a value to a parameter. My point is we need some information from code to test the vulnerability.
+	   // in some cases, eval executes an echo command in some other it assigns a value to a parameter. 
+	   // My point is we need some information from code to test the vulnerability.
 	   // about passing the "die" command, it would be a case of code injection that covers the CWE_94 but it will not cover the "eval injection" as CWE_95
 	   // This is my update for this implementation: I am implementing the code injection; CWE_94; and I need your comments to understand the points that I probably missed from CWE_95.
 	   
@@ -53,21 +54,29 @@ MR CWE_94_95 {
 	  
 	   var new_URL = current_url+";die(2)" // we can also inject 'phpinfo()' as command as well.
 	   
+	   
+	   var go = notTried( action.getUser(), new_URL );
+	   
+	   
+	   for ( var x =0; go && x < action.parameters.size; x++){
+	   
+	   var attackKey = ");die(2"; //Fabrizi: instead of ths, please itroduce another "generator" of sourc einput like the Random...
 	   IMPLIES(
 	   			//afterLogin(action)&&                                 //(4)
 	   			EQUAL ( Input(2), Input(1) ) &&                      //(5)
-	   			Input(2).actions().get(pos).setUrl( new_URL )&&	     //(6)	
-	   			notTried( action.getUser(), new_URL )    			
+	   			Input(2).actions().get(pos).setParameterValue( x, attackKey ) 	     //(6)	
+	   			    			
 		    ,  
 		    
 		    	AND(
 		    		 isError(Output(Input(2), pos)),                       //(7)        How it detects an error page??
-		    	     different ( Output(Input(1),pos),  Output(Input(2),pos)))
-		    	
+		    	     different ( Output(Input(1),pos),  Output(Input(2),pos)) //FABRIZIO: simply check that the context was already retrieved
+		    	)
 		    	
 		    	
 		);//end-IMPLIES
 	}//end-for
+ }
  } 
 }//end-MR
 }//end-package
