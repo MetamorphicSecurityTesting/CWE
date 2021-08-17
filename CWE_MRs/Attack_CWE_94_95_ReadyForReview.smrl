@@ -5,6 +5,10 @@ import sun.security.util.Password
 package smrl.mr.owasp {
  
 /**
+ * 
+ * COMMNENTS NEED TO BE RE-WRITTEN
+ * 
+ * 
  * CWE Definition:
  * The software constructs all or part of a code segment using externally-influenced input 
  * from an upstream component, but it does not neutralize or incorrectly neutralizes special 
@@ -31,7 +35,7 @@ MR CWE_95 {
  	
     for ( Action action : Input(1).actions() ) {                     //(1)
 	  	var pos = action.getPosition();                              //(2)
-	  	var current_url = Input(1).actions().get(pos).getUrl();      //(3)
+	  //	var current_url = Input(1).actions().get(pos).getUrl();      
 	  	//** var new_url = "http://site.com/[yoxel_v1.23beta]/itpm/itpm_estimate.php?a=LOCAL_OR_REMOTE_FILE&rid=1&proj_id=);include($_GET[a]);die(2"
 	  	// We need to define a.
 	  
@@ -52,25 +56,27 @@ MR CWE_95 {
 	   
 	  // Question: how "SetParametervalue" works? do we have access to write a code to extract the parameter name of the EVAL command?
 	  
-	   var new_URL = current_url+";die(2)" // we can also inject 'phpinfo()' as command as well.
+	  // var new_URL = current_url+";die(2)" // we can also inject 'phpinfo()' as command as well.
 	   
 	   
-	   var go = notTried( action.getUser(), new_URL );
+	  // var go = notTried( action.getUser(), new_URL );
 	   
 	   
-	   for ( var x =0; go && x < action.parameters.size; x++){
+	  // for ( var x =0; go && x < action.parameters.size; x++){
+	   	for ( var x =0; x < action.parameters.size; x++){  //(3)
 	   
 	   //var attackKey = ");die(2"; //Fabrizi: instead of ths, please itroduce another "generator" of sourc einput like the Random...
 	   IMPLIES(
 	   			//afterLogin(action)&&                                 //(4)
 	   			EQUAL ( Input(2), Input(1) ) &&                      //(5)
-	   			Input(2).actions().get(pos).setParameterValue( x, EvalInjectionString() ) 	     //(6)	
+	   			Input(2).actions().get(pos).setParameterValue( x, EvalInjectionString() )&& 	     //(6)	
+	   			notTried( Input(2), Input(2).actions().get(pos).getUrl() ) // Nazanin: we are focusing on parameters of actions why we need this?
 	   			    			
 		    ,  
 		    
-		    	AND(
+		    	OR(
 		    		 isError(Output(Input(2), pos)),                       //(7)        How it detects an error page??
-		    	     different ( Output(Input(1),pos),  Output(Input(2),pos)) //FABRIZIO: simply check that the context was already retrieved
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) //FABRIZIO: simply check that the context was already retrieved
 		    	)
 		    	
 		    	

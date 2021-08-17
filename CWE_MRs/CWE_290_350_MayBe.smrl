@@ -41,9 +41,9 @@ MR CWE_290_350{
 			IMPLIES( 
 				 notAvailableWithoutLoggingIn(action) &&	//(3)	
 				 !isSupervisorOf(User(), Input(1))&&	//(4)		
-				 EQUAL( Input(2), changeCredentials(Input(1),User()) ) &&	 //(5)
-				 !notDNSServer.getHostName(currentIpofMachine()).equal(trustedHostname())&& //(6)
-			  	 DNSServer.setHostName(trustedHostname(), currentIpofMachine())  //(7)
+				 EQUAL( Input(2), changeCredentials(Input(1),User()) ) 	 //(5)
+			//check: 	 !notDNSServer.getHostName(currentIpofMachine()).equal(trustedHostname())&& //(6)
+			// check:  	 DNSServer.setHostName(trustedHostname(), currentIpofMachine())  //(7)
 			    ,
 			    
 			 // AND(  
