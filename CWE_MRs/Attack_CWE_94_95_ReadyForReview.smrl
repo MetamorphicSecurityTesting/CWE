@@ -70,6 +70,12 @@ MR CWE_95 {
 	   			//afterLogin(action)&&                                 //(4)
 	   			EQUAL ( Input(2), Input(1) ) &&                      //(5)
 	   			Input(2).actions().get(pos).setParameterValue( x, EvalInjectionString() )&& 	     //(6)	
+	   			
+	   			//NAZANIN: FOR CWE_94: use the same generator for CWE_95 and CWE_94 i.e. a more general version of generator that supports the Eval and Code Injection Vulnerabilities.
+	   			
+	   			
+	   			
+	   			
 	   			notTried( Input(2), Input(2).actions().get(pos).getUrl() ) // Nazanin: we are focusing on parameters of actions why we need this?
 	   			    			
 		    ,  
