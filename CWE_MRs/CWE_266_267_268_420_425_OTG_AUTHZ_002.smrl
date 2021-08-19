@@ -25,7 +25,7 @@ package smrl.mr.owasp {
    * indicated above leads to two different outputs in the two cases.
    *  	
    */	 
-  MR OTG_AUTHZ_002 {
+  MR CWE_266_267_268_420_425_OTG_AUTHZ_002 {
    { 
      for ( Action action : Input(1).actions() ){
 	   IMPLIES(
