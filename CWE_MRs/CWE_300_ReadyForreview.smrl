@@ -1,0 +1,44 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp {
+ 
+/*
+ * CWE Definition:
+ * The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure 
+ * the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.
+ * 
+ * Idea:
+ * We can simply check that an action performed after the login can't be performed on the unencrypted HTTP channel.
+ * 
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1).
+ * (2) Stores the parameters of the current action in a variable.
+ * (3) Checks if the current action has been performed after a login.
+ * (4) Defines a follow-up input that is a copy of the source input.
+ * (5) Sets the unencrypted HTTP channel for the follow-up action.
+ * (6) The system should not allow the follow-up input to complete the action.
+ */
+MR CWE_300 { 
+ { 
+    for ( Action action : Input(1).actions() ) {                             //(1)
+	  	var pos = action.getPosition();                                      //(2)
+	   IMPLIES(
+	        afterLogin(action) 												 //(3)
+	          &&  EQUAL ( Input(2), Input(1) )				    			 //(4)
+	    	  &&  Input(2).actions.get(action.position).setChannel("http")   //(5)
+		    ,  
+		    OR(
+		    	NOT(isEncrypted(action)),									 //(6)
+		    	different ( Output(Input(1),pos),  Output(Input(2),pos) ) 	
+		    	)
+		);//end-IMPLIES
+	}//end-for
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+
