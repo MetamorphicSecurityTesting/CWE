@@ -24,7 +24,7 @@ package smrl.mr.owasp {
  * 
  */
  
-MR CWE_703_166_77_76_75_74 { 
+MR CWE_703_166_78_77_76_75_74 { 
  { 
     for ( Action action : Input(1).actions() ) { //(1)
 	  	var pos = action.getPosition();          //(2)

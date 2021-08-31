@@ -22,7 +22,7 @@ package smrl.mr.owasp {
  * 
  */
  
-MR CWE_792_793_794 { 
+MR CWE_792_793_794_795_796_797 { 
 	// This is exactly the same as  CWE_703_166_77_76_75_74 
 	// The idea is when the system has an input validation mechanism that does not allow any special characters
 	// then it will detect the multiple occurrence of it as well.
@@ -39,7 +39,7 @@ MR CWE_792_793_794 {
 	            action.containFormInput()	&&							
 	            EQUAL ( Input(2), Input(1) ) &&		//(4)		    			
 	    	    Input(2).actions.get(action.position).setInputValue(indx , input_value) //(5) 
-	    	  //  Input(2).actions.get(action.position).setInputValue(newInputValue)  
+	    	    //  Input(2).actions.get(action.position).setInputValue(newInputValue)  
 	    	  		    ,  
 		    
 		    	EQUAL(Output(Input(1), pos),Output(Input(2), pos)) //(6) FABRIZIO: the "Extra Details" seem to indicate that special chars should be simply ignored, not lead to an error. Please find a concrete case.
