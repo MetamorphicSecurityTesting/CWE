@@ -1,0 +1,42 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp {
+ 
+/*
+ *  
+ * CWE Definition:
+ *  The application does not handle or incorrectly handles when it has insufficient privileges to access resources or functionality as 
+ *  specified by their permissions. This may cause it to follow unexpected code paths that may leave the application in an invalid state.
+ * 
+ * Idea:
+ * instead of checking the page is different we check the page return was already observed before. 
+ * if the app is the state that is already seen would be similar to prev. seen ones.
+ * 
+ * comments:
+ * Not sure how to trigger the WU-FTPD problem
+ */
+
+MR CWE_280_755{
+	{
+   for(var x = 0; (x < Input(1).actions().size() ); x++){
+			for (var y = x+1; (isLogin(Input(1).actions().get(x)) && y < Input(1).actions().size()); y++) {
+	  			IMPLIES(
+	  				//1st par of IMPLIES including 5 clauses
+	  				(!isSupervisorOf(User(), Input(1).actions().get(y).user)) &&
+	  				cannotReachThroughGUI(User(), Input(1).actions().get(y).getUrl()) &&
+	  				EQUAL(Input(2), Input(1).actions().get(x)) &&
+	  				EQUAL(Input(3), changeCredentials(Input(2), User())) &&
+	  				EQUAL(Input(4), addAction(Input(1), y, Input(3).actions().get(0)))
+	  			,	        
+             OR(
+	  					userCanRetrieveContent(Input(4).actions().get(y+1).getUser(), Output(Input(4), y+1))
+	  					,
+	  					Output(Input(4), y+1).isError()
+	  				)
+	  			); //end-IMPLIES
+  			} //end-for
+		} //end-for
+    }
+  } //end-MR
+} //end-package

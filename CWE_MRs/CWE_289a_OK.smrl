@@ -22,7 +22,7 @@ package smrl.mr.owasp {
  * (8) The system should show an error page or different outputs for two inputs. 
  */
 
-MR CWE_289a{
+MR CWE_289a {
 	{
    for (Action action: Input(1).actions()){ //(1)
       var pos = action.getPosition();       //(2)
