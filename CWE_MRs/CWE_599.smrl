@@ -1,0 +1,51 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import sun.security.util.Password
+
+package smrl.mr.owasp {
+ 
+/**
+ * CWE Definition:
+ * The software uses OpenSSL and trusts or uses a certificate without using the SSL_get_verify_result() 
+ * function to ensure that the certificate satisfies all necessary security requirements.
+ * 
+ * Idea:
+ * we can connect to a webserver after we have a certificate we can simply check if we can connect when we remove 
+ * the certificate. if it is possible to install a certificate on a browser we can write MRs. after removing 
+ * a certificate (after login) see we can do the action or not. certificate should be on the client side as well. 
+ * https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html
+ * 
+ * Comments:
+ * 
+ * 
+ */
+ 
+MR CWE_599 { 
+ { 
+    for ( Action action : Input(1).actions() ) {
+	  	var pos = action.getPosition();
+	  
+	   IMPLIES(
+	   		   afterLogin(action) &&
+	           EQUAL ( Input(2), Input(1) ) &&				    			
+	    	   Input(2).actions.get(action.position).removeCertificate()
+	    	  //The implementation may be modified after finalizing the function.
+	    	  
+		    ,  
+		    AND(
+		    	!(Output(Input(1), pos).isError())
+		    	,
+		    	(!userCanRetrieveContent(action.user, Output(Input(2), pos)) &&
+		    		different ( Output(Input(1),pos),  Output(Input(2),pos))
+		    		)
+		    	)   	
+		);//end-IMPLIES
+	}//end-for
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+
