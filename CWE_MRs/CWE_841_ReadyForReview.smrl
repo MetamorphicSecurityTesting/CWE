@@ -1,0 +1,48 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/*
+ * CWE Definition:
+ * The software supports a session in which more than one behavior must be performed by an actor, 
+ * but it does not properly ensure that the actor performs the behaviors in the required sequence.
+ * 
+ * Idea:
+ * reverse the sequence of an action that requires to be authenticated before take it.
+ * 
+ * Comments:
+ * (1) The first loop iterates over all the actions to find a login action.
+ * (2) The second loop iterates over all the actions to find an action performed after login.
+ * (3) Creates the follow-up input with specific sequence of actions 0 to y-2.
+ * (4),(5) Changes the sequence of the action y with action y-1. 
+ * (6) Verifies that the system gives two different outputs or will give error by executing the follow-up input.
+ * 
+ * 
+ */ 
+MR CWE_841 {
+		{
+			for ( var x = 0; x < Input(1).actions().size(); x++ ){   //(1)
+				for ( var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){  //(2)			
+					
+					IMPLIES ( 
+						EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, y-2 ) ) ) && //(3)
+						//EQUAL ( Input(3) , Input ( Input(1).actions().subList(y-2, Input(1).actions().size() ) ) )  &&
+						//Input(2).addAction(0,Input(1).actions().get(x))  &&                   // we start with a login
+						Input(2).addAction ( y-1, Input(1).actions().get(y) ) &&              //(4) check the y
+						Input(2).addAction ( y, Input(1).actions().get(y-1) )                 //(5)
+				
+						, 
+					
+						AND( different ( Output(Input(2),y),  Output(Input(1),y) ) //(6) check the command
+						,
+						isError(Output(Input(2),y)) 
+						)
+					); //end-IMPLIES
+					
+				} //end-for
+			} //end-for
+		}
+	} //end-MR
+} //end-package
+

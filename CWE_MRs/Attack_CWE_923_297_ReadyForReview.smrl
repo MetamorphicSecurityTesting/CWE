@@ -32,19 +32,19 @@ package smrl.mr.owasp{
  */ 
 MR CWE_923_297 {
  { 
-    for ( Action action : Input(1).actions() ){                     //(1)
-	    var pos = action.getPosition();                                    //(2)
+    for ( Action action : Input(1).actions() ){                                      //(1)
+	    var pos = action.getPosition();                                              //(2)
 		IMPLIES(                                                    
-		      notAvailableWithoutLoggingIn( action ) 									//(3)
-			  && EQUAL ( Input(2), Input(1) )						//(4)
-			  && Input(2).actions().get(pos).setCertificate(invalidCertificate()) 	//(5)
+		      notAvailableWithoutLoggingIn( action ) 								 //(3)
+			  && EQUAL ( Input(2), Input(1) )						                 //(4)
+			  && Input(2).actions().get(pos).setCertificate(invalidCertificate()) 	 //(5)
 			                                                                        
 			 /* Nazanin: 
 			 // "If the certificate's host-specific data is not properly checked - such as the Common Name (CN) in the Subject or 
 			 // the Subject Alternative Name (SAN) extension of an X.509 certificate - it may be possible for a redirection or spoofing attack"
 			 // According to the above definition if we have access to change the certificate's details we can perform this vulnerability.'
 			*/, 
-			OR(different( Output(Input(1),pos), Output(Input(2),pos) ) //(6)
+			OR(different( Output(Input(1),pos), Output(Input(2),pos) )                //(6)
 			,
 			  userCanRetrieveContent(action.getUser(), Output(Input(2),pos))
 			)|| isError(Output(Input(2),pos))
