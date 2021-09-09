@@ -15,9 +15,9 @@ package smrl.mr.owasp{
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Stores the parameters of the current action in a variable.
  * (3) Second for loop iterates over all parameters of the current action
- * (4) Creates the follow-up input
- * (5) Sets the SQL injection strings to the parameter of the action
- * (6) Verifies that the current url has not been seen before
+ * (4) Verifies that the current url has not been seen before
+ * (5) Creates the follow-up input
+ * (6) Sets the SQL injection strings to the parameter of the action 
  * (7) Checks that the result of the follow-up input is error
  * (8) Or the follow-up input can has the right to access 
  * 
@@ -35,9 +35,10 @@ MR CWE_89 {
  		
  			IMPLIES(
  		
+ 				notTried( action.user, Input(1).actions().get(pos).getUrl() ) &&
  				EQUAL(Input(2), Input(1))&&                //(4)
- 				Input(2).actions().get(pos).setParameterValue( x, SQLInjectionString() )&& //(5)
- 			    notTried( Input(2), Input(2).actions().get(pos).getUrl() )                 //(6)   Nazanin: We need this???
+ 				Input(2).actions().get(pos).setParameterValue( x, SQLInjectionString() ) //(5)
+ 			                  
  				,
  				
  				OR(

@@ -5,25 +5,19 @@ import sun.security.util.Password
 package smrl.mr.owasp {
  
 /**
- * FABRIZIO: we need a concrete case to test with
+ *
+ * Real Case: 
+ * https://www.balisage.net/Proceedings/vol7/html/Vlist02/BalisageVol7-Vlist02.html
  * 
- * Nazanin: 
- * Cases that I have checked:
- * http://projects.webappsec.org/w/page/13247005/XPath%20Injection
- * https://www.exploit-db.com/exploits/10372
  * 
- * It can be merged to CWE_703, if we also filter the "' or 1=1 or ''='" and single quotation mark as special characters.
- * 
+ *** It can be merged with CWE 643
  * 
  * CWE Definition:
  * The software uses external input to dynamically construct an XPath expression 
  * used to retrieve data from an XML database, but it does not neutralize or incorrectly 
  * neutralizes that input. This allows an attacker to control the structure of the query.
  * 
- * OWASP hint:
- * with XPath injection, the first step is to insert a single quote (') in the field to 
- * be tested, introducing a syntax error in the query, and to check whether the application 
- * returns an error message.
+ * 
  * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1)
