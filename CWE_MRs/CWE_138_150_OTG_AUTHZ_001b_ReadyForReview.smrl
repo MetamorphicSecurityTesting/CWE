@@ -1,0 +1,57 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/**
+ * CWE Definition:
+ * The software receives input from an upstream component, but it does not neutralize or 
+ * incorrectly neutralizes special elements that could be interpreted as control elements 
+ * or syntactic markers when they are sent to a downstream component.
+ * 
+ * Comments:
+ * 
+ * (1) Defines the separator variable
+ * (2) For loop iterates for 3 times to cover multiple occurrence of the special character as well.              //Nazanin: for this reason right?
+ * (3) Second for loop iterates over all actions of the Input(1).
+ * (4) Stores the parameters of the current action in a variable.
+ * (5) Defines the new URL.
+ * (6) Verifies whether the current action has been not performed by an administrator
+ * (7) Checks if the current action has been performed after a login.
+ * (8) Defines a follow-up input that is a copy of the source input.
+ * (9) Adds to the end of the current URL a relative path to a file.
+ * (10) Verifies that the given path was not tried in a previous execution of the loop (to speed up).
+ * (11) Verifies that the follow-up input does not lead to a file 
+ *      Or the returned file is something that the user has the right to access.
+ *      Or the system shows an error page.
+ * 
+ */ 
+MR CWE_138_150_OTG_AUTHZ_001b {
+ {
+ 	var sep="/";                                                //(1)
+ 	for ( var par=0; par < 3; par++ ){                          //(2)
+ 		 
+		for ( Action action : Input(1).actions() ){             //(3)
+			 
+			var pos = action.getPosition();                     //(4)
+			var newUrl = action.urlPath+sep+RandomFilePath();   //(5)
+			IMPLIES( 
+				!isAdmin(action.user) &&						//(6)
+				afterLogin(action) &&							//(7)
+				EQUAL( Input(2), Input(1) ) &&					//(8)
+			  	Input(2).actions().get(pos).setUrl( newUrl ) &&	//(9)
+			  	notTried( action.getUser(), newUrl )			//(10)
+			    ,
+			    TRUE ( 	                                        //(11)
+			    	Output(Input(2),pos).noFile() ||	
+				    userCanRetrieveContent(	action.getUser(), Output(Input(2),pos).file() ) || 								 
+					Output(Input(2),pos).isError()  	
+				)
+			);//end-IMPLIES
+		}//end-for
+		
+		sep=sep+"../";
+	}//end-for
+ }
+}//end-MR
+}

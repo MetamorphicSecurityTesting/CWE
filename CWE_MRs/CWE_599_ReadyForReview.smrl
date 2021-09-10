@@ -16,26 +16,33 @@ package smrl.mr.owasp {
  * https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html
  * 
  * Comments:
- * 
+ * (1) For loop iterates over all actions of the Input(1)
+ * (2) Stores the parameters of the current action in a variable
+ * (3) It checks if the current action of the Input(1) is taken after the login.
+ * (4) Creates the follow-up input.
+ * (5) It removes the certificate in the current action.
+ * (6) The system should show the error 
+ *     Or the follow-up input should retrieve the content that has right to access
+ *     Or the result should be different.
  * 
  */
  
 MR CWE_599 { 
  { 
-    for ( Action action : Input(1).actions() ) {
-	  	var pos = action.getPosition();
+    for ( Action action : Input(1).actions() ) {                                     //(1)
+	  	var pos = action.getPosition();                                              //(2)
 	  
 	   IMPLIES(
-	   		   afterLogin(action) &&
-	           EQUAL ( Input(2), Input(1) ) &&				    			
-	    	   Input(2).actions.get(action.position).removeCertificate()
+	   		   afterLogin(action) &&                                                 //(3)
+	           EQUAL ( Input(2), Input(1) ) &&				    			         //(4)
+	    	   Input(2).actions.get(action.position).removeCertificate()             //(5) 
 	    	  //The implementation may be modified after finalizing the function.
 	    	  
 		    ,  
-		    AND(
-		    	!(Output(Input(1), pos).isError())
+		    OR(                                                                     //(6)
+		    	Output(Input(1), pos).isError()    
 		    	,
-		    	(!userCanRetrieveContent(action.user, Output(Input(2), pos)) &&
+		    	(userCanRetrieveContent(action.user, Output(Input(2), pos)) &&
 		    		different ( Output(Input(1),pos),  Output(Input(2),pos))
 		    		)
 		    	)   	
