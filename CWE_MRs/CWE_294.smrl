@@ -4,9 +4,18 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp {
  
 /**
- * Authentication Bypass by Capture-replay
+ * 
+ * CWE Definition:
+ * Capture-replay attacks are common and can be difficult to defeat without cryptography. They are a subset 
+ * of network injection attacks that rely on observing previously-sent valid commands, then changing them slightly 
+ * if necessary and resending the same commands to the server.
+ * 
+ * OWASP: Authentication Bypass by Capture-replay
  * Utilize some sequence or time stamping functionality along with a checksum which takes this into account 
  * in order to ensure that messages can be parsed only once.
+ * 
+ * Idea:
+ * By duplicating a packet the 
  * 
  */
  

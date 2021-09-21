@@ -1,0 +1,57 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import sun.security.util.Password
+
+package smrl.mr.owasp {
+ 
+/**
+ * CWE Definition:
+ * The application stores sensitive information in cleartext in a cookie.
+ * 
+ * Attackers can use widely-available tools to view the cookie and read the sensitive information. 
+ * Even if the information is encoded in a way that is not human-readable, certain techniques could 
+ * determine which encoding is being used, then decode the information.
+ * 
+ * Idea:
+ * We assume that even if the password is encrypted it can be identified, i.e. by exploring various encryption algorithms
+ * Then the attacker should not be allowed to access the password field of the cookie.
+ * 
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1).
+ * (2) Stores the parameters of the current action in a variable.
+ * (3) Stores the cookie of the current action in a variable.
+ * (4) Checks that the current user, Input(1), is not admin.
+ * (5) Creates the follow-up input.
+ * (6) Tried to retrieve the password field of the cookie.
+ * (7) the system should show an error page for the attacker if he/she can access the password field of the cookie
+ *     Or the system should show a different result.
+ * 
+ */
+ 
+MR CWE_315 { 
+ { 
+    for ( Action action : Input(1).actions() ) {                                           //(1)
+	  	var pos = action.getPosition();                                                    //(2)
+	  	var cookie = action.getCookie();                                                   //(3)
+	  
+	   IMPLIES(
+	        !isAdmin(Input(1)) 									                           //(4)
+	          &&  EQUAL ( Input(2), Input(1) )				    			               //(5)
+	    	  &&  Input(2).actions.get(action.position).retrieveCookiePassword(cookie)     //(6)
+		    ,  
+		    AND(                                                                           //(7)
+		    	isError(Output(Input(2), pos)),
+		    	different ( Output(Input(1),pos),  Output(Input(2),pos))
+		    	
+		    	)
+		    	
+		);//end-IMPLIES
+	}//end-for
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+

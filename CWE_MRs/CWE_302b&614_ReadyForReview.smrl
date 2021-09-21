@@ -4,32 +4,41 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp {
  
 /*
- * /*
- The authentication scheme or implementation uses key data elements that are assumed to be immutable, 
+ * CWE Definition:
+ * The authentication scheme or implementation uses key data elements that are assumed to be immutable, 
  * but can be controlled or modified by the attacker.
-cookie:
-1- in addition to the domain, the URL path that the cookie is valid for can be specified. 
-* if the domain and path match, then the cookie will be sent in request
-2- check the expiration of the cookie.
-
-How to test:
-1- after login
-2- verify the tag “;secure” flag
-3- verify the tag “;HttpOnly” to be set
-
+ * 
+ *  Idea:
+ * Focus on cookies as the key data, and remove the important tags for authentication e.g. “;secure” or “;HttpOnly”, and system should not authenticate the user.
+ * 
+ * How to test:
+ * 1- after login
+ * 2- verify the tag “;secure” flag
+ * 3- verify the tag “;HttpOnly” to be set
+ * 
+ * 
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1).
+ * (2) Stores the parameters of the current action in a variable.
+ * (3) Checks that the action is a log in.
+ * (4) Creates the follow-up input.
+ * (5) Set Invalid cookie tags for the cookie, it will replace empty value for the tags that are mentioned above.
+ * (6)The system should show an error page and and the results should be different to the original user.
+ * 
  */
 
 MR CWE_302b{
 	{
-   for (Action action: Input(1).actions()){
-      var pos = action.getPosition();
+   for (Action action: Input(1).actions()){                                             //(1)
+      var pos = action.getPosition();                                                   //(2)
       IMPLIES(             
-               afterLogin(action)
-               && EQUAL(Input(2), Input(1))
-               && Input(2).actions.get(action.position).setCookie(InvalidCookieTags())// remove tags from the cookie
+               afterLogin(action)                                                       //(3)
+               && EQUAL(Input(2), Input(1))                                             //(4)
+               && Input(2).actions.get(action.position).setCookie(InvalidCookieTags())  //(5)       remove tags from the cookie
              ,
-              different( Output( Input(1), pos) , Output(Input(2) , pos) )
-&&        isError( Output(Input(2) , pos))
+             AND(                                                                        //(6)
+             	 different( Output( Input(1), pos) , Output(Input(2) , pos) )              
+,                isError( Output(Input(2) , pos)))
 		);//end-IMPLIES
 	}//end-for
 	}

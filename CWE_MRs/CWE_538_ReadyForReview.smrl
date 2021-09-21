@@ -1,0 +1,50 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/**
+ * CWE Definition:
+ * The product places sensitive information into files or directories that are accessible 
+ * to actors who are allowed to have access to the files, but not to the sensitive information.
+ * 
+ * Idea:
+ *  we can check the file that is accessible by the admin (any user) and find the information that is only accessible by that user from GUI
+ * and for other user we need to check that can not see that (string of) specific information in the same file or not.
+ * 
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1)
+ * (2) Stores the parameters of the current action in a variable
+ * (3) Verifies that the user is not admin.
+ * (4) Checks if the current action of the Input(1) is taken after the login.
+ * (5) Creates the follow-up input.
+ * (6) Sets an action that access to a url which contains sensitive information.
+ * (7) The system verifies that the follow-up input can see the content that has right
+ *     to access or will show an error page.
+ * 
+ * 
+ */ 
+ 
+MR CWE_538 {
+ {
+ 		
+ 		 
+		for ( Action action : Input(1).actions() ){                                            //(1)
+			 
+			var pos = action.getPosition();                                                    //(2)
+			
+			IMPLIES( 
+				!isAdmin(action.user) &&						                               //(3)
+				afterLogin(action) &&							                               //(4)
+				EQUAL( Input(2), Input(1) ) &&					                               //(5)
+			  	Input(2).actions().get(pos).setAccessibleUrlWithSensInfo()                     //(6)
+			    ,
+			    OR ( 	                                                                       //(7)
+			    	   userCanRetrieveContent(Input(2) , Output(Input(2),pos).file()) , 								 
+					Output(Input(2),pos).isError()  
+				)
+			);//end-IMPLIES
+	}//end-for
+ }
+}//end-MR
+}
