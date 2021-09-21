@@ -17,7 +17,7 @@ package smrl.mr.owasp{
  * associate, and possibly authenticate, against the server using that session identifier, giving the 
  * attacker access to the user's account through the active session.
  * 
- * 
+ * Idea:
  * FABRIZIO: In my opinion we shall simply perform a login within another logged in session. No logout is needed.
  * 
  * 

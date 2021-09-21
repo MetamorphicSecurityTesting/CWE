@@ -1,0 +1,64 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import sun.security.util.Password
+
+package smrl.mr.owasp {
+ 
+/**
+ * 
+ * CWE Definitions:
+ * CWE_94: The software constructs all or part of a code segment using externally-influenced input 
+ * from an upstream component, but it does not neutralize or incorrectly neutralizes special elements 
+ * that could modify the syntax or behavior of the intended code segment.
+ * 
+ * CWE_95: The software receives input from an upstream component, but it does not neutralize or 
+ * incorrectly neutralizes code syntax before using the input in a dynamic evaluation call (e.g. "eval").
+ * 
+ * 
+ *** This is a particular case of the attack.
+ *   Attack from: https://www.exploit-db.com/exploits/6606
+ * 
+ * Idea:
+ * We will try to inject some code as the value of the parameter and the system should not allow the action to be taken successfully.
+ * It should show an error page or show the content that the user already has the right to access it.
+ * 
+ * Comments:
+ * (1) For loop iterate over all actions of the Input(1)
+ * (2) Define a variable to store the position of the Input(1)'s action
+ * (3) The second loop iterates over all parameters of the action.
+ * (4) Creates the follow-up input by copying the Input(1).
+ * (5) Injects some Eval injection strings to the follow-up input.
+ * (6) Makes sure that the result of the follow-up input is an error page
+ *     Or The user is retrieving the content that has right to access it.
+ * 
+ * 
+ */
+ 
+MR CWE_94_95 { 
+ { 	
+ 	
+    for ( Action action : Input(1).actions() ) {                                                   //(1)
+	  	var pos = action.getPosition();                                                            //(2)
+	   	for ( var x =0; x < action.parameters.size; x++){                                          //(3)   
+	  
+	   IMPLIES(
+	   			                              
+	   			EQUAL ( Input(2), Input(1) ) &&                                                    //(4)
+	   			Input(2).actions().get(pos).setParameterValue( x, CodeInjectionString() ) 	       //(5)	
+		    ,  
+	    	OR(
+		    		 isError(Output(Input(2), pos)),                                               //(6)      
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) 
+		    	)	
+		    	
+		);//end-IMPLIES
+	}//end-for
+ }
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+
