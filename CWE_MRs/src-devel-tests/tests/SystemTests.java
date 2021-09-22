@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import smrl.mr.crawljax.WebOperationsProvider;
 import smrl.mr.language.MRBaseTest;
+import smrl.mr.owasp.TEST_NOT_TRIED;
 import smrl.mr.test.TEST_RANDOM_COOKIE_PATH;
 import smrl.mr.test.TEST_WAIT;
 
@@ -51,9 +52,15 @@ public class SystemTests extends MRBaseTest {
 	public void test_CWE302b() {
 		super.test(provider,TEST_INVALID_COOKIE_TAG.class);
 	}
+	
+	
 
 */
-
+	@Test
+	public void test_CWE_96() {
+		super.test(provider,TEST_NOT_TRIED.class);
+	}
+	
 	public static String getCurrentTime() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
 		LocalDateTime now = LocalDateTime.now();  

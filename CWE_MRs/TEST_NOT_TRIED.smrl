@@ -1,0 +1,31 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import java.util.HashSet;
+
+package smrl.mr.owasp {
+ 
+
+MR TEST_NOT_TRIED { 
+ { 	
+ 	var set = new HashSet<String>();
+ 	
+    for ( Action action : Input(1).actions() ) {
+    	
+    	if ( notTried(action.url) ){ 
+    	                    
+	  	var pos = action.getPosition();                             
+	  	
+	  							
+	  	
+	   	TRUE ( set.add(action.url) );
+	   	
+	   	}
+	}//end-for
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+
