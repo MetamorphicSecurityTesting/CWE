@@ -10,7 +10,6 @@ package smrl.mr.owasp{
  * or syntactic markers when they are sent to a downstream component.
  * 
  * Comments:
- * 
  * (1) Defines the separator variable
  * (2) For loop iterates for 3 times to cover multiple occurrence of the special character as well.              //Nazanin: for this reason right?
  * (3) Second for loop iterates over all actions of the Input(1).

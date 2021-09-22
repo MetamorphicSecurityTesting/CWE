@@ -7,14 +7,19 @@ package smrl.mr.owasp {
 /**
  * 
  * CWE Definition:
- * The software receives input from an upstream component, but it does not neutralize or incorrectly neutralizes code 
- * syntax before inserting the input into an executable resource, such as a library, configuration file, or template.
- *
+ * CWE_94: The software constructs all or part of a code segment using externally-influenced input 
+ * from an upstream component, but it does not neutralize or incorrectly neutralizes special elements 
+ * that could modify the syntax or behavior of the intended code segment.
+ * 
+ * CWE_96 (child of CWE_94): The software receives input from an upstream component, but it does not 
+ * neutralize or incorrectly neutralizes code syntax before inserting the input into an executable resource, 
+ * such as a library, configuration file, or template.
+ * 
  * 
  * Comments:
  * (1) For loop iterate over all actions of the Input(1)
  * (2) Define a variable to store the position of the Input(1)'s action
- * (3) The second loop iterates over all parameters of the action if the action URL's was not tested already with any user
+ * (3) The second loop iterates over all parameters of the action if the action URL's was not tested already with any user.
  * (4) Creates the follow-up input by copying the Input(1).
  * (5) Injects some Static injection strings to the follow-up input.
  * (6) Makes sure that the result of the Input(1) and the follow-up input is different
