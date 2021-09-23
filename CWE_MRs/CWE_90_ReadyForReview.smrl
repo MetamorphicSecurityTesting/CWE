@@ -13,36 +13,36 @@ package smrl.mr.owasp{
  * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1).
- * (2) Stores the parameters of the current action in a variable.
+ * (2) Stores the position of the action parameter in a variable.
  * (3) Second for loop iterates over all parameters of the current action
- * (4) Creates the follow-up input
- * (5) Sets the LDAP query strings to the parameter of the action
- * (6) Verifies that the current url has not been seen before
- * (7) Checks that the result of the follow-up input is error
- * (8) Or the follow-up input can has the right to access 
+ * (4) Store the paramtr name
+ *  (5) Verifies that we did not already test in the past the parameter for the current URL
+ * (6) Creates the follow-up input
+ * (7) Sets the LDAP query strings to the parameter of the action
+ * 
+ * (8) Checks that the result of the follow-up input is error
+ * (9) Or the follow-up input can has the right to access 
  * 
  */ 
 MR CWE_90 {
  {
- 	
- 	//FABRIZIO: please fix it by looking at 95 with a generator for SQLI 
  	
 
  	for (Action action : Input(1).actions()){              //(1)
  		var pos = action.getPosition();                    //(2) 
  		
  		for (var x = 0; x < action.parameters.size; x++){  //(3)
- 		
+ 			var parameterName = action.parameters.get(x).key; //(4)
  			IMPLIES(
- 		
- 				EQUAL(Input(2), Input(1))&&                //(4)
- 				Input(2).actions().get(pos).setParameterValue( x, LDAPQueryString() )&&    //(5)
- 			    notTried( Input(2), Input(2).actions().get(pos).getUrl() )                 //(6)  
+ 				notTried( parameterName, Input(2).actions().get(pos).getUrl() )    && //(5)
+ 				EQUAL(Input(2), Input(1))&&                //(6)
+ 				Input(2).actions().get(pos).setParameterValue( x, LDAPQueryString() )    //(7)
+ 			      
  				,
  				
  				OR(
-		    		 isError(Output(Input(2), pos)),        //(7)                  
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        //(8)
+		    		 isError(Output(Input(2), pos)),        //(8)                  
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        //(9)
 		    	)
  			);
  		}
