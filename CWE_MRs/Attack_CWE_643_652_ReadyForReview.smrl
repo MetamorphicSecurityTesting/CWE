@@ -30,16 +30,18 @@ package smrl.mr.owasp {
  * 
  * 
  * Idea:
- * In the login page instead of giving the correct value to the username, we can inject the malicious value.
- * It means we can try whether with the malicious value like ( "' or 1=1 or ''='") the system may give access to the attacker or not.
- * In this MR, for all login actions we will try to give malicious input as username and a random value as a wrong password.
- * The system should show an error page or a content that the user has right to access.
+ * In the login page instead of providing a correct value to the username field, we provide a malicious value ( e.g., "' or 1=1 or ''='") and a random value as a wrong password.
+ * If the system is vulnerable it may give access to the attacker.
+ * Therefore, if the system is not vulnerable it should show an error page or a content that the user has right to access.
+ * Since every login interface provided by a different URL may be handled by a different implementation, in this MR, 
+ * we perform the attack for every login action URL observed. 
  * 
  * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1)
  * (2) Store the parameters of the current action in a variable
  * (3) It checks if the current action of the Input(1) is login.
+ * (3.a)
  * (4) Creates Input(2) as the follow-up input.
  * (5) Set the specific value for the username of the Input(2)
  * (6) Set the (') value for the password of the Input(2)
@@ -58,7 +60,8 @@ MR CWE_643_652 {
 	  	var pos = action.getPosition();                                                                            //(2)
 	  
 	   IMPLIES(
-	          isLogin(action) 	                                                                                   //(3)							
+	          isLogin(action) 	                                                                                   //(3)
+	          && notTried(action.url)																				//(3.a)							
 	          && EQUAL ( Input(2), Input(1) )	                                                                   //(4)	
 	          && Input(2).actions.get(action.position).setValueForParametersOfType("username", XQueryInjection()) //(5)   "' or 1=1 or ''='"
 	          //Bases on http://projects.webappsec.org/w/page/13247005/XPath%20Injection
