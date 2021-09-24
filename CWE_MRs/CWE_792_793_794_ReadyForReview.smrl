@@ -13,6 +13,10 @@ package smrl.mr.owasp {
  * software system. Use an appropriate combination of denylists and allowlists to ensure only valid,
  * expected and appropriate input is processed by the system.
  * 
+ * Idea:
+ * As the input value it gives all possible multiple occurrence of special characters in the list to check that the
+ * system is vulnerable to them or not.
+ * 
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Stores the parameters of the action in the variable.
  * (3) Iterates over a list of all possible special characters to check all possible combinations of the input value.

@@ -31,7 +31,7 @@ package smrl.mr.owasp {
  * 
  */
  
-MR CWE_93_a { 
+MR CWE_93_b { 
  { 	
  	
     for ( Action action : Input(1).actions() ) {                      //(1)

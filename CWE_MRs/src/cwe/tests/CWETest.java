@@ -14,7 +14,6 @@ import smrl.mr.crawljax.WebOperationsProvider;
 import smrl.mr.language.MRBaseTest;
 import smrl.mr.owasp.CWE_138_150_OTG_AUTHZ_001b;
 import smrl.mr.owasp.CWE_15_341_639_OTG_AUTHZ_004;
-import smrl.mr.owasp.CWE_219_220_530_OTG_AUTHZ_001;
 import smrl.mr.owasp.CWE_262_263;
 import smrl.mr.owasp.CWE_266_267_268_420_425_OTG_AUTHZ_002;
 import smrl.mr.owasp.CWE_276_277_OTG_AUTHZ_002d;
@@ -58,7 +57,7 @@ public class CWETest extends MRBaseTest {
 	*/
 
 	@Test
-	public void test_CWE_138_150_OTG_AUTHZ_001b() {  // 
+	public void test_CWE_138_150_OTG_AUTHZ_001b() {  // not seen
 		super.test(provider,CWE_138_150_OTG_AUTHZ_001b.class);
 	}
 	/*
@@ -89,13 +88,13 @@ public class CWETest extends MRBaseTest {
 		super.test(provider,CWE_284_OTG_AUTHN_004.class);
 	}
 	
-
+*/
 	@Test
 	public void test_CWE_262_263() {
 		super.test(provider,CWE_262_263.class);
 	}
 	
-	*/
+	
 	public static String getCurrentTime() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
 		LocalDateTime now = LocalDateTime.now();  

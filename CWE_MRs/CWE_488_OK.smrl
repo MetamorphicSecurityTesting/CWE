@@ -11,16 +11,17 @@ package smrl.mr.owasp{
  * processed simultaneously by different threads. A common result is that developers use Servlet member fields in such a way that one user may
  * inadvertently see another user's data. In other words, storing user data in Servlet member fields introduces a data access race condition.
  * 
- * General Comments:
+ * Idea:
+ * Copy the action after the login from the user, and the follow-up user will do the same action as the User.
+ * If there is a data access race condition, then user and follow-up user would see the same information by doing the same action (accessing the same url).
  * 
- * (1),(2)  Two for loops iterate over all actions that input(1) will do after the login
+ * Comments:
+ * (1),(2)  Two for loops iterate over all actions that input(1) will do after the login.
  * (3) It checks whether the user in User() is not a supervisor of the user performing the y-th action. // if Admin can change a data it's fine, it should not be an abnormal behaviour in system
- * (4) Create the follow-up Input by copying Input(1) with different credentials
- * (5) Copy the action y+1 (the action after the login) from Input(1), and now the Input(3) will do the same action as input(1)
- * 
- * There is a OR condition between the results of (6) and (7)
+ * (4) Create the follow-up Input by copying Input(1) with different credentials.
+ * (5) Copy the action y+1 (the action after the login) from Input(1), and now the Input(3) will do the same action as input(1).
  * (6) If there is a data access race condition, then Input(3) and Input(1) would see the same information by doing the same action (accessing the same url)
- * (7) If the Output(3) see the error page while input(1) is accessing the same URL is accepted.
+ *     Or if the Output(3) see the error page while input(1) is accessing the same URL is accepted.
  */
  
 MR CWE_488 {
@@ -44,7 +45,7 @@ MR CWE_488 {
 	  					,
 	  					//userCanRetrieveContent(Input(3).actions().get(y+2).getUser(), Output(Input(3), y+2))
 	  					
-	  					Output(Input(3), y+1).isError() //(7)
+	  					Output(Input(3), y+1).isError() 
 	  				)	);
 			}
 		}

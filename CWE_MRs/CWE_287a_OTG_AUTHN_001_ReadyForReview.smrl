@@ -7,6 +7,8 @@ package smrl.mr.owasp {
  * CWE Definition:
  * When an actor claims to have a given identity, the software does not prove or insufficiently proves that the claim is correct.
  * 
+ * Idea:
+ * A login operation should not succeed if performed on the HTTP channel.
  * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1)

@@ -10,6 +10,11 @@ package smrl.mr.owasp {
  * XSS: The software does not neutralize or incorrectly neutralizes user-controllable input 
  * before it is placed in output that is used as a web page that is served to other users.
  * 
+ * Idea:
+ * for all actions we inject the URL of the action with XSS strings to verify that 
+ * is there any vulnerable URL in the system or not. The system should show an error page
+ * or a different output after injecting the URL.
+ * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Defines a variable to store the position of the Input(1)'s action.

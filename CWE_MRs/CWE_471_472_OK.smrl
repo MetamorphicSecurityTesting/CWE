@@ -11,6 +11,9 @@ package smrl.mr.owasp {
  *CWE Definition:
  * The software does not properly protect an assumed-immutable element from being modified by an attacker.
  * 
+ * Idea:
+ * 
+ * 
  * Comments:
  * (1) For loop iterates over the all actions performed by Input(1).
  * (2) Stores the parameters of the action in a variable.

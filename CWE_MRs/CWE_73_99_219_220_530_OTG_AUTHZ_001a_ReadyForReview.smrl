@@ -20,7 +20,7 @@ package smrl.mr.owasp{
  *     Or the returned content is something that the user has the right to access.
  * 
  */ 
-MR CWE_219_220_530_OTG_AUTHZ_001 {
+MR CWE_73_99_219_220_530_OTG_AUTHZ_001a {
  {
 	for ( Action action : Input(1).actions() ){                                           //(1)
 		for ( var par=0; par < action.getParameters().size(); par++ ){                    //(2)

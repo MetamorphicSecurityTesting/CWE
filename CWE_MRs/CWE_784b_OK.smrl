@@ -12,6 +12,11 @@ package smrl.mr.owasp {
   * authentication by modifying the cookie to contain an expected value.
   * e.g. In a code excerpt reads a value from a browser cookie to determine the role of the user.
   * 
+  * Idea:
+  * if we can access to the cookie of an action, and we change it to another role with higher access level, 
+  * like admin. the system should not allow the user to access information.
+  * 
+  * 
   * Comments:
   * (1) For loop iterates over all actions of the Input(1).
   * (2) Stores the parameters of the current action in a variable.

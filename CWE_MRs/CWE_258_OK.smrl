@@ -8,6 +8,10 @@ package smrl.mr.owasp {
  * CWE Definition:
  * Using an empty string as a password is insecure.
  * 
+ * Idea:
+ * Trying to give an empty string as the input value for the password to check the system
+ * is vulnerable or not.
+ * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1)
  * (2) Store the parameters of the current action in a variable

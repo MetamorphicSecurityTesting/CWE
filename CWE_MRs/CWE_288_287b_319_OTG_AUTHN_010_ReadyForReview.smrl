@@ -8,7 +8,7 @@ package smrl.mr.owasp{
  * 287: When an actor claims to have a given identity, the software does not prove or insufficiently proves that the claim is correct.
  * 288: A product requires authentication, but the product has an alternate path or channel that does not require authentication.
  * 
- * Details:
+ * Idea:
  * Without begin authenticated, a user should not be able to access a page that normally 
  * can be reached only through the user interface of authenticated users. 
  * This should be true even if she tries on the http channel (i.e., the result of a same operation 

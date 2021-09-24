@@ -7,8 +7,11 @@ package smrl.mr.owasp {
 /**
  * 
  * CWE Definition:
- * The software allows the attacker to upload or transfer files of dangerous types that can be automatically processed within the product's environment.
+ * The software allows the attacker to upload or transfer files of dangerous types that can be 
+ * automatically processed within the product's environment.
  * 
+ * Idea:
+ * For all input entries that accept to upload a file, we will try to opload files with invalid type e.g. file.php or file.exe.
  * 
  * Comments:
  * (1) For loop iterate over all actions of the Input(1)

@@ -8,6 +8,11 @@ package smrl.mr.owasp {
  * CWE Definition:
  * The product does not require that users should have strong passwords, which makes it easier for attackers to compromise user accounts.
  * 
+ * Idea:
+ * We create a list of weak password i.e. only numbers, only characters, less than five characters, and etc.
+ * for each password parameter we will try the weak paswords from our list, and a good system should not allow the user to
+ * sign up with that weak password.
+ * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1)
  * (2) Store the parameters of the current action in a variable

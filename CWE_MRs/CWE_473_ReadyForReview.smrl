@@ -12,6 +12,12 @@ package smrl.mr.owasp {
    * query parameters or cookies. This can expose the application to numerous weaknesses that would not exist otherwise.
    * Do not allow your application to run with register_globals enabled.
    * 
+   * Idea:
+   * if the system enables the register_globals, the attacker can change the session path to the malicious one.
+   * then we try to set the session path to another one to check whether the system is vulnerable or not.
+   * A good system will show an error page or ignores the injected path.
+   * 
+   *  
    * Comments:
    * (1) define a variable with the attacker's session path value.
    * (2) For loop iterate over all actions of the Input(1)

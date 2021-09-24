@@ -9,6 +9,10 @@ package smrl.mr.owasp{
  * incorrectly neutralizes special elements that could be interpreted as control elements 
  * or syntactic markers when they are sent to a downstream component.
  * 
+ * Idea:
+ * A file path passed in the URL of a request should never enable a 
+ * user to access data that is not provided by the user interface.
+ * 
  * Comments:
  * (1) Defines the separator variable
  * (2) For loop iterates for 3 times to cover multiple occurrence of the special character as well.              //Nazanin: for this reason right?

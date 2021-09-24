@@ -4,51 +4,55 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp{
 
 /**
- *  
+ * CWE Definition:
+ * The product receives a request, message, or directive from an upstream component, but the product 
+ * does not sufficiently preserve the original source of the request before forwarding the request 
+ * to an external actor that is outside of the product's control sphere. This causes the product to 
+ * appear to be the source of the request, leading it to act as a proxy or other intermediary between 
+ * the upstream component and the external actor.
+ *   
+ * Idea:
  * A file path passed in the URL of a request should never enable a 
  * user to access data that is not provided by the user interface.
+ * 
+ *** Real case: https://curl.se/docs/CVE-2009-0037.html
+ * 
+ * Comments:
+ * (1) For loop iterates for 3 times to cover multiple occurrence of the special character as well.             // WHY???
+ * (2) Second for loop iterates over all actions of the Input(1).
+ * (3) Stores the parameters of the current action in a variable.
+ * (4) Defines the new URL.
+ * (5) Verifies whether the current action contains any protocols.
+ * (6) Checks if the current action has not been performed.
+ * (7) Defines a follow-up input that is a copy of the source input.
+ * (8) Adds to the end of the current URL a relative path to a file.
+ * (9) Verifies that the given path was not tried in a previous execution of the loop (to speed up).
+ * (10) Verifies that the follow-up input does not lead to a file 
+ *      Or the returned file is something that the user has the right to access.
+ *      Or the system shows an error page.
+
  *
- * This metamorphic relation contains two nested loops; the first is used to introduce
- * relative paths in the query (jumps to parent folders), the second iterates over the 
- * actions in the input sequence.
- * 
- * The 1st parameter of the operator IMPLIES is a boolean expression with three clauses 
- * joined with a logical conjunction.
- * The 1st clause verifies whether the current action has been not performed by an administrator
- * The 2nd clause checks if the current action has been performed after a login.
- * The 3rd clause defines a follow-up input that is a copy of the source input.
- * The 4th clause adds to the end of the current URL a relative path to a file.
- * The 5th clause verifies that the given path was not tried in a previous execution of 
- * the loop (to speed up).
- * 
- * The 2nd parameter of IMPLIES verifies the result. It is implemented as an OR operation where 
- * The 1st parameter verifies that the follow-up input does not lead to a file.
- * The 2nd parameter deals with the case in which the generated request is valid, and 
- * verifies that the returned file is something that the user has the right to access.
- * The 3rd parameter verifies that the follow-up input leads to an error page.
- * 
- * Real case: https://curl.se/docs/CVE-2009-0037.html
  * 
  */ 
 MR CWE_441 {
  {
  
- 	for ( var par=0; par < 3; par++ ){
+ 	for ( var par=0; par < 3; par++ ){                                                   //(1)
  		 
-		for ( Action action : Input(1).actions() ){
+		for ( Action action : Input(1).actions() ){                                      //(2)
 			 
-			var pos = action.getPosition();
-			var newUrl = "scp://" + RandomFilePath();//Nazanin: scp://name:passwd@host/a'... how to define the first protocol? is this always the same? I mean can we use 'scp://' for all newUrls?
+			var pos = action.getPosition();                                              //(3)
+			var newUrl = "scp://" + RandomFilePath();                                    //(4)   //Nazanin: scp://name:passwd@host/a'... how to define the first protocol? is this always the same? I mean can we use 'scp://' for all newUrls?
 			  
 			IMPLIES(
-				URLContainProtocol(action.getUrl())&&
-				notTried(action.user, Input(1).actions().get(pos).getUrl())&&
-				EQUAL( Input(2), Input(1) ) &&					//3rd clause of IMPLIES (1st par)
-			  	Input(2).actions().get(pos).setUrl( newUrl )	
+				URLContainProtocol(action.getUrl())&&                                    //(5)
+				notTried(action.user, Input(1).actions().get(pos).getUrl())&&            //(6)
+				EQUAL( Input(2), Input(1) ) &&					                         //(7)
+			  	Input(2).actions().get(pos).setUrl( newUrl )	                         //(8)
 			    ,
 			    OR(
-		    		 isError(Output(Input(2), pos)),        //(7)                  
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        //(8)
+		    		 isError(Output(Input(2), pos)),                                     //(9)                  
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))      //(10)
 		    	)
 			);//end-IMPLIES
 		}//end-for

@@ -11,6 +11,7 @@ package smrl.mr.owasp {
 * The software performs reverse DNS resolution on an IP address to obtain the hostname and make a security
 * decision, but it does not properly ensure that the IP address is truly associated with the hostname.
 * 
+* Idea:
 * Since DNS names can be easily spoofed or misreported, and it may be difficult for the software to detect
 * if a trusted DNS server has been compromised, DNS names do not constitute a valid authentication mechanism.
 * When the software performs a reverse DNS resolution for an IP address, if an attacker controls the server

@@ -18,7 +18,7 @@ package smrl.mr.owasp{
  * attacker access to the user's account through the active session.
  * 
  * Idea:
- * FABRIZIO: In my opinion we shall simply perform a login within another logged in session. No logout is needed.
+ * we shall simply perform a login within another logged in session. No logout is needed.
  * 
  * 
  * Comments: 

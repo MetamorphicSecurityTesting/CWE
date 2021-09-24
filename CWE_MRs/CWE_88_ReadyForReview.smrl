@@ -14,6 +14,8 @@ package smrl.mr.owasp {
  * control sphere, but it does not properly delimit the intended arguments, options, or switches
  * within that command string.
  * 
+ * Idea:
+ * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Stores the parameters of the action in the variable.

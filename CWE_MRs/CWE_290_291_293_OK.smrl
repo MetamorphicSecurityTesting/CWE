@@ -15,8 +15,10 @@ package smrl.mr.owasp {
  * Attackers may be able to circumvent this requirement by using source routing, but source routing is disabled
  * across much of the Internet today. 
  * 
- * 
- * In summary, IP address verification can be a useful part of an authentication scheme, but it should not be the single factor required for authentication.
+ * Idea:
+ * In summary, IP address verification can be a useful part of an authentication scheme, but it should not be 
+ * the single factor required for authentication. Then, we will check that for an action with valid IP if we set
+ * a null session the system will authenticate the user or not.
  * 
  * 
  * Comments:

@@ -10,6 +10,10 @@ package smrl.mr.owasp{
  * CWE Definition:
  * Allowing password aging to occur may result in the possibility of diminished password integrity.
  * 
+ * Idea:
+ * We try to find a logout and login actions and change the passed time between these two actions with wait() function to check
+ * that the system has any mechanism for password aging or not.
+ * 
  * Comments:
  * (1) To keep track of actions that Input(1) can do, two for loops are implemented.
  * (2) It checks whether the current action X is doing "log out".

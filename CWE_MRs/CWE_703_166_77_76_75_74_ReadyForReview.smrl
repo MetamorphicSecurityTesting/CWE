@@ -4,7 +4,6 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp {
  
 /**
- * FABRIZIO: It seems ok, not clear why you wrote Question in the title
  * 
  * CWE Definition:
  * The software receives input from an upstream component, but it does not handle or incorrectly
@@ -14,6 +13,10 @@ package smrl.mr.owasp {
  * Developers should anticipate that special elements will be removed in the input vectors of their 
  * software system. Use an appropriate combination of denylists and allowlists to ensure only valid,
  * expected and appropriate input is processed by the system.
+ * 
+ * Idea:
+ * As the input value it gives all possible special characters in the list to check that the
+ * system is vulnerable to them or not.
  * 
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Stores the parameters of the action in the variable.
