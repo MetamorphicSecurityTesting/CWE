@@ -24,7 +24,7 @@ package smrl.mr.owasp{
  * Comments: 
  * (1) The first loop iterates over all the actions of the Input(1).
  * (2) The second loop iterates over all the actions after the x to find an action performed after login.
- * (3) Avoids reseting the session by the browser.
+ * (3) Avoids resetting the browser.
  * (4) Sets the sub-sequence of actions to Input(2), from beginning to the first action after the login.
  * (5) Sets the sub-sequence of actions to Input(3), from the first action after the login till the end.
  * (6) Makes sure that Input(3) starts with a login.
