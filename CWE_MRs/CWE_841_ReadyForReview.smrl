@@ -18,25 +18,47 @@ package smrl.mr.owasp{
  * (4),(5) Changes the sequence of the action y with action y-1. 
  * (6) Verifies that the system gives two different outputs or will give error by executing the follow-up input.
  * 
- * 
+ * The only thing I could think of is to simulate registering a user without confirming the email.
+We first determine if the current input represents a functional test case for a user registering into a platform.
+We start the MR in a clean state (to implement)
+We run Input(1)
+We re-run Input(1) and check that an action before the login leads to a different output but the login succeeds.
+We reset the MR state.
+We create Input(2) as a copy of Input(1) but we remove the action before the login.
+The login output shall be different than in Input(1) (i.e., not succeed)
  */ 
 MR CWE_841 {
 		{
+			//Nazanin:
+			/* I tried to simplify the steps that you mentioned.
+			
+ 			 if we signup the email should be verified, and the steps are like the following:
+
+ 			signup -> email verification(enter the code) -> login -> authenticated action
+ 			signup -> login-> authenticated action NOTVALID
+
+			 Considering that we have a website that after signing up it redirect you to a page that asks you to enter a code, which has been sent to your email account (email verification). 
+			 After that it will redirect you to login page.
+
+ 			The problem is this case brings its own vulnerabilities e.g. the attacker injects the variable in URL that declares a user is verified or not.
+*/
+			
 			for ( var x = 0; x < Input(1).actions().size(); x++ ){   //(1)
-				for ( var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){  //(2)			
+				for ( var y = x+2; isSignup(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){  //(2)			
 					
-					IMPLIES ( 
-						EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, y-2 ) ) ) && //(3)
-						//EQUAL ( Input(3) , Input ( Input(1).actions().subList(y-2, Input(1).actions().size() ) ) )  &&
-						//Input(2).addAction(0,Input(1).actions().get(x))  &&                   // we start with a login
-						Input(2).addAction ( y-1, Input(1).actions().get(y) ) &&              //(4) check the y
-						Input(2).addAction ( y, Input(1).actions().get(y-1) )                 //(5)
-				
+					IMPLIES (
+						// x = signup
+						// y = login 
+						isLogin(Input(1).actions().get(y))&&
+						EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, x) ) ) && //(3)
+						EQUAL ( Input(3) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  &&
+						Input(3).addAction(0,Input(1).actions().get(x))                    // we start with a sign up
+						
 						, 
 					
-						AND( different ( Output(Input(2),y),  Output(Input(1),y) ) //(6) check the command
+						AND( different ( Output(Input(2),y+1),  Output(Input(1),y+1) ) //(6) check the command
 						,
-						isError(Output(Input(2),y)) 
+						isError(Output(Input(2),y+1)) 
 						)
 					); //end-IMPLIES
 					
