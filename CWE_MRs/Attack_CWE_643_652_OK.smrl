@@ -5,23 +5,21 @@ import sun.security.util.Password
 package smrl.mr.owasp {
  
 /**
- * Real Cases of CWE  652: https://www.securecodewarrior.com/blog/coders-conquer-security-share-learn-series-xquery-injection
- *      https://www.securecodewarrior.com/blog/coders-conquer-security-share-learn-series-xquery-injection
  * 
- * FABRIZIO: we need a concrete case to test with
- * 
- * Nazanin: 
+ * CWE Definition:
+ * CWE_643:The software uses external input to dynamically construct an XPath expression used to 
+ * retrieve data from an XML database, but it does not neutralize or incorrectly neutralizes that input. 
+ * This allows an attacker to control the structure of the query.
  * Cases that I have checked for CWE 643:
  * http://projects.webappsec.org/w/page/13247005/XPath%20Injection
  * https://www.exploit-db.com/exploits/10372
  * 
- * It can be merged to CWE_703, if we also filter the "' or 1=1 or ''='" and single quotation mark as special characters.
- * 
- * 
- * CWE Definition:
- * The software uses external input to dynamically construct an XPath expression 
- * used to retrieve data from an XML database, but it does not neutralize or incorrectly 
- * neutralizes that input. This allows an attacker to control the structure of the query.
+ * CWE_652:
+ * The software uses external input to dynamically construct an XQuery expression used to retrieve data 
+ * from an XML database, but it does not neutralize or incorrectly neutralizes that input. This allows 
+ * an attacker to control the structure of the query.
+ * Real Cases of CWE  652: https://www.securecodewarrior.com/blog/coders-conquer-security-share-learn-series-xquery-injection
+ *      https://www.securecodewarrior.com/blog/coders-conquer-security-share-learn-series-xquery-injection
  * 
  * OWASP hint:
  * with XPath injection, the first step is to insert a single quote (') in the field to 
@@ -35,22 +33,26 @@ package smrl.mr.owasp {
  * Therefore, if the system is not vulnerable it should show an error page or a content that the user has right to access.
  * Since every login interface provided by a different URL may be handled by a different implementation, in this MR, 
  * we perform the attack for every login action URL observed. 
+ * The idea behind the CWE_643 that is about XPath is similar to the XQuery idea of CWE_652.
+ * XQuery supports XPath and extended relational models. According to the real cases, we can trigger the weakness with the same inputs, 
+ * then we merged these two CWE vulnerabilities together.
  * 
  * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1)
  * (2) Store the parameters of the current action in a variable
  * (3) It checks if the current action of the Input(1) is login.
- * (3.a)
- * (4) Creates Input(2) as the follow-up input.
- * (5) Set the specific value for the username of the Input(2)
- * (6) Set the (') value for the password of the Input(2)
+ * (4) Verifies that the URL has not been tried before.
+ * (5) Creates Input(2) as the follow-up input.
+ * (6) Set the specific value for the username of the Input(2)
+ * (7) Set the (') value for the password of the Input(2)
+ * 
  * //FABRIZIO: based on the description in http://projects.webappsec.org/w/page/13247005/XPath%20Injection
  * 				if you replace the username with "' or 1=1 or ''='"
  * 				you shall not replace also the password field, no?
  * // Nazanin: In the example they replaced the password with a string value 'foobar', as a point from OWASP, I replaced a single quotation for password. it is possible to even divide it into two MRs.
  * 
- * (7) The system should show an error page
+ * (8) The system should show an error page
  *      Or the user should retrieve the content that has right to access it.
  */
  
@@ -61,16 +63,16 @@ MR CWE_643_652 {
 	  
 	   IMPLIES(
 	          isLogin(action) 	                                                                                   //(3)
-	          && notTried(action.url)																				//(3.a)							
-	          && EQUAL ( Input(2), Input(1) )	                                                                   //(4)	
-	          && Input(2).actions.get(action.position).setValueForParametersOfType("username", XQueryInjection()) //(5)   "' or 1=1 or ''='"
+	          && notTried(action.url)																			   //(4)							
+	          && EQUAL ( Input(2), Input(1) )	                                                                   //(5)	
+	          && Input(2).actions.get(action.position).setValueForParametersOfType("username", XQueryInjection())  //(6)   "' or 1=1 or ''='"
 	          //Bases on http://projects.webappsec.org/w/page/13247005/XPath%20Injection
 	          		    			
-	    	  && Input(2).actions.get(action.position).setValueForParametersOfType("password", IncorrectPWD())    //(6) 
+	    	  && Input(2).actions.get(action.position).setValueForParametersOfType("password", IncorrectPWD())     //(7) 
 	    	  //Where the first attribute is the input type in HTML and the second parameter is the value to be set. 
 	    	  
 		    ,  
-		    OR(                                                                                                    //(7) 
+		    OR(                                                                                                    //(8) 
 		    		 isError(Output(Input(2), pos)),                        
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
 		    	)
