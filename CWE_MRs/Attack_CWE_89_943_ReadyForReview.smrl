@@ -38,7 +38,7 @@ MR CWE_89 {
  		
  			IMPLIES(
  		
- 				notTried( action.user, Input(1).actions().get(pos).getUrl() ) &&
+ 				notTried( Input(1).actions().get(pos).getUrl() ) &&
  				EQUAL(Input(2), Input(1))&&                //(4)
  				Input(2).actions().get(pos).setParameterValue( x, SQLInjectionString() ) //(5)
  			                  
