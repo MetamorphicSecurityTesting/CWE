@@ -54,16 +54,16 @@ public class CWETest extends MRBaseTest {
 	public void test_CWE_266_267_268_420_425_OTG_AUTHZ_002() {  // failure saw
 		super.test(provider,CWE_266_267_268_420_425_OTG_AUTHZ_002.class);
 	}
-	*/
+	
 
 	@Test
-	public void test_CWE_138_150_OTG_AUTHZ_001b() {  // not seen
+	public void test_CWE_138_150_OTG_AUTHZ_001b() {  // passed
 		super.test(provider,CWE_138_150_OTG_AUTHZ_001b.class);
 	}
 	/*
 
 	@Test
-	public void test_CWE_15_341_639_OTG_AUTHZ_004() {   // not seen
+	public void test_CWE_15_341_639_OTG_AUTHZ_004() {   //passed
 		super.test(provider,CWE_15_341_639_OTG_AUTHZ_004.class);
 	}/*	
 	
@@ -74,7 +74,7 @@ public class CWETest extends MRBaseTest {
 	}
 	
 	@Test
-	public void test_CWE_276_277_OTG_AUTHZ_002d() {   // not seen
+	public void test_CWE_276_277_OTG_AUTHZ_002d() {   // passed
 		super.test(provider,CWE_276_277_OTG_AUTHZ_002d.class);
 	}
 		
@@ -84,13 +84,19 @@ public class CWETest extends MRBaseTest {
 	}
 	
 	@Test
-	public void test_CWE_284_OTG_AUTHN_004 () { // not seen tested with 4 test cases
+	public void test_CWE_284_OTG_AUTHN_004 () { // passed tested with 4 test cases
 		super.test(provider,CWE_284_OTG_AUTHN_004.class);
 	}
 	
-*/
+
 	@Test
-	public void test_CWE_262_263() {
+	public void test_CWE_262_263() {// passed
+		super.test(provider,CWE_262_263.class);
+	}
+	*/
+	
+	@Test
+	public void test_CWE_262_263() {// passed
 		super.test(provider,CWE_262_263.class);
 	}
 	
