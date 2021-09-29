@@ -15,34 +15,39 @@ package smrl.mr.owasp{
  * Comments:
  * (1) For loop iterates over all actions of the Input(1)
  * (2) Stores the parameters of the current action in a variable
- * (3) Verifies that the user is not admin.
+ * (3) Verifies that the User() is supervisor of Input(1).
  * (4) Checks if the current action of the Input(1) is taken after the login.
- * (5) Creates the follow-up input.
- * (6) Sets an action that access to a url which contains sensitive information.
- * (7) The system verifies that the follow-up input can see the content that has right
- *     to access or will show an error page.
+ * (5) Creates the follow-up input, Input(2) is supervisor of Input(1).
+ * (6) The system checks that the Input(1) and Input(2), both can access the same file
+ *     but the Input(1) cannot see the content of output of the Input(2) that is the admin.
  * 
  * 
  */ 
  
 MR CWE_538 {
  {
- 		
- 		 
-		for ( Action action : Input(1).actions() ){                                            //(1)
+ 	for ( Action action : Input(1).actions() ){                                                //(1)
 			 
 			var pos = action.getPosition();                                                    //(2)
 			
 			IMPLIES( 
-				!isAdmin(action.user) &&						                               //(3)
-				afterLogin(action) &&							                               //(4)
-				EQUAL( Input(2), Input(1) ) &&					                               //(5)
-			  	Input(2).actions().get(pos).setAccessibleUrlWithSensInfo()                     //(6)
+				isSupervisorOf(User (), action.user) &&				                           //(3)
+				afterLogin(action) &&                                                          //(4)									                               //(4)
+				EQUAL ( Input(2), changeCredentials(Input (1), User()) )				       //(5)
+			  	               
 			    ,
-			    OR ( 	                                                                       //(7)
-			    	   userCanRetrieveContent(Input(2) , Output(Input(2),pos).file()) , 								 
-					Output(Input(2),pos).isError()  
-				)
+			    AND (                                                                          //(6)
+			    	
+			    	// 1- both of them have access to the file
+			    	   
+			    	   	!different(Output(Input(2),pos).file(),Output(Input(1),pos).file()) , // Nazanin: what does it check? the file name or file content?
+			    	   
+			    	   // 2- they do not retrieve the same content
+			    	   
+			    	   AND(                                                                 
+			    	   !userCanRetrieveContent(Input(1) , Output(Input(2),pos).file()) , 								 
+					   userCanRetrieveContent(Input(1) , Output(Input(1),pos).file()) 
+				))
 			);//end-IMPLIES
 	}//end-for
  }
