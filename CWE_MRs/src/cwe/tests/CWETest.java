@@ -19,6 +19,7 @@ import smrl.mr.owasp.CWE_266_267_268_420_425_OTG_AUTHZ_002;
 import smrl.mr.owasp.CWE_276_277_OTG_AUTHZ_002d;
 import smrl.mr.owasp.CWE_280_755_OTG_AUTHZ_002e;
 import smrl.mr.owasp.CWE_284_OTG_AUTHN_004;
+import smrl.mr.owasp.CWE_471_472;
 
 public class CWETest extends MRBaseTest {
 	
@@ -93,11 +94,17 @@ public class CWETest extends MRBaseTest {
 	public void test_CWE_262_263() {// passed
 		super.test(provider,CWE_262_263.class);
 	}
-	*/
+	
 	
 	@Test
 	public void test_CWE_262_263() {// passed
 		super.test(provider,CWE_262_263.class);
+	}
+	*/
+	
+	@Test
+	public void test_CWE_471_472() {// passed
+		super.test(provider,CWE_471_472.class);
 	}
 	
 	

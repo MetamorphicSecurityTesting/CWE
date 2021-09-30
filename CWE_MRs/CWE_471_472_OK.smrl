@@ -4,44 +4,43 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp {
  
 /*
- * Hint: use parameters instead of cookies. applies to other MR concerning the form filed. check Phu's.
- * Put values from other users instead of random value.
- * AUTHZ_004
+ ** CWE Definition:
  * 
- * CWE Definition:
+ * CWE_471:
  * The software does not properly protect an assumed-immutable element from being modified by an attacker.
+ * 
+ * CWE_472(child of CWE_471):
+ * The web application does not sufficiently verify inputs that are assumed to be immutable but are actually 
+ * externally controllable, such as hidden form fields.
  * 
  * Idea:
  * If the system assumed that the value of the cookie cannot be changed or be accessed by an attacker, it may
  * not check its value, then it may not recognize a random cookie from the real actual one.
- * Therefore, we try to change the value of the cookie to another random value and check whether the system considers
+ * Therefore, we try to change the value of the cookie to another one from another user and check whether the system considers
  * cookie as immutable item or not e.g. shows an error page.
  * 
  * Comments:
- * (1) For loop iterates over all actions of the Input(1)
- * (2) Store the parameters of the current action in a variable
- * (3) It checks if the current action of the Input(1) is login.
- * (4) Verifies that the URL has not been tried before.
- * (5) Creates Input(2) as the follow-up input.
- * (6) Set the specific value for the email parameter of the Input(2)
- * (7) Verifies that the system should not allow the user to retrieve the content or it should show the error page.
+ * (1) For loop iterates over the all actions performed by Input(1).
+ * (2) Stores the parameters of the action in a variable.
+ * (3) checks that the action is performed after the log in.
+ * (4) Creates the follow-up input by copying the Input(1) with different credentials.
+ * (5) Copy the cookie of input(1) as the cookie of the input(2).
+ * (6) Verifies that the system should not allow the user to retrieve the content or it should show the error page.
  */
-
+ 
 MR CWE_471_472{
 	{
-   for (Action action: Input(1).actions()){                                                                        //(1)
-      var pos = action.getPosition();                                                                              //(2)
-     
-      IMPLIES(             
-               isLogin(action) 	                                                                                   //(3)
-	          && notTried(action.url)																			   //(4)							
-	          && EQUAL ( Input(2), Input(1) )	                                                                   //(5)	
-	          && Input(2).actions.get(action.position).setValueForParametersOfType("email", XSSInjectionString())  //(6)
-	          ///urlencode(str:xss)
+   for (Action action: Input(1).actions()){                                               //(1)
+      var pos = action.getPosition();                                                     //(2)
+     IMPLIES(             
+               afterLogin(action)                                                         //(3)
+               && EQUAL ( Input(2), changeCredentials(Input (1), User()) )                //(4)
+               && Input(2).actions.get(pos).setCookie(Input(1).actions.get(pos).cookie)   //(5)
+               
                 ,
               
-        OR(                                                                                                          //(7)
-        	userCanRetrieveContent( action.getUser(),Output(Input(2),pos))
+        OR(                                                                               //(6)
+        	userCanRetrieveContent(action.getUser(), Output(Input(2),pos))
         	,
         	isError( Output(Input(2) , pos))
         )
@@ -50,8 +49,3 @@ MR CWE_471_472{
 	}
 }//end-MR
 }//end-package
-
-
-
-
-
