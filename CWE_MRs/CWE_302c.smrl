@@ -1,0 +1,67 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import java.util.Map.Entry;
+import org.openqa.selenium.Cookie;
+import smrl.mr.language.CookieSession;
+
+package smrl.mr.owasp {
+ 
+/*
+ * CWE definition:
+ * The authentication scheme or implementation uses key data elements that are assumed to be immutable, 
+ * but can be controlled or modified by the attacker.
+ * 
+ * Idea:
+ * Focus on cookies as the key data:
+ * Set the cookie path to a random cookie to check whether the system authenticates the user or not.
+ * 
+ * 
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1).
+ * (2) Stores the parameters of the current action in a variable.
+ * (3) Checks that the action is a log in.
+ * (4) Creates the follow-up input.
+ * (5) Changes the cookie path of the follow-up input to a random cookie path.
+ * (6) The system should not allow the follow-up input to take the action, it should how an error
+ *     Or It should give a different output to the original user.
+ *  
+ */
+
+MR CWE_302c{
+	{
+   for (Action action: Input(1).actions()){                                                        //(1)
+   	//for (var par=0; par < action.getParameters().size(); par++){                                   
+      var pos = action.getPosition();
+      var session = Output( Input(1), pos).session as CookieSession;
+      var mappings = session.keyValueMappings.entrySet;
+      
+       
+
+	  //It is suboptimal because incrementally update cookie values - but it's a tradeoff	
+	  for ( Entry<String,String> cookie : mappings){
+	  		var type = typeOf(cookie.value);
+	  	
+	  
+      IMPLIES(             
+      		cannotReachThroughGUI( User(), action.url )    				
+      		&& EQUAL( Input(2), changeCredentials(Input(1), User()) ) //of IMPLIES 
+      		&& Input(2).actions.get(pos).setSession( session )                        
+      		&& type == Boolean                                     //(2)                        
+            && session.setCookie(
+            	new Cookie(cookie.key, String.valueOf( RandomValue(type) ))
+            ),
+              different( Output( Input(1), pos) , Output(Input(2) , pos) )                         //(6)
+			&& isError( Output(Input(2) , pos))
+		);//end-IMPLIES
+		}
+		}
+		
+	}//end-for
+	
+}//end-MR
+}//end-package
+
+
+
+
+

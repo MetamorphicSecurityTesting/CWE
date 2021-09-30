@@ -8,7 +8,7 @@ package smrl.mr.owasp{
  * One or more system settings or configuration elements can be externally controlled by a user.
  * 
  * Idea:
- * By randomly changing the parameter values passed to URLs, a user should not be able to retrieve content
+ * By changing the parameter values passed to URLs, a user should not be able to retrieve content
  * she cannot retrieve from GUI.
  * 
  * (1) The first loop iterates over all the actions of the input sequence. 
