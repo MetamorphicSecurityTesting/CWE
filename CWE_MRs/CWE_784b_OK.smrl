@@ -33,6 +33,9 @@ MR CWE_784b{
 	{
 		for(Action action: Input(1).actions()){ //(1)
 		var pos = action.getPosition(); //(2)
+		
+		var session1 = Output( Input(1), pos).session;
+		
 		 for (Action action2: Input(2).actions()){ //(3)
 		
 				IMPLIES(
@@ -40,7 +43,7 @@ MR CWE_784b{
 	  				afterLogin(action) &&  //(4)
 	  				isSupervisorOf(Input(1), Input(2)) && //(5)	  		//isSupervisorOf(User(),Input(1).actions().get(pos).user) 		
 	  				EQUAL(Input(3), Input(2) ) // (6)
-	  				&& Input(3).actions.get(action2.position).setCookie(Input(1).actions().get(action.position).getCookie())// (7)   
+	  				&& Input(3).actions.get(action2.position).setSession(session1)// (7)   
                         ,
              OR( //(8)
               different( Output( Input(1), pos) , Output(Input(3) , pos) )
