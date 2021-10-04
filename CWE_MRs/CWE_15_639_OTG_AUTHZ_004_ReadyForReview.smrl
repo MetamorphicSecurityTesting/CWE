@@ -1,0 +1,52 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/**
+ * CWE Definition:
+ * 
+ * CWE_15: 
+ * One or more system settings or configuration elements can be externally controlled by a user.
+ * 
+ * CWE_639: The system's authorization functionality does not prevent one user from gaining access 
+ * to another user's data or record by modifying the key value identifying the data.
+ * 
+ * Idea:
+ * To check the system's authorization functionality we will check whether the user can access the data from
+ * another user if we directly send the parameter value in the URL or not.
+ * We are going to change the value of  the all parameters of the actions that the user can take.
+ * To change the parameter value, we replace it with the value from another user, and it is passed to URL.
+ * By randomly changing the parameter values passed to URL, a user should not be able to retrieve content that
+ * she cannot retrieve from GUI.
+ * 
+ * (1) The first loop iterates over all the actions of the input sequence. 
+ * (2) The second iterates over all the parameters of the action.
+ * (3) Stores the parameters of the current action in a variable.
+ * (4) Defines the follow-up input. 
+ * (5) Sets a parameter value to a random value.
+ * (6) Checks if the content of the output is either an error message 
+ *     Or some content that can be retrieved from the GUI.
+ */ 
+	MR CWE_15_639_OTG_AUTHZ_004 {
+		{
+			for ( Action action : Input(1).actions() ){                                             //(1)
+				for ( var par=0; par < action.getParameters().size(); par++ ){                      //(2)
+					var pos = action.getPosition();                                                 //(3)
+					IMPLIES( 
+						EQUAL ( Input(2), Input(1) ) &&	                                            //(4)
+					  	Input(2).actions().get(pos)		                                            
+							.setParameterValue(par, parameterValueUsedByOtherUsers(action, par))    //(5)
+							//TODO: optimization -> return only param_value of this action 
+						, 
+						OR( 							//2nd par of IMPLIES
+							Output(Input(2),pos).isError()                                          //(6)
+							, 
+							userCanRetrieveContent( action.user, Output(Input(2),pos) ) 
+						)
+					);//end-IMPLIES
+				}//end-for
+			}//end-for
+		}
+	}//end-MR
+}

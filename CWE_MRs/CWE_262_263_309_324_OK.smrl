@@ -1,0 +1,64 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/**
+ * To Do: 
+ * 1- We shall improve the crawler to perform logout at least once.
+ * 
+ * CWE Definition:
+ * CWE_262:
+ * If no mechanism is in place for managing password aging, users will have no incentive to update passwords in a timely manner.
+ * 
+ * CWE_263:
+ * Allowing password aging to occur may result in the possibility of diminished password integrity.
+ * 
+ * CWE_309:
+ * The use of password systems as the primary means of authentication may be subject to several flaws 
+ * or shortcomings, each reducing the effectiveness of the mechanism.
+ * 
+ * CWE_324:
+ * The product uses a cryptographic key or password past its expiration date, which diminishes its 
+ * safety significantly by increasing the timing window for cracking attacks against that key.
+ * 
+ * Idea:
+ * We try to find a logout and login actions and change the passed time between these two actions with wait() function to check
+ * that the system has any mechanism for password aging or not.
+ * 
+ * Comments:
+ * (1) To keep track of actions that Input(1) can do, two for loops are implemented.
+ * (2) It checks whether the current action X is doing "log out".
+ * (3) It checks that the action-y of the Input(1) is "log in".
+ * (4) It also makes sure that we did not tried this MR with the login action-y.
+ * (5) Creates the follow-up Input by copying the Input(1), named Input(2)
+ * (6) Add a wait action to Input(2) that moves time forward for a year i.e. the expected time for reseting the password (password aging).
+ * (7) Add a login action to Input(2) to perform a login after a year, which is expected to ask the user to reset the password instead of performing the action.
+ * (8) Based on the above description the results should be different; it shall prompt a password update request 
+ */ 
+	MR CWE_262_263_309_324 {
+		{
+			for ( var x=0; x < Input(1).actions().size() ; x++ ){
+				for ( var y=0; y < x ; y++ ){ //(1)
+					 
+					IMPLIES ( 
+						isLogout( Input(1).actions().get(x) ) &&  //(2)
+						isLogin( Input(1).actions().get(y) ) &&   //(3)
+						notTried(Input(1).actions().get(y).user, Input(1).actions().get(y).url ) &&  //(4)
+						EQUAL ( Input(2) , Input(1) ) &&          //(5)
+						//password shall be updated every year?
+						Input(2).addAction ( x+1, Wait( 60*60*24*30*12*1000 ) ) &&  //(6)
+						Input(2).addAction ( x+2, Input(1).actions().get(y) )       //(7)
+						,
+						different ( Output(Input(2),y),  Output(Input(2),x+2) ) //(8)
+					); //end-IMPLIES
+				} //end-for
+			} //end-for
+		}
+	} //end-MR
+} //end-package
+
+
+
+
+

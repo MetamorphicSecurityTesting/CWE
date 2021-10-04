@@ -5,8 +5,15 @@ package smrl.mr.owasp{
 
 /**
  * CWE Definition:
+ * 
+ * CWE_610:
+ * The product uses an externally controlled name or reference that resolves to a resource that 
+ * is outside of the intended control sphere.
+ *
+ * CWE_384: 
  * Authenticating a user, or otherwise establishing a new user session, without invalidating any
  * existing session identifier gives an attacker the opportunity to steal authenticated sessions.
+ * 
  * 
  * A web application authenticates a user without first invalidating the existing session, thereby
  * continuing to use the session already associated with the user. An attacker is able to force a known
@@ -18,6 +25,7 @@ package smrl.mr.owasp{
  * attacker access to the user's account through the active session.
  * 
  * Idea:
+ * A good system s
  * Considering that we have a user that is active and the attacker can steal the session.
  * The attacker will use the session to log in, and the system should not validate the session. 
  * After the second login the system should publish a new session for the user.
