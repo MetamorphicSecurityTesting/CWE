@@ -10,10 +10,10 @@ package smrl.mr.owasp {
  *  specified by their permissions. This may cause it to follow unexpected code paths that may leave the application in an invalid state.
  * 
  * Idea:
- * instead of checking the page is different we check the page return was already observed before. 
- * if the app is the state that is already seen would be similar to prev. seen ones.
+ * Assuming certain pages can only be accessed in a certain order, we try to access reserved pages just before the legitimate user may access them. 
  * 
- * comments: 
+ * 
+ * Comments: 
  * (1) For loop iterates over all actions of the Input(1)
  * (2) The second for loop iterates over the sequence of actions after the login.
  * (3) Checks whether the user in User() is not a supervisor of the user performing the current action.
