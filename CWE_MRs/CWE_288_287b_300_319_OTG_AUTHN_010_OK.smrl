@@ -5,8 +5,19 @@ package smrl.mr.owasp{
 
 /**
  * CWE Definition:
- * 287: When an actor claims to have a given identity, the software does not prove or insufficiently proves that the claim is correct.
- * 288: A product requires authentication, but the product has an alternate path or channel that does not require authentication.
+ * 
+ * CWE_287: 
+ * When an actor claims to have a given identity, the software does not prove or insufficiently proves that the claim is correct.
+ * 
+ * CWE_288(child of CWE_287): 
+ * A product requires authentication, but the product has an alternate path or channel that does not require authentication.
+ * 
+ * CWE_300: 
+ * The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure 
+ * the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.
+ * 
+ * CWE_319:
+ * The software transmits sensitive or security-critical data in cleartext in a communication channel that can be sniffed by unauthorized actors.
  * 
  * Idea:
  * Without begin authenticated, a user should not be able to access a page that normally 

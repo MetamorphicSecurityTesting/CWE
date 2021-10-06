@@ -1,0 +1,4 @@
+105 OR 1=1
+'name' OR 'a'='a'
+1' and 1=1;--
+SELECT * FROM users WHERE username='' OR 1=1

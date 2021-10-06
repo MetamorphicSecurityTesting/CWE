@@ -13,6 +13,18 @@
 	"randomFilePathFile": "./testData/JenkinsICSE/filePaths.txt",
 	"randomAdminFilePathFile": "./testData/JenkinsICSE/adminFilePaths.txt",
 	"RandomCookiePath": "./testData/JenkinsICSE/cookiePaths.txt",
+        "SQLInjectionString": "./testData/JenkinsICSE/SQLInjectionString.txt",
+        "CRLFAttackString": "./testData/JenkinsICSE/CRLFAttackString.txt",
+        "CodeInjectionString": "./testData/JenkinsICSE/CodeInjectionString.txt",
+        "StaticInjectionString": "./testData/JenkinsICSE/StaticInjectionString.txt",
+        "WeakPassword": "./testData/JenkinsICSE/WeakPassword.txt",
+        "SpecialCharacters": "./testData/JenkinsICSE/SpecialCharacters.txt",
+        "XSSInjectionString": "./testData/JenkinsICSE/XSSInjectionString.txt",
+        "LDAPInjectionString": "./testData/JenkinsICSE/LDAPInjectionString.txt",
+        "CommandInjection": "./testData/JenkinsICSE/CommandInjection.txt",
+        "XQueryInjection": "./testData/JenkinsICSE/XQueryInjection.txt"
+
+
 	"actionsChangedUrlFileName": "./testData/JenkinsICSE/jenkinsActionsChangedUrl.json",
 	"loginParams": [
 		{

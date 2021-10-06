@@ -19,7 +19,7 @@ MR TEST_RANDOM_COOKIE_PATH {
  { 
  	{
     	//Object randomCookiePath = RandomCookiePath();
-    	System.out.println( RandomCookiePath() );
+    	System.out.println( CookiePath() );
 	} 	
 	
  } 
