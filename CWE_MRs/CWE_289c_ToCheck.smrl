@@ -15,8 +15,8 @@ package smrl.mr.owasp {
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Stores the parameters of the current action in a variable.
  * (3) Stores the URL of the current action in a variable.
- * (4) It checks that the current action is only available for authenticated users i.e. available only after log in.
- * (5) It considers users that only have lower or similar access level to Input(1).
+ * (4) Stores the the encoded url in the variable, named encodeURL.
+ * (5) It checks that the current action is only available for authenticated users i.e. available only after log in.
  * (6) Creates the follow-up Input by copying Input(1) with different credentials, named Input(2).
  * (7) It encode the URL for input(2) to check that the url action which is not accessible to the Input(2) would be accessible if it is encoded or not.
  * (8) The system should show an error page or different outputs for two inputs. 
@@ -27,10 +27,11 @@ MR CWE_289c{
    for (Action action: Input(1).actions()){                                         //(1)
       var pos = action.getPosition();                                               //(2)
       var url = action.getUrl();                                                    //(3)
+      var encodeURL = action.EncodeUrl(url);                                        //(4)
       IMPLIES(             
-               notAvailableWithoutLoggingIn(action) &&                              //(4) 
+               notAvailableWithoutLoggingIn(action) &&                              //(5) 
                EQUAL(Input(2), Input( action ) ) &&                                 //(6)
-               Input(2).actions.get(0).setUrl(EncodeUrl(url))                       //(7)
+               Input(2).actions.get(0).setUrl(encodeURL)                            //(7)
                
                
              , OR(    different( Output( Input(1), pos) , Output(Input(2) , pos) ), //(8)
