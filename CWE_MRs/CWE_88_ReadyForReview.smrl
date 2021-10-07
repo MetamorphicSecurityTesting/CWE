@@ -52,21 +52,18 @@ MR CWE_88 {
 		    				
 
 		   OR(
+			   // Assuming that the input sequence continues after 'pos', we may observe the effects of the attack in the following inputs.
+               !different(Output(Input(1)).values.subList(pos,Input(1).actions.length)
+               		, Output(Input(2)).values.subList(pos,Input(1).actions.length) ) 
 
-               !different(Output(Input(1)), Output(Input(2)) ) // Assuming that the input sequence continues after “pos”, we may observe the effects of the attack in the following inputs.
-
-    , OR(
-
-                isError(Output(Input(2), pos)),                       
-
-                AND ( userCanRetrieveContent(action.getUser(), Output(Input(2),pos)),
-                	EQUAL(Output(Input(1)).values.subList(pos+1,size),Output(Input(2)).values.subList(pos+1,size))
-                   
-                    )
-
-    ))
-		    	   
-		    	
+    			, OR(
+					//If we have an error the system has spotted the attack
+                	isError(Output(Input(2), pos)),                       
+					//If the output is different, the user shall anyway be able to retrieve the provided content
+                	userCanRetrieveContent(action.getUser(), Output(Input(2)).values.subList(pos,size) )
+                
+				)
+			)//end-RHS-OR
 		);//end-IMPLIES
 	}//end-for
  }} 
