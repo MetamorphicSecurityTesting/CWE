@@ -32,10 +32,15 @@ package smrl.mr.owasp {
 MR CWE_757_OTG_CRYPST_004 {
  {
    for ( Action action : Input(1).actions() ){
-     IMPLIES ( ( isEncrypted( action ) &&
-	   EQUAL ( Input(2) , Input(1) ) &&
-	   Input(2).setUseWeakEncryption( true ) )  
-	   , different ( Output( Input(1) ), Output( Input(2) ) ) )
+   	
+     IMPLIES ( 
+     	( 
+     		notTried(action.url) &&
+     		isEncrypted( action ) &&
+	   		EQUAL ( Input(2) , Input(1) ) &&
+	   		Input(2).setUseWeakEncryption( true ) )  
+	   		, 
+	   		different ( Output( Input(1), action.position ), Output( Input(2), action.position ) ) )
    } 
  }
    
