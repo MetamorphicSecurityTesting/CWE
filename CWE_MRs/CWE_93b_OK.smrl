@@ -31,15 +31,18 @@ package smrl.mr.owasp {
  * 
  */
  
-MR CWE_93_b { 
+MR CWE_93b { 
  { 	
+ 	var sep="/";                                                     //(1)
+ 	for ( var par=0; par < 3; par++ ){                               //(2)
+ 		 
  	
     for ( Action action : Input(1).actions() ) {                      //(1)
 	  	var pos = action.getPosition();                               //(2)
        
-	    var newUrl = action.urlPath + CRLFAttackString();             //(3)  
+	    var newUrl = action.url + sep+ CRLFAttackString();                 //(3)  
 			IMPLIES( 
-				notTried( action.getUser(), newUrl )		&&	      //(4)	 					 
+				notTried( action.getUser(), action.url )		&&	      //(4)	 					 
 				EQUAL( Input(2), Input(1) ) &&					      //(5)
 			  	Input(2).actions().get(pos).setUrl( newUrl ) 	      //(6)
 			    ,
@@ -49,7 +52,9 @@ MR CWE_93_b {
 		    	
 		);//end-IMPLIES
 	}//end-for
- }
+ }//end-for
+		
+		sep=sep+"../";}
   
 }//end-MR
 }//end-package

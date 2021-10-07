@@ -38,7 +38,7 @@ MR CWE_90 {
  			IMPLIES(
  				notTried( parameterName, Input(2).actions().get(pos).getUrl() )    &&        //(5)
  				EQUAL(Input(2), Input(1))&&                                                  //(6)
- 				Input(2).actions().get(pos).setParameterValue( x, LDAPQueryString() )        //(7)
+ 				Input(2).actions().get(pos).setParameterValue( x, LDAPInjectionString() )        //(7)
  			      
  				,
  				

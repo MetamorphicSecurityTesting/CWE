@@ -25,7 +25,16 @@ package smrl.mr.owasp{
  * attacker access to the user's account through the active session.
  * 
  * Idea:
- * A good system s
+ * When a user login to the system, the system will create a new session for that person.
+ * Even if the user is active and asks for login e.g. from another system or another browser, the
+ * system should create the new session for the user.
+ * In this MR we are trying to implement this idea.
+ * We are looking for two logins in the system (like the examples that user logins from two different systems) without any logout 
+ * i.e. if the user does the logout, the system automatically will gives a new session; and we are testing the new session after doing a logout 
+ * in another MR. We will check that after the second login the system assigns a different
+ * session to the user or not, also the user should not be able to continue her actions
+ * after the second login.
+ * 
  * Considering that we have a user that is active and the attacker can steal the session.
  * The attacker will use the session to log in, and the system should not validate the session. 
  * After the second login the system should publish a new session for the user.
@@ -40,18 +49,19 @@ package smrl.mr.owasp{
  * (5) Sets the sub-sequence of actions to Input(3), from the first action after the login till the end.
  * (6) Makes sure that Input(3) starts with a login.
  * (7) Set the same session of Input(2) for the Input(3).
- * (8) The system should assign two different session IDs after the log in for Input(2) and Input(3)
- *      Or The system should invalidate the session of Input(2).
+ * (8) And the system should invalidate the session of Input(2) therefore the output of Input(3) at 
+ *     position 1 i.e., (the action performed after login – for which we used the session id of Input(2))
+ *     should be either an error message or different than the output of Input(1) for the same input.
  *   
  */ 
 MR CWE_610_384 {
 		{
-			for ( var x = 0; x < Input(1).actions().size(); x++ ){   //(1)
+			for ( var x = 0; x < Input(1).actions().size(); x++ ){                                                //(1)
 		
-				for ( var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){  //(2)
+				for ( var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){   //(2)
 					
 					//var sessionID =  Output(Input(1),x).getSession()
-					setResetBrowserBetweenInputs( false );                                                //(3)
+					setResetBrowserBetweenInputs( false );                                                        //(3)
 					//TODO: automating he invocation of setResetBrowserBetweenInputs( false ) could be an improvement to the language
 					//but the problem is also that, to specify the follow-up input, we need to partially execute it (we execute Input(2) before specifying Input(3)
 					//For this reason it might not be straightforward
@@ -64,28 +74,20 @@ MR CWE_610_384 {
 					//Input(3) L C D
 					
 					IMPLIES ( 
-						EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, y ) ) ) && //(4)
+						EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, y ) ) ) &&                          //(4)
 						EQUAL ( Input(3) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  && //(5)
 						Input(3).addAction(0,Input(1).actions().get(x)) && //(6) we start with a login
-						Input(3).actions().get(1).setSession( Output(Input(2),x).getSession() ) //(7) however, after the login we are forcing the browser to reuse the old session ID
+						Input(3).actions().get(1).setSession( Output(Input(2),x).getSession() )                      //(7) however, after the login we are forcing the browser to reuse the old session ID
 						
 						
 						
 						//EQUAL(Input(3), addAction(Input(2), y+1, Input(1).actions().get(y)))
 						 // configure the system to do not reset the state of selenium 
 						, 
-						//FABRIZIO: nou sure if it is "x" or "x+1"
-						AND( different ( Output(Input(2),x).getSession(),  Output(Input(3),0).getSession() ) //(8)
-						,
-						TRUE(Output(Input(2),1).getSession().isInvalid()) //(6)  //FABRIZIO: what is this supposed to do? 
-						                                                   //Nazanin: checks that the previous login(x) session has been invalidated (terminated).
-																		   //FABRIZIO: from technical perspect it does not appear to be feasible. MST work at the client side. You have no easy way to check if the session is valid, how do you plan to do it, concretely?
-																		   //Nazanin: Actually from the following website I assume that we can use the session.status to be "failed" or "timeout".
-																		   // https://www.browserstack.com/docs/automate/api-reference/selenium/session#get-session-list
-																		   // I also saw this on webdriver api documentation:
-																		   // exception selenium.common.exceptions.InvalidSessionIdException(msg=None, screen=None, stacktrace=None) //Bases: selenium.common.exceptions.WebDriverException
-																		   //Occurs if the given session id is not in the list of active sessions, meaning the session either does not exist or that itï¿½s not active.
-						)
+						//FABRIZIO: not sure if it is "x" or "x+1"
+						OR( different ( Output(Input(2),x+1).getSession(),  Output(Input(3),0).getSession())  // it can be AND as well
+							, isError(Output(Input(2),x+1)))               //(8)
+						
 					); //end-IMPLIES
 					
 					setResetBrowserBetweenInputs( true ); //FIXME: shall this be automatically performed by the framework?

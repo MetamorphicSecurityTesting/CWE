@@ -29,7 +29,7 @@ package smrl.mr.owasp{
  * (5) Creates the follow-up input
  * (6) Sets the SQL injection strings to the parameter of the action 
  * (7) Checks that the result of the follow-up input is error
- *     Or the follow-up input can has the right to access 
+ *     Or the follow-up input can retrieve the content that has the right to access 
  * 
  */ 
 MR CWE_89_943 {

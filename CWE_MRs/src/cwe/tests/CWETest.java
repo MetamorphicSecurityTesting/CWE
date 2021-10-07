@@ -13,13 +13,21 @@ import org.junit.Test;
 import smrl.mr.crawljax.WebOperationsProvider;
 import smrl.mr.language.MRBaseTest;
 import smrl.mr.owasp.CWE_138_150_OTG_AUTHZ_001b;
-import smrl.mr.owasp.CWE_15_341_639_OTG_AUTHZ_004;
-import smrl.mr.owasp.CWE_262_263;
-import smrl.mr.owasp.CWE_266_267_268_420_425_OTG_AUTHZ_002;
+import smrl.mr.owasp.CWE_262_263_309_324;
 import smrl.mr.owasp.CWE_276_277_OTG_AUTHZ_002d;
 import smrl.mr.owasp.CWE_280_755_OTG_AUTHZ_002e;
 import smrl.mr.owasp.CWE_284_OTG_AUTHN_004;
-import smrl.mr.owasp.CWE_471_472;
+import smrl.mr.owasp.CWE_289a;
+import smrl.mr.owasp.CWE_521;
+import smrl.mr.owasp.CWE_643_652;
+import smrl.mr.owasp.CWE_703_166_78_77_76_75_74;
+import smrl.mr.owasp.CWE_79;
+import smrl.mr.owasp.CWE_89_943;
+import smrl.mr.owasp.CWE_90;
+import smrl.mr.owasp.CWE_93a;
+import smrl.mr.owasp.CWE_93b;
+import smrl.mr.owasp.CWE_94_95;
+import smrl.mr.owasp.CWE_94_96;
 
 public class CWETest extends MRBaseTest {
 	
@@ -98,15 +106,52 @@ public class CWETest extends MRBaseTest {
 	
 	@Test
 	public void test_CWE_262_263() {// passed
-		super.test(provider,CWE_262_263.class);
+		super.test(provider,CWE_262_263_309_324.class);
 	}
-	*/
 	
 	@Test
-	public void test_CWE_471_472() {// passed
-		super.test(provider,CWE_471_472.class);
+	public void test_CWE_94_95() { //passed
+		super.test(provider,CWE_94_95.class);
+	}
+		
+	
+	@Test
+	public void test_CWE_93a() { //failed
+		super.test(provider,CWE_93a.class);
 	}
 	
+	@Test
+	public void test_CWE_93b() { //failed
+		super.test(provider,CWE_93b.class);
+	}
+
+	@Test
+	public void test_CWE_94_96() { //failed
+		super.test(provider,CWE_94_96.class);
+	}	
+	@Test
+	public void test_CWE_521() { //failed
+		super.test(provider,CWE_521.class);
+	}
+	
+	@Test
+	public void test_CWE_703_166_78_77_76_75_74() { //passed
+		super.test(provider,CWE_703_166_78_77_76_75_74.class);
+	}
+	
+	@Test
+	public void test_CWE_79() { //failed
+		super.test(provider,CWE_79.class);
+	}
+	@Test
+	public void test_CWE_90() { //failed
+		super.test(provider,CWE_90.class);
+	}
+	*/
+	@Test
+	public void test_CWE_643_652() { //failed
+		super.test(provider,CWE_643_652.class);
+	}
 	
 	public static String getCurrentTime() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  

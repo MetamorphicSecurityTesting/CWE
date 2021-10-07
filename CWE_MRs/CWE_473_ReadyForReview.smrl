@@ -45,7 +45,7 @@ package smrl.mr.owasp {
 	  		var new_url = current_url + global; //(5)
 	  			
   			IMPLIES(
-  				isNotAccessibleWithoutLogin(Input(1).actions().get(pos))&&   //(6)
+  				afterLogin(Input(1).actions().get(pos))&&   //(6)
   				EQUAL(Input(2),changeCredentials( Input(1),User() ) )&&		 //(7)
   				Input(2).actions().get(pos).setUrl( new_url )                //(8)
   				,
