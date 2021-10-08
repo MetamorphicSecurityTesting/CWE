@@ -18,10 +18,13 @@ import smrl.mr.owasp.CWE_276_277_OTG_AUTHZ_002d;
 import smrl.mr.owasp.CWE_280_755_OTG_AUTHZ_002e;
 import smrl.mr.owasp.CWE_284_OTG_AUTHN_004;
 import smrl.mr.owasp.CWE_289a;
+import smrl.mr.owasp.CWE_434;
 import smrl.mr.owasp.CWE_521;
+import smrl.mr.owasp.CWE_611;
 import smrl.mr.owasp.CWE_643_652;
 import smrl.mr.owasp.CWE_703_166_78_77_76_75_74;
 import smrl.mr.owasp.CWE_79;
+import smrl.mr.owasp.CWE_88;
 import smrl.mr.owasp.CWE_89_943;
 import smrl.mr.owasp.CWE_90;
 import smrl.mr.owasp.CWE_93a;
@@ -147,11 +150,32 @@ public class CWETest extends MRBaseTest {
 	public void test_CWE_90() { //failed
 		super.test(provider,CWE_90.class);
 	}
-	*/
+	
 	@Test
 	public void test_CWE_643_652() { //failed
 		super.test(provider,CWE_643_652.class);
 	}
+	
+	@Test
+	public void test_CWE_88() { //passed
+		super.test(provider,CWE_88.class);
+	}
+	
+	@Test
+	public void test_CWE_434() { //passed
+		super.test(provider,CWE_434.class);
+	}
+	
+	@Test
+	public void test_CWE_611() { //passed
+		super.test(provider,CWE_611.class);
+	}
+	*/
+	@Test
+	public void test_CWE_289a() { //passed
+		super.test(provider,CWE_289a.class);
+	}
+	
 	
 	public static String getCurrentTime() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
