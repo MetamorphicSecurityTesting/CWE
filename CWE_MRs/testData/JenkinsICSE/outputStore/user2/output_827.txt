@@ -1,0 +1,1 @@
+try1 #20 [Jenkins] Skip to content ENABLE AUTO REFRESH Jenkins try1 #20  Back to Project  Status  Changes  Console Output  View Build Information  Previous Build Started 4 mo 17 days ago Took 20 min on slave1 Build #20 (Mar 29, 2019 2:26:55 PM) No changes. Started by user admin Page generated: Aug 14, 2019 12:43:47 AM CESTREST APIJenkins ver. 2.121.1

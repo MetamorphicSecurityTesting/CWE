@@ -1,32 +1,32 @@
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 package smrl.mr.owasp{
 
 /**
- * CWE_definition:
+ * CWE-359:
  * 
  * The product does not properly prevent a person's private, personal information from being accessed by actors who either (1) are not explicitly authorized to 
  * access the information or (2) do not have the implicit consent of the person about whom the information is collected.
  * 
+ * CWE-313:
+ * The application stores sensitive information in cleartext in a file, or on disk. 
+ * 
  * Idea:
- * when we identify a page that can be accessed only by a user then the delta that we find in the entry the log file should not contain the data that is only available 
- * to the user; create a list of strings that can appear in all the pages that accessed by all users and we identify the keyword strings of them; if I access the page 
- * that is accessible by the user the delta of the log file should not contain the critical strings; preprocessing step we can retrieve the data that are critical. 
- * we can identify pages that are personal to each user. all users can see personal pages but with different content. we take URL and we take another user if the other 
- * cannot access the URL or the content is different then the delta in the log shall not contain the critical keywords by the (that can appear on the page of the original 
- * user any word that appears in the output or input of that page) original user.
+ * when we identify a page that can be accessed only by a user then it means that the information contained in it is reserved, thus the log generated when processing it should not contain reserved information.
+ * 
  * 
  * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1).
- * (2) Stores the parameters of the current action in a variable.
- * (3) Checks that the follow-up user is not the supervisor of Input(1).
- * (4) Verifies that the action is not available without login.
- * (5) Creates the follow-up input with different credentials.
- * (6) Verifies that the current url has not been seen before
- * (7) Checks that delta of the log file does not contain the critical strings of Input(1)
- *     or the result of the follow-up input is error
+ * (2) Creates a cache of the current status of the log file.
+ * (3) Verified that current action follows a login.
+ * (4) Verifies that the current action is reserved to the current user (i.e., a follow-up user cannot perform it)
+ * (5) Verifies that the current URL leads to some output
+ * (6) Verifies that the that new lines generated into the log file when processing the input (6b)
+ * 		do not include keywords that appear only in pages of the user and in particular in the page generated for the current action (6c).
  * 
  * 
  */ 
@@ -34,21 +34,39 @@ MR CWE_359_313 {
  {
 
  	for (Action action : Input(1).actions()){                                        //(1)
- 		var pos = action.getPosition();                                              //(2) 
+ 		 
  
+// 			IMPLIES(
+// 		
+// 				(!isSupervisorOf(User(), action.user)) &&                            //(3)
+// 				afterLogin(action) &&                                                //(4)
+// 				EQUAL(Input(2), changeCredentials(Input(1), User())) &&              //(5)
+// 			    notTried( Input(2), Input(2).actions().get(pos).getUrl() )           //(6)   
+// 				,
+// 				
+// 				OR(                                                                  //(7)
+//		    		isDeltaLogDifferent(Output(Input(2), pos),Output(Input(1), pos)) // Based on the implementation of the function the implementation of the MR may change.
+//		    		,
+//		    		isError(Output(Input(2), pos))
+//		    	)
+// 			);
+ 			
+ 			
+ 			
+ 			var initialLog = Log();		//(2)
+ 			
+ 						
  			IMPLIES(
- 		
- 				(!isSupervisorOf(User(), action.user)) &&                            //(3)
- 				afterLogin(action) &&                                                //(4)
- 				EQUAL(Input(2), changeCredentials(Input(1), User())) &&              //(5)
- 			    notTried( Input(2), Input(2).actions().get(pos).getUrl() )           //(6)   
- 				,
- 				
- 				OR(                                                                  //(7)
-		    		isDeltaLogDifferent(Output(Input(2), pos),Output(Input(1), pos)) // Based on the implementation of the function the implementation of the MR may change.
-		    		,
-		    		isError(Output(Input(2), pos))
-		    	)
+ 				afterLogin(action) &&                                                //(3)
+ 				cannotReachThroughGUI(User(),action.url)	&&						//(4)   
+ 				Output(Input(1),action.position).values.size > 0					//5
+ 				, 
+ 								
+				NOT ( containsAny( 													//(6a)
+						Log().newLines(initialLog), 								//(6b)
+						Output(Input(1),action.position).values.filter[ e | reservedKeywords(action.user).contains(e) ].toList() //(6c)
+				) )
+				
  			);
  		}
  	}

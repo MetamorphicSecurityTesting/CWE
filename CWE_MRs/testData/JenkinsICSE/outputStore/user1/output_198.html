@@ -1,0 +1,219 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head resurl="/static/11668b7b" data-rooturl="" data-resurl="/static/11668b7b"> 
+  <title>New Credentials [Jenkins]</title>
+  <meta name="ROBOTS" content="INDEX,NOFOLLOW">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+ <body data-model-type="com.cloudbees.plugins.credentials.CredentialsStoreAction$DomainWrapper" id="jenkins" class="*" data-version="2.121.1">
+  <iframe id="_yuiResizeMonitor" title="Text Resize Monitor" tabindex="-1" role="presentation" style="position: absolute; visibility: visible; background-color: transparent; border-width: 0px; width: 2em; height: 2em; left: 0px; top: -27px;"></iframe>
+  <div id="tt" class="*" style="z-index: 999; visibility: hidden;">
+   <div class="*"></div>
+  </div>
+  <a href="#skip2content" class="*">Skip to content</a>
+  <div id="page-head">
+   <div id="breadcrumbBar">
+    <div style="height: 26px;"></div>
+    <div class="*" style="position: fixed; top: 40px; left: 0px;">
+     <div class="*"></div>
+     <div class="*">
+      <div id="right-top-nav"></div>
+      <ul id="breadcrumbs">
+       <li class="*"><a href="/" class="*">Jenkins</a></li>
+       <li href="/" class="*"></li>
+       <li class="*"><a href="/user/user1/" class="*">User1</a></li>
+       <li class="*"></li>
+       <li class="*"><a href="/user/user1/credentials/" class="*">Credentials</a></li>
+       <li class="*"></li>
+       <li class="*"><a href="/user/user1/credentials/store/user/" class="*">User</a></li>
+       <li href="/user/user1/credentials/store/user/" class="*"></li>
+       <li class="*"><a href="/user/user1/credentials/store/user/domain/_/" class="*">Global credentials (unrestricted)</a></li>
+       <li href="/user/user1/credentials/store/user/domain/_/" class="*"></li>
+      </ul>
+      <div id="breadcrumb-menu-target"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="menuSelector"></div>
+  <div id="page-body" class="*">
+   <div id="side-panel">
+    <div id="tasks">
+     <div class="*">
+      <a href="../.." class="*"><img src="/static/11668b7b/images/24x24/up.png" style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="*"></a>&nbsp;
+      <a href="../.." class="*">Back to credential domains</a>
+     </div>
+     <div class="*">
+      <a href="newCredentials" class="*"><img src="/static/11668b7b/plugin/credentials/images/24x24/new-credential.png" style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="*"></a>&nbsp;
+      <a href="newCredentials" class="*"><b>Add Credentials</b></a>
+      <div class="*"></div>
+     </div>
+    </div>
+   </div>
+   <div id="main-panel">
+    <a name="skip2content"></a>
+    <form method="POST" autocomplete="off" name="newCredentials" action="createCredentials">
+     <j:local xmlns:j="jelly:core"></j:local>
+     <table width="100%">
+      <tbody>
+       <tr>
+        <td class="*">&nbsp;</td>
+        <td class="*">Kind</td>
+        <td class="*"><select class="*"><option value="0">Username with password</option><option value="1">Docker Host Certificate Authentication</option><option value="2">SSH Username with private key</option><option value="3">Secret file</option><option value="4">Secret text</option><option value="5">Certificate</option></select></td>
+        <td class="*"></td>
+       </tr>
+       <tr class="*">
+        <td colspan="2"></td>
+        <td colspan="2">
+         <table width="100%" name="credentials">
+          <tbody>
+           <tr class="*"></tr> 
+           <tr>
+            <td class="*">&nbsp;</td>
+            <td class="*">Username</td>
+            <td class="*"> <input name="_.username" type="text" class="*" value=""></td>
+            <td class="*"><a helpurl="/descriptor/com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl/help/username" href="#" class="*" tabindex="9999"><img src="/static/11668b7b/images/16x16/help.png" alt="Help for feature: Username" style="width: 16px; height: 16px; " class="*"></a></td>
+           </tr>
+           <tr class="*">
+            <td colspan="2"></td>
+            <td></td>
+            <td></td>
+           </tr>
+           <tr class="*">
+            <td></td>
+            <td colspan="2">
+             <div class="*">
+              Loading...
+             </div></td>
+            <td></td>
+           </tr>
+           <tr>
+            <td class="*">&nbsp;</td>
+            <td class="*">Password</td>
+            <td class="*"><input name="_.password" checkmethod="post" type="password" class="*" value=""></td>
+            <td class="*"><a helpurl="/descriptor/com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl/help/password" href="#" class="*" tabindex="9999"><img src="/static/11668b7b/images/16x16/help.png" alt="Help for feature: Password" style="width: 16px; height: 16px; " class="*"></a></td>
+           </tr>
+           <tr class="*">
+            <td colspan="2"></td>
+            <td></td>
+            <td></td>
+           </tr>
+           <tr class="*">
+            <td></td>
+            <td colspan="2">
+             <div class="*">
+              Loading...
+             </div></td>
+            <td></td>
+           </tr>
+           <tr>
+            <td class="*">&nbsp;</td>
+            <td class="*">ID</td>
+            <td class="*"> <input checkurl="'/user/user1/'+'descriptorByName/com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl/checkId'+qs(this).addThis().append('$provider=com.cloudbees.plugins.credentials.CredentialsSelectHelper%24UserContextResolver').append('$token=user1').toString()" name="_.id" type="text" class="*" value=""></td>
+            <td class="*"><a helpurl="/descriptor/com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl/help/id" href="#" class="*" tabindex="9999"><img src="/static/11668b7b/images/16x16/help.png" alt="Help for feature: ID" style="width: 16px; height: 16px; " class="*"></a></td>
+           </tr>
+           <tr class="*">
+            <td colspan="2"></td>
+            <td>
+             <div></div></td>
+            <td></td>
+           </tr>
+           <tr class="*">
+            <td></td>
+            <td colspan="2">
+             <div class="*">
+              Loading...
+             </div></td>
+            <td></td>
+           </tr>
+           <tr>
+            <td class="*">&nbsp;</td>
+            <td class="*">Description</td>
+            <td class="*"> <input name="_.description" type="text" class="*" value=""></td>
+            <td class="*"><a helpurl="/descriptor/com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl/help/description" href="#" class="*" tabindex="9999"><img src="/static/11668b7b/images/16x16/help.png" alt="Help for feature: Description" style="width: 16px; height: 16px; " class="*"></a></td>
+           </tr>
+           <tr class="*">
+            <td colspan="2"></td>
+            <td></td>
+            <td></td>
+           </tr>
+           <tr class="*">
+            <td></td>
+            <td colspan="2">
+             <div class="*">
+              Loading...
+             </div></td>
+            <td></td>
+           </tr>
+           <tr style="">
+            <td><input name="stapler-class" type="hidden" value="com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl"><input name="$class" type="hidden" value="com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl"></td>
+           </tr>
+           <tr class="*"></tr>
+           <tr class="*" field-disabled="true" style="display: none;"></tr>
+           <tr class="*" proxy="makeStaplerProxy('/$stapler/bound/1f1a3b44-a578-4808-92f9-3062d8fb3b72','195ba25d8cb739ceed3dfb2280b84717',['render'])" field-disabled="true" style="display: none;"></tr>
+           <tr style="display:none" field-disabled="true">
+            <td><input name="stapler-class" type="hidden" value="org.jenkinsci.plugins.docker.commons.credentials.DockerServerCredentials"><input name="$class" type="hidden" value="org.jenkinsci.plugins.docker.commons.credentials.DockerServerCredentials"></td>
+           </tr>
+           <tr class="*"></tr>
+           <tr class="*" field-disabled="true" style="display: none;"></tr>
+           <tr class="*" proxy="makeStaplerProxy('/$stapler/bound/68e885d4-fd40-4fc6-bd7d-e8b7c5c06b21','195ba25d8cb739ceed3dfb2280b84717',['render'])" field-disabled="true" style="display: none;"></tr>
+           <tr style="display:none" field-disabled="true">
+            <td><input name="stapler-class" type="hidden" value="com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey"><input name="$class" type="hidden" value="com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey"></td>
+           </tr>
+           <tr class="*"></tr>
+           <tr class="*" field-disabled="true" style="display: none;"></tr>
+           <tr class="*" proxy="makeStaplerProxy('/$stapler/bound/bbcf0563-0669-4afe-a9d6-318bbeb868e4','195ba25d8cb739ceed3dfb2280b84717',['render'])" field-disabled="true" style="display: none;"></tr>
+           <tr style="display:none" field-disabled="true">
+            <td><input name="stapler-class" type="hidden" value="org.jenkinsci.plugins.plaincredentials.impl.FileCredentialsImpl"><input name="$class" type="hidden" value="org.jenkinsci.plugins.plaincredentials.impl.FileCredentialsImpl"></td>
+           </tr>
+           <tr class="*"></tr>
+           <tr class="*" field-disabled="true" style="display: none;"></tr>
+           <tr class="*" proxy="makeStaplerProxy('/$stapler/bound/29d4b831-df6e-472c-95a2-6edc1b1a91fb','195ba25d8cb739ceed3dfb2280b84717',['render'])" field-disabled="true" style="display: none;"></tr>
+           <tr style="display:none" field-disabled="true">
+            <td><input name="stapler-class" type="hidden" value="org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl"><input name="$class" type="hidden" value="org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl"></td>
+           </tr>
+           <tr class="*"></tr>
+           <tr class="*" field-disabled="true" style="display: none;"></tr>
+           <tr class="*" proxy="makeStaplerProxy('/$stapler/bound/b904b16d-ca1f-48ea-9976-0841a4e6b698','195ba25d8cb739ceed3dfb2280b84717',['render'])" field-disabled="true" style="display: none;"></tr>
+           <tr style="display:none" field-disabled="true">
+            <td><input name="stapler-class" type="hidden" value="com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl"><input name="$class" type="hidden" value="com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl"></td>
+           </tr>
+           <tr class="*"></tr>
+          </tbody>
+         </table></td>
+       </tr>
+       <tr>
+        <td colspan="4">
+         <div style="height: 76px;"></div>
+         <div id="bottom-sticker" style="position: fixed; bottom: 101px; left: 18px;">
+          <div class="*"></div>
+          <div class="*">
+           <span class="*" id="yui-gen1" name="Submit"><span class="*"><button type="button" tabindex="0" id="yui-gen1-button">OK</button></span></span>
+          </div>
+         </div></td>
+       </tr>
+      </tbody>
+     </table>
+     <div>
+      <input type="hidden" name="Jenkins-Crumb" value="195ba25d8cb739ceed3dfb2280b84717">
+     </div>
+     <div>
+      <input type="hidden" name="json" value="init">
+     </div>
+    </form>
+   </div>
+  </div>
+  <footer>
+   <div class="*">
+    <div class="*">
+     <div class="*" id="footer"></div>
+     <div class="*">
+      <span class="*">Page generated: Aug 14, 2019 12:04:47 AM CEST</span>
+      <span class="*"><a href="api/">REST API</a></span>
+      <span class="*"><a href="https://jenkins.io/">Jenkins ver. 2.121.1</a></span>
+     </div>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>

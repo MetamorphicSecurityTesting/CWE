@@ -1,0 +1,20 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.test {
+ 
+
+MR TEST_RESERVED_KEYWORDS { 
+ { 
+ 	{
+ 		System.out.println( reservedKeywords(User()) );
+	} 	
+	
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+

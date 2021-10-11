@@ -1,0 +1,476 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head resurl="/static/11668b7b" data-rooturl="" data-resurl="/static/11668b7b"> 
+  <title>Manage Jenkins [Jenkins]</title>
+  <meta name="ROBOTS" content="INDEX,NOFOLLOW">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+ <body data-model-type="hudson.model.Hudson" id="jenkins" class="*" data-version="2.121.1">
+  <iframe id="_yuiResizeMonitor" title="Text Resize Monitor" tabindex="-1" role="presentation" style="position: absolute; visibility: visible; background-color: transparent; border-width: 0px; width: 2em; height: 2em; left: 0px; top: -29px;"></iframe>
+  <div id="tt" class="*" style="z-index: 999; visibility: hidden;">
+   <div class="*"></div>
+  </div>
+  <a href="#skip2content" class="*">Skip to content</a>
+  <div id="page-head">
+   <div id="breadcrumbBar">
+    <div style="height: 28px;"></div>
+    <div class="*" style="position: fixed; top: 40px; left: 0px;">
+     <div class="*"></div>
+     <div class="*">
+      <div id="right-top-nav">
+       <div id="right-top-nav">
+        <div class="*">
+         <a href="?auto_refresh=true">ENABLE AUTO REFRESH</a>
+        </div>
+       </div>
+      </div>
+      <ul id="breadcrumbs">
+       <li class="*"><a href="/" class="*">Jenkins</a></li>
+       <li href="/" class="*"></li>
+      </ul>
+      <div id="breadcrumb-menu-target"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="menuSelector"></div>
+  <div id="page-body" class="*">
+   <div id="side-panel">
+    <div id="tasks">
+     <div class="*">
+      <a href="/view/all/newJob" class="*"><img src="/static/11668b7b/images/24x24/new-package.png" style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="*"></a>&nbsp;
+      <a href="/view/all/newJob" class="*">New Item</a>
+     </div>
+     <div class="*">
+      <a href="/asynchPeople/" class="*"><img src="/static/11668b7b/images/24x24/user.png" style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="*"></a>&nbsp;
+      <a href="/asynchPeople/" class="*">People</a>
+     </div>
+     <div class="*">
+      <a href="/view/all/builds" class="*"><img src="/static/11668b7b/images/24x24/notepad.png" style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="*"></a>&nbsp;
+      <a href="/view/all/builds" class="*">Build History</a>
+     </div>
+     <div class="*">
+      <a href="/projectRelationship" class="*"><img src="/static/11668b7b/images/24x24/search.png" style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="*"></a>&nbsp;
+      <a href="/projectRelationship" class="*">Project Relationship</a>
+     </div>
+     <div class="*">
+      <a href="/fingerprintCheck" class="*"><img src="/static/11668b7b/images/24x24/fingerprint.png" style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="*"></a>&nbsp;
+      <a href="/fingerprintCheck" class="*">Check File Fingerprint</a>
+     </div>
+     <div class="*">
+      <a href="/manage" class="*"><img src="/static/11668b7b/images/24x24/gear2.png" style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="*"></a>&nbsp;
+      <a href="/manage" class="*"><b>Manage Jenkins</b></a>
+      <div class="*"></div>
+     </div>
+     <div class="*">
+      <a href="/me/my-views" class="*"><img src="/static/11668b7b/images/24x24/user.png" style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="*"></a>&nbsp;
+      <a href="/me/my-views" class="*">My Views</a>
+     </div>
+     <div class="*">
+      <a href="/credentials" class="*"><img src="/static/11668b7b/plugin/credentials/images/24x24/credentials.png" style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="*"></a>&nbsp;
+      <a href="/credentials" class="*">Credentials</a>
+     </div>
+     <div class="*">
+      <a href="http://localhost:8080/newView" class="*"><img src="/static/11668b7b/plugin/cloudbees-folder/images/24x24/folder.png" style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="*"></a>&nbsp;
+      <a href="http://localhost:8080/newView" class="*">New View</a>
+     </div>
+    </div>
+    <div id="buildQueue" class="*">
+     <div class="*">
+      <div class="*">
+       <a href="/toggleCollapse?paneId=buildQueue" title="collapse" class="*"><img src="/static/11668b7b/images/16x16/collapse.png" alt="collapse" style="width: 16px; height: 16px; " class="*"></a>Build Queue (1)
+      </div>
+     </div>
+     <div class="*">
+      <table class="*">
+       <tbody>
+        <tr>
+         <td class="*" width="100%" style="white-space: normal;"><a tooltip="Started by user user2<br>slave1 is offline<br>Waiting for 10 min" href="/job/listRoot/" class="*" title="Started by user user2<br>slave1 is offline<br>Waiting for 10 min">listRoot</a> &nbsp; <a href="https://jenkins.io/redirect/troubleshooting/executor-starvation"><img src="/static/11668b7b/images/16x16/hourglass.png" style="width: 16px; height: 16px; " class="*"></a></td>
+         <td class="*" width="16" align="center" valign="middle"><a onclick="if(confirm(&quot;Are you sure you want to cancel the queued run of listRoot?&quot;))new Ajax.Request(&quot;/queue/cancelItem?id=30&quot;); return false;" href="/queue/cancelItem?id=30" class="*"><img src="/static/11668b7b/images/16x16/stop.png" alt="cancel this build" style="width: 16px; height: 16px; " class="*"></a></td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div id="executors" class="*">
+     <div class="*">
+      <div class="*">
+       <a href="/toggleCollapse?paneId=executors" title="collapse" class="*"><img src="/static/11668b7b/images/16x16/collapse.png" alt="collapse" style="width: 16px; height: 16px; " class="*"></a>
+       <a href="/computer/">Build Executor Status</a>
+      </div>
+     </div>
+     <div class="*">
+      <table class="*">
+       <colgroup>
+        <col width="30">
+        <col width="200*">
+        <col width="24">
+       </colgroup>
+       <tbody>
+        <tr>
+         <th class="*" colspan="3"><a href="/computer/(master)/" class="*"><img src="/static/11668b7b/images/16x16/computer.png" style="width: 16px; height: 16px; " class="*">&nbsp;master</a></th>
+        </tr>
+        <tr>
+         <td class="*" align="right" style="vertical-align: top">1</td>
+         <td class="*">Idle</td>
+         <td class="*"></td>
+         <td class="*"></td>
+        </tr>
+        <tr>
+         <td class="*" align="right" style="vertical-align: top">2</td>
+         <td class="*">Idle</td>
+         <td class="*"></td>
+         <td class="*"></td>
+        </tr>
+        <tr>
+         <th class="*" colspan="3"><a href="/computer/slave1/" class="*"><img src="/static/11668b7b/images/16x16/computer-x.png" style="width: 16px; height: 16px; " class="*">&nbsp;slave1</a>&nbsp; (offline)</th>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div id="main-panel">
+    <a name="skip2content"></a>
+    <h1>Manage Jenkins</h1>
+    <div class="*">
+     <div class="*" role="alert">
+      <form method="post" name="hudson.PluginWrapper$PluginWrapperAdministrativeMonitor" action="/administrativeMonitor/hudson.PluginWrapper$PluginWrapperAdministrativeMonitor/act">
+       <span class="*" id="yui-gen1" name="correct"><span class="*"><button type="button" tabindex="0" id="yui-gen1-button">Correct</button></span></span>
+       <div>
+        <input type="hidden" name="Jenkins-Crumb" value="a7ce4be476fb4dccb13bd99e04851b2e">
+       </div>
+       <div>
+        <input type="hidden" name="json" value="init">
+       </div>
+      </form>
+      <p><strong>Dependency errors:</strong></p>
+      <p>Some plugins could not be loaded due to unsatisfied dependencies. Fix these issues and restart Jenkins to restore the functionality provided by these plugins.</p>
+      <dl>
+       <dt>
+        Ant Plugin version 1.9
+       </dt>
+       <dd>
+        You must update Jenkins from v2.121.1 to v2.121.2 or later to run this plugin.
+       </dd>
+      </dl>
+     </div>
+     <div class="*">
+       New version of Jenkins (2.176.2) is available for 
+      <a href="http://updates.jenkins-ci.org/download/war/2.176.2/jenkins.war">download</a> (
+      <a href="https://jenkins.io/changelog-stable">changelog</a>). 
+     </div>
+     <span id="message">
+      <div></div></span>
+     <div class="*" role="alert">
+      <form method="post" action="/administrativeMonitor/jenkins.security.UpdateSiteWarningsMonitor/forward">
+       <span class="*" id="yui-gen2" name="fix"><span class="*"><button type="button" tabindex="0" id="yui-gen2-button">Go to plugin manager</button></span></span>
+       <span class="*" id="yui-gen3" name="configure"><span class="*"><button type="button" tabindex="0" id="yui-gen3-button">Configure which of these warnings are shown</button></span></span>
+       <div>
+        <input type="hidden" name="Jenkins-Crumb" value="a7ce4be476fb4dccb13bd99e04851b2e">
+       </div>
+       <div>
+        <input type="hidden" name="json" value="init">
+       </div>
+      </form>Warnings have been published for the following currently installed components.
+      <dl>
+       <dt>
+        Jenkins 2.121.1 core and libraries
+       </dt>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-07-17/" target="_blank">Multiple security vulnerabilities in Jenkins 2.185 and earlier, and LTS 2.176.1 and earlier</a>
+       </dd>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2018-12-05/" target="_blank">Multiple security vulnerabilities in Jenkins 2.153 and earlier, and LTS 2.138.3 and earlier</a>
+       </dd>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2018-07-18/" target="_blank">Multiple security vulnerabilities in Jenkins 2.132 and earlier, and LTS 2.121.1 and earlier</a>
+       </dd>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-01-16/" target="_blank">Multiple security vulnerabilities in Jenkins 2.159 and earlier, and LTS 2.150.1 and earlier</a>
+       </dd>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-04-10/" target="_blank">Multiple security vulnerabilities in Jenkins 2.171 and earlier, and LTS 2.164.1 and earlier</a>
+       </dd>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2018-10-10/" target="_blank">Multiple security vulnerabilities in Jenkins 2.145 and earlier, and LTS 2.138.1 and earlier</a>
+       </dd>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2018-08-15/" target="_blank">Multiple security vulnerabilities in Jenkins 2.137 and earlier, and LTS 2.121.2 and earlier</a>
+       </dd>
+      </dl>
+      <dl>
+       <dt>
+        <a href="https://wiki.jenkins-ci.org/display/JENKINS/Matrix+Project+Plugin" target="_blank">Matrix Project Plugin 1.13</a>
+       </dt>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-03-06/#SECURITY-1339" target="_blank">Script security sandbox bypass</a>
+       </dd>
+       <dt>
+        <a href="https://wiki.jenkins.io/display/JENKINS/Pipeline+Groovy+Plugin" target="_blank">Pipeline: Groovy 2.63</a>
+       </dt>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-03-06/#SECURITY-1336%20(2)" target="_blank">Script security sandbox bypass</a>
+       </dd>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-03-25/#SECURITY-1353" target="_blank">Script Security sandbox bypass</a>
+       </dd>
+       <dt>
+        <a href="https://wiki.jenkins.io/display/JENKINS/Credentials+Plugin" target="_blank">Credentials Plugin 2.1.18</a>
+       </dt>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-05-21/#SECURITY-1322" target="_blank">Certificate file read vulnerability</a>
+       </dd>
+       <dt>
+        <a href="https://wiki.jenkins.io/display/JENKINS/Pipeline+Shared+Groovy+Libraries+Plugin" target="_blank">Pipeline: Shared Groovy Libraries 2.13</a>
+       </dt>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-07-31/#SECURITY-1422" target="_blank">Missing permission check</a>
+       </dd>
+       <dt>
+        <a href="https://wiki.jenkins-ci.org/display/JENKINS/Email-ext+plugin" target="_blank">Email Extension Plugin 2.64</a>
+       </dt>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-03-06/#SECURITY-1340" target="_blank">Script security sandbox bypass</a>
+       </dd>
+       <dt>
+        <a href="http://wiki.jenkins-ci.org/display/JENKINS/PAM+Authentication+Plugin" target="_blank">PAM Authentication plugin 1.4</a>
+       </dt>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-05-21/#SECURITY-1316" target="_blank">Missing permission check allowed obtaining limited information about system configuration</a>
+       </dd>
+       <dt>
+        <a href="https://wiki.jenkins.io/display/JENKINS/Script+Security+Plugin" target="_blank">Script Security Plugin 1.53</a>
+       </dt>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-03-25/#SECURITY-1353" target="_blank">Script Security sandbox bypass</a>
+       </dd>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-03-06/#SECURITY-1336%20(1)" target="_blank">Script security sandbox bypass</a>
+       </dd>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-07-31/#SECURITY-1465%20(2)" target="_blank">Sandbox bypass through method pointer expressions</a>
+       </dd>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-07-31/#SECURITY-1465%20(1)" target="_blank">Sandbox bypass through type casts</a>
+       </dd>
+       <dt>
+        <a href="https://wiki.jenkins-ci.org/display/JENKINS/Token+Macro+Plugin" target="_blank">Token Macro Plugin 2.6</a>
+       </dt>
+       <dd>
+        <a href="https://jenkins.io/security/advisory/2019-06-11/#SECURITY-1399" target="_blank">XML External Entity processing vulnerability</a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+    <div class="*"> 
+     <a href="configure" title="Configure System"><img src="/static/11668b7b/images/48x48/gear2.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        Configure System
+       </dt>
+       <dd>
+        Configure global settings and paths.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="configureSecurity" title="Configure Global Security"><img src="/static/11668b7b/images/48x48/secure.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        Configure Global Security
+       </dt>
+       <dd>
+        Secure Jenkins; define who is allowed to access/use the system.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="configureCredentials" title="Configure Credentials"><img src="/static/11668b7b/plugin/credentials/images/48x48/credentials.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        Configure Credentials
+       </dt>
+       <dd>
+        Configure the credential providers and types
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="configureTools" title="Global Tool Configuration"><img src="/static/11668b7b/images/48x48/setting.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        Global Tool Configuration
+       </dt>
+       <dd>
+        Configure tools, their locations and automatic installers.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a onclick="confirmPOST_id1289(true, 'reload', 'Reload Configuration from Disk: are you sure?')" href="#"><img src="/static/11668b7b/images/48x48/refresh.png" class="*">
+      <dl>
+       <dt>
+        Reload Configuration from Disk
+       </dt>
+       <dd>
+        Discard all the loaded data in memory and reload everything from file system. Useful when you modified config files directly on disk.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="pluginManager" title="Manage Plugins"><img src="/static/11668b7b/images/48x48/plugin.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        Manage Plugins
+       </dt>
+       <dd>
+        Add, remove, disable or enable plugins that can extend the functionality of Jenkins.
+       </dd>
+       <dd>
+        <i class="*" aria-hidden="true" style="color: red"></i> There are updates available 
+       </dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="systemInfo" title="System Information"><img src="/static/11668b7b/images/48x48/computer.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        System Information
+       </dt>
+       <dd>
+        Displays various environmental information to assist trouble-shooting.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="log" title="System Log"><img src="/static/11668b7b/images/48x48/clipboard.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        System Log
+       </dt>
+       <dd>
+        System log captures output from 
+        <code>java.util.logging</code> output related to Jenkins.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="load-statistics" title="Load Statistics"><img src="/static/11668b7b/images/48x48/monitor.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        Load Statistics
+       </dt>
+       <dd>
+        Check your resource utilization and see if you need more computers for your builds.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="cli" title="Jenkins CLI"><img src="/static/11668b7b/images/48x48/terminal.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        Jenkins CLI
+       </dt>
+       <dd>
+        Access/manage Jenkins from your shell, or from your script.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="script" title="Script Console"><img src="/static/11668b7b/images/48x48/notepad.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        Script Console
+       </dt>
+       <dd>
+        Executes arbitrary script for administration/trouble-shooting/diagnostics.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="computer" title="Manage Nodes"><img src="/static/11668b7b/images/48x48/network.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        Manage Nodes
+       </dt>
+       <dd>
+        Add, remove, control and monitor the various nodes that Jenkins runs jobs on.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="about" title="About Jenkins"><img src="/static/11668b7b/images/48x48/help.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        About Jenkins
+       </dt>
+       <dd>
+        See the version and license information.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="administrativeMonitor/OldData/" title="Manage Old Data"><img src="/static/11668b7b/images/48x48/document.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        Manage Old Data
+       </dt>
+       <dd>
+        Scrub configuration files to remove remnants from old plugins and earlier versions.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="securityRealm/" title="Manage Users"><img src="/static/11668b7b/images/48x48/user.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        Manage Users
+       </dt>
+       <dd>
+        Create/delete/modify users that can log in to this Jenkins
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+    <div class="*"> 
+     <a href="quietDown" class="*"><img src="/static/11668b7b/images/48x48/system-log-out.png" alt="manage-option" class="*">
+      <dl>
+       <dt>
+        Prepare for Shutdown
+       </dt>
+       <dd>
+        Stops executing new builds, so that the system can be eventually shut down safely.
+       </dd>
+       <dd></dd>
+      </dl></a>
+    </div>
+   </div>
+  </div>
+  <footer>
+   <div class="*">
+    <div class="*">
+     <div class="*" id="footer"></div>
+     <div class="*">
+      <span class="*">Page generated: Aug 14, 2019 12:02:42 AM CEST</span>
+      <span class="*"><a href="api/">REST API</a></span>
+      <span class="*"><a href="https://jenkins.io/">Jenkins ver. 2.121.1</a></span>
+     </div>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>

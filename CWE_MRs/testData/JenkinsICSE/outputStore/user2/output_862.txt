@@ -1,0 +1,1 @@
+slave1 log [Jenkins] Skip to content ENABLE AUTO REFRESH Jenkins Nodes slave1  Back to List  Status  Build History  Load Statistics Build Executor Status Page generated: Aug 14, 2019 12:46:00 AM CESTREST APIJenkins ver. 2.121.1

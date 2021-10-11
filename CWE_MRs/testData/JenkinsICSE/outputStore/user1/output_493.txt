@@ -1,0 +1,38 @@
+{
+  "_class" : "hudson.slaves.SlaveComputer",
+  "actions" : [
+    
+  ],
+  "assignedLabels" : [
+    {
+      "name" : "slave1"
+    }
+  ],
+  "description" : "slave1 node",
+  "displayName" : "slave1",
+  "executors" : [
+    {
+      
+    }
+  ],
+  "icon" : "computer-flash.gif",
+  "iconClassName" : "icon-computer-x",
+  "idle" : True,
+  "jnlpAgent" : False,
+  "launchSupported" : True,
+  "loadStatistics" : {
+    "_class" : "hudson.model.Label$1"
+  },
+  "manualLaunchAllowed" : True,
+  "monitorData" : {
+    
+  },
+  "numExecutors" : 1,
+  "offline" : True,
+  "offlineCause" : None,
+  "offlineCauseReason" : "",
+  "oneOffExecutors" : [
+    
+  ],
+  "temporarilyOffline" : False
+}

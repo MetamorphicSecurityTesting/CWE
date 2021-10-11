@@ -1,0 +1,38 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import static org.junit.Assert.assertTrue;
+
+package smrl.mr.test {
+ 
+
+MR TEST_LOG_NEW_LINES { 
+ { 
+ 	{
+ 		var atLeastOnce = false;
+ 		for (Action action : Input(1).actions()){   
+ 			
+ 			
+			if ( action.url.equals( "http://192.168.56.102:8080/computer/slave1/launchSlaveAgent" ) ){
+			var initialLog = Log();		//(2)
+			Output(Input(1),action.position); 			
+ 			var newLines = Log().newLines(initialLog);
+ 			
+ 			System.out.println(newLines);	
+ 			
+ 			
+ 			assertTrue ( atLeastOnce || newLines.size > 0 );	
+ 			
+ 			
+ 			
+ 					
+ 			}
+ 			}
+ 		}
+  } 
+}//end-MR
+}//end-package
+
+
+
+
+
