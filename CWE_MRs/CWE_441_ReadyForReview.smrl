@@ -18,16 +18,14 @@ package smrl.mr.owasp{
  *** Real case: https://curl.se/docs/CVE-2009-0037.html
  * 
  * Comments:
- * (1) For loop iterates for 3 times to cover multiple occurrence of the special character as well.             // WHY???
  * (2) Second for loop iterates over all actions of the Input(1).
  * (3) Stores the parameters of the current action in a variable.
  * (4) Defines the new URL.
- * (5) Verifies whether the current action contains any protocols.
- * (6) Checks if the current action has not been performed.
- * (7) Defines a follow-up input that is a copy of the source input.
- * (8) Adds to the end of the current URL a relative path to a file.
- * (9) Verifies that the given path was not tried in a previous execution of the loop (to speed up).
- * (10) Verifies that the follow-up input does not lead to a file 
+ * (5) Checks if the current action has not been performed.
+ * (6) Defines a follow-up input that is a copy of the source input.
+ * (7) Adds to the end of the current URL a relative path to a file.
+ * (8) Verifies that the given path was not tried in a previous execution of the loop (to speed up).
+ * (9) Verifies that the follow-up input does not lead to a file 
  *      Or the returned file is something that the user has the right to access.
  *      Or the system shows an error page.
 
@@ -35,29 +33,24 @@ package smrl.mr.owasp{
  * 
  */ 
 MR CWE_441 {
- {
- 
- 	for ( var par=0; par < 3; par++ ){                                                   //(1)
- 		 
+ { 
 		for ( Action action : Input(1).actions() ){                                      //(2)
 			 
 			var pos = action.getPosition();                                              //(3)
 			var newUrl = "scp://" + RandomFilePath();                                    //(4)   //Nazanin: scp://name:passwd@host/a'... how to define the first protocol? is this always the same? I mean can we use 'scp://' for all newUrls?
 			  
 			IMPLIES(
-				URLContainProtocol(action.getUrl())&&                                    //(5)
-				notTried(action.user, Input(1).actions().get(pos).getUrl())&&            //(6)
-				EQUAL( Input(2), Input(1) ) &&					                         //(7)
-			  	Input(2).actions().get(pos).setUrl( newUrl )	                         //(8)
+				
+				notTried(action.user, Input(1).actions().get(pos).getUrl())&&            //(5)
+				EQUAL( Input(2), Input(1) ) &&					                         //(6)
+			  	Input(2).actions().get(pos).setUrl( newUrl )	                         //(7)
 			    ,
 			    OR(
-		    		 isError(Output(Input(2), pos)),                                     //(9)                  
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))      //(10)
+		    		 isError(Output(Input(2), pos)),                                     //(8)                  
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))      //(9)
 		    	)
 			);//end-IMPLIES
 		}//end-for
-		
-	}//end-for
  }
 }//end-MR
 }

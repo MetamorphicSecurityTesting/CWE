@@ -30,8 +30,8 @@ public class SystemTests extends MRBaseTest {
 		System.out.println("*** Starting time: " + getCurrentTime() +" ***");
 
 		//by default, the SUT is the Jenkins
-//		String configFile = "./testData/JenkinsICSE/jenkinsSysConfigDEMO.json";
-		String configFile = "./testData/JenkinsICSE/jenkinsSysConfigDEMO.FABRIZIO.json";
+		String configFile = "./testData/JenkinsICSE/jenkinsSysConfigDEMO.json";
+	//	String configFile = "./testData/JenkinsICSE/jenkinsSysConfigDEMO.FABRIZIO.json";
 
 		provider = new WebOperationsProvider(configFile);
 	}

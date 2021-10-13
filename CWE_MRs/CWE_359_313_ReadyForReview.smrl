@@ -15,7 +15,8 @@ package smrl.mr.owasp{
  * The application stores sensitive information in cleartext in a file, or on disk. 
  * 
  * Idea:
- * when we identify a page that can be accessed only by a user then it means that the information contained in it is reserved, thus the log generated when processing it should not contain reserved information.
+ * when we identify a page that can be accessed only by a user then it means that the information contained in it is 
+ * reserved, thus the log generated when processing it should not contain reserved information.
  * 
  * 
  * 
