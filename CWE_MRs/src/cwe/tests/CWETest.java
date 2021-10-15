@@ -19,7 +19,6 @@ import smrl.mr.owasp.CWE_276_277_OTG_AUTHZ_002d;
 import smrl.mr.owasp.CWE_280_755_OTG_AUTHZ_002e;
 import smrl.mr.owasp.CWE_284_OTG_AUTHN_004;
 import smrl.mr.owasp.CWE_286_OTG_AUTHZ_002c;
-import smrl.mr.owasp.CWE_287a_OTG_AUTHN_001;
 import smrl.mr.owasp.CWE_288_287b_319_OTG_AUTHN_010;
 import smrl.mr.owasp.CWE_289a;
 import smrl.mr.owasp.CWE_289b_647;
