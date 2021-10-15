@@ -36,7 +36,7 @@ MR CWE_757_OTG_CRYPST_004_F {
      IMPLIES ( 
      	( 
      		notTried(action.url) &&
-     		//isEncrypted( action ) &&
+     		isEncrypted( action ) &&
 	   		EQUAL ( Input(2) , Input(1) ) &&
 	   		Input(2).setUseWeakEncryption( true ) )  
 	   		, 
