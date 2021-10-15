@@ -13,17 +13,24 @@ import org.junit.Test;
 import smrl.mr.crawljax.WebOperationsProvider;
 import smrl.mr.language.MRBaseTest;
 import smrl.mr.owasp.CWE_138_150_OTG_AUTHZ_001b;
+import smrl.mr.owasp.CWE_258;
 import smrl.mr.owasp.CWE_262_263_309_324;
 import smrl.mr.owasp.CWE_276_277_OTG_AUTHZ_002d;
 import smrl.mr.owasp.CWE_280_755_OTG_AUTHZ_002e;
 import smrl.mr.owasp.CWE_284_OTG_AUTHN_004;
+import smrl.mr.owasp.CWE_286_OTG_AUTHZ_002c;
+import smrl.mr.owasp.CWE_287a_OTG_AUTHN_001;
+import smrl.mr.owasp.CWE_288_287b_319_OTG_AUTHN_010;
 import smrl.mr.owasp.CWE_289a;
+import smrl.mr.owasp.CWE_289b_647;
+import smrl.mr.owasp.CWE_302c;
 import smrl.mr.owasp.CWE_314;
 import smrl.mr.owasp.CWE_352_Fabrizio;
 import smrl.mr.owasp.CWE_359_313;
 import smrl.mr.owasp.CWE_434;
 import smrl.mr.owasp.CWE_521;
 import smrl.mr.owasp.CWE_599;
+import smrl.mr.owasp.CWE_610_384;
 import smrl.mr.owasp.CWE_611;
 import smrl.mr.owasp.CWE_643_652;
 import smrl.mr.owasp.CWE_703_166_78_77_76_75_74;
@@ -32,6 +39,7 @@ import smrl.mr.owasp.CWE_79;
 import smrl.mr.owasp.CWE_88;
 import smrl.mr.owasp.CWE_89_943;
 import smrl.mr.owasp.CWE_90;
+import smrl.mr.owasp.CWE_923_297;
 import smrl.mr.owasp.CWE_93a;
 import smrl.mr.owasp.CWE_93b;
 import smrl.mr.owasp.CWE_94_95;
@@ -167,7 +175,7 @@ public class CWETest extends MRBaseTest {
 	}
 	
 	@Test
-	public void test_CWE_434() { //passed
+	public void test_CWE_434() { //passed             ///20
 		super.test(provider,CWE_434.class);
 	}
 	
@@ -185,21 +193,68 @@ public class CWETest extends MRBaseTest {
 	public void test_CWE_757() {  // not working
 		super.test(provider,CWE_757_OTG_CRYPST_004.class);
 	}
-   
-	
-	
-
-
-	
+ 	
 	@Test
 	public void test_CWE_352() {  //passed
 		super.test(provider,CWE_352_Fabrizio.class);
 	}
-	*/
+	
+	//// Thursday OCT 14
+	
 	@Test
-	public void test_CWE_599() {  // error
-		super.test(provider,CWE_599.class);
+	public void test_CWE_610_384() {               //******** error
+		super.test(provider,CWE_610_384.class);
 	}
+	
+	@Test
+	public void test_CWE_89_943() {  // passed
+		super.test(provider,CWE_89_943.class);
+	}
+	
+	@Test
+	public void test_CWE_923_297() {  // passed
+		super.test(provider,CWE_923_297.class);
+	}
+	
+	@Test
+	public void test_CWE_258() {  // passed
+		super.test(provider,CWE_258.class);
+	}
+	
+	@Test
+	public void test_CWE_286() {  //passed
+		super.test(provider,CWE_286_OTG_AUTHZ_002c.class);
+	}
+	
+	@Test
+	public void test_CWE_287a() {  //passed
+		super.test(provider,CWE_287a_OTG_AUTHN_001.class);
+	}
+	
+	
+	@Test
+	public void test_CWE_288_287b_319() {  //passed
+		super.test(provider,CWE_288_287b_319_OTG_AUTHN_010.class);
+	}
+	
+	@Test
+	public void test_CWE_289b() {  //failed                                //32
+		super.test(provider,CWE_289b_647.class);
+	}
+	
+	
+	
+*/
+	
+	@Test
+	public void test_CWE_302() {  //passed
+		super.test(provider,CWE_302c.class);
+	}
+	
+	
+	
+	
+	
 	
 	public static String getCurrentTime() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  

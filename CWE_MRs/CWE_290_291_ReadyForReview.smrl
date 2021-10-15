@@ -50,10 +50,14 @@ MR CWE_290_291{
 	    	  && Input(2).actions.get(action.position).setSession(null)      //(5)
 	    	  
 		    ,
-		    AND(!isError(Output(Input(1), pos)),                             //(6) 
+		    AND(                                                             //(6)
+		    	  OR(
+		    		!isError(Output(Input(1), pos)),                      
+		    	    userCanRetrieveContent( action.user, Output(Input(1),pos) )     
+		    ),                         
 		           OR(                                                       
-		    	isError(Output(Input(2), pos)),
-		    	different ( Output(Input(1),pos),  Output(Input(2),pos))
+		    	    isError(Output(Input(2), pos)),
+		    	    different ( Output(Input(1),pos),  Output(Input(2),pos))
 		    	
 		    	))
 		    	
