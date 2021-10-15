@@ -48,18 +48,18 @@ MR CWE_290_291{
 	          afterLogin(action)                                             //(3)  	 				
 	          &&  EQUAL ( Input(2), Input(1) )	                             //(4)	 
 	    	  && Input(2).actions.get(action.position).setSession(null)      //(5)
-	    	  
+	    	  && userCanRetrieveContent( action.user, Output(Input(1),pos) )     
 		    ,
-		    AND(                                                             //(6)
-		    	  OR(
-		    		!isError(Output(Input(1), pos)),                      
-		    	    userCanRetrieveContent( action.user, Output(Input(1),pos) )     
-		    ),                         
+		                                                                //(6)
+		    	  
+		    	//	!isError(Output(Input(1), pos)),                      
+		    	//    userCanRetrieveContent( action.user, Output(Input(1),pos)      
+		                             
 		           OR(                                                       
 		    	    isError(Output(Input(2), pos)),
 		    	    different ( Output(Input(1),pos),  Output(Input(2),pos))
 		    	
-		    	))
+		    	)
 		    	
 		);//end-IMPLIES
 	}//end-for

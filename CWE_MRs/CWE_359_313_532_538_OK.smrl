@@ -1,0 +1,68 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+package smrl.mr.owasp{
+
+/**
+ * CWE Definitions:
+ * 
+ * CWE-359:
+ * The product does not properly prevent a person's private, personal information from being accessed by actors who either 
+ * (1) are not explicitly authorized to access the information or (2) do not have the implicit consent of the person about 
+ * whom the information is collected.
+ * 
+ * CWE-313:
+ * The application stores sensitive information in cleartext in a file, or on disk. 
+ * 
+ * CWE_532 (Child of CWE_538):
+ * Information written to log files can be of a sensitive nature and give valuable guidance to an attacker or expose
+ * sensitive user information.
+ * 
+ * CWE_538:
+ * The product places sensitive information into files or directories that are accessible to actors who are allowed to have 
+ * access to the files, but not to the sensitive information.
+ * 
+ * Idea:
+ * when we identify a page that can be accessed only by a user then it means that the information contained in it is 
+ * reserved, thus the log generated when processing it should not contain reserved information.
+ * 
+ * 
+ * 
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1).
+ * (2) Creates a cache of the current status of the log file.
+ * (3) Verified that current action follows a login.
+ * (4) Verifies that the current action is reserved to the current user (i.e., a follow-up user cannot perform it)
+ * (5) Verifies that the current URL leads to some output
+ * (6) Verifies that the that new lines generated into the log file when processing the input (6a)
+ * 		do not include keywords that appear only in pages of the user and in particular in the page generated for the current action (6b).
+ * 
+ * 
+ */ 
+MR CWE_359_313_532_538 {
+ {
+
+ 	for (Action action : Input(1).actions()){                                        //(1)	
+ 			
+ 			var initialLog = Log();		                                             //(2)
+ 			
+ 						
+ 			IMPLIES(
+ 				afterLogin(action) &&                                                //(3)
+ 				cannotReachThroughGUI(User(),action.url)	&&			             //(4)   
+ 				Output(Input(1),action.position).values.size > 0	                 //(5)
+ 				, 
+ 								
+				NOT ( containsAny( 													
+						Log().newLines(initialLog), 								//(6a)
+						Output(Input(1),action.position).values.filter[ e | reservedKeywords(action.user).contains(e) ].toList() //(6b)
+				) )
+				
+ 			);
+ 		}
+ 	}
+ 	
+  } 
+ }

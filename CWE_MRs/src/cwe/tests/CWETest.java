@@ -22,13 +22,11 @@ import smrl.mr.owasp.CWE_286_OTG_AUTHZ_002c;
 import smrl.mr.owasp.CWE_288_287b_319_OTG_AUTHN_010;
 import smrl.mr.owasp.CWE_289a;
 import smrl.mr.owasp.CWE_289b_647;
-import smrl.mr.owasp.CWE_302c;
+import smrl.mr.owasp.CWE_302;
 import smrl.mr.owasp.CWE_314;
 import smrl.mr.owasp.CWE_352_Fabrizio;
-import smrl.mr.owasp.CWE_359_313;
 import smrl.mr.owasp.CWE_434;
 import smrl.mr.owasp.CWE_521;
-import smrl.mr.owasp.CWE_599;
 import smrl.mr.owasp.CWE_610_384;
 import smrl.mr.owasp.CWE_611;
 import smrl.mr.owasp.CWE_643_652;
@@ -247,7 +245,7 @@ public class CWETest extends MRBaseTest {
 	
 	@Test
 	public void test_CWE_302() {  //passed
-		super.test(provider,CWE_302c.class);
+		super.test(provider,CWE_302.class);
 	}
 	
 	
