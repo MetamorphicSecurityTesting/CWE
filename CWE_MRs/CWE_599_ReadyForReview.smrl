@@ -37,6 +37,7 @@ MR CWE_599 {
 	           EQUAL ( Input(2), Input(1) ) &&	
 	           //Input(2).actions.get(action.position).setProfile()		    			         //(4)
 	           Input(2).setUseOutdatedCertificate(true)
+	          // Input(2).setUseOtherUserCertificate(true)
 	           //action.getCertificate(action.url) 
 	    	  // Input(2).actions.get(action.position).removeCertificate()             //(5) 
 	    	  //The implementation may be modified after finalizing the function.

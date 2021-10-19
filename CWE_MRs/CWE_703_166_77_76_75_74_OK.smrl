@@ -9,6 +9,21 @@ package smrl.mr.owasp {
  * The software receives input from an upstream component, but it does not handle or incorrectly
  * handles when an expected special element is missing.
  * 
+ * CWE_703:
+ * 
+ * CWE_166:
+ * 
+ * CWE_78:
+ * 
+ * CWE_77:
+ * 
+ * CWE_76:
+ * 
+ * CWE_75:
+ * 
+ * CWE_74:
+ * 
+ * 
  * Extra Details:
  * Developers should anticipate that special elements will be removed in the input vectors of their 
  * software system. Use an appropriate combination of denylists and allowlists to ensure only valid,
@@ -19,24 +34,25 @@ package smrl.mr.owasp {
  * system is vulnerable to them or not.
  * 
  * (1) For loop iterates over all actions of the Input(1).
- * (2) Stores the parameters of the action in the variable.
- * (3) Iterates over a list of all possible special characters to check all possible combinations of the input value.
- * (4) Creates the follow-up input by copying the Input(1)
- * (5) Sets the new input value for the follow-up input.
- * (6) Verifies that the system should show an error page.
+ * (2) Iterates over all parameters of each action
+ * (3) Stores the parameters of the action in the variable.
+ * (4) Verifies that the action contains an input form.
+ * (5) Creates the follow-up input by copying the Input(1)
+ * (6) Sets the new input value which contains special character for the follow-up input.
+ * (7) Verifies that the system should show an error page.
  * 
  */
  
 MR CWE_703_166_78_77_76_75_74 { 
  { 
      for ( Action action : Input(1).actions() ) { //(1)
-	  for ( var par=0; par < action.getParameters().size(); par++ ){    
-	  	var pos = action.getPosition(); 
+	  for ( var par=0; par < action.getParameters().size(); par++ ){  //(2)  
+	  	var pos = action.getPosition(); //(3)
 	  	
 	        IMPLIES(
-	            action.containFormInput()	&&							
-	            EQUAL ( Input(2), Input(1) ) &&		//(4)		    			
-	    	    Input(2).actions().get(pos).setParameterValue(par, SpecialCharacters()) //(5) 
+	            action.containFormInput()	&&	//(4)						
+	            EQUAL ( Input(2), Input(1) ) &&		//(5)		    			
+	    	    Input(2).actions().get(pos).setParameterValue(par, SpecialCharacters()) //(6) 
 	    	    //  Input(2).actions.get(action.position).setInputValue(newInputValue)  
 	    	  		    ,  
 		    

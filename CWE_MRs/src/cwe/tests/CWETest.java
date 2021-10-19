@@ -31,7 +31,7 @@ import smrl.mr.owasp.CWE_610_384;
 import smrl.mr.owasp.CWE_611;
 import smrl.mr.owasp.CWE_643_652;
 import smrl.mr.owasp.CWE_703_166_78_77_76_75_74;
-import smrl.mr.owasp.CWE_757_OTG_CRYPST_004;
+import smrl.mr.owasp.CWE_757_OTG_CRYPST_004_F;
 import smrl.mr.owasp.CWE_79;
 import smrl.mr.owasp.CWE_88;
 import smrl.mr.owasp.CWE_89_943;
@@ -244,8 +244,8 @@ public class CWETest extends MRBaseTest {
 */
 	
 	@Test
-	public void test_CWE_302() {  //passed
-		super.test(provider,CWE_302.class);
+	public void test_CWE_757_F() {  //passed
+		super.test(provider,CWE_757_OTG_CRYPST_004_F.class);
 	}
 	
 	

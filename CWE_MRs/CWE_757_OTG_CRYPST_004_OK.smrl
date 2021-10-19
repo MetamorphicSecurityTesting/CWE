@@ -27,25 +27,23 @@ package smrl.mr.owasp {
  * Note: Yu shall have configured Firefox with an UnsafeEncryption profile
  */
  
-MR CWE_757_OTG_CRYPST_004 {
+MR CWE_757_OTG_CRYPST_004_F {
  {
-   for ( Action action : Input(1).actions() ){                                            //(1)
-   	
+   for ( Action action : Input(1).actions() ){
+   		
      IMPLIES ( 
      	( 
-     		isEncrypted( action ) &&                                                      //(2)
-     		EQUAL ( Input(2) , Input(1) ) &&                                              //(3)
-     		Input(2).actions().get(action.position).setEncryption( WeakEncryption() ) )   //(4)
-	   , 
-	        different ( Output( Input(1) ), Output( Input(2) ) ) )                        //(5)
-	  
+     		notTried(action.url) &&
+     		isEncrypted( action ) &&
+	   		EQUAL ( Input(2) , Input(1) ) &&
+	   		Input(2).setUseWeakEncryption( true ) )  
+	   		, 
+	   		different ( Output( Input(1), action.position ), Output( Input(2), action.position ) ) )
    } 
  }
    
 }//end-MR
 }//end-package
-
-
 
 
 
