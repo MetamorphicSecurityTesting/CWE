@@ -7,35 +7,50 @@ package smrl.mr.owasp{
  *
  * Webmin case: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8820
  * 
- * Cwe
+ * CWE Definition:
+ * The software does not neutralize or incorrectly neutralizes user-controllable input 
+ * before it is placed in output that is used as a web page that is served to other users.
  * 
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1)
+ * (2) Stores the parameters of the current action in a variable
+ * (3) The second loop iterates over all parameters of the action
+ * (4) Verifies that the page can be accessed by more than one user
+ * (5) Checks that the user did not visited the url before.
+ * (6) Checks that the action does not lead to an alert.
+ * (7) Creates the follow-up input with different credentials, named Input(2).
+ * (8) Sets a XSS string for the parameter of Input(2).
+ * (9) Creates a follow-up input of current user, named Input(3)
+ * (10) Verifies that the result of the action is not an empty file,
+ *      it means that the system neutralize the input 
+ *      and also it double checks that the action does not lead to an alert.
  * 
  */ 
 MR CWE_79b {
  {
 
- 	for (Action action : Input(1).actions()){                                            //(1)
- 		var pos = action.getPosition();                                                  //(2) 
+ 	for (Action action : Input(1).actions()){                                                  //(1)
+ 		var pos = action.getPosition();                                                        //(2) 
  		
- 		for (var x = 0; x < action.parameters.size; x++){                                //(3)
+ 		for (var x = 0; x < action.parameters.size; x++){                                      //(3)
  		
  			IMPLIES(
  		
  				//The page can be accessed by more than one user
- 				canReachThroughGUI( User(), Input(1).actions().get(pos).getUrl() ) &&
+ 				canReachThroughGUI( User(), Input(1).actions().get(pos).getUrl() ) &&           //(4)
  				//We did not test the URL before
- 				notTried( Input(1).actions().get(pos).getUrl() ) &&                      //(4)
+ 				notTried( Input(1).actions().get(pos).getUrl() ) &&                             //(5)
  				//No alter shown normally
- 				! Output(Input(1),pos).hasAlert					&&
+ 				! Output(Input(1),pos).hasAlert					&&                              //(6)
  				//We create the follow-up input          
- 				EQUAL(Input(2), changeCredentials(Input(1),User()) ) &&                                              //(5)
+ 				EQUAL(Input(2), changeCredentials(Input(1),User()) ) &&                         //(7)
  				//We put an XSS payload into a parameter
- 				Input(2).actions().get(pos).setParameterValue( x, XSSInjectionString() ) && //(6)
+ 				Input(2).actions().get(pos).setParameterValue( x, XSSInjectionString() ) &&     //(8)
  				//Another sequnce to be performed by teh source user, to see if can be attacked
- 			    EQUAL(Input(3), Input(1))                                              //(5)              
+ 			    EQUAL(Input(3), Input(1))                                                       //(9)              
  				,
  				
- 				AND(
+ 				AND(                                                                            //(10)
 		    		 //attack performed
 		    		 ! Output(Input(2), pos).emptyFile,
 		    		 //no effect                  

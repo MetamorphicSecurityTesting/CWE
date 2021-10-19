@@ -20,7 +20,7 @@ package smrl.mr.owasp {
  * (2) Stores the parameters of the current action in a variable
  * (3) It checks if the current action of the Input(1) is taken after the login.
  * (4) Creates the follow-up input.
- * (5) It removes the certificate in the current action.
+ * (5) It changes the certificate in the current action, it is configured to use a certificate from another user.
  * (6) The system should show the error 
  *     Or the follow-up input should retrieve the content that has right to access
  *     Or the result should be different.
@@ -34,13 +34,10 @@ MR CWE_599 {
 	  
 	   IMPLIES(
 	   		   afterLogin(action) &&                                                 //(3)
-	           EQUAL ( Input(2), Input(1) ) &&	
-	           //Input(2).actions.get(action.position).setProfile()		    			         //(4)
-	           Input(2).setUseOutdatedCertificate(true)
-	          // Input(2).setUseOtherUserCertificate(true)
-	           //action.getCertificate(action.url) 
-	    	  // Input(2).actions.get(action.position).removeCertificate()             //(5) 
-	    	  //The implementation may be modified after finalizing the function.
+	           EQUAL ( Input(2), Input(1) ) &&	                                     //(4)
+	         
+	           Input(2).setUseOutdatedCertificate(true)                              //(5)
+	         
 	    	  
 		    ,  
 		    OR(                                                                     //(6)
