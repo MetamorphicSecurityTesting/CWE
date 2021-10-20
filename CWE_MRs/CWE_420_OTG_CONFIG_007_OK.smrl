@@ -20,7 +20,7 @@ package smrl.mr.owasp {
  * 
  */
  
-	MR OTG_CONFIG_007 {
+	MR CWE_420_OTG_CONFIG_007 {
 		{
 			for ( Action action : Input(1).actions() ) {                                     //(1)
 			
