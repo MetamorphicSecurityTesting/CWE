@@ -1,5 +1,5 @@
 import static smrl.mr.language.Operations.*;
-import smrl.mr.language.Action;
+import smrl.mr.language.actions.ResetSUTAction;
 
 package smrl.mr.owasp{
 
@@ -52,8 +52,8 @@ MR CWE_841 {
 						isLogin(Input(1).actions().get(y))&&
 						//EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, x) ) ) && //(3)
 						EQUAL ( Input(2) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  &&
-						Input(2).addAction(0,Input(1).actions().get(x))                    // we start with a sign up
-						
+						Input(2).addAction(0,Input(1).actions().get(x))   &&                 // we start with a sign up
+						Input(2).addAction(0, new ResetSUTAction()) 
 						, 
 					
 						AND( different ( Output(Input(2),1),  Output(Input(1),y) ) //login should fail
