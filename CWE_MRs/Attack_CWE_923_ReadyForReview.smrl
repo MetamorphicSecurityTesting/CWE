@@ -36,7 +36,7 @@ MR CWE_923 {
 			  afterLogin(action) &&                                                  //(3)
 	           EQUAL ( Input(2), Input(1) ) &&	                                     //(4)
 	           //Input(2).actions.get(action.position).setProfile()		    			       
-	           Input(2).setRemovedCertificate(true)                                  //(5)
+	           Input(2).setUseRemovedCertificate(true)                                  //(5)
 			
 			                                                   
 		   //   notAvailableWithoutLoggingIn( action ) 							
