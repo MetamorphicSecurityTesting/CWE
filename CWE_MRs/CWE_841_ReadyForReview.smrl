@@ -50,15 +50,15 @@ MR CWE_841 {
 						// x = signup
 						// y = login 
 						isLogin(Input(1).actions().get(y))&&
-						EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, x) ) ) && //(3)
-						EQUAL ( Input(3) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  &&
-						Input(3).addAction(0,Input(1).actions().get(x))                    // we start with a sign up
+						//EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, x) ) ) && //(3)
+						EQUAL ( Input(2) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  &&
+						Input(2).addAction(0,Input(1).actions().get(x))                    // we start with a sign up
 						
 						, 
 					
-						AND( different ( Output(Input(2),y+1),  Output(Input(1),y+1) ) //(6) check the command
+						AND( different ( Output(Input(2),1),  Output(Input(1),y) ) //login should fail
 						,
-						isError(Output(Input(2),y+1)) 
+						isError(Output(Input(2),1)) 
 						)
 					); //end-IMPLIES
 					
