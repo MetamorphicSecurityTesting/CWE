@@ -1,5 +1,5 @@
 import static smrl.mr.language.Operations.*;
-import smrl.mr.language.Action;
+import smrl.mr.language.actions.ResetSUTAction;
 
 package smrl.mr.owasp{
 
@@ -11,54 +11,44 @@ package smrl.mr.owasp{
  * Idea:
  * reverse the sequence of an action that requires to be authenticated before take it.
  * 
- * Comments:
- * (1) The first loop iterates over all the actions to find a login action.
- * (2) The second loop iterates over all the actions to find an action performed after login.
- * (3) Creates the follow-up input with specific sequence of actions 0 to y-2.
- * (4),(5) Changes the sequence of the action y with action y-1. 
- * (6) Verifies that the system gives two different outputs or will give error by executing the follow-up input.
+ *  E.g. if we signup, the email should be verified, and the steps are like the following:
+ *  			signup -> email verification(enter the code) -> login -> authenticated action
+ *  			signup -> login-> authenticated action NOTVALID
  * 
- * The only thing I could think of is to simulate registering a user without confirming the email.
-We first determine if the current input represents a functional test case for a user registering into a platform.
-We start the MR in a clean state (to implement)
-We run Input(1)
-We re-run Input(1) and check that an action before the login leads to a different output but the login succeeds.
-We reset the MR state.
-We create Input(2) as a copy of Input(1) but we remove the action before the login.
-The login output shall be different than in Input(1) (i.e., not succeed)
+ *  		    Considering that we have a website that after signing up it redirect you to a page that asks you to enter a code, 
+ *              which has been sent to your email account (email verification). 
+ *              After that it will redirect you to login page.
+ * 
+ * 
+ * Comments:
+ * (1) The first loop iterates over all the actions to find a signup action.
+ * (2) The second loop iterates over all the actions to find a login action performed after the signup.
+ * (3) Verifies that the action y is a login.
+ * (4) Creates the follow-up input with the sequence of actions after the login (action y).
+ * (5) Makes sure that we start with a signup action
+ * (6) Reset the actions for next iteration
+ * (7) Verifies that the system gives two different outputs or will give error by executing the follow-up input.
+ * 
  */ 
 MR CWE_841 {
 		{
-			//Nazanin:
-			/* I tried to simplify the steps that you mentioned.
-			
- 			 if we signup the email should be verified, and the steps are like the following:
-
- 			signup -> email verification(enter the code) -> login -> authenticated action
- 			signup -> login-> authenticated action NOTVALID
-
-			 Considering that we have a website that after signing up it redirect you to a page that asks you to enter a code, which has been sent to your email account (email verification). 
-			 After that it will redirect you to login page.
-
- 		
-*/
-			
-			for ( var x = 0; x < Input(1).actions().size(); x++ ){   //(1)
-				for ( var y = x+2; isSignup(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){  //(2)			
+		
+			for ( var x = 0; x < Input(1).actions().size(); x++ ){                                                       //(1)
+				for ( var y = x+2; isSignup(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){         //(2)			
 					
 					IMPLIES (
 						// x = signup
 						// y = login 
-						isLogin(Input(1).actions().get(y))&&
-						EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, x) ) ) && //(3)
-						EQUAL ( Input(3) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  &&
-						Input(3).addAction(0,Input(1).actions().get(x))                    // we start with a sign up
+						isLogin(Input(1).actions().get(y))&&                                                             //(3)
 						
+						EQUAL ( Input(2) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  &&     //(4)
+						Input(2).addAction(0,Input(1).actions().get(x))   &&                                             //(5)  we start with a sign up
+						Input(2).addAction(0, new ResetSUTAction())                                                      //(6)
 						, 
 					
-						AND( different ( Output(Input(2),y+1),  Output(Input(1),y+1) ) //(6) check the command
+						AND( different ( Output(Input(2),1),  Output(Input(1),y) )                                       //(7)  login should fail 
 						,
-						isError(Output(Input(2),y+1)) 
+						isError(Output(Input(2),1)) 
 						)
 					); //end-IMPLIES
 					
