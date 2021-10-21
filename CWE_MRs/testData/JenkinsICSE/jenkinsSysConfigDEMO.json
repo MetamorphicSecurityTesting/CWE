@@ -13,7 +13,7 @@
 	"inputFile": "./testData/JenkinsICSE/input_small.json",
 	"outputFile": "./testData/JenkinsICSE/outFolder/jenkinsResult.txt",
 	"outputStore": "./testData/JenkinsICSE/outputStore",
-	"randomFilePathFile": "./testData/JenkinsICSE/filePaths.txt",
+	"RandomFilePath": "./testData/JenkinsICSE/filePaths.txt",
 	"randomAdminFilePathFile": "./testData/JenkinsICSE/adminFilePaths.txt",
 	"RandomCookiePath": "./testData/JenkinsICSE/cookiePaths.txt",
         "SQLInjectionString": "./testData/JenkinsICSE/SQLInjectionString.txt",
@@ -28,6 +28,8 @@
         "XQueryInjection": "./testData/JenkinsICSE/XQueryInjection.txt",
         "FileWithInvalidType": "./testData/JenkinsICSE/FileWithInvalidType.txt",
         "XMLInjectedFile": "./testData/JenkinsICSE/XMLInjectedFile.txt",
+        "CronExpressionsInjection": "./testData/JenkinsICSE/CronExpressionsInjection.txt",
+        "RandomPath": "./testData/JenkinsICSE/RandomPath.txt",
 
 	"actionsChangedUrlFileName": "./testData/JenkinsICSE/jenkinsActionsChangedUrl.json",
 	"loginParams": [

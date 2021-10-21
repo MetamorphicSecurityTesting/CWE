@@ -14,6 +14,7 @@ import smrl.mr.crawljax.WebOperationsProvider;
 import smrl.mr.language.MRBaseTest;
 import smrl.mr.owasp.CWE_138_150_OTG_AUTHZ_001b;
 import smrl.mr.owasp.CWE_15_639_OTG_AUTHZ_004;
+import smrl.mr.owasp.CWE_22;
 import smrl.mr.owasp.CWE_258;
 import smrl.mr.owasp.CWE_262_263_309_324;
 import smrl.mr.owasp.CWE_266_267_268_OTG_AUTHZ_002;
@@ -292,112 +293,119 @@ public class CWETest extends MRBaseTest {
 		super.test(provider,CWE_73_99_219_220_530_OTG_AUTHZ_001a.class);
 	}
 
-	*/
+
 
 	@Test
-	public void test_CWE_784() {  //
+	public void test_CWE_784() {  // passed
 		super.test(provider,CWE_784.class);
 	}
 
 
 	@Test
-	public void test_CWE_792() {  //
+	public void test_CWE_792() {  //passed
 		super.test(provider,CWE_792_793_794_795_796_797.class);
 	}
 
 
 	@Test
-	public void test_CWE_841() {  //
+	public void test_CWE_841() {  //passed
 		super.test(provider,CWE_841.class);
 	}
 	
 	
 	
 	@Test
-	public void test_CWE_15_639() {  //
+	public void test_CWE_15_639() {  // passed
 		super.test(provider,CWE_15_639_OTG_AUTHZ_004.class);
 	}
 	
 	@Test
-	public void test_CWE_266_267_268() {  //
+	public void test_CWE_266_267_268() {  // failed
 		super.test(provider,CWE_266_267_268_OTG_AUTHZ_002.class);
 	}
 	
 	
 	@Test
-	public void test_CWE_287a_425() {  //
+	public void test_CWE_287a_425() {  //passed
 		super.test(provider,CWE_287a_425_OTG_AUTHN_001.class);
 	}
 	
 	
 	@Test
-	public void test_CWE_289b2() {  //
+	public void test_CWE_289b2() {  // failed
 		super.test(provider,CWE_289b2.class);
 	}
 
 
 	@Test
-	public void test_CWE_290_291() {  //
+	public void test_CWE_290_291() {  //failed
 		super.test(provider,CWE_290_291.class);
 	}
 	
 	
 
 	@Test
-	public void test_CWE_290_350() {  //
+	public void test_CWE_290_350() {  //failed
 		super.test(provider,CWE_290_350.class);
 	}
 	
 
 	@Test
-	public void test_CWE_306() {  //
+	public void test_CWE_306() {  //failed
 		super.test(provider,CWE_306_OTG_AUTHZ_002b.class);
 	}
 	
 	@Test
-	public void test_CWE_315() {  //
+	public void test_CWE_315() {  //passed
 		super.test(provider,CWE_315b.class);
 	}
 	
 	
 	@Test
-	public void test_CWE_359() {  //
+	public void test_CWE_359() {  //passed
 		super.test(provider,CWE_359_313_532_538.class);
 	}
 	@Test
-	public void test_CWE_420() {  //
+	public void test_CWE_420() {  //passed
 		super.test(provider,CWE_420_OTG_CONFIG_007.class);
 	}
 	
 	@Test
-	public void test_CWE_441() {  //
+	public void test_CWE_441() {  //failed
 		super.test(provider,CWE_441.class);
 	}
 	
 	@Test
-	public void test_CWE_471_472() {  //
+	public void test_CWE_471_472() {  // passed          red messages
 		super.test(provider,CWE_471_472.class);
 	}
 	
 	@Test
-	public void test_CWE_488() {  //
+	public void test_CWE_488() {  //failed
 		super.test(provider,CWE_488.class);
 	}
 	
 	@Test
-	public void test_CWE_599() {  //
+	public void test_CWE_599() {  //passed       red messages            
 		super.test(provider,CWE_599.class);
 	}
 	
 	@Test
-	public void test_CWE_601() {  //
+	public void test_CWE_601() {  //failed
 		super.test(provider,CWE_601_OTG_AUTHZ_002a.class);
 	}
 	
 	
+		*/
+	
+	@Test
+	public void test_CWE_22() {  // passed
+		super.test(provider,CWE_22.class);
+	}
 	
 	
 	
+ 
 	public static String getCurrentTime() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
 		LocalDateTime now = LocalDateTime.now();  
