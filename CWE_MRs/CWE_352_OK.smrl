@@ -26,7 +26,7 @@ package smrl.mr.owasp{
  * (6) The system should show a different output between the action performed on the correct form and teh action performed on the form downloaded locally
  * 
  */ 
-MR CWE_352_Fabrizio {
+MR CWE_352 {
 	{
 		for ( Action action : Input(1).actions() ){                                             //(1)
 			

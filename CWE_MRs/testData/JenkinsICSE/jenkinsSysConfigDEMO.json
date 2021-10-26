@@ -22,7 +22,7 @@
         "StaticInjectionString": "./testData/JenkinsICSE/StaticInjectionString.txt",
         "WeakPassword": "./testData/JenkinsICSE/WeakPassword.txt",
         "SpecialCharacters": "./testData/JenkinsICSE/SpecialCharacters.txt",
-        "XSSInjectionString": "./testData/JenkinsICSE/XSSInjectionString.txt",
+        "XSSInjectionString": "./testData/JenkinsICSE/security944.txt",
         "LDAPInjectionString": "./testData/JenkinsICSE/LDAPInjectionString.txt",
         "CommandInjection": "./testData/JenkinsICSE/CommandInjection.txt",
         "XQueryInjection": "./testData/JenkinsICSE/XQueryInjection.txt",
@@ -30,6 +30,7 @@
         "XMLInjectedFile": "./testData/JenkinsICSE/XMLInjectedFile.txt",
         "CronExpressionsInjection": "./testData/JenkinsICSE/CronExpressionsInjection.txt",
         "RandomPath": "./testData/JenkinsICSE/RandomPath.txt",
+	"test_username": "./testData/JenkinsICSE/test_username.txt",
 
 	"actionsChangedUrlFileName": "./testData/JenkinsICSE/jenkinsActionsChangedUrl.json",
 	"loginParams": [

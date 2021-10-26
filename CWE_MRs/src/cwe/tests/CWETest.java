@@ -33,7 +33,8 @@ import smrl.mr.owasp.CWE_302;
 import smrl.mr.owasp.CWE_306_OTG_AUTHZ_002b;
 import smrl.mr.owasp.CWE_314;
 import smrl.mr.owasp.CWE_315b;
-import smrl.mr.owasp.CWE_352_Fabrizio;
+import smrl.mr.owasp.CWE_352;
+import smrl.mr.owasp.CWE_352_Jenkins;
 import smrl.mr.owasp.CWE_359_313_532_538;
 import smrl.mr.owasp.CWE_420_OTG_CONFIG_007;
 import smrl.mr.owasp.CWE_434;
@@ -48,11 +49,14 @@ import smrl.mr.owasp.CWE_611;
 import smrl.mr.owasp.CWE_613_OTG_SESS_006;
 import smrl.mr.owasp.CWE_643_652;
 import smrl.mr.owasp.CWE_703_166_78_77_76_75_74;
+import smrl.mr.owasp.CWE_703_Jenkins;
 import smrl.mr.owasp.CWE_73_99_219_220_530_OTG_AUTHZ_001a;
 import smrl.mr.owasp.CWE_757_OTG_CRYPST_004_F;
 import smrl.mr.owasp.CWE_784;
 import smrl.mr.owasp.CWE_79;
 import smrl.mr.owasp.CWE_792_793_794_795_796_797;
+import smrl.mr.owasp.CWE_79_Jenkins;
+import smrl.mr.owasp.CWE_79_Jenkins944;
 import smrl.mr.owasp.CWE_79b;
 import smrl.mr.owasp.CWE_841;
 import smrl.mr.owasp.CWE_88;
@@ -396,15 +400,35 @@ public class CWETest extends MRBaseTest {
 	}
 	
 	
-		*/
+		
 	
 	@Test
-	public void test_CWE_22() {  // passed
-		super.test(provider,CWE_22.class);
+	public void test_CWE_352_Jenkins() {  // failed
+		super.test(provider,CWE_352_Jenkins.class);
 	}
 	
+
+	@Test
+	public void test_CWE_703_Jenkins() {  // passed???????????
+		super.test(provider,CWE_703_Jenkins.class);
+	}
+		
+
+	@Test
+	public void test_CWE_79_Jenkins() {  // failed
+		super.test(provider,CWE_79_Jenkins.class);
+	}
 	
-	
+	@Test
+	public void test_CWE_79_Jenkins944() {  // failed
+		super.test(provider,CWE_79_Jenkins944.class);
+	}
+
+	*/
+	@Test
+	public void test_CWE_703_Jenkins() {  // passed???????????
+		super.test(provider,CWE_703_Jenkins.class);
+	}
  
 	public static String getCurrentTime() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
