@@ -1,0 +1,53 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import smrl.mr.crawljax.WebProcessor
+
+package smrl.mr.owasp{
+
+/**
+ * CWE Definition:
+ * The web application does not, or can not, sufficiently verify whether a well-formed, 
+ * valid, consistent request was intentionally provided by the user who submitted the request.
+ * 
+ * Idea:
+ * A user shall not be able to successfully submit a form without retrieving it first.
+ * Otherwise, someone else can create a crafted page with a submit form button.
+ * 
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1).
+ * (2) Stores the parameters of the current action in a variable.
+ * (3) It checks that the action is taken after the login.
+ * (3b)Optimizes testing so that each URL is tried oncly once
+ * (4) Verifies that the action can read data from input.
+ * (5) Creates the follow-up input by:
+ * 		logging into the SUT [Action-1]
+ * 		opening in the browser a "the dump" of form requested in another session (to simulate a tricked request) [Action-2] 
+ *     	performing the next action (typically "click on the submit button" in such a case) [Action 3]
+ * (6) The system should show a different output between the action performed on the correct form and teh action performed on the form downloaded locally
+ * 
+ */ 
+MR CWE_352_Jenkins {
+	{
+		for ( Action action : Input(1).actions() ){                                             //(1)
+			
+				var pos = action.getPosition();                                                 //(2)
+				var testURL = action.url +  "descriptorByName/hudson.tools.ZipExtractionInstaller/checkUrl"
+			IMPLIES( 
+					 					 	
+				(!isSupervisorOf(User (), action.user)) && // 1st par
+			    EQUAL ( Input(2), changeCredentials ( Input(1), User () ) )&&				      //(4)
+			  	Input(2).actions().get(pos).setUrl( testURL ) 	      //(5)
+			//  	notTried( action.getUser(), test )			      //(6)
+			    ,
+			    OR(
+		    		 isError(Output(Input(2), pos)),                       //(7)       
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) ))
+		    	
+			
+			
+			
+		}
+	}}
+}
+
+
