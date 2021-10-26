@@ -1,0 +1,58 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import sun.security.util.Password
+
+package smrl.mr.owasp {
+ 
+/**
+ * 
+ * CWE Definition:
+ * XSS: The software does not neutralize or incorrectly neutralizes user-controllable input 
+ * before it is placed in output that is used as a web page that is served to other users.
+ * 
+ * Idea:
+ * for all actions we inject the URL of the action with XSS strings to verify that 
+ * is there any vulnerable URL in the system or not. The system should show an error page
+ * or a different output after injecting the URL.
+ * 
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1).
+ * (2) Defines a variable to store the position of the Input(1)'s action.
+ * (3) Defines a new URL with the injected XSS value.
+ * (4) Creates the follow-up input by copying the Input(1).
+ * (5) Sets the modified URL to the follow-up input.
+ * (6) Checks that the URL has not been previously seen.
+ * (7) Makes sure that the result of the Input(1) and the follow-up input is different
+ *     Or The user is retrieving the content that has right to access it.
+ *  
+ * 
+ */
+ 
+MR CWE_79_Jenkins { 
+ { 	
+ 	
+    for ( Action action : Input(1).actions() ) {                      //(1)
+	  	var pos = action.getPosition();                               //(2)
+	   //	for ( var x =0; x < action.parameters.size; x++){        
+	  //  var newUrl = action.url + XSSInjectionString();             //(3) it can be generalized  
+			
+			var testURL = "http://www.w3.org/1999/xhtml\"><script>alert(%27XSS%20Detected%27)</script></html><!--";
+			IMPLIES( 
+					 					 
+				EQUAL( Input(2), Input(1) ) &&					      //(4)
+			  	Input(2).actions().get(pos).setUrl( testURL ) 	      //(5)
+			  //	notTried( action.getUser(), newUrl )			      //(6)
+			    ,
+			    OR(
+		    		 isError(Output(Input(2), pos)),                       //(7)       
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) )
+		    	
+		);//end-IMPLIES
+	}//end-for
+ }
+  
+}//end-MR
+}//end-package
+
+
+
