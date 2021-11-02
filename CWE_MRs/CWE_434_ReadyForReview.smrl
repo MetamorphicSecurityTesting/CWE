@@ -36,6 +36,7 @@ MR CWE_434 {
 	   IMPLIES( 
 	   			            
 	   			EQUAL ( Input(2), Input(1) ) &&                            //(4)
+	   			isFileParameter( Input(1).actions().get(pos).getParameterValue( x ) ) && 
 	   			Input(2).actions().get(pos).setParameterValue( x, FileWithInvalidType() )  	     //(5)		
 		    	,  
 		    	OR(
