@@ -1,0 +1,59 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import sun.security.util.Password
+
+package smrl.mr.owasp {
+ 
+/**
+ * 
+ * CWE Definition:
+ * The software allows the attacker to upload or transfer files of dangerous types that can be 
+ * automatically processed within the product's environment.
+ * 
+ * Idea:
+ * For all input entries that accept to upload a file, we will try to upload files with invalid type e.g. file.php or file.exe.
+ * 
+ * Comments:
+ * (1) For loop iterate over all actions of the Input(1)
+ * (2) Define a variable to store the position of the Input(1)'s action
+ * (3) Define a variable to store the URL that has not been tried.
+ * (4) The second loop iterates over all parameters of the action with the URL that has not tried before.
+ * (5) Creates the follow-up input by copying the Input(1).
+ * (6) Verifies that the parameter accept a file or not.
+ * (7) Assigns files with invalid type to the parameter.
+ * (8) Makes sure that the result of the Input(1) and the follow-up input is different
+ *     Or the system shows an error to the follow-up input.
+ * 
+ * 
+ */
+ 
+MR CWE_434 { 
+ { 	
+ 	
+    for ( Action action : Input(1).actions() ) {                                              //(1)
+	  	var pos = action.getPosition();                                                       //(2)
+	  	var notTried = notTried( Input(2).actions().get(pos).getUrl() );                      //(3)
+	   	for ( var x =0; notTried && x < action.parameters.size; x++){                         //(4)
+	   IMPLIES( 
+	   			            
+	   			EQUAL ( Input(2), Input(1) ) &&                                               //(5)
+	   			isFileParameter( Input(1).actions().get(pos).getParameterValue( x ) ) &&      //(6)
+	   			Input(2).actions().get(pos).setParameterValue( x, FileWithInvalidType() )  	  //(7)		
+		    	,  
+		    	OR(
+		    		 isError(Output(Input(2), pos)),                                          //(8)     
+		    	     different(Output(Input(2),pos), Output(Input(2),pos)) 
+		    	)
+		    	
+		    	
+		);//end-IMPLIES
+	}//end-for
+ }
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+
