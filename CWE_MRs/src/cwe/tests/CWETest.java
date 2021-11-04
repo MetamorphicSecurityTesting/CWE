@@ -426,9 +426,10 @@ public class CWETest extends MRBaseTest {
 
 	*/
 	@Test
-	public void test_CWE_703_Jenkins() {  // passed???????????
-		super.test(provider,CWE_703_Jenkins.class);
+	public void test_CWE_79_Jenkins() {  // failed
+		super.test(provider,CWE_79.class);
 	}
+	
  
 	public static String getCurrentTime() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  

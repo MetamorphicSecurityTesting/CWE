@@ -1,0 +1,105 @@
+<html>
+ <head resurl="/static/0b49837a" data-rooturl="" data-resurl="/static/0b49837a"> 
+  <title>Remote API [Jenkins]</title>
+  <meta name="ROBOTS" content="INDEX,NOFOLLOW">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+ <body data-model-type="hudson.model.Api" id="jenkins" class="*" data-version="2.121.1">
+  <iframe id="_yuiResizeMonitor" title="Text Resize Monitor" tabindex="-1" role="presentation" style="position: absolute; visibility: visible; background-color: transparent; border-width: 0px; width: 2em; height: 2em; left: 0px; top: -27px;"></iframe>
+  <div id="tt" class="*" style="z-index: 999; visibility: hidden;">
+   <div class="*"></div>
+  </div>
+  <a href="#skip2content" class="*">Skip to content</a>
+  <div id="page-head">
+   <div id="breadcrumbBar">
+    <div style="height: 26px;"></div>
+    <div class="*" style="position: fixed; top: 40px; left: 0px;">
+     <div class="*"></div>
+     <div class="*">
+      <div id="right-top-nav">
+       <div id="right-top-nav">
+        <div class="*">
+         <a href="?auto_refresh=true">ENABLE AUTO REFRESH</a>
+        </div>
+       </div>
+      </div>
+      <ul id="breadcrumbs">
+       <li class="*"><a href="/" class="*">Jenkins</a></li>
+       <li href="/" class="*"></li>
+       <li class="*"><a href="/computer/" class="*">Nodes</a></li>
+       <li href="/computer/" class="*"></li>
+       <li class="*"><a href="/computer/slave1/" class="*">slave1</a></li>
+       <li class="*"></li>
+       <li class="*"><a href="/computer/slave1/api/" class="*">API</a></li>
+       <li class="*"></li>
+      </ul>
+      <div id="breadcrumb-menu-target"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="menuSelector"></div>
+  <div id="page-body" class="*">
+   <div id="main-panel">
+    <a name="skip2content"></a>
+    <h1>REST API</h1>
+    <p> Many objects of Jenkins provide the remote access API. They are available at <tt>/.../api/</tt> where "..." portion is the object for which you'd like to access. </p>
+    <dl>
+     <dt>
+      <a href="xml">XML API</a>
+     </dt>
+     <dd>
+       Access data exposed in 
+      <a href="..">HTML</a> as XML for machine consumption. 
+      <a href="schema">Schema</a> is also available. 
+      <p> You can also specify optional XPath to control the fragment you'd like to obtain (but see <a href="#tree">below</a>). For example, <tt>../api/xml?xpath=/*/*[0]</tt>. </p>
+      <p> For XPath that matches multiple nodes, you need to also specify the "wrapper" query parameter to specify the name of the root XML element to be create so that the resulting XML becomes well-formed. </p>
+      <p> Similarly <tt>exclude</tt> query parameter can be used to exclude nodes that match the given XPath from the result. This is useful for trimming down the amount of data you fetch (but again see <a href="#tree">below</a>). This query parameter can be specified multiple times. </p>
+      <p> XPath filtering is powerful, and you can have it only return a very small data, but note that the server still has to build a full DOM of the raw data, which could cause a large memory spike. To avoid overloading the server, consider using the <tt>tree</tt> parameter, or use the <tt>xpath</tt> parameter in conjunction with the <tt>tree</tt> parameter. When used together, the result of the <tt>tree</tt> parameter filtering is built into DOM, then the XPath is applied to compute the final return value. In this way, you can often substantially reduce the size of DOM built in memory. </p>
+     </dd>
+     <dt>
+      <a href="json?pretty=true">JSON API</a>
+     </dt>
+     <dd>
+       Access the same data as JSON for JavaScript-based access. 
+      <tt>tree</tt> may be used. 
+     </dd>
+     <dt>
+      <a href="python?pretty=true">Python API</a>
+     </dt>
+     <dd>
+      <p> Access the same data as Python for Python clients. This can be parsed into Python object as <tt>eval(urllib.urlopen("...").read())</tt> and the resulting object tree is identical to that of JSON. However, when you do this, beware of the security implication. If you are connecting to a non-trusted Jenkins, the server can send you malicious Python programs. </p>
+      <p> In Python 2.6 or later you can safely parse this output using <tt>ast.literal_eval(urllib.urlopen("...").read())</tt></p>
+     </dd>
+    </dl>
+    <p> For more information about remote API in Jenkins, see <a href="https://jenkins.io/redirect/remote-api">the documentation</a>. </p>
+    <h2>Controlling the amount of data you fetch</h2>
+    <p><a name="tree"></a> The <tt>tree</tt> query parameter allows you to explicitly specify and retrieve only the information you are looking for, by using an XPath-ish path expression. The value should be a list of property names to include, with sub-properties inside square braces. Try <a href="xml?tree=jobs[name],views[name,jobs[name]]">tree=jobs[name],views[name,jobs[name]]</a> to see just a list of jobs (only giving the name) and views (giving the name and jobs they contain). <strong>Note</strong>: for array-type properties (such as <tt>jobs</tt> in this example), the name must be given in the original plural, not in the singular as the element would appear in XML (<tt>&lt;job&gt;</tt>). This will be more natural for e.g. <a href="json?tree=jobs[name]">json?tree=jobs[name]</a> anyway: the JSON writer does not do plural-to-singular mangling because arrays are represented explicitly. </p>
+    <p> For array-type properties, a range specifier is supported. For example, <tt>tree=jobs[name]{0,10}</tt> would retrieve the name of the first 10 jobs. The range specifier has the following variants: </p>
+    <ul>
+     <li><b>{M,N}</b>: From the M-th element (inclusive) to the N-th element (exclusive). </li>
+     <li><b>{M,}</b>: From the M-th element (inclusive) to the end. </li>
+     <li><b>{,N}</b>: From the first element (inclusive) to the N-th element (exclusive). The same as {0,N}. </li>
+     <li><b>{N}</b>: Just retrieve the N-th element. The same as {N,N+1}. </li>
+    </ul>
+    <p> Another way to retrieve more data is to use the <tt>depth=N</tt> query parameter . This retrieves all the data up to the specified depth. Compare <a href="xml">depth=0</a> and <a href="xml?depth=1">depth=1</a> and see what the difference is for yourself. Also note that data created by a smaller depth value is always a subset of the data created by a bigger depth value. </p>
+    <p> Because of the size of the data, the <tt>depth</tt> parameter should really be only used to explore what data Jenkins can return. Once you identify the data you want to retrieve, you can then come up with the <tt>tree</tt> parameter to exactly specify the data you need. </p>
+    <h2>Load Statistics</h2>
+    <p> Load statistics of this computer has <a href="../loadStatistics/api/">its own separate API</a>. </p>
+    <h2>Fetch/Update config.xml</h2>
+    <p> To programmatically obtain <tt>config.xml</tt>, hit <a href="../config.xml">this URL</a>. You can also POST an updated <tt>config.xml</tt> to the same URL to programmatically update the configuration of a node. </p>
+   </div>
+  </div>
+  <footer>
+   <div class="*">
+    <div class="*">
+     <div class="*" id="footer"></div>
+     <div class="*">
+      <span class="*">Page generated: 28-Oct-2021 01:44:00 CEST</span>
+      <span class="*"><a href="https://jenkins.io/">Jenkins ver. 2.121.1</a></span>
+     </div>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>

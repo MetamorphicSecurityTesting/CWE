@@ -1,0 +1,180 @@
+<html>
+ <head resurl="/static/0b49837a" data-rooturl="" data-resurl="/static/0b49837a"> 
+  <title>New Item [Jenkins]</title>
+  <meta name="ROBOTS" content="INDEX,NOFOLLOW">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+ <body data-model-type="hudson.model.AllView" id="jenkins" class="*" data-version="2.121.1">
+  <iframe id="_yuiResizeMonitor" title="Text Resize Monitor" tabindex="-1" role="presentation" style="position: absolute; visibility: visible; background-color: transparent; border-width: 0px; width: 2em; height: 2em; left: 0px; top: -27px;"></iframe>
+  <div id="tt" class="*" style="z-index: 999; visibility: hidden;">
+   <div class="*"></div>
+  </div>
+  <a href="#skip2content" class="*">Skip to content</a>
+  <div id="page-head">
+   <div id="breadcrumbBar">
+    <div style="height: 26px;"></div>
+    <div class="*" style="position: fixed; top: 40px; left: 0px;">
+     <div class="*"></div>
+     <div class="*">
+      <div id="right-top-nav"></div>
+      <ul id="breadcrumbs">
+       <li class="*"><a href="/" class="*">Jenkins</a></li>
+       <li href="/" class="*"></li>
+       <li class="*"><a href="/me/" class="*">User1</a></li>
+       <li class="*"></li>
+       <li class="*"><a href="/me/my-views/" class="*">My Views</a></li>
+       <li class="*"></li>
+       <li class="*"><a href="/me/my-views/view/all/" class="*">All</a></li>
+       <li href="/me/my-views/view/all/" class="*"></li>
+      </ul>
+      <div id="breadcrumb-menu-target"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="menuSelector"></div>
+  <div id="page-body" class="*">
+   <div id="main-panel">
+    <a name="skip2content"></a>
+    <div class="*" id="add-item-panel">
+     <div class="*">
+      <div class="*">
+       <form method="post" action="createItem" name="createItem" id="createItem">
+        <div class="*">
+         <div class="*">
+          <label for="name">Enter an item name</label>
+          <input name="name" id="name" data-valid="false" type="text" tabindex="0">
+          <div class="*">
+           » Required field
+          </div>
+          <div id="itemname-required" class="*">
+           » This field cannot be empty, please enter a valid name
+          </div>
+          <div id="itemname-invalid" class="*"></div>
+          <div id="itemtype-required" class="*">
+           » Please select an item type
+          </div>
+         </div>
+        </div>
+        <div id="items" class="*" role="radiogroup" aria-labelledby="Items" data-valid="false">
+         <div class="*" id="j-add-item-type-standalone-projects">
+          <div class="*">
+           <h2>Standalone Projects</h2>
+           <p>Create projects with a self-contained configuration and history. These projects can be at the top-level or grouped within folders.</p>
+          </div>
+          <ul class="*">
+           <li tabindex="0" role="radio" aria-checked="false" class="*"><label><input type="radio" name="mode" value="hudson.model.FreeStyleProject"> <span class="*">Freestyle project</span></label>
+            <div class="*">
+             This is the central feature of Jenkins. Jenkins will build your project, combining any SCM with any build system, and this can be even used for something other than software build.
+            </div>
+            <div class="*">
+             <img class="*" src="/static/0b49837a/images/48x48/freestyleproject.png">
+            </div></li>
+           <li tabindex="0" role="radio" aria-checked="false" class="*"><label><input type="radio" name="mode" value="org.jenkinsci.plugins.workflow.job.WorkflowJob"> <span class="*">Pipeline</span></label>
+            <div class="*">
+             Orchestrates long-running activities that can span multiple build agents. Suitable for building pipelines (formerly known as workflows) and/or organizing complex activities that do not easily fit in free-style job type.
+            </div>
+            <div class="*">
+             <img src="/plugin/workflow-job/images/48x48/pipelinejob.png">
+            </div></li>
+           <li tabindex="0" role="radio" aria-checked="false" class="*"><label><input type="radio" name="mode" value="hudson.matrix.MatrixProject"> <span class="*">Multi-configuration project</span></label>
+            <div class="*">
+             Suitable for projects that need a large number of different configurations, such as testing on multiple environments, platform-specific builds, etc.
+            </div>
+            <div class="*">
+             <img src="/plugin/matrix-project/images/48x48/matrixproject.png">
+            </div></li>
+          </ul>
+         </div>
+         <div class="*" id="j-add-item-type-nested-projects">
+          <div class="*">
+           <h2>Nested Projects</h2>
+           <p>Create project categories or project hierarchies with folders. Folders can be created manually or automatically based on repositories.</p>
+          </div>
+          <ul class="*">
+           <li tabindex="0" role="radio" aria-checked="false" class="*"><label><input type="radio" name="mode" value="com.cloudbees.hudson.plugins.folder.Folder"> <span class="*">Folder</span></label>
+            <div class="*">
+             Creates a container that stores nested items in it. Useful for grouping things together. Unlike view, which is just a filter, a folder creates a separate namespace, so you can have multiple things of the same name as long as they are in different folders.
+            </div>
+            <div class="*">
+             <img class="*" src="/static/0b49837a/plugin/cloudbees-folder/images/48x48/folder.png">
+            </div></li>
+           <li tabindex="0" role="radio" aria-checked="false" class="*"><label><input type="radio" name="mode" value="jenkins.branch.OrganizationFolder.org.jenkinsci.plugins.github_branch_source.GitHubSCMNavigator"> <span class="*">GitHub Organization</span></label>
+            <div class="*">
+             Scans a GitHub organization (or user account) for all repositories matching some defined markers.
+            </div>
+            <div class="*">
+             <img class="*" src="/static/0b49837a/plugin/github-branch-source/images/48x48/github-scmnavigator.png">
+            </div></li>
+           <li tabindex="0" role="radio" aria-checked="false" class="*"><label><input type="radio" name="mode" value="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject"> <span class="*">Multibranch Pipeline</span></label>
+            <div class="*">
+             Creates a set of Pipeline projects according to detected branches in one SCM repository.
+            </div>
+            <div class="*">
+             <img class="*" src="/static/0b49837a/plugin/workflow-multibranch/images/48x48/pipelinemultibranchproject.png">
+            </div></li>
+          </ul>
+         </div>
+        </div>
+        <div class="*">
+         <p class="*">If you want to create a new item from other existing, you can use this option:</p>
+         <div class="*">
+          <input type="radio" name="mode" value="copy">
+          <div class="*">
+           <img src="/static/0b49837a/images/48x48/copy.png">
+          </div>
+          <label>Copy from</label> 
+          <input data-valid="false" id="from" placeholder="Type to autocomplete" autocompleteurl="/me/descriptorByName/hudson.model.AllView/autoCompleteCopyNewItemFrom" name="from" type="text" class="*" value="" autocomplete="off" style="position: relative;">
+          <div class="*">
+           <div class="*" style="display: none;">
+            <div class="*" style="display: none;"></div>
+            <div class="*">
+             <ul>
+              <li style="display: none;"></li>
+              <li style="display: none;"></li>
+              <li style="display: none;"></li>
+              <li style="display: none;"></li>
+              <li style="display: none;"></li>
+              <li style="display: none;"></li>
+              <li style="display: none;"></li>
+              <li style="display: none;"></li>
+              <li style="display: none;"></li>
+              <li style="display: none;"></li>
+             </ul>
+            </div>
+            <div class="*" style="display: none;"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="*">
+         <div class="*" style="position: fixed;">
+          <button type="submit" id="ok-button" class="*" disabled>OK</button>
+         </div>
+        </div>
+        <div>
+         <input type="hidden" name="Jenkins-Crumb" value="195ba25d8cb739ceed3dfb2280b84717">
+        </div>
+        <div>
+         <input type="hidden" name="json" value="init">
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <footer>
+   <div class="*">
+    <div class="*">
+     <div class="*" id="footer"></div>
+     <div class="*">
+      <span class="*">Page generated: 28-Oct-2021 03:56:53 CEST</span>
+      <span class="*"><a href="api/">REST API</a></span>
+      <span class="*"><a href="https://jenkins.io/">Jenkins ver. 2.121.1</a></span>
+     </div>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>
