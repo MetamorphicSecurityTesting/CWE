@@ -38,12 +38,12 @@ MR CWE_79b {
  		
  		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
  			
- 			System.out.println("URL TO ATTACK "+(action as StandardAction).getCurrentURL());
- 			System.out.println("URL DEST "+(action as StandardAction).getElementURL());
- 			System.out.println("TEXT "+(action as StandardAction).getText());
-// 			
- 			System.out.println("PARAMETER "+x);
- 			System.out.println( Input(1).actions.get(pos).getFormInputs().get(x) );
+// 			System.out.println("URL TO ATTACK "+(action as StandardAction).getCurrentURL());
+// 			System.out.println("URL DEST "+(action as StandardAction).getElementURL());
+// 			System.out.println("TEXT "+(action as StandardAction).getText());
+//// 			
+// 			System.out.println("PARAMETER "+x);
+// 			System.out.println( Input(1).actions.get(pos).getFormInputs().get(x) );
  			
 // 			System.out.println( "Alert "+Output(Input(1),pos-1).hasAlert ); 
  			

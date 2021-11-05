@@ -73,6 +73,13 @@ public class CWETestWebminFabrizio extends MRBaseTest {
 //		super.test(provider,TEST_INPUTS.class);
 //	}
 	
+	/**
+	 * Detects:
+	 * https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8820
+	 * 
+	 * VM: https://dropit.uni.lu/invitations?share=397ed38758c6f295392d&dl=0
+	 * 
+	 */
 	@Test
 	public void test_CWE_79b() {  
 		super.test(provider,CWE_79b.class);
