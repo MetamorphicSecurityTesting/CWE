@@ -1,5 +1,7 @@
 package cwe.tests;
 
+import static org.junit.Assert.assertTrue;
+
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.time.LocalDateTime;
@@ -184,12 +186,15 @@ public class CWETestFabrizio extends MRBaseTest {
 		super.test(provider,CWE_359_313.class);
 	}
 	
-	*/
+	
 	
 	@Test
 	public void test_CWE_757_OTG_CRYPST_004_F() { //passed
 		super.test(provider,CWE_757_OTG_CRYPST_004_F.class);
-	}
+	}*/
+	
+
+	
 	
 	
 	//
