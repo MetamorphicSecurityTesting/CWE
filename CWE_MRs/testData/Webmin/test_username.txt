@@ -1,0 +1,7 @@
+test 
+te@st
+test.com
+test,com
+testécom
+Stargåte
+te\u0000st

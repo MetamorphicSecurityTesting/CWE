@@ -1,0 +1,2352 @@
+{
+  "path15": [
+    {
+      "url": "http://10.211.55.7:10000/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "  Sign in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[4]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003d  Sign in, attributes\u003d{class\u003dbtn btn-primary, type\u003dsubmit}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/sysinfo.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/session_login.cgi",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "name",
+            "value": "user"
+          },
+          "type": "text",
+          "values": [
+            "fabrizio"
+          ]
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "pass"
+          },
+          "type": "password",
+          "values": [
+            "fabrizio"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "save"
+          },
+          "type": "checkbox",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "Cluster",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCluster, attributes\u003d{data-has-sub-link\u003d, href\u003d#cluster}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/sysinfo.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/sysinfo.cgi?xnavigation\u003d1#cluster",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[2]/LI[4]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003d, attributes\u003d{aria-label\u003dTheme Configuration, class\u003dmenu-exclude-link, data-container\u003d#content, data-href\u003d/settings-user.cgi, data-html\u003dfalse, data-placement\u003dauto top, data-title\u003dTheme Configuration, data-toggle\u003dtooltip, href\u003d/settings-user.cgi}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/sysinfo.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/settings-user.cgi",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "Cluster",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCluster, attributes\u003d{data-has-sub-link\u003d, href\u003d#cluster}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/settings-user.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/settings-user.cgi?xnavigation\u003d1#cluster",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/A[1]/LABEL[1]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hide_top_loader_true_7587"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hide_top_loader_false_7587"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_make_date_true_9838"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_make_date_false_9838"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_enable_container_offset_true_634"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_enable_container_offset_false_634"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_contrast_mode_true_5760"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_contrast_mode_false_5760"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_right_page_hide_persistent_vscroll_true_974"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_right_page_hide_persistent_vscroll_false_974"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_mail_ui_true_7654"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_mail_ui_false_7654"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_collapse_navigation_link_true_2973"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_collapse_navigation_link_false_2973"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_show_night_mode_link_true_8536"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_show_night_mode_link_false_8536"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_favorites_true_7645"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_favorites_false_7645"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_options_button_true_5515"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_options_button_false_5515"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_leftmenu_button_refresh_true_3045"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_leftmenu_button_refresh_false_3045"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hotkeys_active_true_6073"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hotkeys_active_false_6073"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_usermin_default_module"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_document_title"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_font_family"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_cm_editor_palette"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_navigation_color"
+          },
+          "type": "select",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": " fabrizio",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[2]/LI[5]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003d fabrizio, attributes\u003d{aria-label\u003d, class\u003dmenu-exclude-link cursor-default no_effect, data-container\u003daside .user-link, data-html\u003dtrue, data-placement\u003dauto top, data-title\u003d, data-toggle\u003dtooltip}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/settings-user.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/A[1]/LABEL[1]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hide_top_loader_true_9797"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hide_top_loader_false_9797"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_make_date_true_6097"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_make_date_false_6097"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_enable_container_offset_true_9510"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_enable_container_offset_false_9510"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_contrast_mode_true_7968"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_contrast_mode_false_7968"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_right_page_hide_persistent_vscroll_true_364"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_right_page_hide_persistent_vscroll_false_364"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_mail_ui_true_6345"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_mail_ui_false_6345"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_collapse_navigation_link_true_2343"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_collapse_navigation_link_false_2343"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_show_night_mode_link_true_6549"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_show_night_mode_link_false_6549"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_favorites_true_5361"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_favorites_false_5361"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_options_button_true_3227"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_options_button_false_3227"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_leftmenu_button_refresh_true_7235"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_leftmenu_button_refresh_false_7235"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hotkeys_active_true_1136"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hotkeys_active_false_1136"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_usermin_default_module"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_document_title"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_font_family"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_cm_editor_palette"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_navigation_color"
+          },
+          "type": "select",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "Cluster Shell Commands",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[1]/LI[3]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCluster Shell Commands, attributes\u003d{href\u003d/cluster-shell/}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/settings-user.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/cluster-shell/",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/A[1]/LABEL[1]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hide_top_loader_true_9797"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hide_top_loader_false_9797"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_make_date_true_6097"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_make_date_false_6097"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_enable_container_offset_true_9510"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_enable_container_offset_false_9510"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_contrast_mode_true_7968"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_contrast_mode_false_7968"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_right_page_hide_persistent_vscroll_true_364"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_right_page_hide_persistent_vscroll_false_364"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_mail_ui_true_6345"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_mail_ui_false_6345"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_collapse_navigation_link_true_2343"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_collapse_navigation_link_false_2343"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_show_night_mode_link_true_6549"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_show_night_mode_link_false_6549"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_favorites_true_5361"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_favorites_false_5361"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_options_button_true_3227"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_options_button_false_3227"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_leftmenu_button_refresh_true_7235"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_leftmenu_button_refresh_false_7235"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hotkeys_active_true_1136"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hotkeys_active_false_1136"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_usermin_default_module"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_document_title"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_font_family"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_cm_editor_palette"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_navigation_color"
+          },
+          "type": "select",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": " Run Command Now ",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003d Run Command Now , attributes\u003d{class\u003dbtn btn-success  ui_submit ui_form_end_submit, type\u003dbutton}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/cluster-shell/?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/cluster-shell/run.cgi",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "cmd"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "server"
+          },
+          "type": "select",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "Cluster",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCluster, attributes\u003d{data-has-sub-link\u003d, href\u003d#cluster}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/cluster-shell/run.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/cluster-shell/run.cgi?xnavigation\u003d1#cluster",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "Cluster Shell Commands",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[1]/LI[3]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCluster Shell Commands, attributes\u003d{href\u003d/cluster-shell/}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/cluster-shell/run.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/cluster-shell/",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        }
+      ]
+    }
+  ],
+    "path16": [
+    {
+      "url": "http://10.211.55.7:10000/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "  Sign in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/FORM[1]/DIV[4]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003d  Sign in, attributes\u003d{class\u003dbtn btn-primary, type\u003dsubmit}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/sysinfo.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/session_login.cgi",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "name",
+            "value": "user"
+          },
+          "type": "text",
+          "values": [
+            "pippo"
+          ]
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "pass"
+          },
+          "type": "password",
+          "values": [
+            "pippo"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "save"
+          },
+          "type": "checkbox",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "Cluster",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCluster, attributes\u003d{data-has-sub-link\u003d, href\u003d#cluster}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/sysinfo.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/sysinfo.cgi?xnavigation\u003d1#cluster",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[2]/LI[4]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003d, attributes\u003d{aria-label\u003dTheme Configuration, class\u003dmenu-exclude-link, data-container\u003d#content, data-href\u003d/settings-user.cgi, data-html\u003dfalse, data-placement\u003dauto top, data-title\u003dTheme Configuration, data-toggle\u003dtooltip, href\u003d/settings-user.cgi}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/sysinfo.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/settings-user.cgi",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "Cluster",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCluster, attributes\u003d{data-has-sub-link\u003d, href\u003d#cluster}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/settings-user.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/settings-user.cgi?xnavigation\u003d1#cluster",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/A[1]/LABEL[1]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hide_top_loader_true_7587"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hide_top_loader_false_7587"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_make_date_true_9838"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_make_date_false_9838"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_enable_container_offset_true_634"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_enable_container_offset_false_634"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_contrast_mode_true_5760"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_contrast_mode_false_5760"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_right_page_hide_persistent_vscroll_true_974"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_right_page_hide_persistent_vscroll_false_974"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_mail_ui_true_7654"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_mail_ui_false_7654"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_collapse_navigation_link_true_2973"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_collapse_navigation_link_false_2973"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_show_night_mode_link_true_8536"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_show_night_mode_link_false_8536"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_favorites_true_7645"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_favorites_false_7645"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_options_button_true_5515"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_options_button_false_5515"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_leftmenu_button_refresh_true_3045"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_leftmenu_button_refresh_false_3045"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hotkeys_active_true_6073"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hotkeys_active_false_6073"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_usermin_default_module"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_document_title"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_font_family"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_cm_editor_palette"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_navigation_color"
+          },
+          "type": "select",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": " fabrizio",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[2]/LI[5]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003d fabrizio, attributes\u003d{aria-label\u003d, class\u003dmenu-exclude-link cursor-default no_effect, data-container\u003daside .user-link, data-html\u003dtrue, data-placement\u003dauto top, data-title\u003d, data-toggle\u003dtooltip}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/settings-user.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/A[1]/LABEL[1]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hide_top_loader_true_9797"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hide_top_loader_false_9797"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_make_date_true_6097"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_make_date_false_6097"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_enable_container_offset_true_9510"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_enable_container_offset_false_9510"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_contrast_mode_true_7968"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_contrast_mode_false_7968"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_right_page_hide_persistent_vscroll_true_364"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_right_page_hide_persistent_vscroll_false_364"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_mail_ui_true_6345"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_mail_ui_false_6345"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_collapse_navigation_link_true_2343"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_collapse_navigation_link_false_2343"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_show_night_mode_link_true_6549"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_show_night_mode_link_false_6549"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_favorites_true_5361"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_favorites_false_5361"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_options_button_true_3227"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_options_button_false_3227"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_leftmenu_button_refresh_true_7235"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_leftmenu_button_refresh_false_7235"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hotkeys_active_true_1136"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hotkeys_active_false_1136"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_usermin_default_module"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_document_title"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_font_family"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_cm_editor_palette"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_navigation_color"
+          },
+          "type": "select",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "Cluster Shell Commands",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[1]/LI[3]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCluster Shell Commands, attributes\u003d{href\u003d/cluster-shell/}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/settings-user.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/cluster-shell/",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/A[1]/LABEL[1]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hide_top_loader_true_9797"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hide_top_loader_false_9797"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_make_date_true_6097"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_make_date_false_6097"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_enable_container_offset_true_9510"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_enable_container_offset_false_9510"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_contrast_mode_true_7968"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_contrast_mode_false_7968"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_right_page_hide_persistent_vscroll_true_364"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_right_page_hide_persistent_vscroll_false_364"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_mail_ui_true_6345"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_mail_ui_false_6345"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_collapse_navigation_link_true_2343"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_collapse_navigation_link_false_2343"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_show_night_mode_link_true_6549"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_show_night_mode_link_false_6549"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_favorites_true_5361"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_favorites_false_5361"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_options_button_true_3227"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_theme_options_button_false_3227"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_leftmenu_button_refresh_true_7235"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_leftmenu_button_refresh_false_7235"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hotkeys_active_true_1136"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "settings_hotkeys_active_false_1136"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_usermin_default_module"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_document_title"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_font_family"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_cm_editor_palette"
+          },
+          "type": "select",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "settings_navigation_color"
+          },
+          "type": "select",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": " Run Command Now ",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/FORM[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003d Run Command Now , attributes\u003d{class\u003dbtn btn-success  ui_submit ui_form_end_submit, type\u003dbutton}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/cluster-shell/?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/cluster-shell/run.cgi",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "cmd"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "server"
+          },
+          "type": "select",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "Cluster",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCluster, attributes\u003d{data-has-sub-link\u003d, href\u003d#cluster}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/cluster-shell/run.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/cluster-shell/run.cgi?xnavigation\u003d1#cluster",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "Cluster Shell Commands",
+      "id": "xpath /HTML[1]/BODY[1]/ASIDE[1]/DIV[1]/DIV[1]/UL[1]/LI[3]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCluster Shell Commands, attributes\u003d{href\u003d/cluster-shell/}}",
+      "eventType": "click",
+      "currentURL": "http://10.211.55.7:10000/cluster-shell/run.cgi?xnavigation\u003d1",
+      "elementURL": "http://10.211.55.7:10000/cluster-shell/",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_webmin"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "open_dashboard"
+          },
+          "type": "radio",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[4]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        }
+      ]
+    }
+  ]
+}

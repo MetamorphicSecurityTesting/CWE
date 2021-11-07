@@ -1,0 +1,75 @@
+{
+	"SUT":	"Jenkins",
+    "chromeDriverPath":"/usr/local/bin/chromedriver",
+	"VMadmin": "jenkinsuser",
+	"VMadminPwd": "123",
+	"VMsshPort": "22",
+	"firefoxDriverPath":"/usr/local/bin/geckodriver",
+	"IP": "10.211.55.7",
+	"Log": "./testData/Webmin/logFiles.txt",
+	"VMname": "UbuntuJenkins 2.121.1",
+	"REAL_WAIT_THRESHOLD": "60000", 
+	"inputFile": "./testData/Webmin/inputs.json",
+	"outputFile": "./testData/Webmin/outFolder/wResult.txt",
+	"outputStore": "./testData/Webmin/outputStore",
+	"randomFilePathFile": "./testData/Webmin/filePaths.txt",
+	"randomAdminFilePathFile": "./testData/Webmin/adminFilePaths.txt",
+	"RandomCookiePath": "./testData/Webmin/cookiePaths.txt",
+        "SQLInjectionString": "./testData/Webmin/SQLInjectionString.txt",
+        "CRLFAttackString": "./testData/Webmin/CRLFAttackString.txt",
+        "CodeInjectionString": "./testData/Webmin/CodeInjectionString.txt",
+        "StaticInjectionString": "./testData/Webmin/StaticInjectionString.txt",
+        "WeakPassword": "./testData/Webmin/WeakPassword.txt",
+        "SpecialCharacters": "./testData/Webmin/SpecialCharacters.txt",
+        "XSSInjectionString": "./testData/Webmin/XSSInjectionString.txt",
+        "LDAPInjectionString": "./testData/Webmin/LDAPInjectionString.txt",
+        "CommandInjection": "./testData/Webmin/CommandInjection.txt",
+        "XQueryInjection": "./testData/Webmin/XQueryInjection.txt",
+        "FileWithInvalidType": "./testData/Webmin/FileWithInvalidType.txt",
+        "XMLInjectedFile": "./testData/Webmin/XMLInjectedFile.txt",
+
+	"actionsChangedUrlFileName": "./testData/Webmin/jenkinsActionsChangedUrl.json",
+	"loginParams": [
+		{
+			"loginURL": "http://10.211.55.7:10000/sysinfo.cgi?xnavigation\u003d1",
+			"userParameter": "user",
+			"passwordParameter": "pass"
+		}
+	],
+	"logoutURL": "http://10.211.55.7:10000/logout",
+	"ignoreURLs": [],
+	"confirmationTexts": ["You must use POST method to trigger builds", 
+		"The URL you're trying to access requires that requests be sent using POST (like a form submission)"],
+	"confirmationButtons": ["Retry using POST", "Proceed"],
+	"waitTimeAfterAction": 2000,
+	"signup" : {
+		"url": "http://10.211.55.7:8080/securityRealm/createAccount",
+		"userParam" : "username",
+		"passwordParams" : ["password1", "password2"],
+		"emailParam" : "email",
+		"others": []
+	},
+	"cleanUp": {
+		"class": [],
+		"script": [],
+		"attribute": {
+			"name": ["rel"],
+			"nameValue": []
+		},
+		"tag": [],
+		"id": ["header"]
+	},
+	"supervisedUser":{
+		"admin": ["user1", "user2"],
+		"user2": ["user1"]
+	},
+	"errorSigns" : {
+		"title" :[
+			"Error 404",
+			"Error 403"],
+		"content":[
+			"HTTP ERROR 403",
+			"A problem occurred while processing the request.",
+			"This XML file does not appear to have any style information associated with it."]
+	}
+}
