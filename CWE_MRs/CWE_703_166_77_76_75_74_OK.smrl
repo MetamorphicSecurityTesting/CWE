@@ -6,22 +6,38 @@ package smrl.mr.owasp {
 /**
  * 
  * CWE Definition:
- * The software receives input from an upstream component, but it does not handle or incorrectly
- * handles when an expected special element is missing.
+ * The software receives input from an upstream component, but it does not handle or incorrectly handles 
+ * when an expected special element is missing.
  * 
  * CWE_703:
+ * The software does not properly anticipate or handle exceptional conditions that rarely occur during 
+ * normal operation of the software. 
  * 
  * CWE_166:
+ * The software receives input from an upstream component, but it does not handle or incorrectly handles 
+ * when an expected special element is missing. 
  * 
  * CWE_78:
+ * The software constructs all or part of an OS command using externally-influenced input from an upstream 
+ * component, but it does not neutralize or incorrectly neutralizes special elements that could modify 
+ * the intended OS command when it is sent to a downstream component. 
  * 
  * CWE_77:
+ * The software constructs all or part of a command using externally-influenced input from an upstream 
+ * component, but it does not neutralize or incorrectly neutralizes special elements that could modify 
+ * the intended command when it is sent to a downstream component. 
  * 
  * CWE_76:
+ * The software properly neutralizes certain special elements, but it improperly neutralizes equivalent 
+ * special elements. 
  * 
  * CWE_75:
+ * The software does not adequately filter user-controlled input for special elements with control implications. 
  * 
  * CWE_74:
+ * The software constructs all or part of a command, data structure, or record using externally-influenced 
+ * input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements 
+ * that could modify how it is parsed or interpreted when it is sent to a downstream component. 
  * 
  * 
  * Extra Details:
