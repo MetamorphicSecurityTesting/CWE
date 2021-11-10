@@ -57,7 +57,6 @@ import smrl.mr.owasp.CWE_79;
 import smrl.mr.owasp.CWE_792_793_794_795_796_797;
 import smrl.mr.owasp.CWE_79_Jenkins;
 import smrl.mr.owasp.CWE_79_Jenkins944;
-import smrl.mr.owasp.CWE_79b;
 import smrl.mr.owasp.CWE_841;
 import smrl.mr.owasp.CWE_88;
 import smrl.mr.owasp.CWE_89_943;
@@ -67,6 +66,7 @@ import smrl.mr.owasp.CWE_93a;
 import smrl.mr.owasp.CWE_93b;
 import smrl.mr.owasp.CWE_94_95;
 import smrl.mr.owasp.CWE_94_96;
+import smrl.mr.test.TEST_INPUTS;
 
 public class CWETest extends MRBaseTest {
 
@@ -424,12 +424,16 @@ public class CWETest extends MRBaseTest {
 		super.test(provider,CWE_79_Jenkins944.class);
 	}
 
-	*/
+	
 	@Test
 	public void test_CWE_79_Jenkins() {  // failed
 		super.test(provider,CWE_79.class);
 	}
-	
+	*/
+	@Test
+	public void TEST() {  // failed
+		super.test(provider,TEST_INPUTS.class);
+	}
  
 	public static String getCurrentTime() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  

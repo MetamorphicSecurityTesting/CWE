@@ -1,0 +1,73 @@
+{
+	"SUT":	"Jenkins",
+        "firefoxDriverPath":"C:\\Users\\nbaya076\\geckodriver.exe",
+        "chromeDriverPath":"C:\\Users\\nbaya076\\chromedriver.exe",
+	"VMadmin": "jenkinsuser",
+	"VMadminPwd": "123",
+	"VMsshPort": "22",
+
+	"IP": "192.168.56.104",
+        "Log": "./testData/DVWA/logFiles.txt",
+	"VMname": "UbuntuJenkins 2.121.1",
+	"REAL_WAIT_THRESHOLD": "60000", 
+	"inputFile": "./testData/DVWA/inputs_SQLinjection.json",
+	"outputFile": "./testData/DVWA/outFolder/jenkinsResult.txt",
+	"outputStore": "./testData/DVWA/outputStore",
+	"RandomFilePath": "./testData/DVWA/filePaths.txt",
+	"randomAdminFilePathFile": "./testData/DVWA/adminFilePaths.txt",
+	"RandomCookiePath": "./testData/DVWA/cookiePaths.txt",
+        "SQLInjectionString": "./testData/DVWA/SQLInjectionString.txt",
+        "CRLFAttackString": "./testData/DVWA/CRLFAttackString.txt",
+        "CodeInjectionString": "./testData/DVWA/CodeInjectionString.txt",
+        "StaticInjectionString": "./testData/DVWA/StaticInjectionString.txt",
+        "WeakPassword": "./testData/DVWA/WeakPassword.txt",
+        "SpecialCharacters": "./testData/DVWA/SpecialCharacters.txt",
+        "XSSInjectionString": "./testData/DVWA/XSSInjectionString.txt",
+        "LDAPInjectionString": "./testData/DVWA/LDAPInjectionString.txt",
+        "CommandInjection": "./testData/DVWA/CommandInjection.txt",
+        "XQueryInjection": "./testData/DVWA/XQueryInjection.txt",
+        "FileWithInvalidType": "./testData/DVWA/FileWithInvalidType.txt",
+        "XMLInjectedFile": "./testData/DVWA/XMLInjectedFile.txt",
+        "CronExpressionsInjection": "./testData/DVWA/CronExpressionsInjection.txt",
+        "RandomPath": "./testData/DVWA/RandomPath.txt",
+	"test_username": "./testData/DVWA/test_username.txt",
+
+	"actionsChangedUrlFileName": "./testData/DVWA/jenkinsActionsChangedUrl.json",
+	"loginParams": [
+		{
+			"loginURL": "http://192.168.56.104/dvwa/login.php",
+			"userParameter": "username",
+			"passwordParameter": "password"
+		}
+	],
+	"logoutURL": "http://192.168.56.104/dvwa/logout.php",
+	"ignoreURLs": [],
+	"confirmationTexts": ["You must use POST method to trigger builds", 
+		"The URL you're trying to access requires that requests be sent using POST (like a form submission)"],
+	"confirmationButtons": ["Retry using POST", "Proceed"],
+	"waitTimeAfterAction": 2000,
+	
+	"cleanUp": {
+		"class": [],
+		"script": [],
+		"attribute": {
+			"name": ["rel"],
+			"nameValue": []
+		},
+		"tag": [],
+		"id": ["header"]
+	},
+	"supervisedUser":{
+		"admin": ["user1", "user2"],
+		"user2": ["user1"]
+	},
+	"errorSigns" : {
+		"title" :[
+			"Error 404",
+			"Error 403"],
+		"content":[
+			"HTTP ERROR 403",
+			"A problem occurred while processing the request.",
+			"This XML file does not appear to have any style information associated with it."]
+	}
+}
