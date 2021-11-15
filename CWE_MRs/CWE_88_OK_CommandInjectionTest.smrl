@@ -1,0 +1,72 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp {
+ 
+/**
+ * merge to AUTHZ001a
+ * FABRIZIO: we need a concrete case
+ * e.g., https://cve.circl.lu/cve/CVE-2017-1000392 (but is 79)
+ * 
+ * 
+ * CWE Definition:
+ * The software constructs a string for a command to executed by a separate component in another 
+ * control sphere, but it does not properly delimit the intended arguments, options, or switches
+ * within that command string.
+ * 
+ * Idea:
+ * For all parameters of the actions we try to inject some commands to check whether the system is able
+ * to neutralize the command injection or not.
+ * 
+ * 
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1).
+ * (2) Stores the parameters of the current action in a variable.
+ * (3) Second for loop iterates over all parameters of the current action
+ * (4) Verifies that the current URL has not been seen before
+ * (5) Creates the follow-up input
+ * (6) Sets the SQL injection strings to the parameter of the action 
+ * (7) Checks that the system does not parse the command and the Input(1) and the follow-up input both get the same output.
+ *     Or the result of the follow-up input is error
+ *     Or the follow-up input can has the right to access
+ */
+ 
+ 
+ 
+ 
+ //";echo HELLO;"
+ 
+MR CWE_88test { 
+ { 
+   keepDialogsOpen = true;
+
+ 	for (Action action : Input(1).actions()){                                                  //(1)
+ 		var pos = action.getPosition();                                                        //(2) 
+ 		var currentURL = action.url;
+ 		
+ 		System.out.println("ACTION "+pos+"/"+currentURL);
+ 			System.out.println("ACTION "+pos+"/////"+ Input(1).actions().get(pos).getElementURL());
+ 		
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
+ 			
+ 			
+ 			IMPLIES(
+ 				
+ 				notTried( x+currentURL, Input(1).actions().get(pos).getElementURL() ) &&                             //(5)
+ 				        
+ 				EQUAL(Input(2), Input(1) )                     &&                       //(7)
+ 				
+ 				Input(2).actions.get(pos).setFormInput(x, CommandInjection()) 
+ 				                                 //(9)              
+ 				,
+// 				true
+ 				OR(                                                                          //(10)
+		    		isError(Output(Input(2), pos)),                                     //(7)                  
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
+		    	)
+ 			);
+	}//end-for
+ }} 
+}//end-MR
+}//end-package
+

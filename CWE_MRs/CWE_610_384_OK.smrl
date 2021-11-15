@@ -55,7 +55,7 @@ package smrl.mr.owasp{
  *     should be either an error message or different than the output of Input(1) for the same input.
  *   
  */ 
-MR CWE_610_384 {
+MR CWE_610_384 { 
 		{
 			for ( var x = 0; x < Input(1).actions().size(); x++ ){                                                //(1)
 		

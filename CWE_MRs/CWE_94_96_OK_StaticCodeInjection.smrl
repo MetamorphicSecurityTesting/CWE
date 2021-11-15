@@ -44,7 +44,7 @@ MR CWE_94_96 {
 	  	var pos = action.getPosition();                                                        //(2)
 	  	
 	   	for ( var x =0; notTried(action.url) && x < action.parameters.size; x++){              //(3)
-	   IMPLIES(
+	   IMPLIES( 
 	   	
 	   			EQUAL ( Input(2), Input(1) ) &&                                                //(4)
 	   			Input(2).actions().get(pos).setParameterValue( x, StaticInjectionString() )    //(5)				    			

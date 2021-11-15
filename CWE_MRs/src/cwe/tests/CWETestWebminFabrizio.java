@@ -28,8 +28,8 @@ import smrl.mr.owasp.CWE_643_652;
 import smrl.mr.owasp.CWE_703_166_78_77_76_75_74;
 import smrl.mr.owasp.CWE_757_OTG_CRYPST_004_F;
 import smrl.mr.owasp.CWE_79;
-import smrl.mr.owasp.CWE_79b;
-import smrl.mr.owasp.CWE_88;
+import smrl.mr.owasp.CWE_79b_storedXSS;
+
 import smrl.mr.owasp.CWE_89_943;
 import smrl.mr.owasp.CWE_90;
 import smrl.mr.owasp.CWE_93a;
@@ -82,7 +82,7 @@ public class CWETestWebminFabrizio extends MRBaseTest {
 	 */
 	@Test
 	public void test_CWE_79b() {  
-		super.test(provider,CWE_79b.class);
+		super.test(provider,CWE_79b_storedXSS.class);
 	}
 	
 	

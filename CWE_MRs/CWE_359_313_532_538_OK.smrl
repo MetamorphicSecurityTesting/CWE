@@ -47,7 +47,7 @@ MR CWE_359_313_532_538 {
  	for (Action action : Input(1).actions()){                                        //(1)	
  			
  			var initialLog = Log();		                                             //(2)
- 			
+ 			 
  						
  			IMPLIES(
  				afterLogin(action) &&                                                //(3)

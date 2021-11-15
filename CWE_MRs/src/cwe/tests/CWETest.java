@@ -58,7 +58,7 @@ import smrl.mr.owasp.CWE_792_793_794_795_796_797;
 import smrl.mr.owasp.CWE_79_Jenkins;
 import smrl.mr.owasp.CWE_79_Jenkins944;
 import smrl.mr.owasp.CWE_841;
-import smrl.mr.owasp.CWE_88;
+
 import smrl.mr.owasp.CWE_89_943;
 import smrl.mr.owasp.CWE_90;
 import smrl.mr.owasp.CWE_923_297;

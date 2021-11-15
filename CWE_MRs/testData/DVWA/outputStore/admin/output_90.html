@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Damn Vulnerable Web App (DVWA) v1.0.7 :: Instructions</title>    
+ </head> 
+ <body class="*"> 
+  <div id="container">  
+   <div id="main_menu"> 
+    <div id="main_menu_padded"> 
+     <ul>
+      <li onclick="window.location='.'" class="*"><a href=".">Home</a></li>
+      <li onclick="window.location='instructions.php'" class="*"><a href="instructions.php">Instructions</a></li>
+      <li onclick="window.location='setup.php'" class="*"><a href="setup.php">Setup</a></li>
+     </ul>
+     <ul>
+      <li onclick="window.location='vulnerabilities/brute/.'" class="*"><a href="vulnerabilities/brute/.">Brute Force</a></li>
+      <li onclick="window.location='vulnerabilities/exec/.'" class="*"><a href="vulnerabilities/exec/.">Command Execution</a></li>
+      <li onclick="window.location='vulnerabilities/csrf/.'" class="*"><a href="vulnerabilities/csrf/.">CSRF</a></li>
+      <li onclick="window.location='vulnerabilities/fi/.?page=include.php'" class="*"><a href="vulnerabilities/fi/.?page=include.php">File Inclusion</a></li>
+      <li onclick="window.location='vulnerabilities/sqli/.'" class="*"><a href="vulnerabilities/sqli/.">SQL Injection</a></li>
+      <li onclick="window.location='vulnerabilities/sqli_blind/.'" class="*"><a href="vulnerabilities/sqli_blind/.">SQL Injection (Blind)</a></li>
+      <li onclick="window.location='vulnerabilities/upload/.'" class="*"><a href="vulnerabilities/upload/.">Upload</a></li>
+      <li onclick="window.location='vulnerabilities/xss_r/.'" class="*"><a href="vulnerabilities/xss_r/.">XSS reflected</a></li>
+      <li onclick="window.location='vulnerabilities/xss_s/.'" class="*"><a href="vulnerabilities/xss_s/.">XSS stored</a></li>
+     </ul>
+     <ul>
+      <li onclick="window.location='security.php'" class="*"><a href="security.php">DVWA Security</a></li>
+      <li onclick="window.location='phpinfo.php'" class="*"><a href="phpinfo.php">PHP Info</a></li>
+      <li onclick="window.location='about.php'" class="*"><a href="about.php">About</a></li>
+     </ul>
+     <ul>
+      <li onclick="window.location='logout.php'" class="*"><a href="logout.php">Logout</a></li>
+     </ul> 
+    </div> 
+   </div> 
+   <div id="main_body"> 
+    <div class="*"> 
+     <h1>Instructions</h1> 
+     <div class="*">
+      <span class="*"><a href="?doc=readme">Read Me</a></span>
+      <span class="*"><a href="?doc=changelog">Change Log</a></span>
+      <span class="*"><a href="?doc=copying">Copying</a></span>
+      <span class="*"><a href="?doc=PHPIDS-license">PHPIDS License</a></span>
+     </div> 
+     <span class="*"> ############################################################<br> ################# DAMN VULNERABLE WEB APP ##################<br> ############################################################<br> <br> <br> #####################<br> # Change Log v1.0.7 #<br> #####################<br> <br> Re-designed the login page + made some other slight cosmetic changes. 06/06/2010 (ethicalhack3r)<br> Started PostgreSQL implementation. 15/03/2010 (ethicalhack3r)<br> A few small cosmetic changes. 15/03/2010 (ethicalhack3r)<br> Improved the help information and look. 15/03/2010 (ethicalhack3r)<br> Fixed a few bugs thanks to Digininja. 15/03/2010 (ethicalhack3r)<br> Show logged in username. 05/02/2010 (Jason Jones)<br> Added new info on RandomStorm. 04/02/2010 (ethicalhack3r)<br> Added 'SQL Injection (Blind)'. 04/02/2010 (ethicalhack3r)<br> Added official documentation. 21/11/2009 (ethicalhack3r)<br> Implemented view all source functionality. 16/10/2009 (tmacuk, craig, ethicalhack3r)<br> <br> #####################<br> # Change Log v1.0.6 #<br> #####################<br> <br> Fixed a bug where the logo would not show on first time use. 03/09/2009 (ethicalhack3r)<br> Removed 'current password' input box for low+med CSRF security. 03/09/2009 (ethicalhack3r)<br> Added an article which was written for OWASP Turkey. 03/10/2009 (ethicalhack3r)<br> Added more toubleshooting information. 02/10/2009 (ethicalhack3r)<br> Stored XSS high now sanitises output. 02/10/2009 (ethicalhack3r)<br> Fixed a 'bug' in XSS stored low which made it not vulnerable. 02/10/2009 (ethicalhack3r)<br> Rewritten command execution high to use a whitelist. 30/09/09 (ethicalhack3r)<br> Fixed a command execution vulnerability in exec high. 17/09/09 (ethicalhack3r)<br> Added some troubleshooting info for PHP 5.2.6 in readme.txt. 17/09/09 (ethicalhack3r)<br> Added the upload directory to the upload help. 17/09/09 (ethicalhack3r)<br> <br> <br> #####################<br> # Change Log v1.0.5 #<br> #####################<br> <br> Made IE friendly as much as possible. 30/08/2009 (ethicalhack3r)<br> Removed the acunetix scan report. 30/08/2009 (ethicalhack3r)<br> Added 'Clear Log' button to PHPIDS parser. 27/08/2009 (ethicalhack3r)<br> Implemented PHPIDS log parser. 27/08/2009 (ethicalhack3r)<br> Implemented Stored XSS vulnerability. 27/08/2009 (ethicalhack3r)<br> Added htaccess rule for localhost access only. 22/08/2009 (ethicalhack3r)<br> Added CSRF. 01/08/2009 (ethicalhack3r)<br> Implemented sessions/login. 01/08/2009 (ethicalhack3r)<br> Complete recode. (jamesr)<br> Complete redesign. (jamesr)<br> Delimited 'dvwa' in session- minimising the risk of clash with other projects running on localhost. 01/08/2009 (jamesr)<br> Integrated PHPIDS v0.6. 01/08/2009 (jamesr)<br> Streamlined login functionality. 01/08/2009 (jamesr)<br> <br> <br> #####################<br> # Change Log v1.0.4 #<br> #####################<br> <br> Added acunetix scan report. 24/06/2009<br> All links use <a href="http://hiderefer.com/?http://hiderefer.com" target="_blank">http://hiderefer.com</a> to hide referrer header. 23/06/2009<br> Updated/added 'more info' links. 23/06/2009<br> Moved change log info to CHANGELOG.txt. 22/06/2009<br> Fixed the exec.php UTF-8 output. 16/06/2009<br> Moved Help/View source buttons to footer. 12/06/2009<br> Fixed phpInfo bug. 12/06/2009<br> Made dvwa IE friendly. 11/06/2009<br> Fixed html bugs. 11/06/2009<br> Added more info to about page. 03/06/2009<br> Added pictures for the users. 03/06/2009<br> Fixed typos on the welcome page. 03/06/2009<br> Improved README.txt and fixed typos. 03/06/2009<br> Made SQL injection possible in sqli_med.php. Thanks to Teodor Lupan. 03/06/2009<br> <br> <br> #####################<br> # Change Log v1.0.3 #<br> #####################<br> <br> Changed XAMPP link in index.php. 25/05/2009<br> Set default security to low. 25/05/2009<br> Improved output in setup.php. 25/05/2009<br> <br> <br> #####################<br> # Change Log v1.0.2 #<br> #####################<br> <br> Removed phpinfo on higher security levels. 24/05/2009<br> Moved all vulnerable code to /source/. 24/05/2009<br> Added viewsource. 24/05/2009<br> <br> <br> #####################<br> # Change Log v1.0.1 #<br> #####################<br> <br> Implemented different security levels. 24/05/2009<br> Changed XSS from POST to GET. 22/05/2009<br> Some changes to CSS. 22/05/2009<br> Version number now in variable in header.php. 21/05/2009<br> Added about page. 21/05/2009<br> Updated login script to use database. 21/05/2009<br> Added admin user to database. 21/05/2009<br> Combined RFI + LFI to make 'File Inclusion'. 21/05/2009<br> More realism to Local File Inclusion. 21/05/2009<br> Better error output on upload script. 21/05/2009<br> <br> <br> ###################<br> # Change Log v1.0 #<br> ###################<br> <br> Made command execution more realistic. 20/05/2009<br> Added help buttons. 20/05/2009<br> Added .htaccess file to turn magic quotes off. 20/05/2009<br> Improved database creation with setup.php. 19/05/2009<br> Amended installation instructions in README file. 19/05/2009<br> Added GNU GPL license. 19/05/2009<br> Added a robots.txt file with disallow all. 26/01/2009<br> Removed link to www.ethicalhacker.co.uk in footer. 26/01/2009<br> Added better error output on magic quotes. 26/01/2009<br> <br> <br> # Contact: dvwa@ethicalhack3r.co.uk <br> # Download: <a href="http://hiderefer.com/?http://sourceforge.net/projects/dvwa/" target="_blank">http://sourceforge.net/projects/dvwa/</a><br> # SVN: <a href="http://hiderefer.com/?https://dvwa.svn.sourceforge.net/svnroot/dvwa" target="_blank">https://dvwa.svn.sourceforge.net/svnroot/dvwa</a><br> <br> # Created by: www.ethicalhack3r.co.uk<br> </span> 
+    </div> 
+    <br> 
+    <br> 
+   </div> 
+   <div class="*"> 
+   </div> 
+   <div id="system_info"> 
+    <div align="left">
+     <b>Username:</b> admin
+     <br>
+     <b>Security Level:</b> low
+     <br>
+     <b>PHPIDS:</b> disabled
+    </div> 
+   </div> 
+   <div id="footer"> 
+    <p>Damn Vulnerable Web Application (DVWA) v1.0.7</p> 
+   </div> 
+  </div> 
+ </body>
+</html>

@@ -32,7 +32,7 @@ MR CWE_352 {
 			
 				var pos = action.getPosition();                                                 //(2)
 				
-				
+				 
 				IMPLIES (
 					
 					afterLogin( action )                                                        //(3)

@@ -1,0 +1,1 @@
+Damn Vulnerable Web App (DVWA) - Login Username Password You have logged out Damn Vulnerable Web Application (DVWA) is a RandomStorm OpenSource project Hint: default username is 'admin' with password 'password'

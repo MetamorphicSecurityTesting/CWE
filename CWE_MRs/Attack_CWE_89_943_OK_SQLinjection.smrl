@@ -45,7 +45,7 @@ MR CWE_89_943 {
  				notTried( Input(1).actions().get(pos).getUrl() ) &&                      //(4)          
  				EQUAL(Input(2), Input(1))&&                                              //(5)
  				Input(2).actions().get(pos).setParameterValue( x, SQLInjectionString() ) //(6)
- 			                  
+ 			       // copy with form input           
  				,
  				
  				OR(

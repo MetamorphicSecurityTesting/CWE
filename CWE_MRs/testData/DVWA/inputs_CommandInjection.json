@@ -47,16 +47,7 @@
         }
       ]
     },
-    {
-      "text": "SQL Injection",
-      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/UL[2]/LI[5]/A[1]",
-      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dSQL Injection, attributes\u003d{href\u003dvulnerabilities/sqli/.}}",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/index.php",
-      "elementURL": "http://192.168.56.104/dvwa/vulnerabilities/sqli/",
-      "method": "get",
-      "formInputs": []
-    },
+    
     {
       "text": "Command Execution",
       "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/UL[2]/LI[2]/A[1]",
@@ -76,12 +67,31 @@
         }
       ]
     },
+{
+      "text": "Command Execution",
+      "id": "xpath /html/body/div/div[3]/div/div/form/input[2]",
+      "element": "",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.104/dvwa/vulnerabilities/exec/",
+      "elementURL": "http://192.168.56.104/dvwa/vulnerabilities/exec/#",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "name",
+            "value": "ip"
+          },
+          "type": "text",
+          "values": ["127.0.0.1"]
+        }
+      ]
+    },
     {
       "text": "Home",
       "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/UL[1]/LI[1]/A[1]",
       "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dHome, attributes\u003d{href\u003d../../.}}",
       "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/vulnerabilities/exec/",
+      "currentURL": "http://192.168.56.104/dvwa/vulnerabilities/exec/#",
       "elementURL": "http://192.168.56.104/dvwa/",
       "method": "get",
       "formInputs": [
@@ -104,232 +114,6 @@
       "elementURL": "/dvwa/",
       "method": "get",
       "formInputs": []
-    }
-  ],
-  "path2": [
-    {
-      "url": "http://192.168.56.104/dvwa/",
-      "eventType": "index",
-      "currentURL": "",
-      "method": "get"
-    },
-    {
-      "text": "",
-      "id": "xpath ",
-      "element": "unkown",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/",
-      "elementURL": "/dvwa/",
-      "method": "get",
-      "formInputs": []
-    },
-    {
-      "text": "",
-      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/FORM[1]/FIELDSET[1]/P[1]/INPUT[1]",
-      "element": "Element{node\u003d[INPUT: null], tag\u003dINPUT, text\u003d, attributes\u003d{name\u003dLogin, type\u003dsubmit, value\u003dLogin}}",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/login.php",
-      "elementURL": "http://192.168.56.104/dvwa/login.php",
-      "method": "post",
-      "formInputs": [
-        {
-          "identification": {
-            "how": "name",
-            "value": "username"
-          },
-          "type": "text",
-          "values": [
-            "admin"
-          ]
-        },
-        {
-          "identification": {
-            "how": "name",
-            "value": "password"
-          },
-          "type": "password",
-          "values": [
-            "password"
-          ]
-        }
-      ]
-    },
-    {
-      "text": "SQL Injection",
-      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/UL[2]/LI[5]/A[1]",
-      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dSQL Injection, attributes\u003d{href\u003dvulnerabilities/sqli/.}}",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/index.php",
-      "elementURL": "http://192.168.56.104/dvwa/vulnerabilities/sqli/",
-      "method": "get",
-      "formInputs": []
-    },
-    {
-      "text": "Command Execution",
-      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/UL[2]/LI[2]/A[1]",
-      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCommand Execution, attributes\u003d{href\u003d../../vulnerabilities/exec/.}}",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/vulnerabilities/sqli/",
-      "elementURL": "http://192.168.56.104/dvwa/vulnerabilities/exec/",
-      "method": "get",
-      "formInputs": [
-        {
-          "identification": {
-            "how": "name",
-            "value": "id"
-          },
-          "type": "text",
-          "values": []
-        }
-      ]
-    },
-    {
-      "text": "Logout",
-      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/UL[4]/LI[1]/A[1]",
-      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dLogout, attributes\u003d{href\u003d../../logout.php}}",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/vulnerabilities/exec/",
-      "elementURL": "http://192.168.56.104/dvwa/logout.php",
-      "method": "get",
-      "formInputs": [
-        {
-          "identification": {
-            "how": "name",
-            "value": "ip"
-          },
-          "type": "text",
-          "values": []
-        }
-      ]
-    }
-  ],
-"path11": [
-    {
-      "url": "http://192.168.56.104/dvwa/",
-      "eventType": "index",
-      "currentURL": "",
-      "method": "get"
-    },
-    {
-      "text": "",
-      "id": "xpath ",
-      "element": "unkown",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/",
-      "elementURL": "/dvwa/",
-      "method": "get",
-      "formInputs": []
-    },
-    {
-      "text": "",
-      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/FORM[1]/FIELDSET[1]/P[1]/INPUT[1]",
-      "element": "Element{node\u003d[INPUT: null], tag\u003dINPUT, text\u003d, attributes\u003d{name\u003dLogin, type\u003dsubmit, value\u003dLogin}}",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/login.php",
-      "elementURL": "http://192.168.56.104/dvwa/login.php",
-      "method": "post",
-      "formInputs": [
-        {
-          "identification": {
-            "how": "name",
-            "value": "username"
-          },
-          "type": "text",
-          "values": [
-            "admin"
-          ]
-        },
-        {
-          "identification": {
-            "how": "name",
-            "value": "password"
-          },
-          "type": "password",
-          "values": [
-            "password"
-          ]
-        }
-      ]
-    },
-    {
-      "text": "XSS reflected",
-      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/UL[2]/LI[8]/A[1]",
-      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dXSS reflected, attributes\u003d{href\u003dvulnerabilities/xss_r/.}}",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/index.php",
-      "elementURL": "http://192.168.56.104/dvwa/vulnerabilities/xss_r/",
-      "method": "get",
-      "formInputs": []
-    },
-    {
-      "text": "Instructions",
-      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/UL[1]/LI[2]/A[1]",
-      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dInstructions, attributes\u003d{href\u003d../../instructions.php}}",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/vulnerabilities/xss_r/",
-      "elementURL": "http://192.168.56.104/dvwa/instructions.php",
-      "method": "get",
-      "formInputs": [
-        {
-          "identification": {
-            "how": "name",
-            "value": "name"
-          },
-          "type": "text",
-          "values": []
-        }
-      ]
-    },
-    {
-      "text": "Read Me",
-      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/SPAN[1]/A[1]",
-      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dRead Me, attributes\u003d{href\u003d?doc\u003dreadme}}",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/instructions.php",
-      "elementURL": "http://192.168.56.104/dvwa/?doc\u003dreadme",
-      "method": "get",
-      "formInputs": []
-    },
-    {
-      "text": "Brute Force",
-      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/UL[2]/LI[1]/A[1]",
-      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dBrute Force, attributes\u003d{href\u003dvulnerabilities/brute/.}}",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/instructions.php?doc\u003dreadme",
-      "elementURL": "http://192.168.56.104/dvwa/vulnerabilities/brute/",
-      "method": "get",
-      "formInputs": []
-    },
-    {
-      "text": "Command Execution",
-      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/UL[2]/LI[2]/A[1]",
-      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCommand Execution, attributes\u003d{href\u003d../../vulnerabilities/exec/.}}",
-      "eventType": "click",
-      "currentURL": "http://192.168.56.104/dvwa/vulnerabilities/brute/",
-      "elementURL": "http://192.168.56.104/dvwa/vulnerabilities/exec/",
-      "method": "get",
-      "formInputs": [
-        {
-          "identification": {
-            "how": "name",
-            "value": "username"
-          },
-          "type": "text",
-          "values": [
-            "admin"
-          ]
-        },
-        {
-          "identification": {
-            "how": "name",
-            "value": "password"
-          },
-          "type": "password",
-          "values": [
-            "password"
-          ]
-        }
-      ]
     }
   ]
 }

@@ -46,7 +46,7 @@ MR CWE_314{
  		for (var x = 0; x < action.parameters.size; x++){                                 //(3)
  		
  			IMPLIES(
- 		
+ 		 
  				notTried( Input(1).actions().get(pos).getUrl() ) &&                       //(4)          
  				EQUAL(Input(2), Input(1)) &&                                              //(5)
  				Input(2).actions().get(pos).setParameterValue( x, randomString(512) )&&   //(6)
