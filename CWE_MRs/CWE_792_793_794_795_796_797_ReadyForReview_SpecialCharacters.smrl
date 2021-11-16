@@ -57,15 +57,16 @@ MR CWE_792_793_794_795_796_797 {
 	  for ( var par=0; par < action.getParameters().size(); par++ ){    //(2)
 	  	var pos = action.getPosition();                                 //(3)
 	  	//var inputVal = SpecialCharacters()+"value"+SpecialCharacters()      
-	  	
+	  	var value = Input(2).actions().get(pos).getParameterValue(par);
 	        IMPLIES(
 	            action.containFormInput()	&&		                    //(4)					
-	            EQUAL ( Input(2), Input(1) ) &&		                    //(5)		    			
-	    	    Input(2).actions().get(pos).setParameterValue(par, SpecialCharacters()+"value"+SpecialCharacters()) //(6) 
+	            EQUAL ( Input(2), Input(1) ) &&		                    //(5)
+	            		    			
+	    	    Input(2).actions().get(pos).setParameterValue(par, SpecialCharacters()+value+SpecialCharacters()) //(6) 
 	    	    //  Input(2).actions.get(action.position).setInputValue(newInputValue)  
 	    	  		    ,  
-		    
-		    	EQUAL(Output(Input(1), pos),Output(Input(2), pos))      //(7) 
+		    	OR ( isError(Output(Input(2), pos)) ,
+		    	EQUAL(Output(Input(1), pos),Output(Input(2), pos)) )     //(7) 
 		    	
 		);//end-IMPLIES
 	}}//end-for
