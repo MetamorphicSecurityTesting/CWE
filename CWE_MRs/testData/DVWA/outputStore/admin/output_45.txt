@@ -1,0 +1,1 @@
+Damn Vulnerable Web App (DVWA) v1.0.7 :: PHPIDS Log Home Instructions Setup Brute Force Command Execution CSRF File Inclusion SQL Injection SQL Injection (Blind) Upload XSS reflected XSS stored DVWA Security PHP Info About Logout PHPIDS Log PHPIDS log cleared Username: admin Security Level: low PHPIDS: disabled Damn Vulnerable Web Application (DVWA) v1.0.7

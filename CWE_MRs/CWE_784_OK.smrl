@@ -47,7 +47,7 @@ MR CWE_784{
 	  				EQUAL(Input(3), Input(2) )                                     //(7)
 	  				&& Input(3).actions.get(action2.position).setSession(session1) //(8)   
                         ,
-             OR(                                                                   //(9)
+             OR(                                                                    //(9)
               different( Output( Input(1), pos) , Output(Input(3) , pos) )
 ,        isError( Output(Input(3) , pos)))
 		);//end-IMPLIES

@@ -1,6 +1,7 @@
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 import  smrl.mr.language.actions.StandardAction;
+import jdk.internal.util.xml.impl.Input
 
 package smrl.mr.owasp{
 
@@ -27,7 +28,7 @@ package smrl.mr.owasp{
  *      and also it double checks that the action does not lead to an alert.
  * 
  */ 
-MR CWE_79b {
+MR CWE_89_943b {
  {
 	keepDialogsOpen = true;
 
@@ -38,38 +39,20 @@ MR CWE_79b {
  		
  		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
  			
-// 			System.out.println("URL TO ATTACK "+(action as StandardAction).getCurrentURL());
-// 			System.out.println("URL DEST "+(action as StandardAction).getElementURL());
-// 			System.out.println("TEXT "+(action as StandardAction).getText());
-//// 			
-// 			System.out.println("PARAMETER "+x);
-// 			System.out.println( Input(1).actions.get(pos).getFormInputs().get(x) );
- 			
-// 			System.out.println( "Alert "+Output(Input(1),pos-1).hasAlert ); 
  			
  			IMPLIES(
  				
- 				//The page can be accessed by more than one user
-// 				canReachThroughGUI( User(), Input(1).actions().get(pos).getUrl() ) &&           //(4)
- 				//We did not test the URL before
  				notTried( x, Input(1).actions().get(pos).getUrl() ) &&                             //(5)
- 				//No alter shown normally
- 				! Output(Input(1),pos).hasAlert					&&                              //(6)
- 				//We create the follow-up input          
+ 				        
  				EQUAL(Input(2), Input(1) )                     &&                       //(7)
  				
- 				//We put an XSS payload into a parameter
- 				Input(2).actions.get(pos).setFormInput(x, XSSInjectionString()) &&
- 				
- 				//Another sequnce to be performed by teh source user, to see if can be attacked
- 			    EQUAL(Input(3), Input(1) )                                     //(9)              
+ 				Input(2).actions.get(pos).setFormInput(x, SQLInjectionString()) 
+ 				                                 //(9)              
  				,
 // 				true
- 				OR(                                                                            //(10)
-		    		 //either the attack was not performed
-		    		 Output(Input(2), pos).emptyFile,
-		    		 //or no effect shall be observed (the effect is visualized when reaching the page where we inject the XSS)                  
-		    	     ! Output(Input(3), pos-1).hasAlert        
+ 				OR(                                                                          //(10)
+		    		isError(Output(Input(2), pos)),                                     //(7)                  
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
 		    	)
  			);
  		}

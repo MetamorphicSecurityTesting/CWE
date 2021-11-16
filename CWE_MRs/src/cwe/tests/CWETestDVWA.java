@@ -16,8 +16,14 @@ import smrl.mr.owasp.CWE_601_OTG_AUTHZ_002a;
 import smrl.mr.owasp.CWE_703_166_78_77_76_75_74;
 import smrl.mr.owasp.CWE_79;
 import smrl.mr.owasp.CWE_792_793_794_795_796_797;
-import smrl.mr.owasp.CWE_88;
+
+import smrl.mr.owasp.CWE_79b_XSSreflected;
+import smrl.mr.owasp.CWE_79b_storedXSS;
+import smrl.mr.owasp.CWE_88a;
+import smrl.mr.owasp.CWE_88b;
+import smrl.mr.owasp.CWE_88test;
 import smrl.mr.owasp.CWE_89_943;
+import smrl.mr.owasp.CWE_89_943b;
 import smrl.mr.test.TEST_INPUTS;
 
 public class CWETestDVWA extends MRBaseTest {
@@ -38,7 +44,7 @@ public class CWETestDVWA extends MRBaseTest {
 		//String configFile = "./testData/JenkinsICSE/jenkinsSysConfigDEMO.json";
 
 
-		smrl.mr.crawljax.WebProcessor.DEFAULT_HEADLESS = true;
+		smrl.mr.crawljax.WebProcessor.DEFAULT_HEADLESS = false;
 		provider = new WebOperationsProvider(configFile);
 	}
 
@@ -78,7 +84,7 @@ public class CWETestDVWA extends MRBaseTest {
 	public void test_CommandInjection() {
 		super.test(provider, CWE_88.class);
 	}
-	*/
+	
 	@Test
 	public void test_SpecialCharacters() {
 		super.test(provider, CWE_703_166_78_77_76_75_74.class);
@@ -86,8 +92,36 @@ public class CWETestDVWA extends MRBaseTest {
 	
 	
 	
+	@Test
+	public void test_XSSinjectionreflected() { //fail
+		super.test(provider, CWE_79b_storedXSS.class);
+	}
+	@Test
+	public void test() { //fail
+		super.test(provider, TEST_INPUTS.class);
+	}
 	
 
+	@Test
+	public void test1() { //fail
+		super.test(provider, CWE_88test.class);
+	}
+
+
+	@Test
+	public void test() { //fail
+		super.test(provider, TEST_INPUTS.class);
+	}
+
+	@Test
+	public void test() { //fail
+		super.test(provider, TEST_INPUTS.class);
+	}	*/
+	
+	@Test
+	public void test() { //fail
+		super.test(provider, TEST_INPUTS.class);
+	}
 	
 	
  

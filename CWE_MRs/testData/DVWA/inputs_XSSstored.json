@@ -1,0 +1,115 @@
+{
+"path12": [
+    {
+      "url": "http://192.168.56.104/dvwa/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.104/dvwa/",
+      "elementURL": "/dvwa/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/FORM[1]/FIELDSET[1]/P[1]/INPUT[1]",
+      "element": "Element{node\u003d[INPUT: null], tag\u003dINPUT, text\u003d, attributes\u003d{name\u003dLogin, type\u003dsubmit, value\u003dLogin}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.104/dvwa/login.php",
+      "elementURL": "http://192.168.56.104/dvwa/login.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "name",
+            "value": "username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "password"
+          },
+          "type": "password",
+          "values": [
+            "password"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "XSS stored",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/UL[2]/LI[9]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dXSS stored, attributes\u003d{href\u003dvulnerabilities/xss_s/.}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.104/dvwa/index.php",
+      "elementURL": "http://192.168.56.104/dvwa/vulnerabilities/xss_s/",
+      "method": "get",
+      "formInputs": []
+    },
+     {
+      "text": "XSS stored",
+      "id": "xpath /html/body/div/div[3]/div/div[1]/form/table/tbody/tr[3]/td[2]/input",
+      "element": "",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.104/dvwa/vulnerabilities/xss_s/",
+      "elementURL": "http://192.168.56.104/dvwa/vulnerabilities/xss_s/",
+      "method": "get",
+       "formInputs": [
+        {
+          "identification": {
+            "how": "name",
+            "value": "txtName"
+          },
+          "type": "text",
+          "values": ["a"]
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "mtxMessage"
+          },
+          "type": "textarea",
+          "values": ["abc"]
+        }
+      ]
+    },
+    {
+      "text": "Upload",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/UL[2]/LI[7]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dUpload, attributes\u003d{href\u003d../../vulnerabilities/upload/.}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.104/dvwa/vulnerabilities/xss_s/",
+      "elementURL": "http://192.168.56.104/dvwa/vulnerabilities/upload/",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "name",
+            "value": "txtName"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "name",
+            "value": "mtxMessage"
+          },
+          "type": "textarea",
+          "values": []
+        }
+      ]
+    }
+  ]
+}

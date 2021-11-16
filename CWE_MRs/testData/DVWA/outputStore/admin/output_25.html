@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Damn Vulnerable Web App (DVWA) v1.0.7 :: Instructions</title>    
+ </head> 
+ <body class="*"> 
+  <div id="container">  
+   <div id="main_menu"> 
+    <div id="main_menu_padded"> 
+     <ul>
+      <li onclick="window.location='.'" class="*"><a href=".">Home</a></li>
+      <li onclick="window.location='instructions.php'" class="*"><a href="instructions.php">Instructions</a></li>
+      <li onclick="window.location='setup.php'" class="*"><a href="setup.php">Setup</a></li>
+     </ul>
+     <ul>
+      <li onclick="window.location='vulnerabilities/brute/.'" class="*"><a href="vulnerabilities/brute/.">Brute Force</a></li>
+      <li onclick="window.location='vulnerabilities/exec/.'" class="*"><a href="vulnerabilities/exec/.">Command Execution</a></li>
+      <li onclick="window.location='vulnerabilities/csrf/.'" class="*"><a href="vulnerabilities/csrf/.">CSRF</a></li>
+      <li onclick="window.location='vulnerabilities/fi/.?page=include.php'" class="*"><a href="vulnerabilities/fi/.?page=include.php">File Inclusion</a></li>
+      <li onclick="window.location='vulnerabilities/sqli/.'" class="*"><a href="vulnerabilities/sqli/.">SQL Injection</a></li>
+      <li onclick="window.location='vulnerabilities/sqli_blind/.'" class="*"><a href="vulnerabilities/sqli_blind/.">SQL Injection (Blind)</a></li>
+      <li onclick="window.location='vulnerabilities/upload/.'" class="*"><a href="vulnerabilities/upload/.">Upload</a></li>
+      <li onclick="window.location='vulnerabilities/xss_r/.'" class="*"><a href="vulnerabilities/xss_r/.">XSS reflected</a></li>
+      <li onclick="window.location='vulnerabilities/xss_s/.'" class="*"><a href="vulnerabilities/xss_s/.">XSS stored</a></li>
+     </ul>
+     <ul>
+      <li onclick="window.location='security.php'" class="*"><a href="security.php">DVWA Security</a></li>
+      <li onclick="window.location='phpinfo.php'" class="*"><a href="phpinfo.php">PHP Info</a></li>
+      <li onclick="window.location='about.php'" class="*"><a href="about.php">About</a></li>
+     </ul>
+     <ul>
+      <li onclick="window.location='logout.php'" class="*"><a href="logout.php">Logout</a></li>
+     </ul> 
+    </div> 
+   </div> 
+   <div id="main_body"> 
+    <div class="*"> 
+     <h1>Instructions</h1> 
+     <div class="*">
+      <span class="*"><a href="?doc=readme">Read Me</a></span>
+      <span class="*"><a href="?doc=changelog">Change Log</a></span>
+      <span class="*"><a href="?doc=copying">Copying</a></span>
+      <span class="*"><a href="?doc=PHPIDS-license">PHPIDS License</a></span>
+     </div> 
+     <span class="*"> ############################################################<br> ################# DAMN VULNERABLE WEB APP ##################<br> ############################################################<br> <br> Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment.<br> <br> ############<br> # WARNING! #<br> ############<br> <br> Damn Vulnerable Web App is damn vulnerable! Do not upload it to your hosting provider's public html folder or any working web<br> server as it will be hacked. I recommend downloading and installing XAMPP onto a local machine inside your LAN which is used solely for testing. <br> <br> We do not take responsibility for the way in which any one uses Damn Vulnerable Web App (DVWA). We have made the purposes of the application clear and it should not be used maliciously. We have given warnings and taken measures to prevent users from installing DVWA on to live web servers. If your web server is compromised via an installation of DVWA it is not our responsibility it is the responsibility of the person/s who uploaded and installed it.<br> <br> ###########<br> # License #<br> ###########<br> <br> This file is part of Damn Vulnerable Web App (DVWA).<br> <br> Damn Vulnerable Web App (DVWA) is free software: you can redistribute it and/or modify<br> it under the terms of the GNU General Public License as published by<br> the Free Software Foundation, either version 3 of the License, or<br> (at your option) any later version.<br> <br> Damn Vulnerable Web App (DVWA) is distributed in the hope that it will be useful,<br> but WITHOUT ANY WARRANTY; without even the implied warranty of<br> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the<br> GNU General Public License for more details.<br> <br> You should have received a copy of the GNU General Public License<br> along with Damn Vulnerable Web App (DVWA). If not, see <a href="http://hiderefer.com/?http://www.gnu.org/licenses/." target="_blank">http://www.gnu.org/licenses/.</a><br> <br> ################<br> # Installation #<br> ################<br> <br> Default username = admin<br> Default password = password<br> <br> Installation video:<br> <a href="http://hiderefer.com/?http://www.youtube.com/watch?v=GzIj07jt8rM" target="_blank">http://www.youtube.com/watch?v=GzIj07jt8rM</a><br> <br> The easiest way to install DVWA is to download and install 'XAMPP' if you do not already have a web server setup. <br> <br> XAMPP is a very easy to install Apache Distribution for Linux, Solaris, Windows and Mac OS X. The package includes the Apache web server, MySQL, PHP, Perl, a FTP server and phpMyAdmin.<br> <br> XAMPP can be downloaded from:<br> <a href="http://hiderefer.com/?http://www.apachefriends.org/en/xampp.html" target="_blank">http://www.apachefriends.org/en/xampp.html</a><br> <br> Simply unzip dvwa.zip, place the unzipped files in your public html folder, then point your browser to <a href="http://hiderefer.com/?http://127.0.0.1/dvwa/index.php" target="_blank">http://127.0.0.1/dvwa/index.php</a><br> <br> <br> ##################<br> # Database Setup #<br> ##################<br> <br> To set up the database, simply click on the Setup button in the main menu, then click on the 'Create / Reset Database' button. This will create / reset the database for you with some data in.<br> <br> If you receive an error while trying to create your database, make sure your database credentials are correct within /config/config.inc.php<br> <br> The variables are set to the following by default: <br> <br> $_DVWA[ 'db_user' ] = 'root';<br> $_DVWA[ 'db_password' ] = '';<br> $_DVWA[ 'db_database' ] = 'dvwa';<br> <br> An explanation of these variables:<br> <br> $_DVWA[ 'db_user' ] = 'your_database_username';<br> $_DVWA[ 'db_password' ] = 'your_database_password';<br> $_DVWA[ 'db_database' ] = 'your_database_name';<br> <br> <br> ###################<br> # Troubleshooting #<br> ###################<br> <br> For the latest troubleshooting information please visit: <a href="http://hiderefer.com/?http://www.dvwa.co.uk/forum/viewtopic.php?f=5" target="_blank">http://www.dvwa.co.uk/forum/viewtopic.php?f=5</a>&amp;t=7<br> <br> <br> +Q. SQL Injection wont work on PHP version 5.2.6.<br> <br> -A.If you are using PHP version 5.2.6 you will need to do the following in order for SQL injection and other vulnerabilities to work.<br> <br> In .htaccess:<br> <br> Replace:<br> <br> 
+      <ifmodule mod_php5.c="">
+       <br> php_flag magic_quotes_gpc off
+       <br> #php_flag allow_url_fopen on
+       <br> #php_flag allow_url_include on
+       <br> 
+      </ifmodule><br> <br> With:<br> <br> 
+      <ifmodule mod_php5.c="">
+       <br> magic_quotes_gpc = Off
+       <br> allow_url_fopen = On
+       <br> allow_url_include = On
+       <br> 
+      </ifmodule><br> <br> +Q. Command execution won't work.<br> <br> -A. Apache may not have high enough priviledges to run commands on the web server. If you are running DVWA under linux make sure you are logged in as root. Under Windows log in as Administrator.<br> <br> +Q. My XSS payload won't run in IE.<br> <br> -A. If your running IE8 or above IE actively filters any XSS. To disable the filter you can do so by setting the HTTP header 'X-XSS-Protection: 0' or disable it from internet options. There may also be ways to bypass the filter.<br> <br> <br> # Contact: dvwa@dvwa.co.uk <br> # Website: <a href="http://hiderefer.com/?http://www.dvwa.co.uk" target="_blank">http://www.dvwa.co.uk</a><br> # Download: <a href="http://hiderefer.com/?http://sourceforge.net/projects/dvwa/" target="_blank">http://sourceforge.net/projects/dvwa/</a><br> # SVN: <a href="http://hiderefer.com/?http://dvwa.svn.sourceforge.net/svnroot/dvwa" target="_blank">http://dvwa.svn.sourceforge.net/svnroot/dvwa</a><br> <br> # Created by: The DVWA team.<br> </span> 
+    </div> 
+    <br> 
+    <br> 
+   </div> 
+   <div class="*"> 
+   </div> 
+   <div id="system_info"> 
+    <div align="left">
+     <b>Username:</b> admin
+     <br>
+     <b>Security Level:</b> low
+     <br>
+     <b>PHPIDS:</b> disabled
+    </div> 
+   </div> 
+   <div id="footer"> 
+    <p>Damn Vulnerable Web Application (DVWA) v1.0.7</p> 
+   </div> 
+  </div> 
+ </body>
+</html>
