@@ -1,0 +1,82 @@
+import static smrl.mr.language.Operations.*
+
+package smrl.mr.owasp {
+
+   /**
+   * 
+   * CWE Definition:
+   * The software does not perform any authentication for functionality that requires a provable user identity or consumes a significant amount of resources.
+   * 
+   * Idea:
+   * If a certain action is not available to a given user, this user should not be able to perform the action.
+   * Assume we have two users, user a and user b. Given (1) a source input as a sequence of actions performed by a user 'a'
+   * which contains an action y that is dedicated to user a (i.e., it is not visible to user b) and (2) a follow-up input 
+   * that is a copy of that sequence which, however, includes, before action y, an action that matches action y (e.g., same
+   * URL requested) but is performed by user 'b' . 
+   * The result of action y should not be different when performed in the source input (i.e., without any action of b)
+   * or in the follow-up input (i.e., when performed also by user b). 
+   * In other words, the action of user b should be ignored by the system and not interfere with the action of user a.
+   * 
+   * Comment:
+   * (1) The first loop iterates over the actions of the source input to identify a login operation (action x) for user a, 
+   * (2) The second loop iterates over the remaining y-th actions.
+   * (3) Checks whether the user in User() is not a supervisor of the user performing the y-th action.
+   * (4) Checks that action y cannot be accessed by user b (User()).
+   * (5) Defines Input(2) which just performs a login.
+   * (6) Defines Input(3) which just performs a login as user b.
+   * (7) Creates a copy of Input(1) with a login as b before action y (this way action y is performed as User b).
+   * (8) Adds after action y+1 (the original action y now shifted) new copy of action y (now performed by user b).
+   * (9) Adds after the new copy of action y a new login as user a.
+   * (10) The system checks that the output of the action y in the two sequences remains the same when 
+   *      performed by user a (in the follow-up sequence the action of user a is shifted by three because 
+   *      three actions are introduced, the login of user b, the current action and a new login for user a).
+   *     	
+   */ 
+  MR CWE_306_OTG_AUTHZ_002b_Fabrizio {
+  	{
+    	for(var x = 0; x < Input(1).actions().size() ; x++){                                                    //(1)
+			for (var y = x+1; isLogin(Input(1).actions().get(x)) ; y++) {     //(2)
+	  			
+	  			EQUAL(Input(2), Input(1).actions().get(x) );
+	  			EQUAL(Input(3), Input(1).actions().get(x) );
+	  			EQUAL(Input(4), Input(1).actions().get(x) );
+	  			EQUAL(Input(5), Input(1).actions().get(x) );
+	  			EQUAL(Input(6), Input(1).actions().get(x) );
+	  			
+	  			var totalDuration = ( Output(Input(2), 1).duration + 
+	  			Output(Input(3), 1).duration + 
+	  			Output(Input(4), 1).duration +
+	  			Output(Input(5), 1).duration +
+	  			Output(Input(6), 1).duration ) as double / 5 ;
+	  			
+	  			for(var z = 0; z < Input(7).actions().size() ; z++){    
+	  				
+	  			
+	  			
+	  			IMPLIES(
+	  				
+	  				notTried(  Input(7).actions().get(z).url ) && //We check once
+	  				(availableWithoutLoggingIn ( Input(7).actions().get(z) )) &&                                //(3)
+	  				
+	  				EQUAL(Input(8), Input(7) ) &&                                               //(5)
+	  				EQUAL(Input(9), Input(7) ) &&                                               //(5)
+	  				EQUAL(Input(10), Input(7) ) &&                                               //(5)
+	  				EQUAL(Input(11), Input(7) ) &&                                               //(5)
+	  				EQUAL(Input(12), Input(7) ) 
+	  				,
+	  				//2nd par of IMPLIES
+	  				TRUE(                                                                                      //(10)
+	  					( Output(Input(8), z).duration + 
+	  					Output(Input(9), z).duration + 
+	  					Output(Input(10), z).duration +
+	  					Output(Input(11), z).duration +
+	  					Output(Input(12), z).duration ) as double / 5 < totalDuration * 3 
+	  					)
+	  				
+	  			); //end-IMPLIES
+	  			}
+  			} //end-for
+		} //end-for
+    }
+  } //end-MR
+} //end-package
