@@ -99,7 +99,7 @@
             "value": "uploaded"
           },
           "type": "file",
-          "values": ["C:\\Users\\nbaya076\\Downloads\\XMLInjected.xml"]
+          "values": ["C:\\Users\\nbaya076\\Downloads\\HTMLInjected.html"]
         }
       ]
     },
@@ -109,7 +109,8 @@
       "element": "",
       "eventType": "click",
       "currentURL": "http://192.168.56.104/dvwa/vulnerabilities/upload/#",
-      "elementURL": "http://192.168.56.104/dvwa/hackable/uploads/XMLInjected.xml",
+      "elementURL": "http://192.168.56.104/dvwa/hackable/uploads/HTMLInjected.html",
+                  
       "method": "get",
       "formInputs": [  ]
     }

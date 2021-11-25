@@ -26,34 +26,43 @@ package smrl.mr.owasp{
  * (9) Or the follow-up input can has the right to access 
  * 
  */ 
-MR CWE_90 {
+MR CWE_90b {
  {
  	
  
- 	for (Action action : Input(1).actions()){                                                //(1)
- 		var pos = action.getPosition();                                                      //(2) 
+ 	keepDialogsOpen = true;
+
+ 	for (Action action : Input(1).actions()){                                                  //(1)
+ 		var pos = action.getPosition();                                                        //(2) 
  		
- 		for (var x = 0; x < action.parameters.size; x++){                                    //(3)
- 			var parameterName = action.parameters.get(x).key;                                //(4)
+ 		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
+ 		
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
+ 			
+ 			
  			IMPLIES(
- 				notTried( parameterName, Input(2).actions().get(pos).getUrl() )    &&        //(5)
- 				! Output(Input(1),pos).hasAlert					&&  
- 				EQUAL(Input(2), Input(1))&&                                                  //(6)
- 				Input(2).actions().get(pos).setParameterValue( x, LDAPInjectionString() )        //(7)
- 			      
- 				,
  				
+ 			//	notTried( x, Input(1).actions().get(pos).getUrl() ) &&                             //(5)
+ 				
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&        
+ 			//	! Output(Input(1),pos).hasAlert					&&  
+ 				EQUAL(Input(2), Input(1) )                     &&                       //(7)
+ 				
+ 				Input(2).actions.get(pos).setFormInput(x, LDAPInjectionString()) 
+ 				                                 //(9)              
+ 				,
+// 				true
  				OR(//OR(
 		    		 isError(Output(Input(2), pos)),                                         //(8)                  
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))          //(9)
 		    //	),
 		    	
-		/*   ,	OR(                                                                            //(10)
+		 //  ,	OR(                                                                            //(10)
 		    		 //either the attack was not performed
-		    		 Output(Input(2), pos).emptyFile,
-		    		 //or no effect shall be observed (the effect is visualized when reaching the page where we inject the XSS)                  
-		    	    ! Output(Input(2), pos).hasAlert        //stored XSS
-		    	)*/
+		    	//	 Output(Input(2), pos).emptyFile,
+		    		     
+		    	   // ! Output(Input(2), pos).hasAlert        
+		    //	)
 		    	)
  			);
  		}

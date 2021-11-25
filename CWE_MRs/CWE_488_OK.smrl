@@ -27,8 +27,8 @@ package smrl.mr.owasp{
 MR CWE_488 {
 	{
 		
-		for(var x = 0; (x < Input(1).actions().size() ); x++){ //(1)
-			for (var y = x+1; (isLogin(Input(1).actions().get(x)) && y < Input(1).actions().size()); y++) //(2)
+		for(var x = 0; (x < Input(1).actions().size()-1 ); x++){ //(1)
+			for (var y = x+1; (isLogin(Input(1).actions().get(x)) && y < Input(1).actions().size()-2); y++) //(2)
 				{ 		
 				IMPLIES(
 	  				

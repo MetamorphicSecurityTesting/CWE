@@ -10,7 +10,7 @@
         "Log": "./testData/DVWA/logFiles.txt",
 	"VMname": "UbuntuJenkins 2.121.1",
 	"REAL_WAIT_THRESHOLD": "60000", 
-	"inputFile": "./testData/DVWA/inputs_Upload.json",
+	"inputFile": "./testData/DVWA/inputs_XSSstored.json",
 	"outputFile": "./testData/DVWA/outFolder/jenkinsResult.txt",
 	"outputStore": "./testData/DVWA/outputStore",
 	"RandomFilePath": "./testData/DVWA/filePaths.txt",

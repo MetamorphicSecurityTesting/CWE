@@ -36,16 +36,17 @@ MR CWE_79_Jenkins {
 	   //	for ( var x =0; x < action.parameters.size; x++){        
 	  //  var newUrl = action.url + XSSInjectionString();             //(3) it can be generalized  
 			
-			var testURL = "http://www.w3.org/1999/xhtml\"><script>alert(%27XSS%20Detected%27)</script></html><!--";
+			
 			IMPLIES( 
 					 					 
 				EQUAL( Input(2), Input(1) ) &&					      //(4)
-			  	Input(2).actions().get(pos).setUrl( testURL ) 	      //(5)
+			  	Input(2).actions().get(pos).setUrl( action.url + XSSInjectionJenkins() ) 	      //(5)
 			  //	notTried( action.getUser(), newUrl )			      //(6)
 			    ,
 			    OR(
 		    		 isError(Output(Input(2), pos)),                       //(7)       
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) )
+		    	      ! Output(Input(2), pos).hasAlert )
+		    	     //userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) )
 		    	
 		);//end-IMPLIES
 	}//end-for

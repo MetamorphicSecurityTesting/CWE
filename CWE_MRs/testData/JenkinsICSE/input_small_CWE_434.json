@@ -1,0 +1,172 @@
+{
+"path6": [
+		{
+			"url": "http://192.168.56.103:8080/",
+			"eventType": "index",
+			"method": "get"
+		},
+		{
+			"text": "",
+			"id": "xpath ",
+			"element": "unkown",
+			"eventType": "click",
+			"currentURL": "/",
+			"elementURL": "/",
+			"method": "get"
+		},
+		{
+			"text": "log in",
+			"id": "xpath /HTML[1]/BODY[1]/DIV[4]/DIV[2]/DIV[1]/FORM[1]/SPAN[1]/SPAN[1]/BUTTON[1]",
+			"element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dlog in, attributes\u003d{atusa\u003did1037324811_0, id\u003dyui-gen1-button, tabindex\u003d0, type\u003dbutton}}",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/login?from\u003d%2F",
+			"elementURL": "http://192.168.56.103:8080/j_acegi_security_check",
+			"method": "post",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "id",
+						"value": "search-box"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "j_username"
+					},
+					"type": "text",
+					"values": [
+						"admin"
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "j_password"
+					},
+					"type": "password",
+					"values": [
+						"adminPass"
+					]
+				}
+			]
+		},
+		{
+			"text": "Build History",
+			"id": "xpath /HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[1]/DIV[3]/A[2]",
+			"element": "Element{node\u003d[A: null], tag\u003dA, text\u003dBuild History, attributes\u003d{class\u003dtask-link, href\u003d/view/all/builds}}",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/",
+			"elementURL": "http://192.168.56.103:8080/view/all/builds",
+			"method": "get",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "id",
+						"value": "search-box"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "tab-1563140895957-"
+					},
+					"type": "radio",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "tab-1563140895957-1"
+					},
+					"type": "radio",
+					"values": [
+					]
+				}
+			]
+		},
+		{
+			"text": "",
+			"id": "xpath ",
+			"element": "unkown",
+			"eventType": "click",
+			"currentURL": "/",
+			"elementURL": "/",
+			"method": "get"
+		},
+		{
+			"text": "Check File Fingerprint",
+			"id": "xpath /HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[1]/DIV[5]/A[2]",
+			"element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCheck File Fingerprint, attributes\u003d{class\u003dtask-link, href\u003d/fingerprintCheck}}",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/",
+			"elementURL": "http://192.168.56.103:8080/fingerprintCheck",
+			"method": "get",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "id",
+						"value": "search-box"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "tab-1563154793158-"
+					},
+					"type": "radio",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "tab-1563154793158-1"
+					},
+					"type": "radio",
+					"values": [
+					]
+				}
+			]
+		},
+		
+		{
+			"text": "Check File Fingerprint",
+			"id": "xpath /html/body/div[4]/div[2]/form/table/tbody/tr[4]/td/span",
+			"element": "",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/fingerprintCheck",
+			"elementURL": "http://192.168.56.103:8080/fingerprintCheck",
+			"method": "get",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "name",
+						"value": "name"
+					},
+					"type": "file",
+					"values": ["C:\\Users\\nbaya076\\Downloads\\HTMLInjected.html"]
+				}
+			]
+		},
+		{
+			"text": "",
+			"id": "xpath ",
+			"element": "unkown",
+			"eventType": "click",
+			"currentURL": "/",
+			"elementURL": "/",
+			"method": "get"
+		}
+	]
+}

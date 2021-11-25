@@ -35,12 +35,14 @@ MR CWE_302{
       var session = Output( Input(1), pos).session as CookieSession;
       var mappings = session.keyValueMappings.entrySet;
       
-       
+         System.out.println("ACTION "+pos+"/**** session:"+session);
 
 	  //It is suboptimal because incrementally update cookie values - but it's a tradeoff	
 	  for ( Entry<String,String> cookie : mappings){
 	  		var type = typeOf(cookie.value);
+	  		 System.out.println("ACTION "+pos+"/*** Cookie Value:  "+cookie.value);
 	  	
+	 		 System.out.println("ACTION "+pos+"/*** Type: "+type);
 	  
       IMPLIES(             
       		cannotReachThroughGUI( User(), action.url )    				

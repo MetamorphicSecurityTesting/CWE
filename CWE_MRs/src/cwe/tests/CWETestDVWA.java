@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import smrl.mr.crawljax.WebOperationsProvider;
 import smrl.mr.language.MRBaseTest;
+import smrl.mr.owasp.CWE_22;
 import smrl.mr.owasp.CWE_601_OTG_AUTHZ_002a;
 import smrl.mr.owasp.CWE_703_166_78_77_76_75_74;
 import smrl.mr.owasp.CWE_79;
@@ -24,6 +25,7 @@ import smrl.mr.owasp.CWE_88b;
 import smrl.mr.owasp.CWE_88test;
 import smrl.mr.owasp.CWE_89_943;
 import smrl.mr.owasp.CWE_89_943b;
+import smrl.mr.owasp.CWE_94_95;
 import smrl.mr.test.TEST_INPUTS;
 
 public class CWETestDVWA extends MRBaseTest {
@@ -119,10 +121,9 @@ public class CWETestDVWA extends MRBaseTest {
 	}	*/
 	
 	@Test
-	public void test() { //fail
-		super.test(provider, TEST_INPUTS.class);
+	public void test_XSSinjectionreflected() { //fail
+		super.test(provider, CWE_79b_storedXSS.class);
 	}
-	
 	
  
 	public static String getCurrentTime() {

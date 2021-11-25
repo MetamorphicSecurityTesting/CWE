@@ -47,11 +47,11 @@ MR CWE_290_350{
 			// check:  	 DNSServer.setHostName(trustedHostname(), currentIpofMachine())  //(7)
 			    ,
 			    
-			 // AND(  
-			   		// different ( Output(Input(2),pos),Output(Input(1),pos)),
+			  OR(  
+			   		 userCanRetrieveContent(action.getUser(), Output(Input(2),pos))   ,
 			    	 isError( Output(Input(2) , pos))     //(7) 		
 			  
-			//)
+			)
 			);//end-IMPLIES	
 	}//end-for
  }

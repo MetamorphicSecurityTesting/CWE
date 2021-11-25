@@ -45,9 +45,19 @@ MR CWE_93a {
 				EQUAL( Input(2), Input(1) ) &&					                           //(5)
 			  	Input(2).actions().get(pos).setUrl( newUrl )                               //(6)
 			    ,
-			    OR(
-		    		 isError(Output(Input(2), pos)),                                       //(7)       
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) )
+			   OR(//OR(
+		    		 isError(Output(Input(2), pos)),                                         //(8)                  
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))          //(9)
+		    //	),
+		    	
+		 //  ,	OR(                                                                            //(10)
+		    		 //either the attack was not performed
+		    	//	 Output(Input(2), pos).emptyFile,
+		    		     
+		    	  //  ! Output(Input(2), pos).hasAlert        
+		    //	)
+		    	)
+ 			
 		    	
 		);//end-IMPLIES
 	}//end-for

@@ -1,0 +1,239 @@
+{
+"path112": [
+		{
+			"url": "http://192.168.56.103:8080/",
+			"eventType": "index",
+			"method": "get"
+		},
+		{
+			"text": "log in",
+			"id": "xpath /HTML[1]/BODY[1]/DIV[4]/DIV[2]/DIV[1]/FORM[1]/SPAN[1]/SPAN[1]/BUTTON[1]",
+			"element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dlog in, attributes\u003d{atusa\u003did1857815974_0, id\u003dyui-gen1-button, tabindex\u003d0, type\u003dbutton}}",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/login?from\u003d%2F",
+			"elementURL": "http://192.168.56.103:8080/j_acegi_security_check",
+			"method": "post",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "id",
+						"value": "search-box"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "j_username"
+					},
+					"type": "text",
+					"values": [
+						"wrong"
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "j_password"
+					},
+					"type": "password",
+					"values": [
+						"wrong"
+					]
+				}
+			]
+		},
+		{
+			"text": "Try again",
+			"id": "xpath /HTML[1]/BODY[1]/DIV[4]/DIV[2]/DIV[1]/A[1]",
+			"element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTry again, attributes\u003d{href\u003dlogin?from\u003d/}}",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/loginError",
+			"elementURL": "http://192.168.56.103:8080/login?from\u003d/",
+			"method": "get",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "id",
+						"value": "search-box"
+					},
+					"type": "text",
+					"values": [
+					]
+				}
+			]
+		},
+		{
+			"text": "Create an account",
+			"id": "xpath /HTML[1]/BODY[1]/DIV[4]/DIV[2]/DIV[1]/DIV[1]/A[1]",
+			"element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCreate an account, attributes\u003d{href\u003dsignup}}",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/login?from\u003d%2F",
+			"elementURL": "http://192.168.56.103:8080/signup",
+			"method": "get",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "id",
+						"value": "search-box"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "j_username"
+					},
+					"type": "text",
+					"values": [
+						"wrong"
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "j_password"
+					},
+					"type": "password",
+					"values": [
+						"wrong"
+					]
+				}
+			]
+		},
+		{
+			"text": "Sign up",
+			"id": "xpath /HTML[1]/BODY[1]/DIV[4]/DIV[2]/FORM[1]/SPAN[1]/SPAN[1]/BUTTON[1]",
+			"element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dSign up, attributes\u003d{id\u003dyui-gen1-button, tabindex\u003d0, type\u003dbutton}}",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/signup",
+			"elementURL": "http://192.168.56.103:8080/securityRealm/createAccount",
+			"method": "post",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "id",
+						"value": "search-box"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "username"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "password1"
+					},
+					"type": "password",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "password2"
+					},
+					"type": "password",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "fullname"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "email"
+					},
+					"type": "text",
+					"values": [
+					]
+				}
+			]
+		},
+		{
+			"text": "Jenkins’ own user database",
+			"id": "xpath /HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[2]/DIV[2]/UL[1]/LI[3]/A[1]",
+			"element": "Element{node\u003d[A: null], tag\u003dA, text\u003dJenkins’ own user database, attributes\u003d{class\u003d inside breadcrumbBarAnchor, href\u003d/securityRealm/}}",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/securityRealm/createAccount",
+			"elementURL": "http://192.168.56.103:8080/securityRealm/",
+			"method": "get",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "id",
+						"value": "search-box"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "username"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "password1"
+					},
+					"type": "password",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "password2"
+					},
+					"type": "password",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "fullname"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "email"
+					},
+					"type": "text",
+					"values": [
+					]
+				}
+			]
+		}
+	]
+}
