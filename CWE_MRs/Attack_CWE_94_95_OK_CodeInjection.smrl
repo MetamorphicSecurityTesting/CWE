@@ -45,31 +45,29 @@ MR CWE_94_95 {
  		
  		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
  			
- 			
+ 			System.out.println("ACTION "+pos+"/////"+x);
  			IMPLIES(
  				
- 			//	notTried( x, Input(1).actions().get(pos).getUrl() ) &&                             //(5)
- 				action.eventType == Action.ActionType.click &&
- 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&        
- 				
+ 				//The page can be accessed by more than one user
+// 				canReachThroughGUI( User(), Input(1).actions().get(pos).getUrl() ) &&           //(4)
+ 				//We did not test the URL before
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&                             //(5)
+ 				//No alter shown normally
+ 				! Output(Input(1),pos).hasAlert					&&                              //(6)
+ 				//We create the follow-up input          
  				EQUAL(Input(2), Input(1) )                     &&                       //(7)
  				
+ 				//We put an XSS payload into a parameter
  				Input(2).actions.get(pos).setFormInput(x, CodeInjectionString()) 
- 				                                 //(9)              
+ 				
+ 				//Another sequnce to be performed by the source user, to see if can be attacked
+ 			  //  EQUAL(Input(3), Input(1) )                                     //(9)              
  				,
 // 				true
- 				  OR(//OR(
-		    		 isError(Output(Input(2), pos)),                                         //(8)                  
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))          //(9)
-		    //	),
-		    	
-		/*    ,	OR(                                                                            //(10)
-		    		 //either the attack was not performed
-		    		 Output(Input(2), pos).emptyFile,
-		    		     
-		    	    ! Output(Input(2), pos).hasAlert        
-		    	)*/
-		    	)
+ 				OR( 
+ 					different( Output(Input(1),pos),Output(Input(2),pos))
+ 					,
+ 					isError(Output(Input(2), pos)))
  			);
  		}
  	}

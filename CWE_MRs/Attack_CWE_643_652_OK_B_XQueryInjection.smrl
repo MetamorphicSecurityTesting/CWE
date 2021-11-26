@@ -7,7 +7,9 @@ package smrl.mr.owasp {
 /**
  * 
  * CWE Definition:
- * CWE_643:The software uses external input to dynamically construct an XPath expression used to 
+ * 
+ * CWE_643:
+ * The software uses external input to dynamically construct an XPath expression used to 
  * retrieve data from an XML database, but it does not neutralize or incorrectly neutralizes that input. 
  * This allows an attacker to control the structure of the query.
  * Cases that I have checked for CWE 643:
@@ -40,20 +42,14 @@ package smrl.mr.owasp {
  * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1)
- * (2) Store the parameters of the current action in a variable
- * (3) It checks if the current action of the Input(1) is login.
+ * (2) Stores the parameters of the current action in a variable
+ * (3) Iterates over the actions that contain a form input.
  * (4) Verifies that the URL has not been tried before.
- * (5) Creates Input(2) as the follow-up input.
- * (6) Set the specific value for the username of the Input(2)
- * (7) Set the (') value for the password of the Input(2)
- * 
- * //FABRIZIO: based on the description in http://projects.webappsec.org/w/page/13247005/XPath%20Injection
- * 				if you replace the username with "' or 1=1 or ''='"
- * 				you shall not replace also the password field, no?
- * // Nazanin: In the example they replaced the password with a string value 'foobar', as a point from OWASP, I replaced a single quotation for password. it is possible to even divide it into two MRs.
- * 
- * (8) The system should show an error page
- *      Or the user should retrieve the content that has right to access it.
+ * (5) Checks that the current user, Input(1), does not have any error in the output.
+ * (6) Creates Input(2) as the follow-up input.
+ * (7) Set the Xquery string for the username of the Input(2).
+ * (8) The system should show an error page.
+ *   
  */
  
 MR CWE_643_652_B { 
@@ -62,26 +58,17 @@ MR CWE_643_652_B {
 	  	
 	  	var pos = action.getPosition();                                                                            //(2)
 	  	
-	  	System.out.println("ACTION "+pos+"/"+action.url);
+	  	//System.out.println("ACTION "+pos+"/"+action.url);														   
 	  		
-	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){ 
+	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){                    //(3)
 	  			 IMPLIES(
-	         	         	                                                                                 //(3)
 	        			
-	        		  notTried(XQueryInjection()+ x +action.url, Input(1).actions().get(pos).getElementURL() ) 
-	        		  && !isError(Output(Input(1),pos))																		   //(4)							
-	       			  && EQUAL ( Input(2), Input(1) )	    
-	                                                                        
-	        		  && Input(2).actions.get(action.position).setUsernameFormInput(x, XQueryInjection())  //(6)   "' or 1=1 or ''='"
-	         
-	         
-	          //Bases on http://projects.webappsec.org/w/page/13247005/XPath%20Injection
-	          		    			
-	  
+	        		  notTried(XQueryInjection()+ x +action.url, Input(1).actions().get(pos).getElementURL() )     //(4)
+	        		  && !isError(Output(Input(1),pos))															   //(5)							
+	       			  && EQUAL ( Input(2), Input(1) )	    													   //(6)	                                                                        
+	        		  && Input(2).actions.get(action.position).setUsernameFormInput(x, XQueryInjection())          //(7)   "' or 1=1 or ''='"
 		    , 
-		     isError(Output(Input(2), pos)) 
-		   
-		    	
+		    		 isError(Output(Input(2), pos))                                                                //(8)  
 		);//end-IMPLIES
 	}//end-for
  } }
