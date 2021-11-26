@@ -10,7 +10,7 @@
         "Log": "./testData/JenkinsICSE/logFiles.txt",
 	"VMname": "UbuntuJenkins 2.121.1",
 	"REAL_WAIT_THRESHOLD": "60000", 
-	"inputFile": "./testData/JenkinsICSE/input_FULL.json",
+	"inputFile": "./testData/JenkinsICSE/input_small.json",
 	"outputFile": "./testData/JenkinsICSE/outFolder/jenkinsResult.txt",
 	"outputStore": "./testData/JenkinsICSE/outputStore",
 	"RandomFilePath": "./testData/JenkinsICSE/filePaths.txt",
@@ -31,6 +31,8 @@
         "CronExpressionsInjection": "./testData/JenkinsICSE/CronExpressionsInjection.txt",
         "RandomPath": "./testData/JenkinsICSE/RandomPath.txt",
 	"test_username": "./testData/JenkinsICSE/test_username.txt",
+	"XSSInjectionJenkins": "./testData/JenkinsICSE/XSSinjectionJenkins1129.txt",
+	
 
 	"actionsChangedUrlFileName": "./testData/JenkinsICSE/jenkinsActionsChangedUrl.json",
 	"loginParams": [
@@ -74,6 +76,7 @@
 		"content":[
 			"HTTP ERROR 403",
 			"A problem occurred while processing the request.",
+			"Invalid login information. Please try again.",
 			"This XML file does not appear to have any style information associated with it."]
 	}
 }

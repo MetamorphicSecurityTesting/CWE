@@ -52,9 +52,11 @@ MR CWE_79b_storedXSS {
  				//The page can be accessed by more than one user
 // 				canReachThroughGUI( User(), Input(1).actions().get(pos).getUrl() ) &&           //(4)
  				//We did not test the URL before
- 				notTried( x, Input(1).actions().get(pos).getUrl() ) &&                             //(5)
+ 				action.eventType == Action.ActionType.click &&
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&
+ 				//notTried( x, Input(1).actions().get(pos).getUrl() ) &&                             //(5)
  				//No alter shown normally
- 				! Output(Input(1),pos).hasAlert					&&                              //(6)
+ 			//! Output(Input(1),pos).hasAlert					&&                              //(6)
  				//We create the follow-up input          
  				EQUAL(Input(2), Input(1) )                     &&                       //(7)
  				

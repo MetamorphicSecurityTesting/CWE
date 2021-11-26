@@ -42,39 +42,61 @@ MR CWE_314{
 	{
 	  for (Action action : Input(1).actions()){                                           //(1)
  		var pos = action.getPosition();                                                   //(2) 
- 		
+ 		var str512 = action.randomString(512);
+ 		var str1024 = action.randomString(1024);
+ 		var str2048 = action.randomString(2048);
  		for (var x = 0; x < action.parameters.size; x++){                                 //(3)
  		
  			IMPLIES(
+ 				
+ 				! Output(Input(1), pos).hasAlert  &&
  		 
  				notTried( Input(1).actions().get(pos).getUrl() ) &&                       //(4)          
  				EQUAL(Input(2), Input(1)) &&                                              //(5)
- 				Input(2).actions().get(pos).setParameterValue( x, randomString(512) )&&   //(6)
+ 				Input(2).actions().get(pos).setParameterValue( x, str512 )&&   //(6)
  				
  				EQUAL(Input(3), Input(1)) &&                                              //(7)
- 				Input(3).actions().get(pos).setParameterValue( x, randomString(1024) )&&  //(8)
+ 				Input(3).actions().get(pos).setParameterValue( x, str1024 )&&  //(8)
  				
  				EQUAL(Input(4), Input(1)) &&                                              //(9)
- 				Input(4).actions().get(pos).setParameterValue( x, randomString(2048) )    //(10)
+ 				Input(4).actions().get(pos).setParameterValue( x, str2048 )    //(10)
  			                  
  				,
- 				OR(
+ 		OR(	OR(
  					OR(
  						OR(
 		    		 isError(Output(Input(2), pos)),                                      //(11)                  
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
-		    	     ),
-		    	       OR(
-		    		 isError(Output(Input(3), pos)),                                                       
+		    	     ),	OR(                                                                            //(10)
+		    		 //either the attack was not performed
+		    		 Output(Input(2), pos).emptyFile,
+		    		     
+		    	    ! Output(Input(2), pos).hasAlert   	)
+		    	)
+		    	
+		    	,
+		    	OR(
+ 						OR(
+		    		 isError(Output(Input(3), pos)),                                      //(11)                  
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(3),pos))        
-		    	))
- 				,
- 				
- 				OR(
-		    		 isError(Output(Input(4), pos)),                                                      
+		    	     ),	OR(                                                                            //(10)
+		    		 //either the attack was not performed
+		    		 Output(Input(3), pos).emptyFile,
+		    		     
+		    	    ! Output(Input(3), pos).hasAlert        
+		    	)
+		    	)),
+		    	OR(
+ 						OR(
+		    		 isError(Output(Input(4), pos)),                                      //(11)                  
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(4),pos))        
+		    	     ),	OR(                                                                            //(10)
+		    		 //either the attack was not performed
+		    		 Output(Input(4), pos).emptyFile,
+		    		     
+		    	    ! Output(Input(4), pos).hasAlert        
+		    	)
 		    	))
-
 		);//end-IMPLIES
 	}}//end-for
 	}

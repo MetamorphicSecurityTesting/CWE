@@ -27,6 +27,7 @@ import smrl.mr.owasp.CWE_288_287b_319_OTG_AUTHN_010;
 import smrl.mr.owasp.CWE_289a;
 import smrl.mr.owasp.CWE_289b2;
 import smrl.mr.owasp.CWE_289b_647;
+import smrl.mr.owasp.CWE_289c;
 import smrl.mr.owasp.CWE_290_291;
 import smrl.mr.owasp.CWE_290_350;
 import smrl.mr.owasp.CWE_302;
@@ -57,10 +58,16 @@ import smrl.mr.owasp.CWE_79;
 import smrl.mr.owasp.CWE_792_793_794_795_796_797;
 import smrl.mr.owasp.CWE_79_Jenkins;
 import smrl.mr.owasp.CWE_79_Jenkins944;
+import smrl.mr.owasp.CWE_79b_XSSreflected;
+import smrl.mr.owasp.CWE_79b_storedXSS;
 import smrl.mr.owasp.CWE_841;
-
+import smrl.mr.owasp.CWE_88a;
+import smrl.mr.owasp.CWE_88b;
+import smrl.mr.owasp.CWE_88test;
 import smrl.mr.owasp.CWE_89_943;
+import smrl.mr.owasp.CWE_89_943b;
 import smrl.mr.owasp.CWE_90;
+import smrl.mr.owasp.CWE_923;
 import smrl.mr.owasp.CWE_923_297;
 import smrl.mr.owasp.CWE_93a;
 import smrl.mr.owasp.CWE_93b;
@@ -82,8 +89,9 @@ public class CWETest extends MRBaseTest {
 		//by default, the SUT is the Jenkins
 		String configFile = "./testData/JenkinsICSE/jenkinsSysConfigDEMO.json";
 
-
-		smrl.mr.crawljax.WebProcessor.DEFAULT_HEADLESS = true;
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\nbaya076\\geckodriver.exe");
+		
+		smrl.mr.crawljax.WebProcessor.DEFAULT_HEADLESS = false;
 		provider = new WebOperationsProvider(configFile);
 	}
 
@@ -96,30 +104,28 @@ public class CWETest extends MRBaseTest {
 	public static void printEndingTime() {
 		System.out.println("*** Ending time: " + getCurrentTime() + " ***");
 	}   
-
-	/*
-	@Test
-	public void test_CWE_266_267_268_420_425_OTG_AUTHZ_002() {  // failure saw
-		super.test(provider,CWE_266_267_268_420_425_OTG_AUTHZ_002.class);
-	}
-
+/*
 
 	@Test
 	public void test_CWE_138_150_OTG_AUTHZ_001b() {  // passed
 		super.test(provider,CWE_138_150_OTG_AUTHZ_001b.class);
 	}
-	/*
+	
 
 	@Test
-	public void test_CWE_15_341_639_OTG_AUTHZ_004() {   //passed
-		super.test(provider,CWE_15_341_639_OTG_AUTHZ_004.class);
-	}/*	
+	public void test_CWE_15_639_OTG_AUTHZ_004() {   //passed
+		super.test(provider, CWE_15_639_OTG_AUTHZ_004.class);
+	}	
+
 
 
 	@Test
-	public void test_CWE_219_220_530_OTG_AUTHZ_001() {  // failure saw
-		super.test(provider,CWE_219_220_530_OTG_AUTHZ_001.class);
+	public void test_CWE_73() {  //passed
+		super.test(provider,CWE_73_99_219_220_530_OTG_AUTHZ_001a.class);
 	}
+
+
+
 
 	@Test
 	public void test_CWE_276_277_OTG_AUTHZ_002d() {   // passed
@@ -135,37 +141,85 @@ public class CWETest extends MRBaseTest {
 	public void test_CWE_284_OTG_AUTHN_004 () { // passed tested with 4 test cases
 		super.test(provider,CWE_284_OTG_AUTHN_004.class);
 	}
-
+	
+	@Test
+	public void test_CWE_286() {  //passed
+		super.test(provider,CWE_286_OTG_AUTHZ_002c.class);
+	}
 
 	@Test
-	public void test_CWE_262_263() {// passed
-		super.test(provider,CWE_262_263.class);
+	public void test_CWE_287a_425_OTG_AUTHN_001() {  //passed
+		super.test(provider,CWE_287a_425_OTG_AUTHN_001.class);
 	}
 
 
 	@Test
-	public void test_CWE_262_263() {// passed
-		super.test(provider,CWE_262_263_309_324.class);
-	}
-
-	@Test
-	public void test_CWE_94_95() { //passed
-		super.test(provider,CWE_94_95.class);
+	public void test_CWE_288_287b_300_319() {  //passed
+		super.test(provider,CWE_288_287b_319_OTG_AUTHN_010.class);
 	}
 
 
 	@Test
-	public void test_CWE_93a() { //failed
-		super.test(provider,CWE_93a.class);
+	public void test_CWE_757_F() {  //passed
+		super.test(provider,CWE_757_OTG_CRYPST_004_F.class);
 	}
 
-	@Test
-	public void test_CWE_93b() { //failed
-		super.test(provider,CWE_93b.class);
-	}
 
 	@Test
-	public void test_CWE_94_96() { //failed
+	public void test_CWE_613() {  //passed
+		super.test(provider,CWE_613_OTG_SESS_006.class);
+	}
+
+@Test
+	public void test_CWE_601() {  //failed
+		super.test(provider,CWE_601_OTG_AUTHZ_002a.class);
+	}
+	
+	
+	@Test
+	public void test_CWE_15_639() {  // passed
+		super.test(provider,CWE_15_639_OTG_AUTHZ_004.class);
+	}
+	
+	@Test
+	public void test_CWE_266_267_268() {  // failed
+		super.test(provider,CWE_266_267_268_OTG_AUTHZ_002.class);
+	}
+	@Test
+	public void test_CWE_287a_425() {  //passed
+		super.test(provider,CWE_287a_425_OTG_AUTHN_001.class);
+	}
+	@Test
+	public void test_CWE_306() {  //failed
+		super.test(provider,CWE_306_OTG_AUTHZ_002b.class);
+	}
+	@Test
+	public void test_CWE_420() {  //passed
+		super.test(provider,CWE_420_OTG_CONFIG_007.class);
+	}
+*/	
+	@Test
+	public void test_CWE_79() { //failed
+		super.test(provider,CWE_79.class);
+	}
+@Test
+	public void test_CWE_703_Jenkins() {  // 
+		super.test(provider,CWE_703_Jenkins.class);
+	}
+		
+	
+
+
+@Test
+	public void test1_CWE_599() {      
+		super.test(provider,CWE_599.class);
+	}
+	
+	
+
+
+	@Test
+	public void test_CWE_94_96() { //passed
 		super.test(provider,CWE_94_96.class);
 	}	
 	@Test
@@ -173,28 +227,29 @@ public class CWETest extends MRBaseTest {
 		super.test(provider,CWE_521.class);
 	}
 
+	
+	
 	@Test
-	public void test_CWE_703_166_78_77_76_75_74() { //passed
-		super.test(provider,CWE_703_166_78_77_76_75_74.class);
-	}
-
-	@Test
-	public void test_CWE_79() { //failed
-		super.test(provider,CWE_79.class);
-	}
-	@Test
-	public void test_CWE_90() { //failed
+	public void test_CWE_90() { 
 		super.test(provider,CWE_90.class);
 	}
 
+	
 	@Test
-	public void test_CWE_643_652() { //failed
-		super.test(provider,CWE_643_652.class);
+	public void test_CWE_88a() { //passed
+		super.test(provider,CWE_88a.class);
 	}
-
+	
 	@Test
-	public void test_CWE_88() { //passed
-		super.test(provider,CWE_88.class);
+	public void test_CWE_88b() { //passed
+		super.test(provider,CWE_88b.class);
+	}
+	
+	
+	
+	@Test
+	public void test_CWE_314() { //passed
+		super.test(provider,CWE_314.class);
 	}
 
 	@Test
@@ -211,77 +266,54 @@ public class CWETest extends MRBaseTest {
 	public void test_CWE_289a() { //passed
 		super.test(provider,CWE_289a.class);
 	}
-
-
+	
 	@Test
-	public void test_CWE_352() {  //passed
-		super.test(provider,CWE_352_Fabrizio.class);
-	}
-
-
-	@Test
-	public void test_CWE_89_943() {  // passed
-		super.test(provider,CWE_89_943.class);
-	}
-
-	@Test
-	public void test_CWE_923_297() {  // passed
-		super.test(provider,CWE_923_297.class);
-	}
-
-	@Test
-	public void test_CWE_258() {  // passed
-		super.test(provider,CWE_258.class);
-	}
-
-	@Test
-	public void test_CWE_286() {  //passed
-		super.test(provider,CWE_286_OTG_AUTHZ_002c.class);
-	}
-
-	@Test
-	public void test_CWE_287a() {  //passed
-		super.test(provider,CWE_287a_OTG_AUTHN_001.class);
-	}
-
-
-	@Test
-	public void test_CWE_288_287b_319() {  //passed
-		super.test(provider,CWE_288_287b_319_OTG_AUTHN_010.class);
-	}
-
-	@Test
-	public void test_CWE_289b() {  //failed                                //32
-		super.test(provider,CWE_289b_647.class);
+	public void test_CWE_289c() { //passed
+		super.test(provider,CWE_289c.class);
 	}
 
 
 
 
 
+	
+
 	@Test
-	public void test_CWE_757_F() {  //passed
-		super.test(provider,CWE_757_OTG_CRYPST_004_F.class);
+	public void test_CWE_89_943b() {  // passed
+		super.test(provider,CWE_89_943b.class);
 	}
 
-
-	/// OCT 18
-
-
-
+	
 	@Test
-	public void test_CWE_79b() {  //passed
-		super.test(provider,CWE_79b.class);
-	}
-	@Test
-	public void test_CWE_610_384() {    // failed //red messages in console   
-		super.test(provider,CWE_610_384.class);
+	public void test_CWE_923() {  // passed
+		super.test(provider,CWE_923.class);
 	}
 
+	
+
+	
+
 
 	@Test
-	public void test_CWE_613() {  //passed
-		super.test(provider,CWE_613_OTG_SESS_006.class);
+	public void test_CWE_79_a() {  //passed
+		super.test(provider,CWE_79.class);
+	}
+	@Test
+	public void test_CWE_79_b() {  //passed
+		super.test(provider,CWE_79b_XSSreflected.class);
+	}
+	@Test
+	public void test_CWE_79_c() {  //passed
+		super.test(provider,CWE_79b_storedXSS.class);
+	}
+	/// 79 jenkins are not tested.
+	
+	
+	
+	
+	@Test
+	public void test_CWE_302() {  //passed
+		super.test(provider,CWE_302.class);
 	}
 
 
@@ -291,13 +323,6 @@ public class CWETest extends MRBaseTest {
 	}
 
 	
-
-	@Test
-	public void test_CWE_73() {  //passed
-		super.test(provider,CWE_73_99_219_220_530_OTG_AUTHZ_001a.class);
-	}
-
-
 
 	@Test
 	public void test_CWE_784() {  // passed
@@ -317,34 +342,13 @@ public class CWETest extends MRBaseTest {
 	}
 	
 	
-	
+		
 	@Test
-	public void test_CWE_15_639() {  // passed
-		super.test(provider,CWE_15_639_OTG_AUTHZ_004.class);
-	}
-	
-	@Test
-	public void test_CWE_266_267_268() {  // failed
-		super.test(provider,CWE_266_267_268_OTG_AUTHZ_002.class);
-	}
-	
-	
-	@Test
-	public void test_CWE_287a_425() {  //passed
-		super.test(provider,CWE_287a_425_OTG_AUTHN_001.class);
-	}
-	
-	
-	@Test
-	public void test_CWE_289b2() {  // failed
+	public void test_CWE_289b2() {  // passed
 		super.test(provider,CWE_289b2.class);
 	}
 
 
-	@Test
-	public void test_CWE_290_291() {  //failed
-		super.test(provider,CWE_290_291.class);
-	}
 	
 	
 
@@ -352,52 +356,21 @@ public class CWETest extends MRBaseTest {
 	public void test_CWE_290_350() {  //failed
 		super.test(provider,CWE_290_350.class);
 	}
-	
 
-	@Test
-	public void test_CWE_306() {  //failed
-		super.test(provider,CWE_306_OTG_AUTHZ_002b.class);
-	}
 	
 	@Test
 	public void test_CWE_315() {  //passed
 		super.test(provider,CWE_315b.class);
 	}
 	
+
+	
 	
 	@Test
-	public void test_CWE_359() {  //passed
-		super.test(provider,CWE_359_313_532_538.class);
-	}
-	@Test
-	public void test_CWE_420() {  //passed
-		super.test(provider,CWE_420_OTG_CONFIG_007.class);
-	}
-	
-	@Test
-	public void test_CWE_441() {  //failed
-		super.test(provider,CWE_441.class);
-	}
-	
-	@Test
-	public void test_CWE_471_472() {  // passed          red messages
+	public void test_CWE_471_472() {  // passed         
 		super.test(provider,CWE_471_472.class);
 	}
 	
-	@Test
-	public void test_CWE_488() {  //failed
-		super.test(provider,CWE_488.class);
-	}
-	
-	@Test
-	public void test_CWE_599() {  //passed       red messages            
-		super.test(provider,CWE_599.class);
-	}
-	
-	@Test
-	public void test_CWE_601() {  //failed
-		super.test(provider,CWE_601_OTG_AUTHZ_002a.class);
-	}
 	
 	
 		
@@ -408,15 +381,11 @@ public class CWETest extends MRBaseTest {
 	}
 	
 
-	@Test
-	public void test_CWE_703_Jenkins() {  // passed???????????
-		super.test(provider,CWE_703_Jenkins.class);
-	}
-		
+	
 
 	@Test
 	public void test_CWE_79_Jenkins() {  // failed
-		super.test(provider,CWE_79_Jenkins.class);
+	   super.test(provider,CWE_79_Jenkins.class);
 	}
 	
 	@Test
@@ -424,17 +393,181 @@ public class CWETest extends MRBaseTest {
 		super.test(provider,CWE_79_Jenkins944.class);
 	}
 
+	@Test
+	public void test_CWE_22() {
+		super.test(provider,CWE_22.class);
+	}
+	 @Test
+	public void test_CWE_88test() { //passed
+		super.test(provider,CWE_88test.class);
+	}
+	 @Test
+	public void test_CWE_703_166_78_77_76_75_74() { //passed
+		super.test(provider,CWE_703_166_78_77_76_75_74.class);
+	}
+
+	 
+	@Test
+	public void test_CWE_289b() {  //failed                                //32
+		super.test(provider,CWE_289b_647.class);
+	}
+	 @Test
+	public void test_CWE_262_263_309_324() {// passed
+		super.test(provider,CWE_262_263_309_324.class);
+	}
+	@Test
+	public void test_CWE_488() {  //failed
+		super.test(provider,CWE_488.class);
+	}
+	
+@Test
+	public void test_CWE_643_652() { //failed
+		super.test(provider,CWE_643_652.class);
+	}
+	@Test
+	public void test_CWE_352() {  //passed
+		super.test(provider,CWE_352.class);
+	}
+	
 	
 	@Test
-	public void test_CWE_79_Jenkins() {  // failed
-		super.test(provider,CWE_79.class);
+	public void test_CWE_94_95() { //passed
+		super.test(provider,CWE_94_95.class);
 	}
-	*/
+
+
+	@Test
+	public void test_CWE_93a() { //failed
+		super.test(provider,CWE_93a.class);
+	}
+
+	@Test
+	public void test_CWE_93b() { //failed
+		super.test(provider,CWE_93b.class);
+	}
+@Test
+	public void test_CWE_258() {  // passed
+		super.test(provider,CWE_258.class);
+	}
+	
+	@Test
+	public void test_CWE_290_291() {  //failed
+		super.test(provider,CWE_290_291.class);
+	}
+	
+	@Test
+	public void test_CWE_610_384() {    // failed //red messages in console   
+		super.test(provider,CWE_610_384.class);
+	}
+
+	
+	@Test
+	public void test_CWE_359() {  //passed
+		super.test(provider,CWE_359_313_532_538.class);
+	}
+	
+	/*
+
 	@Test
 	public void TEST() {  // failed
 		super.test(provider,TEST_INPUTS.class);
 	}
- 
+ */
+	
+	
+	
+	/* FAILURE!!!!!!!!!!!!
+	 * 
+	 * 
+	 * @Test
+	public void test_CWE_89_943() {  // FAILUR!!!!!!!!!!!!!!!!!!!!!!!!!!
+		super.test(provider,CWE_89_943.class);
+	}
+	 * 
+	 * 
+	 * 
+	 */
+	
+	
+	
+	
+	/* 
+	 * ******** The last to be tested
+	 * 
+	 * 
+	 * 
+	 @Test
+	public void test_CWE_88test() { //passed
+		super.test(provider,CWE_88test.class);
+	}
+	 @Test
+	public void test_CWE_703_166_78_77_76_75_74() { //passed
+		super.test(provider,CWE_703_166_78_77_76_75_74.class);
+	}
+
+	 
+	@Test
+	public void test_CWE_289b() {  //failed                                //32
+		super.test(provider,CWE_289b_647.class);
+	}
+	 @Test
+	public void test_CWE_262_263_309_324() {// passed
+		super.test(provider,CWE_262_263_309_324.class);
+	}
+	@Test
+	public void test_CWE_488() {  //failed
+		super.test(provider,CWE_488.class);
+	}
+	
+@Test
+	public void test_CWE_643_652() { //failed
+		super.test(provider,CWE_643_652.class);
+	}
+	@Test
+	public void test_CWE_352() {  //passed
+		super.test(provider,CWE_352.class);
+	}
+	
+	
+	@Test
+	public void test_CWE_94_95() { //passed
+		super.test(provider,CWE_94_95.class);
+	}
+
+
+	@Test
+	public void test_CWE_93a() { //failed
+		super.test(provider,CWE_93a.class);
+	}
+
+	@Test
+	public void test_CWE_93b() { //failed
+		super.test(provider,CWE_93b.class);
+	}
+@Test
+	public void test_CWE_258() {  // passed
+		super.test(provider,CWE_258.class);
+	}
+	
+	@Test
+	public void test_CWE_290_291() {  //failed
+		super.test(provider,CWE_290_291.class);
+	}
+	
+	@Test
+	public void test_CWE_610_384() {    // failed //red messages in console   
+		super.test(provider,CWE_610_384.class);
+	}
+
+	
+	@Test
+	public void test_CWE_359() {  //passed
+		super.test(provider,CWE_359_313_532_538.class);
+	}
+	
+	
+	 * 
+	 * */
 	public static String getCurrentTime() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
 		LocalDateTime now = LocalDateTime.now();  

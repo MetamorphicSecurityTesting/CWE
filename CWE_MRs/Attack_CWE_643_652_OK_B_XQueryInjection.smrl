@@ -42,37 +42,36 @@ package smrl.mr.owasp {
  * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1)
- * (2) Store the parameters of the current action in a variable
- * (3) It checks if the current action of the Input(1) is login.
+ * (2) Stores the parameters of the current action in a variable
+ * (3) Iterates over the actions that contain a form input.
  * (4) Verifies that the URL has not been tried before.
- * (5) Creates Input(2) as the follow-up input.
- * (6) Set a Xquery string for the username of the Input(2)
- * (7) Set a weak password value for the password of the Input(2) 
- * (8) The system should show an error page
- *      Or the user should retrieve the content that has right to access it.
+ * (5) Checks that the current user, Input(1), does not have any error in the output.
+ * (6) Creates Input(2) as the follow-up input.
+ * (7) Set the Xquery string for the username of the Input(2).
+ * (8) The system should show an error page.
+ *   
  */
  
-MR CWE_643_652 { 
+MR CWE_643_652_B { 
  { 
     for ( Action action : Input(1).actions() ) {                                                                   //(1)
+	  	
 	  	var pos = action.getPosition();                                                                            //(2)
-	  	//System.out.println("ACTION "+pos+"/"+action.url);
-	   IMPLIES(
-	   	
-	          isLogin(action)                                                                                      //(3)
-	          && notTried(action.url)																			   //(4)							
-	          && EQUAL ( Input(2), Input(1) )	                                                                   //(5)
-	          && Input(2).actions.get(action.position).setValueForParametersOfType("text", XQueryInjection())      //(6)   "' or 1=1 or ''='"
-	    	  && Input(2).actions.get(action.position).setValueForParametersOfType("password", WeakPassword())     //(7) 
-		    ,  
-		    OR(                                                                                                    //(8) 
-		    		 isError(Output(Input(2), pos)),                        
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
-		    	)
-		    	
+	  	
+	  	//System.out.println("ACTION "+pos+"/"+action.url);														   
+	  		
+	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){                    //(3)
+	  			 IMPLIES(
+	        			
+	        		  notTried(XQueryInjection()+ x +action.url, Input(1).actions().get(pos).getElementURL() )     //(4)
+	        		  && !isError(Output(Input(1),pos))															   //(5)							
+	       			  && EQUAL ( Input(2), Input(1) )	    													   //(6)	                                                                        
+	        		  && Input(2).actions.get(action.position).setUsernameFormInput(x, XQueryInjection())          //(7)   "' or 1=1 or ''='"
+		    , 
+		    		 isError(Output(Input(2), pos))                                                                //(8)  
 		);//end-IMPLIES
 	}//end-for
- } 
+ } }
 }//end-MR
 }//end-package
 

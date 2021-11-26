@@ -1,3 +1,1 @@
-C:\Users\nbaya076\Downloads\androidS.exe
-C:\Users\nbaya076\Downloads\PHP.php
-../../.././jenkins/plugins/credentials/testJob.txt
+C:\\Users\\nbaya076\\Downloads\\HTMLInjected.html

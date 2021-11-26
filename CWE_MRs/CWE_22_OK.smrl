@@ -1,0 +1,98 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/**
+ * CWE Definition:
+ * The software uses external input to construct a pathname that is intended to 
+ * identify a file or directory that is located underneath a restricted parent 
+ * directory, but the software does not properly neutralize special elements 
+ * within the pathname that can cause the pathname to resolve to a location that 
+ * is outside of the restricted directory.
+ * 
+ * Idea:
+ * A file path passed in a parameter should never enable a 
+ * user to access data that is not provided by the user interface.
+ *
+ * (1) Iterates over the actions of the Input(1).
+ * (2) The second for loop iterates over the parameters of the action.
+ * (3) Stores the parameters of the current action in a variable.
+ * (4) Creates the follow-up input, named Input(2).
+ * (5) Sets the value of a parameter to a random file path.
+ * (6) Verifies that the system shows an error page
+ *     Or the returned content is something that the user has the right to access.
+ * 
+ */ 
+MR CWE_22 {
+	
+ {
+	keepDialogsOpen = true;
+
+ 	for (Action action : Input(1).actions()){                                                  //(1)
+ 		var pos = action.getPosition();                                                        //(2) 
+ 		
+ 		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
+ 		
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
+ 			
+ 			System.out.println("ACTION "+pos+"/////"+x);
+ 			IMPLIES(
+ 				
+ 				//The page can be accessed by more than one user
+// 				canReachThroughGUI( User(), Input(1).actions().get(pos).getUrl() ) &&           //(4)
+ 				//We did not test the URL before
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&                             //(5)
+ 				//No alter shown normally
+ 				! Output(Input(1),pos).hasAlert					&&                              //(6)
+ 				//We create the follow-up input          
+ 				EQUAL(Input(2), Input(1) )                     &&                       //(7)
+ 				
+ 				//We put an XSS payload into a parameter
+ 				Input(2).actions.get(pos).setFormInput(x, RandomPath()) 
+ 				
+ 				//Another sequnce to be performed by the source user, to see if can be attacked
+ 			  //  EQUAL(Input(3), Input(1) )                                     //(9)              
+ 				,
+// 				true
+ 				OR( 
+ 					different( Output(Input(1),pos+1),Output(Input(2),pos+1))
+ 					,
+ 					OR(                                                                           //(10)
+		    		 //either the attack was not performed
+		    		 Output(Input(2), pos+2).emptyFile,
+		    		 //or no effect shall be observed (the effect is visualized when reaching the page where we inject the XSS)                  
+		    	     ! Output(Input(2), pos+2).hasAlert        //reflected XSS
+		    	))
+ 	
+/* 	keepDialogsOpen = true;
+
+ 	for (Action action : Input(1).actions()){                                                  //(1)
+ 		var pos = action.getPosition();                                                        //(2) 
+ 		var currentURL = action.url;
+ 		
+ 	
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
+ 			System.out.println("ACTION "+pos+"/////"+x);
+ 			
+ 			IMPLIES(
+ 				
+ 				notTried( x+currentURL, Input(1).actions().get(pos).getElementURL() ) &&                             //(5)
+ 				        
+ 				EQUAL(Input(2), Input(1) )                     &&                       //(7)
+ 				
+ 				Input(2).actions.get(pos).setFormInput(x,  RandomPath() ) 
+ 				                                 //(9)              
+ 				,
+// 				true
+ 
+ 			
+ 					             
+		    	     ! Output(Input(2), pos+1).hasAlert        //reflected XSS
+		    	*/
+ 			);//end-IMPLIES
+		}//end-for
+	}//end-for
+ }
+}//end-MR
+}

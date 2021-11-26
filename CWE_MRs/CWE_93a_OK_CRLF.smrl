@@ -45,11 +45,17 @@ MR CWE_93a {
 				EQUAL( Input(2), Input(1) ) &&					                           //(5)
 			  	Input(2).actions().get(pos).setUrl( newUrl )                               //(6)
 			    ,
-			    OR(
-		    		 isError(Output(Input(2), pos)),                                       //(7)       
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) )
-		    	
-		);//end-IMPLIES
+			  OR(OR(                                                                           //(10)
+		    		 //either the attack was not performed
+		    		 Output(Input(2), pos).emptyFile,
+		    		 //or no effect shall be observed (the effect is visualized when reaching the page where we inject the XSS)                  
+		    	     Output(Input(2), pos).hasAlert   
+		    	     ), OR( 
+ 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  
+ 					,
+ 					isError(Output(Input(2), pos)))
+ 				//	userCanRetrieveContent(action.getUser(), Output(Input(2),pos))    
+ 		)	);
 	}//end-for
  }
   

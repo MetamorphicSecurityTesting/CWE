@@ -26,29 +26,38 @@ package smrl.mr.owasp{
  * (9) Or the follow-up input can has the right to access 
  * 
  */ 
-MR CWE_90 {
+MR CWE_90b {
  {
- 	
- 
- 	for (Action action : Input(1).actions()){                                                //(1)
- 		var pos = action.getPosition();                                                      //(2) 
+ 	keepDialogsOpen = true;
+
+ 	for (Action action : Input(1).actions()){                                                  //(1)
+ 		var pos = action.getPosition();                                                        //(2) 
  		
- 		for (var x = 0; x < action.parameters.size; x++){                                    //(3)
- 			var parameterName = action.parameters.get(x).key;                                //(4)
+ 		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
+ 		
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
+ 			
+ 			System.out.println("ACTION "+pos+"/////"+x);
  			IMPLIES(
  				
- 				                        //(5)
+ 				//The page can be accessed by more than one user
+// 				canReachThroughGUI( User(), Input(1).actions().get(pos).getUrl() ) &&           //(4)
+ 				//We did not test the URL before
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&                             //(5)
  				//No alter shown normally
- 			
  				
- 				notTried(x + parameterName, Input(1).actions().get(pos).getUrl() )    &&        //(5)
- 				! Output(Input(1),pos).hasAlert					&&  
- 			
- 				EQUAL(Input(2), Input(1))&&                                                  //(6)
- 				Input(2).actions().get(pos).setParameterValue( x, LDAPInjectionString() )        //(7)
- 			      
+ 				! Output(Input(1),pos).hasAlert					&&                              //(6)
+ 				//We create the follow-up input          
+ 				EQUAL(Input(2), Input(1) )                     &&                       //(7)
+ 				
+ 				//We put an XSS payload into a parameter
+ 				Input(2).actions.get(pos).setFormInput(x, CodeInjectionString()) 
+ 				
+ 				//Another sequnce to be performed by the source user, to see if can be attacked
+ 			  //  EQUAL(Input(3), Input(1) )                                     //(9)              
  				,
- 			OR(OR(                                                                           //(10)
+// 				true
+ 				OR(OR(                                                                           //(10)
 		    		 //either the attack was not performed
 		    		 Output(Input(2), pos).emptyFile,
 		    		 //or no effect shall be observed (the effect is visualized when reaching the page where we inject the XSS)                  
@@ -59,6 +68,8 @@ MR CWE_90 {
  					isError(Output(Input(2), pos)))
  				//	userCanRetrieveContent(action.getUser(), Output(Input(2),pos))    
  		)	);
+ 
+ 	
  		}
  	}
  	

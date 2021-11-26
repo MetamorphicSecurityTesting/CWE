@@ -42,8 +42,10 @@ MR CWE_89_943b {
  			
  			IMPLIES(
  				
- 				notTried( x, Input(1).actions().get(pos).getUrl() ) &&                             //(5)
- 				        
+ 			//	notTried( x, Input(1).actions().get(pos).getUrl() ) &&                             //(5)
+ 				
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&        
+ 				
  				EQUAL(Input(2), Input(1) )                     &&                       //(7)
  				
  				Input(2).actions.get(pos).setFormInput(x, SQLInjectionString()) 

@@ -1,0 +1,127 @@
+{
+	"path22": [
+		{
+			"url": "http://192.168.56.103:8080/",
+			"eventType": "index",
+			"method": "get"
+		},
+		{
+			"text": "",
+			"id": "xpath ",
+			"element": "unkown",
+			"eventType": "click",
+			"currentURL": "/",
+			"elementURL": "/",
+			"method": "get"
+		},
+		{
+			"text": "log in",
+			"id": "xpath /HTML[1]/BODY[1]/DIV[4]/DIV[2]/DIV[1]/FORM[1]/SPAN[1]/SPAN[1]/BUTTON[1]",
+			"element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dlog in, attributes\u003d{atusa\u003did1037324811_0, id\u003dyui-gen1-button, tabindex\u003d0, type\u003dbutton}}",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/login?from\u003d%2F",
+			"elementURL": "http://192.168.56.103:8080/j_acegi_security_check",
+			"method": "post",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "id",
+						"value": "search-box"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "j_username"
+					},
+					"type": "text",
+					"values": [
+						"admin"
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "j_password"
+					},
+					"type": "password",
+					"values": [
+						"adminPass"
+					]
+				}
+			]
+		},
+		{
+			"text": "New Item",
+			"id": "xpath /HTML[1]/BODY[1]/DIV[4]/DIV[1]/DIV[1]/DIV[1]/A[2]",
+			"element": "Element{node\u003d[A: null], tag\u003dA, text\u003dNew Item, attributes\u003d{class\u003dtask-link, href\u003d/view/all/newJob}}",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/",
+			"elementURL": "http://192.168.56.103:8080/view/all/newJob",
+			"method": "get",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "id",
+						"value": "search-box"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "tab-1563145222921-"
+					},
+					"type": "radio",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "tab-1563145222921-1"
+					},
+					"type": "radio",
+					"values": [
+					]
+				}
+			]
+		},
+		{
+			"text": "New Item",
+			"id": "xpath /html/body/div[4]/div/div/div/div/form/div[2]/div[1]/ul/li[1]",
+			"element": "",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/view/all/newJob",
+			"elementURL": "http://192.168.56.103:8080/view/all/newJob",
+			"method": "get",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "name",
+						"value": "name"
+					},
+					"type": "text",
+					"values": ["/%3C?php%20system(%22/bin/ls%20-l%22);?%3E"]
+				}
+			]
+		},
+		{
+			"text": "New Item",
+			"id": "xpath /html/body/div[4]/div/div/div/div/form/div[4]/div/button",
+			"element": "",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.103:8080/view/all/newJob",
+			"elementURL": "http://192.168.56.103:8080/view/all/newJob",
+			"method": "get",
+			"formInputs": [
+			]
+		}
+	
+	]
+}
