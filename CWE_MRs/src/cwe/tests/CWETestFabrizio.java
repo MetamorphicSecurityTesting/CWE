@@ -20,6 +20,8 @@ import smrl.mr.owasp.CWE_276_277_OTG_AUTHZ_002d;
 import smrl.mr.owasp.CWE_280_755_OTG_AUTHZ_002e;
 import smrl.mr.owasp.CWE_284_OTG_AUTHN_004;
 import smrl.mr.owasp.CWE_289a;
+import smrl.mr.owasp.CWE_290_291;
+import smrl.mr.owasp.CWE_352;
 //import smrl.mr.owasp.CWE_359_313;
 import smrl.mr.owasp.CWE_434;
 import smrl.mr.owasp.CWE_521;
@@ -194,7 +196,20 @@ public class CWETestFabrizio extends MRBaseTest {
 	}*/
 	
 
+//	@Test
+//	public void test_CWE_352() { //passed
+//		super.test(provider,CWE_352.class);
+//	}
 	
+//	@Test
+//	public void test_CWE_138() { //passed
+//		super.test(provider,CWE_138_150_OTG_AUTHZ_001b.class);
+//	}
+	
+	@Test
+	public void test_CWE_290() { //passed
+		super.test(provider,CWE_290_291.class);
+	}
 	
 	
 	//
