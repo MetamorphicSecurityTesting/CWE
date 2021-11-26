@@ -106,7 +106,7 @@ public class CWETest_small extends MRBaseTest {
 
 	@Test
 	public void TEST() {  // failed
-		super.test(provider,CWE_94_95.class);
+		super.test(provider,CWE_90b.class);
 	}
 	
 	@AfterClass

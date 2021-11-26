@@ -36,26 +36,29 @@ MR CWE_90 {
  		for (var x = 0; x < action.parameters.size; x++){                                    //(3)
  			var parameterName = action.parameters.get(x).key;                                //(4)
  			IMPLIES(
- 				notTried( parameterName, Input(2).actions().get(pos).getUrl() )    &&        //(5)
+ 				
+ 				                        //(5)
+ 				//No alter shown normally
+ 			
+ 				
+ 				notTried(x + parameterName, Input(1).actions().get(pos).getUrl() )    &&        //(5)
  				! Output(Input(1),pos).hasAlert					&&  
+ 			
  				EQUAL(Input(2), Input(1))&&                                                  //(6)
  				Input(2).actions().get(pos).setParameterValue( x, LDAPInjectionString() )        //(7)
  			      
  				,
- 				
- 				OR(//OR(
-		    		 isError(Output(Input(2), pos)),                                         //(8)                  
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))          //(9)
-		    //	),
-		    	
-		/*   ,	OR(                                                                            //(10)
+ 			OR(OR(                                                                           //(10)
 		    		 //either the attack was not performed
 		    		 Output(Input(2), pos).emptyFile,
 		    		 //or no effect shall be observed (the effect is visualized when reaching the page where we inject the XSS)                  
-		    	    ! Output(Input(2), pos).hasAlert        //stored XSS
-		    	)*/
-		    	)
- 			);
+		    	     Output(Input(2), pos).hasAlert   
+		    	     ), OR( 
+ 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  
+ 					,
+ 					isError(Output(Input(2), pos)))
+ 				//	userCanRetrieveContent(action.getUser(), Output(Input(2),pos))    
+ 		)	);
  		}
  	}
  	
