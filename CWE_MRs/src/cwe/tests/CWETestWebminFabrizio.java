@@ -68,10 +68,10 @@ public class CWETestWebminFabrizio extends MRBaseTest {
     }   
 	
 	
-//	@Test
-//	public void test_ALL_Inputs() { 
-//		super.test(provider,TEST_INPUTS.class);
-//	}
+	@Test
+	public void test_ALL_Inputs() { 
+		super.test(provider,TEST_INPUTS.class);
+	}
 	
 	/**
 	 * Detects:
