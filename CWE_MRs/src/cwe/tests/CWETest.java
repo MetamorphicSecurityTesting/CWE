@@ -104,100 +104,16 @@ public class CWETest extends MRBaseTest {
 	public static void printEndingTime() {
 		System.out.println("*** Ending time: " + getCurrentTime() + " ***");
 	}   
-/*
-
-	@Test
-	public void test_CWE_138_150_OTG_AUTHZ_001b() {  // passed
-		super.test(provider,CWE_138_150_OTG_AUTHZ_001b.class);
-	}
-	
-
-	@Test
-	public void test_CWE_15_639_OTG_AUTHZ_004() {   //passed
-		super.test(provider, CWE_15_639_OTG_AUTHZ_004.class);
-	}	
-
-
-
-	@Test
-	public void test_CWE_73() {  //passed
-		super.test(provider,CWE_73_99_219_220_530_OTG_AUTHZ_001a.class);
-	}
-
-
-
-
-	@Test
-	public void test_CWE_276_277_OTG_AUTHZ_002d() {   // passed
-		super.test(provider,CWE_276_277_OTG_AUTHZ_002d.class);
-	}
-
-	@Test
-	public void test_CWE_280_755_OTG_AUTHZ_002e() { // failure saw
-		super.test(provider,CWE_280_755_OTG_AUTHZ_002e.class);
-	}
-
-	@Test
-	public void test_CWE_284_OTG_AUTHN_004 () { // passed tested with 4 test cases
-		super.test(provider,CWE_284_OTG_AUTHN_004.class);
-	}
-	
-	@Test
-	public void test_CWE_286() {  //passed
-		super.test(provider,CWE_286_OTG_AUTHZ_002c.class);
-	}
-
-	@Test
-	public void test_CWE_287a_425_OTG_AUTHN_001() {  //passed
-		super.test(provider,CWE_287a_425_OTG_AUTHN_001.class);
-	}
-
-
-	@Test
-	public void test_CWE_288_287b_300_319() {  //passed
-		super.test(provider,CWE_288_287b_319_OTG_AUTHN_010.class);
-	}
-
-
-	@Test
-	public void test_CWE_757_F() {  //passed
-		super.test(provider,CWE_757_OTG_CRYPST_004_F.class);
-	}
-
-
-	@Test
-	public void test_CWE_613() {  //passed
-		super.test(provider,CWE_613_OTG_SESS_006.class);
-	}
-
-@Test
-	public void test_CWE_601() {  //failed
-		super.test(provider,CWE_601_OTG_AUTHZ_002a.class);
-	}
 	
 	
-	@Test
-	public void test_CWE_15_639() {  // passed
-		super.test(provider,CWE_15_639_OTG_AUTHZ_004.class);
-	}
+	////currently is testing
 	
-	@Test
-	public void test_CWE_266_267_268() {  // failed
-		super.test(provider,CWE_266_267_268_OTG_AUTHZ_002.class);
-	}
-	@Test
-	public void test_CWE_287a_425() {  //passed
-		super.test(provider,CWE_287a_425_OTG_AUTHN_001.class);
-	}
-	@Test
-	public void test_CWE_306() {  //failed
-		super.test(provider,CWE_306_OTG_AUTHZ_002b.class);
-	}
-	@Test
-	public void test_CWE_420() {  //passed
-		super.test(provider,CWE_420_OTG_CONFIG_007.class);
-	}
-*/	
+	 @Test
+		public void test_CWE_703_166_78_77_76_75_74() { //passed
+			super.test(provider,CWE_703_166_78_77_76_75_74.class);
+		}
+	 
+	 /*
 	@Test
 	public void test_CWE_79() { //failed
 		super.test(provider,CWE_79.class);

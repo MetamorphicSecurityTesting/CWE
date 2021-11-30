@@ -1,12 +1,12 @@
 {
 	"SUT":	"Jenkins",
         "firefoxDriverPath":"C:\\Users\\nbaya076\\geckodriver.exe",
-        "chromeDriverPath":"C:\\Users\\nbaya076\\chromedriver.exe",
+        "chromeDriverPath":"/home/naz/./chromedriver",
 	"VMadmin": "jenkinsuser",
 	"VMadminPwd": "123",
 	"VMsshPort": "22",
 
-	"IP": "192.168.56.103",
+	"IP": "localhost",
         "Log": "./testData/JenkinsICSE/logFiles.txt",
 	"VMname": "UbuntuJenkins 2.121.1",
 	"REAL_WAIT_THRESHOLD": "60000", 
@@ -37,19 +37,19 @@
 	"actionsChangedUrlFileName": "./testData/JenkinsICSE/jenkinsActionsChangedUrl.json",
 	"loginParams": [
 		{
-			"loginURL": "http://192.168.56.103:8080/j_acegi_security_check",
+			"loginURL": "http://localhost:8082/j_acegi_security_check",
 			"userParameter": "j_username",
 			"passwordParameter": "j_password"
 		}
 	],
-	"logoutURL": "http://192.168.56.103:8080/logout",
+	"logoutURL": "http://localhost:8082/logout",
 	"ignoreURLs": [],
 	"confirmationTexts": ["You must use POST method to trigger builds", 
 		"The URL you're trying to access requires that requests be sent using POST (like a form submission)"],
 	"confirmationButtons": ["Retry using POST", "Proceed"],
 	"waitTimeAfterAction": 2000,
 	"signup" : {
-		"url": "http://192.168.56.103:8080/securityRealm/createAccount",
+		"url": "http://localhost:8082/securityRealm/createAccount",
 		"userParam" : "username",
 		"passwordParams" : ["password1", "password2"],
 		"emailParam" : "email",

@@ -22,7 +22,7 @@ package smrl.mr.owasp{
  * 
  * Comments:
  * (1) Defines the separator variable
- * (2) For loop iterates for 3 times to cover multiple occurrence of the special character as well.              //Nazanin: for this reason right?
+ * (2) For loop iterates for 3 times to cover multiple occurrence of the path separator as well.              //Nazanin: for this reason right?
  * (3) Second for loop iterates over all actions of the Input(1).
  * (4) Stores the parameters of the current action in a variable.
  * (5) Defines the new URL.
@@ -42,7 +42,7 @@ MR CWE_138_150_OTG_AUTHZ_001b {
  	for ( var par=0; par < 3; par++ ){                          //(2)
  		 
 		for ( Action action : Input(1).actions() ){             //(3)
-			 
+			System.out.println("this is the url" + action.url) ;
 			var pos = action.getPosition();                     //(4)
 			var newUrl = action.urlPath+sep+RandomFilePath();   //(5)
 			IMPLIES( 
@@ -61,7 +61,7 @@ MR CWE_138_150_OTG_AUTHZ_001b {
 		}//end-for
 		
 		sep=sep+"../";
-	}//end-for
+}//end-for
  }
 }//end-MR
 }
