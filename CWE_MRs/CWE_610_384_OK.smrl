@@ -51,7 +51,7 @@ package smrl.mr.owasp{
  * (7) Set the same session of Input(2) for the Input(3).
  * (8) The system should assign two different session IDs after the log in for Input(2) and Input(3)
  *     And the system should invalidate the session of Input(2) therefore the output of Input(3) at 
- *     position 1 i.e., (the action performed after login � for which we used the session id of Input(2))
+ *     position 1 i.e., (the action performed after login) for which we used the session id of Input(2))
  *     should be either an error message or different than the output of Input(1) for the same input.
  *   
  */ 
