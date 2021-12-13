@@ -40,6 +40,7 @@ package smrl.mr.owasp{
  * 		do not include keywords that appear only in pages of the user and in particular in the page generated for the current action (6b).
  * 
  * 
+ * 
  */ 
 MR CWE_359_313_532_538 {
  {

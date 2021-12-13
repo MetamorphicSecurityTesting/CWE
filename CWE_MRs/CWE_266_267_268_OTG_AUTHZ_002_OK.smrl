@@ -24,6 +24,7 @@ package smrl.mr.owasp {
    * the same output when it is executed by another user, if it includes access to a URL with 
    * these characteristics.
    * 
+   * 
    * Comments:
    * (1) For loop iterates over all actions of the Input(1)
    * (2) Checks whether the user in User() is not a supervisor of the user performing the current action.

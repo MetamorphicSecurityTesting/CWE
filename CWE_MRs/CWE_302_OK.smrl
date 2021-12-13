@@ -25,6 +25,7 @@ package smrl.mr.owasp {
  * (6) The system should not allow the follow-up input to take the action, it should how an error
  *     Or It should give a different output to the original user.
  *  
+ * 
  */
 
 MR CWE_302{ 

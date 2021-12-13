@@ -32,6 +32,7 @@ package smrl.mr.owasp {
  *     Or The user is retrieving content that he has right to access.
  *  
  * 
+ * 
  */
  
 MR CWE_93a { 

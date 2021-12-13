@@ -25,6 +25,7 @@ package smrl.mr.owasp {
  *     Or the follow-up input should retrieve the content that has right to access
  *     Or the result should be different.
  * 
+ * 
  */
  
 MR CWE_599 {  

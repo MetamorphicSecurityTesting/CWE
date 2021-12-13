@@ -26,6 +26,7 @@ package smrl.mr.owasp {
  *      The 2nd clause verifies that the original URL does not perform any redirect.
  *      The 3rd clause verifies that the follow up input does not lead to the same redirect from the original input.
  *  
+ * 
  */ 
   MR CWE_601_OTG_AUTHZ_002a {
     {

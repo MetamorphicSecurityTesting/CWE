@@ -22,6 +22,7 @@ package smrl.mr.owasp{
  * (5) Copy the action y+1 (the action after the login) from Input(1), and now the Input(3) will do the same action as input(1).
  * (6) If there is a data access race condition, then Input(3) and Input(1) would see the same information by doing the same action (accessing the same url)
  *     Or if the Output(3) see the error page while input(1) is accessing the same URL is accepted.
+ * 
  */
  
 MR CWE_488 {

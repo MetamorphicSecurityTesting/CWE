@@ -16,6 +16,7 @@ package smrl.mr.owasp {
  * http://projects.webappsec.org/w/page/13247005/XPath%20Injection
  * https://www.exploit-db.com/exploits/10372
  * 
+ * 
  * CWE_652:
  * The software uses external input to dynamically construct an XQuery expression used to retrieve data 
  * from an XML database, but it does not neutralize or incorrectly neutralizes that input. This allows 

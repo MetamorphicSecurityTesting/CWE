@@ -25,6 +25,7 @@ package smrl.mr.owasp{
  *     	performing the next action (typically "click on the submit button" in such a case) [Action 3]
  * (6) The system should show a different output between the action performed on the correct form and teh action performed on the form downloaded locally
  * 
+ * 
  */ 
 MR CWE_352_Jenkins {
 	{

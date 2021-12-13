@@ -22,6 +22,8 @@ package smrl.mr.owasp {
  * (6) Defines the follow-up input, named Input(3) but with different credentials than the Input(2).
  * (7) Creates a copy of Input(1) with a login as b before action y (this way action y is performed as User b). ///// check this one
  * (8) The system should show an error page or the user should see the content that has right to access.
+ * 
+ * 
  */
 
 MR CWE_280_755_OTG_AUTHZ_002e{

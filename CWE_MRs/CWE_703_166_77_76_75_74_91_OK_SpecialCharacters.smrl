@@ -39,6 +39,8 @@ package smrl.mr.owasp {
  * input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements 
  * that could modify how it is parsed or interpreted when it is sent to a downstream component. 
  * 
+ * CWE_91:
+ * 
  * 
  * Extra Details:
  * Developers should anticipate that special elements will be removed in the input vectors of their 
@@ -57,9 +59,10 @@ package smrl.mr.owasp {
  * (6) Sets the new input value which contains special character for the follow-up input.
  * (7) Verifies that the system should show an error page.
  * 
+ * 
  */
  
-MR CWE_703_166_78_77_76_75_74 { 
+MR CWE_703_166_78_77_76_75_74_91 { 
  { 
      for ( Action action : Input(1).actions() ) { //(1)
 	  for ( var par=0; par < action.getParameters().size(); par++ ){  //(2)  

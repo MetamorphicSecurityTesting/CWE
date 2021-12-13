@@ -20,7 +20,8 @@ package smrl.mr.owasp{
  * For all parameters of the actions we try to inject some SQLinjection phrases to check whether the system 
  * is vulnerable to SQL injection or not.
  * 
- * 
+ *
+ *  
  * Comments:
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Stores the parameters of the current action in a variable.

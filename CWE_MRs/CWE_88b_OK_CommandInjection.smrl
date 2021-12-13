@@ -29,6 +29,7 @@ package smrl.mr.owasp {
  * (7) Checks that the system does not parse the command and the Input(1) and the follow-up input both get the same output.
  *     Or the result of the follow-up input is error
  *     Or the follow-up input can has the right to access
+ * 
  */
  
  
@@ -65,13 +66,13 @@ MR CWE_88b {
                !different(Output(Input(1)).values.subList(pos,Input(1).actions.length)
                		, Output(Input(2)).values.subList(pos,Input(1).actions.length) ) 
 
-    			, OR(
+    			, //OR(
 					//If we have an error the system has spotted the attack
-                	isError(Output(Input(2), pos)),                       
+                	isError(Output(Input(2), pos))//,                       
 					//If the output is different, the user shall anyway be able to retrieve the provided content
-                	userCanRetrieveContent(action.getUser(), Output(Input(2)).values.subList(pos,size) )
+                //	userCanRetrieveContent(action.getUser(), Output(Input(2)).values.subList(pos,size) )
                 
-				)
+				//)
 			)//end-RHS-OR
 		);//end-IMPLIES
 	}//end-for

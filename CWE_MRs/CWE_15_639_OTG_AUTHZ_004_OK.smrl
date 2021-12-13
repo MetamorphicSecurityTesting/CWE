@@ -20,6 +20,7 @@ package smrl.mr.owasp{
  * By randomly changing the parameter values passed to URL, a user should not be able to retrieve content that
  * she cannot retrieve from GUI.
  * 
+ * 
  * (1) The first loop iterates over all the actions of the input sequence. 
  * (2) The second iterates over all the parameters of the action.
  * (3) Stores the parameters of the current action in a variable.

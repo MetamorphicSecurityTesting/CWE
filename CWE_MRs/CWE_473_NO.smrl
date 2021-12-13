@@ -29,7 +29,8 @@ package smrl.mr.owasp {
    * (8) Setting the new URL which is going to change the user's session
    * (9) If the system is well designed, then it will show an error page or
    * it may show the same session for the next action (it means it the attacker was not successful to change the session)
-   *   	
+   *   
+   * 	
    */ 
   MR OTG_473 {
   	{

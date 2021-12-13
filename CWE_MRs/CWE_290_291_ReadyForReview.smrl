@@ -36,6 +36,7 @@ package smrl.mr.owasp {
  *     AND The results of the performing the same action by Input(1) and Input(2) 
  *     should be different, or the system shows an error page for Input(2).
  * 
+ * 
  */
  
 MR CWE_290_291{ 
@@ -51,8 +52,6 @@ MR CWE_290_291{
 	    	  && ! sameUrl( action.currentURL, action.elementURL )     
 
 		    ,
-		    
-		    
 		                                                                //(6)
 		    	  
 		    	//	!isError(Output(Input(1), pos)),                      

@@ -47,6 +47,7 @@ package smrl.mr.owasp {
  * (6) Sets the new input value which contains multiple special characters for the follow-up input.
  * (7) Verifies that the system should show an error page.
  * 
+ * 
  */
  
 MR CWE_792_793_794_795_796_797_B { 

@@ -26,6 +26,7 @@ package smrl.mr.owasp {
  *      is different than the output of the sequence performed by the original user. We do not check only
  *      for the output of action x because the error might be observed afterwards (e.g., during execution).
  * 
+ * 
  */ 
   MR CWE_276_277_OTG_AUTHZ_002d {
   	{

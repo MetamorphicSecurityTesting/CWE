@@ -26,6 +26,7 @@ package smrl.mr.owasp {
  * (7) the system should show an error page for the attacker if he/she can access the password field of the cookie
  *     Or the system should show a different result.
  * 
+ * 
  */
  
 MR CWE_315b { 

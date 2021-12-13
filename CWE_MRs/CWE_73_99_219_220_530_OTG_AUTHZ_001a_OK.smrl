@@ -34,6 +34,7 @@ package smrl.mr.owasp{
  * (6) Verifies that the system shows an error page
  *     Or the returned content is something that the user has the right to access.
  * 
+ * 
  */ 
 MR CWE_73_99_219_220_530_OTG_AUTHZ_001a {
  {

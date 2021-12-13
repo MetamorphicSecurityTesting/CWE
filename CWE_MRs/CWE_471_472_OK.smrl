@@ -41,6 +41,7 @@ MR CWE_471_472{
                // if we assume that the session ID is the only variable for each cookie we can consider that
                // the cookies should not be different after the logout.
                
+     
                 ,
               
         OR(                                                                               //(6)

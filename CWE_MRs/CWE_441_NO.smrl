@@ -28,7 +28,6 @@ package smrl.mr.owasp{
  * (9) Verifies that the follow-up input does not lead to a file 
  *      Or the returned file is something that the user has the right to access.
  *      Or the system shows an error page.
-
  *
  * 
  */ 

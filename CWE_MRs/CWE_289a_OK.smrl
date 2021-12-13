@@ -22,6 +22,7 @@ package smrl.mr.owasp {
  * (7) Creates the follow-up Input by copying Input(1) with different credentials, named Input(2).
  * (8) It encode the URL for input(2) to check that the url action which is not accessible to the Input(2) would be accessible if it is encoded or not.
  * (9) The system should show an error page or different outputs for two inputs. 
+ * 
  */
 
 MR CWE_289a {

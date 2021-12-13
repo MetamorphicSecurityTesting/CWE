@@ -27,6 +27,7 @@ package smrl.mr.owasp{
  * (7) Checks that the result of the follow-up input is error
  *     Or the follow-up input can has the right to access 
  * 
+ * 
  */
  
 MR CWE_611 { 

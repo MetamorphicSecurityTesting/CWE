@@ -25,7 +25,8 @@ package smrl.mr.owasp{
  * (5) Checks that the action y is not a login.
  * (6) Defines a follow-up input with the logout action being duplicated in position y.
  * (7) Verifies if the session ID before and after executing the logout is different.
- *   
+ *  
+ *  
  */ 
 	MR CWE_613_OTG_SESS_006 {
 		{

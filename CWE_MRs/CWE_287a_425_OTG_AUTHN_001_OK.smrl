@@ -18,6 +18,7 @@ package smrl.mr.owasp {
  * Idea:
  * A login operation should not succeed if performed on the HTTP channel.
  * 
+ * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1)
  * (2) Stores the parameters of the current action in a variable
