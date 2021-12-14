@@ -30,7 +30,8 @@ package smrl.mr.owasp {
    * (10) The system checks that the output of the action y in the two sequences remains the same when 
    *      performed by user a (in the follow-up sequence the action of user a is shifted by three because 
    *      three actions are introduced, the login of user b, the current action and a new login for user a).
-   *     	
+   *     
+   * 	
    */ 
   MR CWE_306_OTG_AUTHZ_002b_Fabrizio {
   	{
