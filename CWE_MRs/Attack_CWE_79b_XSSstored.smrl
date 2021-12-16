@@ -12,7 +12,6 @@ package smrl.mr.owasp{
  * The software does not neutralize or incorrectly neutralizes user-controllable input 
  * before it is placed in output that is used as a web page that is served to other users.
  * 
- * 
  * Comments:
  * (1) 
  * (2) For loop iterates over all actions of the Input(1)
@@ -36,20 +35,14 @@ MR CWE_79b_storedXSS {
  	for (Action action : Input(1).actions()){                                                  //(2)
  		var pos = action.getPosition();                                                        //(3) 
  		
- 		//System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
- 		
  		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){         //(4)
 		
  			IMPLIES(
- 				
- 				//The page can be accessed by more than one user
-// 				canReachThroughGUI( User(), Input(1).actions().get(pos).getUrl() ) &&            
  				//We did not test the URL before
  				action.eventType == Action.ActionType.click &&                                 //(5)
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&       //(6)
- 				//notTried( x, Input(1).actions().get(pos).getUrl() ) &&                       
  				//No alter shown normally
- 			//! Output(Input(1),pos).hasAlert					&&                             
+ 				! Output(Input(1),pos).hasAlert					&&                             
  				//We create the follow-up input          
  				EQUAL(Input(2), Input(1) )                     &&                              //(7)
  				
@@ -59,7 +52,6 @@ MR CWE_79b_storedXSS {
  				//Another sequnce to be performed by teh source user, to see if can be attacked
  			    EQUAL(Input(3), Input(1) )                                                     //(9)              
  				,
-// 				true
  				OR(                                                                            //(10)
 		    		 //either the attack was not performed
 		    		 Output(Input(2), pos).emptyFile,
