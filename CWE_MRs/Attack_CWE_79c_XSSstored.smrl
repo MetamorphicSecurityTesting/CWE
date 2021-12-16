@@ -28,34 +28,38 @@ package smrl.mr.owasp{
  *      and also it double checks that the action does not lead to an alert.
  * 
  */ 
-MR CWE_79b_storedXSS {
+MR CWE_79c_storedXSS {
  {
+ 	//Dialogs are normally ignored by our framework by clicking on OK; with the following we avoid clicking on OK
 	keepDialogsOpen = true;                                                                    //(1)
 
  	for (Action action : Input(1).actions()){                                                  //(2)
  		var pos = action.getPosition();                                                        //(3) 
  		
+ 		//We try every form input
  		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){         //(4)
 		
  			IMPLIES(
- 				//We did not test the URL before
+ 				//We are about to submit a form
  				action.eventType == Action.ActionType.click &&                                 //(5)
+ 				//We did not test the URL before
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&       //(6)
- 				//No alter shown normally
+ 				//No alert shown normally
  				! Output(Input(1),pos).hasAlert					&&                             
  				//We create the follow-up input          
  				EQUAL(Input(2), Input(1) )                     &&                              //(7)
  				
- 				//We put an XSS payload into a parameter
+ 				//We put an XSS payload into a form input text
  				Input(2).actions.get(pos).setFormInput(x, XSSInjectionString()) &&             //(8)
  				
- 				//Another sequnce to be performed by teh source user, to see if can be attacked
+ 				//We will perform the same sequence as the source-input (i.e., without XSS injected)
+ 				//If an alert will pop-up, it will mean that the XSS has been stored into the system
  			    EQUAL(Input(3), Input(1) )                                                     //(9)              
  				,
  				OR(                                                                            //(10)
 		    		 //either the attack was not performed
 		    		 Output(Input(2), pos).emptyFile,
-		    		 //or no effect shall be observed (the effect is visualized when reaching the page where we inject the XSS)                  
+		    		 //or no effect shall be observed (the effect of the XSS is usually visualized when reaching the page where we inject the XSS)                  
 		    	     ! Output(Input(3), pos-1).hasAlert        //stored XSS
 		    	)
  			);
