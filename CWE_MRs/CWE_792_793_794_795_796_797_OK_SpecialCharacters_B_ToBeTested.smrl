@@ -55,12 +55,17 @@ MR CWE_792_793_794_795_796_797_B {
 
  { 
  	keepDialogsOpen = true;
-
- 	for (Action action : Input(1).actions()){                                                  //(1)
- 		var pos = action.getPosition();                                                        //(2) 
+ for ( Action action : Input(1).actions() ) {                                                                   //(1)
+	  	
+	  	var pos = action.getPosition();                                                                            //(2)
+	  	
+	  	//System.out.println("ACTION "+pos+"/"+action.url);														   
+	  		
+	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){                    //(3)
+	  			
+ 	
  		
- 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
- 				var value = Input(2).actions().get(pos).getParameterValue(x);
+ 				var value = Input(2).actions().get(pos).getFormInputs(); // getFormInputs().get(pos).getAsJsonObject()
  			
  			IMPLIES(
  				
@@ -70,7 +75,7 @@ MR CWE_792_793_794_795_796_797_B {
  				
  				EQUAL(Input(2), Input(1) )                     &&                       //(7)
  				
- 				Input(2).actions.get(pos).setFormInput(x, SpecialCharacters()+value+SpecialCharacters()) 
+ 				Input(2).actions.get(pos).setFormInput(x, SpecialCharacters()+ value+SpecialCharacters()) 
  				                                 //(9)              
  				,
 // 				true
