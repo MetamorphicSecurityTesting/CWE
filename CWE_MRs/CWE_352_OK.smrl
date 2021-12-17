@@ -25,7 +25,6 @@ package smrl.mr.owasp{
  *     	performing the next action (typically "click on the submit button" in such a case) [Action 3]
  * (6) The system should show a different output between the action performed on the correct form and teh action performed on the form downloaded locally
  * 
- * 
  */ 
 MR CWE_352 {
 	{
@@ -35,25 +34,19 @@ MR CWE_352 {
  	for (Action action : Input(1).actions()){                                                  //(1)
  		var pos = action.getPosition();                                                        //(2) 
  		
- 		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
  		
  		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
  			
  			
  			IMPLIES(
- 				
- 			//	notTried( x, Input(1).actions().get(pos).getUrl() ) &&                             //(5)
- 				
- 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&        
- 				afterLogin( action )    &&
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) && //(5)        
+ 				afterLogin( action )    &&													//(6)
  				EQUAL( Input(2), Input( LoginAction(action.user)   ,                       //(7)
  				RequestUrlAction("file://"+Output(Input(1),pos-1).file.absolutePath), 
 						action
 					) )
- 			
  				                                 //(9)              
  				,
-// 				true
 				different ( Output(Input(1),pos),  Output(Input(2),3) )    
  				
  			);
