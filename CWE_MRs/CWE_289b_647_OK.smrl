@@ -52,16 +52,19 @@ var hashed_sep = "%5C";
 			  	notTried( action.getUser(), hashed_sep_newUrl )		//(10)	
 			    ,
 			   //(11)
-			    	different( Output( Input(1), pos) , Output(Input(2) , pos) )
-			      // AND(
-			     		//isError( Output(Input(2) , pos) )
-			     			//,
-			     			//userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))
+			    	
+			     AND(  OR(
+			     		isError( Output(Input(2) , pos) )
+			     			,
+			     			userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))
 			     			
-			     		//)//,
-			      		//isError( Output(Input(3) , pos) ))
-			    
-			      //) 
+			     		),
+			      		OR(
+			      			isError( Output(Input(3) , pos) )
+			      		
+			                ,
+			     			userCanRetrieveContent(action.getUser(),Output(Input(3) , pos))
+			      ) )
 			);//end-IMPLIES
 		}//end-for
 		

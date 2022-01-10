@@ -1,0 +1,88 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/**
+ * CWE Definition:
+ * 
+ * CWE_610:
+ * The product uses an externally controlled name or reference that resolves to a resource that 
+ * is outside of the intended control sphere.
+ *
+ * CWE_384 (Child of CWE_610): 
+ * Authenticating a user, or otherwise establishing a new user session, without invalidating any
+ * existing session identifier gives an attacker the opportunity to steal authenticated sessions.
+ * 
+ * 
+ * A web application authenticates a user without first invalidating the existing session, thereby
+ * continuing to use the session already associated with the user. An attacker is able to force a known
+ * session identifier on a user so that, once the user authenticates, the attacker has access to the 
+ * authenticated session. The application or container uses predictable session identifiers. In the 
+ * generic exploit of session fixation vulnerabilities, an attacker creates a new session on a web 
+ * application and records the associated session identifier. The attacker then causes the victim to 
+ * associate, and possibly authenticate, against the server using that session identifier, giving the 
+ * attacker access to the user's account through the active session.
+ * 
+ * Idea:
+ * When a user login to the system, the system will create a new session for that person.
+ * Even if the user is active and asks for login e.g. from another system or another browser, the
+ * system should create the new session for the user.
+ * In this MR we are trying to implement this idea.
+ * We are looking for two logins in the system (like the examples that user logins from two different systems) without any logout 
+ * i.e. if the user does the logout, the system automatically will gives a new session; and we are testing the new session after doing a logout 
+ * in another MR. We will check that after the second login the system assigns a different
+ * session to the user or not, also the user should not be able to continue her actions
+ * after the second login.
+ * 
+ * Considering that we have a user that is active and the attacker can steal the session.
+ * The attacker will use the session to log in, and the system should not validate the session. 
+ * After the second login the system should publish a new session for the user.
+ * We shall simply perform a login within another logged in session. No logout is needed.
+ * 
+ * 
+ * Comments: 
+ * (1) The first loop iterates over all the actions of the Input(1).
+ * (2) The second loop iterates over all the actions after the x to find an action performed after login.
+ * (3) Avoids resetting the browser.
+ * (4) Sets the sub-sequence of actions to Input(2), from beginning to the first action after the login.
+ * (5) Sets the sub-sequence of actions to Input(3), from the first action after the login till the end.
+ * (6) Makes sure that Input(3) starts with a login.
+ * (7) Set the same session of Input(2) for the Input(3).
+ * (8) The system should assign two different session IDs after the log in for Input(2) and Input(3)
+ *     And the system should invalidate the session of Input(2) therefore the output of Input(3) at 
+ *     position 1 i.e., (the action performed after login) for which we used the session id of Input(2))
+ *     should be either an error message or different than the output of Input(1) for the same input.
+ *   
+ * 
+ */ 
+MR CWE_610_384_B { 
+		{
+			for ( var x = 0; x < Input(1).actions().size(); x++ ){                                                //(1)
+		
+				for ( var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){   //(2)
+					
+				//	setResetBrowserBetweenInputs( false );                                                        //(3)
+					
+					IMPLIES ( 
+						EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, y ) ) ) &&                          //(4)
+						EQUAL ( Input(3) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  && //(5)
+						Input(3).addAction(0,Input(1).actions().get(x)) && 											 //(6) we start with a login
+						Input(3).actions().get(1).setSession( Output(Input(2),x).getSession() )                      //(7) however, after the login we are forcing the browser to reuse the old session ID
+						
+						,
+					//	OR ( different ( Output(Input(2),x),  Output(Input(3),0)),
+					
+					AND	( different ( Output(Input(2),x).getSession(),  Output(Input(3),0).getSession())  // 
+							,  isError(Output(Input(3),1))
+	)						
+					); //end-IMPLIES
+					
+				//	setResetBrowserBetweenInputs( true ); 
+					
+				} //end-for
+			} //end-for
+		}
+	} //end-MR
+} //end-package
+

@@ -63,7 +63,8 @@ MR CWE_643_652_B {
 	  		
 	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){                    //(3)
 	  			 IMPLIES(
-	        			
+	        		
+	        		  action.eventType == Action.ActionType.click &&        
 	        		  notTried(XQueryInjection()+ x +action.url, Input(1).actions().get(pos).getElementURL() )     //(4)
 	        		  && !isError(Output(Input(1),pos))															   //(5)							
 	       			  && EQUAL ( Input(2), Input(1) )	    													   //(6)	                                                                        
