@@ -37,8 +37,10 @@ var hashed_sep = "%5C";
 			var newUrl = action.urlPath + sep + RandomFilePath(); //// random file name?????
 			var hashed_sep_newUrl =  action.urlPath + hashed_sep + RandomFilePath();
 			IMPLIES( 
+				
 				!isAdmin(action.user) &&						
 				 notAvailableWithoutLoggingIn(action) &&		/// The action should not be visible by using the hashed separator					
+				
 				EQUAL( Input(2), Input(1) ) &&					
 			  	Input(2).actions().get(pos).setUrl( newUrl ) &&	
 			  	//notTried( action.getUser(), newUrl ) &&

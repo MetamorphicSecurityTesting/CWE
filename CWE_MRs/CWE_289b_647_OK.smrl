@@ -42,6 +42,7 @@ var hashed_sep = "%5C";
 			IMPLIES( 
 				!isAdmin(action.user) &&	//(5)			
 				afterLogin(action) &&		//(6)					
+				
 				EQUAL( Input(2), Input(1) ) &&	//(7)				
 			  	Input(2).actions().get(pos).setUrl( newUrl ) &&	//(8)
 			  	notTried( action.getUser(), newUrl ) && //(9)
@@ -50,15 +51,17 @@ var hashed_sep = "%5C";
 			  	Input(3).actions().get(pos).setUrl( hashed_sep_newUrl ) &&	
 			  	notTried( action.getUser(), hashed_sep_newUrl )		//(10)	
 			    ,
-			    OR( //(11)
-			    	AND(
-			   			 different ( Output(Input(2),pos),Output(Input(1),pos)),
-			    		 different ( Output(Input(3),pos),Output(Input(1),pos))),
-			       AND(
-			     		isError( Output(Input(2) , pos) ),
-			      		isError( Output(Input(3) , pos) ))
+			   //(11)
+			    	different( Output( Input(1), pos) , Output(Input(2) , pos) )
+			      // AND(
+			     		//isError( Output(Input(2) , pos) )
+			     			//,
+			     			//userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))
+			     			
+			     		//)//,
+			      		//isError( Output(Input(3) , pos) ))
 			    
-			      ) 
+			      //) 
 			);//end-IMPLIES
 		}//end-for
 		
