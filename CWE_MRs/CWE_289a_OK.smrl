@@ -30,7 +30,7 @@ MR CWE_289a {
    for (Action action: Input(1).actions()){                                           //(1)
       var pos = action.getPosition();                                                 //(2)
       var url = action.getUrl();                                                      //(3)
-      var encodeURL = action.EncodeUrl(url);                                           //(4)
+      var encodeURL = action.EncodeUrl(url);                                          //(4)
       IMPLIES(             
                    
                (!isSupervisorOf(User(), action.user)) &&                              //(5) 

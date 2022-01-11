@@ -47,7 +47,7 @@ MR CWE_88b {
  		
  		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
  		
- 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size-1; x++){                                      //(3)
  			
  			
  			IMPLIES(
@@ -69,13 +69,13 @@ MR CWE_88b {
                !different(Output(Input(1)).values.subList(pos,Input(1).actions.length)
                		, Output(Input(2)).values.subList(pos,Input(1).actions.length) ) 
 
-    			, //OR(
+    			, OR(
 					//If we have an error the system has spotted the attack
-                	isError(Output(Input(2), pos))//,                       
+                	isError(Output(Input(2), pos)),                       
 					//If the output is different, the user shall anyway be able to retrieve the provided content
-                //	userCanRetrieveContent(action.getUser(), Output(Input(2)).values.subList(pos,size) )
+                	userCanRetrieveContent(action.getUser(), Output(Input(2)).values.subList(pos,size) )
                 
-				//)
+				)
 			)//end-RHS-OR
 		);//end-IMPLIES
 	}//end-for

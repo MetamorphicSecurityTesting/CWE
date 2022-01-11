@@ -30,17 +30,20 @@ package smrl.mr.owasp {
  */
 MR CWE_289b_647{
 	{
-var sep="/";
+var sep="\\";
 var hashed_sep = "%5C";
  	for ( var par=0; par < 3; par++ ){
  		 
 		for ( Action action : Input(1).actions() ){ //(1)
-			 
+						 
 			var pos = action.getPosition();  //(2)
-			var newUrl = action.urlPath + sep + RandomFilePath(); //(3)     // random file name?????
-			var hashed_sep_newUrl =  action.urlPath + hashed_sep + RandomFilePath();//(4)
-			IMPLIES( 
-				!isAdmin(action.user) &&	//(5)			
+			var newUrl = action.rephraseURL(action.urlPath, sep); //(3)     
+			//System.out.println(newUrl);
+			var hashed_sep_newUrl =  action.rephraseURL(action.urlPath, hashed_sep);//(4)
+			
+			//!isError(Output(Input(1), pos)),	
+			
+			IMPLIES( 			
 				afterLogin(action) &&		//(6)					
 				
 				EQUAL( Input(2), Input(1) ) &&	//(7)				
@@ -52,23 +55,20 @@ var hashed_sep = "%5C";
 			  	notTried( action.getUser(), hashed_sep_newUrl )		//(10)	
 			    ,
 			   //(11)
-			    	
-			     AND(  OR(
-			     		isError( Output(Input(2) , pos) )
-			     			,
-			     			userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))
-			     			
-			     		),
-			      		OR(
-			      			isError( Output(Input(3) , pos) )
-			      		
-			                ,
-			     			userCanRetrieveContent(action.getUser(),Output(Input(3) , pos))
-			      ) )
+			    AND(
+			    	    !isError(Output(Input(1), pos)),	
+			     AND( 
+			     	 OR(
+			     		isError( Output(Input(2) , pos) ),
+			     		userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))	),
+			      	OR(
+			      		isError( Output(Input(3) , pos) ) ,
+			     		userCanRetrieveContent(action.getUser(),Output(Input(3) , pos))
+			      ) ))
 			);//end-IMPLIES
 		}//end-for
 		
-		sep=sep+"../";
+		//sep=sep+"../";
 	}//end-for
  }
 }//end-MR
