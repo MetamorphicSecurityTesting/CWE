@@ -10,7 +10,7 @@
         "Log": "./testData/JenkinsICSE/logFiles.txt",
 	"VMname": "UbuntuJenkins 2.121.1",
 	"REAL_WAIT_THRESHOLD": "60000", 
-	"inputFile": "./testData/JenkinsICSE/input_small.json",
+	"inputFile": "./testData/JenkinsICSE/input_FULL.json",
 	"outputFile": "./testData/JenkinsICSE/outFolder/jenkinsResult.txt",
 	"outputStore": "./testData/JenkinsICSE/outputStore",
 	"randomFilePathFile": "./testData/JenkinsICSE/filePaths.txt",
@@ -79,6 +79,7 @@
 			"HTTP ERROR 403",
 			"A problem occurred while processing the request.",
 			"Invalid login information. Please try again.",
+                         " \"null\" is prohibited as a full name for security reasons.",
 			"This XML file does not appear to have any style information associated with it."]
 	}
 }

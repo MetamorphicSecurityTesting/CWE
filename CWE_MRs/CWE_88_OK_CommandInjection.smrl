@@ -41,7 +41,7 @@ MR CWE_88a {
  	
     for (Action action : Input(1).actions()){                                          //(1)
  		var pos = action.getPosition();                                                //(2) 
- 		var size = Input (1).actions().size()-1;
+ 		var size = Input (1).actions().size();
  		for (var x = 0; x < action.parameters.size-1; x++){                              //(3)
  		
  			IMPLIES(
@@ -60,9 +60,9 @@ MR CWE_88a {
 					//If we have an error the system has spotted the attack
                 	isError(Output(Input(2), pos))                       
 					//If the output is different, the user shall anyway be able to retrieve the provided content
-                ,	userCanRetrieveContent(action.getUser(), Output(Input(2)).values.subList(pos,size) )
-                
-				)
+                ,	//userCanRetrieveContent(action.getUser(), Output(Input(2)).values.subList(pos,size-1) )
+                userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))	)
+				
 			)//end-RHS-OR
 		);//end-IMPLIES
 	}//end-for
