@@ -27,7 +27,7 @@ package smrl.mr.owasp{
  * 
  * 
  */ 
-MR CWE_90 {
+MR CWE_90a {
  {
  	
  
@@ -55,10 +55,11 @@ MR CWE_90 {
 		    		 //or no effect shall be observed (the effect is visualized when reaching the page where we inject the XSS)                  
 		    	     Output(Input(2), pos).hasAlert   
 		    	     ), OR( 
- 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  
+ 					isError(Output(Input(2), pos))
  					,
- 					isError(Output(Input(2), pos)))
- 				//	userCanRetrieveContent(action.getUser(), Output(Input(2),pos))    
+ 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  
+ 					)
+ 				
  		)	);
  		}
  	}

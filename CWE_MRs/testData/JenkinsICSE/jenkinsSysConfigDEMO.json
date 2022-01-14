@@ -75,11 +75,12 @@
 			"Error 404",
 			"Error 403"],
 		"content":[
-"java.io.IOException: listRoot is not buildable",
+                        "java.io.IOException: listRoot is not buildable",
 			"HTTP ERROR 403",
 			"A problem occurred while processing the request.",
 			"Invalid login information. Please try again.",
-                         " \"null\" is prohibited as a full name for security reasons.",
+                        " \"null\" is prohibited as a full name for security reasons.",
+                        "This URL requires POST",
 			"This XML file does not appear to have any style information associated with it."]
 	}
 }

@@ -40,8 +40,8 @@ var hashed_sep = "%5C";
 			var newUrl = action.rephraseURL(action.urlPath, sep); //(3)     
 			//System.out.println(newUrl);
 			var hashed_sep_newUrl =  action.rephraseURL(action.urlPath, hashed_sep);//(4)
-			
-			//!isError(Output(Input(1), pos)),	
+			//System.out.println(hashed_sep_newUrl);
+			//isError(Output(Input(1), pos))
 			
 			IMPLIES( 			
 				afterLogin(action) &&		//(6)					
@@ -56,7 +56,9 @@ var hashed_sep = "%5C";
 			    ,
 			   //(11)
 			    AND(
-			    	    !isError(Output(Input(1), pos)),	
+			    	  // OR(
+			     		isError( Output(Input(1) , pos) )  ,
+			     		//userCanRetrieveContent(action.getUser(),Output(Input(1) , pos))	),
 			     AND( 
 			     	 OR(
 			     		isError( Output(Input(2) , pos) ),
@@ -67,8 +69,7 @@ var hashed_sep = "%5C";
 			      ) ))
 			);//end-IMPLIES
 		}//end-for
-		
-		//sep=sep+"../";
+
 	}//end-for
  }
 }//end-MR
