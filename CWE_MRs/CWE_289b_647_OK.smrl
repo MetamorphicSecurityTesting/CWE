@@ -18,55 +18,41 @@ package smrl.mr.owasp {
  * comments:
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Stores the parameters of the current action in a variable.
- * (3),(4) It creates a new URL address with our defined seperators
- * (5) It checks that the user is not admin.
- * (6) Checks if the current action has been performed after a login.
- * (7) Defines a follow-up input that is a copy of the source input.
- * (8) Sets a relative path to a file
- * (9) Verifies that the given path was not tried in a previous execution of the loop (to speed up). 
- * (10) The same process for the URL with hashed separator as (7),(8),(9).
- * (11) The system should not allow the new URL to be accessible, and it should show an error page or a different page in comparison to Input(1).
+ * (3) It creates a new URL address with the hashed format of the separator.
+ * (4) Checks if the current action has been performed after a login.
+ * (5) Checks if the current user does not have access to the URL and he/she cannot retrieve the content .
+ * (6) Defines a follow-up input that is a copy of the source input.
+ * (7) Sets the modified URL for the follow-up input.
+ * (8) Verifies that the given URL was not tried in a previous execution of the loop (to speed up). 
+ * (9) The system should not allow the follow-up input to access the content of the URL that is not accessible by the original URL.
+ *     It should show an error page or a content that the user has already right to access.
  * 
  */
 MR CWE_289b_647{
 	{
-var sep="\\";
-var hashed_sep = "%5C";
+
+var sep = "%5C";
  	for ( var par=0; par < 3; par++ ){
  		 
-		for ( Action action : Input(1).actions() ){ //(1)
+		for ( Action action : Input(1).actions() ){                                     //(1)
 						 
-			var pos = action.getPosition();  //(2)
-			var newUrl = action.rephraseURL(action.urlPath, sep); //(3)     
-			//System.out.println(newUrl);
-			var hashed_sep_newUrl =  action.rephraseURL(action.urlPath, hashed_sep);//(4)
-			//System.out.println(hashed_sep_newUrl);
-			//isError(Output(Input(1), pos))
+			var pos = action.getPosition();                                             //(2)
+			var newUrl = action.rephraseURL(action.urlPath, sep);                       //(3)     
+			
 			
 			IMPLIES( 			
-				afterLogin(action) &&		//(6)					
+				afterLogin(action) &&		                                             //(4)					
+				isError( Output(Input(1) , pos) )	 &&                                  //(5)
 				
-				EQUAL( Input(2), Input(1) ) &&	//(7)				
-			  	Input(2).actions().get(pos).setUrl( newUrl ) &&	//(8)
-			  	notTried( action.getUser(), newUrl ) && //(9)
-			  	
-			  	EQUAL( Input(3), Input(1) ) &&					
-			  	Input(3).actions().get(pos).setUrl( hashed_sep_newUrl ) &&	
-			  	notTried( action.getUser(), hashed_sep_newUrl )		//(10)	
-			    ,
-			   //(11)
-			    AND(
-			    	  // OR(
-			     		isError( Output(Input(1) , pos) )  ,
-			     		//userCanRetrieveContent(action.getUser(),Output(Input(1) , pos))	),
-			     AND( 
-			     	 OR(
+				EQUAL( Input(2), Input(1) ) &&	                                         //(6)				
+			  	Input(2).actions().get(pos).setUrl( newUrl ) &&	                         //(7)
+			  	notTried( action.getUser(), newUrl )                                     //(8)
+			  
+			    ,     
+			     	 OR(                                                                  //(9)
 			     		isError( Output(Input(2) , pos) ),
-			     		userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))	),
-			      	OR(
-			      		isError( Output(Input(3) , pos) ) ,
-			     		userCanRetrieveContent(action.getUser(),Output(Input(3) , pos))
-			      ) ))
+			     		userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))	)
+			      	      
 			);//end-IMPLIES
 		}//end-for
 

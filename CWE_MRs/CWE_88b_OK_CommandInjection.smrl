@@ -49,9 +49,8 @@ MR CWE_88b {
  		var len = Input(1).actions.length();                                                     //(2) 
  		
  		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
- 		//System.out.println(Output(Input(1)).values.subList(pos,Input(1).actions.length))
- 		//System.out.println(Output(Input(2)).values)
- 		for (var x = 0; action.containFormInput() && x < action.formInputs.size-1; x++){                                      //(3)
+ 		
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
  			
  			
  			IMPLIES(
@@ -60,23 +59,23 @@ MR CWE_88b {
  				action.eventType == Action.ActionType.click &&  
  				
  				//notTried( x, Input(1).actions().get(pos).getUrl() ) &&                             //(5)
- 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&  
- 				        
- 				EQUAL(Input(2), Input(1) )                     &&                       //(7)
- 				
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&          
+ 				EQUAL(Input(2), Input(1) ) &&                                                        //(7)
  				Input(2).actions.get(pos).setFormInput(x, CommandInjection()) 
- 				                                 //(9)              
+ 				  && userCanRetrieveContent(action.getUser(), Output(Input(1)).values.subList(pos,size) )                                            
  				,
 // 			
 		   OR(
 			   // Assuming that the input sequence continues after 'pos', we may observe the effects of the attack in the following inputs.
               
-               !different(Output(Input(1)).values.subList(pos,Input(1).actions.length)		, Output(Input(2)).values.subList(pos,Input(1).actions.length) ) 
+               !different(Output(Input(1)).values.subList(pos,Input(1).actions.length), Output(Input(2)).values.subList(pos,Input(1).actions.length) ) 
 
     		,
                  OR(
 			     		isError( Output(Input(2) , pos) ),
-			     		userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))	)
+			     		userCanRetrieveContent(action.getUser(), Output(Input(2)).values.subList(pos,size) ))
+			     		
+			     	//	userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))	)
 				
 			)//end-RHS-OR
 		);//end-IMPLIES

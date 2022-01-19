@@ -44,14 +44,18 @@ MR CWE_88a {
  		var pos = action.getPosition();                                                //(2) 
  		var size = Input (1).actions().size();
  		var param = action.parameters;
+ 		
  		for (var x = 0; x < action.parameters.size; x++){                              //(3)
+ 		
  		System.out.println("This is the value of x:"+x);
  		System.out.println("action.parameters.size is:" + action.parameters.size);
+ 				
  			IMPLIES(
  		
  				notTried( Input(1).actions().get(pos).getUrl() ) &&                    //(4)
  				EQUAL(Input(2), Input(1))&&                                            //(5)
  				Input(2).actions().get(pos).setParameterValue( x, CommandInjection() ) //(6)
+ 			    && userCanRetrieveContent(action.getUser(), Output(Input(1)).values.subList(pos,size) )
  			    , 
 		   
 		   OR(
@@ -60,10 +64,15 @@ MR CWE_88a {
                		, Output(Input(2)).values.subList(pos,Input(1).actions.length) ) 
 
     			, OR(
+    				
 					//If we have an error the system has spotted the attack
                 	isError(Output(Input(2), pos))                       
 					//If the output is different, the user shall anyway be able to retrieve the provided content
                 ,	userCanRetrieveContent(action.getUser(), Output(Input(2)).values.subList(pos,size) ))
+                
+                
+                
+                
                 //userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))	)
 				
 			)//end-RHS-OR
