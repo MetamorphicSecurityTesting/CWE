@@ -33,9 +33,11 @@ MR CWE_488 {
 				{ 		
 				IMPLIES(
 	  				
-	  				!isSupervisorOf(User(),Input (1).actions().get(y).user)&& //(3)	  				
+	  				!isSupervisorOf(User(),Input (1).actions().get(y).user)&& //(3)	
+	  				userCanRetrieveContent(User(),Output(Input(1), y+1) ) &&  				
 	  				EQUAL(Input(2), changeCredentials(Input(1), User())) && //(4)
 	  				EQUAL(Input(3), addAction(Input(2), y+1, Input(1).actions().get(x+1))) // (5)
+	  				
 	  				,
 	  			
 	  				OR(
@@ -43,10 +45,10 @@ MR CWE_488 {
 	  					different(Output(Input(1), y+2),Output(Input(3), y+2)) //(6)
 	  					//The problem here is that only some specific part of the page may be similar(the information leakage reveal the data for a specific entry and all other parts of the page is already different)
 	  					// how we can restrict the comparison to the information revealing part?
-	  					,
-	  					//userCanRetrieveContent(Input(3).actions().get(y+2).getUser(), Output(Input(3), y+2))
+	  				//	,
+	  				//	OR(userCanRetrieveContent(User(),Output(Input(3), y+2) )
 	  					
-	  					Output(Input(3), y+1).isError() 
+	  					,Output(Input(3), y+1).isError() 
 	  				)	);
 			}
 		}

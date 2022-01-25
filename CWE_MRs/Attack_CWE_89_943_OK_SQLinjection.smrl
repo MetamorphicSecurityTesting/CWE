@@ -43,7 +43,8 @@ MR CWE_89_943 {
  		
  			IMPLIES(
  		
- 				notTried( Input(1).actions().get(pos).getUrl() ) &&                      //(4)          
+ 				notTried( Input(1).actions().get(pos).getUrl() ) &&   
+ 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&                   //(4)          
  				EQUAL(Input(2), Input(1))&&                                              //(5)
  				Input(2).actions().get(pos).setParameterValue( x, SQLInjectionString() ) //(6)
  			       // copy with form input           

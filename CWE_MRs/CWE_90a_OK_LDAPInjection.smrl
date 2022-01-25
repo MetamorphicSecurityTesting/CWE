@@ -44,7 +44,9 @@ MR CWE_90a {
  				
  				notTried(x + parameterName, Input(1).actions().get(pos).getUrl() )    &&        //(5)
  				! Output(Input(1),pos).hasAlert					&&  
+ 			   
  			    userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&
+ 				
  				EQUAL(Input(2), Input(1))&&                                                  //(6)
  				
  				Input(2).actions().get(pos).setParameterValue( x, LDAPInjectionString() )        //(7)

@@ -71,6 +71,7 @@ MR CWE_792_793_794_795_796_797_B {
  				
  			//	notTried( x, Input(1).actions().get(pos).getUrl() ) &&                             //(5)
  				
+ 				 action.eventType == Action.ActionType.click &&    
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&        
  				
  				EQUAL(Input(2), Input(1) )                     &&                       //(7)

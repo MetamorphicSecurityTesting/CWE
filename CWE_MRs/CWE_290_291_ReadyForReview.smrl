@@ -46,10 +46,12 @@ MR CWE_290_291{
 	   IMPLIES(
 	   	
 	        
-	          afterLogin(action)                                             //(3)  	 				
+	          afterLogin(action)  
+	          &&  userCanRetrieveContent(action.getUser(), Output(Input(1),pos))         //(3)  	 				
 	          &&  EQUAL ( Input(2), Input(1) )	                             //(4)	 
          	  && Input(2).actions.get(pos).setSession( new CookieSession() )      //(5)
-	    	  && ! sameUrl( action.currentURL, action.elementURL )     
+	    	  && ! sameUrl( action.currentURL, action.elementURL ) 
+	    	
 
 		    ,
 		                                                                //(6)
@@ -57,10 +59,14 @@ MR CWE_290_291{
 		    	//	!isError(Output(Input(1), pos)),                      
 		    	//    userCanRetrieveContent( action.user, Output(Input(1),pos)      
 		                             
-		           OR(                                                       
-		    	    isError(Output(Input(2), pos)),
-		    	    different ( Output(Input(1),pos),  Output(Input(2),pos))
+		      OR(     
+		      	OR(                                                       
+		    	 
+		    	 isError(Output(Input(2), pos)),
+		    	 different ( Output(Input(1),pos),  Output(Input(2),pos))
 		    	
+		    	),
+		    	userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  
 		    	)
 		    	
 		);//end-IMPLIES

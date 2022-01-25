@@ -4,16 +4,22 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp {
  
 /*
- * Hint:
- * Once we implement the EncodeUrl() we may not need this version.
- * 
+ * *
  * CWE Definition:
+ * 
+ * CWE_289:
  *  The software performs authentication based on the name of a resource being accessed,
  *  or the name of the actor performing the access, but it does not properly check all possible names 
  *  for that resource or actor.
  * 
+ * CWE_647:
+ * The software defines policy namespaces and makes authorization decisions based on the assumption that 
+ * a URL is canonical. This can allow a non-canonical URL to bypass the authorization.
+ * 
  * Idea:
  * Protection mechanism that restricts URL access can be bypassed using URL encoding. 
+ * 
+ * 
  * 
  * comments:
  * (1) For loop iterates over all actions of the Input(1).
@@ -26,6 +32,10 @@ package smrl.mr.owasp {
  * (8) Verifies that the given URL was not tried in a previous execution of the loop (to speed up). 
  * (9) The system should not allow the follow-up input to access the content of the URL that is not accessible by the original URL.
  *     It should show an error page or a content that the user has already right to access.
+ * 
+ * jenkins/user
+ * 
+ * jenkis%5Cuser
  * 
  */
 MR CWE_289b_647{
@@ -55,7 +65,7 @@ var sep = "%5C";
 			      	      
 			);//end-IMPLIES
 		}//end-for
-
+	sep=sep+"../";
 	}//end-for
  }
 }//end-MR
