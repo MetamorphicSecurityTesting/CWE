@@ -43,37 +43,44 @@ import smrl.mr.owasp.CWE_441;
 import smrl.mr.owasp.CWE_471_472;
 import smrl.mr.owasp.CWE_488;
 import smrl.mr.owasp.CWE_521;
+import smrl.mr.owasp.CWE_521_b;
 import smrl.mr.owasp.CWE_599;
 import smrl.mr.owasp.CWE_601_OTG_AUTHZ_002a;
 import smrl.mr.owasp.CWE_610_384;
+import smrl.mr.owasp.CWE_610_384_B;
 import smrl.mr.owasp.CWE_611;
 import smrl.mr.owasp.CWE_613_OTG_SESS_006;
 import smrl.mr.owasp.CWE_643_652;
-import smrl.mr.owasp.CWE_703_166_78_77_76_75_74;
+import smrl.mr.owasp.CWE_643_652_B;
+import smrl.mr.owasp.CWE_703_166_78_77_76_75_74_91;
+import smrl.mr.owasp.CWE_703_166_78_77_76_75_74_91_B;
+import smrl.mr.owasp.CWE_703_166_78_77_76_75_74_91;
 import smrl.mr.owasp.CWE_703_Jenkins;
 import smrl.mr.owasp.CWE_73_99_219_220_530_OTG_AUTHZ_001a;
 import smrl.mr.owasp.CWE_757_OTG_CRYPST_004_F;
 import smrl.mr.owasp.CWE_784;
-import smrl.mr.owasp.CWE_79;
+
 import smrl.mr.owasp.CWE_792_793_794_795_796_797;
+import smrl.mr.owasp.CWE_792_793_794_795_796_797_B;
 import smrl.mr.owasp.CWE_79_Jenkins;
 import smrl.mr.owasp.CWE_79_Jenkins944;
 import smrl.mr.owasp.CWE_79b_XSSreflected;
-import smrl.mr.owasp.CWE_79b_storedXSS;
+import smrl.mr.owasp.CWE_79c_storedXSS;
 import smrl.mr.owasp.CWE_841;
 import smrl.mr.owasp.CWE_88a;
 import smrl.mr.owasp.CWE_88b;
 import smrl.mr.owasp.CWE_88test;
 import smrl.mr.owasp.CWE_89_943;
 import smrl.mr.owasp.CWE_89_943b;
-import smrl.mr.owasp.CWE_90;
+import smrl.mr.owasp.CWE_90a;
+import smrl.mr.owasp.CWE_90b;
 import smrl.mr.owasp.CWE_923;
-import smrl.mr.owasp.CWE_923_297;
 import smrl.mr.owasp.CWE_93a;
 import smrl.mr.owasp.CWE_93b;
 import smrl.mr.owasp.CWE_94_95;
 import smrl.mr.owasp.CWE_94_96;
 import smrl.mr.test.TEST_INPUTS;
+import smrl.mr.test.TEST_USERCANRETRIEVE;
 
 public class CWETest extends MRBaseTest {
 
@@ -87,11 +94,12 @@ public class CWETest extends MRBaseTest {
 		System.out.println("*** Starting time: " + getCurrentTime() +" ***");
 
 		//by default, the SUT is the Jenkins
+	//	String configFile = "./testData/JenkinsICSE/jenkinsSysConfigDEMO.json";
 		String configFile = "./testData/JenkinsICSE/jenkinsSysConfigDEMO.json";
 
 		System.setProperty("webdriver.gecko.driver", "C:\\Users\\nbaya076\\geckodriver.exe");
-		
-		smrl.mr.crawljax.WebProcessor.DEFAULT_HEADLESS = false;
+	//	options.setBinary("/path/to/chrome");
+		smrl.mr.crawljax.WebProcessor.DEFAULT_HEADLESS = true;
 		provider = new WebOperationsProvider(configFile);
 	}
 
@@ -108,42 +116,42 @@ public class CWETest extends MRBaseTest {
 	
 	////currently is testing
 	
-	 @Test
-		public void test_CWE_703_166_78_77_76_75_74() { //passed
-			super.test(provider,CWE_703_166_78_77_76_75_74.class);
-		}
+  /* / #1  port 8081
 	 
-	 /*
 	@Test
-	public void test_CWE_79() { //failed
+	public void test_CWE_79() {                                               ////NO FP
 		super.test(provider,CWE_79.class);
 	}
-@Test
-	public void test_CWE_703_Jenkins() {  // 
-		super.test(provider,CWE_703_Jenkins.class);
-	}
+
 		
 	
 
 
-@Test
-	public void test1_CWE_599() {      
-		super.test(provider,CWE_599.class);
-	}
+//@Test
+//	public void test1_CWE_599() {                                            
+//		super.test(provider,CWE_599.class);
+//	}
 	
 	
 
 
 	@Test
-	public void test_CWE_94_96() { //passed
+	public void test_CWE_94_96() {                                              ////NO FP
 		super.test(provider,CWE_94_96.class);
 	}	
 	@Test
-	public void test_CWE_521() { //failed
+	public void test_CWE_521() {                                               ////NO FP
 		super.test(provider,CWE_521.class);
 	}
 
 	
+	
+	
+	
+	
+	
+	
+	/* /   #2    port 9090
 	
 	@Test
 	public void test_CWE_90() { 
@@ -172,6 +180,10 @@ public class CWETest extends MRBaseTest {
 	public void test_CWE_434() { //passed             ///20
 		super.test(provider,CWE_434.class);
 	}
+	/*/
+	
+	
+	/*/ #3   port 9092
 
 	@Test
 	public void test_CWE_611() { //passed
@@ -209,7 +221,7 @@ public class CWETest extends MRBaseTest {
 
 	
 
-
+       // #4   port 9094
 	@Test
 	public void test_CWE_79_a() {  //passed
 		super.test(provider,CWE_79.class);
@@ -240,74 +252,55 @@ public class CWETest extends MRBaseTest {
 
 	
 
+	
+	
+	//          #5   port = 9095
+	
+	
 	@Test
 	public void test_CWE_784() {  // passed
 		super.test(provider,CWE_784.class);
 	}
 
-
 	@Test
-	public void test_CWE_792() {  //passed
+	public void test_CWE_792() {  //error
 		super.test(provider,CWE_792_793_794_795_796_797.class);
 	}
-
 
 	@Test
 	public void test_CWE_841() {  //passed
 		super.test(provider,CWE_841.class);
 	}
-	
-	
 		
 	@Test
 	public void test_CWE_289b2() {  // passed
 		super.test(provider,CWE_289b2.class);
 	}
 
-
-	
-	
-
 	@Test
 	public void test_CWE_290_350() {  //failed
 		super.test(provider,CWE_290_350.class);
 	}
 
+
+
+/*
+
+	//   #6   port = 9096
 	
 	@Test
 	public void test_CWE_315() {  //passed
 		super.test(provider,CWE_315b.class);
 	}
-	
-
-	
-	
-	@Test
-	public void test_CWE_471_472() {  // passed         
-		super.test(provider,CWE_471_472.class);
-	}
-	
-	
-	
 		
+	//@Test
+	//public void test_CWE_471_472() {  // passed         
+	//	super.test(provider,CWE_471_472.class);
+	//}
 	
-	@Test
-	public void test_CWE_352_Jenkins() {  // failed
-		super.test(provider,CWE_352_Jenkins.class);
-	}
+	
 	
 
-	
-
-	@Test
-	public void test_CWE_79_Jenkins() {  // failed
-	   super.test(provider,CWE_79_Jenkins.class);
-	}
-	
-	@Test
-	public void test_CWE_79_Jenkins944() {  // failed
-		super.test(provider,CWE_79_Jenkins944.class);
-	}
 
 	@Test
 	public void test_CWE_22() {
@@ -317,20 +310,35 @@ public class CWETest extends MRBaseTest {
 	public void test_CWE_88test() { //passed
 		super.test(provider,CWE_88test.class);
 	}
+	
+	 
 	 @Test
-	public void test_CWE_703_166_78_77_76_75_74() { //passed
-		super.test(provider,CWE_703_166_78_77_76_75_74.class);
+	public void test_CWE_703_166_78_77_76_75_74_91() { //passed
+		super.test(provider,CWE_703_166_78_77_76_75_74_91.class);
 	}
-
+	
 	 
 	@Test
 	public void test_CWE_289b() {  //failed                                //32
 		super.test(provider,CWE_289b_647.class);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	///  #7   port = 9090
+	
+	 
 	 @Test
 	public void test_CWE_262_263_309_324() {// passed
 		super.test(provider,CWE_262_263_309_324.class);
 	}
+	
+	
 	@Test
 	public void test_CWE_488() {  //failed
 		super.test(provider,CWE_488.class);
@@ -350,12 +358,16 @@ public class CWETest extends MRBaseTest {
 	public void test_CWE_94_95() { //passed
 		super.test(provider,CWE_94_95.class);
 	}
-
+	
+	
+	
+ /// #8   port = 9092
 
 	@Test
 	public void test_CWE_93a() { //failed
 		super.test(provider,CWE_93a.class);
 	}
+
 
 	@Test
 	public void test_CWE_93b() { //failed
@@ -377,12 +389,33 @@ public class CWETest extends MRBaseTest {
 	}
 
 	
+	
+ ///   #9   port= 9094
+	
 	@Test
 	public void test_CWE_359() {  //passed
 		super.test(provider,CWE_359_313_532_538.class);
 	}
 	
-	/*
+	
+	@Test
+	public void test_CWE_352_Jenkins() {  // failed
+		super.test(provider,CWE_352_Jenkins.class);
+	}
+	
+	@Test
+	public void test_CWE_79_Jenkins() {  // failed
+	   super.test(provider,CWE_79_Jenkins.class);
+	}
+	
+	@Test
+	public void test_CWE_79_Jenkins944() {  // failed
+		super.test(provider,CWE_79_Jenkins944.class);
+	}
+	
+	
+	
+	
 
 	@Test
 	public void TEST() {  // failed
@@ -483,7 +516,35 @@ public class CWETest extends MRBaseTest {
 	
 	
 	 * 
+	 * 
 	 * */
+	
+	
+	
+	
+	
+	
+	
+	@Test
+	public void test_CWE_359() {  //passed
+		super.test(provider,CWE_359_313_532_538.class);
+	}
+
+	
+	
+	
+
+	/*
+	@Test
+	public void TEST() {  // failed
+		super.test(provider,TEST_USERCANRETRIEVE.class);
+	}
+
+	*/
+	
+	
+
+	
 	public static String getCurrentTime() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
 		LocalDateTime now = LocalDateTime.now();  

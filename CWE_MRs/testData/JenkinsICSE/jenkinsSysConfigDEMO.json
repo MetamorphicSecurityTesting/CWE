@@ -8,7 +8,7 @@
 
 	"IP": "192.168.56.103",
         "Log": "./testData/JenkinsICSE/logFiles.txt",
-	"VMname": "UbuntuJenkins 2.121.1",
+	"VMname": "",
 	"REAL_WAIT_THRESHOLD": "60000", 
 	"inputFile": "./testData/JenkinsICSE/input_FULL.json",
 	"outputFile": "./testData/JenkinsICSE/outFolder/jenkinsResult.txt",

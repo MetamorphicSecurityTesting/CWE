@@ -1,1 +1,1 @@
-/var/log/jenkins/jenkins.log
+\\uottawa.o.univ\acadhomes\n\nb\nbaya076\nbaya076\Documents\GitHub\CWE\CWE_MRs\Output_302.log

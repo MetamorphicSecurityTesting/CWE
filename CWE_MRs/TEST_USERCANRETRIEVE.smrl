@@ -1,0 +1,28 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.test {
+ 
+
+MR TEST_USERCANRETRIEVE { 
+ { 
+ 	{
+ 		   for ( Action action : Input(1).actions() ) 
+ 		   {
+    				var pos = action.getPosition(); 
+    			 
+    	            Input(1).actions().get(pos).setUrl( "http://192.168.56.103:8080/computer/slave1/api/json?tree=*%29%28uid%3D*%29%29%28%7C%28uid%3D*]"   )     
+	  			                            
+	  	
+ 					userCanRetrieveContent( User(), Output(Input(1), pos) );
+	} 	
+	}
+	
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+

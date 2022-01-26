@@ -14,7 +14,7 @@ import smrl.mr.crawljax.WebOperationsProvider;
 import smrl.mr.language.MRBaseTest;
 import smrl.mr.owasp.CWE_22;
 import smrl.mr.owasp.CWE_601_OTG_AUTHZ_002a;
-import smrl.mr.owasp.CWE_703_166_78_77_76_75_74;
+import smrl.mr.owasp.CWE_703_166_78_77_76_75_74_91;
 import smrl.mr.owasp.CWE_79;
 import smrl.mr.owasp.CWE_792_793_794_795_796_797;
 
