@@ -45,10 +45,10 @@ MR CWE_488 {
 	  					different(Output(Input(1), y+2),Output(Input(3), y+2)) //(6)
 	  					//The problem here is that only some specific part of the page may be similar(the information leakage reveal the data for a specific entry and all other parts of the page is already different)
 	  					// how we can restrict the comparison to the information revealing part?
-	  				//	,
-	  				//	OR(userCanRetrieveContent(User(),Output(Input(3), y+2) )
+	  					,
+	  					OR(userCanRetrieveContent(User(),Output(Input(3), y+2) )
 	  					
-	  					,Output(Input(3), y+1).isError() 
+	  					,Output(Input(3), y+1).isError() )
 	  				)	);
 			}
 		}
