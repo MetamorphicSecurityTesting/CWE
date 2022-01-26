@@ -6,7 +6,6 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -27,16 +26,17 @@ import smrl.mr.owasp.CWE_434;
 import smrl.mr.owasp.CWE_521;
 import smrl.mr.owasp.CWE_611;
 import smrl.mr.owasp.CWE_643_652;
-import smrl.mr.owasp.CWE_703_166_78_77_76_75_74_91;
+//import smrl.mr.owasp.CWE_703_166_78_77_76_75_74;
 import smrl.mr.owasp.CWE_757_OTG_CRYPST_004_F;
-import smrl.mr.owasp.CWE_79;
+//import smrl.mr.owasp.CWE_79;
 
 import smrl.mr.owasp.CWE_89_943;
-import smrl.mr.owasp.CWE_90;
+//import smrl.mr.owasp.CWE_90;
 import smrl.mr.owasp.CWE_93a;
 import smrl.mr.owasp.CWE_93b;
 import smrl.mr.owasp.CWE_94_95;
 import smrl.mr.owasp.CWE_94_96;
+import smrl.mr.test.TEST_INPUTS;
 
 public class CWETestFabrizio extends MRBaseTest {
 	
@@ -206,9 +206,14 @@ public class CWETestFabrizio extends MRBaseTest {
 //		super.test(provider,CWE_138_150_OTG_AUTHZ_001b.class);
 //	}
 	
+//	@Test
+//	public void test_CWE_290() { //passed
+//		super.test(provider,CWE_290_291.class);
+//	}
+	
 	@Test
-	public void test_CWE_290() { //passed
-		super.test(provider,CWE_290_291.class);
+	public void test_TEST_INPUTS() { //passed
+		super.test(provider,TEST_INPUTS.class);
 	}
 	
 	
