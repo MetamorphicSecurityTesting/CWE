@@ -7,6 +7,9 @@ package smrl.mr.test {
 MR TEST_INPUTS { 
  { 
  	{
+// 		System.out.println( "!!!!!!!!" + Boolean.FALSE.class.typeName );
+// 		System.out.println( RandomValue( typeOf( Boolean.FALSE.toString ) ) );
+// 		RandomValue(Boolean.TRUE.class.typeName);
  		Output( Input (1) );
 	} 	
 	
