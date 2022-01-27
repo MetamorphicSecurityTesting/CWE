@@ -7,7 +7,13 @@ package smrl.mr.test {
 MR TEST_INPUTS { 
  { 
  	{
-// 		System.out.println( "!!!!!!!!" + Boolean.FALSE.class.typeName );
+// 		System.out.println( "!!!!!!!!" + CodeInjectionString() );
+		System.out.println( "!!!!!!!!" + Input(1).actions.get(0) );
+ 		System.out.println( "!!!!!!!!" + Input(1).actions.get(0).isClickOnButton );
+ 		System.out.println( "!!!!!!!!" + Input(1).actions.get(1) );
+ 		System.out.println( "!!!!!!!!" + Input(1).actions.get(1).isClickOnButton );
+ 		System.out.println( "!!!!!!!!" + Input(1).actions.get(2) );
+ 		System.out.println( "!!!!!!!!" + Input(1).actions.get(2).isClickOnButton );
 // 		System.out.println( RandomValue( typeOf( Boolean.FALSE.toString ) ) );
 // 		RandomValue(Boolean.TRUE.class.typeName);
  		Output( Input (1) );

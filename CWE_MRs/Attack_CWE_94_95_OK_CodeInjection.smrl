@@ -52,7 +52,7 @@ MR CWE_94_95 {
  			System.out.println("ACTION "+pos+"/////"+x);
  			IMPLIES(
  				
- 				action.eventType == Action.ActionType.click &&                                 //(4)
+ 				action.isClickOnButton &&                                 //(4)
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&      //(5)
  				! Output(Input(1),pos).hasAlert					&&                             //(6)       
  				EQUAL(Input(2), Input(1) )                     &&                              //(7)
