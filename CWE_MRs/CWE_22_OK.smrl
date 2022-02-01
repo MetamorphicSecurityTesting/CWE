@@ -41,7 +41,7 @@ MR CWE_22 {
  			IMPLIES(
  				
  				//We are about to submit a form
- 				action.eventType == Action.ActionType.click &&  
+ 					action.isClickOnButton &&      
  				
  				//The page can be accessed by more than one user
 // 				canReachThroughGUI( User(), Input(1).actions().get(pos).getUrl() ) &&           //(4)

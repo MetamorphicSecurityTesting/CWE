@@ -76,7 +76,7 @@ MR CWE_703_166_78_77_76_75_74_91_B {
  			
  			IMPLIES(
  				//We are about to submit a form
- 				action.eventType == Action.ActionType.click &&   
+ 					action.isClickOnButton &&      
  				
  			//	notTried( x, Input(1).actions().get(pos).getUrl() ) &&                             //(5)
  				

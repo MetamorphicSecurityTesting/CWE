@@ -80,10 +80,9 @@ MR CWE_D{
  			System.out.println("value of x:  "+x +"///"+Input(1).actions().get(pos).getFormInputs());
  			IMPLIES(
  				
- 				action.eventType == Action.ActionType.click &&   
+ 				action.isClickOnButton &&      
  				value1 != Boolean &&
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&        
- 				
  				EQUAL(Input(2), Input(1) )     &&                       //(7)
  				Input(2).actions.get(pos).setFormInput(x,  SCInjection_beginning(value1 , SpecialCharacters())) 		                                 //(9)              
  				,

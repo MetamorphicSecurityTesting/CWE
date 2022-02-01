@@ -45,8 +45,8 @@ MR CWE_611 {
  			IMPLIES(
  				
  				//We are about to submit a form
- 				action.eventType == Action.ActionType.click &&  
- 				
+ 				//action.eventType == Action.ActionType.click &&  
+ 					action.isClickOnButton &&      
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&                             //(5)
  				
  				! Output(Input(1),pos).hasAlert					&&                              //(6)

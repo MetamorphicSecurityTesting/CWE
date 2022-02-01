@@ -11,6 +11,12 @@ package smrl.mr.owasp{
  * processed simultaneously by different threads. A common result is that developers use Servlet member fields in such a way that one user may
  * inadvertently see another user's data. In other words, storing user data in Servlet member fields introduces a data access race condition.
  * 
+ * 
+ * Data can bleed from one session to another one, when there is only one instance of the object that the users want to access, 
+ * and that single object is used and re-used to handle multiple
+ *  requests. if the object saves the user data, when another user access the same object may see the data of the other user.
+ * 
+ * 
  * Idea:
  * Copy the action after the login from the user, and the follow-up user will do the same action as the User.
  * If there is a data access race condition, then user and follow-up user would see the same information by doing the same action (accessing the same url).

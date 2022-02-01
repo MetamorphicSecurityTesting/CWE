@@ -41,7 +41,7 @@ MR CWE_79b_XSSreflected {
  			
  			IMPLIES(
  				//We are about to submit a form
- 				action.eventType == Action.ActionType.click &&                                 //(5)
+ 					action.isClickOnButton &&                                     //(5)
  				//We did not test the URL before         
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&        //(6)
  				//No pop-up / alert dialog shown normally

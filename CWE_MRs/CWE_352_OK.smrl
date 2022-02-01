@@ -41,7 +41,7 @@ MR CWE_352 {
  			IMPLIES(
  				
  				//We are about to submit a form
- 				action.eventType == Action.ActionType.click &&   
+ 					action.isClickOnButton &&      
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) && //(5)        
  				afterLogin( action )    &&													//(6)
  				EQUAL( Input(2), Input( LoginAction(action.user)   ,                       //(7)
