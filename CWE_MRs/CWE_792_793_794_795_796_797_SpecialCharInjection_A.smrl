@@ -1,0 +1,104 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp {
+ 
+/**
+ * 
+ * CWE Definition:
+ * The software receives input from an upstream component, but it does not handle or incorrectly handles 
+ * when an expected special element is missing.
+ * 
+ * CWE_703:
+ * The software does not properly anticipate or handle exceptional conditions that rarely occur during 
+ * normal operation of the software. 
+ * 
+ * CWE_166:
+ * The software receives input from an upstream component, but it does not handle or incorrectly handles 
+ * when an expected special element is missing. 
+ * 
+ * CWE_78:
+ * The software constructs all or part of an OS command using externally-influenced input from an upstream 
+ * component, but it does not neutralize or incorrectly neutralizes special elements that could modify 
+ * the intended OS command when it is sent to a downstream component. 
+ * 
+ * CWE_77:
+ * The software constructs all or part of a command using externally-influenced input from an upstream 
+ * component, but it does not neutralize or incorrectly neutralizes special elements that could modify 
+ * the intended command when it is sent to a downstream component. 
+ * 
+ * CWE_76:
+ * The software properly neutralizes certain special elements, but it improperly neutralizes equivalent 
+ * special elements. 
+ * 
+ * CWE_75:
+ * The software does not adequately filter user-controlled input for special elements with control implications. 
+ * 
+ * CWE_74:
+ * The software constructs all or part of a command, data structure, or record using externally-influenced 
+ * input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements 
+ * that could modify how it is parsed or interpreted when it is sent to a downstream component. 
+ * 
+ * CWE_91:
+ * 
+ * 
+ * Extra Details:
+ * Developers should anticipate that special elements will be removed in the input vectors of their 
+ * software system. Use an appropriate combination of denylists and allowlists to ensure only valid,
+ * expected and appropriate input is processed by the system.
+ * 
+ * Idea:
+ * As the input value it gives all possible special characters in the list to check that the
+ * system is vulnerable to them or not.
+ * 
+ * (1) For loop iterates over all actions of the Input(1).
+ * (2) Iterates over all parameters of each action
+ * (3) Stores the parameters of the action in the variable.
+ * (4) Verifies that the action contains an input form.
+ * (5) Creates the follow-up input by copying the Input(1)
+ * (6) Sets the new input value which contains special character for the follow-up input.
+ * (7) Verifies that the system should show an error page.
+ * 
+ * 
+ * file name : ../etc/password
+ * final path in the system: /home/user/../etc/password
+ * 
+ * 
+ * 
+ */
+ 
+MR CWE_C{ 
+ { 
+     for ( Action action : Input(1).actions() ) { //(1)
+	  for ( var par=0; par < action.getParameters().size(); par++ ){  //(2)  
+	  	var pos = action.getPosition(); //(3)
+	  	
+	  	var value = Input(1).actions().get(pos).getParameterValue(par);
+	  	
+	  		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
+	  		System.out.println(SCInjection_beginning(value , SpecialCharacters()));
+	       
+	        IMPLIES(
+	        	value != Boolean &&
+	            notTried( Input(1).actions().get(pos).getUrl() ) &&   
+ 				//userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&                   //(4)          
+ 				EQUAL(Input(2), Input(1))&&  	    			
+	    	    Input(2).actions().get(pos).setParameterValue(par, SCInjection_beginning(value , SpecialCharacters())) //(6) 
+	    	    //  Input(2).actions.get(action.position).setInputValue(newInputValue)  
+	    	  		    ,  
+		    
+		    	OR(
+		    		 isError(Output(Input(2), pos)),                                     //(7)                  
+		    	    EQUAL(Output(Input(1), pos),Output(Input(2), pos))        
+		    	) //(6) FABRIZIO: the "Extra Details" seem to indicate that special chars should be simply ignored, not lead to an error. Please find a concrete case.
+		    	
+		);//end-IMPLIES
+	}}//end-for
+ } 
+}//end-MR
+}//end-package
+
+
+
+
+
