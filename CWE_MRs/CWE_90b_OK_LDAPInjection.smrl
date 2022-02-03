@@ -55,7 +55,7 @@ MR CWE_90b {
  				EQUAL(Input(2), Input(1) )                     &&                       //(7)
  				
  				//We put an XSS payload into a parameter
- 				Input(2).actions.get(pos).setFormInput(x, CodeInjectionString()) 
+ 				Input(2).actions.get(pos).setFormInput(x, LDAPInjectionString()) 
  				
  				//Another sequnce to be performed by the source user, to see if can be attacked
  			  //  EQUAL(Input(3), Input(1) )                                     //(9)              

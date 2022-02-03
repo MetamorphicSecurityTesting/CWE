@@ -1,6 +1,6 @@
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
-import sun.security.util.Password
+
 
 package smrl.mr.owasp {
  
@@ -53,8 +53,10 @@ package smrl.mr.owasp {
  *   
  */
  
-MR CWE_643_652_B { 
+MR CWE_643_652_C { 
  { 
+ 	keepDialogsOpen = true;
+ 	
     for ( Action action : Input(1).actions() ) {                                                                   //(1)
 	  	
 	  	var pos = action.getPosition();                                                                            //(2)
@@ -64,13 +66,16 @@ MR CWE_643_652_B {
 	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){                    //(3)
 	  			 IMPLIES(
 	        		
-	        			action.isClickOnButton &&      
-	        		  notTried(XQueryInjection()+ x +action.url, Input(1).actions().get(pos).getElementURL() )     //(4)
-	        		  && !isError(Output(Input(1),pos))															   //(5)							
-	       			  && EQUAL ( Input(2), Input(1) )	    													   //(6)	                                                                        
-	        		  && Input(2).actions.get(action.position).setUsernameFormInput(x, XQueryInjection())          //(7)   "' or 1=1 or ''='"
+	        		  action.isClickOnButton &&      
+	        		  notTried(XQueryInjection()+ x +action.url, Input(1).actions().get(pos).getElementURL() )  &&   //(4)
+	        		  !isError(Output(Input(1),pos))		&&													   //(5)							
+	       			  EQUAL ( Input(2), Input(1) )	   && 													   //(6)	                                                                        
+	        		  Input(2).actions.get(action.position).setUsernameFormInput(x, XQueryInjection())          //(7)   "' or 1=1 or ''='"
 		    , 
-		    		 isError(Output(Input(2), pos))                                                                //(8)  
+		    		 OR(                                                                     
+		    		isError(Output(Input(2), pos)),                                                       
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
+		    	)                                                       //(8)  
 		);//end-IMPLIES
 	}//end-for
  } }

@@ -53,16 +53,22 @@ MR CWE_94_95 {
  			IMPLIES(
  				
  				action.isClickOnButton &&                                 //(4)
+ 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&      //(5)
  				! Output(Input(1),pos).hasAlert					&&                             //(6)       
  				EQUAL(Input(2), Input(1) )                     &&                              //(7)
  				Input(2).actions.get(pos).setFormInput(x, CodeInjectionString())               //(8)
+ 				
  				,
 
  				OR(                                                                             //(9)
  					different( Output(Input(1),pos),Output(Input(2),pos))
  					,
- 					isError(Output(Input(2), pos)))
+ 					OR(
+ 					isError(Output(Input(2), pos))
+ 					,
+ 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  )
+ 					)
  			);
  		}
  	}
