@@ -36,6 +36,7 @@ import smrl.mr.owasp.CWE_93a;
 import smrl.mr.owasp.CWE_93b;
 import smrl.mr.owasp.CWE_94_95;
 import smrl.mr.owasp.CWE_94_96;
+import smrl.mr.owasp.TEST_ExecutedInputs;
 import smrl.mr.test.TEST_INPUTS;
 
 public class CWETestFabrizio extends MRBaseTest {
@@ -212,8 +213,8 @@ public class CWETestFabrizio extends MRBaseTest {
 //	}
 	
 	@Test
-	public void test_TEST_INPUTS() { //passed
-		super.test(provider,TEST_INPUTS.class);
+	public void TEST_ExecutedInputs() { //passed
+		super.test(provider,TEST_ExecutedInputs.class);
 	}
 	
 	

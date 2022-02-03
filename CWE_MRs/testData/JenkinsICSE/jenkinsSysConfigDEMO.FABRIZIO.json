@@ -9,7 +9,7 @@
 	"Log": "./testData/JenkinsICSE/logFiles.txt",
 	"VMname": "UbuntuJenkins 2.121.1",
 	"REAL_WAIT_THRESHOLD": "60000", 
-	"inputFile": "./testData/JenkinsICSE/input_small.FABRIZIO.json",
+	"inputFile": "./testData/JenkinsICSE/input_small.FABRIZIO.TEST.json",
 	"outputFile": "./testData/JenkinsICSE/outFolder/jenkinsResult.txt",
 	"outputStore": "./testData/JenkinsICSE/outputStore",
 	"randomFilePathFile": "./testData/JenkinsICSE/filePaths.txt",
