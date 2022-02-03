@@ -1,0 +1,49 @@
+{
+	"path1": [
+		{
+			"url": "http://192.168.56.102:8080/",
+			"eventType": "index",
+			"method": "get"
+		},
+		{	
+			"text": "log in",
+			"id": "xpath /HTML[1]/BODY[1]/DIV[4]/DIV[2]/DIV[1]/FORM[1]/SPAN[1]/SPAN[1]/BUTTON[1]",
+			"element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dlog in, attributes\u003d{atusa\u003did1037324811_0, id\u003dyui-gen1-button, tabindex\u003d0, type\u003dbutton}}",
+			"eventType": "click",
+			"currentURL": "http://192.168.56.102:8080/login?from\u003d%2F",
+			"elementURL": "http://192.168.56.102:8080/j_acegi_security_check",
+			"method": "post",
+			"formInputs": [
+				{
+					"identification": {
+						"how": "id",
+						"value": "search-box"
+					},
+					"type": "text",
+					"values": [
+					]
+				},
+				{
+					"identification": {
+						"how": "id",
+						"value": "j_username"
+					},
+					"type": "text",
+					"values": [
+						"admin"
+					]
+				},
+				{
+					"identification": {
+						"how": "name",
+						"value": "j_password"
+					},
+					"type": "password",
+					"values": [
+						"adminPass"
+					]
+				}
+			]
+		}
+	]
+}
