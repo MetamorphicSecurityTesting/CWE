@@ -41,10 +41,12 @@ MR CWE_89_943_C {
 	  	//System.out.println("ACTION "+pos+"/"+action.url);														   
 	  		
 	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){                    //(3)
+	  			
 	  			 IMPLIES(
 	        		
-	        	  action.isClickOnButton &&      
-	        	  notTried(XQueryInjection()+ x +action.url, Input(1).actions().get(pos).getElementURL() )  &&   //(4)
+	        	  action.isClickOnButton && 
+	        	  userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&       
+	        	  notTried(SQLInjectionString() + x + action.url, Input(1).actions().get(pos).getElementURL() )  &&   //(4)
 	        	  !isError(Output(Input(1),pos))		&&													   //(5)							
 	       		  EQUAL ( Input(2), Input(1) )	 &&   													   //(6)	                                                                        
 	        	  Input(2).actions.get(pos).setFormInput(x, SQLInjectionString())  			              

@@ -69,7 +69,8 @@ MR CWE_643_652_B {
  			
  			IMPLIES(
  				//We are about to submit a form
- 				action.isClickOnButton &&       				
+ 				action.isClickOnButton && 
+ 				 userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&        				
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&        
  				EQUAL(Input(2), Input(1) )                     &&                       
  				Input(2).actions.get(pos).setFormInput(x, XQueryInjection())  			              

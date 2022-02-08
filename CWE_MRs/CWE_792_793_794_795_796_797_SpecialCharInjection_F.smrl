@@ -62,7 +62,7 @@ package smrl.mr.owasp {
  * 
  */
  
-MR CWE_H{ 
+MR CWE_F{ 
  { 
      keepDialogsOpen = true;
 

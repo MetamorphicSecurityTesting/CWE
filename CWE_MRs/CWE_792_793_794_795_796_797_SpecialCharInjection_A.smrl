@@ -67,7 +67,7 @@ package smrl.mr.owasp {
  * 
  */
  
-MR CWE_C{ 
+MR CWE_A{ 
  { 
      for ( Action action : Input(1).actions() ) { //(1)
 	  for ( var par=0; par < action.getParameters().size(); par++ ){  //(2)  
@@ -79,7 +79,7 @@ MR CWE_C{
 	  		System.out.println(SCInjection_beginning(value , SpecialCharacters()));
 	       
 	        IMPLIES(
-	        	value != Boolean &&
+	        	//value != Boolean &&
 	            notTried( Input(1).actions().get(pos).getUrl() ) &&   
  				//userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&                   //(4)          
  				EQUAL(Input(2), Input(1))&&  	    			

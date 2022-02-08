@@ -31,6 +31,11 @@ package smrl.mr.owasp {
  * 
  * 
  * Idea:
+ * The software uses external input to create an XQuery expression to retrieve data 
+ * from an XML database, but it does not neutralize that input. This may lead to retrieving the 
+ * information that the user does not have right to access.
+ * 
+ * 
  * In the login page instead of providing a correct value to the username field, we provide a malicious value ( e.g., "' or 1=1 or ''='") and a random value as a wrong password.
  * If the system is vulnerable it may give access to the attacker.
  * Therefore, if the system is not vulnerable it should show an error page or a content that the user has right to access.
@@ -66,7 +71,8 @@ MR CWE_643_652_C {
 	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){                    //(3)
 	  			 IMPLIES(
 	        		
-	        		  action.isClickOnButton &&      
+	        		  action.isClickOnButton && 
+	        		  userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&     
 	        		  notTried(XQueryInjection()+ x +action.url, Input(1).actions().get(pos).getElementURL() )  &&   //(4)
 	        		  !isError(Output(Input(1),pos))		&&													   //(5)							
 	       			  EQUAL ( Input(2), Input(1) )	   && 													   //(6)	                                                                        
@@ -74,7 +80,8 @@ MR CWE_643_652_C {
 		    , 
 		    		 OR(                                                                     
 		    		isError(Output(Input(2), pos)),                                                       
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))   
+		    	     //     
 		    	)                                                       //(8)  
 		);//end-IMPLIES
 	}//end-for

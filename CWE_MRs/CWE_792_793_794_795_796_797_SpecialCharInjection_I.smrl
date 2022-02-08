@@ -62,7 +62,7 @@ package smrl.mr.owasp {
  * 
  */
  
-MR CWE_K{ 
+MR CWE_I{ 
  { 
      for ( Action action : Input(1).actions() ) { //(1)
 	  for ( var par=0; par < action.getParameters().size(); par++ ){  //(2)  

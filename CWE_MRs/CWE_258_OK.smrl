@@ -29,7 +29,7 @@ MR CWE_258 {
 	   IMPLIES(
 	       	  action.isClickOnButton && 
  			  userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&        				
- 			  notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) && 						
+ 			 // notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) && 						
 	          EQUAL ( Input(2), Input(1) )&&	//(4)			    			
 	    	  Input(2).actions.get(action.position).setFormInputOfType(x, "","password") //(5)
 	    	 
