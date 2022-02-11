@@ -53,7 +53,6 @@ var sep = "%5C";
 			IMPLIES( 			
 				afterLogin(action) &&		                                             //(4)					
 				isError( Output(Input(1) , pos) )	 &&                                  //(5)
-				
 				EQUAL( Input(2), Input(1) ) &&	                                         //(6)				
 			  	Input(2).actions().get(pos).setUrl( newUrl ) &&	                         //(7)
 			  	notTried( action.getUser(), newUrl )                                     //(8)
