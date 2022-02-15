@@ -20,6 +20,10 @@ package smrl.mr.owasp {
  * The web application does not sufficiently verify inputs that are assumed to be immutable but are actually 
  * externally controllable, such as hidden form fields.
  * 
+ * CWE_784:
+ * The application uses a protection mechanism that relies on the existence or values of a cookie, but it 
+ * does not properly ensure that the cookie is valid for the associated user.
+ * 
  * Idea:
  * Focus on cookies as the key data:
  * Set the cookie path to a random cookie to check whether the system authenticates the user or not.
@@ -37,7 +41,7 @@ package smrl.mr.owasp {
  * 
  */
 
-MR CWE_302_471_472{ 
+MR CWE_302_471_472_784{ 
 	{
    for (Action action: Input(1).actions()){                                                        //(1)
    	//for (var par=0; par < action.getParameters().size(); par++){                                   
