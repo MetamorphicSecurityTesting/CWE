@@ -212,11 +212,16 @@ public class CWETestFabrizio extends MRBaseTest {
 //		super.test(provider,CWE_290_291.class);
 //	}
 	
-	@Test
-	public void TEST_ExecutedInputs() { //passed
-		super.test(provider,TEST_ExecutedInputs.class);
-	}
+//	@Test
+//	public void TEST_ExecutedInputs() { //passed
+//		super.test(provider,TEST_ExecutedInputs.class);
+//	}
 	
+	
+	@Test
+	public void TEST_FIND_SOURCE_INPUT() { //passed
+		super.test(provider,smrl.mr.test.TEST_FIND_SOURCE_INPUT.class);
+	}
 	
 	//
 	

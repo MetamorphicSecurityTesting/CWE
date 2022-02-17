@@ -1,0 +1,36 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import java.util.ArrayList;
+
+package smrl.mr.test {
+ 
+
+MR TEST_FIND_SOURCE_INPUT { 
+ { 
+ 	{
+ 		   setCollectAllFailures(false);
+ 		   
+ 		   var toFind = new ArrayList();
+ 		   toFind.add("http://192.168.56.102:8080/");
+ 		   toFind.add("http://192.168.56.102:8080/j_acegi_security_check");
+ 		   
+ 		   var found = new ArrayList();
+ 		   
+ 		   for (Action action : Input(1).actions ){
+ 		   	System.out.println(action.url);
+ 		   	 found.add(action.url);
+ 		   }
+ 		   
+ 		   System.out.println(toFind);
+ 		   System.out.println(found);
+ 		   
+ 		   if ( toFind.equals(found) ){
+    		System.out.println("SOURCE INPUT IDENTIFIED: "+Input(1).getDBid());
+    		System.exit(1); //this is brutal..
+    	   }
+			
+	}
+	
+ } 
+}//end-MR
+}//end-package
