@@ -35,6 +35,7 @@ MR CWE_611 {
  	keepDialogsOpen = true;
 
  	for (Action action : Input(1).actions()){                                                  //(1)
+ 		
  		var pos = action.getPosition();                                                        //(2) 
  		
  		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
@@ -44,29 +45,23 @@ MR CWE_611 {
  			System.out.println("ACTION "+pos+"/////"+x);
  			IMPLIES(
  				
- 				//We are about to submit a form
- 				//action.eventType == Action.ActionType.click &&  
- 					action.isClickOnButton &&      
+ 				action.isClickOnButton &&      
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&                             //(5)
- 				
  				! Output(Input(1),pos).hasAlert					&&                              //(6)
- 			      
- 				EQUAL(Input(2), Input(1) )                     &&                       //(7)
- 				
- 			
- 				Input(2).actions.get(pos).setFormInput(x,  XMLInjectedFile()) 
- 				
- 				                                 //(9)              
+ 			    EQUAL(Input(2), Input(1) )                     &&                       //(7)
+ 				Input(2).actions.get(pos).setFormInput(x,  XMLInjectedFile())         
  				,
 
  				OR( 
- 					different( Output(Input(1),pos+1),Output(Input(2),pos+1))
+ 					OR(
+ 						different( Output(Input(1),pos+1),Output(Input(2),pos+1)),
+ 						isError(Output(Input(2),pos+1))
+ 					)
  					,
  					OR(                                                                           //(10)
-		    		 //either the attack was not performed
-		    		 Output(Input(2), pos+2).emptyFile,
-		    	               
-		    	     ! Output(Input(2), pos+2).hasAlert       
+		    		 //It depends on the system 
+		    		 Output(Input(2), pos+1).emptyFile,             
+		    	     ! Output(Input(2), pos+1).hasAlert       
 		    	))
  			);//end-IMPLIES
 		}//end-for
@@ -74,30 +69,3 @@ MR CWE_611 {
  }
 }//end-MR
 }
- 	
- 	
- 	
- 	/*
-   for (Action action : Input(1).actions()){                                                //(1)
- 		var pos = action.getPosition();                                                     //(2) 
- 		
- 		for (var x = 0; x < action.parameters.size && action.containFormInput(); x++){      //(3)
- 		
- 			IMPLIES(
- 				
- 				notTried( action.user, Input(1).actions().get(pos).getUrl() ) &&            //(4)
- 				EQUAL(Input(2), Input(1))&&                                                 //(5)
- 				Input(2).actions().get(pos).setParameterValue( x, XMLInjectedFile() )       //(6)
- 			                  
- 				,
- 				
- 				OR(
-		    		 isError(Output(Input(2), pos)),                                         //(7)                  
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
-		    	)
- 			);
- 		}
- 	}
- 	
-  } }
- }*/

@@ -38,12 +38,12 @@ MR CWE_79_a_XSSreflected {
 
 	  	var pos = action.getPosition();                               
 	  	
-	  	//We try to inject every URL parameter, one after teh other
+	  	//We try to inject every URL parameter, one after the other
 	    for ( var x =0; x < action.parameters.size; x++){        //(2)
   
 			IMPLIES(
 				//We verify to not have tested the same URL before; there is no reason for testing a same URL
-				 notTried( x, action.url )&&
+				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&        //(6)
 				 //No pop-up / alert dialog shown normally
 				! Output(Input(1), pos).hasAlert   &&	 
 				//We create the follow-up input as a copy of the source input					 
