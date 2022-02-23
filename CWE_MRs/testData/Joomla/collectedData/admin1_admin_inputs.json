@@ -1,0 +1,1600 @@
+{
+  "path1": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path2": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path3": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Users",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[3]/LI[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dUsers, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_users}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_users",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path4": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Templates",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[4]/LI[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTemplates, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_templates}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_templates",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path5": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "New Article",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[1]/LI[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dNew Article, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.add}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.add",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path6": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Modules",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[2]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dModules, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_modules}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_modules",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path7": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Menu(s)",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[2]/LI[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dMenu(s), attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_menus}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_menus",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path8": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Media",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[1]/LI[4]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dMedia, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_media}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_media",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path9": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Libra: PayPal first to drop out of Facebook cryptocurrency",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dLibra: PayPal first to drop out of Facebook cryptocurrency, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d3}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d3",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path10": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Getting Started",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dGetting Started, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d1}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d1",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path11": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Facebook\u0027s Libra could be misused, says treasury chief Mnuchin",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dFacebook\u0027s Libra could be misused, says treasury chief Mnuchin, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d2}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d2",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path12": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Categories",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[1]/LI[3]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dCategories, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_categories\u0026extension\u003dcom_content}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_categories\u0026extension\u003dcom_content",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path13": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Articles",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dArticles, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path14": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Administrator 1",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dAdministrator 1, attributes\u003d{class\u003dhasTooltip, data-original-title\u003dID : 720, href\u003d/administrator/index.php?option\u003dcom_users\u0026task\u003duser.edit\u0026id\u003d720, title\u003d}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_users\u0026task\u003duser.edit\u0026id\u003d720",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path15": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "0Messages",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[5]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003d0Messages, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_messages}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_messages",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path16": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path17": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Transfer news: Done deals in transfer window in October",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTransfer news: Done deals in transfer window in October, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d4",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "The five most creative cities in the world",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dThe five most creative cities in the world, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d6}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d6",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path18": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Language(s)",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[4]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dLanguage(s), attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_languages}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_languages",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path19": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003d, attributes\u003d{class\u003dbtn btn-micro disabled jgrid hasTooltip, data-original-title\u003d\u003cstrong\u003eChecked out\u003c/strong\u003e\u003cbr /\u003eAuthor 1\u003cbr /\u003eTuesday, 19 November 2019\u003cbr /\u003e23:13, title\u003d}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path20": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "The five most creative cities in the world",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dThe five most creative cities in the world, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d6}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d6",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path21": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    }
+  ]
+}

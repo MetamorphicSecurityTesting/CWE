@@ -1,0 +1,910 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb" dir="ltr">
+ <head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta charset="utf-8"> 
+  <meta name="description" content="Joomla 3.8.7 under test"> 
+  <meta name="generator" content="Joomla! - Open Source Content Management"> 
+  <title>Tags: New - SUT - Administration</title>      
+  <style>
+.mce-in { padding: 5px 10px !important;}
+	</style>     
+  <!--[if lte IE 9]><script src="/media/system/js/polyfill.filter.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->      
+  <!--[if lte IE 11]><script src="/media/system/js/polyfill.event.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->     
+  <!--[if lt IE 9]><script src="/media/system/js/html5fallback.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->     
+  <!--[if lte IE 11]><script src="/media/system/js/polyfill.classlist.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]--> 
+  <!--[if lte IE 11]><script src="/media/system/js/polyfill.map.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->      
+  <!--[if lt IE 9]><script src="/media/jui/js/html5.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+ </head> 
+ <body class="*" data-basepath=""> 
+  <!-- Top Navigation --> 
+  <nav class="*"> 
+   <div class="*"> 
+    <div class="*"> 
+     <a href="#" class="*" data-toggle="collapse" data-target=".nav-collapse"> <span class="*">Toggle Navigation</span> <span class="*"></span> <span class="*"></span> <span class="*"></span> </a> 
+     <!-- skip to content --> 
+     <a class="*" href="#skiptarget">Skip to Main Content</a> 
+     <a class="*"> <span class="*"></span> 
+      <div class="*">
+        Control Panel 
+      </div> </a> 
+     <a class="*" href="http://192.168.56.105/" title="Preview SUT" target="_blank">SUT <span class="*"></span></a> 
+     <div class="*"> 
+      <ul id="menu" class="*"> 
+       <li class="*"><a class="*" href="#">System</a></li> 
+       <li class="*"><a class="*" href="#">Users</a></li> 
+       <li class="*"><a class="*" href="#">Menus</a></li> 
+       <li class="*"><a class="*" href="#">Content</a></li> 
+       <li class="*"><a class="*" href="#">Components</a></li> 
+       <li class="*"><a class="*" href="#">Extensions</a></li> 
+       <li class="*"><a class="*" href="#">Help</a></li> 
+      </ul> 
+      <ul id="nav-empty" class="*" style="display: none;"></ul> 
+      <ul class="*"> 
+       <li class="*"> <a class="*" data-toggle=""><span class="*"></span> <span class="*"></span> 
+         <div class="*">
+           User Menu 
+         </div> </a> 
+        <ul class="*"> 
+        </ul> </li> 
+      </ul> 
+      <a class="*" href="http://192.168.56.105/" title="Preview SUT" target="_blank">SUT <span class="*"></span></a> 
+     </div> 
+     <!--/.nav-collapse --> 
+    </div> 
+   </div> 
+  </nav> 
+  <!-- Header --> 
+  <header class="*"> 
+   <div class="*"> 
+    <img src="/administrator/templates/isis/images/logo.png" class="*" alt="SUT"> 
+   </div> 
+   <div class="*"> 
+    <h1 class="*"> <span class="*" aria-hidden="true"></span> Tags: New</h1> 
+   </div> 
+  </header> 
+  <!-- Subheader --> 
+  <a class="*" data-toggle="collapse" data-target=".subhead-collapse">Toolbar <span class="*"></span></a> 
+  <div class="*" id="isisJsData" data-tmpl-sticky="true" data-tmpl-offset="30" style="height: 51px;"> 
+   <div class="*"> 
+    <div class="*"> 
+     <div id="container-collapse" class="*"></div> 
+     <div class="*"> 
+      <div class="*"> 
+       <!-- target for skip to content link --> 
+       <a id="skiptarget" class="*">Main content begins here</a> 
+       <div class="*" role="toolbar" aria-label="Toolbar" id="toolbar"> 
+        <div class="*" id="toolbar-apply"> 
+         <button onclick="Joomla.submitbutton('tag.apply');" class="*"> <span class="*" aria-hidden="true"></span> Save</button> 
+        </div> 
+        <div class="*" id="toolbar-save"> 
+         <button onclick="Joomla.submitbutton('tag.save');" class="*"> <span class="*" aria-hidden="true"></span> Save &amp; Close</button> 
+        </div> 
+        <div class="*" id="toolbar-save-new"> 
+         <button onclick="Joomla.submitbutton('tag.save2new');" class="*"> <span class="*" aria-hidden="true"></span> Save &amp; New</button> 
+        </div> 
+        <div class="*" id="toolbar-cancel"> 
+         <button onclick="Joomla.submitbutton('tag.cancel');" class="*"> <span class="*" aria-hidden="true"></span> Cancel</button> 
+        </div> 
+        <div class="*" id="toolbar-help">  
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- container-fluid --> 
+  <div class="*" style="top: 82px;"> 
+   <section id="content"> 
+    <!-- Begin Content --> 
+    <div class="*"> 
+     <div class="*"> 
+      <div id="system-message-container"> 
+      </div> 
+      <form action="/administrator/index.php?option=com_tags&amp;layout=edit&amp;id=0" method="post" name="adminForm" id="item-form" class="*"> 
+       <div class="*"> 
+        <div class="*"> 
+         <div class="*">
+          <label id="jform_title-lbl" for="jform_title" class="*" title="" data-original-title="<strong>Title</strong>"> Title<span class="*">&nbsp;*</span></label> 
+         </div> 
+         <div class="*">
+          <input type="text" name="jform[title]" id="jform_title" value="" class="*" size="40" required aria-required="true"> 
+         </div> 
+        </div> 
+        <div class="*"> 
+         <div class="*">
+          <label id="jform_alias-lbl" for="jform_alias" class="*" title="" data-content="The Alias will be used in the SEF URL. Leave this blank and Joomla will fill in a default value from the title. This value will depend on the SEO settings (Global Configuration->Site). <br />Using Unicode will produce UTF-8 aliases. You may also enter manually any UTF-8 character. Spaces and some forbidden characters will be changed to hyphens.<br />When using default transliteration it will produce an alias in lower case and with dashes instead of spaces. You may enter the Alias manually. Use lowercase letters and hyphens (-). No spaces or underscores are allowed. Default value will be a date and time if the title is typed in non-latin letters." data-placement="bottom" data-original-title="Alias"> Alias</label> 
+         </div> 
+         <div class="*">
+          <input type="text" name="jform[alias]" id="jform_alias" value="" size="40" placeholder="Auto-generate from title"> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="*"> 
+        <ul class="*" id="myTabTabs">
+         <li class="*"><a href="#details" data-toggle="tab">Tag Details</a></li>
+         <li class="*"><a href="#attrib-basic" data-toggle="tab">Options</a></li>
+         <li class="*"><a href="#attrib-images" data-toggle="tab">Images</a></li>
+         <li class="*"><a href="#publishing" data-toggle="tab">Publishing</a></li>
+        </ul> 
+        <div class="*" id="myTabContent"> 
+         <div id="details" class="*"> 
+          <div class="*"> 
+           <div class="*"> 
+            <div class="*"> 
+             <div class="*"> 
+              <div class="*">
+               <label id="jform_description-lbl" for="jform_description" class="*" title="" data-content="Enter an optional tag description in the text area." data-original-title="Description"> Description</label> 
+              </div> 
+              <div class="*">
+               <div class="*">
+                <div id="mceu_55" class="*" hidefocus="1" tabindex="-1" role="application" style="visibility: hidden; border-width: 1px;">
+                 <div id="mceu_55-body" class="*">
+                  <div id="mceu_56" class="*" role="menubar" style="border-width: 0px 0px 1px;">
+                   <div id="mceu_56-body" class="*">
+                    <div id="mceu_57" class="*" tabindex="-1" aria-labelledby="mceu_57" role="menuitem" aria-haspopup="true">
+                     <button id="mceu_57-open" role="presentation" type="button" tabindex="-1"><span class="*">Edit</span> <i class="*"></i></button>
+                    </div>
+                    <div id="mceu_58" class="*" tabindex="-1" aria-labelledby="mceu_58" role="menuitem" aria-haspopup="true">
+                     <button id="mceu_58-open" role="presentation" type="button" tabindex="-1"><span class="*">Insert</span> <i class="*"></i></button>
+                    </div>
+                    <div id="mceu_59" class="*" tabindex="-1" aria-labelledby="mceu_59" role="menuitem" aria-haspopup="true">
+                     <button id="mceu_59-open" role="presentation" type="button" tabindex="-1"><span class="*">View</span> <i class="*"></i></button>
+                    </div>
+                    <div id="mceu_60" class="*" tabindex="-1" aria-labelledby="mceu_60" role="menuitem" aria-haspopup="true">
+                     <button id="mceu_60-open" role="presentation" type="button" tabindex="-1"><span class="*">Format</span> <i class="*"></i></button>
+                    </div>
+                    <div id="mceu_61" class="*" tabindex="-1" aria-labelledby="mceu_61" role="menuitem" aria-haspopup="true">
+                     <button id="mceu_61-open" role="presentation" type="button" tabindex="-1"><span class="*">Table</span> <i class="*"></i></button>
+                    </div>
+                    <div id="mceu_62" class="*" tabindex="-1" aria-labelledby="mceu_62" role="menuitem" aria-haspopup="true">
+                     <button id="mceu_62-open" role="presentation" type="button" tabindex="-1"><span class="*">Tools</span> <i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_63" class="*" hidefocus="1" tabindex="-1" role="group">
+                   <div id="mceu_63-body" class="*">
+                    <div id="mceu_64" class="*" role="toolbar">
+                     <div id="mceu_64-body" class="*">
+                      <div id="mceu_65" class="*" role="group">
+                       <div id="mceu_65-body">
+                        <div id="mceu_0" class="*" tabindex="-1" aria-labelledby="mceu_0" role="button" aria-label="Bold">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_1" class="*" tabindex="-1" aria-labelledby="mceu_1" role="button" aria-label="Italic">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_2" class="*" tabindex="-1" aria-labelledby="mceu_2" role="button" aria-label="Underline">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_3" class="*" tabindex="-1" aria-labelledby="mceu_3" role="button" aria-label="Strikethrough">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_66" class="*" role="group">
+                       <div id="mceu_66-body">
+                        <div id="mceu_4" class="*" tabindex="-1" aria-labelledby="mceu_4" role="button" aria-label="Align left">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_5" class="*" tabindex="-1" aria-labelledby="mceu_5" role="button" aria-label="Align center">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_6" class="*" tabindex="-1" aria-labelledby="mceu_6" role="button" aria-label="Align right">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_7" class="*" tabindex="-1" aria-labelledby="mceu_7" role="button" aria-label="Justify">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_67" class="*" role="group">
+                       <div id="mceu_67-body">
+                        <div id="mceu_8" class="*" tabindex="-1" aria-labelledby="mceu_8" role="button" aria-haspopup="true">
+                         <button id="mceu_8-open" role="presentation" type="button" tabindex="-1"><span class="*">Formats</span> <i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_68" class="*" role="group">
+                       <div id="mceu_68-body">
+                        <div id="mceu_9" class="*" tabindex="-1" aria-labelledby="mceu_9" role="button" aria-haspopup="true">
+                         <button id="mceu_9-open" role="presentation" type="button" tabindex="-1"><span class="*">Paragraph</span> <i class="*"></i></button>
+                        </div>
+                        <div id="mceu_10" class="*" tabindex="-1" aria-labelledby="mceu_10" role="button" aria-label="Font Family" aria-haspopup="true">
+                         <button id="mceu_10-open" role="presentation" type="button" tabindex="-1"><span class="*">Times</span> <i class="*"></i></button>
+                        </div>
+                        <div id="mceu_11" class="*" tabindex="-1" aria-labelledby="mceu_11" role="button" aria-label="Font Sizes" aria-haspopup="true">
+                         <button id="mceu_11-open" role="presentation" type="button" tabindex="-1"><span class="*">12pt</span> <i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_69" class="*" role="group">
+                       <div id="mceu_69-body">
+                        <div id="mceu_12" class="*" tabindex="-1" aria-labelledby="mceu_12" role="button" aria-label="Find and replace">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_70" class="*" role="group">
+                       <div id="mceu_70-body">
+                        <div id="mceu_13" class="*" role="button" tabindex="-1" aria-label="Bullet list" aria-haspopup="true">
+                         <button type="button" hidefocus="1" tabindex="-1"><i class="*"></i></button>
+                         <button type="button" class="*" hidefocus="1" tabindex="-1"> <i class="*"></i></button>
+                        </div>
+                        <div id="mceu_14" class="*" role="button" tabindex="-1" aria-label="Numbered list" aria-haspopup="true">
+                         <button type="button" hidefocus="1" tabindex="-1"><i class="*"></i></button>
+                         <button type="button" class="*" hidefocus="1" tabindex="-1"> <i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_71" class="*" role="group">
+                       <div id="mceu_71-body">
+                        <div id="mceu_15" class="*" tabindex="-1" aria-labelledby="mceu_15" role="button" aria-label="Decrease indent">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_16" class="*" tabindex="-1" aria-labelledby="mceu_16" role="button" aria-label="Increase indent">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_72" class="*" role="group">
+                       <div id="mceu_72-body">
+                        <div id="mceu_17" class="*" tabindex="-1" aria-labelledby="mceu_17" role="button" aria-label="Undo" aria-disabled="true">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_18" class="*" tabindex="-1" aria-labelledby="mceu_18" role="button" aria-label="Redo" aria-disabled="true">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_73" class="*" role="group">
+                       <div id="mceu_73-body">
+                        <div id="mceu_19" class="*" tabindex="-1" aria-labelledby="mceu_19" role="button" aria-label="Insert/edit link">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_20" class="*" tabindex="-1" aria-labelledby="mceu_20" role="button" aria-label="Remove link">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_21" class="*" tabindex="-1" aria-labelledby="mceu_21" role="button" aria-label="Anchor">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_22" class="*" tabindex="-1" aria-labelledby="mceu_22" role="button" aria-label="Insert/edit image">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_74" class="*" role="group">
+                       <div id="mceu_74-body">
+                        <div id="mceu_23" class="*" tabindex="-1" aria-labelledby="mceu_23" role="button" aria-label="Source code">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_75" class="*" role="group">
+                       <div id="mceu_75-body">
+                        <div id="mceu_24" class="*" role="button" tabindex="-1" aria-haspopup="true" aria-label="Text color">
+                         <button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="*"></i><span id="mceu_24-preview" class="*"></span></button>
+                         <button type="button" class="*" hidefocus="1" tabindex="-1"> <i class="*"></i></button>
+                        </div>
+                        <div id="mceu_25" class="*" role="button" tabindex="-1" aria-haspopup="true" aria-label="Background color">
+                         <button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="*"></i><span id="mceu_25-preview" class="*"></span></button>
+                         <button type="button" class="*" hidefocus="1" tabindex="-1"> <i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_76" class="*" role="group">
+                       <div id="mceu_76-body">
+                        <div id="mceu_26" class="*" tabindex="-1" aria-labelledby="mceu_26" role="button" aria-label="Fullscreen">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_77" class="*" role="group">
+                       <div id="mceu_77-body">
+                        <div id="mceu_27" class="*" tabindex="-1" aria-labelledby="mceu_27" role="button" aria-label="Table" aria-haspopup="true">
+                         <button id="mceu_27-open" role="presentation" type="button" tabindex="-1"><i class="*"></i> <i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_78" class="*" role="group">
+                       <div id="mceu_78-body">
+                        <div id="mceu_28" class="*" tabindex="-1" aria-labelledby="mceu_28" role="button" aria-label="Subscript">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_29" class="*" tabindex="-1" aria-labelledby="mceu_29" role="button" aria-label="Superscript">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_79" class="*" role="group">
+                       <div id="mceu_79-body">
+                        <div id="mceu_30" class="*" tabindex="-1" aria-labelledby="mceu_30" role="button" aria-label="Special character">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_31" class="*" tabindex="-1" aria-labelledby="mceu_31" role="button" aria-label="Emoticons" aria-haspopup="true">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_32" class="*" tabindex="-1" aria-labelledby="mceu_32" role="button" aria-label="Insert/edit media">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_33" class="*" tabindex="-1" aria-labelledby="mceu_33" role="button" aria-label="Horizontal line">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_34" class="*" tabindex="-1" aria-labelledby="mceu_34" role="button" aria-label="Left to right">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_35" class="*" tabindex="-1" aria-labelledby="mceu_35" role="button" aria-label="Right to left">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_80" class="*" role="group">
+                       <div id="mceu_80-body">
+                        <div id="mceu_36" class="*" tabindex="-1" aria-labelledby="mceu_36" role="button" aria-label="Cut">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_37" class="*" tabindex="-1" aria-labelledby="mceu_37" role="button" aria-label="Copy">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_38" class="*" tabindex="-1" aria-labelledby="mceu_38" role="button" aria-label="Paste">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_39" class="*" tabindex="-1" aria-labelledby="mceu_39" role="button" aria-label="Paste as text">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_81" class="*" role="group">
+                       <div id="mceu_81-body">
+                        <div id="mceu_40" class="*" tabindex="-1" aria-labelledby="mceu_40" role="button" aria-label="Show invisible characters">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_41" class="*" tabindex="-1" aria-labelledby="mceu_41" role="button" aria-label="Show blocks">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_42" class="*" tabindex="-1" aria-labelledby="mceu_42" role="button" aria-label="Nonbreaking space">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_43" class="*" tabindex="-1" aria-labelledby="mceu_43" role="button" aria-label="Blockquote">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_44" class="*" tabindex="-1" aria-labelledby="mceu_44" role="button" aria-label="Insert template">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_82" class="*" role="group">
+                       <div id="mceu_82-body">
+                        <div id="mceu_45" class="*" tabindex="-1" aria-labelledby="mceu_45" role="button" aria-label="Print">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_46" class="*" tabindex="-1" aria-labelledby="mceu_46" role="button" aria-label="Preview">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_47" class="*" tabindex="-1" aria-labelledby="mceu_47" role="button" aria-label="Insert/Edit code sample">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                        <div id="mceu_48" class="*" role="button" tabindex="-1" aria-label="Insert date/time" aria-haspopup="true">
+                         <button type="button" hidefocus="1" tabindex="-1"><i class="*"></i></button>
+                         <button type="button" class="*" hidefocus="1" tabindex="-1"> <i class="*"></i></button>
+                        </div>
+                        <div id="mceu_49" class="*" tabindex="-1" aria-labelledby="mceu_49" role="button" aria-label="Clear formatting">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_83" class="*" role="group">
+                       <div id="mceu_83-body">
+                        <div id="mceu_50" class="*" tabindex="-1" aria-labelledby="mceu_50" role="button" aria-label="Module">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Module</span></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_84" class="*" role="group">
+                       <div id="mceu_84-body">
+                        <div id="mceu_51" class="*" tabindex="-1" aria-labelledby="mceu_51" role="button" aria-label="Menu">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Menu</span></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_85" class="*" role="group">
+                       <div id="mceu_85-body">
+                        <div id="mceu_52" class="*" tabindex="-1" aria-labelledby="mceu_52" role="button" aria-label="Contact">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Contact</span></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_86" class="*" role="group">
+                       <div id="mceu_86-body">
+                        <div id="mceu_53" class="*" tabindex="-1" aria-labelledby="mceu_53" role="button" aria-label="Article">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Article</span></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_87" class="*" role="group">
+                       <div id="mceu_87-body">
+                        <div id="mceu_54" class="*" tabindex="-1" aria-labelledby="mceu_54" role="button" aria-label="Image">
+                         <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Image</span></button>
+                        </div>
+                       </div>
+                      </div>
+                      <div id="mceu_88" class="*" role="group">
+                       <div id="mceu_88-body"></div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_89" class="*" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;">
+                   <iframe id="jform_description_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help" src="javascript:&quot;&quot;" style="width: 100%; height: 550px; display: block;"></iframe>
+                  </div>
+                  <div id="mceu_90" class="*" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;">
+                   <div id="mceu_90-body" class="*">
+                    <div id="mceu_91" class="*">
+                     <div role="button" class="*" data-index="0" tabindex="-1" id="mceu_91-0" aria-level="1">
+                      p
+                     </div>
+                    </div>
+                    <span id="mceu_93" class="*">Words: 0</span>
+                    <div id="mceu_92" class="*">
+                     <i class="*"></i>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+                <textarea name="jform[description]" id="jform_description" cols="" rows="" style="width: 100%; height: 500px; display: none;" class="*" aria-hidden="true">	</textarea>
+                <div class="*"> 
+                 <div class="*"> 
+                  <a class="*" href="#" onclick="tinyMCE.execCommand('mceToggleEditor', false, 'jform_description');return false;" title="Toggle editor"> <span class="*" aria-hidden="true"></span> Toggle editor </a> 
+                 </div> 
+                </div>
+               </div>
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <fieldset class="*">
+             <div class="*"> 
+              <div class="*">
+               <label id="jform_parent_id-lbl" for="jform_parent_id" class="*" title="" data-content="Select a parent tag." data-original-title="Parent"> Parent</label> 
+              </div> 
+              <div class="*">
+               <select id="jform_parent_id" name="jform[parent_id]" style="display: none;"> <option value="1">None</option> <option value="2">Joomla</option> <option value="3">TagSU</option> <option value="4">TagRegistered</option> <option value="5">TagSpecial</option> <option value="7">TagForSU</option> </select>
+               <div class="*" style="width: 220px;" title="" id="jform_parent_id_chzn">
+                <a class="*"><span>None</span>
+                 <div>
+                  <b></b>
+                 </div></a>
+                <div class="*">
+                 <div class="*">
+                  <input type="text" autocomplete="off" readonly>
+                 </div>
+                 <ul class="*">
+                  <li class="*" data-option-array-index="0" style="">None</li>
+                  <li class="*" data-option-array-index="1" style="">Joomla</li>
+                  <li class="*" data-option-array-index="2" style="">TagSU</li>
+                  <li class="*" data-option-array-index="3" style="">TagRegistered</li>
+                  <li class="*" data-option-array-index="4" style="">TagSpecial</li>
+                  <li class="*" data-option-array-index="5" style="">TagForSU</li>
+                 </ul>
+                </div>
+               </div> 
+              </div> 
+             </div> 
+             <div class="*"> 
+              <div class="*">
+               <label id="jform_published-lbl" for="jform_published" class="*" title="" data-content="Set publication status." data-original-title="Status"> Status</label> 
+              </div> 
+              <div class="*">
+               <select id="jform_published" name="jform[published]" class="*" size="1" style="display: none;"> <option value="1" selected>Published</option> <option value="0">Unpublished</option> <option value="2">Archived</option> <option value="-2">Trashed</option> </select>
+               <div class="*" style="width: 220px;" title="" id="jform_published_chzn">
+                <div class="*">
+                 <div class="*">
+                  <input type="text" autocomplete="off" readonly>
+                 </div>
+                 <ul class="*"></ul>
+                </div>
+               </div> 
+              </div> 
+             </div> 
+             <div class="*"> 
+              <div class="*">
+               <label id="jform_access-lbl" for="jform_access" class="*" title="" data-content="The access level group that is allowed to view this item." data-original-title="Access"> Access</label> 
+              </div> 
+              <div class="*">
+               <select id="jform_access" name="jform[access]" style="display: none;"> <option value="1" selected>Public</option> <option value="5">Guest</option> <option value="2">Registered</option> <option value="3">Special</option> <option value="6">Super Users</option> </select>
+               <div class="*" style="width: 220px;" title="" id="jform_access_chzn">
+                <a class="*"><span>Public</span>
+                 <div>
+                  <b></b>
+                 </div></a>
+                <div class="*">
+                 <div class="*">
+                  <input type="text" autocomplete="off" readonly>
+                 </div>
+                 <ul class="*"></ul>
+                </div>
+               </div> 
+              </div> 
+             </div> 
+             <div class="*"> 
+              <div class="*">
+               <label id="jform_language-lbl" for="jform_language" class="*" title="" data-content="Assign a language to this tag." data-original-title="Language"> Language</label> 
+              </div> 
+              <div class="*">
+               <select id="jform_language" name="jform[language]" style="display: none;"> <option value="*">All</option> <option value="en-GB">English (en-GB)</option> </select>
+               <div class="*" style="width: 220px;" title="" id="jform_language_chzn">
+                <a class="*"><span>All</span>
+                 <div>
+                  <b></b>
+                 </div></a>
+                <div class="*">
+                 <div class="*">
+                  <input type="text" autocomplete="off" readonly>
+                 </div>
+                 <ul class="*"></ul>
+                </div>
+               </div> 
+              </div> 
+             </div> 
+             <div class="*"> 
+              <div class="*">
+               <label id="jform_note-lbl" for="jform_note" class="*" title="" data-content="An optional note to display in the tag list." data-original-title="Note"> Note</label> 
+              </div> 
+              <div class="*">
+               <input type="text" name="jform[note]" id="jform_note" value="" class="*" size="40" maxlength="255"> 
+              </div> 
+             </div> 
+             <div class="*"> 
+              <div class="*">
+               <label id="jform_version_note-lbl" for="jform_version_note" class="*" title="" data-content="Enter an optional note for this version of the item." data-original-title="Version Note"> Version Note</label> 
+              </div> 
+              <div class="*">
+               <input type="text" name="jform[version_note]" id="jform_version_note" value="" class="*" size="45" maxlength="255"> 
+              </div> 
+             </div> 
+            </fieldset> 
+           </div> 
+          </div> 
+         </div> 
+         <div id="attrib-basic" class="*"> 
+          <div class="*"> 
+           <div class="*">
+            <label id="jform_params_tag_layout-lbl" for="jform_params_tag_layout" class="*" title="" data-content="Use a layout from the supplied component view or overrides in the templates." data-original-title="Layout"> Layout</label> 
+           </div> 
+           <div class="*">
+            <select id="jform_params_tag_layout" name="jform[params][tag_layout]" style="display: none;"> <optgroup label="---From Global Options---"> <option value="" selected>Use Global</option> </optgroup> <optgroup id="jform_params_tag_layout__" label="---From Component---"> <option value="_:default">Default</option> <option value="_:list">Compact layout</option> </optgroup> </select>
+            <div class="*" style="width: 220px;" title="" id="jform_params_tag_layout_chzn">
+             <a class="*"><span>Use Global</span>
+              <div>
+               <b></b>
+              </div></a>
+             <div class="*">
+              <div class="*">
+               <input type="text" autocomplete="off" readonly>
+              </div>
+              <ul class="*"></ul>
+             </div>
+            </div> 
+           </div> 
+          </div> 
+          <div class="*"> 
+           <div class="*">
+            <label id="jform_params_tag_link_class-lbl" for="jform_params_tag_link_class" class="*" title="" data-content="Add specific CSS classes for the tag link. If empty 'label label-info' will be added by the default tag layout." data-original-title="CSS Class for tag link"> CSS Class for tag link</label> 
+           </div> 
+           <div class="*">
+            <input type="text" name="jform[params][tag_link_class]" id="jform_params_tag_link_class" value="label label-info" size="20"> 
+           </div> 
+          </div> 
+         </div> 
+         <div id="attrib-images" class="*"> 
+          <div class="*"> 
+           <div class="*">
+            <label id="jform_images_image_intro-lbl" for="jform_images_image_intro" class="*" title="" data-content="Select or upload an image that will be displayed as part of a list." data-original-title="Teaser Image"> Teaser Image</label> 
+           </div> 
+           <div class="*">
+            <div class="*" data-basepath="http://192.168.56.105/" data-url="index.php?option=com_media&amp;view=images&amp;tmpl=component&amp;asset=com_tags&amp;author=&amp;fieldid={field-media-id}&amp;ismoo=0&amp;folder=" data-modal=".modal" data-modal-width="100%" data-modal-height="400px" data-input=".field-media-input" data-button-select=".button-select" data-button-clear=".button-clear" data-button-save-selected=".button-save-selected" data-preview="true" data-preview-as-tooltip="true" data-preview-container=".field-media-preview" data-preview-width="200" data-preview-height="200"> 
+             <div id="imageModal_jform_images_image_intro" tabindex="-1" class="*"> 
+              <div class="*"> 
+               <button type="button" class="*" data-dismiss="modal">×</button> 
+               <h3>Change Image</h3> 
+              </div> 
+              <div class="*"> 
+              </div> 
+              <div class="*"> 
+               <a class="*" data-dismiss="modal">Cancel</a>
+              </div> 
+             </div> 
+             <div class="*">  
+              <input type="text" name="jform[images][image_intro]" id="jform_images_image_intro" value="" readonly class="*" data-original-title="" title=""> 
+              <a class="*">Select</a> 
+              <a class="*" title="" data-original-title="Clear"></a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="*"> 
+           <div class="*">
+            <label id="jform_images_float_intro-lbl" for="jform_images_float_intro" class="*" title="" data-content="Float attribute for the image." data-original-title="Float"> Float</label> 
+           </div> 
+           <div class="*">
+            <select id="jform_images_float_intro" name="jform[images][float_intro]" style="display: none;"> <option value="" selected>Select an option</option> <option value="right">Right</option> <option value="left">Left</option> <option value="none">None</option> </select>
+            <div class="*" style="width: 220px;" title="" id="jform_images_float_intro_chzn">
+             <a class="*"><span>Select an option</span>
+              <div>
+               <b></b>
+              </div></a>
+             <div class="*">
+              <div class="*">
+               <input type="text" autocomplete="off" readonly>
+              </div>
+              <ul class="*"></ul>
+             </div>
+            </div> 
+           </div> 
+          </div> 
+          <div class="*"> 
+           <div class="*">
+            <label id="jform_images_image_intro_alt-lbl" for="jform_images_image_intro_alt" class="*" title="" data-content="Alt text for the image." data-original-title="Alt"> Alt</label> 
+           </div> 
+           <div class="*">
+            <input type="text" name="jform[images][image_intro_alt]" id="jform_images_image_intro_alt" value="" size="20"> 
+           </div> 
+          </div> 
+          <div class="*"> 
+           <div class="*">
+            <label id="jform_images_image_intro_caption-lbl" for="jform_images_image_intro_caption" class="*" title="" data-content="Caption for the image." data-original-title="Caption"> Caption</label> 
+           </div> 
+           <div class="*">
+            <input type="text" name="jform[images][image_intro_caption]" id="jform_images_image_intro_caption" value="" size="20"> 
+           </div> 
+          </div> 
+          <div class="*"> 
+           <div class="*">
+            <span class="*"><span class="*"></span><span>
+              <hr></span><span class="*"></span></span>
+           </div> 
+           <div class="*"> 
+           </div> 
+          </div> 
+          <div class="*"> 
+           <div class="*">
+            <label id="jform_images_image_fulltext-lbl" for="jform_images_image_fulltext" class="*" title="" data-content="Select or upload an image that will be displayed in the single tag view." data-original-title="Full Image"> Full Image</label> 
+           </div> 
+           <div class="*">
+            <div class="*" data-basepath="http://192.168.56.105/" data-url="index.php?option=com_media&amp;view=images&amp;tmpl=component&amp;asset=com_tags&amp;author=&amp;fieldid={field-media-id}&amp;ismoo=0&amp;folder=" data-modal=".modal" data-modal-width="100%" data-modal-height="400px" data-input=".field-media-input" data-button-select=".button-select" data-button-clear=".button-clear" data-button-save-selected=".button-save-selected" data-preview="true" data-preview-as-tooltip="true" data-preview-container=".field-media-preview" data-preview-width="200" data-preview-height="200"> 
+             <div id="imageModal_jform_images_image_fulltext" tabindex="-1" class="*"> 
+              <div class="*"> 
+               <button type="button" class="*" data-dismiss="modal">×</button> 
+               <h3>Change Image</h3> 
+              </div> 
+              <div class="*"> 
+              </div> 
+              <div class="*"> 
+               <a class="*" data-dismiss="modal">Cancel</a>
+              </div> 
+             </div> 
+             <div class="*">  
+              <input type="text" name="jform[images][image_fulltext]" id="jform_images_image_fulltext" value="" readonly class="*" data-original-title="" title=""> 
+              <a class="*">Select</a> 
+              <a class="*" title="" data-original-title="Clear"></a> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="*"> 
+           <div class="*">
+            <label id="jform_images_float_fulltext-lbl" for="jform_images_float_fulltext" class="*" title="" data-content="Float attribute for the image." data-original-title="Float"> Float</label> 
+           </div> 
+           <div class="*">
+            <select id="jform_images_float_fulltext" name="jform[images][float_fulltext]" style="display: none;"> <option value="" selected>Select an option</option> <option value="right">Right</option> <option value="left">Left</option> <option value="none">None</option> </select>
+            <div class="*" style="width: 220px;" title="" id="jform_images_float_fulltext_chzn">
+             <a class="*"><span>Select an option</span>
+              <div>
+               <b></b>
+              </div></a>
+             <div class="*">
+              <div class="*">
+               <input type="text" autocomplete="off" readonly>
+              </div>
+              <ul class="*"></ul>
+             </div>
+            </div> 
+           </div> 
+          </div> 
+          <div class="*"> 
+           <div class="*">
+            <label id="jform_images_image_fulltext_alt-lbl" for="jform_images_image_fulltext_alt" class="*" title="" data-content="Alt text for the image." data-original-title="Alt"> Alt</label> 
+           </div> 
+           <div class="*">
+            <input type="text" name="jform[images][image_fulltext_alt]" id="jform_images_image_fulltext_alt" value="" size="20"> 
+           </div> 
+          </div> 
+          <div class="*"> 
+           <div class="*">
+            <label id="jform_images_image_fulltext_caption-lbl" for="jform_images_image_fulltext_caption" class="*" title="" data-content="Caption for the image." data-original-title="Caption"> Caption</label> 
+           </div> 
+           <div class="*">
+            <input type="text" name="jform[images][image_fulltext_caption]" id="jform_images_image_fulltext_caption" value="" size="20"> 
+           </div> 
+          </div> 
+         </div> 
+         <div id="publishing" class="*"> 
+          <div class="*"> 
+           <div class="*"> 
+            <div class="*"> 
+             <div class="*">
+              <label id="jform_created_time-lbl" for="jform_created_time" class="*" title="" data-content="The date and time that the tag was created." data-original-title="Created Date"> Created Date</label> 
+             </div> 
+             <div class="*">
+              <div class="*"> 
+               <input type="text" id="jform_created_time" name="jform[created_time]" value="" class="*" readonly data-alt-value="" autocomplete="off"> 
+               <button type="button" class="*" id="jform_created_time_btn" data-inputfield="jform_created_time" data-dayformat="%Y-%m-%d %H:%M:%S" data-button="jform_created_time_btn" data-firstday="0" data-weekend="0,6" data-today-btn="1" data-week-numbers="1" data-show-time="1" data-show-others="1" data-time-24="24" data-only-months-nav="0" title="Open the calendar"><span class="*" aria-hidden="true"></span></button> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="*"> 
+             <div class="*">
+              <label id="jform_created_user_id-lbl" for="jform_created_user_id" class="*" title="" data-content="The user who created this." data-original-title="Created By"> Created By</label> 
+             </div> 
+             <div class="*">
+              <div class="*" data-url="index.php?option=com_users&amp;view=users&amp;layout=modal&amp;tmpl=component&amp;required=0&amp;field={field-user-id}&amp;ismoo=0" data-modal=".modal" data-modal-width="100%" data-modal-height="400px" data-input=".field-user-input" data-input-name=".field-user-input-name" data-button-select=".button-select"> 
+               <div class="*"> 
+                <input type="text" id="jform_created_user_id" class="*" value="" placeholder="Select a User" readonly> 
+                <a class="*" title="Select User"><span class="*"></span></a> 
+                <div id="userModal_jform_created_user_id" tabindex="-1" class="*"> 
+                 <div class="*"> 
+                  <button type="button" class="*" data-dismiss="modal">×</button> 
+                  <h3>Select User</h3> 
+                 </div> 
+                 <div class="*"> 
+                 </div> 
+                 <div class="*"> 
+                  <a class="*" data-dismiss="modal">Cancel</a>
+                 </div> 
+                </div> 
+               </div> 
+               <input type="hidden" id="jform_created_user_id_id" name="jform[created_user_id]" value="0" class="*" data-onchange=""> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="*"> 
+             <div class="*">
+              <label id="jform_created_by_alias-lbl" for="jform_created_by_alias" class="*" title="" data-content="Uses another name than the author's for display." data-original-title="Author's Alias"> Author's Alias</label> 
+             </div> 
+             <div class="*">
+              <input type="text" name="jform[created_by_alias]" id="jform_created_by_alias" value="" size="20"> 
+             </div> 
+            </div> 
+            <div class="*"> 
+             <div class="*">
+              <label id="jform_modified_time-lbl" for="jform_modified_time" class="*" title="" data-content="The date and time that the tag was last modified." data-original-title="Modified Date"> Modified Date</label> 
+             </div> 
+             <div class="*">
+              <div class="*"> 
+               <input type="text" id="jform_modified_time" name="jform[modified_time]" value="" class="*" readonly data-alt-value="" autocomplete="off"> 
+               <button type="button" class="*" id="jform_modified_time_btn" data-inputfield="jform_modified_time" data-dayformat="%Y-%m-%d %H:%M:%S" data-button="jform_modified_time_btn" data-firstday="0" data-weekend="0,6" data-today-btn="1" data-week-numbers="1" data-show-time="1" data-show-others="1" data-time-24="24" data-only-months-nav="0" title="Open the calendar"><span class="*" aria-hidden="true"></span></button> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="*"> 
+             <div class="*">
+              <label id="jform_modified_user_id-lbl" for="jform_modified_user_id"> Modified By</label> 
+             </div> 
+             <div class="*">
+              <div class="*" data-url="index.php?option=com_users&amp;view=users&amp;layout=modal&amp;tmpl=component&amp;required=0&amp;field={field-user-id}&amp;ismoo=0" data-modal=".modal" data-modal-width="100%" data-modal-height="400px" data-input=".field-user-input" data-input-name=".field-user-input-name" data-button-select=".button-select"> 
+               <div class="*"> 
+                <input type="text" id="jform_modified_user_id" class="*" value="" readonly> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="*"> 
+             <div class="*">
+              <label id="jform_hits-lbl" for="jform_hits" class="*" title="" data-content="Number of hits for this tag." data-original-title="Hits"> Hits</label> 
+             </div> 
+             <div class="*">
+              <input type="number" name="jform[hits]" id="jform_hits" value="0" class="*" readonly step="1">
+             </div> 
+            </div> 
+            <div class="*"> 
+             <div class="*">
+              <label id="jform_id-lbl" for="jform_id" class="*" title="" data-content="Record number in the database." data-original-title="ID"> ID</label> 
+             </div> 
+             <div class="*">
+              <input type="number" name="jform[id]" id="jform_id" value="0" class="*" readonly step="1">
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <div class="*">
+              <label id="jform_metadesc-lbl" for="jform_metadesc" class="*" title="" data-content="An optional paragraph to be used as the description of the page in the HTML output. This will generally display in the results of search engines." data-original-title="Meta Description"> Meta Description</label> 
+             </div> 
+             <div class="*">
+              <textarea name="jform[metadesc]" id="jform_metadesc" cols="40" rows="3"></textarea>
+             </div> 
+            </div> 
+            <div class="*"> 
+             <div class="*">
+              <label id="jform_metakey-lbl" for="jform_metakey" class="*" title="" data-content="An optional comma-separated list of keywords and/or phrases to be used in the HTML output." data-original-title="Meta Keywords"> Meta Keywords</label> 
+             </div> 
+             <div class="*">
+              <textarea name="jform[metakey]" id="jform_metakey" cols="40" rows="3"></textarea>
+             </div> 
+            </div> 
+            <div class="*"> 
+             <div class="*">
+              <label id="jform_metadata_author-lbl" for="jform_metadata_author" class="*" title="" data-content="The author of this content." data-original-title="Author"> Author</label> 
+             </div> 
+             <div class="*">
+              <input type="text" name="jform[metadata][author]" id="jform_metadata_author" value="" size="30"> 
+             </div> 
+            </div> 
+            <div class="*"> 
+             <div class="*">
+              <label id="jform_metadata_robots-lbl" for="jform_metadata_robots" class="*" title="" data-content="Robots instructions." data-original-title="Robots"> Robots</label> 
+             </div> 
+             <div class="*">
+              <select id="jform_metadata_robots" name="jform[metadata][robots]" style="display: none;"> <option value="" selected>Use Global</option> <option value="index, follow">Index, Follow</option> <option value="noindex, follow">No index, follow</option> <option value="index, nofollow">Index, No follow</option> <option value="noindex, nofollow">No index, no follow</option> </select>
+              <div class="*" style="width: 220px;" title="" id="jform_metadata_robots_chzn">
+               <a class="*"><span>Use Global</span>
+                <div>
+                 <b></b>
+                </div></a>
+               <div class="*">
+                <div class="*">
+                 <input type="text" autocomplete="off" readonly>
+                </div>
+                <ul class="*"></ul>
+               </div>
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <input type="hidden" name="task" value=""> 
+       <input type="hidden" name="56ab75540282dd008cf1c89955c5fc3c" value="1">
+      </form> 
+     </div> 
+    </div> 
+    <!-- End Content --> 
+   </section> 
+  </div> 
+  <!-- Begin Status Module --> 
+  <div id="status" class="*"> 
+   <div class="*"> 
+    <div class="*"> 
+     <p> Joomla! 3.8.7 &nbsp;—&nbsp; © 2020 SUT </p> 
+    </div> 
+    <div class="*">
+     <a href="http://192.168.56.105/" target="_blank"><span class="*" aria-hidden="true"></span>View Site</a>
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <span class="*">0</span>Visitors
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <span class="*">2</span>Administrators
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <span class="*">0</span>Messages
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <span class="*" aria-hidden="true"></span>Log out
+    </div> 
+   </div> 
+  </div> 
+  <!-- End Status Module --> 
+ </body>
+</html>

@@ -1,0 +1,91 @@
+{
+  "path1": [
+    {
+      "url": "http://192.168.56.105/administrator",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Components ",
+      "id": "xpath /HTML[1]/BODY[1]/NAV[1]/DIV[1]/DIV[1]/DIV[1]/UL[1]/LI[5]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dComponents, attributes\u003d{class\u003ddropdown-toggle, data-toggle\u003ddropdown, href\u003d#}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php/#",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Tags",
+      "id": "xpath /HTML[1]/BODY[1]/NAV[1]/DIV[1]/DIV[1]/DIV[1]/UL[1]/LI[5]/UL[1]/LI[11]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTags, attributes\u003d{class\u003dno-dropdown menu-tags, href\u003dindex.php?option=com_tags}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option=com_tags",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "New",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dNew, attributes\u003d{class\u003dbtn btn-small button-new btn-success, onclick\u003dJoomla.submitbutton('tag.add');}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php?option=com_tags&view=tags",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option=com_tags&view=tags",
+      "method": "post",
+      "formInputs": []
+    },
+    {
+      "text": "None",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/FORM[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/FIELDSET[1]/DIV[1]/DIV[2]/DIV[1]/A[1]/SPAN[1]",
+      "element": "Element{node\u003d[SPAN: null], tag\u003dSPAN, text\u003dNone}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php?option=com_tags&view=tag&layout=edit",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option=com_tags&view=tag&layout=edit",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Cancel",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[4]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dNew, attributes\u003d{class\u003dbtn btn-small button-cancel, onclick\u003dJoomla.submitbutton('tag.cancel');}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php?option=com_tags&view=tag&layout=edit",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option=com_tags&layout=edit&id=0",
+      "method": "post",
+      "formInputs": []
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb" dir="ltr">
+ <head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta charset="utf-8"> 
+  <base href="http://192.168.56.105/index.php/tags/tagspecial"> 
+  <meta name="description" content="Joomla 3.8.7 under test"> 
+  <meta name="generator" content="Joomla! - Open Source Content Management"> 
+  <title>TagSpecial</title>        
+  <style>
+
+	h1, h2, h3, h4, h5, h6, .site-title {
+		font-family: 'Open Sans', sans-serif;
+	}
+div.mod_search93 input[type="search"]{ width:auto; }
+	</style>         
+  <!--[if lt IE 9]><script src="/media/jui/js/html5.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]--> 
+  <!--[if lt IE 9]><script src="/media/system/js/polyfill.event.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+  <!--[if lt IE 9]><script src="/media/system/js/html5fallback.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+ </head> 
+ <body class="*"> 
+  <!-- Body --> 
+  <div class="*" id="top"> 
+   <div class="*"> 
+    <!-- Header --> 
+    <header class="*" role="banner"> 
+     <div class="*"> 
+      <a class="*" href="/"> <span class="*" title="SUT">SUT</span> </a> 
+      <div class="*"> 
+       <div class="*"> 
+        <form action="/index.php/tags" method="post" class="*"> 
+         <label for="mod-search-searchword93" class="*">Search ...</label> 
+         <input name="searchword" id="mod-search-searchword93" maxlength="200" class="*" type="search" size="20" placeholder="Search ..."> 
+         <input type="hidden" name="task" value="search"> 
+         <input type="hidden" name="option" value="com_search"> 
+         <input type="hidden" name="Itemid" value="114"> 
+        </form> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+    <nav class="*" role="navigation"> 
+     <div class="*"> 
+      <a class="*" data-toggle="collapse" data-target=".nav-collapse"> <span class="*">Toggle Navigation</span> <span class="*"></span> <span class="*"></span> <span class="*"></span> </a> 
+     </div> 
+     <div class="*"> 
+      <ul class="*"> 
+       <li class="*"><a href="/index.php">Home</a></li>
+       <li class="*"><a href="/index.php/news">News</a></li>
+       <li class="*"><a href="/index.php/sport">Sport</a></li>
+       <li class="*"><a href="/index.php/travel">Travel</a></li>
+       <li class="*"><a href="/index.php/culture">Culture</a></li>
+       <li class="*"><a href="/index.php/contact">Contact</a></li>
+       <li class="*"><a href="/index.php/tags">Tags</a></li>
+      </ul> 
+     </div> 
+    </nav> 
+    <div class="*"> 
+     <main id="content" role="main" class="*"> 
+      <!-- Begin Content --> 
+      <div class="*"> 
+       <div class="*"> 
+        <p><img src="/images/headers/blue-flower.jpg" alt="Blue Flower"></p>
+       </div> 
+      </div> 
+      <div id="system-message-container"> 
+      </div> 
+      <div class="*"> 
+       <form action="http://192.168.56.105/index.php/tags/tagspecial" method="post" name="adminForm" id="adminForm" class="*"> 
+        <fieldset class="*"> 
+         <div class="*"> 
+          <label class="*" for="filter-search"> Enter Part of Title&nbsp; </label> 
+          <input type="text" name="filter-search" id="filter-search" value="" class="*" onchange="document.adminForm.submit();" title="Enter all or part of the title to search for." placeholder="Enter Part of Title"> 
+          <button type="button" name="filter-search-button" title="Search" onclick="document.adminForm.submit();" class="*"> <span class="*"></span> </button> 
+          <button type="reset" name="filter-clear-button" title="Clear" class="*" onclick="resetFilter(); document.adminForm.submit();"> <span class="*"></span> </button> 
+         </div> 
+         <div class="*"> 
+          <label for="limit" class="*"> Display # </label> 
+          <select id="limit" name="limit" class="*" size="1" onchange="this.form.submit()" style="display: none;"> <option value="5">5</option> <option value="10">10</option> <option value="15">15</option> <option value="20" selected>20</option> <option value="25">25</option> <option value="30">30</option> <option value="50">50</option> <option value="100">100</option> <option value="0">All</option> </select>
+          <div class="*" style="width: 60px;" title="" id="limit_chzn">
+           <a class="*"><span>20</span>
+            <div>
+             <b></b>
+            </div></a>
+           <div class="*">
+            <div class="*">
+             <input type="text" autocomplete="off" readonly>
+            </div>
+            <ul class="*"></ul>
+           </div>
+          </div> 
+         </div> 
+         <input type="hidden" name="filter_order" value=""> 
+         <input type="hidden" name="filter_order_Dir" value=""> 
+         <input type="hidden" name="limitstart" value=""> 
+         <input type="hidden" name="task" value=""> 
+         <div class="*"></div> 
+        </fieldset> 
+        <p>No matching items were found.</p> 
+       </form> 
+      </div> 
+      <div class="*"></div> 
+      <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="*"> 
+       <li> You are here: &nbsp; </li> 
+       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <a itemprop="item" href="/index.php" class="*"><span itemprop="name">Home</span></a> <span class="*"> <img src="/media/system/images/arrow.png" alt=""> </span> 
+        <meta itemprop="position" content="1"> </li> 
+       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="*"> <span itemprop="name"> Tags </span> 
+        <meta itemprop="position" content="2"> </li> 
+      </ul> 
+      <!-- End Content --> 
+     </main> 
+     <div id="aside" class="*"> 
+      <!-- Begin Right Sidebar --> 
+      <div class="*">
+       <h3 class="*">Popular Tags</h3>
+       <div class="*"> 
+        <ul> 
+         <li> <a href="/index.php/tags/joomla"> Joomla</a> </li> 
+        </ul> 
+       </div> 
+      </div>
+      <div class="*">
+       <h3 class="*">Latest Articles</h3>
+       <ul class="*"> 
+        <li itemscope itemtype="https://schema.org/Article"> <a href="/index.php/culture/6-the-five-most-creative-cities-in-the-world" itemprop="url"> <span itemprop="name"> The five most creative cities in the world </span> </a> </li> 
+        <li itemscope itemtype="https://schema.org/Article"> <a href="/index.php/travel/5-germanys-tiny-geographic-oddity" itemprop="url"> <span itemprop="name"> Germanys tiny geographic oddity </span> </a> </li> 
+        <li itemscope itemtype="https://schema.org/Article"> <a href="/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october" itemprop="url"> <span itemprop="name"> Transfer news: Done deals in transfer window in October </span> </a> </li> 
+        <li itemscope itemtype="https://schema.org/Article"> <a href="/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency" itemprop="url"> <span itemprop="name"> Libra: PayPal first to drop out of Facebook cryptocurrency </span> </a> </li> 
+        <li itemscope itemtype="https://schema.org/Article"> <a href="/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin" itemprop="url"> <span itemprop="name"> Facebook's Libra could be misused, says treasury chief Mnuchin </span> </a> </li> 
+       </ul> 
+      </div>
+      <div class="*">
+       <h3 class="*">User Menu</h3>
+       <ul class="*"> 
+        <li class="*"><a href="/index.php/your-profile">Your Profile</a></li>
+        <li class="*"><a href="/index.php/submit-an-article">Submit an Article</a></li>
+       </ul> 
+      </div>
+      <div class="*">
+       <h3 class="*">Login Form</h3>
+       <form action="/index.php/tags" method="post" id="login-form" class="*"> 
+        <div class="*">
+          Hi Publisher 1, 
+        </div> 
+        <div class="*"> 
+         <input type="submit" name="Submit" class="*" value="Log out"> 
+         <input type="hidden" name="option" value="com_users"> 
+         <input type="hidden" name="task" value="user.logout"> 
+         <input type="hidden" name="return" value="aHR0cDovLzE5Mi4xNjguNTYuMTA1L2luZGV4LnBocC90YWdzL3RhZ3NwZWNpYWw="> 
+         <input type="hidden" name="fa7824b5b28abc744c61917b3d7b61c8" value="1"> 
+        </div> 
+       </form> 
+      </div> 
+      <!-- End Right Sidebar --> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- Footer --> 
+  <footer class="*" role="contentinfo"> 
+   <div class="*"> 
+    <hr> 
+    <p class="*"> <a href="#top" id="back-top"> Back to Top </a> </p> 
+    <p> © 2020 SUT </p> 
+   </div> 
+  </footer> 
+ </body>
+</html>

@@ -1,0 +1,81 @@
+*** Starting time: 2019-11-06 13:47:09 ***
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 45483
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 3886
+Executed with: Input(4): Input(4)=[[Action 22582930929702 : access the index http://192.168.56.105/], [Action 22582930946550 : log in with (admin,adminPass) at http://192.168.56.105/index.php], [Action 22582930959787 : click on http://192.168.56.105/index.php/submit-an-article], [Action 22582930972520 : click on http://192.168.56.105/index.php/submit-an-article#publishing]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 1175
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 16849
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 17287
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 23155
+Executed with: Input(4): Input(4)=[[Action 22582930929702 : access the index http://192.168.56.105/], [Action 22582930946550 : log in with (author2,author2Pass) at http://192.168.56.105/index.php], [Action 22582930959787 : click on http://192.168.56.105/index.php/submit-an-article], [Action 22582930972520 : click on http://192.168.56.105/index.php/submit-an-article#publishing]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 18210
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 2630
+Executed with: Input(4): Input(4)=[[Action 22582930929702 : access the index http://192.168.56.105/], [Action 22582930946550 : log in with (admin,adminPass) at http://192.168.56.105/index.php], [Action 22582930959787 : click on http://192.168.56.105/index.php/submit-an-article], [Action 22582930972520 : click on http://192.168.56.105/index.php/submit-an-article#publishing]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 31950
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 10891
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 9537
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 35970
+Executed with: Input(4): Input(4)=[[Action 22582930929702 : access the index http://192.168.56.105/], [Action 22582930946550 : log in with (author2,author2Pass) at http://192.168.56.105/index.php], [Action 22582930959787 : click on http://192.168.56.105/index.php/submit-an-article], [Action 22582930972520 : click on http://192.168.56.105/index.php/submit-an-article#publishing]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 26269
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 26760
+Executed with: Input(4): Input(4)=[[Action 22582930929702 : access the index http://192.168.56.105/], [Action 22582930946550 : log in with (admin,adminPass) at http://192.168.56.105/index.php], [Action 22582930959787 : click on http://192.168.56.105/index.php/submit-an-article], [Action 22582930972520 : click on http://192.168.56.105/index.php/submit-an-article#publishing]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 38364
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 46614
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 13381
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 20194
+Executed with: Input(4): Input(4)=[[Action 22582930929702 : access the index http://192.168.56.105/], [Action 22582930946550 : log in with (author2,author2Pass) at http://192.168.56.105/index.php], [Action 22582930959787 : click on http://192.168.56.105/index.php/submit-an-article], [Action 22582930972520 : click on http://192.168.56.105/index.php/submit-an-article#publishing]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 40225
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 38888
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 1190
+Executed with: Input(4): Input(4)=[[Action 22582931067597 : access the index http://192.168.56.105/], [Action 22582931082159 : log in with (admin,adminPass) at http://192.168.56.105/index.php], [Action 22582931095523 : click on http://192.168.56.105/index.php/news]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 43728
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 37153
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 40947
+Executed with: Input(4): Input(4)=[[Action 22582931067597 : access the index http://192.168.56.105/], [Action 22582931082159 : log in with (author2,author2Pass) at http://192.168.56.105/index.php], [Action 22582931095523 : click on http://192.168.56.105/index.php/news]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 7055
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 7892
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 20086
+Executed with: Input(4): Input(4)=[[Action 22582931067597 : access the index http://192.168.56.105/], [Action 22582931082159 : log in with (admin,adminPass) at http://192.168.56.105/index.php], [Action 22582931095523 : click on http://192.168.56.105/index.php/news]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 35870
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 39292
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 12335
+Executed with: Input(4): Input(4)=[[Action 22582931067597 : access the index http://192.168.56.105/], [Action 22582931082159 : log in with (author2,author2Pass) at http://192.168.56.105/index.php], [Action 22582931095523 : click on http://192.168.56.105/index.php/news]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 48320
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 27742
+Executed with: Input(4): Input(4)=[[Action 22582930333512 : access the index http://192.168.56.105/], [Action 22582930752002 : log in with (admin,adminPass) at http://192.168.56.105/index.php], [Action 22582930768732 : click on http://192.168.56.105/index.php/tags]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 15754
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 8182
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 32215
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 7188
+Executed with: Input(4): Input(4)=[[Action 22582930333512 : access the index http://192.168.56.105/], [Action 22582930752002 : log in with (author2,author2Pass) at http://192.168.56.105/index.php], [Action 22582930768732 : click on http://192.168.56.105/index.php/tags]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 21230
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 9432
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 17945
+Executed with: Input(4): Input(4)=[[Action 22582931067597 : access the index http://192.168.56.105/], [Action 22582931082159 : log in with (admin,adminPass) at http://192.168.56.105/index.php], [Action 22582931095523 : click on http://192.168.56.105/index.php/news]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 13407
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 11077
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 43937
+Executed with: Input(4): Input(4)=[[Action 22582931067597 : access the index http://192.168.56.105/], [Action 22582931082159 : log in with (author2,author2Pass) at http://192.168.56.105/index.php], [Action 22582931095523 : click on http://192.168.56.105/index.php/news]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 46380
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 39764
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 25863
+Executed with: Input(4): Input(4)=[[Action 22582930333512 : access the index http://192.168.56.105/], [Action 22582930752002 : log in with (admin,adminPass) at http://192.168.56.105/index.php], [Action 22582930768732 : click on http://192.168.56.105/index.php/tags]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 10772
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 20442
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 42961
+Executed with: Input(4): Input(4)=[[Action 22582930333512 : access the index http://192.168.56.105/], [Action 22582930752002 : log in with (author2,author2Pass) at http://192.168.56.105/index.php], [Action 22582930768732 : click on http://192.168.56.105/index.php/tags]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 44118
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 4004
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 36249
+Executed with: Input(4): Input(4)=[[Action 22582930929702 : access the index http://192.168.56.105/], [Action 22582930946550 : log in with (admin,adminPass) at http://192.168.56.105/index.php], [Action 22582930959787 : click on http://192.168.56.105/index.php/submit-an-article], [Action 22582930972520 : click on http://192.168.56.105/index.php/submit-an-article#publishing]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 32139
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 44293
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 28834
+Executed with: Input(4): Input(4)=[[Action 22582930929702 : access the index http://192.168.56.105/], [Action 22582930946550 : log in with (author2,author2Pass) at http://192.168.56.105/index.php], [Action 22582930959787 : click on http://192.168.56.105/index.php/submit-an-article], [Action 22582930972520 : click on http://192.168.56.105/index.php/submit-an-article#publishing]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 11338
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 3232
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 24892
+Executed with: Input(4): Input(4)=[[Action 22582930929702 : access the index http://192.168.56.105/], [Action 22582930946550 : log in with (admin,adminPass) at http://192.168.56.105/index.php], [Action 22582930959787 : click on http://192.168.56.105/index.php/submit-an-article], [Action 22582930972520 : click on http://192.168.56.105/index.php/submit-an-article#publishing]]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 14778
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 47735
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 7804
+Executed with: Input(4): Input(4)=[[Action 22582930929702 : access the index http://192.168.56.105/], [Action 22582930946550 : log in with (author2,author2Pass) at http://192.168.56.105/index.php], [Action 22582930959787 : click on http://192.168.56.105/index.php/submit-an-article], [Action 22582930972520 : click on http://192.168.56.105/index.php/submit-an-article#publishing]]

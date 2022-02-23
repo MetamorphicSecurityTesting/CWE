@@ -1,0 +1,12 @@
+./testData/Joomla/collectedData/superUser_user_inputs.json
+./testData/Joomla/collectedData/superUser_admin_inputs.json
+./testData/Joomla/collectedData/admin1_user_inputs.json
+./testData/Joomla/collectedData/admin1_admin_inputs.json
+./testData/Joomla/collectedData/publisher1_user_inputs.json
+./testData/Joomla/collectedData/publisher1_admin_inputs.json
+./testData/Joomla/collectedData/editor1_user_inputs.json
+./testData/Joomla/collectedData/editor1_admin_inputs.json
+./testData/Joomla/collectedData/author1_user_inputs.json
+./testData/Joomla/collectedData/author1_admin_inputs.json
+./testData/Joomla/collectedData/anonym_user_inputs.json
+./testData/Joomla/collectedData/anonym_admin_inputs.json

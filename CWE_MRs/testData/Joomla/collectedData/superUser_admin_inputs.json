@@ -1,0 +1,659 @@
+{
+  "path1": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path2": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Modules",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[2]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dModules, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_modules}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/#skiptarget",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_modules",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path3": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "New Article",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[1]/LI[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dNew Article, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.add}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.add",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path4": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Install Extensions",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[5]/LI[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dInstall Extensions, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_installer}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_installer",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path5": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Media",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[1]/LI[4]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dMedia, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_media}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_media",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path6": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "The five most creative cities in the world",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dThe five most creative cities in the world, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d6}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d6",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path7": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Getting Started",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dGetting Started, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d1}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d1",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path8": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Facebook\u0027s Libra could be misused, says treasury chief Mnuchin",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dFacebook\u0027s Libra could be misused, says treasury chief Mnuchin, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d2}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d2",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path9": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Language(s)",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[4]/LI[3]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dLanguage(s), attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_languages}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_languages",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path10": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Articles",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dArticles, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path11": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Libra: PayPal first to drop out of Facebook cryptocurrency",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/STRONG[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dLibra: PayPal first to drop out of Facebook cryptocurrency, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d3}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_content\u0026task\u003darticle.edit\u0026id\u003d3",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path12": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        }
+      ]
+    }
+  ]
+}

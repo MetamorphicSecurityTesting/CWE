@@ -1,0 +1,995 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb" dir="ltr">
+ <head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta charset="utf-8"> 
+  <base href="http://192.168.56.105/index.php/submit-an-article"> 
+  <meta name="description" content="Joomla 3.8.7 under test"> 
+  <meta name="generator" content="Joomla! - Open Source Content Management"> 
+  <title>Submit an Article</title>       
+  <style>
+.mce-in { padding: 5px 10px !important;}
+	h1, h2, h3, h4, h5, h6, .site-title {
+		font-family: 'Open Sans', sans-serif;
+	}
+div.mod_search93 input[type="search"]{ width:auto; }
+	</style>         
+  <!--[if lte IE 11]><script src="/media/system/js/polyfill.event.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->        
+  <!--[if lt IE 9]><script src="/media/system/js/html5fallback.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->    
+  <!--[if lte IE 11]><script src="/media/system/js/polyfill.classlist.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]--> 
+  <!--[if lte IE 11]><script src="/media/system/js/polyfill.map.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->     
+  <!--[if lt IE 9]><script src="/media/jui/js/html5.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+ </head> 
+ <body class="*"> 
+  <!-- Body --> 
+  <div class="*" id="top"> 
+   <div class="*"> 
+    <!-- Header --> 
+    <header class="*" role="banner"> 
+     <div class="*"> 
+      <a class="*" href="/"> <span class="*" title="SUT">SUT</span> </a> 
+      <div class="*"> 
+       <div class="*"> 
+        <form action="/index.php/submit-an-article" method="post" class="*"> 
+         <label for="mod-search-searchword93" class="*">Search ...</label> 
+         <input name="searchword" id="mod-search-searchword93" maxlength="200" class="*" type="search" size="20" placeholder="Search ..."> 
+         <input type="hidden" name="task" value="search"> 
+         <input type="hidden" name="option" value="com_search"> 
+         <input type="hidden" name="Itemid" value="104"> 
+        </form> 
+       </div> 
+      </div> 
+     </div> 
+    </header> 
+    <nav class="*" role="navigation"> 
+     <div class="*"> 
+      <a class="*" data-toggle="collapse" data-target=".nav-collapse"> <span class="*">Toggle Navigation</span> <span class="*"></span> <span class="*"></span> <span class="*"></span> </a> 
+     </div> 
+     <div class="*"> 
+      <ul class="*"> 
+       <li class="*"><a href="/index.php">Home</a></li>
+       <li class="*"><a href="/index.php/news">News</a></li>
+       <li class="*"><a href="/index.php/sport">Sport</a></li>
+       <li class="*"><a href="/index.php/travel">Travel</a></li>
+       <li class="*"><a href="/index.php/culture">Culture</a></li>
+       <li class="*"><a href="/index.php/contact">Contact</a></li>
+       <li class="*"><a href="/index.php/tags">Tags</a></li>
+      </ul> 
+     </div> 
+    </nav> 
+    <div class="*"> 
+     <main id="content" role="main" class="*"> 
+      <!-- Begin Content --> 
+      <div class="*"> 
+       <div class="*"> 
+        <p><img src="/images/headers/blue-flower.jpg" alt="Blue Flower"></p>
+       </div> 
+      </div> 
+      <div id="system-message-container"> 
+      </div> 
+      <div class="*"> 
+       <form action="/index.php/submit-an-article?a_id=0" method="post" name="adminForm" id="adminForm" class="*"> 
+        <fieldset> 
+         <ul class="*" id="com-content-formTabs">
+          <li class="*"><a href="#editor" data-toggle="tab">Content</a></li>
+          <li class="*"><a href="#attrib-fields-2" data-toggle="tab">FieldGroupSpecial</a></li>
+          <li class="*"><a href="#attrib-fields-3" data-toggle="tab">FieldGroupRegistered</a></li>
+          <li class="*"><a href="#publishing" data-toggle="tab">Publishing</a></li>
+          <li class="*"><a href="#language" data-toggle="tab">Language</a></li>
+          <li class="*"><a href="#metadata" data-toggle="tab">Metadata</a></li>
+         </ul> 
+         <div class="*" id="com-content-formContent"> 
+          <div id="editor" class="*"> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_title-lbl" for="jform_title" class="*" title="" data-content="Title for the article." data-original-title="Title"> Title<span class="*">&nbsp;*</span></label> 
+            </div> 
+            <div class="*">
+             <input type="text" name="jform[title]" id="jform_title" value="" class="*" size="30" required aria-required="true"> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_alias-lbl" for="jform_alias" class="*" title="" data-content="The Alias will be used in the SEF URL. Leave this blank and Joomla! will fill in a default value from the title. This value will depend on the SEO settings (Global Configuration->Site). <br />Using Unicode will produce UTF-8 aliases. You may also enter manually any UTF-8 character. Spaces and some forbidden characters will be changed to hyphens.<br />When using default transliteration it will produce an alias in lower case and with dashes instead of spaces. You may enter the Alias manually. Use lowercase letters and hyphens (-). No spaces or underscores are allowed. Default value will be a date and time if the title is typed in non-latin letters ." data-placement="bottom" data-original-title="Alias"> Alias</label> 
+            </div> 
+            <div class="*">
+             <input type="text" name="jform[alias]" id="jform_alias" value="" class="*" size="45" placeholder="Auto-generate from title"> 
+            </div> 
+           </div> 
+           <div class="*">
+            <div id="mceu_58" class="*" hidefocus="1" tabindex="-1" role="application" style="visibility: hidden; border-width: 1px;">
+             <div id="mceu_58-body" class="*">
+              <div id="mceu_59" class="*" role="menubar" style="border-width: 0px 0px 1px;">
+               <div id="mceu_59-body" class="*">
+                <div id="mceu_60" class="*" tabindex="-1" aria-labelledby="mceu_60" role="menuitem" aria-haspopup="true">
+                 <button id="mceu_60-open" role="presentation" type="button" tabindex="-1"><span class="*">Edit</span> <i class="*"></i></button>
+                </div>
+                <div id="mceu_61" class="*" tabindex="-1" aria-labelledby="mceu_61" role="menuitem" aria-haspopup="true">
+                 <button id="mceu_61-open" role="presentation" type="button" tabindex="-1"><span class="*">Insert</span> <i class="*"></i></button>
+                </div>
+                <div id="mceu_62" class="*" tabindex="-1" aria-labelledby="mceu_62" role="menuitem" aria-haspopup="true">
+                 <button id="mceu_62-open" role="presentation" type="button" tabindex="-1"><span class="*">View</span> <i class="*"></i></button>
+                </div>
+                <div id="mceu_63" class="*" tabindex="-1" aria-labelledby="mceu_63" role="menuitem" aria-haspopup="true">
+                 <button id="mceu_63-open" role="presentation" type="button" tabindex="-1"><span class="*">Format</span> <i class="*"></i></button>
+                </div>
+                <div id="mceu_64" class="*" tabindex="-1" aria-labelledby="mceu_64" role="menuitem" aria-haspopup="true">
+                 <button id="mceu_64-open" role="presentation" type="button" tabindex="-1"><span class="*">Table</span> <i class="*"></i></button>
+                </div>
+                <div id="mceu_65" class="*" tabindex="-1" aria-labelledby="mceu_65" role="menuitem" aria-haspopup="true">
+                 <button id="mceu_65-open" role="presentation" type="button" tabindex="-1"><span class="*">Tools</span> <i class="*"></i></button>
+                </div>
+               </div>
+              </div>
+              <div id="mceu_66" class="*" hidefocus="1" tabindex="-1" role="group">
+               <div id="mceu_66-body" class="*">
+                <div id="mceu_67" class="*" role="toolbar">
+                 <div id="mceu_67-body" class="*">
+                  <div id="mceu_68" class="*" role="group">
+                   <div id="mceu_68-body">
+                    <div id="mceu_0" class="*" tabindex="-1" aria-labelledby="mceu_0" role="button" aria-label="Bold">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_1" class="*" tabindex="-1" aria-labelledby="mceu_1" role="button" aria-label="Italic">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_2" class="*" tabindex="-1" aria-labelledby="mceu_2" role="button" aria-label="Underline">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_3" class="*" tabindex="-1" aria-labelledby="mceu_3" role="button" aria-label="Strikethrough">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_69" class="*" role="group">
+                   <div id="mceu_69-body">
+                    <div id="mceu_4" class="*" tabindex="-1" aria-labelledby="mceu_4" role="button" aria-label="Align left">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_5" class="*" tabindex="-1" aria-labelledby="mceu_5" role="button" aria-label="Align center">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_6" class="*" tabindex="-1" aria-labelledby="mceu_6" role="button" aria-label="Align right">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_7" class="*" tabindex="-1" aria-labelledby="mceu_7" role="button" aria-label="Justify">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_70" class="*" role="group">
+                   <div id="mceu_70-body">
+                    <div id="mceu_8" class="*" tabindex="-1" aria-labelledby="mceu_8" role="button" aria-haspopup="true">
+                     <button id="mceu_8-open" role="presentation" type="button" tabindex="-1"><span class="*">Formats</span> <i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_71" class="*" role="group">
+                   <div id="mceu_71-body">
+                    <div id="mceu_9" class="*" tabindex="-1" aria-labelledby="mceu_9" role="button" aria-haspopup="true" aria-expanded="true">
+                     <button id="mceu_9-open" role="presentation" type="button" tabindex="-1"><span class="*">Paragraph</span> <i class="*"></i></button>
+                    </div>
+                    <div id="mceu_10" class="*" tabindex="-1" aria-labelledby="mceu_10" role="button" aria-label="Font Family" aria-haspopup="true">
+                     <button id="mceu_10-open" role="presentation" type="button" tabindex="-1"><span class="*">Times</span> <i class="*"></i></button>
+                    </div>
+                    <div id="mceu_11" class="*" tabindex="-1" aria-labelledby="mceu_11" role="button" aria-label="Font Sizes" aria-haspopup="true">
+                     <button id="mceu_11-open" role="presentation" type="button" tabindex="-1"><span class="*">12pt</span> <i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_72" class="*" role="group">
+                   <div id="mceu_72-body">
+                    <div id="mceu_12" class="*" tabindex="-1" aria-labelledby="mceu_12" role="button" aria-label="Find and replace">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_73" class="*" role="group">
+                   <div id="mceu_73-body">
+                    <div id="mceu_13" class="*" role="button" tabindex="-1" aria-label="Bullet list" aria-haspopup="true">
+                     <button type="button" hidefocus="1" tabindex="-1"><i class="*"></i></button>
+                     <button type="button" class="*" hidefocus="1" tabindex="-1"> <i class="*"></i></button>
+                    </div>
+                    <div id="mceu_14" class="*" role="button" tabindex="-1" aria-label="Numbered list" aria-haspopup="true">
+                     <button type="button" hidefocus="1" tabindex="-1"><i class="*"></i></button>
+                     <button type="button" class="*" hidefocus="1" tabindex="-1"> <i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_74" class="*" role="group">
+                   <div id="mceu_74-body">
+                    <div id="mceu_15" class="*" tabindex="-1" aria-labelledby="mceu_15" role="button" aria-label="Decrease indent">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_16" class="*" tabindex="-1" aria-labelledby="mceu_16" role="button" aria-label="Increase indent">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_75" class="*" role="group">
+                   <div id="mceu_75-body">
+                    <div id="mceu_17" class="*" tabindex="-1" aria-labelledby="mceu_17" role="button" aria-label="Undo" aria-disabled="true">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_18" class="*" tabindex="-1" aria-labelledby="mceu_18" role="button" aria-label="Redo" aria-disabled="true">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_76" class="*" role="group">
+                   <div id="mceu_76-body">
+                    <div id="mceu_19" class="*" tabindex="-1" aria-labelledby="mceu_19" role="button" aria-label="Insert/edit link">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_20" class="*" tabindex="-1" aria-labelledby="mceu_20" role="button" aria-label="Remove link">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_21" class="*" tabindex="-1" aria-labelledby="mceu_21" role="button" aria-label="Anchor">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_22" class="*" tabindex="-1" aria-labelledby="mceu_22" role="button" aria-label="Insert/edit image">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_77" class="*" role="group">
+                   <div id="mceu_77-body">
+                    <div id="mceu_23" class="*" tabindex="-1" aria-labelledby="mceu_23" role="button" aria-label="Source code">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_78" class="*" role="group">
+                   <div id="mceu_78-body">
+                    <div id="mceu_24" class="*" role="button" tabindex="-1" aria-haspopup="true" aria-label="Text color">
+                     <button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="*"></i><span id="mceu_24-preview" class="*"></span></button>
+                     <button type="button" class="*" hidefocus="1" tabindex="-1"> <i class="*"></i></button>
+                    </div>
+                    <div id="mceu_25" class="*" role="button" tabindex="-1" aria-haspopup="true" aria-label="Background color">
+                     <button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="*"></i><span id="mceu_25-preview" class="*"></span></button>
+                     <button type="button" class="*" hidefocus="1" tabindex="-1"> <i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_79" class="*" role="group">
+                   <div id="mceu_79-body">
+                    <div id="mceu_26" class="*" tabindex="-1" aria-labelledby="mceu_26" role="button" aria-label="Fullscreen">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_80" class="*" role="group">
+                   <div id="mceu_80-body">
+                    <div id="mceu_27" class="*" tabindex="-1" aria-labelledby="mceu_27" role="button" aria-label="Table" aria-haspopup="true">
+                     <button id="mceu_27-open" role="presentation" type="button" tabindex="-1"><i class="*"></i> <i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_81" class="*" role="group">
+                   <div id="mceu_81-body">
+                    <div id="mceu_28" class="*" tabindex="-1" aria-labelledby="mceu_28" role="button" aria-label="Subscript">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_29" class="*" tabindex="-1" aria-labelledby="mceu_29" role="button" aria-label="Superscript">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_82" class="*" role="group">
+                   <div id="mceu_82-body">
+                    <div id="mceu_30" class="*" tabindex="-1" aria-labelledby="mceu_30" role="button" aria-label="Special character">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_31" class="*" tabindex="-1" aria-labelledby="mceu_31" role="button" aria-label="Emoticons" aria-haspopup="true">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_32" class="*" tabindex="-1" aria-labelledby="mceu_32" role="button" aria-label="Insert/edit media">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_33" class="*" tabindex="-1" aria-labelledby="mceu_33" role="button" aria-label="Horizontal line">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_34" class="*" tabindex="-1" aria-labelledby="mceu_34" role="button" aria-label="Left to right">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_35" class="*" tabindex="-1" aria-labelledby="mceu_35" role="button" aria-label="Right to left">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_83" class="*" role="group">
+                   <div id="mceu_83-body">
+                    <div id="mceu_36" class="*" tabindex="-1" aria-labelledby="mceu_36" role="button" aria-label="Cut">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_37" class="*" tabindex="-1" aria-labelledby="mceu_37" role="button" aria-label="Copy">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_38" class="*" tabindex="-1" aria-labelledby="mceu_38" role="button" aria-label="Paste">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_39" class="*" tabindex="-1" aria-labelledby="mceu_39" role="button" aria-label="Paste as text">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_84" class="*" role="group">
+                   <div id="mceu_84-body">
+                    <div id="mceu_40" class="*" tabindex="-1" aria-labelledby="mceu_40" role="button" aria-label="Show invisible characters">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_41" class="*" tabindex="-1" aria-labelledby="mceu_41" role="button" aria-label="Show blocks">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_42" class="*" tabindex="-1" aria-labelledby="mceu_42" role="button" aria-label="Nonbreaking space">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_43" class="*" tabindex="-1" aria-labelledby="mceu_43" role="button" aria-label="Blockquote">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_44" class="*" tabindex="-1" aria-labelledby="mceu_44" role="button" aria-label="Insert template">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_85" class="*" role="group">
+                   <div id="mceu_85-body">
+                    <div id="mceu_45" class="*" tabindex="-1" aria-labelledby="mceu_45" role="button" aria-label="Print">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_46" class="*" tabindex="-1" aria-labelledby="mceu_46" role="button" aria-label="Preview">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_47" class="*" tabindex="-1" aria-labelledby="mceu_47" role="button" aria-label="Insert/Edit code sample">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                    <div id="mceu_48" class="*" role="button" tabindex="-1" aria-label="Insert date/time" aria-haspopup="true">
+                     <button type="button" hidefocus="1" tabindex="-1"><i class="*"></i></button>
+                     <button type="button" class="*" hidefocus="1" tabindex="-1"> <i class="*"></i></button>
+                    </div>
+                    <div id="mceu_49" class="*" tabindex="-1" aria-labelledby="mceu_49" role="button" aria-label="Clear formatting">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_86" class="*" role="group">
+                   <div id="mceu_86-body">
+                    <div id="mceu_50" class="*" tabindex="-1" aria-labelledby="mceu_50" role="button" aria-label="Module">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Module</span></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_87" class="*" role="group">
+                   <div id="mceu_87-body">
+                    <div id="mceu_51" class="*" tabindex="-1" aria-labelledby="mceu_51" role="button" aria-label="Menu">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Menu</span></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_88" class="*" role="group">
+                   <div id="mceu_88-body">
+                    <div id="mceu_52" class="*" tabindex="-1" aria-labelledby="mceu_52" role="button" aria-label="Contact">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Contact</span></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_89" class="*" role="group">
+                   <div id="mceu_89-body">
+                    <div id="mceu_53" class="*" tabindex="-1" aria-labelledby="mceu_53" role="button" aria-label="Field">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Field</span></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_90" class="*" role="group">
+                   <div id="mceu_90-body">
+                    <div id="mceu_54" class="*" tabindex="-1" aria-labelledby="mceu_54" role="button" aria-label="Article">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Article</span></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_91" class="*" role="group">
+                   <div id="mceu_91-body">
+                    <div id="mceu_55" class="*" tabindex="-1" aria-labelledby="mceu_55" role="button" aria-label="Image">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Image</span></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_92" class="*" role="group">
+                   <div id="mceu_92-body">
+                    <div id="mceu_56" class="*" tabindex="-1" aria-labelledby="mceu_56" role="button" aria-label="Page Break">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Page Break</span></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_93" class="*" role="group">
+                   <div id="mceu_93-body">
+                    <div id="mceu_57" class="*" tabindex="-1" aria-labelledby="mceu_57" role="button" aria-label="Read More">
+                     <button role="presentation" type="button" tabindex="-1"><i class="*"></i><span class="*">Read More</span></button>
+                    </div>
+                   </div>
+                  </div>
+                  <div id="mceu_94" class="*" role="group">
+                   <div id="mceu_94-body"></div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div id="mceu_95" class="*" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;">
+               <iframe id="jform_articletext_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help" src="javascript:&quot;&quot;" style="width: 100%; height: 550px; display: block;"></iframe>
+              </div>
+              <div id="mceu_96" class="*" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;">
+               <div id="mceu_96-body" class="*">
+                <div id="mceu_97" class="*">
+                 <div role="button" class="*" data-index="0" tabindex="-1" id="mceu_97-0" aria-level="1">
+                  p
+                 </div>
+                </div>
+                <span id="mceu_99" class="*">Words: 0</span>
+                <div id="mceu_98" class="*">
+                 <i class="*"></i>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <textarea name="jform[articletext]" id="jform_articletext" cols="" rows="" style="width: 100%; height: 500px; display: none;" class="*" aria-hidden="true">	</textarea>
+            <div class="*"> 
+             <div class="*"> 
+              <a class="*" href="#" onclick="tinyMCE.execCommand('mceToggleEditor', false, 'jform_articletext');return false;" title="Toggle editor"> <span class="*" aria-hidden="true"></span> Toggle editor </a> 
+             </div> 
+            </div>
+           </div> 
+          </div> 
+          <div id="attrib-fields-2" class="*"> 
+           <p class="*">FieldGroupSpecial</p>
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_com_fields_fieldspecial-lbl" for="jform_com_fields_fieldspecial" class="*"> FieldSpecial<span class="*">&nbsp;*</span></label> 
+            </div> 
+            <div class="*">
+             <input type="text" name="jform[com_fields][fieldspecial]" id="jform_com_fields_fieldspecial" value="Give more info" class="*" disabled maxlength="100" required aria-required="true"> 
+            </div> 
+           </div> 
+          </div> 
+          <div id="attrib-fields-3" class="*"> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_com_fields_fieldregistered-lbl" for="jform_com_fields_fieldregistered"> FieldRegistered</label> 
+            </div> 
+            <div class="*">
+             <input type="text" name="jform[com_fields][fieldregistered]" id="jform_com_fields_fieldregistered" value="" disabled> 
+            </div> 
+           </div> 
+          </div> 
+          <div id="publishing" class="*"> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_catid-lbl" for="jform_catid" class="*" title="" data-original-title="<strong>Category</strong>"> Category<span class="*">&nbsp;*</span></label> 
+            </div> 
+            <div class="*">
+             <select id="jform_catid" name="jform[catid]" data-custom_group_text="New Categories" data-no_results_text="Add new Category" data-placeholder="Type or Select a Category" class="*" required aria-required="true" onchange="categoryHasChanged(this);" style="display: none;"> <option value="2">Uncategorised</option> <option value="8">News</option> <option value="9">Sport</option> <option value="10">Travel</option> <option value="11">Culture</option> </select>
+             <div class="*" style="width: 220px;" title="" id="jform_catid_chzn">
+              <a class="*"><span>Uncategorised</span>
+               <div>
+                <b></b>
+               </div></a>
+              <div class="*">
+               <div class="*">
+                <input type="text" autocomplete="off">
+               </div>
+               <ul class="*"></ul>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_tags-lbl" for="jform_tags" class="*" title="" data-content="Assign tags to content items. You may select a tag from the pre-defined list or enter a new tag by typing the name in the field and pressing enter." data-original-title="Tags"> Tags</label> 
+            </div> 
+            <div class="*">
+             <select id="jform_tags" name="jform[tags][]" class="*" size="45" multiple style="display: none;"> <option value="2">Joomla</option> <option value="3">TagSU</option> <option value="4">TagRegistered</option> <option value="5">TagSpecial</option> <option value="7">TagForSU</option> </select>
+             <div class="*" style="width: 220px;" title="" id="jform_tags_chzn">
+              <ul class="*">
+               <li class="*"><input type="text" value="Type or select some options" class="*" autocomplete="off" style="width: 187px;"></li>
+              </ul>
+              <div class="*">
+               <ul class="*"></ul>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_version_note-lbl" for="jform_version_note" class="*" title="" data-content="Enter an optional note for this version of the item." data-original-title="Version Note"> Version Note</label> 
+            </div> 
+            <div class="*">
+             <input type="text" name="jform[version_note]" id="jform_version_note" value="" class="*" size="45" maxlength="255"> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_created_by_alias-lbl" for="jform_created_by_alias" class="*" title="" data-content="Uses another name than the author's for display." data-original-title="Author's Alias"> Author's Alias</label> 
+            </div> 
+            <div class="*">
+             <input type="text" name="jform[created_by_alias]" id="jform_created_by_alias" value="" class="*" size="20"> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_state-lbl" for="jform_state" class="*" title="" data-content="Set publication status." data-original-title="Status"> Status</label> 
+            </div> 
+            <div class="*">
+             <select id="jform_state" name="jform[state]" class="*" size="1" style="display: none;"> <option value="1" selected>Published</option> <option value="0">Unpublished</option> <option value="2">Archived</option> <option value="-2">Trashed</option> </select>
+             <div class="*" style="width: 220px;" title="" id="jform_state_chzn">
+              <a class="*"><span>Published</span>
+               <div>
+                <b></b>
+               </div></a>
+              <div class="*">
+               <div class="*">
+                <input type="text" autocomplete="off" readonly>
+               </div>
+               <ul class="*"></ul>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_featured-lbl" for="jform_featured" class="*" title="" data-content="Assign the article to the featured blog layout." data-original-title="Featured"> Featured</label> 
+            </div> 
+            <div class="*">
+             <select id="jform_featured" name="jform[featured]" class="*" style="display: none;"> <option value="0" selected>No</option> <option value="1">Yes</option> </select>
+             <div class="*" style="width: 220px;" title="" id="jform_featured_chzn">
+              <a class="*"><span>No</span>
+               <div>
+                <b></b>
+               </div></a>
+              <div class="*">
+               <div class="*">
+                <input type="text" autocomplete="off" readonly>
+               </div>
+               <ul class="*"></ul>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_publish_up-lbl" for="jform_publish_up" class="*" title="" data-content="An optional date to start publishing." data-original-title="Start Publishing"> Start Publishing</label> 
+            </div> 
+            <div class="*">
+             <div class="*"> 
+              <div class="*"> 
+               <input type="text" id="jform_publish_up" name="jform[publish_up]" value="" size="22" class="*" data-alt-value="" autocomplete="off"> 
+               <button type="button" class="*" id="jform_publish_up_btn" data-inputfield="jform_publish_up" data-dayformat="%Y-%m-%d %H:%M:%S" data-button="jform_publish_up_btn" data-firstday="0" data-weekend="0,6" data-today-btn="1" data-week-numbers="1" data-show-time="1" data-show-others="1" data-time-24="24" data-only-months-nav="0" title="Open the calendar"><span class="*" aria-hidden="true"></span></button> 
+              </div> 
+              <div class="*" style="direction: ltr; position: absolute; box-shadow: rgba(0, 0, 0, 0.67) 0px 0px 70px 0px; min-width: 0px; padding: 0px; display: none; left: auto; top: auto; z-index: 1060; border-radius: 20px;">
+               <div class="*">
+                <table class="*" cellspacing="0" cellpadding="0" style="margin-bottom: 0px; visibility: visible;">
+                 <thead class="*">
+                  <tr class="*">
+                   <td colspan="1" class="*" style="text-align: center; font-size: 18px; line-height: 18px;"><a class="*" style="display:inline;padding:2px 6px;cursor:pointer;text-decoration:none;" unselectable="on">‹</a></td>
+                   <td colspan="6" class="*">
+                    <div unselectable="on">
+                     <div style="text-align:center;font-size:18px">
+                      <span>2020</span>
+                     </div>
+                    </div></td>
+                   <td colspan="1" class="*" style="text-align: center; font-size: 18px; line-height: 18px;"><a class="*" style="display:inline;padding:2px 6px;cursor:pointer;text-decoration:none;" unselectable="on"> ›</a></td>
+                  </tr>
+                  <tr class="*">
+                   <td colspan="1" class="*" style="text-align: center; font-size: 2em; line-height: 1em;"><a class="*" style="display:inline;padding:2px 6px;cursor:pointer;text-decoration:none;" unselectable="on">‹</a></td>
+                   <td colspan="6" class="*" style="text-align: center;">
+                    <div unselectable="on">
+                     <div style="text-align:center;font-size:1.2em">
+                      <span>March</span>
+                     </div>
+                    </div></td>
+                   <td colspan="1" class="*" style="text-align: center; font-size: 2em; line-height: 1em;"><a class="*" style="display:inline;padding:2px 6px;cursor:pointer;text-decoration:none;" unselectable="on"> ›</a></td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*">wk</td>
+                   <td class="*">Sun</td>
+                   <td class="*">Mon</td>
+                   <td class="*">Tue</td>
+                   <td class="*">Wed</td>
+                   <td class="*">Thu</td>
+                   <td class="*">Fri</td>
+                   <td class="*">Sat</td>
+                  </tr>
+                 </thead>
+                 <tbody>
+                  <tr class="*">
+                   <td class="*">9</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">1</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">2</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">3</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">4</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">5</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">6</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">7</td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*">10</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">8</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">9</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">10</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">11</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">12</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">13</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">14</td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*">11</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">15</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">16</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">17</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">18</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">19</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">20</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">21</td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*">12</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">22</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">23</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">24</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">25</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">26</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">27</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">28</td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*">13</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">29</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">30</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">31</td>
+                   <td class="*" style="text-align: center;">1</td>
+                   <td class="*" style="text-align: center;">2</td>
+                   <td class="*" style="text-align: center;">3</td>
+                   <td class="*" style="text-align: center;">4</td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*">14</td>
+                   <td class="*" style="text-align: center;">5</td>
+                   <td class="*" style="text-align: center;">6</td>
+                   <td class="*" style="text-align: center;">7</td>
+                   <td class="*" style="text-align: center;">8</td>
+                   <td class="*" style="text-align: center;">9</td>
+                   <td class="*" style="text-align: center;">10</td>
+                   <td class="*" style="text-align: center;">11</td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*" colspan="1" style="vertical-align: middle;"> </td>
+                   <td class="*" colspan="2"><select class="*" data-chosen="true" style="width: 100%;"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12" selected>12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select></td>
+                   <td class="*" colspan="2"><select class="*" data-chosen="true" style="width: 100%;"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27" selected>27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select></td>
+                   <td class="*" colspan="3">&nbsp;</td>
+                  </tr>
+                 </tbody>
+                </table>
+                <div class="*">
+                 <button type="button" data-action="clear" class="*">Clear</button>
+                 <button type="button" data-action="today" class="*">Today</button>
+                 <button type="button" data-action="exit" class="*">Close</button>
+                </div>
+               </div>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_publish_down-lbl" for="jform_publish_down" class="*" title="" data-content="An optional date to stop publishing." data-original-title="Finish Publishing"> Finish Publishing</label> 
+            </div> 
+            <div class="*">
+             <div class="*"> 
+              <div class="*"> 
+               <input type="text" id="jform_publish_down" name="jform[publish_down]" value="" size="22" class="*" data-alt-value="" autocomplete="off"> 
+               <button type="button" class="*" id="jform_publish_down_btn" data-inputfield="jform_publish_down" data-dayformat="%Y-%m-%d %H:%M:%S" data-button="jform_publish_down_btn" data-firstday="0" data-weekend="0,6" data-today-btn="1" data-week-numbers="1" data-show-time="1" data-show-others="1" data-time-24="24" data-only-months-nav="0" title="Open the calendar"><span class="*" aria-hidden="true"></span></button> 
+              </div> 
+              <div class="*" style="direction: ltr; position: absolute; box-shadow: rgba(0, 0, 0, 0.67) 0px 0px 70px 0px; min-width: 0px; padding: 0px; display: none; left: auto; top: auto; z-index: 1060; border-radius: 20px;">
+               <div class="*">
+                <table class="*" cellspacing="0" cellpadding="0" style="margin-bottom: 0px; visibility: visible;">
+                 <thead class="*">
+                  <tr class="*">
+                   <td colspan="1" class="*" style="text-align: center; font-size: 18px; line-height: 18px;"><a class="*" style="display:inline;padding:2px 6px;cursor:pointer;text-decoration:none;" unselectable="on">‹</a></td>
+                   <td colspan="6" class="*">
+                    <div unselectable="on">
+                     <div style="text-align:center;font-size:18px">
+                      <span>2020</span>
+                     </div>
+                    </div></td>
+                   <td colspan="1" class="*" style="text-align: center; font-size: 18px; line-height: 18px;"><a class="*" style="display:inline;padding:2px 6px;cursor:pointer;text-decoration:none;" unselectable="on"> ›</a></td>
+                  </tr>
+                  <tr class="*">
+                   <td colspan="1" class="*" style="text-align: center; font-size: 2em; line-height: 1em;"><a class="*" style="display:inline;padding:2px 6px;cursor:pointer;text-decoration:none;" unselectable="on">‹</a></td>
+                   <td colspan="6" class="*" style="text-align: center;">
+                    <div unselectable="on">
+                     <div style="text-align:center;font-size:1.2em">
+                      <span>March</span>
+                     </div>
+                    </div></td>
+                   <td colspan="1" class="*" style="text-align: center; font-size: 2em; line-height: 1em;"><a class="*" style="display:inline;padding:2px 6px;cursor:pointer;text-decoration:none;" unselectable="on"> ›</a></td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*">wk</td>
+                   <td class="*">Sun</td>
+                   <td class="*">Mon</td>
+                   <td class="*">Tue</td>
+                   <td class="*">Wed</td>
+                   <td class="*">Thu</td>
+                   <td class="*">Fri</td>
+                   <td class="*">Sat</td>
+                  </tr>
+                 </thead>
+                 <tbody>
+                  <tr class="*">
+                   <td class="*">9</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">1</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">2</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">3</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">4</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">5</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">6</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">7</td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*">10</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">8</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">9</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">10</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">11</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">12</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">13</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">14</td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*">11</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">15</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">16</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">17</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">18</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">19</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">20</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">21</td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*">12</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">22</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">23</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">24</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">25</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">26</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">27</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">28</td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*">13</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">29</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">30</td>
+                   <td class="*" style="text-align: center; cursor: pointer;">31</td>
+                   <td class="*" style="text-align: center;">1</td>
+                   <td class="*" style="text-align: center;">2</td>
+                   <td class="*" style="text-align: center;">3</td>
+                   <td class="*" style="text-align: center;">4</td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*">14</td>
+                   <td class="*" style="text-align: center;">5</td>
+                   <td class="*" style="text-align: center;">6</td>
+                   <td class="*" style="text-align: center;">7</td>
+                   <td class="*" style="text-align: center;">8</td>
+                   <td class="*" style="text-align: center;">9</td>
+                   <td class="*" style="text-align: center;">10</td>
+                   <td class="*" style="text-align: center;">11</td>
+                  </tr>
+                  <tr class="*">
+                   <td class="*" colspan="1" style="vertical-align: middle;"> </td>
+                   <td class="*" colspan="2"><select class="*" data-chosen="true" style="width: 100%;"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12" selected>12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select></td>
+                   <td class="*" colspan="2"><select class="*" data-chosen="true" style="width: 100%;"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27" selected>27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select></td>
+                   <td class="*" colspan="3">&nbsp;</td>
+                  </tr>
+                 </tbody>
+                </table>
+                <div class="*">
+                 <button type="button" data-action="clear" class="*">Clear</button>
+                 <button type="button" data-action="today" class="*">Today</button>
+                 <button type="button" data-action="exit" class="*">Close</button>
+                </div>
+               </div>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_access-lbl" for="jform_access" class="*" title="" data-content="Access level for this content." data-original-title="Access"> Access</label> 
+            </div> 
+            <div class="*">
+             <select id="jform_access" name="jform[access]" class="*" size="1" style="display: none;"> <option value="1" selected>Public</option> <option value="5">Guest</option> <option value="2">Registered</option> <option value="3">Special</option> <option value="6">Super Users</option> </select>
+             <div class="*" style="width: 220px;" title="" id="jform_access_chzn">
+              <a class="*"><span>Public</span>
+               <div>
+                <b></b>
+               </div></a>
+              <div class="*">
+               <div class="*">
+                <input type="text" autocomplete="off" readonly>
+               </div>
+               <ul class="*"></ul>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+            </div> 
+            <div class="*">
+              Ordering:
+             <br>New articles default to the first position in the Category. The ordering can be changed in Backend. 
+            </div> 
+           </div> 
+          </div> 
+          <div id="language" class="*"> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_language-lbl" for="jform_language" class="*" title="" data-content="Assign a language to this article." data-original-title="Language"> Language</label> 
+            </div> 
+            <div class="*">
+             <select id="jform_language" name="jform[language]" class="*" style="display: none;"> <option value="*">All</option> <option value="en-GB">English (en-GB)</option> </select>
+             <div class="*" style="width: 220px;" title="" id="jform_language_chzn">
+              <a class="*"><span>All</span>
+               <div>
+                <b></b>
+               </div></a>
+              <div class="*">
+               <div class="*">
+                <input type="text" autocomplete="off" readonly>
+               </div>
+               <ul class="*"></ul>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div id="metadata" class="*"> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_metadesc-lbl" for="jform_metadesc" class="*" title="" data-content="Metadata description." data-original-title="Meta Description"> Meta Description</label> 
+            </div> 
+            <div class="*">
+             <textarea name="jform[metadesc]" id="jform_metadesc" cols="50" rows="5" class="*"></textarea>
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*">
+             <label id="jform_metakey-lbl" for="jform_metakey" class="*" title="" data-content="Keywords describing the content." data-original-title="Keywords"> Keywords</label> 
+            </div> 
+            <div class="*">
+             <textarea name="jform[metakey]" id="jform_metakey" cols="50" rows="5" class="*"></textarea>
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <input type="hidden" name="task" value=""> 
+         <input type="hidden" name="return" value=""> 
+         <input type="hidden" name="fa7824b5b28abc744c61917b3d7b61c8" value="1"> 
+        </fieldset> 
+        <div class="*"> 
+         <div class="*"> 
+          <button type="button" class="*" onclick="Joomla.submitbutton('article.save')"> <span class="*"></span>Save </button> 
+         </div> 
+         <div class="*"> 
+          <button type="button" class="*" onclick="Joomla.submitbutton('article.cancel')"> <span class="*"></span>Cancel </button> 
+         </div> 
+        </div> 
+       </form> 
+      </div> 
+      <div class="*"></div> 
+      <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="*"> 
+       <li> You are here: &nbsp; </li> 
+       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <a itemprop="item" href="/index.php" class="*"><span itemprop="name">Home</span></a> <span class="*"> <img src="/media/system/images/arrow.png" alt=""> </span> 
+        <meta itemprop="position" content="1"> </li> 
+       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <a itemprop="item" href="/index.php/submit-an-article?view=form" class="*"><span itemprop="name">Submit an Article</span></a> <span class="*"> <img src="/media/system/images/arrow.png" alt=""> </span> 
+        <meta itemprop="position" content="2"> </li> 
+       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="*"> <span itemprop="name"> Submit an Article </span> 
+        <meta itemprop="position" content="3"> </li> 
+      </ul> 
+      <!-- End Content --> 
+     </main> 
+     <div id="aside" class="*"> 
+      <!-- Begin Right Sidebar --> 
+      <div class="*">
+       <h3 class="*">Popular Tags</h3>
+       <div class="*"> 
+        <ul> 
+         <li> <a href="/index.php/tags/joomla"> Joomla</a> </li> 
+        </ul> 
+       </div> 
+      </div>
+      <div class="*">
+       <h3 class="*">Latest Articles</h3>
+       <ul class="*"> 
+        <li itemscope itemtype="https://schema.org/Article"> <a href="/index.php/culture/6-the-five-most-creative-cities-in-the-world" itemprop="url"> <span itemprop="name"> The five most creative cities in the world </span> </a> </li> 
+        <li itemscope itemtype="https://schema.org/Article"> <a href="/index.php/travel/5-germanys-tiny-geographic-oddity" itemprop="url"> <span itemprop="name"> Germanys tiny geographic oddity </span> </a> </li> 
+        <li itemscope itemtype="https://schema.org/Article"> <a href="/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october" itemprop="url"> <span itemprop="name"> Transfer news: Done deals in transfer window in October </span> </a> </li> 
+        <li itemscope itemtype="https://schema.org/Article"> <a href="/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency" itemprop="url"> <span itemprop="name"> Libra: PayPal first to drop out of Facebook cryptocurrency </span> </a> </li> 
+        <li itemscope itemtype="https://schema.org/Article"> <a href="/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin" itemprop="url"> <span itemprop="name"> Facebook's Libra could be misused, says treasury chief Mnuchin </span> </a> </li> 
+       </ul> 
+      </div>
+      <div class="*">
+       <h3 class="*">User Menu</h3>
+       <ul class="*"> 
+        <li class="*"><a href="/index.php/your-profile">Your Profile</a></li>
+        <li class="*"><a href="/index.php/submit-an-article">Submit an Article</a></li>
+       </ul> 
+      </div>
+      <div class="*">
+       <h3 class="*">Login Form</h3>
+       <form action="/index.php/submit-an-article" method="post" id="login-form" class="*"> 
+        <div class="*">
+          Hi Publisher 1, 
+        </div> 
+        <div class="*"> 
+         <input type="submit" name="Submit" class="*" value="Log out"> 
+         <input type="hidden" name="option" value="com_users"> 
+         <input type="hidden" name="task" value="user.logout"> 
+         <input type="hidden" name="return" value="aHR0cDovLzE5Mi4xNjguNTYuMTA1L2luZGV4LnBocC9zdWJtaXQtYW4tYXJ0aWNsZQ=="> 
+         <input type="hidden" name="fa7824b5b28abc744c61917b3d7b61c8" value="1"> 
+        </div> 
+       </form> 
+      </div> 
+      <!-- End Right Sidebar --> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- Footer --> 
+  <footer class="*" role="contentinfo"> 
+   <div class="*"> 
+    <hr> 
+    <p class="*"> <a href="#top" id="back-top"> Back to Top </a> </p> 
+    <p> © 2020 SUT </p> 
+   </div> 
+  </footer> 
+  <div id="loading-logo" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.8; overflow: hidden; z-index: 10000; display: none; background-color: rgb(255, 255, 255); background-image: url(&quot;/media/jui/images/ajax-loader.gif&quot;); background-position: center center; background-repeat: no-repeat; background-attachment: fixed;"></div>
+  <div id="mceu_100" class="*" hidefocus="1" tabindex="-1" role="application" aria-labelledby="mceu_100" aria-describedby="mceu_100-none" style="border-width: 1px; z-index: 65536; left: 457.578px; top: 333px; width: 160px;">
+   <div id="mceu_100-body" class="*" role="menu" style="width: 160px;">
+    <div id="mceu_101" class="*" tabindex="-1" role="menuitem" aria-checked="true" aria-pressed="true">
+     <i class="*"></i>&nbsp;
+     <span id="mceu_101-text" class="*" style="font-family:Tahoma, Helvetica, Arial, sans-serif;font-size:12.16px;font-weight:400;font-style:normal;text-decoration:none solid rgb(51, 51, 51);text-transform:none;color:rgb(51, 51, 51);padding:0 2px;border:0px none rgb(51, 51, 51);border-radius:0px;outline:rgb(51, 51, 51) none 0px;text-shadow:none;">Paragraph</span>
+    </div>
+    <div id="mceu_102" class="*" tabindex="-1" role="menuitem" aria-checked="false">
+     <i class="*"></i>&nbsp;
+     <span id="mceu_102-text" class="*" style="font-family:Arial, Helvetica, sans-serif;font-size:16px;font-weight:700;font-style:normal;text-decoration:none solid rgb(102, 102, 102);text-transform:none;color:rgb(102, 102, 102);padding:0 2px;border:0px none rgb(102, 102, 102);border-radius:0px;outline:rgb(102, 102, 102) none 0px;text-shadow:none;">Heading 1</span>
+    </div>
+    <div id="mceu_103" class="*" tabindex="-1" role="menuitem" aria-checked="false">
+     <i class="*"></i>&nbsp;
+     <span id="mceu_103-text" class="*" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;font-weight:400;font-style:normal;text-decoration:none solid rgb(51, 51, 51);text-transform:none;color:rgb(51, 51, 51);padding:0 2px;border:0px none rgb(51, 51, 51);border-radius:0px;outline:rgb(51, 51, 51) none 0px;text-shadow:none;">Heading 2</span>
+    </div>
+    <div id="mceu_104" class="*" tabindex="-1" role="menuitem" aria-checked="false">
+     <i class="*"></i>&nbsp;
+     <span id="mceu_104-text" class="*" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;font-weight:700;font-style:normal;text-decoration:none solid rgb(19, 92, 174);text-transform:none;color:rgb(19, 92, 174);padding:0 2px;border:0px none rgb(19, 92, 174);border-radius:0px;outline:rgb(19, 92, 174) none 0px;text-shadow:none;">Heading 3</span>
+    </div>
+    <div id="mceu_105" class="*" tabindex="-1" role="menuitem" aria-checked="false">
+     <i class="*"></i>&nbsp;
+     <span id="mceu_105-text" class="*" style="font-family:Arial, Helvetica, sans-serif;font-size:12.16px;font-weight:700;font-style:normal;text-decoration:none solid rgb(51, 51, 51);text-transform:none;color:rgb(51, 51, 51);padding:0 2px;border:0px none rgb(51, 51, 51);border-radius:0px;outline:rgb(51, 51, 51) none 0px;text-shadow:none;">Heading 4</span>
+    </div>
+    <div id="mceu_106" class="*" tabindex="-1" role="menuitem" aria-checked="false">
+     <i class="*"></i>&nbsp;
+     <span id="mceu_106-text" class="*" style="font-family:Tahoma, Helvetica, Arial, sans-serif;font-size:10.0928px;font-weight:700;font-style:normal;text-decoration:none solid rgb(51, 51, 51);text-transform:none;color:rgb(51, 51, 51);padding:0 2px;border:0px none rgb(51, 51, 51);border-radius:0px;outline:rgb(51, 51, 51) none 0px;text-shadow:none;">Heading 5</span>
+    </div>
+    <div id="mceu_107" class="*" tabindex="-1" role="menuitem" aria-checked="false">
+     <i class="*"></i>&nbsp;
+     <span id="mceu_107-text" class="*" style="font-family:Tahoma, Helvetica, Arial, sans-serif;font-size:8.1472px;font-weight:700;font-style:normal;text-decoration:none solid rgb(51, 51, 51);text-transform:none;color:rgb(51, 51, 51);padding:0 2px;border:0px none rgb(51, 51, 51);border-radius:0px;outline:rgb(51, 51, 51) none 0px;text-shadow:none;">Heading 6</span>
+    </div>
+    <div id="mceu_108" class="*" tabindex="-1" role="menuitem" aria-checked="false">
+     <i class="*"></i>&nbsp;
+     <span id="mceu_108-text" class="*" style="font-family:monospace;font-size:9.88px;font-weight:400;font-style:normal;text-decoration:none solid rgb(51, 51, 51);text-transform:none;color:rgb(51, 51, 51);padding:0 2px;border:0px none rgb(51, 51, 51);border-radius:0px;outline:rgb(51, 51, 51) none 0px;text-shadow:none;">Preformatted</span>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

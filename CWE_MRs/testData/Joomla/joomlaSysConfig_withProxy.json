@@ -1,0 +1,63 @@
+{
+	"SUT":	"Joomla",
+	"inputFile": "./testData/Joomla/inputs_crawljax1.json",
+	"outputFile": "./testData/Joomla/outFolder/joomlaResult.txt",
+	"outputStore": "./testData/Joomla/outputStore",
+	"randomFilePathFile": "./testData/Joomla/filePaths.txt",
+	"randomAdminFilePathFile": "./testData/Joomla/adminFilePaths.txt",
+	"loginURL": "http://192.168.56.105/index.php",
+	"userParameter": "modlgn-username",
+	"passwordParameter": "modlgn-passwd",
+	"loginParams": [
+		{
+			"loginURL": "http://192.168.56.105/index.php",
+			"userParameter": "modlgn-username",
+			"passwordParameter": "modlgn-passwd"
+		},
+		{
+			"loginURL": "http://192.168.56.105/administrator/index.php",
+			"userParameter": "mod-login-username",
+			"passwordParameter": "mod-login-password"}
+		],
+	"logoutURL": "http://192.168.56.105/index.php",
+	"ignoreURLs": [],
+	"confirmationTexts": [],
+	"confirmationButtons": [],
+	"waitTimeAfterAction": 500,
+	"signup" : {
+		"url": "",
+		"userParam" : "",
+		"passwordParams" : [],
+		"emailParam" : "",
+		"others": []
+	},
+	"proxy": { "address": "127.0.0.1",
+				"port": 1234,
+				"certificate" : "./root_ca.cer",
+				"api_key": "cccvae9f9sgtup3rsa01ncvbpf"
+			},
+	"cleanUp": {
+		"class": [],
+		"script": [],
+		"attribute": {
+			"name": ["rel"],
+			"nameValue": []
+		},
+		"tag": [],
+		"id": ["header"]
+	},
+	"supervisedUser":{
+		"admin": ["admin1", "publisher1", "edit1", "author1", "author2","wrong"],
+		"admin1": ["publisher1", "edit1", "author1", "author2","wrong"],
+		"publisher1": ["edit1", "author1", "author2","wrong"],
+		"edit1": ["author1", "author2","wrong"],
+		"author1":["wrong"],
+		"author2":["wrong"]
+	},
+	"errorSigns" : {
+		"title" :["Error: 404"],
+		"content": ["You do not have access to the Administrator section of this site",
+					"Please login first",
+					"You are not authorised to view this resource"]
+	}
+}

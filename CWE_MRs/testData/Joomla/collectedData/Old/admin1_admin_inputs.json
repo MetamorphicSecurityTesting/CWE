@@ -1,0 +1,187 @@
+{
+  "path1": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path2": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "User Note Categories",
+      "id": "xpath /HTML[1]/BODY[1]/NAV[1]/DIV[1]/DIV[1]/DIV[1]/UL[1]/LI[2]/UL[1]/LI[9]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dUser Note Categories, attributes\u003d{class\u003ddropdown-toggle menu-category, data-toggle\u003ddropdown, href\u003dindex.php?option\u003dcom_categories\u0026view\u003dcategories\u0026extension\u003dcom_users}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/index.php",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_categories\u0026view\u003dcategories\u0026extension\u003dcom_users",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path3": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "",
+      "id": "xpath ",
+      "element": "unkown",
+      "eventType": "click",
+      "currentURL": "/administrator/",
+      "elementURL": "/administrator/",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Templates",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[2]/SECTION[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[4]/LI[1]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTemplates, attributes\u003d{href\u003d/administrator/index.php?option\u003dcom_templates}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php?option\u003dcom_templates",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path4": [
+    {
+      "url": "http://192.168.56.105/administrator/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/FORM[1]/FIELDSET[1]/DIV[3]/DIV[1]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{class\u003dbtn btn-primary btn-block btn-large login-button, tabindex\u003d5}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/administrator/",
+      "elementURL": "http://192.168.56.105/administrator/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-username"
+          },
+          "type": "text",
+          "values": [
+            "admin1"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "mod-login-password"
+          },
+          "type": "password",
+          "values": [
+            "admin1Pass"
+          ]
+        }
+      ]
+    }
+  ]
+}

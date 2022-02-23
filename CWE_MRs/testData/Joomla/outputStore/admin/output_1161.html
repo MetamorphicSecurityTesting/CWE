@@ -1,0 +1,128 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb" dir="ltr">
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="description" content="Joomla 3.8.7 under test"> 
+  <meta name="generator" content="Joomla! - Open Source Content Management"> 
+  <title>Media - SUT - Administration</title>           
+  <!--[if lt IE 9]><script src="/media/system/js/polyfill.event.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->      
+  <!--[if lte IE 9]><script src="/media/system/js/polyfill.filter.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+  <!--[if lt IE 9]><script src="/media/jui/js/html5.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+ </head> 
+ <body class="*"> 
+  <div id="system-message-container" class="*"> 
+  </div> 
+  <div class="*"> 
+   <!-- Begin Sidebar --> 
+   <div id="j-sidebar-container" class="*"> 
+    <div id="j-toggle-sidebar-wrapper"> 
+     <div id="j-toggle-button-wrapper" class="*"> 
+      <div id="j-toggle-sidebar-button" class="*" onclick="toggleSidebar(false); return false;" data-original-title="Hide the sidebar" aria-label="Hide the sidebar"> 
+       <span id="j-toggle-sidebar-icon" class="*" aria-hidden="true"></span> 
+      </div> 
+     </div> 
+     <div id="sidebar" class="*"> 
+      <div class="*"> 
+      </div> 
+     </div> 
+     <div id="j-toggle-sidebar"></div> 
+    </div> 
+    <div class="*"> 
+     <h3>Media Folders </h3> 
+    </div> 
+    <div id="treeview" class="*"> 
+     <div id="media-tree_tree" class="*"> 
+      <ul class="*" id="collapseFolder-"> 
+       <li id="banners" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=banners" target="folderframe" class="*"> <span class="*"></span> banners </a> </li> 
+       <li id="headers" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=headers" target="folderframe" class="*"> <span class="*"></span> headers </a> </li> 
+       <li id="sampledata" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=sampledata" target="folderframe" class="*"> <span class="*"></span> sampledata </a> 
+        <ul class="*" id="collapseFolder-sampledata"> 
+         <li id="sampledata-fruitshop" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=sampledata/fruitshop" target="folderframe" class="*"> <span class="*"></span> fruitshop </a> </li> 
+         <li id="sampledata-parks" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=sampledata/parks" target="folderframe" class="*"> <span class="*"></span> parks </a> 
+          <ul class="*" id="collapseFolder-sampledata-parks"> 
+           <li id="sampledata-parks-animals" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=sampledata/parks/animals" target="folderframe" class="*"> <span class="*"></span> animals </a> </li> 
+           <li id="sampledata-parks-landscape" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=sampledata/parks/landscape" target="folderframe" class="*"> <span class="*"></span> landscape </a> </li> 
+          </ul> </li> 
+        </ul> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- End Sidebar --> 
+   <!-- Begin Content --> 
+   <div id="j-main-container" class="*"> 
+    <div class="*"> 
+     <a href="#" id="thumbs" onclick="MediaManager.setViewType('thumbs')" class="*"> <span class="*"></span> Thumbnail View</a> 
+     <a href="#" id="details" onclick="MediaManager.setViewType('details')" class="*"> <span class="*"></span> Detail View</a> 
+    </div> 
+    <form action="index.php?option=com_media" name="adminForm" id="mediamanager-form" method="post" enctype="multipart/form-data"> 
+     <input type="hidden" name="task" value=""> 
+     <input type="hidden" name="cb1" id="cb1" value="0"> 
+     <input class="*" type="hidden" name="folder" id="folder" value=""> 
+    </form> 
+    <!-- File Upload Form --> 
+    <div id="collapseUpload" class="*"> 
+     <form action="http://192.168.56.105/administrator/index.php?option=com_media&amp;task=file.upload&amp;tmpl=component&amp;f43c96c9893d29df5b4a867f2bc2bcce=f6jr7176hsr6pvorcjt7nil8kp&amp;6a18d0ba250ceed35b47c7b2a087dc69=1&amp;format=html&amp;folder=" id="uploadForm" class="*" name="uploadForm" method="post" enctype="multipart/form-data"> 
+      <div id="uploadform" class="*"> 
+       <fieldset id="upload-noflash" class="*"> 
+        <label for="upload-file" class="*">Upload file</label> 
+        <input required type="file" id="upload-file" name="Filedata[]" multiple> 
+        <button class="*" id="upload-submit"><span class="*"></span> Start Upload</button> 
+        <p class="*"> Maximum upload size: <strong>2.00 MB</strong> </p> 
+       </fieldset> 
+       <input class="*" type="hidden" name="folder" id="folder" value=""> 
+      </div> 
+     </form> 
+    </div> 
+    <div id="collapseFolder" class="*"> 
+     <form action="index.php?option=com_media&amp;task=folder.create&amp;tmpl=component" name="folderForm" id="folderForm" class="*" method="post"> 
+      <div class="*"> 
+       <input type="text" id="folderpath" readonly class="*"> 
+       <input required type="text" id="foldername" name="foldername"> 
+       <input class="*" type="hidden" name="folderbase" id="folderbase" value=""> 
+       <button type="submit" class="*"><span class="*"></span> Create Folder</button> 
+      </div> 
+      <input type="hidden" name="6a18d0ba250ceed35b47c7b2a087dc69" value="1"> 
+     </form> 
+    </div> 
+    <form action="index.php?option=com_media&amp;task=folder.create&amp;tmpl=component" name="folderForm" id="folderForm" method="post"> 
+     <div id="folderview"> 
+      <div class="*"> 
+       <iframe class="*" src="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=" id="folderframe" name="folderframe" width="100%" height="500px" marginwidth="0" marginheight="0" scrolling="auto"></iframe> 
+      </div> 
+      <input type="hidden" name="6a18d0ba250ceed35b47c7b2a087dc69" value="1"> 
+     </div> 
+    </form> 
+   </div> 
+   <div id="imagePreview" tabindex="-1" class="*"> 
+    <div class="*"> 
+     <button type="button" class="*" data-dismiss="modal">×</button> 
+     <h3>Preview</h3> 
+    </div> 
+    <div class="*"> 
+     <div id="image" style="text-align:center;">
+      <img id="imagePreviewSrc" src="../media/jui/img/alpha.png" alt="preview" style="max-width:100%; max-height:300px;">
+     </div>
+    </div> 
+    <div class="*"> 
+     <a type="button" class="*" data-dismiss="modal" aria-hidden="true">Close</a>
+    </div> 
+   </div> 
+   <div id="videoPreview" tabindex="-1" class="*"> 
+    <div class="*"> 
+     <button type="button" class="*" data-dismiss="modal">×</button> 
+     <h3>Preview</h3> 
+    </div> 
+    <div class="*"> 
+     <div id="videoPlayer" style="z-index: -100;">
+      <video id="mejsPlayer" style="height: 250px;"></video>
+     </div>
+    </div> 
+    <div class="*"> 
+     <a type="button" class="*" data-dismiss="modal" aria-hidden="true">Close</a>
+    </div> 
+   </div> 
+   <!-- End Content --> 
+  </div> 
+ </body>
+</html>

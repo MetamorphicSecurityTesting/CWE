@@ -1,0 +1,411 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb" dir="ltr">
+ <head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta charset="utf-8"> 
+  <meta name="description" content="Joomla 3.8.7 under test"> 
+  <meta name="generator" content="Joomla! - Open Source Content Management"> 
+  <title>Languages: Installed (Site) - SUT - Administration</title>         
+  <!--[if lte IE 9]><script src="/media/system/js/polyfill.filter.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->       
+  <!--[if lt IE 9]><script src="/media/system/js/html5fallback.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+  <!--[if lt IE 9]><script src="/media/jui/js/html5.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+ </head> 
+ <body class="*" data-basepath=""> 
+  <!-- Top Navigation --> 
+  <nav class="*"> 
+   <div class="*"> 
+    <div class="*"> 
+     <a href="#" class="*" data-toggle="collapse" data-target=".nav-collapse"> <span class="*">Toggle Navigation</span> <span class="*"></span> <span class="*"></span> <span class="*"></span> </a> 
+     <!-- skip to content --> 
+     <a class="*" href="#skiptarget">Skip to Main Content</a> 
+     <a class="*" href="/administrator/index.php"> <span class="*"></span> 
+      <div class="*">
+        Control Panel 
+      </div> </a> 
+     <a class="*" href="http://192.168.56.105/" title="Preview SUT" target="_blank">SUT <span class="*"></span></a> 
+     <div class="*"> 
+      <ul id="menu" class="*"> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">System <span class="*"></span></a>
+        <ul class="*"> 
+         <li><a class="*" href="index.php">Control Panel</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_config">Global Configuration</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_checkin">Global Check-in</a></li> 
+         <li><a class="*" href="index.php?option=com_cache">Clear Cache</a></li> 
+         <li><a class="*" href="index.php?option=com_cache&amp;view=purge">Clear Expired Cache</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_admin&amp;view=sysinfo">System Information</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Users <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=users">Manage</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=user.add">Add New User</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=groups">Groups</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=group.add">Add New Group</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=levels">Access Levels</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=level.add">Add New Access Level</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;context=com_users.user">Fields</a></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;view=groups&amp;context=com_users.user">Field Groups</a></li> 
+         <li class="*"><span></span></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=notes">User Notes</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=note.add">Add User Note</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_categories&amp;view=categories&amp;extension=com_users">User Note Categories</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_categories&amp;task=category.add&amp;extension=com_users">Add New Category</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_users&amp;view=mail">Mass Mail Users</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Menus <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_menus&amp;view=menus">Manage</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_menus&amp;view=menu&amp;layout=edit">Add New Menu</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_menus&amp;view=items&amp;menutype=">All Menu Items</a></li> 
+         <li class="*"><span>Site</span></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_menus&amp;view=items&amp;menutype=mainmenu">Main Menu <span class="*"></span></a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_menus&amp;view=item&amp;layout=edit&amp;menutype=mainmenu">Add New Menu Item</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_menus&amp;view=items&amp;menutype=usermenu">User Menu </a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_menus&amp;view=item&amp;layout=edit&amp;menutype=usermenu">Add New Menu Item</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Content <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_content">Articles</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_content&amp;task=article.add">Add New Article</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_categories&amp;extension=com_content">Categories</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_categories&amp;task=category.add&amp;extension=com_content">Add New Category</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_content&amp;view=featured">Featured Articles</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;context=com_content.article">Fields</a></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;view=groups&amp;context=com_content.article">Field Groups</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_media">Media</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Components <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_banners">Banners</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_banners">Banners</a></li> 
+           <li><a class="*" href="index.php?option=com_categories&amp;extension=com_banners">Categories</a></li> 
+           <li><a class="*" href="index.php?option=com_banners&amp;view=clients">Clients</a></li> 
+           <li><a class="*" href="index.php?option=com_banners&amp;view=tracks">Tracks</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_contact">Contacts</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_contact">Contacts</a></li> 
+           <li><a class="*" href="index.php?option=com_categories&amp;extension=com_contact">Categories</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_joomlaupdate">Joomla! Update</a></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_messages">Messaging</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_messages&amp;task=message.add">New Private Message</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_associations">Multilingual Associations</a></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_newsfeeds">News Feeds</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_newsfeeds">Feeds</a></li> 
+           <li><a class="*" href="index.php?option=com_categories&amp;extension=com_newsfeeds">Categories</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_postinstall">Post-installation Messages</a></li> 
+         <li><a class="*" href="index.php?option=com_redirect">Redirects</a></li> 
+         <li><a class="*" href="index.php?option=com_search">Search</a></li> 
+         <li><a class="*" href="index.php?option=com_finder">Smart Search</a></li> 
+         <li><a class="*" href="index.php?option=com_tags">Tags</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Extensions <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_installer">Manage</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_installer">Install</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=update">Update</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=manage">Manage</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=discover">Discover</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=database">Database</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=warnings">Warnings</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=languages">Install Languages</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=updatesites">Update Sites</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_modules">Modules</a></li> 
+         <li><a class="*" href="index.php?option=com_plugins">Plugins</a></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_templates">Templates</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_templates&amp;view=styles">Styles</a></li> 
+           <li><a class="*" href="index.php?option=com_templates&amp;view=templates">Templates</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_languages">Language(s)</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_languages&amp;view=installed">Installed</a></li> 
+           <li><a class="*" href="index.php?option=com_languages&amp;view=languages">Content Languages</a></li> 
+           <li><a class="*" href="index.php?option=com_languages&amp;view=overrides">Overrides</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Help <span class="*"></span></a>
+        <ul class="*"> 
+         <li><a class="*" href="index.php?option=com_admin&amp;view=help">Joomla! Help</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="https://forum.joomla.org" target="_blank">Official Support Forum</a></li> 
+         <li><a class="*" href="index.php?option=com_admin&amp;view=help&amp;layout=langforum" target="_blank">Official Language Forums</a></li> 
+         <li><a class="*" href="https://docs.joomla.org" target="_blank">Documentation Wiki</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="https://extensions.joomla.org" target="_blank">Joomla! Extensions</a></li> 
+         <li><a class="*" href="https://community.joomla.org/translations.html" target="_blank">Joomla! Translations</a></li> 
+         <li><a class="*" href="https://resources.joomla.org" target="_blank">Joomla! Resources</a></li> 
+         <li><a class="*" href="https://community.joomla.org" target="_blank">Community Portal</a></li> 
+         <li><a class="*" href="https://developer.joomla.org/security-centre.html" target="_blank">Security Centre</a></li> 
+         <li><a class="*" href="https://developer.joomla.org" target="_blank">Developer Resources</a></li> 
+         <li><a class="*" href="https://joomla.stackexchange.com" target="_blank">Stack Exchange</a></li> 
+         <li><a class="*" href="https://community.joomla.org/the-joomla-shop.html" target="_blank">Joomla! Shop</a></li> 
+        </ul> </li> 
+      </ul> 
+      <ul id="nav-empty" class="*"></ul> 
+      <ul class="*"> 
+       <li class="*"> <a class="*" data-toggle="dropdown" href="#"><span class="*"></span> <span class="*"></span> 
+         <div class="*">
+           User Menu 
+         </div> </a> 
+        <ul class="*"> 
+         <li> <span> <span class="*"></span> <strong>Super User</strong> </span> </li> 
+         <li class="*"></li> 
+         <li> <a href="index.php?option=com_admin&amp;task=profile.edit&amp;id=719">Edit Account</a> </li> 
+         <li class="*"></li> 
+         <li class="*"> <a href="/administrator/index.php?option=com_login&amp;task=logout&amp;a2d2d0aceb93a012ceee55388a075686=1">Logout</a> </li> 
+        </ul> </li> 
+      </ul> 
+      <a class="*" href="http://192.168.56.105/" title="Preview SUT" target="_blank">SUT <span class="*"></span></a> 
+     </div> 
+     <!--/.nav-collapse --> 
+    </div> 
+   </div> 
+  </nav> 
+  <!-- Header --> 
+  <header class="*"> 
+   <div class="*"> 
+    <img src="/administrator/templates/isis/images/logo.png" class="*" alt="SUT"> 
+   </div> 
+   <div class="*"> 
+    <h1 class="*"> <span class="*" aria-hidden="true"></span> Languages: Installed (Site)</h1> 
+   </div> 
+  </header> 
+  <!-- Subheader --> 
+  <a class="*" data-toggle="collapse" data-target=".subhead-collapse">Toolbar <span class="*"></span></a> 
+  <div class="*" id="isisJsData" data-tmpl-sticky="true" data-tmpl-offset="30" style="height: 51px;"> 
+   <div class="*"> 
+    <div class="*"> 
+     <div id="container-collapse" class="*"></div> 
+     <div class="*"> 
+      <div class="*"> 
+       <!-- target for skip to content link --> 
+       <a id="skiptarget" class="*">Main content begins here</a> 
+       <div class="*" role="toolbar" aria-label="Toolbar" id="toolbar"> 
+        <div class="*" id="toolbar-default"> 
+         <button onclick="if (document.adminForm.boxchecked.value == 0) { alert(Joomla.JText._('JLIB_HTML_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST')); } else { Joomla.submitbutton('installed.setDefault'); }" class="*"> <span class="*" aria-hidden="true"></span> Default</button> 
+        </div> 
+        <div class="*" id="toolbar-upload"> 
+         <button onclick="location.href='index.php?option=com_installer&amp;view=languages';" class="*"> <span class="*" aria-hidden="true"></span> Install Languages</button> 
+        </div> 
+        <div class="*" id="toolbar-options"> 
+         <button onclick="location.href='index.php?option=com_config&amp;view=component&amp;component=com_languages&amp;path=&amp;return=aHR0cDovLzE5Mi4xNjguNTYuMTA1L2FkbWluaXN0cmF0b3IvaW5kZXgucGhwP29wdGlvbj1jb21fbGFuZ3VhZ2Vz';" class="*"> <span class="*" aria-hidden="true"></span> Options</button> 
+        </div> 
+        <div class="*" id="toolbar-help">  
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- container-fluid --> 
+  <div class="*" style="top: 82px;"> 
+   <section id="content"> 
+    <!-- Begin Content --> 
+    <div class="*"> 
+     <div class="*"> 
+      <div id="system-message-container" class="*"> 
+      </div> 
+      <form action="/administrator/index.php?option=com_languages&amp;view=installed" method="post" id="adminForm" name="adminForm"> 
+       <div id="j-sidebar-container" class="*"> 
+        <div id="j-toggle-sidebar-wrapper"> 
+         <div id="j-toggle-button-wrapper" class="*"> 
+          <div id="j-toggle-sidebar-button" class="*" onclick="toggleSidebar(false); return false;" data-original-title="Hide the sidebar" aria-label="Hide the sidebar"> 
+           <span id="j-toggle-sidebar-icon" class="*" aria-hidden="true"></span> 
+          </div> 
+         </div> 
+         <div id="sidebar" class="*"> 
+          <div class="*"> 
+           <ul id="submenu" class="*"> 
+            <li class="*"> <a href="index.php?option=com_languages&amp;view=installed">Installed</a> </li> 
+            <li> <a href="index.php?option=com_languages&amp;view=languages">Content Languages</a> </li> 
+            <li> <a href="index.php?option=com_languages&amp;view=overrides">Overrides</a> </li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div id="j-toggle-sidebar"></div> 
+        </div> 
+       </div> 
+       <div id="j-main-container" class="*"> 
+        <div class="*"> 
+         <div class="*"> 
+          <div class="*"> 
+           <div class="*"> 
+            <select id="client_id" name="client_id" onchange="jQuery('#filter_search, select[id^=filter_], #list_fullordering').val('');this.form.submit();" style="display: none;"> <option value="0">Site</option> <option value="1">Administrator</option> </select>
+            <div class="*" style="width: 220px;" title="" id="client_id_chzn">
+             <a class="*"><span>Site</span>
+              <div>
+               <b></b>
+              </div></a>
+             <div class="*">
+              <div class="*">
+               <input type="text" autocomplete="off" readonly>
+              </div>
+              <ul class="*"></ul>
+             </div>
+            </div> 
+           </div> 
+          </div> 
+          <div class="*"> 
+           <label for="filter_search" class="*"> Search </label> 
+           <div class="*"> 
+            <input type="text" name="filter[search]" id="filter_search" value="" placeholder="Search" data-original-title="" title=""> 
+            <button type="submit" class="*" title="" aria-label="Search" data-original-title="Search"> <span class="*" aria-hidden="true"></span> </button> 
+           </div> 
+           <div class="*"> 
+            <button type="button" class="*" title="" data-original-title="Clear"> Clear </button> 
+           </div> 
+          </div> 
+          <div class="*" style=""> 
+           <div class="*"> 
+            <div class="*"> 
+             <select id="list_fullordering" name="list[fullordering]" onchange="this.form.submit();" style="display: none;"> <option value="">Sort Table By:</option> <option value="name ASC" selected>Language ascending</option> <option value="name DESC">Language descending</option> <option value="nativeName ASC">Native Title ascending</option> <option value="nativeName DESC">Native Title descending</option> <option value="language ASC">Language Tag ascending</option> <option value="language DESC">Language Tag descending</option> <option value="published ASC">Default ascending</option> <option value="published DESC">Default descending</option> <option value="version ASC">Version ascending</option> <option value="version DESC">Version descending</option> <option value="creationDate ASC">Date ascending</option> <option value="creationDate DESC">Date descending</option> <option value="author ASC">Author ascending</option> <option value="author DESC">Author descending</option> <option value="authorEmail ASC">Author Email ascending</option> <option value="authorEmail DESC">Author Email descending</option> <option value="extension_id ASC">ID ascending</option> <option value="extension_id DESC">ID descending</option> </select>
+             <div class="*" style="width: 220px;" title="" id="list_fullordering_chzn">
+              <a class="*"><span>Language ascending</span>
+               <div>
+                <b></b>
+               </div></a>
+              <div class="*">
+               <div class="*">
+                <input type="text" autocomplete="off">
+               </div>
+               <ul class="*"></ul>
+              </div>
+             </div> 
+            </div> 
+            <div class="*"> 
+             <select id="list_limit" name="list[limit]" class="*" onchange="this.form.submit();" style="display: none;"> <option value="5">5</option> <option value="10">10</option> <option value="15">15</option> <option value="20" selected>20</option> <option value="25">25</option> <option value="30">30</option> <option value="50">50</option> <option value="100">100</option> <option value="200">200</option> <option value="500">500</option> <option value="0">All</option> </select>
+             <div class="*" style="width: 60px;" title="" id="list_limit_chzn">
+              <a class="*"><span>20</span>
+               <div>
+                <b></b>
+               </div></a>
+              <div class="*">
+               <div class="*">
+                <input type="text" autocomplete="off">
+               </div>
+               <ul class="*"></ul>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <!-- Filters div --> 
+        </div> 
+        <table class="*"> 
+         <thead> 
+          <tr> 
+           <th width="1%"> &nbsp; </th> 
+           <th width="15%" class="*"> <a href="#" onclick="return false;" class="*" data-order="name" data-direction="DESC" data-name="Title" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Title"> Title<span class="*"></span></a> </th> 
+           <th width="15%" class="*"> <a href="#" onclick="return false;" class="*" data-order="nativeName" data-direction="ASC" data-name="Native Title" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Native Title"> Native Title</a> </th> 
+           <th class="*"> <a href="#" onclick="return false;" class="*" data-order="language" data-direction="ASC" data-name="Language Tag" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Language Tag"> Language Tag</a> </th> 
+           <th class="*"> <a href="#" onclick="return false;" class="*" data-order="published" data-direction="ASC" data-name="Default" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Default"> Default</a> </th> 
+           <th class="*"> <a href="#" onclick="return false;" class="*" data-order="version" data-direction="ASC" data-name="Version" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Version"> Version</a> </th> 
+           <th class="*"> <a href="#" onclick="return false;" class="*" data-order="creationDate" data-direction="ASC" data-name="Date" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Date"> Date</a> </th> 
+           <th class="*"> <a href="#" onclick="return false;" class="*" data-order="author" data-direction="ASC" data-name="Author" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Author"> Author</a> </th> 
+           <th class="*"> <a href="#" onclick="return false;" class="*" data-order="authorEmail" data-direction="ASC" data-name="Author Email" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Author Email"> Author Email</a> </th> 
+           <th class="*"> <a href="#" onclick="return false;" class="*" data-order="extension_id" data-direction="ASC" data-name="ID" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="ID"> ID</a> </th> 
+          </tr> 
+         </thead> 
+         <tfoot> 
+          <tr> 
+           <td colspan="10"> 
+            <div class="*"> 
+             <input type="hidden" name="limitstart" value="0"> 
+            </div> </td> 
+          </tr> 
+         </tfoot> 
+         <tbody> 
+          <tr class="*"> 
+           <td> <input type="radio" id="cb0" name="cid" value="en-GB" onclick="Joomla.isChecked(this.checked);" title="1"> </td> 
+           <td> <label for="cb0"> English (en-GB) </label> </td> 
+           <td class="*"> English (United Kingdom) </td> 
+           <td> en-GB </td> 
+           <td class="*"> <a class="*" title="" data-original-title="Default"><span class="*"></span></a> </td> 
+           <td class="*"> <span class="*">3.8.7</span> </td> 
+           <td class="*"> April 2018 </td> 
+           <td class="*"> Joomla! Project </td> 
+           <td class="*"> admin@joomla.org </td> 
+           <td class="*"> 600 </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <input type="hidden" name="task" value=""> 
+        <input type="hidden" name="boxchecked" value="0"> 
+        <input type="hidden" name="a2d2d0aceb93a012ceee55388a075686" value="1"> 
+       </div> 
+      </form> 
+     </div> 
+    </div> 
+    <!-- End Content --> 
+   </section> 
+  </div> 
+  <!-- Begin Status Module --> 
+  <div id="status" class="*"> 
+   <div class="*"> 
+    <div class="*"> 
+     <p> Joomla! 3.8.7 &nbsp;—&nbsp; © 2020 SUT </p> 
+    </div> 
+    <div class="*">
+     <a href="http://192.168.56.105/" target="_blank"><span class="*" aria-hidden="true"></span>View Site</a>
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <span class="*">29</span>Visitors
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <span class="*">9</span>Administrators
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <a href="/administrator/index.php?option=com_messages"><span class="*">0</span>Messages</a>
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <a href="/administrator/index.php?option=com_login&amp;task=logout&amp;a2d2d0aceb93a012ceee55388a075686=1"><span class="*" aria-hidden="true"></span>Log out</a>
+    </div> 
+   </div> 
+  </div> 
+  <!-- End Status Module --> 
+ </body>
+</html>
