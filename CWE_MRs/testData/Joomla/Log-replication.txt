@@ -1,0 +1,440 @@
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 46990
+Only local connections are allowed.
+Mar 18, 2020 12:30:58 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269404861918 : index (http://192.168.56.105/administrator/) --> DONE
+	- Action 382269405729528 :  (/administrator/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/administrator/) --> DONE
+	- Action 382269405791917 : log in with admin (http://192.168.56.105/administrator/index.php) --> DONE
+	- Action 382269405834351 : Articles (http://192.168.56.105/administrator/index.php?option=com_content) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269404861918 : access the index http://192.168.56.105/administrator/], [Action 382269405729528 : click on /administrator/], [Action 382269405791917 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269405834351 : click on http://192.168.56.105/administrator/index.php?option=com_content]]
+ [Last input processed: [[Action 382269404861918 : access the index http://192.168.56.105/administrator/], [Action 382269405729528 : click on /administrator/], [Action 382269405791917 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269405834351 : click on http://192.168.56.105/administrator/index.php?option=com_content]] position: 3] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 34946
+Only local connections are allowed.
+Mar 18, 2020 12:31:17 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269406467490 : index (http://192.168.56.105/administrator/) --> DONE
+	- Action 382269406508341 :  (/administrator/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/administrator/) --> DONE
+	- Action 382269406550442 : log in with admin (http://192.168.56.105/administrator/index.php) --> DONE
+	- Action 382269406600438 : Super User (http://192.168.56.105/administrator/index.php?option=com_users&task=user.edit&id=719) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269406467490 : access the index http://192.168.56.105/administrator/], [Action 382269406508341 : click on /administrator/], [Action 382269406550442 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269406600438 : click on http://192.168.56.105/administrator/index.php?option=com_users&task=user.edit&id=719]]
+ [Last input processed: [[Action 382269406467490 : access the index http://192.168.56.105/administrator/], [Action 382269406508341 : click on /administrator/], [Action 382269406550442 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269406600438 : click on http://192.168.56.105/administrator/index.php?option=com_users&task=user.edit&id=719]] position: 3] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 38387
+Only local connections are allowed.
+Mar 18, 2020 12:31:34 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269406889705 : index (http://192.168.56.105/administrator/) --> DONE
+	- Action 382269406937174 :  (/administrator/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/administrator/) --> DONE
+	- Action 382269406985826 : log in with admin (http://192.168.56.105/administrator/index.php) --> DONE
+	- Action 382269407026562 : 0Messages (http://192.168.56.105/administrator/index.php?option=com_messages) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269406889705 : access the index http://192.168.56.105/administrator/], [Action 382269406937174 : click on /administrator/], [Action 382269406985826 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269407026562 : click on http://192.168.56.105/administrator/index.php?option=com_messages]]
+ [Last input processed: [[Action 382269406889705 : access the index http://192.168.56.105/administrator/], [Action 382269406937174 : click on /administrator/], [Action 382269406985826 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269407026562 : click on http://192.168.56.105/administrator/index.php?option=com_messages]] position: 3] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 25783
+Only local connections are allowed.
+Mar 18, 2020 12:31:51 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269407261115 : index (http://192.168.56.105/administrator/) --> DONE
+	- Action 382269407301518 :  (/administrator/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/administrator/) --> DONE
+	- Action 382269407357631 : log in with admin (http://192.168.56.105/administrator/index.php) --> DONE
+	- Action 382269407387144 : Libra: PayPal first to drop out of Facebook cryptocurrency (http://192.168.56.105/administrator/index.php?option=com_content&task=article.edit&id=3) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269407261115 : access the index http://192.168.56.105/administrator/], [Action 382269407301518 : click on /administrator/], [Action 382269407357631 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269407387144 : click on http://192.168.56.105/administrator/index.php?option=com_content&task=article.edit&id=3]]
+ [Last input processed: [[Action 382269407261115 : access the index http://192.168.56.105/administrator/], [Action 382269407301518 : click on /administrator/], [Action 382269407357631 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269407387144 : click on http://192.168.56.105/administrator/index.php?option=com_content&task=article.edit&id=3]] position: 3] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 4065
+Only local connections are allowed.
+Mar 18, 2020 12:32:08 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269407593183 : index (http://192.168.56.105/administrator/) --> DONE
+	- Action 382269407625488 :  (/administrator/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/administrator/) --> DONE
+	- Action 382269407664292 : log in with admin (http://192.168.56.105/administrator/index.php) --> DONE
+	- Action 382269407727233 : Language(s) (http://192.168.56.105/administrator/index.php?option=com_languages) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269407593183 : access the index http://192.168.56.105/administrator/], [Action 382269407625488 : click on /administrator/], [Action 382269407664292 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269407727233 : click on http://192.168.56.105/administrator/index.php?option=com_languages]]
+ [Last input processed: [[Action 382269407593183 : access the index http://192.168.56.105/administrator/], [Action 382269407625488 : click on /administrator/], [Action 382269407664292 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269407727233 : click on http://192.168.56.105/administrator/index.php?option=com_languages]] position: 3] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 45716
+Only local connections are allowed.
+Mar 18, 2020 12:32:25 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269407896238 : index (http://192.168.56.105/administrator/) --> DONE
+	- Action 382269407918558 :  (/administrator/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/administrator/) --> DONE
+	- Action 382269407944147 : log in with admin (http://192.168.56.105/administrator/index.php) --> DONE
+	- Action 382269407965766 : Templates (http://192.168.56.105/administrator/index.php?option=com_templates) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269407896238 : access the index http://192.168.56.105/administrator/], [Action 382269407918558 : click on /administrator/], [Action 382269407944147 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269407965766 : click on http://192.168.56.105/administrator/index.php?option=com_templates]]
+ [Last input processed: [[Action 382269407896238 : access the index http://192.168.56.105/administrator/], [Action 382269407918558 : click on /administrator/], [Action 382269407944147 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269407965766 : click on http://192.168.56.105/administrator/index.php?option=com_templates]] position: 3] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 6115
+Only local connections are allowed.
+Mar 18, 2020 12:32:42 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269408106455 : index (http://192.168.56.105/administrator/) --> DONE
+	- Action 382269408128559 :  (/administrator/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/administrator/) --> DONE
+	- Action 382269408151930 : log in with admin (http://192.168.56.105/administrator/index.php) --> DONE
+	- Action 382269408173255 : Menu(s) (http://192.168.56.105/administrator/index.php?option=com_menus) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269408106455 : access the index http://192.168.56.105/administrator/], [Action 382269408128559 : click on /administrator/], [Action 382269408151930 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269408173255 : click on http://192.168.56.105/administrator/index.php?option=com_menus]]
+ [Last input processed: [[Action 382269408106455 : access the index http://192.168.56.105/administrator/], [Action 382269408128559 : click on /administrator/], [Action 382269408151930 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269408173255 : click on http://192.168.56.105/administrator/index.php?option=com_menus]] position: 3] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 12449
+Only local connections are allowed.
+Mar 18, 2020 12:32:58 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269408316267 : index (http://192.168.56.105/administrator/) --> DONE
+	- Action 382269408340192 :  (/administrator/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/administrator/) --> DONE
+	- Action 382269408385302 : log in with admin (http://192.168.56.105/administrator/index.php) --> DONE
+	- Action 382269408414728 : Getting Started (http://192.168.56.105/administrator/index.php?option=com_content&task=article.edit&id=1) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269408316267 : access the index http://192.168.56.105/administrator/], [Action 382269408340192 : click on /administrator/], [Action 382269408385302 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269408414728 : click on http://192.168.56.105/administrator/index.php?option=com_content&task=article.edit&id=1]]
+ [Last input processed: [[Action 382269408316267 : access the index http://192.168.56.105/administrator/], [Action 382269408340192 : click on /administrator/], [Action 382269408385302 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269408414728 : click on http://192.168.56.105/administrator/index.php?option=com_content&task=article.edit&id=1]] position: 3] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 11234
+Only local connections are allowed.
+Mar 18, 2020 12:33:16 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269408554438 : index (http://192.168.56.105/administrator/) --> DONE
+	- Action 382269408576735 :  (/administrator/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/administrator/) --> DONE
+	- Action 382269408601864 : log in with admin (http://192.168.56.105/administrator/index.php) --> DONE
+	- Action 382269408626324 : New Article (http://192.168.56.105/administrator/index.php?option=com_content&task=article.add) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269408554438 : access the index http://192.168.56.105/administrator/], [Action 382269408576735 : click on /administrator/], [Action 382269408601864 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269408626324 : click on http://192.168.56.105/administrator/index.php?option=com_content&task=article.add]]
+ [Last input processed: [[Action 382269408554438 : access the index http://192.168.56.105/administrator/], [Action 382269408576735 : click on /administrator/], [Action 382269408601864 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269408626324 : click on http://192.168.56.105/administrator/index.php?option=com_content&task=article.add]] position: 3] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 25901
+Only local connections are allowed.
+Mar 18, 2020 12:33:34 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269408764851 : index (http://192.168.56.105/administrator/) --> DONE
+	- Action 382269408786972 :  (/administrator/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/administrator/) --> DONE
+	- Action 382269408811623 : log in with admin (http://192.168.56.105/administrator/index.php) --> DONE
+	- Action 382269408847065 : The five most creative cities in the world (http://192.168.56.105/administrator/index.php?option=com_content&task=article.edit&id=6)	  updateUrlMap: {382269408811623=382269408847065}
+ --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269408764851 : access the index http://192.168.56.105/administrator/], [Action 382269408786972 : click on /administrator/], [Action 382269408811623 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269408847065 : click on http://192.168.56.105/administrator/index.php?option=com_content&task=article.edit&id=6]]
+ [Last input processed: [[Action 382269408764851 : access the index http://192.168.56.105/administrator/], [Action 382269408786972 : click on /administrator/], [Action 382269408811623 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269408847065 : click on http://192.168.56.105/administrator/index.php?option=com_content&task=article.edit&id=6]] position: 3] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 3972
+Only local connections are allowed.
+Mar 18, 2020 12:33:51 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269408984213 : index (http://192.168.56.105/administrator/) --> DONE
+	- Action 382269409006917 :  (/administrator/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/administrator/) --> DONE
+	- Action 382269409035564 : log in with admin (http://192.168.56.105/administrator/index.php) --> DONE
+	- Action 382269409060315 : Categories (http://192.168.56.105/administrator/index.php?option=com_categories&extension=com_content) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269408984213 : access the index http://192.168.56.105/administrator/], [Action 382269409006917 : click on /administrator/], [Action 382269409035564 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269409060315 : click on http://192.168.56.105/administrator/index.php?option=com_categories&extension=com_content]]
+ [Last input processed: [[Action 382269408984213 : access the index http://192.168.56.105/administrator/], [Action 382269409006917 : click on /administrator/], [Action 382269409035564 : log in with (admin,adminPass) at http://192.168.56.105/administrator/index.php], [Action 382269409060315 : click on http://192.168.56.105/administrator/index.php?option=com_categories&extension=com_content]] position: 3] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 32485
+Only local connections are allowed.
+Mar 18, 2020 12:34:07 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269409187555 : index (http://192.168.56.105/) --> DONE
+	- Action 382269409210296 :  (/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/) --> DONE
+	- Action 382269409246462 : log in with editor1 (http://192.168.56.105/index.php) --> DONE
+	- Action 382269409277048 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	- Action 382269409311122 : Transfer news: Done deals in transfer window in October (http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october) --> DONE
+	- Action 382269409347969 : Sport (http://192.168.56.105/index.php/sport) --> DONE
+	- Action 382269409401289 : Transfer news: Done deals in transfer window in October (http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269409187555 : access the index http://192.168.56.105/], [Action 382269409210296 : click on /], [Action 382269409246462 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269409277048 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269409311122 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269409347969 : click on http://192.168.56.105/index.php/sport], [Action 382269409401289 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october]]
+ [Last input processed: [[Action 382269409187555 : access the index http://192.168.56.105/], [Action 382269409210296 : click on /], [Action 382269409246462 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269409277048 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269409311122 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269409347969 : click on http://192.168.56.105/index.php/sport], [Action 382269409401289 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october]] position: 6] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 48132
+Only local connections are allowed.
+Mar 18, 2020 12:34:33 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269410197146 : index (http://192.168.56.105/) --> DONE
+	- Action 382269410239278 :  (/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/) --> DONE
+	- Action 382269410281578 : log in with editor1 (http://192.168.56.105/index.php) --> DONE
+	- Action 382269410312252 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	- Action 382269410340746 : Transfer news: Done deals in transfer window in October (http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october) --> DONE
+	- Action 382269410426347 : Sport (http://192.168.56.105/index.php/sport) --> DONE
+	- Action 382269410459746 : Travel (http://192.168.56.105/index.php/travel) --> DONE
+	- Action 382269410489618 : Germanys tiny geographic oddity (http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity) --> DONE
+	- Action 382269410526461 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269410197146 : access the index http://192.168.56.105/], [Action 382269410239278 : click on /], [Action 382269410281578 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269410312252 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269410340746 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269410426347 : click on http://192.168.56.105/index.php/sport], [Action 382269410459746 : click on http://192.168.56.105/index.php/travel], [Action 382269410489618 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269410526461 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101]]
+ [Last input processed: [[Action 382269410197146 : access the index http://192.168.56.105/], [Action 382269410239278 : click on /], [Action 382269410281578 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269410312252 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269410340746 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269410426347 : click on http://192.168.56.105/index.php/sport], [Action 382269410459746 : click on http://192.168.56.105/index.php/travel], [Action 382269410489618 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269410526461 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101]] position: 8] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 29231
+Only local connections are allowed.
+Mar 18, 2020 12:35:05 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269411273006 : index (http://192.168.56.105/) --> DONE
+	- Action 382269411299019 :  (/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/) --> DONE
+	- Action 382269411329636 : log in with editor1 (http://192.168.56.105/index.php) --> DONE
+	- Action 382269411372427 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	- Action 382269411398112 : Transfer news: Done deals in transfer window in October (http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october) --> DONE
+	- Action 382269411423023 : Sport (http://192.168.56.105/index.php/sport) --> DONE
+	- Action 382269411446110 : Travel (http://192.168.56.105/index.php/travel) --> DONE
+	- Action 382269411469073 : Germanys tiny geographic oddity (http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity) --> DONE
+	- Action 382269411491972 : Facebook's Libra could be misused, says treasury chief Mnuchin (http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin) --> DONE
+	- Action 382269411517348 : Prev (http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency) --> DONE
+	- Action 382269411560331 : News (http://192.168.56.105/index.php/news) --> DONE
+	- Action 382269411584533 : Facebook's Libra could be misused, says treasury chief Mnuchin (http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269411273006 : access the index http://192.168.56.105/], [Action 382269411299019 : click on /], [Action 382269411329636 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269411372427 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269411398112 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269411423023 : click on http://192.168.56.105/index.php/sport], [Action 382269411446110 : click on http://192.168.56.105/index.php/travel], [Action 382269411469073 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269411491972 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269411517348 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269411560331 : click on http://192.168.56.105/index.php/news], [Action 382269411584533 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin]]
+ [Last input processed: [[Action 382269411273006 : access the index http://192.168.56.105/], [Action 382269411299019 : click on /], [Action 382269411329636 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269411372427 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269411398112 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269411423023 : click on http://192.168.56.105/index.php/sport], [Action 382269411446110 : click on http://192.168.56.105/index.php/travel], [Action 382269411469073 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269411491972 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269411517348 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269411560331 : click on http://192.168.56.105/index.php/news], [Action 382269411584533 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin]] position: 11] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 9233
+Only local connections are allowed.
+Mar 18, 2020 12:35:47 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269412652449 : index (http://192.168.56.105/) --> DONE
+	- Action 382269412678025 :  (/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/) --> DONE
+	- Action 382269412700402 : log in with editor1 (http://192.168.56.105/index.php) --> DONE
+	- Action 382269412722954 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	- Action 382269412743324 : Transfer news: Done deals in transfer window in October (http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october) --> DONE
+	- Action 382269412765811 : Sport (http://192.168.56.105/index.php/sport) --> DONE
+	- Action 382269412786218 : Travel (http://192.168.56.105/index.php/travel) --> DONE
+	- Action 382269412808347 : Germanys tiny geographic oddity (http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity) --> DONE
+	- Action 382269412834240 : Facebook's Libra could be misused, says treasury chief Mnuchin (http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin) --> DONE
+	- Action 382269412856937 : Prev (http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency) --> DONE
+	- Action 382269412887162 : The five most creative cities in the world (http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world) --> DONE
+	- Action 382269412911867 : Home (http://192.168.56.105/index.php) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269412652449 : access the index http://192.168.56.105/], [Action 382269412678025 : click on /], [Action 382269412700402 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269412722954 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269412743324 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269412765811 : click on http://192.168.56.105/index.php/sport], [Action 382269412786218 : click on http://192.168.56.105/index.php/travel], [Action 382269412808347 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269412834240 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269412856937 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269412887162 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269412911867 : click on http://192.168.56.105/index.php]]
+ [Last input processed: [[Action 382269412652449 : access the index http://192.168.56.105/], [Action 382269412678025 : click on /], [Action 382269412700402 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269412722954 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269412743324 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269412765811 : click on http://192.168.56.105/index.php/sport], [Action 382269412786218 : click on http://192.168.56.105/index.php/travel], [Action 382269412808347 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269412834240 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269412856937 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269412887162 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269412911867 : click on http://192.168.56.105/index.php]] position: 11] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 9385
+Only local connections are allowed.
+Mar 18, 2020 12:36:28 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269413988284 : index (http://192.168.56.105/) --> DONE
+	- Action 382269414009136 :  (/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/) --> DONE
+	- Action 382269414029366 : log in with editor1 (http://192.168.56.105/index.php) --> DONE
+	- Action 382269414051698 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	- Action 382269414070948 : Transfer news: Done deals in transfer window in October (http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october) --> DONE
+	- Action 382269414091674 : Sport (http://192.168.56.105/index.php/sport) --> DONE
+	- Action 382269414109190 : Travel (http://192.168.56.105/index.php/travel) --> DONE
+	- Action 382269414128724 : Germanys tiny geographic oddity (http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity) --> DONE
+	- Action 382269414145956 : Facebook's Libra could be misused, says treasury chief Mnuchin (http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin) --> DONE
+	- Action 382269414168689 : Prev (http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency) --> DONE
+	- Action 382269414188802 : The five most creative cities in the world (http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world) --> DONE
+	- Action 382269414215836 : Culture (http://192.168.56.105/index.php/culture) --> DONE
+	- Action 382269414236090 : The five most creative cities in the world (http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269413988284 : access the index http://192.168.56.105/], [Action 382269414009136 : click on /], [Action 382269414029366 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269414051698 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269414070948 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269414091674 : click on http://192.168.56.105/index.php/sport], [Action 382269414109190 : click on http://192.168.56.105/index.php/travel], [Action 382269414128724 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269414145956 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269414168689 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269414188802 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269414215836 : click on http://192.168.56.105/index.php/culture], [Action 382269414236090 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world]]
+ [Last input processed: [[Action 382269413988284 : access the index http://192.168.56.105/], [Action 382269414009136 : click on /], [Action 382269414029366 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269414051698 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269414070948 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269414091674 : click on http://192.168.56.105/index.php/sport], [Action 382269414109190 : click on http://192.168.56.105/index.php/travel], [Action 382269414128724 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269414145956 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269414168689 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269414188802 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269414215836 : click on http://192.168.56.105/index.php/culture], [Action 382269414236090 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world]] position: 12] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 1254
+Only local connections are allowed.
+Mar 18, 2020 12:37:12 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269415205679 : index (http://192.168.56.105/) --> DONE
+	- Action 382269415224158 :  (/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/) --> DONE
+	- Action 382269415252630 : log in with editor1 (http://192.168.56.105/index.php) --> DONE
+	- Action 382269415270996 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	- Action 382269415289845 : Transfer news: Done deals in transfer window in October (http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october) --> DONE
+	- Action 382269415308089 : Sport (http://192.168.56.105/index.php/sport) --> DONE
+	- Action 382269415324108 : Travel (http://192.168.56.105/index.php/travel) --> DONE
+	- Action 382269415344773 : Germanys tiny geographic oddity (http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity) --> DONE
+	- Action 382269415364360 : Facebook's Libra could be misused, says treasury chief Mnuchin (http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin) --> DONE
+	- Action 382269415381456 : Prev (http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency) --> DONE
+	- Action 382269415400733 : The five most creative cities in the world (http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world) --> DONE
+	- Action 382269415418241 : Culture (http://192.168.56.105/index.php/culture) --> DONE
+	- Action 382269415436851 : SUT (http://192.168.56.105/) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269415205679 : access the index http://192.168.56.105/], [Action 382269415224158 : click on /], [Action 382269415252630 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269415270996 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269415289845 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269415308089 : click on http://192.168.56.105/index.php/sport], [Action 382269415324108 : click on http://192.168.56.105/index.php/travel], [Action 382269415344773 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269415364360 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269415381456 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269415400733 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269415418241 : click on http://192.168.56.105/index.php/culture], [Action 382269415436851 : click on http://192.168.56.105/]]
+ [Last input processed: [[Action 382269415205679 : access the index http://192.168.56.105/], [Action 382269415224158 : click on /], [Action 382269415252630 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269415270996 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269415289845 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269415308089 : click on http://192.168.56.105/index.php/sport], [Action 382269415324108 : click on http://192.168.56.105/index.php/travel], [Action 382269415344773 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269415364360 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269415381456 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269415400733 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269415418241 : click on http://192.168.56.105/index.php/culture], [Action 382269415436851 : click on http://192.168.56.105/]] position: 12] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 8257
+Only local connections are allowed.
+Mar 18, 2020 12:37:56 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269416261442 : index (http://192.168.56.105/) --> DONE
+	- Action 382269416274752 :  (/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/) --> DONE
+	- Action 382269416286107 : log in with editor1 (http://192.168.56.105/index.php) --> DONE
+	- Action 382269416296956 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	- Action 382269416307457 : Transfer news: Done deals in transfer window in October (http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october) --> DONE
+	- Action 382269416318172 : Sport (http://192.168.56.105/index.php/sport) --> DONE
+	- Action 382269416344084 : Travel (http://192.168.56.105/index.php/travel) --> DONE
+	- Action 382269416363366 : Germanys tiny geographic oddity (http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity) --> DONE
+	- Action 382269416384128 : Facebook's Libra could be misused, says treasury chief Mnuchin (http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin) --> DONE
+	- Action 382269416403880 : Prev (http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency) --> DONE
+	- Action 382269416426979 : The five most creative cities in the world (http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world) --> DONE
+	- Action 382269416447458 : Culture (http://192.168.56.105/index.php/culture) --> DONE
+	- Action 382269416466634 : Joomla (http://192.168.56.105/index.php/component/tags/tag/joomla) --> DONE
+	- Action 382269416485638 : Getting Started (http://192.168.56.105/index.php/2-uncategorised/1-getting-started) --> DONE
+	- Action 382269416504886 : Uncategorised (http://192.168.56.105/index.php/2-uncategorised?layout=) --> DONE
+	- Action 382269416524369 : Getting Started (http://192.168.56.105/index.php/2-uncategorised/1-getting-started) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269416261442 : access the index http://192.168.56.105/], [Action 382269416274752 : click on /], [Action 382269416286107 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269416296956 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269416307457 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269416318172 : click on http://192.168.56.105/index.php/sport], [Action 382269416344084 : click on http://192.168.56.105/index.php/travel], [Action 382269416363366 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269416384128 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269416403880 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269416426979 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269416447458 : click on http://192.168.56.105/index.php/culture], [Action 382269416466634 : click on http://192.168.56.105/index.php/component/tags/tag/joomla], [Action 382269416485638 : click on http://192.168.56.105/index.php/2-uncategorised/1-getting-started], [Action 382269416504886 : click on http://192.168.56.105/index.php/2-uncategorised?layout=], [Action 382269416524369 : click on http://192.168.56.105/index.php/2-uncategorised/1-getting-started]]
+ [Last input processed: [[Action 382269416261442 : access the index http://192.168.56.105/], [Action 382269416274752 : click on /], [Action 382269416286107 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269416296956 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269416307457 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269416318172 : click on http://192.168.56.105/index.php/sport], [Action 382269416344084 : click on http://192.168.56.105/index.php/travel], [Action 382269416363366 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269416384128 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269416403880 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269416426979 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269416447458 : click on http://192.168.56.105/index.php/culture], [Action 382269416466634 : click on http://192.168.56.105/index.php/component/tags/tag/joomla], [Action 382269416485638 : click on http://192.168.56.105/index.php/2-uncategorised/1-getting-started], [Action 382269416504886 : click on http://192.168.56.105/index.php/2-uncategorised?layout=], [Action 382269416524369 : click on http://192.168.56.105/index.php/2-uncategorised/1-getting-started]] position: 15] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 24049
+Only local connections are allowed.
+Mar 18, 2020 12:38:49 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269417536907 : index (http://192.168.56.105/) --> DONE
+	- Action 382269417570938 :  (/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/) --> DONE
+	- Action 382269417620282 : log in with editor1 (http://192.168.56.105/index.php) --> DONE
+	- Action 382269417641350 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	- Action 382269417660513 : Transfer news: Done deals in transfer window in October (http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october) --> DONE
+	- Action 382269417679058 : Sport (http://192.168.56.105/index.php/sport) --> DONE
+	- Action 382269417706998 : Travel (http://192.168.56.105/index.php/travel) --> DONE
+	- Action 382269417727889 : Germanys tiny geographic oddity (http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity) --> DONE
+	- Action 382269417748274 : Facebook's Libra could be misused, says treasury chief Mnuchin (http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin) --> DONE
+	- Action 382269417784479 : Prev (http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency) --> DONE
+	- Action 382269417804597 : The five most creative cities in the world (http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world) --> DONE
+	- Action 382269417824038 : Culture (http://192.168.56.105/index.php/culture) --> DONE
+	- Action 382269417840030 : Joomla (http://192.168.56.105/index.php/component/tags/tag/joomla) --> DONE
+	- Action 382269417859512 : Getting Started (http://192.168.56.105/index.php/2-uncategorised/1-getting-started) --> DONE
+	- Action 382269417876705 : Uncategorised (http://192.168.56.105/index.php/2-uncategorised?layout=) --> DONE
+	- Action 382269417894640 : Forgot your username? (http://192.168.56.105/index.php/component/users/?view=remind&Itemid=101) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269417536907 : access the index http://192.168.56.105/], [Action 382269417570938 : click on /], [Action 382269417620282 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269417641350 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269417660513 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269417679058 : click on http://192.168.56.105/index.php/sport], [Action 382269417706998 : click on http://192.168.56.105/index.php/travel], [Action 382269417727889 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269417748274 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269417784479 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269417804597 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269417824038 : click on http://192.168.56.105/index.php/culture], [Action 382269417840030 : click on http://192.168.56.105/index.php/component/tags/tag/joomla], [Action 382269417859512 : click on http://192.168.56.105/index.php/2-uncategorised/1-getting-started], [Action 382269417876705 : click on http://192.168.56.105/index.php/2-uncategorised?layout=], [Action 382269417894640 : click on http://192.168.56.105/index.php/component/users/?view=remind&Itemid=101]]
+ [Last input processed: [[Action 382269417536907 : access the index http://192.168.56.105/], [Action 382269417570938 : click on /], [Action 382269417620282 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269417641350 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269417660513 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269417679058 : click on http://192.168.56.105/index.php/sport], [Action 382269417706998 : click on http://192.168.56.105/index.php/travel], [Action 382269417727889 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269417748274 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269417784479 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269417804597 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269417824038 : click on http://192.168.56.105/index.php/culture], [Action 382269417840030 : click on http://192.168.56.105/index.php/component/tags/tag/joomla], [Action 382269417859512 : click on http://192.168.56.105/index.php/2-uncategorised/1-getting-started], [Action 382269417876705 : click on http://192.168.56.105/index.php/2-uncategorised?layout=], [Action 382269417894640 : click on http://192.168.56.105/index.php/component/users/?view=remind&Itemid=101]] position: 15] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 46070
+Only local connections are allowed.
+Mar 18, 2020 12:39:42 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269418616083 : index (http://192.168.56.105/) --> DONE
+	- Action 382269418645701 :  (/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/) --> DONE
+	- Action 382269418662794 : log in with editor1 (http://192.168.56.105/index.php) --> DONE
+	- Action 382269418682175 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	- Action 382269418720633 : Transfer news: Done deals in transfer window in October (http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october) --> DONE
+	- Action 382269418750418 : Sport (http://192.168.56.105/index.php/sport) --> DONE
+	- Action 382269418768383 : Travel (http://192.168.56.105/index.php/travel) --> DONE
+	- Action 382269418787787 : Germanys tiny geographic oddity (http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity) --> DONE
+	- Action 382269418806706 : Facebook's Libra could be misused, says treasury chief Mnuchin (http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin) --> DONE
+	- Action 382269418826031 : Prev (http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency) --> DONE
+	- Action 382269418857861 : The five most creative cities in the world (http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world) --> DONE
+	- Action 382269418881254 : Culture (http://192.168.56.105/index.php/culture) --> DONE
+	- Action 382269418900448 : Joomla (http://192.168.56.105/index.php/component/tags/tag/joomla) --> DONE
+	- Action 382269418927574 : Getting Started (http://192.168.56.105/index.php/2-uncategorised/1-getting-started) --> DONE
+	- Action 382269418992681 : Uncategorised (http://192.168.56.105/index.php/2-uncategorised?layout=) --> DONE
+	- Action 382269419013993 : Contact (http://192.168.56.105/index.php/contact) --> DONE
+	- Action 382269419034661 : Contact publisher (http://192.168.56.105/index.php/contact/1-contact-publisher) --> DONE
+	- Action 382269419054387 : Travel (http://192.168.56.105/index.php/travel) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269418616083 : access the index http://192.168.56.105/], [Action 382269418645701 : click on /], [Action 382269418662794 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269418682175 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269418720633 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269418750418 : click on http://192.168.56.105/index.php/sport], [Action 382269418768383 : click on http://192.168.56.105/index.php/travel], [Action 382269418787787 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269418806706 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269418826031 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269418857861 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269418881254 : click on http://192.168.56.105/index.php/culture], [Action 382269418900448 : click on http://192.168.56.105/index.php/component/tags/tag/joomla], [Action 382269418927574 : click on http://192.168.56.105/index.php/2-uncategorised/1-getting-started], [Action 382269418992681 : click on http://192.168.56.105/index.php/2-uncategorised?layout=], [Action 382269419013993 : click on http://192.168.56.105/index.php/contact], [Action 382269419034661 : click on http://192.168.56.105/index.php/contact/1-contact-publisher], [Action 382269419054387 : click on http://192.168.56.105/index.php/travel]]
+ [Last input processed: [[Action 382269418616083 : access the index http://192.168.56.105/], [Action 382269418645701 : click on /], [Action 382269418662794 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269418682175 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269418720633 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269418750418 : click on http://192.168.56.105/index.php/sport], [Action 382269418768383 : click on http://192.168.56.105/index.php/travel], [Action 382269418787787 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269418806706 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269418826031 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269418857861 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269418881254 : click on http://192.168.56.105/index.php/culture], [Action 382269418900448 : click on http://192.168.56.105/index.php/component/tags/tag/joomla], [Action 382269418927574 : click on http://192.168.56.105/index.php/2-uncategorised/1-getting-started], [Action 382269418992681 : click on http://192.168.56.105/index.php/2-uncategorised?layout=], [Action 382269419013993 : click on http://192.168.56.105/index.php/contact], [Action 382269419034661 : click on http://192.168.56.105/index.php/contact/1-contact-publisher], [Action 382269419054387 : click on http://192.168.56.105/index.php/travel]] position: 17] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 46243
+Only local connections are allowed.
+Mar 18, 2020 12:40:41 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269419950320 : index (http://192.168.56.105/) --> DONE
+	- Action 382269419970595 :  (/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/) --> DONE
+	- Action 382269419988608 : log in with editor1 (http://192.168.56.105/index.php) --> DONE
+	- Action 382269420007572 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	- Action 382269420026847 : Transfer news: Done deals in transfer window in October (http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october) --> DONE
+	- Action 382269420043879 : Sport (http://192.168.56.105/index.php/sport) --> DONE
+	- Action 382269420058607 : Travel (http://192.168.56.105/index.php/travel) --> DONE
+	- Action 382269420075924 : Germanys tiny geographic oddity (http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity) --> DONE
+	- Action 382269420094246 : Facebook's Libra could be misused, says treasury chief Mnuchin (http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin) --> DONE
+	- Action 382269420110348 : Prev (http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency) --> DONE
+	- Action 382269420132367 : The five most creative cities in the world (http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world) --> DONE
+	- Action 382269420155208 : Culture (http://192.168.56.105/index.php/culture) --> DONE
+	- Action 382269420171819 : Joomla (http://192.168.56.105/index.php/component/tags/tag/joomla) --> DONE
+	- Action 382269420189743 : Getting Started (http://192.168.56.105/index.php/2-uncategorised/1-getting-started) --> DONE
+	- Action 382269420207730 : Log in (http://192.168.56.105/index.php/2-uncategorised/)	  updateUrlMap: {382269408811623=382269408847065, 382269420189743=382269420207730}
+ --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269419950320 : access the index http://192.168.56.105/], [Action 382269419970595 : click on /], [Action 382269419988608 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269420007572 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269420026847 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269420043879 : click on http://192.168.56.105/index.php/sport], [Action 382269420058607 : click on http://192.168.56.105/index.php/travel], [Action 382269420075924 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269420094246 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269420110348 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269420132367 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269420155208 : click on http://192.168.56.105/index.php/culture], [Action 382269420171819 : click on http://192.168.56.105/index.php/component/tags/tag/joomla], [Action 382269420189743 : click on http://192.168.56.105/index.php/2-uncategorised/1-getting-started], [Action 382269420207730 : click on http://192.168.56.105/index.php/2-uncategorised/]]
+ [Last input processed: [[Action 382269419950320 : access the index http://192.168.56.105/], [Action 382269419970595 : click on /], [Action 382269419988608 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269420007572 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269420026847 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269420043879 : click on http://192.168.56.105/index.php/sport], [Action 382269420058607 : click on http://192.168.56.105/index.php/travel], [Action 382269420075924 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269420094246 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269420110348 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269420132367 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269420155208 : click on http://192.168.56.105/index.php/culture], [Action 382269420171819 : click on http://192.168.56.105/index.php/component/tags/tag/joomla], [Action 382269420189743 : click on http://192.168.56.105/index.php/2-uncategorised/1-getting-started], [Action 382269420207730 : click on http://192.168.56.105/index.php/2-uncategorised/]] position: 14] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 46678
+Only local connections are allowed.
+Mar 18, 2020 12:41:31 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269420878579 : index (http://192.168.56.105/) --> DONE
+	- Action 382269420896474 :  (/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/) --> DONE
+	- Action 382269420915855 : log in with editor1 (http://192.168.56.105/index.php) --> DONE
+	- Action 382269420934990 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	- Action 382269420951756 : Transfer news: Done deals in transfer window in October (http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october) --> DONE
+	- Action 382269420970441 : Sport (http://192.168.56.105/index.php/sport) --> DONE
+	- Action 382269420995857 : Travel (http://192.168.56.105/index.php/travel) --> DONE
+	- Action 382269421015425 : Germanys tiny geographic oddity (http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity) --> DONE
+	- Action 382269421037233 : Facebook's Libra could be misused, says treasury chief Mnuchin (http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin) --> DONE
+	- Action 382269421057261 : Prev (http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency) --> DONE
+	- Action 382269421075635 : The five most creative cities in the world (http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world) --> DONE
+	- Action 382269421094270 : Culture (http://192.168.56.105/index.php/culture) --> DONE
+	- Action 382269421110790 : Joomla (http://192.168.56.105/index.php/component/tags/tag/joomla) --> DONE
+	- Action 382269421130185 : 20 (http://192.168.56.105/index.php/component/tags/tag/joomla) --> DONE
+	- Action 382269421146320 : Log in (http://192.168.56.105/index.php/component/tags/) --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269420878579 : access the index http://192.168.56.105/], [Action 382269420896474 : click on /], [Action 382269420915855 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269420934990 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269420951756 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269420970441 : click on http://192.168.56.105/index.php/sport], [Action 382269420995857 : click on http://192.168.56.105/index.php/travel], [Action 382269421015425 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269421037233 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269421057261 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269421075635 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269421094270 : click on http://192.168.56.105/index.php/culture], [Action 382269421110790 : click on http://192.168.56.105/index.php/component/tags/tag/joomla], [Action 382269421130185 : click on http://192.168.56.105/index.php/component/tags/tag/joomla], [Action 382269421146320 : click on http://192.168.56.105/index.php/component/tags/]]
+ [Last input processed: [[Action 382269420878579 : access the index http://192.168.56.105/], [Action 382269420896474 : click on /], [Action 382269420915855 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269420934990 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269420951756 : click on http://192.168.56.105/index.php/sport/4-transfer-news-done-deals-in-transfer-window-in-october], [Action 382269420970441 : click on http://192.168.56.105/index.php/sport], [Action 382269420995857 : click on http://192.168.56.105/index.php/travel], [Action 382269421015425 : click on http://192.168.56.105/index.php/travel/5-germanys-tiny-geographic-oddity], [Action 382269421037233 : click on http://192.168.56.105/index.php/news/2-facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin], [Action 382269421057261 : click on http://192.168.56.105/index.php/news/3-libra-paypal-first-to-drop-out-of-facebook-cryptocurrency], [Action 382269421075635 : click on http://192.168.56.105/index.php/culture/6-the-five-most-creative-cities-in-the-world], [Action 382269421094270 : click on http://192.168.56.105/index.php/culture], [Action 382269421110790 : click on http://192.168.56.105/index.php/component/tags/tag/joomla], [Action 382269421130185 : click on http://192.168.56.105/index.php/component/tags/tag/joomla], [Action 382269421146320 : click on http://192.168.56.105/index.php/component/tags/]] position: 14] [Last equal: null]
+Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 47162
+Only local connections are allowed.
+Mar 18, 2020 12:42:21 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+	- Action 382269421947162 : index (http://192.168.56.105/) --> DONE
+	- Action 382269421974243 :  (/)		!!! Cannot get id for the action: 
+		!!! NOT FOUND: xpath 
+		--> access directly the element URL (/) --> DONE
+	- Action 382269421994280 : log in with editor1 (http://192.168.56.105/index.php) --> DONE
+	- Action 382269422012612 : Forgot your password? (http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101) --> DONE
+	- Action 382269422030912 : Log in (http://192.168.56.105/index.php/component/users/)	  updateUrlMap: {382269422012612=382269422030912, 382269408811623=382269408847065, 382269420189743=382269420207730}
+ --> DONE
+	Times of automatic confirmation: 0
+Executed with: Input(1): Input(1)=[[Action 382269421947162 : access the index http://192.168.56.105/], [Action 382269421974243 : click on /], [Action 382269421994280 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269422012612 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269422030912 : click on http://192.168.56.105/index.php/component/users/]]
+ [Last input processed: [[Action 382269421947162 : access the index http://192.168.56.105/], [Action 382269421974243 : click on /], [Action 382269421994280 : log in with (editor1,editor1Pass) at http://192.168.56.105/index.php], [Action 382269422012612 : click on http://192.168.56.105/index.php/component/users/?view=reset&Itemid=101], [Action 382269422030912 : click on http://192.168.56.105/index.php/component/users/]] position: 4] [Last equal: null]
+java.lang.NullPointerException
+!!!!IGNORING EXCEPTION, sleep
+	at smrl.mr.crawljax.WebProcessor.isLogin(WebProcessor.java:2548)
+	at smrl.mr.crawljax.WebOperationsProvider.isLogin(WebOperationsProvider.java:202)
+	at smrl.mr.language.Operations.isLogin(Operations.java:403)
+	at smrl.mr.language.actions.StandardAction.toString(StandardAction.java:232)
+	at java.lang.String.valueOf(String.java:2994)
+	at java.lang.StringBuilder.append(StringBuilder.java:131)
+	at java.util.AbstractCollection.toString(AbstractCollection.java:462)
+	at smrl.mr.crawljax.WebInputCrawlJax.toString(WebInputCrawlJax.java:200)
+	at smrl.mr.language.MR.setLastInputProcessed(MR.java:800)
+	at smrl.mr.language.Operations.Output(Operations.java:698)
+	at smrl.mr.language.DBPopulator.mr(DBPopulator.java:21)
+	at smrl.mr.language.MR.iterateMR(MR.java:229)
+	at smrl.mr.language.MR.iterateMR(MR.java:298)
+	at smrl.mr.language.MR.run(MR.java:199)
+	at smrl.mr.language.OutputDBFiller.main(OutputDBFiller.java:64)
+!!!!IGNORING EXCEPTION, go ahead
+Exception in thread "main" java.lang.NullPointerException
+	at smrl.mr.crawljax.WebProcessor.isLogin(WebProcessor.java:2548)
+	at smrl.mr.crawljax.WebOperationsProvider.isLogin(WebOperationsProvider.java:202)
+	at smrl.mr.language.Operations.isLogin(Operations.java:403)
+	at smrl.mr.language.actions.StandardAction.toString(StandardAction.java:232)
+	at java.lang.String.valueOf(String.java:2994)
+	at java.lang.StringBuilder.append(StringBuilder.java:131)
+	at java.util.AbstractCollection.toString(AbstractCollection.java:462)
+	at smrl.mr.crawljax.WebInputCrawlJax.toString(WebInputCrawlJax.java:200)
+	at java.lang.String.valueOf(String.java:2994)
+	at java.lang.StringBuilder.append(StringBuilder.java:131)
+	at java.util.HashMap$Node.toString(HashMap.java:294)
+	at smrl.mr.language.MR.extractExecutionInformation(MR.java:428)
+	at smrl.mr.language.MR.iterateMR(MR.java:253)
+	at smrl.mr.language.MR.iterateMR(MR.java:298)
+	at smrl.mr.language.MR.run(MR.java:199)
+	at smrl.mr.language.OutputDBFiller.main(OutputDBFiller.java:64)

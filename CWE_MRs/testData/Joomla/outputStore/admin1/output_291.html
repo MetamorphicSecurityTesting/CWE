@@ -1,0 +1,491 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb" dir="ltr">
+ <head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta charset="utf-8"> 
+  <meta name="description" content="Joomla 3.8.7 under test"> 
+  <meta name="generator" content="Joomla! - Open Source Content Management"> 
+  <title>Control Panel - SUT - Administration</title>       
+  <!--[if lte IE 9]><script src="/media/system/js/polyfill.filter.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+  <!--[if lt IE 9]><script src="/media/jui/js/html5.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+ </head> 
+ <body class="*" data-basepath=""> 
+  <!-- Top Navigation --> 
+  <nav class="*"> 
+   <div class="*"> 
+    <div class="*"> 
+     <a href="#" class="*" data-toggle="collapse" data-target=".nav-collapse"> <span class="*">Toggle Navigation</span> <span class="*"></span> <span class="*"></span> <span class="*"></span> </a> 
+     <!-- skip to content --> 
+     <a class="*" href="#skiptarget">Skip to Main Content</a> 
+     <a class="*" href="/administrator/index.php"> <span class="*"></span> 
+      <div class="*">
+        Control Panel 
+      </div> </a> 
+     <a class="*" href="http://192.168.56.105/" title="Preview SUT" target="_blank">SUT <span class="*"></span></a> 
+     <div class="*"> 
+      <ul id="menu" class="*"> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">System <span class="*"></span></a>
+        <ul class="*"> 
+         <li><a class="*" href="index.php">Control Panel</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_checkin">Global Check-in</a></li> 
+         <li><a class="*" href="index.php?option=com_cache">Clear Cache</a></li> 
+         <li><a class="*" href="index.php?option=com_cache&amp;view=purge">Clear Expired Cache</a></li> 
+         <li class="*"><span></span></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Users <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=users">Manage</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=user.add">Add New User</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=groups">Groups</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=group.add">Add New Group</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=levels">Access Levels</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=level.add">Add New Access Level</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;context=com_users.user">Fields</a></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;view=groups&amp;context=com_users.user">Field Groups</a></li> 
+         <li class="*"><span></span></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=notes">User Notes</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=note.add">Add User Note</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_categories&amp;view=categories&amp;extension=com_users">User Note Categories</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_categories&amp;task=category.add&amp;extension=com_users">Add New Category</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_users&amp;view=mail">Mass Mail Users</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Menus <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_menus&amp;view=menus">Manage</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_menus&amp;view=menu&amp;layout=edit">Add New Menu</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_menus&amp;view=items&amp;menutype=">All Menu Items</a></li> 
+         <li class="*"><span>Site</span></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_menus&amp;view=items&amp;menutype=mainmenu">Main Menu <span class="*"></span></a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_menus&amp;view=item&amp;layout=edit&amp;menutype=mainmenu">Add New Menu Item</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_menus&amp;view=items&amp;menutype=usermenu">User Menu </a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_menus&amp;view=item&amp;layout=edit&amp;menutype=usermenu">Add New Menu Item</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Content <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_content">Articles</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_content&amp;task=article.add">Add New Article</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_categories&amp;extension=com_content">Categories</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_categories&amp;task=category.add&amp;extension=com_content">Add New Category</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_content&amp;view=featured">Featured Articles</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;context=com_content.article">Fields</a></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;view=groups&amp;context=com_content.article">Field Groups</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_media">Media</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Components <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_banners">Banners</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_banners">Banners</a></li> 
+           <li><a class="*" href="index.php?option=com_categories&amp;extension=com_banners">Categories</a></li> 
+           <li><a class="*" href="index.php?option=com_banners&amp;view=clients">Clients</a></li> 
+           <li><a class="*" href="index.php?option=com_banners&amp;view=tracks">Tracks</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_contact">Contacts</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_contact">Contacts</a></li> 
+           <li><a class="*" href="index.php?option=com_categories&amp;extension=com_contact">Categories</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_joomlaupdate">Joomla! Update</a></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_messages">Messaging</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_messages&amp;task=message.add">New Private Message</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_associations">Multilingual Associations</a></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_newsfeeds">News Feeds</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_newsfeeds">Feeds</a></li> 
+           <li><a class="*" href="index.php?option=com_categories&amp;extension=com_newsfeeds">Categories</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_postinstall">Post-installation Messages</a></li> 
+         <li><a class="*" href="index.php?option=com_redirect">Redirects</a></li> 
+         <li><a class="*" href="index.php?option=com_search">Search</a></li> 
+         <li><a class="*" href="index.php?option=com_finder">Smart Search</a></li> 
+         <li><a class="*" href="index.php?option=com_tags">Tags</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Extensions <span class="*"></span></a>
+        <ul class="*"> 
+         <li><a class="*" href="index.php?option=com_modules">Modules</a></li> 
+         <li><a class="*" href="index.php?option=com_plugins">Plugins</a></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_templates">Templates</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_templates&amp;view=styles">Styles</a></li> 
+           <li><a class="*" href="index.php?option=com_templates&amp;view=templates">Templates</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_languages">Language(s)</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_languages&amp;view=installed">Installed</a></li> 
+           <li><a class="*" href="index.php?option=com_languages&amp;view=languages">Content Languages</a></li> 
+           <li><a class="*" href="index.php?option=com_languages&amp;view=overrides">Overrides</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Help <span class="*"></span></a>
+        <ul class="*"> 
+         <li><a class="*" href="index.php?option=com_admin&amp;view=help">Joomla! Help</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="https://forum.joomla.org" target="_blank">Official Support Forum</a></li> 
+         <li><a class="*" href="index.php?option=com_admin&amp;view=help&amp;layout=langforum" target="_blank">Official Language Forums</a></li> 
+         <li><a class="*" href="https://docs.joomla.org" target="_blank">Documentation Wiki</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="https://extensions.joomla.org" target="_blank">Joomla! Extensions</a></li> 
+         <li><a class="*" href="https://community.joomla.org/translations.html" target="_blank">Joomla! Translations</a></li> 
+         <li><a class="*" href="https://resources.joomla.org" target="_blank">Joomla! Resources</a></li> 
+         <li><a class="*" href="https://community.joomla.org" target="_blank">Community Portal</a></li> 
+         <li><a class="*" href="https://developer.joomla.org/security-centre.html" target="_blank">Security Centre</a></li> 
+         <li><a class="*" href="https://developer.joomla.org" target="_blank">Developer Resources</a></li> 
+         <li><a class="*" href="https://joomla.stackexchange.com" target="_blank">Stack Exchange</a></li> 
+         <li><a class="*" href="https://community.joomla.org/the-joomla-shop.html" target="_blank">Joomla! Shop</a></li> 
+        </ul> </li> 
+      </ul> 
+      <ul id="nav-empty" class="*"></ul> 
+      <ul class="*"> 
+       <li class="*"> <a class="*" data-toggle="dropdown" href="#"><span class="*"></span> <span class="*"></span> 
+         <div class="*">
+           User Menu 
+         </div> </a> 
+        <ul class="*"> 
+         <li> <span> <span class="*"></span> <strong>Administrator 1</strong> </span> </li> 
+         <li class="*"></li> 
+         <li> <a href="index.php?option=com_admin&amp;task=profile.edit&amp;id=720">Edit Account</a> </li> 
+         <li class="*"></li> 
+         <li class="*"> <a href="/administrator/index.php?option=com_login&amp;task=logout&amp;49cb83b8231b0da1faac5489035d8bf2=1">Logout</a> </li> 
+        </ul> </li> 
+      </ul> 
+      <a class="*" href="http://192.168.56.105/" title="Preview SUT" target="_blank">SUT <span class="*"></span></a> 
+     </div> 
+     <!--/.nav-collapse --> 
+    </div> 
+   </div> 
+  </nav> 
+  <!-- Header --> 
+  <header class="*"> 
+   <div class="*"> 
+    <img src="/administrator/templates/isis/images/logo.png" class="*" alt="SUT"> 
+   </div> 
+   <div class="*"> 
+    <h1 class="*"> <span class="*" aria-hidden="true"></span> Control Panel</h1> 
+   </div> 
+  </header> 
+  <div style="margin-bottom: 20px"> 
+   <!-- target for skip to content link --> 
+   <a id="skiptarget" class="*">Main content begins here</a> 
+  </div> 
+  <!-- container-fluid --> 
+  <div class="*"> 
+   <section id="content"> 
+    <!-- Begin Content --> 
+    <div class="*"> 
+     <div class="*"> 
+      <div id="system-message-container"> 
+      </div> 
+      <div class="*"> 
+       <div class="*"> 
+        <div class="*"> 
+         <div class="*"> 
+          <div class="*">
+           <h2 class="*">Content</h2> 
+           <ul class="*"> 
+            <li> <a href="/administrator/index.php?option=com_content&amp;task=article.add"> <span class="*" aria-hidden="true"></span> <span class="*">New Article</span> </a> </li> 
+            <li> <a href="/administrator/index.php?option=com_content"> <span class="*" aria-hidden="true"></span> <span class="*">Articles</span> </a> </li> 
+            <li> <a href="/administrator/index.php?option=com_categories&amp;extension=com_content"> <span class="*" aria-hidden="true"></span> <span class="*">Categories</span> </a> </li> 
+            <li> <a href="/administrator/index.php?option=com_media"> <span class="*" aria-hidden="true"></span> <span class="*">Media</span> </a> </li> 
+           </ul> 
+           <h2 class="*">Structure</h2> 
+           <ul class="*"> 
+            <li> <a href="/administrator/index.php?option=com_menus"> <span class="*" aria-hidden="true"></span> <span class="*">Menu(s)</span> </a> </li> 
+            <li> <a href="/administrator/index.php?option=com_modules"> <span class="*" aria-hidden="true"></span> <span class="*">Modules</span> </a> </li> 
+           </ul> 
+           <h2 class="*">Users</h2> 
+           <ul class="*"> 
+            <li> <a href="/administrator/index.php?option=com_users"> <span class="*" aria-hidden="true"></span> <span class="*">Users</span> </a> </li> 
+           </ul> 
+           <h2 class="*">Configuration</h2> 
+           <ul class="*"> 
+            <li> <a href="/administrator/index.php?option=com_templates"> <span class="*" aria-hidden="true"></span> <span class="*">Templates</span> </a> </li> 
+            <li> <a href="/administrator/index.php?option=com_languages"> <span class="*" aria-hidden="true"></span> <span class="*">Language(s)</span> </a> </li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="*"> 
+        <div class="*"> 
+         <div class="*">
+          <h2 class="*">Logged-in Users</h2>
+          <div class="*"> 
+           <div class="*"> 
+            <div class="*"> 
+             <strong class="*"> <a href="/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=720" class="*" title="" data-original-title="ID : 720"> Administrator 1</a> </strong> 
+             <small class="*" title="" data-original-title="Location"> Administration </small> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Last Activity"> 
+              <span class="*" aria-hidden="true"></span> 2020-03-20 11:21 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <a title="" href="/administrator/index.php?option=com_login&amp;task=logout&amp;uid=719&amp;49cb83b8231b0da1faac5489035d8bf2=1" class="*" data-original-title="Logout"> <span class="*" aria-hidden="true"><span class="*">Log out</span></span> </a> 
+             <strong class="*"> <a href="/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=719" class="*" title="" data-original-title="ID : 719"> Super User</a> </strong> 
+             <small class="*" title="" data-original-title="Location"> Site </small> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Last Activity"> 
+              <span class="*" aria-hidden="true"></span> 2020-03-20 11:10 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <strong class="*"> <a href="/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=720" class="*" title="" data-original-title="ID : 720"> Administrator 1</a> </strong> 
+             <small class="*" title="" data-original-title="Location"> Administration </small> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Last Activity"> 
+              <span class="*" aria-hidden="true"></span> 2020-03-20 11:20 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <a title="" href="/administrator/index.php?option=com_login&amp;task=logout&amp;uid=719&amp;49cb83b8231b0da1faac5489035d8bf2=1" class="*" data-original-title="Logout"> <span class="*" aria-hidden="true"><span class="*">Log out</span></span> </a> 
+             <strong class="*"> <a href="/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=719" class="*" title="" data-original-title="ID : 719"> Super User</a> </strong> 
+             <small class="*" title="" data-original-title="Location"> Site </small> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Last Activity"> 
+              <span class="*" aria-hidden="true"></span> 2020-03-20 11:09 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <strong class="*"> <a href="/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=720" class="*" title="" data-original-title="ID : 720"> Administrator 1</a> </strong> 
+             <small class="*" title="" data-original-title="Location"> Administration </small> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Last Activity"> 
+              <span class="*" aria-hidden="true"></span> 2020-03-20 11:19 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div>
+        </div>
+        <div class="*">
+         <div class="*">
+          <h2 class="*">Popular Articles</h2>
+          <div class="*"> 
+           <div class="*"> 
+            <div class="*"> 
+             <span class="*" title="" data-original-title="Hits">49</span> 
+             <a class="*" title="" data-original-title="<strong>Checked out</strong><br />Administrator 1<br />Friday, 20 March 2020<br />11:21"><span class="*"></span></a> 
+             <strong class="*" title="Getting Started"> <a href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=1"> Getting Started</a> </strong> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Created Date"> 
+              <span class="*" aria-hidden="true"></span> 2019-10-06 22:44 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <span class="*" title="" data-original-title="Hits">44</span> 
+             <a class="*" title="" data-original-title="<strong>Checked out</strong><br />Super User<br />Friday, 20 March 2020<br />11:17"><span class="*"></span></a> 
+             <strong class="*" title="The five most creative cities in the world"> <a href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=6"> The five most creative cities in the world</a> </strong> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Created Date"> 
+              <span class="*" aria-hidden="true"></span> 2019-10-07 12:32 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <span class="*" title="" data-original-title="Hits">13</span> 
+             <a class="*" title="" data-original-title="<strong>Checked out</strong><br />Author 1<br />Friday, 18 October 2019<br />12:19"><span class="*"></span></a> 
+             <strong class="*" title="Facebook's Libra could be misused, says treasury chief Mnuchin"> <a href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=2"> Facebook's Libra could be misused, says treasury chief Mnuchin</a> </strong> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Created Date"> 
+              <span class="*" aria-hidden="true"></span> 2019-10-07 11:46 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <span class="*" title="" data-original-title="Hits">11</span> 
+             <a class="*" title="" data-original-title="<strong>Checked out</strong><br />Author 1<br />Friday, 18 October 2019<br />13:14"><span class="*"></span></a> 
+             <strong class="*" title="Libra: PayPal first to drop out of Facebook cryptocurrency"> <a href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=3"> Libra: PayPal first to drop out of Facebook cryptocurrency</a> </strong> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Created Date"> 
+              <span class="*" aria-hidden="true"></span> 2019-10-07 11:51 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <span class="*" title="" data-original-title="Hits">10</span> 
+             <a class="*" title="" data-original-title="<strong>Checked out</strong><br />Super User<br />Friday, 20 March 2020<br />11:17"><span class="*"></span></a> 
+             <strong class="*" title="Transfer news: Done deals in transfer window in October"> <a href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=4"> Transfer news: Done deals in transfer window in October</a> </strong> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Created Date"> 
+              <span class="*" aria-hidden="true"></span> 2019-10-07 12:25 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div>
+        </div>
+        <div class="*">
+         <div class="*">
+          <h3 class="*">Site Information</h3>
+          <ul class="*"> 
+           <li><span class="*" title="OS" aria-hidden="true"></span> OS Linux u</li> 
+           <li><span class="*" title="PHP" aria-hidden="true"></span> PHP 7.2.19-0ubuntu0.18.04.2</li> 
+           <li><span class="*" title="MySQLi" aria-hidden="true"></span> MySQLi 5.7.27-0ubuntu0.18.04.1</li> 
+           <li><span class="*" title="Time" aria-hidden="true"></span> Time 11:22</li> 
+           <li><span class="*" title="Caching" aria-hidden="true"></span> Caching Disabled</li> 
+           <li><span class="*" title="Gzip" aria-hidden="true"></span> Gzip Disabled</li> 
+           <li><span class="*" title="Users" aria-hidden="true"></span> Users 7</li> 
+           <li><span class="*" title="Articles" aria-hidden="true"></span> Articles 6</li> 
+          </ul> 
+         </div>
+        </div>
+        <div class="*">
+         <div class="*">
+          <h2 class="*">Recently Added Articles</h2>
+          <div class="*"> 
+           <div class="*"> 
+            <div class="*"> 
+             <a class="*" title="" data-original-title="Published and is Current.<br />Start: 2019-10-07 12:32"><span class="*"></span></a> 
+             <a class="*" title="" data-original-title="<strong>Checked out</strong><br />Super User<br />Friday, 20 March 2020<br />11:17"><span class="*"></span></a> 
+             <strong class="*" title="The five most creative cities in the world"> <a href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=6"> The five most creative cities in the world</a> </strong> 
+             <small class="*" title="" data-original-title="Created By"> Author 2 </small> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Created Date"> 
+              <span class="*" aria-hidden="true"></span> 2019-10-07 12:32 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <a class="*" title="" data-original-title="Published and is Current.<br />Start: 2019-10-07 12:29"><span class="*"></span></a> 
+             <strong class="*" title="Germanys tiny geographic oddity"> <a href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=5"> Germanys tiny geographic oddity</a> </strong> 
+             <small class="*" title="" data-original-title="Created By"> Author 2 </small> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Created Date"> 
+              <span class="*" aria-hidden="true"></span> 2019-10-07 12:29 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <a class="*" title="" data-original-title="Published and is Current.<br />Start: 2019-10-07 12:26"><span class="*"></span></a> 
+             <a class="*" title="" data-original-title="<strong>Checked out</strong><br />Super User<br />Friday, 20 March 2020<br />11:17"><span class="*"></span></a> 
+             <strong class="*" title="Transfer news: Done deals in transfer window in October"> <a href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=4"> Transfer news: Done deals in transfer window in October</a> </strong> 
+             <small class="*" title="" data-original-title="Created By"> Author 2 </small> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Created Date"> 
+              <span class="*" aria-hidden="true"></span> 2019-10-07 12:25 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <a class="*" title="" data-original-title="Published and is Current.<br />Start: 2019-10-07 12:08"><span class="*"></span></a> 
+             <a class="*" title="" data-original-title="<strong>Checked out</strong><br />Author 1<br />Friday, 18 October 2019<br />13:14"><span class="*"></span></a> 
+             <strong class="*" title="Libra: PayPal first to drop out of Facebook cryptocurrency"> <a href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=3"> Libra: PayPal first to drop out of Facebook cryptocurrency</a> </strong> 
+             <small class="*" title="" data-original-title="Created By"> Author 1 </small> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Created Date"> 
+              <span class="*" aria-hidden="true"></span> 2019-10-07 11:51 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <a class="*" title="" data-original-title="Published and is Current.<br />Start: 2019-10-07 11:50"><span class="*"></span></a> 
+             <a class="*" title="" data-original-title="<strong>Checked out</strong><br />Author 1<br />Friday, 18 October 2019<br />12:19"><span class="*"></span></a> 
+             <strong class="*" title="Facebook's Libra could be misused, says treasury chief Mnuchin"> <a href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=2"> Facebook's Libra could be misused, says treasury chief Mnuchin</a> </strong> 
+             <small class="*" title="" data-original-title="Created By"> Author 1 </small> 
+            </div> 
+            <div class="*"> 
+             <div class="*" title="" data-original-title="Created Date"> 
+              <span class="*" aria-hidden="true"></span> 2019-10-07 11:46 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <!-- End Content --> 
+   </section> 
+  </div> 
+  <!-- Begin Status Module --> 
+  <div id="status" class="*"> 
+   <div class="*"> 
+    <div class="*"> 
+     <p> Joomla! 3.8.7 &nbsp;—&nbsp; © 2020 SUT </p> 
+    </div> 
+    <div class="*">
+     <a href="http://192.168.56.105/" target="_blank"><span class="*" aria-hidden="true"></span>View Site</a>
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <span class="*">29</span>Visitors
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <span class="*">22</span>Administrators
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <a href="/administrator/index.php?option=com_messages"><span class="*">0</span>Messages</a>
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <a href="/administrator/index.php?option=com_login&amp;task=logout&amp;49cb83b8231b0da1faac5489035d8bf2=1"><span class="*" aria-hidden="true"></span>Log out</a>
+    </div> 
+   </div> 
+  </div> 
+  <!-- End Status Module --> 
+ </body>
+</html>

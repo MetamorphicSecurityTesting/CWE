@@ -1,0 +1,94 @@
+{
+  "path2": [
+    {
+      "url": "http://192.168.56.105/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/FORM[1]/DIV[1]/DIV[4]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{atusa\u003did1037324811_0, class\u003dbtn btn-primary login-button, name\u003dSubmit, tabindex\u003d0, type\u003dsubmit}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/",
+      "elementURL": "http://192.168.56.105/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "modlgn-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "modlgn-passwd"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "modlgn-remember"
+          },
+          "type": "checkbox",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "TagSU",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/UL[1]/LI[2]/A[1]",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTagSU, attributes\u003d{href\u003d/index.php/component/tags/tag/tagsu}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/",
+      "elementURL": "http://192.168.56.105/index.php/component/tags/tag/tagsu",
+      "method": "get",
+      "formInputs": []
+    },
+    {
+      "text": "All tags",
+      "id": "",
+      "element": "",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/index.php/component/tags/tag/tagsu",
+      "elementURL": "http://192.168.56.105/index.php/component/tags/",
+      "method": "get",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "filter-search"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "xpath",
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/MAIN[1]/DIV[3]/FORM[1]/FIELDSET[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/INPUT[1]"
+          },
+          "type": "text",
+          "values": []
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "limit"
+          },
+          "type": "select",
+          "values": []
+        }
+      ]
+    }
+  ]
+}

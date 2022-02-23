@@ -1,0 +1,184 @@
+{
+  "path1": [
+    {
+      "url": "http://192.168.56.105/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/FORM[1]/DIV[1]/DIV[4]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{atusa\u003did1037324811_0, class\u003dbtn btn-primary login-button, name\u003dSubmit, tabindex\u003d0, type\u003dsubmit}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/",
+      "elementURL": "http://192.168.56.105/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "modlgn-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "modlgn-passwd"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "modlgn-remember"
+          },
+          "type": "checkbox",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "Tags",
+      "id": "xpath /html/body/div/div/nav/div[2]/ul/li[7]/a",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTags, attributes\u003d{href\u003d/index.php/tags}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/",
+      "elementURL": "http://192.168.56.105/index.php/tags",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path2": [
+    {
+      "url": "http://192.168.56.105/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/FORM[1]/DIV[1]/DIV[4]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{atusa\u003did1037324811_0, class\u003dbtn btn-primary login-button, name\u003dSubmit, tabindex\u003d0, type\u003dsubmit}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/",
+      "elementURL": "http://192.168.56.105/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "modlgn-username"
+          },
+          "type": "text",
+          "values": [
+            "admin"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "modlgn-passwd"
+          },
+          "type": "password",
+          "values": [
+            "adminPass"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "modlgn-remember"
+          },
+          "type": "checkbox",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "Submit an Article",
+      "id": "xpath /html/body/div/div/div/div/div[3]/ul/li[2]/a",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dSubmit an Article, attributes\u003d{href\u003d/index.php/submit-an-article}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/",
+      "elementURL": "http://192.168.56.105/index.php/submit-an-article",
+      "method": "get",
+      "formInputs": []
+    }
+    ,
+    {
+      "text": "Publishing",
+      "id": "xpath /html/body/div[1]/div/div/main/div[3]/form/fieldset/ul/li[4]/a",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dPublishing, attributes\u003d{href\u003d#publishing}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/index.php/submit-an-article",
+      "elementURL": "http://192.168.56.105/index.php/submit-an-article#publishing",
+      "method": "get",
+      "formInputs": []
+    }
+  ],
+  "path3": [
+    {
+      "url": "http://192.168.56.105/",
+      "eventType": "index",
+      "currentURL": "",
+      "method": "get"
+    },
+    {
+      "text": "Log in",
+      "id": "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/FORM[1]/DIV[1]/DIV[4]/DIV[1]/BUTTON[1]",
+      "element": "Element{node\u003d[BUTTON: null], tag\u003dBUTTON, text\u003dLog in, attributes\u003d{atusa\u003did1037324811_0, class\u003dbtn btn-primary login-button, name\u003dSubmit, tabindex\u003d0, type\u003dsubmit}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/",
+      "elementURL": "http://192.168.56.105/index.php",
+      "method": "post",
+      "formInputs": [
+        {
+          "identification": {
+            "how": "id",
+            "value": "modlgn-username"
+          },
+          "type": "text",
+          "values": [
+            "author2"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "modlgn-passwd"
+          },
+          "type": "password",
+          "values": [
+            "author2Pass"
+          ]
+        },
+        {
+          "identification": {
+            "how": "id",
+            "value": "modlgn-remember"
+          },
+          "type": "checkbox",
+          "values": []
+        }
+      ]
+    },
+    {
+      "text": "News",
+      "id": "xpath /html/body/div/div/nav/div[2]/ul/li[2]/a",
+      "element": "Element{node\u003d[A: null], tag\u003dA, text\u003dTags, attributes\u003d{href\u003d/index.php/news}}",
+      "eventType": "click",
+      "currentURL": "http://192.168.56.105/",
+      "elementURL": "http://192.168.56.105/index.php/news",
+      "method": "get",
+      "formInputs": []
+    }
+  ]
+}

@@ -1,0 +1,768 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb" dir="ltr">
+ <head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta charset="utf-8"> 
+  <meta name="description" content="Joomla 3.8.7 under test"> 
+  <meta name="generator" content="Joomla! - Open Source Content Management"> 
+  <title>Articles - SUT - Administration</title>          
+  <!--[if lte IE 9]><script src="/media/system/js/polyfill.filter.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->        
+  <!--[if lt IE 9]><script src="/media/system/js/html5fallback.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->   
+  <!--[if lt IE 9]><script src="/media/jui/js/html5.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+ </head> 
+ <body class="*" data-basepath=""> 
+  <!-- Top Navigation --> 
+  <nav class="*"> 
+   <div class="*"> 
+    <div class="*"> 
+     <a href="#" class="*" data-toggle="collapse" data-target=".nav-collapse"> <span class="*">Toggle Navigation</span> <span class="*"></span> <span class="*"></span> <span class="*"></span> </a> 
+     <!-- skip to content --> 
+     <a class="*" href="#skiptarget">Skip to Main Content</a> 
+     <a class="*" href="/administrator/index.php"> <span class="*"></span> 
+      <div class="*">
+        Control Panel 
+      </div> </a> 
+     <a class="*" href="http://192.168.56.105/" title="Preview SUT" target="_blank">SUT <span class="*"></span></a> 
+     <div class="*"> 
+      <ul id="menu" class="*"> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">System <span class="*"></span></a>
+        <ul class="*"> 
+         <li><a class="*" href="index.php">Control Panel</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_checkin">Global Check-in</a></li> 
+         <li><a class="*" href="index.php?option=com_cache">Clear Cache</a></li> 
+         <li><a class="*" href="index.php?option=com_cache&amp;view=purge">Clear Expired Cache</a></li> 
+         <li class="*"><span></span></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Users <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=users">Manage</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=user.add">Add New User</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=groups">Groups</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=group.add">Add New Group</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=levels">Access Levels</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=level.add">Add New Access Level</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;context=com_users.user">Fields</a></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;view=groups&amp;context=com_users.user">Field Groups</a></li> 
+         <li class="*"><span></span></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=notes">User Notes</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=note.add">Add User Note</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_categories&amp;view=categories&amp;extension=com_users">User Note Categories</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_categories&amp;task=category.add&amp;extension=com_users">Add New Category</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_users&amp;view=mail">Mass Mail Users</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Menus <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_menus&amp;view=menus">Manage</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_menus&amp;view=menu&amp;layout=edit">Add New Menu</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_menus&amp;view=items&amp;menutype=">All Menu Items</a></li> 
+         <li class="*"><span>Site</span></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_menus&amp;view=items&amp;menutype=mainmenu">Main Menu <span class="*"></span></a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_menus&amp;view=item&amp;layout=edit&amp;menutype=mainmenu">Add New Menu Item</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_menus&amp;view=items&amp;menutype=usermenu">User Menu </a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_menus&amp;view=item&amp;layout=edit&amp;menutype=usermenu">Add New Menu Item</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Content <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_content">Articles</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_content&amp;task=article.add">Add New Article</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_categories&amp;extension=com_content">Categories</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_categories&amp;task=category.add&amp;extension=com_content">Add New Category</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_content&amp;view=featured">Featured Articles</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;context=com_content.article">Fields</a></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;view=groups&amp;context=com_content.article">Field Groups</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_media">Media</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Components <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_banners">Banners</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_banners">Banners</a></li> 
+           <li><a class="*" href="index.php?option=com_categories&amp;extension=com_banners">Categories</a></li> 
+           <li><a class="*" href="index.php?option=com_banners&amp;view=clients">Clients</a></li> 
+           <li><a class="*" href="index.php?option=com_banners&amp;view=tracks">Tracks</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_contact">Contacts</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_contact">Contacts</a></li> 
+           <li><a class="*" href="index.php?option=com_categories&amp;extension=com_contact">Categories</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_joomlaupdate">Joomla! Update</a></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_messages">Messaging</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_messages&amp;task=message.add">New Private Message</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_associations">Multilingual Associations</a></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_newsfeeds">News Feeds</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_newsfeeds">Feeds</a></li> 
+           <li><a class="*" href="index.php?option=com_categories&amp;extension=com_newsfeeds">Categories</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_postinstall">Post-installation Messages</a></li> 
+         <li><a class="*" href="index.php?option=com_redirect">Redirects</a></li> 
+         <li><a class="*" href="index.php?option=com_search">Search</a></li> 
+         <li><a class="*" href="index.php?option=com_finder">Smart Search</a></li> 
+         <li><a class="*" href="index.php?option=com_tags">Tags</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Extensions <span class="*"></span></a>
+        <ul class="*"> 
+         <li><a class="*" href="index.php?option=com_modules">Modules</a></li> 
+         <li><a class="*" href="index.php?option=com_plugins">Plugins</a></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_templates">Templates</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_templates&amp;view=styles">Styles</a></li> 
+           <li><a class="*" href="index.php?option=com_templates&amp;view=templates">Templates</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_languages">Language(s)</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_languages&amp;view=installed">Installed</a></li> 
+           <li><a class="*" href="index.php?option=com_languages&amp;view=languages">Content Languages</a></li> 
+           <li><a class="*" href="index.php?option=com_languages&amp;view=overrides">Overrides</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Help <span class="*"></span></a>
+        <ul class="*"> 
+         <li><a class="*" href="index.php?option=com_admin&amp;view=help">Joomla! Help</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="https://forum.joomla.org" target="_blank">Official Support Forum</a></li> 
+         <li><a class="*" href="index.php?option=com_admin&amp;view=help&amp;layout=langforum" target="_blank">Official Language Forums</a></li> 
+         <li><a class="*" href="https://docs.joomla.org" target="_blank">Documentation Wiki</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="https://extensions.joomla.org" target="_blank">Joomla! Extensions</a></li> 
+         <li><a class="*" href="https://community.joomla.org/translations.html" target="_blank">Joomla! Translations</a></li> 
+         <li><a class="*" href="https://resources.joomla.org" target="_blank">Joomla! Resources</a></li> 
+         <li><a class="*" href="https://community.joomla.org" target="_blank">Community Portal</a></li> 
+         <li><a class="*" href="https://developer.joomla.org/security-centre.html" target="_blank">Security Centre</a></li> 
+         <li><a class="*" href="https://developer.joomla.org" target="_blank">Developer Resources</a></li> 
+         <li><a class="*" href="https://joomla.stackexchange.com" target="_blank">Stack Exchange</a></li> 
+         <li><a class="*" href="https://community.joomla.org/the-joomla-shop.html" target="_blank">Joomla! Shop</a></li> 
+        </ul> </li> 
+      </ul> 
+      <ul id="nav-empty" class="*"></ul> 
+      <ul class="*"> 
+       <li class="*"> <a class="*" data-toggle="dropdown" href="#"><span class="*"></span> <span class="*"></span> 
+         <div class="*">
+           User Menu 
+         </div> </a> 
+        <ul class="*"> 
+         <li> <span> <span class="*"></span> <strong>Administrator 1</strong> </span> </li> 
+         <li class="*"></li> 
+         <li> <a href="index.php?option=com_admin&amp;task=profile.edit&amp;id=720">Edit Account</a> </li> 
+         <li class="*"></li> 
+         <li class="*"> <a href="/administrator/index.php?option=com_login&amp;task=logout&amp;84826facfd80ffeb43ebf1f1ce52e34e=1">Logout</a> </li> 
+        </ul> </li> 
+      </ul> 
+      <a class="*" href="http://192.168.56.105/" title="Preview SUT" target="_blank">SUT <span class="*"></span></a> 
+     </div> 
+     <!--/.nav-collapse --> 
+    </div> 
+   </div> 
+  </nav> 
+  <!-- Header --> 
+  <header class="*"> 
+   <div class="*"> 
+    <img src="/administrator/templates/isis/images/logo.png" class="*" alt="SUT"> 
+   </div> 
+   <div class="*"> 
+    <h1 class="*"> <span class="*" aria-hidden="true"></span> Articles</h1> 
+   </div> 
+  </header> 
+  <!-- Subheader --> 
+  <a class="*" data-toggle="collapse" data-target=".subhead-collapse">Toolbar <span class="*"></span></a> 
+  <div class="*" id="isisJsData" data-tmpl-sticky="true" data-tmpl-offset="30" style="height: 82px;"> 
+   <div class="*"> 
+    <div class="*"> 
+     <div id="container-collapse" class="*"></div> 
+     <div class="*"> 
+      <div class="*"> 
+       <!-- target for skip to content link --> 
+       <a id="skiptarget" class="*">Main content begins here</a> 
+       <div class="*" role="toolbar" aria-label="Toolbar" id="toolbar"> 
+        <div class="*" id="toolbar-new"> 
+         <button onclick="Joomla.submitbutton('article.add');" class="*"> <span class="*" aria-hidden="true"></span> New</button> 
+        </div> 
+        <div class="*" id="toolbar-edit"> 
+         <button onclick="if (document.adminForm.boxchecked.value == 0) { alert(Joomla.JText._('JLIB_HTML_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST')); } else { Joomla.submitbutton('article.edit'); }" class="*"> <span class="*" aria-hidden="true"></span> Edit</button> 
+        </div> 
+        <div class="*" id="toolbar-publish"> 
+         <button onclick="if (document.adminForm.boxchecked.value == 0) { alert(Joomla.JText._('JLIB_HTML_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST')); } else { Joomla.submitbutton('articles.publish'); }" class="*"> <span class="*" aria-hidden="true"></span> Publish</button> 
+        </div> 
+        <div class="*" id="toolbar-unpublish"> 
+         <button onclick="if (document.adminForm.boxchecked.value == 0) { alert(Joomla.JText._('JLIB_HTML_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST')); } else { Joomla.submitbutton('articles.unpublish'); }" class="*"> <span class="*" aria-hidden="true"></span> Unpublish</button> 
+        </div> 
+        <div class="*" id="toolbar-featured"> 
+         <button onclick="if (document.adminForm.boxchecked.value == 0) { alert(Joomla.JText._('JLIB_HTML_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST')); } else { Joomla.submitbutton('articles.featured'); }" class="*"> <span class="*" aria-hidden="true"></span> Feature</button> 
+        </div> 
+        <div class="*" id="toolbar-unfeatured"> 
+         <button onclick="if (document.adminForm.boxchecked.value == 0) { alert(Joomla.JText._('JLIB_HTML_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST')); } else { Joomla.submitbutton('articles.unfeatured'); }" class="*"> <span class="*" aria-hidden="true"></span> Unfeature</button> 
+        </div> 
+        <div class="*" id="toolbar-archive"> 
+         <button onclick="if (document.adminForm.boxchecked.value == 0) { alert(Joomla.JText._('JLIB_HTML_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST')); } else { Joomla.submitbutton('articles.archive'); }" class="*"> <span class="*" aria-hidden="true"></span> Archive</button> 
+        </div> 
+        <div class="*" id="toolbar-checkin"> 
+         <button onclick="if (document.adminForm.boxchecked.value == 0) { alert(Joomla.JText._('JLIB_HTML_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST')); } else { Joomla.submitbutton('articles.checkin'); }" class="*"> <span class="*" aria-hidden="true"></span> Check-in</button> 
+        </div> 
+        <div class="*" id="toolbar-batch"> 
+         <button data-toggle="modal" onclick="if (document.adminForm.boxchecked.value==0){alert(Joomla.JText._('JLIB_HTML_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST'));}else{jQuery( '#collapseModal' ).modal('show'); return true;}" class="*"> <span class="*" aria-hidden="true"></span> Batch</button> 
+        </div> 
+        <div class="*" id="toolbar-trash"> 
+         <button onclick="if (document.adminForm.boxchecked.value == 0) { alert(Joomla.JText._('JLIB_HTML_PLEASE_MAKE_A_SELECTION_FROM_THE_LIST')); } else { Joomla.submitbutton('articles.trash'); }" class="*"> <span class="*" aria-hidden="true"></span> Trash</button> 
+        </div> 
+        <div class="*" id="toolbar-options"> 
+         <button onclick="location.href='index.php?option=com_config&amp;view=component&amp;component=com_content&amp;path=&amp;return=aHR0cDovLzE5Mi4xNjguNTYuMTA1L2FkbWluaXN0cmF0b3IvaW5kZXgucGhwP29wdGlvbj1jb21fY29udGVudCZ2aWV3PWFydGljbGVz';" class="*"> <span class="*" aria-hidden="true"></span> Options</button> 
+        </div> 
+        <div class="*" id="toolbar-help">  
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- container-fluid --> 
+  <div class="*" style="top: 113px;"> 
+   <section id="content"> 
+    <!-- Begin Content --> 
+    <div class="*"> 
+     <div class="*"> 
+      <div id="system-message-container" class="*"> 
+       <div class="*"> 
+        <button type="button" class="*" data-dismiss="alert">×</button> 
+        <h4 class="*">Error</h4> 
+        <div class="*">
+         Check-out failed with the following error: The user checking out does not match the user who checked out the item.
+        </div> 
+        <div class="*">
+         You are not permitted to use that link to directly access that page (#4).
+        </div> 
+       </div> 
+      </div> 
+      <form action="/administrator/index.php?option=com_content&amp;view=articles" method="post" name="adminForm" id="adminForm"> 
+       <div id="j-sidebar-container" class="*"> 
+        <div id="j-toggle-sidebar-wrapper"> 
+         <div id="j-toggle-button-wrapper" class="*"> 
+          <div id="j-toggle-sidebar-button" class="*" onclick="toggleSidebar(false); return false;" data-original-title="Hide the sidebar" aria-label="Hide the sidebar"> 
+           <span id="j-toggle-sidebar-icon" class="*" aria-hidden="true"></span> 
+          </div> 
+         </div> 
+         <div id="sidebar" class="*"> 
+          <div class="*"> 
+           <ul id="submenu" class="*"> 
+            <li class="*"> <a href="index.php?option=com_content&amp;view=articles">Articles</a> </li> 
+            <li> <a href="index.php?option=com_categories&amp;extension=com_content">Categories</a> </li> 
+            <li> <a href="index.php?option=com_content&amp;view=featured">Featured Articles</a> </li> 
+            <li> <a href="index.php?option=com_fields&amp;context=com_content.article">Fields</a> </li> 
+            <li> <a href="index.php?option=com_fields&amp;view=groups&amp;context=com_content.article">Field Groups</a> </li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div id="j-toggle-sidebar"></div> 
+        </div> 
+       </div> 
+       <div id="j-main-container" class="*"> 
+        <div class="*"> 
+         <div class="*"> 
+          <div class="*"> 
+           <label for="filter_search" class="*"> Search </label> 
+           <div class="*"> 
+            <input type="text" name="filter[search]" id="filter_search" value="" placeholder="Search" data-original-title="" title=""> 
+            <button type="submit" class="*" title="" aria-label="Search" data-original-title="Search"> <span class="*" aria-hidden="true"></span> </button> 
+           </div> 
+           <div class="*"> 
+            <button type="button" class="*" title="" data-original-title="Filter the list items."> Search Tools <span class="*"></span> </button> 
+           </div> 
+           <div class="*"> 
+            <button type="button" class="*" title="" data-original-title="Clear"> Clear </button> 
+           </div> 
+          </div> 
+          <div class="*" style=""> 
+           <div class="*"> 
+            <div class="*"> 
+             <select id="list_fullordering" name="list[fullordering]" onchange="this.form.submit();" style="display: none;"> <option value="">Sort Table By:</option> <option value="a.ordering ASC">Ordering ascending</option> <option value="a.ordering DESC">Ordering descending</option> <option value="a.state ASC">Status ascending</option> <option value="a.state DESC">Status descending</option> <option value="a.featured ASC">Featured ascending</option> <option value="a.featured DESC">Featured descending</option> <option value="a.title ASC">Title ascending</option> <option value="a.title DESC">Title descending</option> <option value="category_title ASC">Category ascending</option> <option value="category_title DESC">Category descending</option> <option value="a.access ASC">Access ascending</option> <option value="a.access DESC">Access descending</option> <option value="a.created_by ASC">Author ascending</option> <option value="a.created_by DESC">Author descending</option> <option value="language ASC">Language ascending</option> <option value="language DESC">Language descending</option> <option value="a.created ASC">Date ascending</option> <option value="a.created DESC">Date descending</option> <option value="a.modified ASC">Date Modified ascending</option> <option value="a.modified DESC">Date Modified descending</option> <option value="a.publish_up ASC">Start Publishing ascending</option> <option value="a.publish_up DESC">Start Publishing descending</option> <option value="a.publish_down ASC">Finish Publishing ascending</option> <option value="a.publish_down DESC">Finish Publishing descending</option> <option value="a.hits ASC">Hits ascending</option> <option value="a.hits DESC">Hits descending</option> <option value="a.id ASC">ID ascending</option> <option value="a.id DESC" selected>ID descending</option> </select>
+             <div class="*" style="width: 220px;" title="" id="list_fullordering_chzn">
+              <a class="*"><span>ID descending</span>
+               <div>
+                <b></b>
+               </div></a>
+              <div class="*">
+               <div class="*">
+                <input type="text" autocomplete="off">
+               </div>
+               <ul class="*"></ul>
+              </div>
+             </div> 
+            </div> 
+            <div class="*"> 
+             <select id="list_limit" name="list[limit]" class="*" onchange="this.form.submit();" style="display: none;"> <option value="5">5</option> <option value="10">10</option> <option value="15">15</option> <option value="20" selected>20</option> <option value="25">25</option> <option value="30">30</option> <option value="50">50</option> <option value="100">100</option> <option value="200">200</option> <option value="500">500</option> <option value="0">All</option> </select>
+             <div class="*" style="width: 60px;" title="" id="list_limit_chzn">
+              <a class="*"><span>20</span>
+               <div>
+                <b></b>
+               </div></a>
+              <div class="*">
+               <div class="*">
+                <input type="text" autocomplete="off">
+               </div>
+               <ul class="*"></ul>
+              </div>
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <!-- Filters div --> 
+         <div class="*" style=""> 
+          <div class="*"> 
+           <select id="filter_published" name="filter[published]" onchange="this.form.submit();" style="display: none;"> <option value="" selected>- Select Status -</option> <option value="-2">Trashed</option> <option value="0">Unpublished</option> <option value="1">Published</option> <option value="2">Archived</option> <option value="*">All</option> </select>
+           <div class="*" style="width: 220px;" title="" id="filter_published_chzn">
+            <a class="*"><span>- Select Status -</span>
+             <div>
+              <b></b>
+             </div></a>
+            <div class="*">
+             <div class="*">
+              <input type="text" autocomplete="off" readonly class="*">
+             </div>
+             <ul class="*"></ul>
+            </div>
+           </div> 
+          </div> 
+          <div class="*"> 
+           <select id="filter_category_id" name="filter[category_id][]" class="*" multiple onchange="this.form.submit();" style="display: none;"> <option value="2">Uncategorised</option> <option value="8">News</option> <option value="9">Sport</option> <option value="10">Travel</option> <option value="11">Culture</option> </select>
+           <div class="*" style="width: 220px;" title="" id="filter_category_id_chzn">
+            <ul class="*">
+             <li class="*"><input type="text" value="- Select Category -" class="*" autocomplete="off" style="width: 133px;"></li>
+            </ul>
+            <div class="*">
+             <ul class="*"></ul>
+            </div>
+           </div> 
+          </div> 
+          <div class="*"> 
+           <select id="filter_access" name="filter[access][]" class="*" multiple onchange="this.form.submit();" style="display: none;"> <option value="1">Public</option> <option value="5">Guest</option> <option value="2">Registered</option> <option value="3">Special</option> <option value="6">Super Users</option> </select>
+           <div class="*" style="width: 220px;" title="" id="filter_access_chzn">
+            <ul class="*">
+             <li class="*"><input type="text" value="- Select Access -" class="*" autocomplete="off" style="width: 122px;"></li>
+            </ul>
+            <div class="*">
+             <ul class="*"></ul>
+            </div>
+           </div> 
+          </div> 
+          <div class="*"> 
+           <select id="filter_author_id" name="filter[author_id][]" class="*" multiple onchange="this.form.submit();" style="display: none;"> <option value="0">None</option> <option value="722">Author 1</option> <option value="723">Author 2</option> <option value="719">Super User</option> </select>
+           <div class="*" style="width: 220px;" title="" id="filter_author_id_chzn">
+            <ul class="*">
+             <li class="*"><input type="text" value="- Select Author -" class="*" autocomplete="off" style="width: 118px;"></li>
+            </ul>
+            <div class="*">
+             <ul class="*"></ul>
+            </div>
+           </div> 
+          </div> 
+          <div class="*"> 
+           <select id="filter_language" name="filter[language]" onchange="this.form.submit();" style="display: none;"> <option value="" selected>- Select Language -</option> <option value="*">All</option> <option value="en-GB">English (en-GB)</option> </select>
+           <div class="*" style="width: 220px;" title="" id="filter_language_chzn">
+            <a class="*"><span>- Select Language -</span>
+             <div>
+              <b></b>
+             </div></a>
+            <div class="*">
+             <div class="*">
+              <input type="text" autocomplete="off" readonly class="*">
+             </div>
+             <ul class="*"></ul>
+            </div>
+           </div> 
+          </div> 
+          <div class="*"> 
+           <select id="filter_tag" name="filter[tag][]" class="*" multiple onchange="this.form.submit();" style="display: none;"> <option value="2">Joomla</option> <option value="3">TagSU</option> <option value="4">TagRegistered</option> <option value="5">TagSpecial</option> <option value="7">TagForSU</option> </select>
+           <div class="*" style="width: 220px;" title="" id="filter_tag_chzn">
+            <ul class="*">
+             <li class="*"><input type="text" value="- Select Tag -" class="*" autocomplete="off" style="width: 101px;"></li>
+            </ul>
+            <div class="*">
+             <ul class="*"></ul>
+            </div>
+           </div> 
+          </div> 
+          <div class="*"> 
+           <select id="filter_level" name="filter[level]" onchange="this.form.submit();" style="display: none;"> <option value="" selected>- Select Max Levels -</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option> </select>
+           <div class="*" style="width: 220px;" title="" id="filter_level_chzn">
+            <a class="*"><span>- Select Max Levels -</span>
+             <div>
+              <b></b>
+             </div></a>
+            <div class="*">
+             <div class="*">
+              <input type="text" autocomplete="off" class="*">
+             </div>
+             <ul class="*"></ul>
+            </div>
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <table class="*" id="articleList"> 
+         <thead> 
+          <tr> 
+           <th width="1%" class="*"> <a href="#" onclick="return false;" class="*" data-order="a.ordering" data-direction="ASC" data-name="" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Ordering"> <span class="*"></span></a> </th> 
+           <th width="1%" class="*"> <input type="checkbox" name="checkall-toggle" value="" class="*" title="" onclick="Joomla.checkAll(this)" data-original-title="Check All Items"> </th> 
+           <th width="1%" class="*"> <a href="#" onclick="return false;" class="*" data-order="a.state" data-direction="ASC" data-name="Status" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Status"> Status</a> </th> 
+           <th style="min-width:100px" class="*"> <a href="#" onclick="return false;" class="*" data-order="a.title" data-direction="ASC" data-name="Title" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Title"> Title</a> </th> 
+           <th width="10%" class="*"> <a href="#" onclick="return false;" class="*" data-order="a.access" data-direction="ASC" data-name="Access" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Access"> Access</a> </th> 
+           <th width="10%" class="*"> <a href="#" onclick="return false;" class="*" data-order="a.created_by" data-direction="ASC" data-name="Author" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Author"> Author</a> </th> 
+           <th width="10%" class="*"> <a href="#" onclick="return false;" class="*" data-order="language" data-direction="ASC" data-name="Language" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Language"> Language</a> </th> 
+           <th width="10%" class="*"> <a href="#" onclick="return false;" class="*" data-order="a.created" data-direction="ASC" data-name="Date Created" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Date Created"> Date Created</a> </th> 
+           <th width="1%" class="*"> <a href="#" onclick="return false;" class="*" data-order="a.hits" data-direction="ASC" data-name="Hits" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="Hits"> Hits</a> </th> 
+           <th width="1%" class="*"> <a href="#" onclick="return false;" class="*" data-order="a.id" data-direction="ASC" data-name="ID" title="" data-content="Select to sort by this column" data-placement="top" data-original-title="ID"> ID<span class="*"></span></a> </th> 
+          </tr> 
+         </thead> 
+         <tfoot> 
+          <tr> 
+           <td colspan="10"> </td> 
+          </tr> 
+         </tfoot> 
+         <tbody> 
+          <tr class="*" sortable-group-id="11"> 
+           <td class="*"> <span class="*" title="" data-original-title="Please sort by order to enable reordering"> <span class="*" aria-hidden="true"></span> </span> </td> 
+           <td class="*"> <input type="checkbox" id="cb0" name="cid[]" value="6" onclick="Joomla.isChecked(this.checked);"> </td> 
+           <td class="*"> 
+            <div class="*"> 
+             <a class="*" href="javascript:void(0);" onclick="return listItemTask('cb0','articles.unpublish')" title="" data-original-title="Published and is Current.<br />Start: 2019-10-07 12:32"><span class="*" aria-hidden="true"></span></a> 
+             <a href="#" onclick="return listItemTask('cb0','articles.featured')" class="*" title="" data-original-title="Toggle featured status."><span class="*" aria-hidden="true"></span></a> 
+             <button data-toggle="dropdown" class="*"><span class="*"></span><span class="*">Actions for: The five most creative cities in the world</span></button>
+             <ul class="*">
+              <li><a href="javascript://" onclick="listItemTask('cb0', 'articles.archive')"><span class="*" aria-hidden="true"></span> Archive</a></li>
+              <li><a href="javascript://" onclick="listItemTask('cb0', 'articles.trash')"><span class="*" aria-hidden="true"></span> Trash</a></li>
+             </ul> 
+            </div> </td> 
+           <td class="*"> 
+            <div class="*"> 
+             <a class="*" href="javascript:void(0);" onclick="return listItemTask('cb0','articles.checkin')" title="" data-original-title="<strong>Check-in</strong><br />Super User<br />Friday, 20 March 2020<br />11:17"><span class="*" aria-hidden="true"></span></a> 
+             <a class="*" href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=6" title="" data-original-title="Edit"> The five most creative cities in the world</a> 
+             <span class="*"> (<span>Alias</span>: the-five-most-creative-cities-in-the-world) </span> 
+             <div class="*">
+               Category: Culture 
+             </div> 
+            </div> </td> 
+           <td class="*"> Public </td> 
+           <td class="*"> <a class="*" href="/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=723" title="" data-original-title="Author"> Author 2</a> </td> 
+           <td class="*"> All </td> 
+           <td class="*"> 2019-10-07 </td> 
+           <td class="*"> <span class="*"> 44 </span> </td> 
+           <td class="*"> 6 </td> 
+          </tr> 
+          <tr class="*" sortable-group-id="10"> 
+           <td class="*"> <span class="*" title="" data-original-title="Please sort by order to enable reordering"> <span class="*" aria-hidden="true"></span> </span> </td> 
+           <td class="*"> <input type="checkbox" id="cb1" name="cid[]" value="5" onclick="Joomla.isChecked(this.checked);"> </td> 
+           <td class="*"> 
+            <div class="*"> 
+             <a class="*" href="javascript:void(0);" onclick="return listItemTask('cb1','articles.unpublish')" title="" data-original-title="Published and is Current.<br />Start: 2019-10-07 12:29"><span class="*" aria-hidden="true"></span></a> 
+             <a href="#" onclick="return listItemTask('cb1','articles.featured')" class="*" title="" data-original-title="Toggle featured status."><span class="*" aria-hidden="true"></span></a> 
+             <button data-toggle="dropdown" class="*"><span class="*"></span><span class="*">Actions for: Germanys tiny geographic oddity</span></button>
+             <ul class="*">
+              <li><a href="javascript://" onclick="listItemTask('cb1', 'articles.archive')"><span class="*" aria-hidden="true"></span> Archive</a></li>
+              <li><a href="javascript://" onclick="listItemTask('cb1', 'articles.trash')"><span class="*" aria-hidden="true"></span> Trash</a></li>
+             </ul> 
+            </div> </td> 
+           <td class="*"> 
+            <div class="*"> 
+             <a class="*" href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=5" title="" data-original-title="Edit"> Germanys tiny geographic oddity</a> 
+             <span class="*"> (<span>Alias</span>: germanys-tiny-geographic-oddity) </span> 
+             <div class="*">
+               Category: Travel 
+             </div> 
+            </div> </td> 
+           <td class="*"> Public </td> 
+           <td class="*"> <a class="*" href="/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=723" title="" data-original-title="Author"> Author 2</a> </td> 
+           <td class="*"> All </td> 
+           <td class="*"> 2019-10-07 </td> 
+           <td class="*"> <span class="*"> 8 </span> </td> 
+           <td class="*"> 5 </td> 
+          </tr> 
+          <tr class="*" sortable-group-id="9"> 
+           <td class="*"> <span class="*" title="" data-original-title="Please sort by order to enable reordering"> <span class="*" aria-hidden="true"></span> </span> </td> 
+           <td class="*"> <input type="checkbox" id="cb2" name="cid[]" value="4" onclick="Joomla.isChecked(this.checked);"> </td> 
+           <td class="*"> 
+            <div class="*"> 
+             <a class="*" href="javascript:void(0);" onclick="return listItemTask('cb2','articles.unpublish')" title="" data-original-title="Published and is Current.<br />Start: 2019-10-07 12:26"><span class="*" aria-hidden="true"></span></a> 
+             <a href="#" onclick="return listItemTask('cb2','articles.featured')" class="*" title="" data-original-title="Toggle featured status."><span class="*" aria-hidden="true"></span></a> 
+             <button data-toggle="dropdown" class="*"><span class="*"></span><span class="*">Actions for: Transfer news: Done deals in transfer window in October</span></button>
+             <ul class="*">
+              <li><a href="javascript://" onclick="listItemTask('cb2', 'articles.archive')"><span class="*" aria-hidden="true"></span> Archive</a></li>
+              <li><a href="javascript://" onclick="listItemTask('cb2', 'articles.trash')"><span class="*" aria-hidden="true"></span> Trash</a></li>
+             </ul> 
+            </div> </td> 
+           <td class="*"> 
+            <div class="*"> 
+             <a class="*" href="javascript:void(0);" onclick="return listItemTask('cb2','articles.checkin')" title="" data-original-title="<strong>Check-in</strong><br />Super User<br />Friday, 20 March 2020<br />11:17"><span class="*" aria-hidden="true"></span></a> 
+             <a class="*" href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=4" title="" data-original-title="Edit"> Transfer news: Done deals in transfer window in October</a> 
+             <span class="*"> (<span>Alias</span>: transfer-news-done-deals-in-transfer-window-in-october) </span> 
+             <div class="*">
+               Category: Sport 
+             </div> 
+            </div> </td> 
+           <td class="*"> Public </td> 
+           <td class="*"> <a class="*" href="/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=723" title="" data-original-title="Author"> Author 2</a> </td> 
+           <td class="*"> All </td> 
+           <td class="*"> 2019-10-07 </td> 
+           <td class="*"> <span class="*"> 10 </span> </td> 
+           <td class="*"> 4 </td> 
+          </tr> 
+          <tr class="*" sortable-group-id="8"> 
+           <td class="*"> <span class="*" title="" data-original-title="Please sort by order to enable reordering"> <span class="*" aria-hidden="true"></span> </span> </td> 
+           <td class="*"> <input type="checkbox" id="cb3" name="cid[]" value="3" onclick="Joomla.isChecked(this.checked);"> </td> 
+           <td class="*"> 
+            <div class="*"> 
+             <a class="*" href="javascript:void(0);" onclick="return listItemTask('cb3','articles.unpublish')" title="" data-original-title="Published and is Current.<br />Start: 2019-10-07 12:08"><span class="*" aria-hidden="true"></span></a> 
+             <a href="#" onclick="return listItemTask('cb3','articles.featured')" class="*" title="" data-original-title="Toggle featured status."><span class="*" aria-hidden="true"></span></a> 
+             <button data-toggle="dropdown" class="*"><span class="*"></span><span class="*">Actions for: Libra: PayPal first to drop out of Facebook cryptocurrency</span></button>
+             <ul class="*">
+              <li><a href="javascript://" onclick="listItemTask('cb3', 'articles.archive')"><span class="*" aria-hidden="true"></span> Archive</a></li>
+              <li><a href="javascript://" onclick="listItemTask('cb3', 'articles.trash')"><span class="*" aria-hidden="true"></span> Trash</a></li>
+             </ul> 
+            </div> </td> 
+           <td class="*"> 
+            <div class="*"> 
+             <a class="*" href="javascript:void(0);" onclick="return listItemTask('cb3','articles.checkin')" title="" data-original-title="<strong>Check-in</strong><br />Author 1<br />Friday, 18 October 2019<br />13:14"><span class="*" aria-hidden="true"></span></a> 
+             <a class="*" href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=3" title="" data-original-title="Edit"> Libra: PayPal first to drop out of Facebook cryptocurrency</a> 
+             <span class="*"> (<span>Alias</span>: libra-paypal-first-to-drop-out-of-facebook-cryptocurrency) </span> 
+             <div class="*">
+               Category: News 
+             </div> 
+            </div> </td> 
+           <td class="*"> Public </td> 
+           <td class="*"> <a class="*" href="/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=722" title="" data-original-title="Author"> Author 1</a> </td> 
+           <td class="*"> <img src="/media/mod_languages/images/en_gb.gif" alt="">&nbsp;English (en-GB) </td> 
+           <td class="*"> 2019-10-07 </td> 
+           <td class="*"> <span class="*"> 11 </span> </td> 
+           <td class="*"> 3 </td> 
+          </tr> 
+          <tr class="*" sortable-group-id="8"> 
+           <td class="*"> <span class="*" title="" data-original-title="Please sort by order to enable reordering"> <span class="*" aria-hidden="true"></span> </span> </td> 
+           <td class="*"> <input type="checkbox" id="cb4" name="cid[]" value="2" onclick="Joomla.isChecked(this.checked);"> </td> 
+           <td class="*"> 
+            <div class="*"> 
+             <a class="*" href="javascript:void(0);" onclick="return listItemTask('cb4','articles.unpublish')" title="" data-original-title="Published and is Current.<br />Start: 2019-10-07 11:50"><span class="*" aria-hidden="true"></span></a> 
+             <a href="#" onclick="return listItemTask('cb4','articles.featured')" class="*" title="" data-original-title="Toggle featured status."><span class="*" aria-hidden="true"></span></a> 
+             <button data-toggle="dropdown" class="*"><span class="*"></span><span class="*">Actions for: Facebook's Libra could be misused, says treasury chief Mnuchin</span></button>
+             <ul class="*">
+              <li><a href="javascript://" onclick="listItemTask('cb4', 'articles.archive')"><span class="*" aria-hidden="true"></span> Archive</a></li>
+              <li><a href="javascript://" onclick="listItemTask('cb4', 'articles.trash')"><span class="*" aria-hidden="true"></span> Trash</a></li>
+             </ul> 
+            </div> </td> 
+           <td class="*"> 
+            <div class="*"> 
+             <a class="*" href="javascript:void(0);" onclick="return listItemTask('cb4','articles.checkin')" title="" data-original-title="<strong>Check-in</strong><br />Author 1<br />Friday, 18 October 2019<br />12:19"><span class="*" aria-hidden="true"></span></a> 
+             <a class="*" href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=2" title="" data-original-title="Edit"> Facebook's Libra could be misused, says treasury chief Mnuchin</a> 
+             <span class="*"> (<span>Alias</span>: facebook-s-libra-could-be-misused-says-treasury-chief-mnuchin) </span> 
+             <div class="*">
+               Category: News 
+             </div> 
+            </div> </td> 
+           <td class="*"> Public </td> 
+           <td class="*"> <a class="*" href="/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=722" title="" data-original-title="Author"> Author 1</a> </td> 
+           <td class="*"> <img src="/media/mod_languages/images/en_gb.gif" alt="">&nbsp;English (en-GB) </td> 
+           <td class="*"> 2019-10-07 </td> 
+           <td class="*"> <span class="*"> 13 </span> </td> 
+           <td class="*"> 2 </td> 
+          </tr> 
+          <tr class="*" sortable-group-id="2"> 
+           <td class="*"> <span class="*" title="" data-original-title="Please sort by order to enable reordering"> <span class="*" aria-hidden="true"></span> </span> </td> 
+           <td class="*"> <input type="checkbox" id="cb5" name="cid[]" value="1" onclick="Joomla.isChecked(this.checked);"> </td> 
+           <td class="*"> 
+            <div class="*"> 
+             <a class="*" href="javascript:void(0);" onclick="return listItemTask('cb5','articles.unpublish')" title="" data-original-title="Published and is Current.<br />Start: 2019-10-06 22:44"><span class="*" aria-hidden="true"></span></a> 
+             <a href="#" onclick="return listItemTask('cb5','articles.featured')" class="*" title="" data-original-title="Toggle featured status."><span class="*" aria-hidden="true"></span></a> 
+             <button data-toggle="dropdown" class="*"><span class="*"></span><span class="*">Actions for: Getting Started</span></button>
+             <ul class="*">
+              <li><a href="javascript://" onclick="listItemTask('cb5', 'articles.archive')"><span class="*" aria-hidden="true"></span> Archive</a></li>
+              <li><a href="javascript://" onclick="listItemTask('cb5', 'articles.trash')"><span class="*" aria-hidden="true"></span> Trash</a></li>
+             </ul> 
+            </div> </td> 
+           <td class="*"> 
+            <div class="*"> 
+             <a class="*" href="/administrator/index.php?option=com_content&amp;task=article.edit&amp;id=1" title="" data-original-title="Edit"> Getting Started</a> 
+             <span class="*"> (<span>Alias</span>: getting-started) </span> 
+             <div class="*">
+               Category: Uncategorised 
+             </div> 
+            </div> </td> 
+           <td class="*"> Public </td> 
+           <td class="*"> <a class="*" href="/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=719" title="" data-original-title="Author"> Super User</a> </td> 
+           <td class="*"> All </td> 
+           <td class="*"> 2019-10-06 </td> 
+           <td class="*"> <span class="*"> 49 </span> </td> 
+           <td class="*"> 1 </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <div id="collapseModal" tabindex="-1" class="*"> 
+         <div class="*"> 
+          <button type="button" class="*" data-dismiss="modal">×</button> 
+          <h3>Batch process the selected articles</h3> 
+         </div> 
+         <div class="*"> 
+          <div class="*"> 
+           <div class="*"> 
+            <div class="*"> 
+             <div class="*"> 
+              <label id="batch-language-lbl" for="batch-language-id" class="*" title="<strong>Set Language</strong><br />Not making a selection will keep the original language when processing."> Set Language</label> 
+              <select name="batch[language_id]" class="*" id="batch-language-id" style="display: none;"> <option value="">- Keep original Language -</option> <option value="*">All</option> <option value="en-GB">English (en-GB)</option> </select>
+              <div class="*" style="width: 220px;" title="" id="batch_language_id_chzn">
+               <a class="*"><span>- Keep original Language -</span>
+                <div>
+                 <b></b>
+                </div></a>
+               <div class="*">
+                <div class="*">
+                 <input type="text" autocomplete="off" readonly>
+                </div>
+                <ul class="*"></ul>
+               </div>
+              </div> 
+             </div> 
+            </div> 
+            <div class="*"> 
+             <div class="*"> 
+              <label id="batch-access-lbl" for="batch-access" class="*" title="<strong>Set Access Level</strong><br />Not making a selection will keep the original access levels when processing."> Set Access Level</label> 
+              <select id="batch-access" name="batch[assetgroup_id]" class="*" style="display: none;"> <option value="">- Keep original Access Levels -</option> <option value="1">Public</option> <option value="5">Guest</option> <option value="2">Registered</option> <option value="3">Special</option> <option value="6">Super Users</option> </select>
+              <div class="*" style="width: 220px;" title="" id="batch_access_chzn">
+               <a class="*"><span>- Keep original Access Levels -</span>
+                <div>
+                 <b></b>
+                </div></a>
+               <div class="*">
+                <div class="*">
+                 <input type="text" autocomplete="off" readonly>
+                </div>
+                <ul class="*"></ul>
+               </div>
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="*"> 
+            <div class="*"> 
+             <div class="*"> 
+              <label id="batch-choose-action-lbl" for="batch-choose-action">To Move or Copy your selection please select a Category.</label> 
+              <div id="batch-choose-action" class="*"> 
+               <select name="batch[category_id]" class="*" id="batch-category-id" style="display: none;"> <option value="">- Don't move or copy -</option> <option value="2">Uncategorised</option> <option value="8">News</option> <option value="9">Sport</option> <option value="10">Travel</option> <option value="11">Culture</option> </select>
+               <div class="*" style="width: 220px;" title="" id="batch_category_id_chzn">
+                <a class="*"><span>- Don't move or copy -</span>
+                 <div>
+                  <b></b>
+                 </div></a>
+                <div class="*">
+                 <div class="*">
+                  <input type="text" autocomplete="off" readonly>
+                 </div>
+                 <ul class="*"></ul>
+                </div>
+               </div> 
+              </div> 
+              <div id="batch-copy-move" class="*" style="display: none;">
+                Do you want to move the items or make a copy of them? 
+               <div class="*"> 
+                <label for="batch[move_copy]c" id="batch[move_copy]c-lbl" class="*"> <input type="radio" name="batch[move_copy]" id="batch[move_copy]c" value="c">Copy </label> 
+                <label for="batch[move_copy]m" id="batch[move_copy]m-lbl" class="*"> <input type="radio" name="batch[move_copy]" id="batch[move_copy]m" value="m" checked>Move </label> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="*"> 
+             <div class="*"> 
+              <label id="batch-tag-lbl" for="batch-tag-id" class="*" title="<strong>Add Tag</strong><br />Add a tag to selected items."> Add Tag</label> 
+              <select name="batch[tag]" class="*" id="batch-tag-id" style="display: none;"> <option value="">- Keep original Tags -</option> <option value="2">Joomla</option> <option value="3">TagSU</option> <option value="4">TagRegistered</option> <option value="5">TagSpecial</option> <option value="7">TagForSU</option> </select>
+              <div class="*" style="width: 220px;" title="" id="batch_tag_id_chzn">
+               <a class="*"><span>- Keep original Tags -</span>
+                <div>
+                 <b></b>
+                </div></a>
+               <div class="*">
+                <div class="*">
+                 <input type="text" autocomplete="off" readonly>
+                </div>
+                <ul class="*"></ul>
+               </div>
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="*"> 
+          <a class="*" type="button" onclick="document.getElementById('batch-category-id').value='';document.getElementById('batch-access').value='';document.getElementById('batch-language-id').value='';document.getElementById('batch-user-id').value='';document.getElementById('batch-tag-id').value=''" data-dismiss="modal"> Cancel</a> 
+          <button class="*" type="submit" onclick="Joomla.submitbutton('article.batch');"> Process</button>
+         </div> 
+        </div> 
+        <div class="*"> 
+         <input type="hidden" name="limitstart" value="0"> 
+        </div> 
+        <input type="hidden" name="task" value=""> 
+        <input type="hidden" name="boxchecked" value="0"> 
+        <input type="hidden" name="84826facfd80ffeb43ebf1f1ce52e34e" value="1"> 
+       </div> 
+      </form> 
+     </div> 
+    </div> 
+    <!-- End Content --> 
+   </section> 
+  </div> 
+  <!-- Begin Status Module --> 
+  <div id="status" class="*"> 
+   <div class="*"> 
+    <div class="*"> 
+     <p> Joomla! 3.8.7 &nbsp;—&nbsp; © 2020 SUT </p> 
+    </div> 
+    <div class="*">
+     <a href="http://192.168.56.105/" target="_blank"><span class="*" aria-hidden="true"></span>View Site</a>
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <span class="*">29</span>Visitors
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <span class="*">13</span>Administrators
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <a href="/administrator/index.php?option=com_messages"><span class="*">0</span>Messages</a>
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <a href="/administrator/index.php?option=com_login&amp;task=logout&amp;84826facfd80ffeb43ebf1f1ce52e34e=1"><span class="*" aria-hidden="true"></span>Log out</a>
+    </div> 
+   </div> 
+  </div> 
+  <!-- End Status Module --> 
+ </body>
+</html>

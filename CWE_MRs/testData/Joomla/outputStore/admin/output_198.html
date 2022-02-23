@@ -1,0 +1,396 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb" dir="ltr">
+ <head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta charset="utf-8"> 
+  <meta name="description" content="Joomla 3.8.7 under test"> 
+  <meta name="generator" content="Joomla! - Open Source Content Management"> 
+  <title>Media - SUT - Administration</title>           
+  <!--[if lt IE 9]><script src="/media/system/js/polyfill.event.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->      
+  <!--[if lte IE 9]><script src="/media/system/js/polyfill.filter.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+  <!--[if lt IE 9]><script src="/media/jui/js/html5.js?38ae67656354d2a48609a682f9cf7df1"></script><![endif]-->  
+ </head> 
+ <body class="*" data-basepath=""> 
+  <!-- Top Navigation --> 
+  <nav class="*"> 
+   <div class="*"> 
+    <div class="*"> 
+     <a href="#" class="*" data-toggle="collapse" data-target=".nav-collapse"> <span class="*">Toggle Navigation</span> <span class="*"></span> <span class="*"></span> <span class="*"></span> </a> 
+     <!-- skip to content --> 
+     <a class="*" href="#skiptarget">Skip to Main Content</a> 
+     <a class="*" href="/administrator/index.php"> <span class="*"></span> 
+      <div class="*">
+        Control Panel 
+      </div> </a> 
+     <a class="*" href="http://192.168.56.105/" title="Preview SUT" target="_blank">SUT <span class="*"></span></a> 
+     <div class="*"> 
+      <ul id="menu" class="*"> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">System <span class="*"></span></a>
+        <ul class="*"> 
+         <li><a class="*" href="index.php">Control Panel</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_config">Global Configuration</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_checkin">Global Check-in</a></li> 
+         <li><a class="*" href="index.php?option=com_cache">Clear Cache</a></li> 
+         <li><a class="*" href="index.php?option=com_cache&amp;view=purge">Clear Expired Cache</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_admin&amp;view=sysinfo">System Information</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Users <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=users">Manage</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=user.add">Add New User</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=groups">Groups</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=group.add">Add New Group</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=levels">Access Levels</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=level.add">Add New Access Level</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;context=com_users.user">Fields</a></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;view=groups&amp;context=com_users.user">Field Groups</a></li> 
+         <li class="*"><span></span></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_users&amp;view=notes">User Notes</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_users&amp;task=note.add">Add User Note</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_categories&amp;view=categories&amp;extension=com_users">User Note Categories</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_categories&amp;task=category.add&amp;extension=com_users">Add New Category</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_users&amp;view=mail">Mass Mail Users</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Menus <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_menus&amp;view=menus">Manage</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_menus&amp;view=menu&amp;layout=edit">Add New Menu</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_menus&amp;view=items&amp;menutype=">All Menu Items</a></li> 
+         <li class="*"><span>Site</span></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_menus&amp;view=items&amp;menutype=mainmenu">Main Menu <span class="*"></span></a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_menus&amp;view=item&amp;layout=edit&amp;menutype=mainmenu">Add New Menu Item</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_menus&amp;view=items&amp;menutype=usermenu">User Menu </a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_menus&amp;view=item&amp;layout=edit&amp;menutype=usermenu">Add New Menu Item</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Content <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_content">Articles</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_content&amp;task=article.add">Add New Article</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_categories&amp;extension=com_content">Categories</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_categories&amp;task=category.add&amp;extension=com_content">Add New Category</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_content&amp;view=featured">Featured Articles</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;context=com_content.article">Fields</a></li> 
+         <li><a class="*" href="index.php?option=com_fields&amp;view=groups&amp;context=com_content.article">Field Groups</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_media">Media</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Components <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_banners">Banners</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_banners">Banners</a></li> 
+           <li><a class="*" href="index.php?option=com_categories&amp;extension=com_banners">Categories</a></li> 
+           <li><a class="*" href="index.php?option=com_banners&amp;view=clients">Clients</a></li> 
+           <li><a class="*" href="index.php?option=com_banners&amp;view=tracks">Tracks</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_contact">Contacts</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_contact">Contacts</a></li> 
+           <li><a class="*" href="index.php?option=com_categories&amp;extension=com_contact">Categories</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_joomlaupdate">Joomla! Update</a></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_messages">Messaging</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_messages&amp;task=message.add">New Private Message</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_associations">Multilingual Associations</a></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_newsfeeds">News Feeds</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_newsfeeds">Feeds</a></li> 
+           <li><a class="*" href="index.php?option=com_categories&amp;extension=com_newsfeeds">Categories</a></li> 
+          </ul> </li> 
+         <li><a class="*" href="index.php?option=com_postinstall">Post-installation Messages</a></li> 
+         <li><a class="*" href="index.php?option=com_redirect">Redirects</a></li> 
+         <li><a class="*" href="index.php?option=com_search">Search</a></li> 
+         <li><a class="*" href="index.php?option=com_finder">Smart Search</a></li> 
+         <li><a class="*" href="index.php?option=com_tags">Tags</a></li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Extensions <span class="*"></span></a>
+        <ul class="*"> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_installer">Manage</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_installer">Install</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=update">Update</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=manage">Manage</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=discover">Discover</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=database">Database</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=warnings">Warnings</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=languages">Install Languages</a></li> 
+           <li><a class="*" href="index.php?option=com_installer&amp;view=updatesites">Update Sites</a></li> 
+          </ul> </li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="index.php?option=com_modules">Modules</a></li> 
+         <li><a class="*" href="index.php?option=com_plugins">Plugins</a></li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_templates">Templates</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_templates&amp;view=styles">Styles</a></li> 
+           <li><a class="*" href="index.php?option=com_templates&amp;view=templates">Templates</a></li> 
+          </ul> </li> 
+         <li class="*"><a class="*" data-toggle="dropdown" href="index.php?option=com_languages">Language(s)</a>
+          <ul class="*"> 
+           <li><a class="*" href="index.php?option=com_languages&amp;view=installed">Installed</a></li> 
+           <li><a class="*" href="index.php?option=com_languages&amp;view=languages">Content Languages</a></li> 
+           <li><a class="*" href="index.php?option=com_languages&amp;view=overrides">Overrides</a></li> 
+          </ul> </li> 
+        </ul> </li> 
+       <li class="*"><a class="*" data-toggle="dropdown" href="#">Help <span class="*"></span></a>
+        <ul class="*"> 
+         <li><a class="*" href="index.php?option=com_admin&amp;view=help">Joomla! Help</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="https://forum.joomla.org" target="_blank">Official Support Forum</a></li> 
+         <li><a class="*" href="index.php?option=com_admin&amp;view=help&amp;layout=langforum" target="_blank">Official Language Forums</a></li> 
+         <li><a class="*" href="https://docs.joomla.org" target="_blank">Documentation Wiki</a></li> 
+         <li class="*"><span></span></li> 
+         <li><a class="*" href="https://extensions.joomla.org" target="_blank">Joomla! Extensions</a></li> 
+         <li><a class="*" href="https://community.joomla.org/translations.html" target="_blank">Joomla! Translations</a></li> 
+         <li><a class="*" href="https://resources.joomla.org" target="_blank">Joomla! Resources</a></li> 
+         <li><a class="*" href="https://community.joomla.org" target="_blank">Community Portal</a></li> 
+         <li><a class="*" href="https://developer.joomla.org/security-centre.html" target="_blank">Security Centre</a></li> 
+         <li><a class="*" href="https://developer.joomla.org" target="_blank">Developer Resources</a></li> 
+         <li><a class="*" href="https://joomla.stackexchange.com" target="_blank">Stack Exchange</a></li> 
+         <li><a class="*" href="https://community.joomla.org/the-joomla-shop.html" target="_blank">Joomla! Shop</a></li> 
+        </ul> </li> 
+      </ul> 
+      <ul id="nav-empty" class="*"></ul> 
+      <ul class="*"> 
+       <li class="*"> <a class="*" data-toggle="dropdown" href="#"><span class="*"></span> <span class="*"></span> 
+         <div class="*">
+           User Menu 
+         </div> </a> 
+        <ul class="*"> 
+         <li> <span> <span class="*"></span> <strong>Super User</strong> </span> </li> 
+         <li class="*"></li> 
+         <li> <a href="index.php?option=com_admin&amp;task=profile.edit&amp;id=719">Edit Account</a> </li> 
+         <li class="*"></li> 
+         <li class="*"> <a href="/administrator/index.php?option=com_login&amp;task=logout&amp;810ce8df3f191d9a8b278055fe7f471b=1">Logout</a> </li> 
+        </ul> </li> 
+      </ul> 
+      <a class="*" href="http://192.168.56.105/" title="Preview SUT" target="_blank">SUT <span class="*"></span></a> 
+     </div> 
+     <!--/.nav-collapse --> 
+    </div> 
+   </div> 
+  </nav> 
+  <!-- Header --> 
+  <header class="*"> 
+   <div class="*"> 
+    <img src="/administrator/templates/isis/images/logo.png" class="*" alt="SUT"> 
+   </div> 
+   <div class="*"> 
+    <h1 class="*"> <span class="*" aria-hidden="true"></span> Media</h1> 
+   </div> 
+  </header> 
+  <!-- Subheader --> 
+  <a class="*" data-toggle="collapse" data-target=".subhead-collapse">Toolbar <span class="*"></span></a> 
+  <div class="*" id="isisJsData" data-tmpl-sticky="true" data-tmpl-offset="30" style="height: 51px;"> 
+   <div class="*"> 
+    <div class="*"> 
+     <div id="container-collapse" class="*"></div> 
+     <div class="*"> 
+      <div class="*"> 
+       <!-- target for skip to content link --> 
+       <a id="skiptarget" class="*">Main content begins here</a> 
+       <div class="*" role="toolbar" aria-label="Toolbar" id="toolbar"> 
+        <div class="*" id="toolbar-upload"> 
+         <button data-toggle="collapse" data-target="#collapseUpload" class="*"> <span class="*" title="Upload"></span> Upload</button> 
+        </div> 
+        <div class="*" id="toolbar-create"> 
+         <button data-toggle="collapse" data-target="#collapseFolder" class="*"> <span class="*" title="Create New Folder"></span> Create New Folder</button> 
+        </div> 
+        <div class="*" id="toolbar-delete">  
+         <button onclick="deleteMedia()" class="*"> <span class="*" title="Delete"></span> Delete</button> 
+        </div> 
+        <div class="*" id="toolbar-options"> 
+         <button onclick="location.href='index.php?option=com_config&amp;view=component&amp;component=com_media&amp;path=&amp;return=aHR0cDovLzE5Mi4xNjguNTYuMTA1L2FkbWluaXN0cmF0b3IvaW5kZXgucGhwP29wdGlvbj1jb21fbWVkaWE%3D';" class="*"> <span class="*" aria-hidden="true"></span> Options</button> 
+        </div> 
+        <div class="*" id="toolbar-help">  
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- container-fluid --> 
+  <div class="*" style="top: 82px;"> 
+   <section id="content"> 
+    <!-- Begin Content --> 
+    <div class="*"> 
+     <div class="*"> 
+      <div id="system-message-container" class="*"> 
+      </div> 
+      <div class="*"> 
+       <!-- Begin Sidebar --> 
+       <div id="j-sidebar-container" class="*"> 
+        <div id="j-toggle-sidebar-wrapper"> 
+         <div id="j-toggle-button-wrapper" class="*"> 
+          <div id="j-toggle-sidebar-button" class="*" onclick="toggleSidebar(false); return false;" data-original-title="Hide the sidebar" aria-label="Hide the sidebar"> 
+           <span id="j-toggle-sidebar-icon" class="*" aria-hidden="true"></span> 
+          </div> 
+         </div> 
+         <div id="sidebar" class="*"> 
+          <div class="*"> 
+          </div> 
+         </div> 
+         <div id="j-toggle-sidebar"></div> 
+        </div> 
+        <div class="*"> 
+         <h3>Media Folders </h3> 
+        </div> 
+        <div id="treeview" class="*"> 
+         <div id="media-tree_tree" class="*"> 
+          <ul class="*" id="collapseFolder-"> 
+           <li id="banners" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=banners" target="folderframe" class="*"> <span class="*"></span> banners </a> </li> 
+           <li id="headers" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=headers" target="folderframe" class="*"> <span class="*"></span> headers </a> </li> 
+           <li id="sampledata" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=sampledata" target="folderframe" class="*"> <span class="*"></span> sampledata </a> 
+            <ul class="*" id="collapseFolder-sampledata"> 
+             <li id="sampledata-fruitshop" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=sampledata/fruitshop" target="folderframe" class="*"> <span class="*"></span> fruitshop </a> </li> 
+             <li id="sampledata-parks" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=sampledata/parks" target="folderframe" class="*"> <span class="*"></span> parks </a> 
+              <ul class="*" id="collapseFolder-sampledata-parks"> 
+               <li id="sampledata-parks-animals" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=sampledata/parks/animals" target="folderframe" class="*"> <span class="*"></span> animals </a> </li> 
+               <li id="sampledata-parks-landscape" class="*"> <a href="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=sampledata/parks/landscape" target="folderframe" class="*"> <span class="*"></span> landscape </a> </li> 
+              </ul> </li> 
+            </ul> </li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- End Sidebar --> 
+       <!-- Begin Content --> 
+       <div id="j-main-container" class="*"> 
+        <div class="*"> 
+         <a href="#" id="thumbs" onclick="MediaManager.setViewType('thumbs')" class="*"> <span class="*"></span> Thumbnail View</a> 
+         <a href="#" id="details" onclick="MediaManager.setViewType('details')" class="*"> <span class="*"></span> Detail View</a> 
+        </div> 
+        <form action="index.php?option=com_media" name="adminForm" id="mediamanager-form" method="post" enctype="multipart/form-data"> 
+         <input type="hidden" name="task" value=""> 
+         <input type="hidden" name="cb1" id="cb1" value="0"> 
+         <input class="*" type="hidden" name="folder" id="folder" value=""> 
+        </form> 
+        <!-- File Upload Form --> 
+        <div id="collapseUpload" class="*"> 
+         <form action="http://192.168.56.105/administrator/index.php?option=com_media&amp;task=file.upload&amp;tmpl=component&amp;f43c96c9893d29df5b4a867f2bc2bcce=ctjtjuh4pvdc5pf6o03j5362t4&amp;810ce8df3f191d9a8b278055fe7f471b=1&amp;format=html&amp;folder=" id="uploadForm" class="*" name="uploadForm" method="post" enctype="multipart/form-data"> 
+          <div id="uploadform" class="*"> 
+           <fieldset id="upload-noflash" class="*"> 
+            <label for="upload-file" class="*">Upload file</label> 
+            <input required type="file" id="upload-file" name="Filedata[]" multiple> 
+            <button class="*" id="upload-submit"><span class="*"></span> Start Upload</button> 
+            <p class="*"> Maximum upload size: <strong>2.00 MB</strong> </p> 
+           </fieldset> 
+           <input class="*" type="hidden" name="folder" id="folder" value=""> 
+          </div> 
+         </form> 
+        </div> 
+        <div id="collapseFolder" class="*"> 
+         <form action="index.php?option=com_media&amp;task=folder.create&amp;tmpl=index" name="folderForm" id="folderForm" class="*" method="post"> 
+          <div class="*"> 
+           <input type="text" id="folderpath" readonly class="*"> 
+           <input required type="text" id="foldername" name="foldername"> 
+           <input class="*" type="hidden" name="folderbase" id="folderbase" value=""> 
+           <button type="submit" class="*"><span class="*"></span> Create Folder</button> 
+          </div> 
+          <input type="hidden" name="810ce8df3f191d9a8b278055fe7f471b" value="1"> 
+         </form> 
+        </div> 
+        <form action="index.php?option=com_media&amp;task=folder.create&amp;tmpl=index" name="folderForm" id="folderForm" method="post"> 
+         <div id="folderview"> 
+          <div class="*"> 
+           <iframe class="*" src="index.php?option=com_media&amp;view=mediaList&amp;tmpl=component&amp;folder=" id="folderframe" name="folderframe" width="100%" height="500px" marginwidth="0" marginheight="0" scrolling="auto"></iframe> 
+          </div> 
+          <input type="hidden" name="810ce8df3f191d9a8b278055fe7f471b" value="1"> 
+         </div> 
+        </form> 
+       </div> 
+       <div id="imagePreview" tabindex="-1" class="*"> 
+        <div class="*"> 
+         <button type="button" class="*" data-dismiss="modal">×</button> 
+         <h3>Preview</h3> 
+        </div> 
+        <div class="*"> 
+         <div id="image" style="text-align:center;">
+          <img id="imagePreviewSrc" src="../media/jui/img/alpha.png" alt="preview" style="max-width:100%; max-height:300px;">
+         </div>
+        </div> 
+        <div class="*"> 
+         <a type="button" class="*" data-dismiss="modal" aria-hidden="true">Close</a>
+        </div> 
+       </div> 
+       <div id="videoPreview" tabindex="-1" class="*"> 
+        <div class="*"> 
+         <button type="button" class="*" data-dismiss="modal">×</button> 
+         <h3>Preview</h3> 
+        </div> 
+        <div class="*"> 
+         <div id="videoPlayer" style="z-index: -100;">
+          <video id="mejsPlayer" style="height: 250px;"></video>
+         </div>
+        </div> 
+        <div class="*"> 
+         <a type="button" class="*" data-dismiss="modal" aria-hidden="true">Close</a>
+        </div> 
+       </div> 
+       <!-- End Content --> 
+      </div> 
+     </div> 
+    </div> 
+    <!-- End Content --> 
+   </section> 
+  </div> 
+  <!-- Begin Status Module --> 
+  <div id="status" class="*"> 
+   <div class="*"> 
+    <div class="*"> 
+     <p> Joomla! 3.8.7 &nbsp;—&nbsp; © 2020 SUT </p> 
+    </div> 
+    <div class="*">
+     <a href="http://192.168.56.105/" target="_blank"><span class="*" aria-hidden="true"></span>View Site</a>
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <span class="*">29</span>Visitors
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <span class="*">5</span>Administrators
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <a href="/administrator/index.php?option=com_messages"><span class="*">0</span>Messages</a>
+     <span class="*"></span>
+    </div>
+    <div class="*">
+     <a href="/administrator/index.php?option=com_login&amp;task=logout&amp;810ce8df3f191d9a8b278055fe7f471b=1"><span class="*" aria-hidden="true"></span>Log out</a>
+    </div> 
+   </div> 
+  </div> 
+  <!-- End Status Module --> 
+ </body>
+</html>
