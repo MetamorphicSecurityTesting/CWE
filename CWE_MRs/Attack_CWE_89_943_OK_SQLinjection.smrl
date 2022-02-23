@@ -38,13 +38,13 @@ MR CWE_89_943 {
 
  	for (Action action : Input(1).actions()){                                            //(1)
  		var pos = action.getPosition();                                                  //(2) 
- 		
+ 		userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) ;
  		for (var x = 0; x < action.parameters.size; x++){                                //(3)
  		
  			IMPLIES(
  		
- 				notTried( Input(1).actions().get(pos).getUrl() ) &&   
- 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&                   //(4)          
+ 				notTried(SQLInjectionString() + x + action.url, Input(1).actions().get(pos).getElementURL() )  &&   
+ 				                  //(4)          
  				EQUAL(Input(2), Input(1))&&                                              //(5)
  				Input(2).actions().get(pos).setParameterValue( x, SQLInjectionString() ) //(6)
  			       // copy with form input           

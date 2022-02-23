@@ -1,8 +1,9 @@
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
-import sun.security.util.Password
+import  smrl.mr.language.actions.StandardAction;
+import jdk.internal.util.xml.impl.Input
 
-package smrl.mr.owasp {
+package smrl.mr.owasp{
  
 /**
  * 
@@ -14,6 +15,9 @@ package smrl.mr.owasp {
  * CWE_96 (child of CWE_94): The software receives input from an upstream component, but it does not 
  * neutralize or incorrectly neutralizes code syntax before inserting the input into an executable resource, 
  * such as a library, configuration file, or template.
+ * 
+ * This issue is most frequently found in PHP applications that allow users to set configuration variables 
+ * that are stored within executable PHP files.
  * 
  * Idea:
  * While the programmer intends for the input sections i.e. messages; to only include data, an attacker can provide a message such as:
@@ -35,36 +39,37 @@ package smrl.mr.owasp {
  * (6) Makes sure that the result of the Input(1) and the follow-up input is different
  *     Or The user is retrieving the content that has right to access it.
  *  
- * 
  */
  
-MR CWE_94_96 { 
- { 	
+  
+MR CWE_94_96_B {
+ {
+	keepDialogsOpen = true;
+
+ 	for (Action action : Input(1).actions()){                                                  //(1)
+ 		var pos = action.getPosition();                                                        //(2) 
+ 		
+ 		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
+ 		
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
+ 			
+ 			
+ 			IMPLIES(
+ 				//We are about to submit a form
+ 				action.isClickOnButton && 
+ 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&        				
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&        
+ 				EQUAL(Input(2), Input(1) )                     &&                       
+ 				Input(2).actions.get(pos).setFormInput(x, StaticInjectionString())  			              
+ 				,
+
+ 				OR(                                                                     
+		    		isError(Output(Input(2), pos)),                                                       
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
+		    	)
+ 			);
+ 		}
+ 	}
  	
-    for ( Action action : Input(1).actions() ) {                                               //(1)
-	  	var pos = action.getPosition();                                                        //(2)
-	  	
-	   	for ( var x =0; x < action.parameters.size; x++){              //(3)
-	   IMPLIES( 
-	   			notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&
-	   			userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&
-	   			EQUAL ( Input(2), Input(1) ) &&                                                //(4)
-	   			Input(2).actions().get(pos).setParameterValue( x, StaticInjectionString() )    //(5)				    			
-		    ,  
-		    	OR(
-		    		 isError(Output(Input(2), pos)),                                           //(6)        
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) 
-		    	     )
-		    	
-		    	
-		);//end-IMPLIES
-	}//end-for
+  } }
  }
- } 
-}//end-MR
-}//end-package
-
-
-
-
-

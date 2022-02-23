@@ -37,7 +37,7 @@ MR CWE_89_943_C {
 	 for ( Action action : Input(1).actions() ) {                                                                   //(1)
 	  	
 	  	var pos = action.getPosition();                                                                            //(2)
-	  	
+	  	userCanRetrieveContent(action.getUser(), Output(Input(1),pos));
 	  	//System.out.println("ACTION "+pos+"/"+action.url);														   
 	  		
 	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){                    //(3)
@@ -45,7 +45,7 @@ MR CWE_89_943_C {
 	  			 IMPLIES(
 	        		
 	        	  action.isClickOnButton && 
-	        	  userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&       
+	        	        
 	        	  notTried(SQLInjectionString() + x + action.url, Input(1).actions().get(pos).getElementURL() )  &&   //(4)
 	        	  !isError(Output(Input(1),pos))		&&													   //(5)							
 	       		  EQUAL ( Input(2), Input(1) )	 &&   													   //(6)	                                                                        

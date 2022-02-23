@@ -42,7 +42,9 @@ MR CWE_93b {
 	  	var pos = action.getPosition();                               //(2)
 	    var newUrl = action.url + sep+ CRLFAttackString();                 //(3)  
 			IMPLIES( 
+				
 				notTried( action.getUser(), newUrl )		&&	      //(4)	 					 
+				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&
 				EQUAL( Input(2), Input(1) ) &&					      //(5)
 			  	Input(2).actions().get(pos).setUrl( newUrl ) 	      //(6)
 			    ,

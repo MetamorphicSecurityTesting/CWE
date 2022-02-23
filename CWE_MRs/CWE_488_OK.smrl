@@ -1,81 +1,53 @@
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 
-package smrl.mr.owasp{
+package smrl.mr.owasp {
+ 
 /*
+ *  
  * CWE Definition:
- * 
- * Data can "bleed" from one session to another through member variables of singleton objects, such as Servlets, and objects from a shared pool.
- * In the case of Servlets, developers sometimes do not understand that, unless a Servlet implements the SingleThreadModel interface, the Servlet
- * is a singleton; there is only one instance of the Servlet, and that single instance is used and re-used to handle multiple requests that are
- * processed simultaneously by different threads. A common result is that developers use Servlet member fields in such a way that one user may
- * inadvertently see another user's data. In other words, storing user data in Servlet member fields introduces a data access race condition.
- * 
- * 
- * Data can bleed from one session to another one, when there is only one instance of the object that the users want to access, 
- * and that single object is used and re-used to handle multiple
- *  requests. if the object saves the user data, when another user access the same object may see the data of the other user.
- * 
+ *  The application does not handle or incorrectly handles when it has insufficient privileges to access resources or functionality as 
+ *  specified by their permissions. This may cause it to follow unexpected code paths that may leave the application in an invalid state.
  * 
  * Idea:
- * Copy the action after the login from the user, and the follow-up user will do the same action as the User.
- * If there is a data access race condition, then user and follow-up user would see the same information by doing the same action (accessing the same url).
+ * Assuming certain pages can only be accessed in a certain order, we try to access reserved pages just before the legitimate user may access them. 
  * 
- * Comments:
- * (1),(2)  Two for loops iterate over all actions that input(1) will do after the login.
- * (3) It checks whether the user in User() is not a supervisor of the user performing the y-th action. // if Admin can change a data it's fine, it should not be an abnormal behaviour in system
- * (4) Create the follow-up Input by copying Input(1) with different credentials.
- * (5) Copy the action y+1 (the action after the login) from Input(1), and now the Input(3) will do the same action as input(1).
- * (6) If there is a data access race condition, then Input(3) and Input(1) would see the same information by doing the same action (accessing the same url)
- *     Or if the Output(3) see the error page while input(1) is accessing the same URL is accepted.
+ * 
+ * Comments: 
+ * (1) For loop iterates over all actions of the Input(1)
+ * (2) The second for loop iterates over the sequence of actions after the login.
+ * (3) Checks whether the user in User() is not a supervisor of the user performing the current action.
+ * (4) Checks that the uRL of the current action is not accessible without login.
+ * (5) Creates the follow-up input, named Input(2) that takes the login action.
+ * (6) Defines the follow-up input, named Input(3) but with different credentials than the Input(2).
+ * (7) Creates a copy of Input(1) with a login as b before action y (this way action y is performed as User b). ///// check this one
+ * (8) The system should show an error page or the user should see the content that has right to access.
+ * 
  * 
  */
- 
-MR CWE_488 {
+
+MR CWE_488{
 	{
-		
-		for(var x = 0; (x < Input(1).actions().size()-1 ); x++){ //(1)
-			for (var y = x+1; (isLogin(Input(1).actions().get(x)) && y < Input(1).actions().size()-2); y++) //(2)
-				{ 		
-				IMPLIES(
-	  				
-	  				!isSupervisorOf(User(),Input (1).actions().get(y).user)&& //(3)	
-	  				userCanRetrieveContent(User(),Output(Input(1), y+1) ) &&  				
-	  				EQUAL(Input(2), changeCredentials(Input(1), User())) && //(4)
-	  				EQUAL(Input(3), addAction(Input(2), y+1, Input(1).actions().get(x+1))) // (5)
-	  				
-	  				,
-	  			
-	  				OR(
-	  					
-	  					different(Output(Input(1), y+2),Output(Input(3), y+2)) //(6)
-	  					//The problem here is that only some specific part of the page may be similar(the information leakage reveal the data for a specific entry and all other parts of the page is already different)
-	  					// how we can restrict the comparison to the information revealing part?
+       for(var x = 0; (x < Input(1).actions().size() ); x++){                                                      //(1)
+			for (var y = x+1; (isLogin(Input(1).actions().get(x)) && y < Input(1).actions().size()); y++) {    //(2)
+	  			IMPLIES(
+	  				//1st par of IMPLIES including 5 clauses
+	  				(!isSupervisorOf(User(), Input(1).actions().get(y).user)) &&                               //(3)
+	  				EQUAL(Input(2), Input(1).actions().get(x)) &&                                              //(5)
+	  				EQUAL(Input(3), changeCredentials(Input(2), User())) &&                                    //(6)
+	  				EQUAL(Input(4), addAction(Input(1), y, Input(3).actions().get(0)))                         //(7)
+	  			,	        
+             OR(                                                                                               //(8)
+	  					userCanRetrieveContent(Input(4).actions().get(y+1).getUser(), Output(Input(4), y+1))
 	  					,
-	  					OR(userCanRetrieveContent(User(),Output(Input(3), y+2) )
-	  					
-	  					,Output(Input(3), y+1).isError() )
-	  				)	);
-			}
-		}
-	}
-}
-}
-
-
-
-
-
-/*for ( Action action : Input(1).actions() ){
-			var pos = action.getPosition();
-			
-			IMPLIES(
-				 
-				notAvailableWithoutLoggingIn( action ) &&
-				NOT ( NULL ( Output(Input(1)).getSession() ) ) &&	
-				EQUAL(Input(2), Input(1)) &&
-				Input(2).actions().get(pos).setRandomSession() /// a list of different session IDs
-				
-				
-				, different ( Output( Input(1), pos ), Output( Input(2), pos ) )
-				 ); */
+	  					OR(Output(Input(4), y+1).isError() ///  add different() for CWE_488
+	  					,
+	  					different(Output(Input(1), y+1),Output(Input(4), y+1))
+	  					)
+	  				)
+	  			); //end-IMPLIES
+  			} //end-for
+		} //end-for
+    }
+  } //end-MR
+} //end-package

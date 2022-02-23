@@ -42,19 +42,16 @@ MR CWE_90a {
  				//No alter shown normally
  			
  				
- 				notTried(x + parameterName, Input(1).actions().get(pos).getUrl() )    &&        //(5)
+ 				notTried(LDAPInjectionString() + x + parameterName, Input(1).actions().get(pos).getUrl() )    &&        //(5)
  				! Output(Input(1),pos).hasAlert					&&  
- 			   
  			    userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&
- 				
  				EQUAL(Input(2), Input(1))&&                                                  //(6)
- 				
  				Input(2).actions().get(pos).setParameterValue( x, LDAPInjectionString() )        //(7)
  			   
  				,
  			OR(OR(                                                                           //(10)
 		    		 //either the attack was not performed
-		    		 Output(Input(2), pos).emptyFile,
+		    		different( Output(Input(1), pos),Output(Input(2), pos)),
 		    		 //or no effect shall be observed (the effect is visualized when reaching the page where we inject the XSS)                  
 		    	     Output(Input(2), pos).hasAlert   
 		    	     ), OR( 

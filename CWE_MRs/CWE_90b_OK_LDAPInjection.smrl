@@ -43,13 +43,12 @@ MR CWE_90b {
  				
  				//We are about to submit a form
  				action.isClickOnButton &&      
- 				
  				//The page can be accessed by more than one user
 // 				canReachThroughGUI( User(), Input(1).actions().get(pos).getUrl() ) &&           //(4)
  				//We did not test the URL before
- 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&                             //(5)
+ 				notTried( LDAPInjectionString() + x + action.url, Input(1).actions().get(pos).getElementURL() )  &&                             //(5)
  				//No alter shown normally
- 				
+ 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&
  				! Output(Input(1),pos).hasAlert					&&                              //(6)
  				//We create the follow-up input          
  				EQUAL(Input(2), Input(1) )                     &&                       //(7)
@@ -63,12 +62,11 @@ MR CWE_90b {
 // 				true
  				OR(OR(                                                                           //(10)
 		    		 //either the attack was not performed
-		    		 Output(Input(2), pos).emptyFile,
+		    		different( Output(Input(1), pos),Output(Input(2), pos)),
 		    		 //or no effect shall be observed (the effect is visualized when reaching the page where we inject the XSS)                  
 		    	     Output(Input(2), pos).hasAlert   
 		    	     ), OR( 
- 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  
- 					,
+ 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) ,
  					isError(Output(Input(2), pos)))
  				//	userCanRetrieveContent(action.getUser(), Output(Input(2),pos))    
  		)	);

@@ -35,6 +35,7 @@ MR CWE_599 {
 	  
 	   IMPLIES(
 	   		   afterLogin(action) &&                                                 //(3)
+	           userCanRetrieveContent(action.user, Output(Input(1), pos))&&
 	           EQUAL ( Input(2), Input(1) ) &&	                                     //(4)
 	         
 	           Input(2).setUseOutdatedCertificate(true)                              //(5)
@@ -42,9 +43,9 @@ MR CWE_599 {
 	    	  
 		    ,  
 		    OR(                                                                     //(6)
-		    	Output(Input(2), pos).isError()    
+		    	isError(Output(Input(2), pos))    
 		    	,
-		    	(userCanRetrieveContent(action.user, Output(Input(2), pos)) &&
+		    OR	(userCanRetrieveContent(action.user, Output(Input(2), pos)) ,
 		    		different ( Output(Input(1),pos),  Output(Input(2),pos))
 		    		)
 		    	)   	

@@ -51,8 +51,9 @@ MR CWE_314{
  			IMPLIES(
  				
  				! Output(Input(1), pos).hasAlert  &&
- 		 
+ 		 		userCanRetrieveContent(action.getUser(), Output(Input(1),pos))   &&
  				notTried( Input(1).actions().get(pos).getUrl() ) &&                       //(4)          
+ 				
  				EQUAL(Input(2), Input(1)) &&                                              //(5)
  				Input(2).actions().get(pos).setParameterValue( x, str512 )&&   //(6)
  				

@@ -52,7 +52,7 @@ MR CWE_88b {
  		
  		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
  			
- 			
+ 			 
  			IMPLIES(
  				
  				//We are about to submit a form
@@ -62,13 +62,13 @@ MR CWE_88b {
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&          
  				EQUAL(Input(2), Input(1) ) &&                                                        //(7)
  				Input(2).actions.get(pos).setFormInput(x, CommandInjection()) 
- 				  && userCanRetrieveContent(action.getUser(), Output(Input(1)).values.subList(pos,size) )                                            
+ 				 && userCanRetrieveContent(action.getUser(), Output(Input(1)).values.subList(pos,size) )                                            
  				,
 // 			
 		   OR(
 			   // Assuming that the input sequence continues after 'pos', we may observe the effects of the attack in the following inputs.
               
-               !different(Output(Input(1)).values.subList(pos,Input(1).actions.length), Output(Input(2)).values.subList(pos,Input(1).actions.length) ) 
+               !different(Output(Input(1)).values.subList(pos,Input(1).actions.length), Output(Input(2)).values.subList(pos,Input(2).actions.length) ) 
 
     		,
                  OR(

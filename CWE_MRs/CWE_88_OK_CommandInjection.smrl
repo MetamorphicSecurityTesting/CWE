@@ -43,7 +43,7 @@ MR CWE_88a {
     for (Action action : Input(1).actions()){                                          //(1)
  		var pos = action.getPosition();                                                //(2) 
  		var size = Input (1).actions().size();
- 		var param = action.parameters;
+ 	//	var param = action.parameters;
  		
  		for (var x = 0; x < action.parameters.size; x++){                              //(3)
  		
@@ -51,20 +51,22 @@ MR CWE_88a {
  		System.out.println("action.parameters.size is:" + action.parameters.size);
  				
  			IMPLIES(
- 		
- 				notTried( Input(1).actions().get(pos).getUrl() ) &&                    //(4)
+ 		   
+ 				
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&                    //(4)
+ 				userCanRetrieveContent(action.getUser(), Output(Input(1)).values.subList(pos,size) )&&
  				EQUAL(Input(2), Input(1))&&                                            //(5)
  				Input(2).actions().get(pos).setParameterValue( x, CommandInjection() ) //(6)
- 			    && userCanRetrieveContent(action.getUser(), Output(Input(1)).values.subList(pos,size) )
+ 			   
  			    , 
 		   
 		   OR(
 			   // Assuming that the input sequence continues after 'pos', we may observe the effects of the attack in the following inputs.
                !different(Output(Input(1)).values.subList(pos,Input(1).actions.length)
-               		, Output(Input(2)).values.subList(pos,Input(1).actions.length) ) 
+               		, Output(Input(2)).values.subList(pos,Input(2).actions.length) ) 
 
     			, OR(
-    				
+    				 
 					//If we have an error the system has spotted the attack
                 	isError(Output(Input(2), pos))                       
 					//If the output is different, the user shall anyway be able to retrieve the provided content
