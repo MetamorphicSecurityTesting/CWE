@@ -39,46 +39,48 @@ package smrl.mr.owasp{
  * has right to access.
  * Since every login interface provided by a different URL may be handled by a different implementation, in this MR, 
  * we perform the attack for every login action URL observed. 
- * The idea behind the CWE_643 that is about XPath is similar to the XQuery idea of CWE_652.
+ * The idea behind the CWE_643 that is about XPath is similar to the XQuery injection in CWE_652.
  * XQuery supports XPath and extended relational models. According to the real cases, we can trigger the weakness with the same inputs, 
  * then we merged these two CWE vulnerabilities together.
  * 
  * 
  * Comments:
- * (1) For loop iterates over all actions of the Input(1)
- * (2) Stores the parameters of the current action in a variable
- * (3) Iterates over the actions that contain a form input.
- * (4) Verifies that the URL has not been tried before.
- * (5) Checks that the current user, Input(1), does not have any error in the output.
- * (6) Creates Input(2) as the follow-up input.
- * (7) Set the Xquery string for the username of the Input(2).
- * (8) The system should show an error page.
+ * (1) It avoids clicking on OK; because dialogs are normally ignored by our framework by clicking on OK.
+ * (2) For loop iterates over all actions of the Input(1)
+ * (3) Stores the parameters of the current action in a variable
+ * (4) Iterates over the actions that contain a form input.
+ * (5) Checks if the action submits the form; i.e. the action contains clicking on submit button.
+ * (6) Filters the dynamic content.
+ * (7) Verifies that the URL has not been tried before.
+ * (8) Creates Input(2) as the follow-up input.
+ * (9) Set the XQuery string as the form input value.
+ * (10) The system should show an error page or a content that the user has right to access.
  * 
  */
  
   
 MR CWE_643_652_B {
  {
-	keepDialogsOpen = true; //Dialogs are normally ignored by our framework by clicking on OK; with the following we avoid clicking on OK
-
- 	for (Action action : Input(1).actions()){                                               
- 		var pos = action.getPosition();                                                     
- 		userCanRetrieveContent(action.getUser(), Output(Input(1),pos));
+	keepDialogsOpen = true;                                                                 //(1)
+	
+ 	for (Action action : Input(1).actions()){                                               //(2)                                          
+ 		
+ 		var pos = action.getPosition();                                                     //(3)
  		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
  		
- 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){      //(4)
  			
  			
  			IMPLIES(
  				//We are about to submit a form
- 				action.isClickOnButton && 
- 				      				
- 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&        
- 				EQUAL(Input(2), Input(1) )                     &&                       
- 				Input(2).actions.get(pos).setFormInput(x, XQueryInjection())  			              
+ 				action.isClickOnButton &&                                                   //(5)
+ 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&     		//(6)
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&    //(7)
+ 				EQUAL(Input(2), Input(1) )                     &&                           //(8)
+ 				Input(2).actions.get(pos).setFormInput(x, XQueryInjection())  			    //(9)       
  				,
 
- 				OR(                                                                     
+ 				OR(                                                                         //(10)                                                              
 		    		isError(Output(Input(2), pos)),                                                       
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
 		    	)

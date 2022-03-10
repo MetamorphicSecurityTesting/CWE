@@ -62,9 +62,9 @@ package smrl.mr.owasp {
  * 
  */
  
-MR CWE_B{ 
+MR CWE_792_793_794_795_796_797_B{ 
  { 
-     keepDialogsOpen = true;
+     keepDialogsOpen = true;        
 
  	for (Action action : Input(1).actions()){                                                  //(1)
  		var pos = action.getPosition();                                                        //(2) 

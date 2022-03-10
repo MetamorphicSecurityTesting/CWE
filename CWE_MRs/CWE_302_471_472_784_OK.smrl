@@ -32,11 +32,18 @@ package smrl.mr.owasp {
  * Comments:
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Stores the parameters of the current action in a variable.
- * (3) Checks that the action is a log in.
- * (4) Creates the follow-up input.
- * (5) Changes the cookie path of the follow-up input to a random cookie path.
- * (6) The system should not allow the follow-up input to take the action, it should how an error
- *     Or It should give a different output to the original user.
+ * (3) Saves the cookie value of the Input(1) in a variable.
+ * (4) Creates a follow-up input with different credentials.
+ * (5) Saves the cookie value of the follow-up user in a variable.
+ * (6) Stores the session key values in a variable.???????
+ * (7) For loop iterates over the session values.
+ * (8) Assigns the type of the cookie to a variable.
+ * (9) Makes sure the URL is not accessible without login.
+ * (10) Creates the follow-up input, named Input(3).
+ * (11) set the session2 as the session value of the Input(3).
+ * (12) Filters all cookie types other than Boolean.
+ * (13) Flip the value of the boolean cookie.
+ * (14) The system should give a different output or should show an error.
  *  
  * 
  */
@@ -44,7 +51,7 @@ package smrl.mr.owasp {
 MR CWE_302_471_472_784{ 
 	{
    for (Action action: Input(1).actions()){                                                        //(1)
-   	//for (var par=0; par < action.getParameters().size(); par++){                                   
+                        
       var pos = action.getPosition();
       var session = Output( Input(1), pos).session as CookieSession;
       

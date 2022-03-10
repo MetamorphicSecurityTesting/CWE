@@ -23,11 +23,11 @@ package smrl.mr.owasp{
  * 
  * Comments:
  * (1) Defines the separator variable
- * (2) For loop iterates for 3 times to cover multiple occurrence of the path separator as well.              //Nazanin: for this reason right?
+ * (2) For loop iterates for 3 times to cover multiple occurrence of the path separator as well.
  * (3) Second for loop iterates over all actions of the Input(1).
  * (4) Stores the parameters of the current action in a variable.
  * (5) Defines the new URL.
- * (6) Verifies whether the current action has been not performed by an administrator
+ * (6) Verifies whether the current action has been not performed by an administrator.
  * (7) Checks if the current action has been performed after a login.
  * (8) Defines a follow-up input that is a copy of the source input.
  * (9) Adds to the end of the current URL a relative path to a file.

@@ -14,56 +14,47 @@ package smrl.mr.owasp {
  * For all input entries that accept to upload a file, we will try to upload files with invalid type e.g. file.php or file.exe.
  * 
  * Comments:
- * (1) For loop iterate over all actions of the Input(1)
- * (2) Define a variable to store the position of the Input(1)'s action
- * (3) Define a variable to store the URL that has not been tried.
- * (4) The second loop iterates over all parameters of the action with the URL that has not tried before.
- * (5) Creates the follow-up input by copying the Input(1).
- * (6) Verifies that the parameter accept a file or not.
- * (7) Assigns files with invalid type to the parameter.
- * (8) Makes sure that the result of the Input(1) and the follow-up input is different
- *     Or the system shows an error to the follow-up input.
- * 
+ * (1) It avoids clicking on OK; because dialogs are normally ignored by our framework by clicking on OK.
+ * (2) For loop iterates over all actions of the Input(1)
+ * (3) Stores the parameters of the current action in a variable
+ * (4) Iterates over the actions that contain a form input.
+ * (5) Checks if the action submits the form; i.e. the action contains clicking on submit button.
+ * (6) Verifies that the URL has not been tried before.
+ * (7) Checks if the action initially does not have any alerts.
+ * (8) Creates Input(2) as the follow-up input.
+ * (9) Set the path to a file with invalid type as the form input value.
+ * (10) The system should show a different result 
+ *      Or the attack should not be performed.
  * 
  * 
  */
  
 MR CWE_434 { 
  { 	
- 	keepDialogsOpen = true;
+ 	keepDialogsOpen = true;                                                                   //(1)
 
- 	for (Action action : Input(1).actions()){                                                  //(1)
- 		var pos = action.getPosition();                                                        //(2) 
+ 	for (Action action : Input(1).actions()){                                                 //(2)
  		
+ 		var pos = action.getPosition();                                                       //(3) 
  		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
  		
- 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
- 			
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){        //(4)	
  			System.out.println("ACTION "+pos+"/////"+x);
- 			IMPLIES(
- 				
- 				//We are about to submit a form
- 					action.isClickOnButton &&      
- 				
- 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&                             //(5)
- 				
- 				! Output(Input(1),pos).hasAlert					&&                              //(6)
- 			      
- 				EQUAL(Input(2), Input(1) )                     &&                       //(7)
- 				
  			
- 				Input(2).actions.get(pos).setFormInput(x,  FileWithInvalidType()) 
- 				
- 				                                 //(9)              
+ 			IMPLIES(
+ 				action.isClickOnButton &&                                                     //(5)
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&     //(6)
+ 				! Output(Input(1),pos).hasAlert					&&                            //(7)
+ 			    EQUAL(Input(2), Input(1) )                     &&                             //(8)
+ 				Input(2).actions.get(pos).setFormInput(x,  FileWithInvalidType())             //(9)
  				,
-
  				OR( 
- 					different( Output(Input(1),pos+1),Output(Input(2),pos+1))
+ 					different( Output(Input(1),pos+1),Output(Input(2),pos+1))                 //(10)
  					,
- 					OR(                                                                           //(10)
+ 					OR(                                                                         
 		    		 //either the attack was not performed
 		    		 Output(Input(2), pos+2).emptyFile,
-		    	               
+		    	                
 		    	     ! Output(Input(2), pos+2).hasAlert       
 		    	))
  			);//end-IMPLIES

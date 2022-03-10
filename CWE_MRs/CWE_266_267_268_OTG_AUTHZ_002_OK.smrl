@@ -36,14 +36,15 @@ package smrl.mr.owasp {
    */	 
   MR CWE_266_267_268_OTG_AUTHZ_002 {
    { 
-     for ( Action action : Input(1).actions() ){                                             //(1)
+     for ( Action action : Input(1).actions() ){                                            //(1)
+	   
 	   IMPLIES(
-	   	 (!isSupervisorOf(User(), action.user)) &&						                     //(2)
-	     cannotReachThroughGUI( User(), action.url )    				                     //(3)
-	     	&&   EQUAL( Input(2), changeCredentials(Input(1), User()) )                      //(4)
+	   	    (!isSupervisorOf(User(), action.user)) &&						                //(2)
+	        cannotReachThroughGUI( User(), action.url )&&   				                //(3)
+	        EQUAL( Input(2), changeCredentials(Input(1), User()) )                          //(4)
 		 ,
 		 OR(
-		 	isError(Output(Input(1),action.position)), 										 //(5)
+		 	isError(Output(Input(1),action.position)), 										//(5)
 		 	NOT( Output(Input(1),action.position).equals(Output(Input(2),action.position))) 
 	   )); //end-IMPLIES
 	   

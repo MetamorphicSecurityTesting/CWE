@@ -3,7 +3,7 @@ import smrl.mr.language.Action;
 
 package smrl.mr.owasp{
 
-/**
+/*
  * CWE Definition:
  * The software uses external input to construct a pathname that is intended to 
  * identify a file or directory that is located underneath a restricted parent 
@@ -15,47 +15,47 @@ package smrl.mr.owasp{
  * A file path passed in a parameter should never enable a 
  * user to access data that is not provided by the user interface.
  *
- * (1) Iterates over the actions of the Input(1).
- * (2) The second for loop iterates over the parameters of the action.
- * (3) Stores the parameters of the current action in a variable.
- * (4) Creates the follow-up input, named Input(2).
- * (5) Sets the value of a parameter to a random file path.
- * (6) Verifies that the system shows an error page
- *     Or the returned content is something that the user has the right to access.
  * 
+ * Comments:
+ * (1) It avoids clicking on OK; because dialogs are normally ignored by our framework by clicking on OK.
+ * (2) For loop iterates over all actions of the Input(1)
+ * (3) Stores the parameters of the current action in a variable
+ * (4) Iterates over the actions that contain a form input.
+ * (5) Checks if the action submits the form; i.e. the action contains clicking on submit button.
+ * (7) Verifies that the URL has not been tried before.
+ * (6) Filters the dynamic content.
+ * (8) Creates Input(2) as the follow-up input.
+ * (9) Set the path to a random file as the form input value.
+ * (10) The system should show a content that the user has right to access,
+ *      Or it should return and empty file or show an error page to the user.
  * 
  */ 
- 
- 
-
  
 MR CWE_22 {
 	
  {
-	keepDialogsOpen = true;
+	keepDialogsOpen = true;                                                                     //(1)
 
- 	for (Action action : Input(1).actions()){                                                  //(1)
- 		var pos = action.getPosition();                                                        //(2) 
+ 	for (Action action : Input(1).actions()){                                                   //(2)
  		
+ 		var pos = action.getPosition();                                                         //(3) 
  		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
  		
- 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){          //(4)
  			
  			System.out.println("ACTION "+pos+"/////"+x);
+ 			
  			IMPLIES(
- 				
- 				action.isClickOnButton &&      
- 				// canReachThroughGUI( User(), Input(1).actions().get(pos).getUrl() ) &&        //(4)
- 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&                             //(5)
- 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&
- 			//	! Output(Input(1),pos).hasAlert	&&                              //(6)  
- 				EQUAL(Input(2), Input(1) ) &&                       //(7)
- 				Input(2).actions.get(pos).setFormInput(x, "../"+RandomPath()) 
+ 				action.isClickOnButton &&                                                       //(5) 
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&       //(6)
+ 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&                //(7)
+ 				EQUAL(Input(2), Input(1) ) &&                                                   //(8)
+ 				Input(2).actions.get(pos).setFormInput(x, "../"+RandomPath())                   //(9)
 
- 				,OR( 
+ 				,OR(                                                                            //(10)
  					 userCanRetrieveContent(action.getUser(), Output(Input(2),pos))
  					,
- 					OR(                                                                           //(10)
+ 					OR(                                                                           
 		    		 Output(Input(2), pos).emptyFile,                 
 		    	     isError(Output(Input(2), pos))       
 		    	))

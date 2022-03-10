@@ -32,9 +32,9 @@ package smrl.mr.owasp {
  * (3) It makes sure that the action is available after the login.
  * (4) Creates the follow-up input by copying the Input(1), named Input(2).
  * (5) Sets a null session for the follow-up input.
- * (6) Verifies that the action can be taken by the current user. i.e. if the IP is not valid the browser will not let us to take the action and will show an error page.
- *     AND The results of the performing the same action by Input(1) and Input(2) 
- *     should be different, or the system shows an error page for Input(2).
+ * (6) Filter out the refresh action.( makes sure the user does not perform the same action in the next iteration)
+ * (7) Verifies that the system would show a content that the user has right to access
+ *     Or it would show an error page or the user will see a different result than1 the source input.
  * 
  * 
  */
@@ -43,31 +43,17 @@ MR CWE_290_291{
  { 
     for ( Action action : Input(1).actions() ) {                             //(1)
 	  	var pos = action.getPosition();                                      //(2)
-	  //	System.out.println("Session Input(1): "+ Input(1).actions.get(pos).session);
-	 // 	Input(2).actions.get(pos).setSession( new CookieSession() ) ;
-	 // 	System.out.println("Session Input(2): "+ Input(2).actions.get(pos).session);
+	
 	   IMPLIES(
-	   	
-	        
 	          afterLogin(action)  
 	         // &&  userCanRetrieveContent(action.getUser(), Output(Input(1),pos))         //(3)  	 				
 	          &&  EQUAL ( Input(2), Input(1) )	                             //(4)	 
          	  && Input(2).actions.get(pos).setSession( new CookieSession() )      //(5)
-	    	  && ! sameUrl( action.currentURL, action.elementURL ) 
-	    	
-
-		    ,
-		                                                                //(6)
-		    
-		      OR(     
-		      	OR(                                                       
-		    	 
-		    	 isError(Output(Input(2), pos)),
-		    	 different ( Output(Input(1),pos),  Output(Input(2),pos))
-		    	
-		    	),
-		    	userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  
-		    	)
+	    	  && ! sameUrl( action.currentURL, action.elementURL )                         //(6)
+		    ,		    
+		      OR(   userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) ,   
+		      	OR( isError(Output(Input(2), pos)),
+		    	 	different ( Output(Input(1),pos),  Output(Input(2),pos))))
 		    	
 		);//end-IMPLIES
 	}//end-for

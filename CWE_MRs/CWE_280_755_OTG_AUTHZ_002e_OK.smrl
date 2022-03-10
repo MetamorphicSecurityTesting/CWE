@@ -6,10 +6,13 @@ package smrl.mr.owasp {
 /*
  *  
  * CWE Definition:
- *  The application does not handle or incorrectly handles when it has insufficient privileges to access resources or functionality as 
- *  specified by their permissions. This may cause it to follow unexpected code paths that may leave the application in an invalid state.
+ * CWE_288: A product requires authentication, but the product has an alternate path or channel that does not require authentication.
+ * 
+ * CWE_755: The software does not handle or incorrectly handles an exceptional condition.
  * 
  * Idea:
+ * The application does not handle or incorrectly handles when it has insufficient privileges to access resources or functionality as 
+ * specified by their permissions. This may cause it to follow unexpected code paths that may leave the application in an invalid state.
  * Assuming certain pages can only be accessed in a certain order, we try to access reserved pages just before the legitimate user may access them. 
  * 
  * 
@@ -17,7 +20,7 @@ package smrl.mr.owasp {
  * (1) For loop iterates over all actions of the Input(1)
  * (2) The second for loop iterates over the sequence of actions after the login.
  * (3) Checks whether the user in User() is not a supervisor of the user performing the current action.
- * (4) Checks that the uRL of the current action is not accessible without login.
+ * (4) Checks that the URL of the current action is not accessible without login.
  * (5) Creates the follow-up input, named Input(2) that takes the login action.
  * (6) Defines the follow-up input, named Input(3) but with different credentials than the Input(2).
  * (7) Creates a copy of Input(1) with a login as b before action y (this way action y is performed as User b). ///// check this one
@@ -28,10 +31,9 @@ package smrl.mr.owasp {
 
 MR CWE_280_755_OTG_AUTHZ_002e{
 	{
-       for(var x = 0; (x < Input(1).actions().size() ); x++){                                                      //(1)
+       for(var x = 0; (x < Input(1).actions().size() ); x++){                                                  //(1)
 			for (var y = x+1; (isLogin(Input(1).actions().get(x)) && y < Input(1).actions().size()); y++) {    //(2)
 	  			IMPLIES(
-	  				//1st par of IMPLIES including 5 clauses
 	  				(!isSupervisorOf(User(), Input(1).actions().get(y).user)) &&                               //(3)
 	  				cannotReachThroughGUI(User(), Input(1).actions().get(y).getUrl()) &&                       //(4)
 	  				EQUAL(Input(2), Input(1).actions().get(x)) &&                                              //(5)
@@ -39,9 +41,8 @@ MR CWE_280_755_OTG_AUTHZ_002e{
 	  				EQUAL(Input(4), addAction(Input(1), y, Input(3).actions().get(0)))                         //(7)
 	  			,	        
              OR(                                                                                               //(8)
-	  					userCanRetrieveContent(Input(4).actions().get(y+1).getUser(), Output(Input(4), y+1))
-	  					,
 	  					Output(Input(4), y+1).isError()
+	  					, userCanRetrieveContent(Input(4).actions().get(y+1).getUser(), Output(Input(4), y+1))	  					
 	  				)
 	  			); //end-IMPLIES
   			} //end-for

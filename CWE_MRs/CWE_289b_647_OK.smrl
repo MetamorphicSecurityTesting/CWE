@@ -18,7 +18,8 @@ package smrl.mr.owasp {
  * 
  * Idea:
  * Protection mechanism that restricts URL access can be bypassed using URL encoding. 
- * 
+ * For example if the "http://URL/users" is not accessible the "http://URL%5Cusers"
+ * should not be accessible as well.
  * 
  * 
  * comments:
@@ -26,16 +27,13 @@ package smrl.mr.owasp {
  * (2) Stores the parameters of the current action in a variable.
  * (3) It creates a new URL address with the hashed format of the separator.
  * (4) Checks if the current action has been performed after a login.
- * (5) Checks if the current user does not have access to the URL and he/she cannot retrieve the content .
+ * (5) Checks if the current user does not have any errors.
  * (6) Defines a follow-up input that is a copy of the source input.
  * (7) Sets the modified URL for the follow-up input.
  * (8) Verifies that the given URL was not tried in a previous execution of the loop (to speed up). 
  * (9) The system should not allow the follow-up input to access the content of the URL that is not accessible by the original URL.
  *     It should show an error page or a content that the user has already right to access.
  * 
- * jenkins/user
- * 
- * jenkis%5Cuser
  * 
  */
 MR CWE_289b_647{
@@ -44,10 +42,10 @@ MR CWE_289b_647{
 var sep = "%5C";
  	for ( var par=0; par < 3; par++ ){
  		 
-		for ( Action action : Input(1).actions() ){                                     //(1)
+		for ( Action action : Input(1).actions() ){                                      //(1)
 						 
-			var pos = action.getPosition();                                             //(2)
-			var newUrl = action.rephraseURL(action.urlPath, sep);                       //(3)     
+			var pos = action.getPosition();                                              //(2)
+			var newUrl = action.rephraseURL(action.urlPath, sep);                        //(3)     
 			
 			
 			IMPLIES( 			
@@ -58,7 +56,7 @@ var sep = "%5C";
 			  	notTried( action.getUser(), newUrl )                                     //(8)
 			  
 			    ,     
-			     	 OR(                                                                  //(9)
+			     	 OR(                                                                 //(9)
 			     		isError( Output(Input(2) , pos) ),
 			     		userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))	)
 			      	      

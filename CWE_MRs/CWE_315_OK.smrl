@@ -20,29 +20,26 @@ package smrl.mr.owasp {
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Stores the parameters of the current action in a variable.
  * (3) Stores the cookie of the current action in a variable.
- * (4) Checks that the current user, Input(1), is not admin.
- * (5) Creates the follow-up input.
- * (6) Tried to retrieve the password field of the cookie.
- * (7) the system should show an error page for the attacker if he/she can access the password field of the cookie
- *     Or the system should show a different result.
+ * (4) Creates the follow-up input.
+ * (5) checks that the session value should not contain the user's password.
  * 
  * 
  */
  
 MR CWE_315 { 
  {  
-    for ( Action action : Input(1).actions() ) {                                        //(1)
+    for ( Action action : Input(1).actions() ) {                                                          //(1)
 
-		var pos = action.getPosition();     
-		var data = Output(Input(1),pos).session.keyValueMappings.values();   
-		var pwd = action.user.password;                                         //(2)
-	  	System.out.println(Output(Input(1),pos).session.keyValueMappings.values  );                                              
+		var pos = action.getPosition();                                                                   //(2)
+		var data = Output(Input(1),pos).session.keyValueMappings.values();                                //(3)
+		//var pwd = action.user.password;                                        
+	  	System.out.println(Output(Input(1),pos).session.keyValueMappings.values  );                                                          
 	   IMPLIES(
 	       								                          
-	          EQUAL ( Input(2), Input(1) )      		    			               //(3)
+	          EQUAL ( Input(2), Input(1) )      		    			                                  //(4)
 		    ,  
 
-	   FALSE ( Output(Input(2),pos).session.keyValueMappings.values.contains(action.user.password) ));
+	   FALSE ( Output(Input(2),pos).session.keyValueMappings.values.contains(action.user.password) ));    //(5)
 
 	}//end-for
  } 

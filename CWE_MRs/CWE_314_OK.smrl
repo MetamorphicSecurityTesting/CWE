@@ -18,18 +18,22 @@ package smrl.mr.owasp {
  * Comments:
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Stores the parameters of the current action in a variable.
- * (3) Second for loop iterates over all parameters of the current action
- * (4) Verifies that the current url has not been seen before
- * (5) Creates the follow-up input, named Input(2).
- * (6) Sets a random string with 512 characters to the parameter of the action 
- * (7) Creates the follow-up input, named Input(3).
- * (8) Sets a random string with 1024 characters to the parameter of the action
- * (9) Creates the follow-up input, named Input(4).
- * (10) Sets a random string with 2048 characters to the parameter of the action
- * (11) There is OR conditions among three different follow-up inputs
+ * (3) Defines random string with three different lengths.
+ * (4) Second for loop iterates over all parameters of the current action.
+ * (5) Makes sure the current action does not have any alerts.
+ * (6) Filters the dynamic content.
+ * (7) Verifies that the current URL has not been seen before
+ * (8) Creates the follow-up input, named Input(2).
+ * (9) Sets a random string with 512 characters to the parameter of the action 
+ * (10) Creates the follow-up input, named Input(3).
+ * (11) Sets a random string with 1024 characters to the parameter of the action
+ * (12) Creates the follow-up input, named Input(4).
+ * (13) Sets a random string with 2048 characters to the parameter of the action
+ * (14) There is OR conditions among three different follow-up inputs
  *     the reason is the system may crash or reveal the content with different string lengths 
  *     we check that the result of the follow-up input is error
- *     Or the follow-up input can retrieve the content that has the right to access 
+ *     Or the follow-up input can retrieve the content that has the right to access
+ *     Or either the attack was not performed
  * 
  * 
  * Based on real case of vulnerability: https://securitytracker.com/id?1014450
@@ -43,33 +47,33 @@ MR CWE_314{
 	{
 	  for (Action action : Input(1).actions()){                                           //(1)
  		var pos = action.getPosition();                                                   //(2) 
- 		var str512 = action.randomString(512);
+ 		var str512 = action.randomString(512);                                            //(3)
  		var str1024 = action.randomString(1024);
  		var str2048 = action.randomString(2048);
- 		for (var x = 0; x < action.parameters.size; x++){                                 //(3)
+ 		for (var x = 0; x < action.parameters.size; x++){                                 //(4)
  		
  			IMPLIES(
  				
- 				! Output(Input(1), pos).hasAlert  &&
- 		 		userCanRetrieveContent(action.getUser(), Output(Input(1),pos))   &&
- 				notTried( Input(1).actions().get(pos).getUrl() ) &&                       //(4)          
+ 				! Output(Input(1), pos).hasAlert  &&                                      //(5)
+ 		 		userCanRetrieveContent(action.getUser(), Output(Input(1),pos))   &&       //(6)
+ 				notTried( Input(1).actions().get(pos).getUrl() ) &&                       //(7)          
  				
- 				EQUAL(Input(2), Input(1)) &&                                              //(5)
- 				Input(2).actions().get(pos).setParameterValue( x, str512 )&&   //(6)
+ 				EQUAL(Input(2), Input(1)) &&                                              //(8)
+ 				Input(2).actions().get(pos).setParameterValue( x, str512 )&&              //(9)
  				
- 				EQUAL(Input(3), Input(1)) &&                                              //(7)
- 				Input(3).actions().get(pos).setParameterValue( x, str1024 )&&  //(8)
+ 				EQUAL(Input(3), Input(1)) &&                                              //(10)
+ 				Input(3).actions().get(pos).setParameterValue( x, str1024 )&&             //(11)
  				
- 				EQUAL(Input(4), Input(1)) &&                                              //(9)
- 				Input(4).actions().get(pos).setParameterValue( x, str2048 )    //(10)
+ 				EQUAL(Input(4), Input(1)) &&                                              //(12)
+ 				Input(4).actions().get(pos).setParameterValue( x, str2048 )               //(13)
  			                  
  				,
- 		OR(	OR(
+ 		OR(	OR(                                                                           //(14)
  					OR(
  						OR(
-		    		 isError(Output(Input(2), pos)),                                      //(11)                  
+		    		 isError(Output(Input(2), pos)),                                                       
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
-		    	     ),	OR(                                                                            //(10)
+		    	     ),	OR(                                                                            
 		    		 //either the attack was not performed
 		    		 Output(Input(2), pos).emptyFile,
 		    		     
@@ -79,9 +83,9 @@ MR CWE_314{
 		    	,
 		    	OR(
  						OR(
-		    		 isError(Output(Input(3), pos)),                                      //(11)                  
+		    		 isError(Output(Input(3), pos)),                                                      
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(3),pos))        
-		    	     ),	OR(                                                                            //(10)
+		    	     ),	OR(                                                                            
 		    		 //either the attack was not performed
 		    		 Output(Input(3), pos).emptyFile,
 		    		     
@@ -90,9 +94,9 @@ MR CWE_314{
 		    	)),
 		    	OR(
  						OR(
-		    		 isError(Output(Input(4), pos)),                                      //(11)                  
+		    		 isError(Output(Input(4), pos)),                                                   
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(4),pos))        
-		    	     ),	OR(                                                                            //(10)
+		    	     ),	OR(                                                                          
 		    		 //either the attack was not performed
 		    		 Output(Input(4), pos).emptyFile,
 		    		     

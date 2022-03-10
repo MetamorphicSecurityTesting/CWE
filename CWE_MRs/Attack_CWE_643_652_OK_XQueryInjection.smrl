@@ -45,30 +45,31 @@ package smrl.mr.owasp {
  * (1) For loop iterates over all actions of the Input(1)
  * (2) Store the parameters of the current action in a variable
  * (3) It checks if the current action of the Input(1) is login.
- * (4) Verifies that the URL has not been tried before.
- * (5) Creates Input(2) as the follow-up input.
- * (6) Set a Xquery string for the username of the Input(2)
- * (7) Set a weak password value for the password of the Input(2) 
- * (8) The system should show an error page
+ * (4) Filters the dynamic content.
+ * (5) Verifies that the URL has not been tried before.
+ * (6) Creates Input(2) as the follow-up input.
+ * (7) Set a Xquery string for the username of the Input(2)
+ * (8) Set a weak password value for the password of the Input(2) 
+ * (9) The system should show an error page
  *      Or the user should retrieve the content that has right to access it.
  */
  
 MR CWE_643_652 { 
  { 
     for ( Action action : Input(1).actions() ) {                                                                   //(1)
-	  	var pos = action.getPosition();  
-	  	userCanRetrieveContent(action.getUser(), Output(Input(1),pos))   ;                                                                          //(2)
+	  	
+	  	var pos = action.getPosition();                                                                                                            //(2)
 	  	//System.out.println("ACTION "+pos+"/"+action.url);
 	   IMPLIES(
 	   	
-	          isLogin(action) 
-	                                                                                              //(3)
-	          && notTried(action.url)																			   //(4)							
-	          && EQUAL ( Input(2), Input(1) )	                                                                   //(5)
-	          && Input(2).actions.get(action.position).setValueForParametersOfType("text", XQueryInjection())      //(6)   "' or 1=1 or ''='"
-	    	  && Input(2).actions.get(action.position).setValueForParametersOfType("password", WeakPassword())     //(7) 
+	          isLogin(action)                                                                                      //(3)
+	        //  && userCanRetrieveContent(action.getUser(), Output(Input(1),pos))                                    //(4)                                                //(3)
+	          && notTried(action.url)																			   //(5)							
+	          && EQUAL ( Input(2), Input(1) )	                                                                   //(6)
+	          && Input(2).actions.get(action.position).setValueForParametersOfType("text", XQueryInjection())      //(7)   "' or 1=1 or ''='"
+	    	  && Input(2).actions.get(action.position).setValueForParametersOfType("password", WeakPassword())     //(8) 
 		    ,  
-		    OR(                                                                                                    //(8) 
+		    OR(                                                                                                    //(9) 
 		    		 isError(Output(Input(2), pos)),                        
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
 		    	)
