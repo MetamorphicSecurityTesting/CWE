@@ -23,7 +23,7 @@ package smrl.mr.owasp {
  * (4) Checks that the URL of the current action is not accessible without login.
  * (5) Creates the follow-up input, named Input(2) that takes the login action.
  * (6) Defines the follow-up input, named Input(3) but with different credentials than the Input(2).
- * (7) Creates a copy of Input(1) with a login as b before action y (this way action y is performed as User b). ///// check this one
+ * (7) Creates a copy of Input(1) with a login as b before action y (this way action y is performed as User b).
  * (8) The system should show an error page or the user should see the content that has right to access.
  * 
  * 

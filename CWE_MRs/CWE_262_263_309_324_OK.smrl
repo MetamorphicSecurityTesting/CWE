@@ -47,7 +47,7 @@ package smrl.mr.owasp{
 						isLogin( Input(1).actions().get(y) ) &&                                        //(3)
 						notTried(Input(1).actions().get(y).user, Input(1).actions().get(y).url ) &&    //(4)
 						EQUAL ( Input(2) , Input(1) ) &&                                               //(5)				
-						Input(2).addAction ( x+1, Wait( 60*60*24*30*12*1000 ) ) &&                     //(6) //60*60*24*30*12*1000
+						Input(2).addAction ( x+1, Wait( 60*60*24*30*12*1000) ) &&                      //(6) //60*60*24*30*12*1000
 						Input(2).addAction ( x+2, Input(1).actions().get(y) )                          //(7)
 						,
 						different ( Output(Input(2),y),  Output(Input(2),x+2) )                        //(8)

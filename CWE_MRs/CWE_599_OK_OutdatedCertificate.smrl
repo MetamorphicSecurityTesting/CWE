@@ -5,6 +5,7 @@ import sun.security.util.Password
 package smrl.mr.owasp {
  
 /**
+ * 
  * CWE Definition:
  * The software uses OpenSSL and trusts or uses a certificate without using the SSL_get_verify_result() 
  * function to ensure that the certificate satisfies all necessary security requirements.
@@ -18,10 +19,12 @@ package smrl.mr.owasp {
  * Comments:
  * (1) For loop iterates over all actions of the Input(1)
  * (2) Stores the parameters of the current action in a variable
- * (3) It checks if the current action of the Input(1) is taken after the login.
- * (4) Creates the follow-up input.
- * (5) It changes the certificate in the current action, it is configured to use a certificate from another user.
- * (6) The system should show the error 
+ * (3) It checks if the current action of the Input(1) is the login.
+ * (4) Verifies that the current URL has not been seen before, to speed up the process.
+ * (5) Filters the webpages with dynamic content.
+ * (6) Creates the follow-up input.
+ * (7) Sets an out dated certificate for the user.
+ * (8) The system should show the error 
  *     Or the follow-up input should retrieve the content that has right to access
  *     Or the result should be different.
  * 
@@ -30,19 +33,17 @@ package smrl.mr.owasp {
  
 MR CWE_599 {  
  { 
-    for ( Action action : Input(1).actions() ) {                                     //(1)
-	  	var pos = action.getPosition();                                              //(2)
+    for ( Action action : Input(1).actions() ) {                                        //(1)
+	  	var pos = action.getPosition();                                                 //(2)
 	  
 	   IMPLIES(
-	   		   afterLogin(action) &&                                                 //(3)
-	           userCanRetrieveContent(action.user, Output(Input(1), pos))&&
-	           EQUAL ( Input(2), Input(1) ) &&	                                     //(4)
-	         
-	           Input(2).setUseOutdatedCertificate(true)                              //(5)
-	         
-	    	  
+	   		   isLogin(action) &&                                                       //(3)
+	           notTried( action.url, Input(1).actions().get(pos).getElementURL() )  &&  //(4)
+	           userCanRetrieveContent(action.user, Output(Input(1), pos))&&             //(5)
+	           EQUAL ( Input(2), Input(1) ) &&	                                        //(6)
+	           Input(2).setUseOutdatedCertificate(true)                                 //(7)
 		    ,  
-		    OR(                                                                     //(6)
+		    OR(                                                                         //(8)
 		    	isError(Output(Input(2), pos))    
 		    	,
 		    OR	(userCanRetrieveContent(action.user, Output(Input(2), pos)) ,

@@ -30,12 +30,12 @@ package smrl.mr.owasp{
  */ 
 	MR CWE_613_OTG_SESS_006 {
 		{
-			for ( var x=0; x < Input(1).actions().size() ; x++ ){   //(1)
-				for ( var y=0; y < x ; y++ ){                       //(2)
+			for ( var x=0; x < Input(1).actions().size() ; x++ ){                 //(1)
+				for ( var y=0; y < x ; y++ ){                                     //(2)
 					IMPLIES ( 
-						isLogout( Input(1).actions().get(x) ) &&    //(3)
-						afterLogin( Input(1).actions().get(y) ) &&  //(4)
-						! isLogin( Input(1).actions().get(y) ) &&   //(5)
+						isLogout( Input(1).actions().get(x) ) &&                  //(3)
+						afterLogin( Input(1).actions().get(y) ) &&                //(4)
+						! isLogin( Input(1).actions().get(y) ) &&                 //(5)
 						EQUAL ( Input(2) , copyActionTo( Input(1), x, y ) )       //(6)
 						, 
 						different ( Session(Input(2),y-1),  Session(Input(2),y) ) //(7)

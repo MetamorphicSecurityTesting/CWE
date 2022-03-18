@@ -58,24 +58,23 @@ package smrl.mr.owasp{
  */ 
 MR CWE_610_384 { 
 		{
-			for ( var x = 0; x < Input(1).actions().size(); x++ ){                                                //(1)
+			for ( var x = 0; x < Input(1).actions().size(); x++ ){                                                   //(1)
 		
-				for ( var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){   //(2)
+				for ( var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){      //(2)
 					
-					setResetBrowserBetweenInputs( false );                                                        //(3)
-					var session =  Output(Input(1),x).getSession()
+					setResetBrowserBetweenInputs( false );                                                           //(3)
+					
 					IMPLIES ( 
 						EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, y ) ) ) &&                          //(4)
 						EQUAL ( Input(3) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  && //(5)
-						Input(3).addAction(0,Input(1).actions().get(x)) && 											 //(6) we start with a login
-						Input(3).actions().get(1).setSession( Output(Input(2),x).getSession() )                      //(7) however, after the login we are forcing the browser to reuse the old session ID
-						
+						Input(3).addAction(0,Input(1).actions().get(x)) && 											 //(6) 
+						Input(3).actions().get(1).setSession( Output(Input(2),x).getSession() )                      //(7) 	
 						,
-						OR ( different ( Output(Input(2),x),  Output(Input(3),0)),
-					
-					AND	( different ( Output(Input(2),x).getSession(),  Output(Input(3),0).getSession())  // 
-							,  isError(Output(Input(3),1))
-	))						
+					OR (                                                                                             //(8)
+						different ( Output(Input(2),x),  Output(Input(3),0)),
+						AND	( 
+							   different ( Output(Input(2),x).getSession(),  Output(Input(3),0).getSession())  
+							,  isError(Output(Input(3),1))	))						
 					); //end-IMPLIES
 					
 					setResetBrowserBetweenInputs( true ); 

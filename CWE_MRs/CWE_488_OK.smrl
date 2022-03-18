@@ -18,11 +18,11 @@ package smrl.mr.owasp {
  * (1) For loop iterates over all actions of the Input(1)
  * (2) The second for loop iterates over the sequence of actions after the login.
  * (3) Checks whether the user in User() is not a supervisor of the user performing the current action.
- * (4) Checks that the uRL of the current action is not accessible without login.
+ * (4) Checks that the requested web page does not contain dynamic content.
  * (5) Creates the follow-up input, named Input(2) that takes the login action.
  * (6) Defines the follow-up input, named Input(3) but with different credentials than the Input(2).
- * (7) Creates a copy of Input(1) with a login as b before action y (this way action y is performed as User b). ///// check this one
- * (8) The system should show an error page or the user should see the content that has right to access.
+ * (7) Creates a copy of Input(1) with a login as b before action y (this way action y is performed as User b). 
+ * (8) The system should show an error page, or different content, or a content that the user has right to access.
  * 
  * 
  */
@@ -41,7 +41,7 @@ MR CWE_488{
              OR(                                                                                               //(8)
 	  					userCanRetrieveContent(Input(4).actions().get(y+1).getUser(), Output(Input(4), y+1))
 	  					,
-	  					OR(Output(Input(4), y+1).isError() ///  add different() for CWE_488
+	  					OR(Output(Input(4), y+1).isError() 
 	  					,
 	  					different(Output(Input(1), y+1),Output(Input(4), y+1))
 	  					)

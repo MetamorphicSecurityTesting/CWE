@@ -4,11 +4,6 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp {
  
 /**
- * merge to AUTHZ001a
- * FABRIZIO: we need a concrete case
- * e.g., https://cve.circl.lu/cve/CVE-2017-1000392 (but is 79)
- * 
- * 
  * CWE Definition:
  * The software constructs a string for a command to executed by a separate component in another 
  * control sphere, but it does not properly delimit the intended arguments, options, or switches
@@ -18,64 +13,52 @@ package smrl.mr.owasp {
  * For all parameters of the actions we try to inject some commands to check whether the system is able
  * to neutralize the command injection or not.
  * 
- * 
- * 
  * Comments:
- * (1) For loop iterates over all actions of the Input(1).
- * (2) Stores the parameters of the current action in a variable.
- * (3) Second for loop iterates over all parameters of the current action
- * (4) Verifies that the current URL has not been seen before
- * (5) Creates the follow-up input
- * (6) Sets the SQL injection strings to the parameter of the action 
- * (7) Checks that the system does not parse the command and the Input(1) and the follow-up input both get the same output.
+ * (1) It avoids clicking on OK; because dialogs are normally ignored by our framework by clicking on OK.
+ * (2) For loop iterates over all actions of the Input(1).
+ * (3) Stores the position of the current action in a variable.
+ * (4) Stores the size of the action in a variable.
+ * (5) Second for loop iterates over all parameters of the current action
+ * (6) Verifies that the current URL has not been seen before
+ * (7) Filters the webpages with dynamic content.
+ * (8) Creates the follow-up input.
+ * (9) Sets the command injection string to the parameter of the action 
+ * (10) Checks that the system does not parse the command and the Input(1) and the follow-up input both get the same output.
  *     Or the result of the follow-up input is error
  *     Or the follow-up input can has the right to access
  * 
  */
  
-
- //";echo HELLO;"
  
 MR CWE_88a { 
  { 
- 	keepDialogsOpen = true;
+ 	keepDialogsOpen = true;                                                                              //(1)
  	
-    for (Action action : Input(1).actions()){                                          //(1)
- 		var pos = action.getPosition();                                                //(2) 
- 		var size = Input (1).actions().size();
- 	//	var param = action.parameters;
- 		
- 		for (var x = 0; x < action.parameters.size; x++){                              //(3)
+    for (Action action : Input(1).actions()){                                                            //(2)
+ 	
+ 		var pos = action.getPosition();                                                                  //(3) 
+ 		var size = Input (1).actions().size();                                                           //(4)
+		
+ 		for (var x = 0; x < action.parameters.size; x++){                                                //(5)
  		
  		System.out.println("This is the value of x:"+x);
  		System.out.println("action.parameters.size is:" + action.parameters.size);
  				
  			IMPLIES(
- 		   
- 				
- 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&                    //(4)
- 				userCanRetrieveContent(action.getUser(), Output(Input(1)).values.subList(pos,size) )&&
- 				EQUAL(Input(2), Input(1))&&                                            //(5)
- 				Input(2).actions().get(pos).setParameterValue( x, CommandInjection() ) //(6)
- 			   
+ 		   		notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&                 //(6)
+ 				userCanRetrieveContent(action.getUser(), Output(Input(1)).values.subList(pos,size) )&&   //(7)
+ 				EQUAL(Input(2), Input(1))&&                                                              //(8)
+ 				Input(2).actions().get(pos).setParameterValue( x, CommandInjection() )                   //(9) 
  			    , 
 		   
-		   OR(
+		   OR(                                                                                           //(10)
 			   // Assuming that the input sequence continues after 'pos', we may observe the effects of the attack in the following inputs.
-               !different(Output(Input(1)).values.subList(pos,Input(1).actions.length)
-               		, Output(Input(2)).values.subList(pos,Input(2).actions.length) ) 
+               !different(Output(Input(1)).values.subList(pos,Input(1).actions.length),
+               	Output(Input(2)).values.subList(pos,Input(2).actions.length) ) 
 
     			, OR(
-    				 
-					//If we have an error the system has spotted the attack
                 	isError(Output(Input(2), pos))                       
-					//If the output is different, the user shall anyway be able to retrieve the provided content
                 ,	userCanRetrieveContent(action.getUser(), Output(Input(2)).values.subList(pos,size) ))
-                
-                
-                
-                
-                //userCanRetrieveContent(action.getUser(),Output(Input(2) , pos))	)
 				
 			)//end-RHS-OR
 		);//end-IMPLIES

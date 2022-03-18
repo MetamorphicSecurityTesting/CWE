@@ -18,47 +18,49 @@ package smrl.mr.owasp{
  * show the content to the user that has the right to access to it or an error page. 
  *
  * Comments:
- * (1) For loop iterates over all actions of the Input(1).
- * (2) Stores the parameters of the current action in a variable.
- * (3) Second for loop iterates over all parameters of the current action and verifies that the action has input form.
- * (4) Verifies that the current url has not been seen before
- * (5) Creates the follow-up input
- * (6) Uploads the malformed XML file to the parameter of the action.
- * (7) Checks that the result of the follow-up input is error
+ * (1) It avoids clicking on OK; because dialogs are normally ignored by our framework by clicking on OK.
+ * (2) For loop iterates over all actions of the Input(1).
+ * (3) Stores the parameters of the current action in a variable.
+ * (4) Second for loop iterates over all parameters of the current action and verifies that the action has input form.
+ * (5) Checks that user submits the form.
+ * (6) Verifies that the current URL has not been seen before, to speed up the process.
+ * (7) Checks that the action originally does not contain any alert.
+ * (8) Creates the follow-up input
+ * (9) Uploads the malformed XML file to the parameter of the action.
+ * (10) Checks that the result of the follow-up input is error
  *     Or the follow-up input can has the right to access 
+ *     Or the user will retrieve an empty file or she will see an alert message.
  * 
  * 
  */
  
 MR CWE_611 { 
  { 
- 	keepDialogsOpen = true;
+ 	keepDialogsOpen = true;                                                                    //(1)
 
- 	for (Action action : Input(1).actions()){                                                  //(1)
+ 	for (Action action : Input(1).actions()){                                                  //(2)
  		
- 		var pos = action.getPosition();                                                        //(2) 
- 		
+ 		var pos = action.getPosition();                                                        //(3) 	
  		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
  		
- 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){         //(4)
  			
  			System.out.println("ACTION "+pos+"/////"+x);
  			IMPLIES(
- 				
- 				action.isClickOnButton &&      
- 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&                             //(5)
- 				! Output(Input(1),pos).hasAlert					&&                              //(6)
- 			    EQUAL(Input(2), Input(1) )                     &&                       //(7)
- 				Input(2).actions.get(pos).setFormInput(x,  XMLInjectedFile())         
+ 				action.isClickOnButton &&                                                      //(5)    
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&      //(6)
+ 				! Output(Input(1),pos).hasAlert					&&                             //(7)
+ 			    EQUAL(Input(2), Input(1) )                     &&                              //(8)
+ 				Input(2).actions.get(pos).setFormInput(x,  XMLInjectedFile())                  //(9)
  				,
 
- 				OR( 
+ 				OR(                                                                            //(10)
  					OR(
  						different( Output(Input(1),pos+1),Output(Input(2),pos+1)),
  						isError(Output(Input(2),pos+1))
  					)
  					,
- 					OR(                                                                           //(10)
+ 					OR(                                                                           
 		    		 //It depends on the system 
 		    		 Output(Input(2), pos+1).emptyFile,             
 		    	     ! Output(Input(2), pos+1).hasAlert       

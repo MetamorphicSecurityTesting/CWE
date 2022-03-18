@@ -27,7 +27,7 @@ package smrl.mr.owasp{
  * (4) Creates the follow-up input with the sequence of actions after the login (action y).
  * (5) Makes sure that we start with a signup action
  * (6) Reset the actions for next iteration
- * (7) Verifies that the system gives two different outputs or will give error by executing the follow-up input.
+ * (7) Verifies that the system gives two different outputs or will give an error by executing the follow-up input.
  * 
  * 
  */ 
@@ -47,7 +47,7 @@ MR CWE_841 {
 						Input(2).addAction(0, new ResetSUTAction())                                                      //(6)
 						, 
 					
-						AND( different ( Output(Input(2),1),  Output(Input(1),y) )                                       //(7)  login should fail 
+						AND( different ( Output(Input(2),1),  Output(Input(1),y) )                                       //(7) 
 						,
 						isError(Output(Input(2),1)) 
 						)

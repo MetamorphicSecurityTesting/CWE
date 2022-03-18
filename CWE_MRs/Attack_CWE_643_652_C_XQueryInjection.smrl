@@ -73,7 +73,8 @@ MR CWE_643_652_C {
 	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){                      //(4)
 	  			 IMPLIES(
 	        		
-	        		  action.isClickOnButton &&                                                                      //(5)
+	        		  action.isClickOnButton &&
+	        		  isLogin(action)&&                                                                      //(5)
 	        		  userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&                               //(6)
 	        		  notTried(action.url, Input(1).actions().get(pos).getElementURL() )  &&   //(7)
 	        		  !isError(Output(Input(1),pos))		&&													     //(8)							

@@ -31,39 +31,42 @@ package smrl.mr.owasp{
  * 
  * 
  * Comments:
- * (1) For loop iterate over all actions of the Input(1)
- * (2) Define a variable to store the position of the Input(1)'s action
- * (3) The second loop iterates over all parameters of the action if the action URL's was not tested already with any user.
- * (4) Creates the follow-up input by copying the Input(1).
- * (5) Injects some Static injection strings to the follow-up input.
- * (6) Makes sure that the result of the Input(1) and the follow-up input is different
- *     Or The user is retrieving the content that has right to access it.
+ * (1) It avoids clicking on OK; because dialogs are normally ignored by our framework by clicking on OK.
+ * (2) For loop iterate over all actions of the Input(1)
+ * (3) Define a variable to store the position of the Input(1)'s action
+ * (4) The second loop iterates over all parameters of the action if the action contains a form input.
+ * (5) makes sure the user will submit the form.
+ * (6) Verifies the current parameter was not tested before.
+ * (7) Filters out the web pages with dynamic content.
+ * (8) Creates the follow-up input by copying the Input(1).
+ * (9) Injects some Static injection strings to the follow-up input.
+ * (10) The system may show an error page to the user 
+ *     Or the user is retrieving the content that has right to access it.
  *  
  */
  
   
 MR CWE_94_96_B {
  {
-	keepDialogsOpen = true;
+	keepDialogsOpen = true;                                                                    //(1)
 
- 	for (Action action : Input(1).actions()){                                                  //(1)
- 		var pos = action.getPosition();                                                        //(2) 
+ 	for (Action action : Input(1).actions()){                                                  //(2)
+ 		var pos = action.getPosition();                                                        //(3) 
  		
  		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
  		
- 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                                      //(3)
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){         //(4)
  			
  			
  			IMPLIES(
- 				//We are about to submit a form
- 				action.isClickOnButton && 
- 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&        				
- 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&        
- 				EQUAL(Input(2), Input(1) )                     &&                       
- 				Input(2).actions.get(pos).setFormInput(x, StaticInjectionString())  			              
+ 				action.isClickOnButton &&                                                      //(5)
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&       //(6)
+ 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&        	   //(7)	  
+ 				EQUAL(Input(2), Input(1) )                     &&                              //(8)
+ 				Input(2).actions.get(pos).setFormInput(x, StaticInjectionString())  		   //(9)          
  				,
 
- 				OR(                                                                     
+ 				OR(                                                                            //(10)                                                      
 		    		isError(Output(Input(2), pos)),                                                       
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
 		    	)

@@ -28,14 +28,15 @@ package smrl.mr.owasp {
  * 
  * Comments:
  * (1) For loop iterate over all actions of the Input(1)
- * (2) Define a variable to store the position of the Input(1)'s action
- * (3) The second loop iterates over all parameters of the action if the action URL's was not tested already with any user.
- * (4) Creates the follow-up input by copying the Input(1).
- * (5) Injects some Static injection strings to the follow-up input.
- * (6) Makes sure that the result of the Input(1) and the follow-up input is different
- *     Or The user is retrieving the content that has right to access it.
+ * (2) Stores the position of the action in a variable.
+ * (3) The second loop iterates over all parameters of the action.
+ * (4) Verifies the current parameter was not tested before.
+ * (5) Filters out the web pages with dynamic content.
+ * (6) Creates the follow-up input by copying the Input(1).
+ * (7) Injects some Static injection strings to the follow-up input.
+ * (8) The system may show an error page to the user 
+ *     Or the user is retrieving the content that has right to access it.
  *  
- * 
  */
  
 MR CWE_94_96 { 
@@ -44,15 +45,15 @@ MR CWE_94_96 {
     for ( Action action : Input(1).actions() ) {                                               //(1)
 	  	var pos = action.getPosition();                                                        //(2)
 	  	
-	   	for ( var x =0; x < action.parameters.size; x++){              //(3)
+	   	for ( var x =0; x < action.parameters.size; x++){                                      //(3)
 	   IMPLIES( 
-	   			notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&
-	   			userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&
-	   			EQUAL ( Input(2), Input(1) ) &&                                                //(4)
-	   			Input(2).actions().get(pos).setParameterValue( x, StaticInjectionString() )    //(5)				    			
+	   			notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&       //(4)
+	   			userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&              //(5)
+	   			EQUAL ( Input(2), Input(1) ) &&                                                //(6)
+	   			Input(2).actions().get(pos).setParameterValue( x, StaticInjectionString() )    //(7)				    			
 		    ,  
-		    	OR(
-		    		 isError(Output(Input(2), pos)),                                           //(6)        
+		    	OR(                                                                            //(8)
+		    		 isError(Output(Input(2), pos)),                                                   
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) 
 		    	     )
 		    	
@@ -63,8 +64,5 @@ MR CWE_94_96 {
  } 
 }//end-MR
 }//end-package
-
-
-
 
 

@@ -5,28 +5,31 @@ package smrl.mr.owasp {
  
 /**
  * 
- * CWE Definition:
+* CWE Definition:
  * The software uses CRLF (carriage return line feeds) as a special element, e.g. to separate lines or records, 
  * but it does not neutralize or incorrectly neutralizes CRLF sequences from inputs.
  * 
- * Idea: We append a CRLF attack string, to perform an HTTP Response Splitting attack, which leads
- * to modify expected HTML content coming from the server.
- * A CRLF attack string may be the following "%0d%0a%0d%0aHTTP/1.0%20200%20OK%0d%0aContent-Length:%2014%0d%0aContent-Type:%20text/html%0d%0a%0d%0a<html>defaced</html>
  * 
- * It was successfully used for
- * https://bugtraq.securityfocus.com/detail/20040916150024.04B7BE5BC9
- * 
+ * Idea: 
+ * CRLF injections are vulnerabilities where the attacker is able to inject CR (carriage return, ASCII 13) and LF (line feed, ASCII 10) characters 
+ * into the web application. This lets the attacker add extra headers to HTTP responses or even make the browser ignore the original content and 
+ * process injected content instead.
+ * Then, we inject some CRLF strings e.g. %0d%0a that %0d and %0a are encoded forms of \r and \n respectively, to the URL of the action to check whether the system can neutralize the input or not.
+ * We expect the system to ignore the injected CRLF strings or show an error page.
+ * In this version we will inject the CRLF strings after a separator in URL.
  * 
  * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Defines a variable to store the position of the Input(1)'s action.
- * (3) Defines a new URL with the injected value.
- * (4) Creates the follow-up input by copying the Input(1).
- * (5) Sets the modified URL to the follow-up input.
- * (6) Checks that the URL has not been previously seen.
- * (7) Makes sure that the result of Input(2) is either an error 
- *     Or The user is retrieving content that he has right to access.
+ * (3) Creates a new URL which includes CRLF strings.
+ * (4) Checks that the URL has not been previously seen.
+ * (5) Filters out the web pages with dynamic content.
+ * (6) Creates the follow-up input by copying the Input(1).
+ * (7) Sets the modified URL to the follow-up input.
+ * (8) The user may retrieve an empty file or see an alert
+ *     Or the user may see a content that already has right to access it
+ *     Or the system mat show an error page to the user.
  *  
  * 
  * 
@@ -34,8 +37,8 @@ package smrl.mr.owasp {
  
 MR CWE_93b { 
  { 	 
- 	var sep="/";                                                     //(1)
- 	for ( var par=0; par < 3; par++ ){                               //(2)
+ 	var sep="/";                                                     
+ 	for ( var par=0; par < 3; par++ ){                               
  		 
  	
     for ( Action action : Input(1).actions() ) {                      //(1)

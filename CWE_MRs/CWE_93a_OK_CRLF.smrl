@@ -9,6 +9,7 @@ package smrl.mr.owasp {
  * The software uses CRLF (carriage return line feeds) as a special element, e.g. to separate lines or records, 
  * but it does not neutralize or incorrectly neutralizes CRLF sequences from inputs.
  * 
+ * 
  * Idea: 
  * CRLF injections are vulnerabilities where the attacker is able to inject CR (carriage return, ASCII 13) and LF (line feed, ASCII 10) characters 
  * into the web application. This lets the attacker add extra headers to HTTP responses or even make the browser ignore the original content and 
@@ -16,20 +17,18 @@ package smrl.mr.owasp {
  * Then, we inject some CRLF strings e.g. %0d%0a that %0d and %0a are encoded forms of \r and \n respectively, to the URL of the action to check whether the system can neutralize the input or not.
  * We expect the system to ignore the injected CRLF strings or shows an error page.
  * 
- * like the example from the following web site:
- * www.target.com/%0d%0aContent-Length:35%0d%0aX-XSS-Protection:0%0d%0a%0d%0a23
- * 
- * Web site: https://www.geeksforgeeks.org/crlf-injection-attack/#:~:text=A%20Carriage%20Return%20Line%20Feed%20%28CRLF%29%20Injection%20vulnerability,has%20terminated%20and%20a%20new%20one%20has%20begun.
  * 
  * Comments:
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Defines a variable to store the position of the Input(1)'s action.
- * (3) Checks that the URL has not been previously seen.
- * (4) Defines a new URL with the injected value.
- * (5) Creates the follow-up input by copying the Input(1).
- * (6) Sets the modified URL to the follow-up input.
- * (7) Makes sure that the result of Input(2) is either an error 
- *     Or The user is retrieving content that he has right to access.
+ * (3) Creates a new URL which includes CRLF strings.
+ * (4) Checks that the URL has not been previously seen.
+ * (5) Filters out the web pages with dynamic content.
+ * (6) Creates the follow-up input by copying the Input(1).
+ * (7) Sets the modified URL to the follow-up input.
+ * (8) The user may retrieve an empty file or see an alert
+ *     Or the user may see a content that already has right to access it
+ *     Or the system mat show an error page to the user.
  *  
  * 
  * 
@@ -45,20 +44,18 @@ MR CWE_93a {
 			IMPLIES( 
 				
 				notTried( action.getUser(), newUrl )		&&	                           //(4)	 					 
-				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&
-				EQUAL( Input(2), Input(1) ) &&					                           //(5)
-			  	Input(2).actions().get(pos).setUrl( newUrl )                               //(6)
+				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&           //(5)
+				EQUAL( Input(2), Input(1) ) &&					                           //(6)
+			  	Input(2).actions().get(pos).setUrl( newUrl )                               //(7)
 			    ,
-			  OR(OR(                                                                           //(10)
-		    		 //either the attack was not performed
-		    		 Output(Input(2), pos).emptyFile,
-		    		 //or no effect shall be observed (the effect is visualized when reaching the page where we inject the XSS)                  
-		    	     Output(Input(2), pos).hasAlert   
-		    	     ), OR( 
- 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  
- 					,
+			  OR(                                                                          //(8)
+			  	OR(                                                                          
+		    		 Output(Input(2), pos).emptyFile,              
+		    	     Output(Input(2), pos).hasAlert), 
+		    	OR( 
+ 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos)),  
  					isError(Output(Input(2), pos)))
- 				//	userCanRetrieveContent(action.getUser(), Output(Input(2),pos))    
+ 			  
  		)	);
 	}//end-for
  }

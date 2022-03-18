@@ -26,7 +26,7 @@ package smrl.mr.owasp{
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Stores the parameters of the current action in a variable.
  * (3) Second for loop iterates over all parameters of the current action.
- * (4) Verifies that the current url has not been seen before.
+ * (4) Verifies that the current URL has not been seen before, to speed up the process.
  * (5) Filters the dynamic content.
  * (6) Creates the follow-up input.
  * (7) Sets the SQL injection strings to the parameter of the action. 
@@ -51,7 +51,8 @@ MR CWE_89_943 {
  				,
  				OR(                                                                                                //(8)
 		    		 isError(Output(Input(2), pos)),                                                       
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
+		    	    // userCanRetrieveContent(action.getUser(), Output(Input(2),pos))
+		    	    EQUAL(Output(Input(1),pos),Output(Input(2),pos))        
 		    	)
  			);
  		}

@@ -16,14 +16,15 @@ package smrl.mr.owasp {
  * or a different output after injecting the URL.
  * 
  * Comments:
- * (1) For loop iterates over all actions of the Input(1).
- * (2) Defines a variable to store the position of the Input(1)'s action.
- * (3) Defines a new URL with the injected XSS value.
- * (4) Creates the follow-up input by copying the Input(1).
- * (5) Sets the modified URL to the follow-up input.
- * (6) Checks that the URL has not been previously seen.
- * (7) Makes sure that the result of the Input(1) and the follow-up input is different
- *     Or The user is retrieving the content that has right to access it.
+ * (1) It avoids clicking on OK; because dialogs are normally ignored by our framework by clicking on OK.
+ * (2) For loop iterates over all actions of the Input(1).
+ * (3) The second loop iterates over all parameters of the action.
+ * (4) Defines a variable to store the position of the Input(1)'s action.
+ * (5) Checks if the parameter of the action URL has not seen before, to speed up the process.
+ * (6) Verifies that the action does not originally contain any alert.
+ * (7) Creates the follow-up input by copying the Input(1).
+ * (8) Sets the injected URL to the follow-up input.
+ * (9) Checks either the attack was not performed or no effect shall be observed (the effect of the XSS is usually visualized when reaching the page where we inject the XSS)
  *  
  * 
  * 
@@ -31,30 +32,22 @@ package smrl.mr.owasp {
  
 MR CWE_79_a_XSSreflected { 
  { 	
- 	//Dialogs are normally ignored by our framework by clicking on OK; with the following we avoid clicking on OK
- 	keepDialogsOpen = true; 
  	
-    for ( Action action : Input(1).actions() ) {  
-
-	  	var pos = action.getPosition();                               
-	  	
-	  	//We try to inject every URL parameter, one after the other
-	    for ( var x =0; x < action.parameters.size; x++){        //(2)
-  
+ 	keepDialogsOpen = true;                                                                 //(1)
+ 	
+    for ( Action action : Input(1).actions() ) {                                            //(2)
+	    for ( var x =0; x < action.parameters.size; x++){                                   //(3)
+  			
+  			var pos = action.getPosition();                                                 //(4)
+			
 			IMPLIES(
-				//We verify to not have tested the same URL before; there is no reason for testing a same URL
-				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&        //(6)
-				 //No pop-up / alert dialog shown normally
-				! Output(Input(1), pos).hasAlert   &&	 
-				//We create the follow-up input as a copy of the source input					 
-				EQUAL( Input(2), Input(1) ) &&					      //(4)
-				//We put an XSS payload as parametr text
-			  	Input(2).actions().get(pos).setParameterValue(x,XSSInjectionString()) 
+				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&   //(5)
+				! Output(Input(1), pos).hasAlert   &&	 				                    //(6)	 
+				EQUAL( Input(2), Input(1) ) &&					                            //(7)
+			  	Input(2).actions().get(pos).setParameterValue(x,XSSInjectionString())       //(8)
 			    ,
-			    OR(
-		    		//either the attack was not performed
+			    OR(                                                                         //(9)
 		    	    Output(Input(2), pos).emptyFile,       
-		    	    //or no effect shall be observed (the effect of the XSS is usually visualized when reaching the page where we inject the XSS)
 		    	   ! Output(Input(2), pos).hasAlert  ) 
 		);//end-IMPLIES
 	}//end-for parameter
