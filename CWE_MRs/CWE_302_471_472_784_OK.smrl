@@ -52,7 +52,8 @@ MR CWE_302_471_472_784{
 	{
    for (Action action: Input(1).actions()){                                                         //(1)
                         
-      var pos = action.getPosition();                                                               //(2)
+      var pos = action.getPosition();
+     // notTried( action.url, Input(1).actions().get(pos).getElementURL() );                                                               //(2)
       var session = Output( Input(1), pos).session as CookieSession;                                //(3)
       
       EQUAL( Input(2), changeCredentials(Input(1), User()) )                                        //(4)
@@ -69,7 +70,8 @@ MR CWE_302_471_472_784{
 	  	
 	 		 System.out.println("ACTION "+pos+"/*** Type: "+type);
 	  
-      IMPLIES(             
+      IMPLIES(
+      		notTried( action.url, Input(1).actions().get(pos).getElementURL() ) &&              
       		cannotReachThroughGUI( User(), action.url )                                             //(9) 				
       		&& EQUAL( Input(3), Input(2) )                                                          //(10)
       		&& Input(3).actions.get(pos).setSession( session2 )                                     //(11)

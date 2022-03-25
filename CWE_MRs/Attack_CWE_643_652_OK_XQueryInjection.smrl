@@ -63,7 +63,7 @@ MR CWE_643_652 {
 	   IMPLIES(
 	   	
 	          isLogin(action)                                                                                      //(3)
-	        //  && userCanRetrieveContent(action.getUser(), Output(Input(1),pos))                                    //(4)                                                //(3)
+	          && userCanRetrieveContent(action.getUser(), Output(Input(1),pos))                                    //(4)                                                //(3)
 	          && notTried(action.url)																			   //(5)							
 	          && EQUAL ( Input(2), Input(1) )	                                                                   //(6)
 	          && Input(2).actions.get(action.position).setValueForParametersOfType("text", XQueryInjection())      //(7)   "' or 1=1 or ''='"

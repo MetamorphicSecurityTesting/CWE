@@ -57,7 +57,7 @@ MR CWE_89_943_C {
 	        		
 	        	  action.isClickOnButton &&                                                                           //(5)
 	        	  isLogin(action) &&
-	        	  userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&                                   //(6)
+	        	  //userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&                                   //(6)
 	        	  notTried(action.url, Input(1).actions().get(pos).getElementURL() )  &&   //(7)
 	        	  !isError(Output(Input(1),pos))		&&													          //(8) 							
 	       		  EQUAL ( Input(2), Input(1) )	 &&   													              //(9)	                                                                        

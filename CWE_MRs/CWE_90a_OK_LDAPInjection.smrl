@@ -24,7 +24,7 @@ package smrl.mr.owasp{
  * (7) Filters out the web pages with dynamic content.
  * (8) Creates the follow-up input
  * (9) Sets the LDAP query strings to the parameter of the action
- * (10) Checks that the result of the follow-up input is different than the souce input
+ * (10) Checks that the result of the follow-up input is different than the source input
  *      Or The output contains an alert or an error page is shown
  *      Or the follow-up input can retrieve a content that has the right to access 
  * 

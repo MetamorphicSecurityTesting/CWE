@@ -73,10 +73,10 @@ MR CWE_643_652_C {
 	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){                      //(4)
 	  			 IMPLIES(
 	        		
-	        		  action.isClickOnButton &&
-	        		  isLogin(action)&&                                                                      //(5)
+	        		  action.isClickOnButton &&                                                                      //(5)
+	        		  //isLogin(action)&&                                                                      
 	        		  userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&                               //(6)
-	        		  notTried(action.url, Input(1).actions().get(pos).getElementURL() )  &&   //(7)
+	        		  notTried(action.url, Input(1).actions().get(pos).getElementURL() )  &&                         //(7)
 	        		  !isError(Output(Input(1),pos))		&&													     //(8)							
 	       			  EQUAL ( Input(2), Input(1) )	   && 													         //(9)	                                                                        
 	        		  Input(2).actions.get(action.position).setUsernameFormInput(x, XQueryInjection())               //(10)   "' or 1=1 or ''='"
@@ -85,7 +85,7 @@ MR CWE_643_652_C {
 		    		isError(Output(Input(2), pos)),                                                       
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))   
 		    	     //     
-		    	)                                                       //(8)  
+		    	)                                                    
 		);//end-IMPLIES
 	}//end-for
  } }

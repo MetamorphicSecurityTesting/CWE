@@ -75,7 +75,7 @@ MR CWE_643_652_B {
  				//We are about to submit a form
  				action.isClickOnButton &&                                                   //(5)
  				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&     		//(6)
- 				notTried( action.url, Input(1).actions().get(pos).getElementURL() ) &&    //(7)
+ 				notTried( action.url, Input(1).actions().get(pos).getElementURL() ) &&      //(7)
  				EQUAL(Input(2), Input(1) )                     &&                           //(8)
  				Input(2).actions.get(pos).setFormInput(x, XQueryInjection())  			    //(9)       
  				,
