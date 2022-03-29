@@ -1,0 +1,62 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+
+package smrl.mr.owasp{
+
+/**
+ * CWE_definition:
+ * CWE_943:
+ * The application generates a query intended to access or manipulate data in a data store such as 
+ * a database, but it does not neutralize or incorrectly neutralizes special elements that can modify 
+ * the intended logic of the query.
+ * 
+ * CWE_89(Child of CWE_943):
+ * The software constructs all or part of an SQL command using externally-influenced input 
+ * from an upstream component, but it does not neutralize or incorrectly neutralizes special
+ * elements that could modify the intended SQL command when it is sent to a downstream component. 
+ * 
+ * Idea:
+ * If the system creates a query that accesses the data in the data store and uses the user's input, 
+ * the system should neutralize the special elements of the user's input. CWE_89 and CWE_943 emphasize 
+ * the importance of neutralizing the user's input; then, we merged these two weaknesses as they target 
+ * the same weakness.
+ * 
+ *  
+ * Comments:
+ * (1) For loop iterates over all actions of the Input(1).
+ * (2) Stores the parameters of the current action in a variable.
+ * (3) Second for loop iterates over all parameters of the current action.
+ * (4) Verifies that the current URL has not been seen before, to speed up the process.
+ * (5) Filters the dynamic content.
+ * (6) Creates the follow-up input.
+ * (7) Sets the SQL injection strings to the parameter of the action. 
+ * (8) Checks that the result of the follow-up input is error.
+ *     Or the follow-up input can retrieve the content that has the right to access 
+ * 
+ */ 
+MR CWE_89_943 {
+ {
+
+ 	for (Action action : Input(1).actions()){                                                                      //(1)
+ 		
+ 		var pos = action.getPosition();                                                                            //(2) 
+ 		
+ 		for (var x = 0; x < action.parameters.size; x++){                                                          //(3)
+ 		
+ 			IMPLIES(
+ 				notTried(x + action.url, Input(1).actions().get(pos).getElementURL() )  &&                         //(4) 
+ 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&                                  //(5)          
+ 				EQUAL(Input(2), Input(1))&&                                                                        //(6)
+ 				Input(2).actions().get(pos).setParameterValue( x, SQLInjectionString() )                           //(7)        
+ 				,
+ 				OR(                                                                                                //(8)
+		    		 isError(Output(Input(2), pos)),                                                       
+		    	    OR( userCanRetrieveContent(action.getUser(), Output(Input(2),pos)),
+		    	    EQUAL(Output(Input(1),pos),Output(Input(2),pos)))
+		    	)
+ 			);
+ 		}
+ 	}
+ 	
+  } }
+ }

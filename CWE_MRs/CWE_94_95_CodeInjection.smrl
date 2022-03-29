@@ -1,0 +1,75 @@
+import static smrl.mr.language.Operations.*;
+import smrl.mr.language.Action;
+import sun.security.util.Password
+
+package smrl.mr.owasp {
+ 
+/**
+ * 
+ * CWE Definition:
+ * CWE_94: The software constructs all or part of a code segment using externally-influenced input 
+ * from an upstream component, but it does not neutralize or incorrectly neutralizes special elements 
+ * that could modify the syntax or behavior of the intended code segment.
+ * 
+ * CWE_95 (child of CWE_94): The software receives input from an upstream component, but it does not neutralize or 
+ * incorrectly neutralizes code syntax before using the input in a dynamic evaluation call (e.g. "eval").
+ * Real case: https://www.exploit-db.com/exploits/6606
+ * 
+ * Idea:
+ * We will try to inject some code as the value of the parameter and the system should not allow the action to be done successfully.
+ * It should show an error page or show the content that the user already has the right to access it.
+ * 
+ * 
+ * Comments:
+ * (1) It avoids clicking on OK; because dialogs are normally ignored by our framework by clicking on OK.
+ * (2) For loop iterates over all actions of the Input(1)
+ * (3) Stores the parameters of the current action in a variable
+ * (4) Iterates over the actions that contain a form input.
+ * (5) Checks if the action submits the form; i.e. the action contains clicking on submit button.
+ * (6) Filters the dynamic content.
+ * (7) Verifies that the URL has not been tried before.
+ * (8) Checks the action does not contain any alert message initially.
+ * (9) Creates Input(2) as the follow-up input.
+ * (10) Set the code injection string as the form input value.
+ * (11) The system should show an error page or a content that the user has right to access.
+ * 
+ */
+ 
+MR CWE_94_95 { 
+ { 	
+ 	keepDialogsOpen = true;                                                                    //(1)
+
+ 	for (Action action : Input(1).actions()){                                                  //(2)
+ 		var pos = action.getPosition();                                                        //(3) 
+ 		
+ 		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());                       
+ 		
+ 		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){         //(4)
+ 			
+ 			System.out.println("ACTION "+pos+"/////"+x);
+ 			IMPLIES(
+ 				action.isClickOnButton &&                                                      //(5)
+ 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&               //(6)
+ 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&      //(7)
+ 				! Output(Input(1),pos).hasAlert					&&                             //(8)       
+ 				EQUAL(Input(2), Input(1) )                     &&                              //(9)
+ 				Input(2).actions.get(pos).setFormInput(x, CodeInjectionString())               //(10)
+ 				
+ 				,
+
+ 				OR(                                                                            //(11)
+ 					different( Output(Input(1),pos),Output(Input(2),pos))
+ 					,
+ 					OR(
+ 					isError(Output(Input(2), pos))
+ 					,
+ 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  )
+ 					)
+ 			);
+ 		}
+ 	}
+ 	
+  } 
+
+}//end-MR
+}//end-package
