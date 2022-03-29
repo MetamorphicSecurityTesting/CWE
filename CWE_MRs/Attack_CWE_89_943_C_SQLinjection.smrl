@@ -57,8 +57,8 @@ MR CWE_89_943_C {
 	        		
 	        	  action.isClickOnButton &&                                                                           //(5)
 	        	  isLogin(action) &&
-	        	  //userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&                                   //(6)
-	        	  notTried(action.url, Input(1).actions().get(pos).getElementURL() )  &&   //(7)
+	        	  userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&                                   //(6)
+	        	  notTried(x+action.url, Input(1).actions().get(pos).getElementURL() )  &&                            //(7)
 	        	  !isError(Output(Input(1),pos))		&&													          //(8) 							
 	       		  EQUAL ( Input(2), Input(1) )	 &&   													              //(9)	                                                                        
 	        	  Input(2).actions.get(pos).setFormInput(x, SQLInjectionString())  			                          //(10)
@@ -66,8 +66,8 @@ MR CWE_89_943_C {
 
  				OR(                                                                                                   //(11)                                                           
 		    		isError(Output(Input(2), pos)),                                                       
-		    	     //userCanRetrieveContent(action.getUser(), Output(Input(2),pos))   
-					EQUAL(Output(Input(1),pos),Output(Input(2),pos))    
+		    	   OR( userCanRetrieveContent(action.getUser(), Output(Input(2),pos)),   
+					EQUAL(Output(Input(1),pos),Output(Input(2),pos))  )  
 		    	)
  			);
  		}

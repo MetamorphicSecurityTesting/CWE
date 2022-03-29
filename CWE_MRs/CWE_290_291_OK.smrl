@@ -28,12 +28,13 @@ package smrl.mr.owasp {
  * 
  * Comments:
  * (1) For loop iterates over all Input(1)'s actions
- * (2) The parameters of the current action is stored in the variable.
+ * (2) Stores the parameters of the current action in a variable.
  * (3) It makes sure that the action is available after the login.
- * (4) Creates the follow-up input by copying the Input(1), named Input(2).
- * (5) Sets a null session for the follow-up input.
- * (6) Filter out the refresh action.( makes sure the user does not perform the same action in the next iteration)
- * (7) Verifies that the system would show a content that the user has right to access
+ * (4) Filters the web pages with dynamic content.
+ * (5) Creates the follow-up input by copying the Input(1), named Input(2).
+ * (6) Sets a null session for the follow-up input.
+ * (7) Filter out the refresh action.( makes sure the user does not perform the same action in the next iteration)
+ * (8) Verifies that the system would show a content that the user has right to access
  *     Or it would show an error page or the user will see a different result than1 the source input.
  * 
  * 
@@ -41,17 +42,17 @@ package smrl.mr.owasp {
  
 MR CWE_290_291{ 
  { 
-    for ( Action action : Input(1).actions() ) {                             //(1)
-	  	var pos = action.getPosition();                                      //(2)
+    for ( Action action : Input(1).actions() ) {                                        //(1)
+	  	var pos = action.getPosition();                                                 //(2)
 	
 	   IMPLIES(
-	          afterLogin(action)  
-	         // &&  userCanRetrieveContent(action.getUser(), Output(Input(1),pos))         //(3)  	 				
-	          &&  EQUAL ( Input(2), Input(1) )	                             //(4)	 
-         	  && Input(2).actions.get(pos).setSession( new CookieSession() )      //(5)
-	    	  && ! sameUrl( action.currentURL, action.elementURL )                         //(6)
+	          afterLogin(action)                                                        //(3)
+	          &&  userCanRetrieveContent(action.getUser(), Output(Input(1),pos))        //(4)  	 				
+	          &&  EQUAL ( Input(2), Input(1) )	                                        //(5)	 
+         	  && Input(2).actions.get(pos).setSession( new CookieSession() )            //(6)
+	    	  && ! sameUrl( action.currentURL, action.elementURL )                      //(7)
 		    ,		    
-		      OR(   userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) ,   
+		      OR(   userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) ,    //(8)
 		      	OR( isError(Output(Input(2), pos)),
 		    	 	different ( Output(Input(1),pos),  Output(Input(2),pos))))
 		    	

@@ -38,12 +38,13 @@ package smrl.mr.owasp {
  * (6) Stores the session key values in a variable.
  * (7) For loop iterates over the session values.
  * (8) Assigns the type of the cookie to a variable.
- * (9) Makes sure the URL is not accessible without login.
- * (10) Creates the follow-up input, named Input(3).
- * (11) set the session2 as the session value of the Input(3).
- * (12) Filters all cookie types other than Boolean.
- * (13) Flip the value of the boolean cookie.
- * (14) The system should give a different output or should show an error.
+ * (9) Checks the current URL has not seen before, to speed up the process.
+ * (10) Makes sure the URL is not accessible without login.
+ * (11) Creates the follow-up input, named Input(3).
+ * (12) set the session2 as the session value of the Input(3).
+ * (13) Filters all cookie types other than Boolean.
+ * (14) Flip the value of the boolean cookie.
+ * (15) The system should give a different output or should show an error.
  *  
  * 
  */
@@ -52,8 +53,8 @@ MR CWE_302_471_472_784{
 	{
    for (Action action: Input(1).actions()){                                                         //(1)
                         
-      var pos = action.getPosition();
-     // notTried( action.url, Input(1).actions().get(pos).getElementURL() );                                                               //(2)
+      var pos = action.getPosition();                                                               //(2)
+     // notTried( action.url, Input(1).actions().get(pos).getElementURL() );                                                             
       var session = Output( Input(1), pos).session as CookieSession;                                //(3)
       
       EQUAL( Input(2), changeCredentials(Input(1), User()) )                                        //(4)
@@ -71,15 +72,15 @@ MR CWE_302_471_472_784{
 	 		 System.out.println("ACTION "+pos+"/*** Type: "+type);
 	  
       IMPLIES(
-      		notTried( action.url, Input(1).actions().get(pos).getElementURL() ) &&              
-      		cannotReachThroughGUI( User(), action.url )                                             //(9) 				
-      		&& EQUAL( Input(3), Input(2) )                                                          //(10)
-      		&& Input(3).actions.get(pos).setSession( session2 )                                     //(11)
-      		&& type == Boolean                                                                      //(12)                        
+      		notTried( action.url, Input(1).actions().get(pos).getElementURL() ) &&                  //(9)
+      		cannotReachThroughGUI( User(), action.url )                                             //(10) 				
+      		&& EQUAL( Input(3), Input(2) )                                                          //(11)
+      		&& Input(3).actions.get(pos).setSession( session2 )                                     //(12)
+      		&& type == Boolean                                                                      //(13)                        
             && session.setCookie(      
-            	new Cookie(cookie.key, String.valueOf( ! Boolean.valueOf(cookie.value) ))           //(13)
+            	new Cookie(cookie.key, String.valueOf( ! Boolean.valueOf(cookie.value) ))           //(14)
             ),
-             OR(                                                                                    //(14)
+             OR(                                                                                    //(15)
              	different( Output( Input(1), pos) , Output(Input(3) , pos) )   ,                   
 		 		isError( Output(Input(3) , pos)))
 		);//end-IMPLIES

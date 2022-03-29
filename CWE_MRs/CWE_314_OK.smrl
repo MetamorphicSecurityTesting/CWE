@@ -42,7 +42,6 @@ package smrl.mr.owasp {
  */
 
  
-
 MR CWE_314{
 	{
 	  for (Action action : Input(1).actions()){                                           //(1)

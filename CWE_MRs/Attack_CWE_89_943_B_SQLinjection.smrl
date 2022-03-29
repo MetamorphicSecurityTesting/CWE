@@ -35,25 +35,6 @@ package smrl.mr.owasp{
  * (6) Filters the dynamic content.
  * (7) Verifies that the URL has not been tried before.
  * (8) Creates Input(2) as the follow-up input.
- * (9) Set the SQL string a the form input value.
- * (10) The system should show an error page or a content that the user has right to access.
- * 
- * 
- * Idea:
- * If the system creates a query that accesses the data in the data store and uses the user's input, 
- * the system should neutralize the special elements of the user's input. CWE_89 and CWE_943 emphasize 
- * the importance of neutralizing the user's input; then, we merged these two weaknesses as they target 
- * the same weakness.
- * 
- * Comments:
- * (1) It avoids clicking on OK; because dialogs are normally ignored by our framework by clicking on OK.
- * (2) For loop iterates over all actions of the Input(1)
- * (3) Stores the parameters of the current action in a variable
- * (4) Iterates over the actions that contain a form input.
- * (5) Checks if the action submits the form; i.e. the action contains clicking on submit button.
- * (6) Filters the dynamic content.
- * (7) Verifies that the URL has not been tried before.
- * (8) Creates Input(2) as the follow-up input.
  * (9) Set the SQL string as the form input value.
  * (10) The system should show an error page or a content that the user has right to access.
  * 

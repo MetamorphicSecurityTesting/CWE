@@ -22,12 +22,12 @@ package smrl.mr.owasp {
  */ 
 MR CWE_284_OTG_AUTHN_004 {
  {
-    for ( Action action : Input(1).actions() ) {	             //(1)
+    for ( Action action : Input(1).actions() ) {	                                           //(1)
 	    
 	    IMPLIES( 
-	        afterLogin( action ) 								 //(2)
-	          &&  notVisibleWithoutLoggingIn( action.getUrl() )  //(3)
-	          &&  EQUAL( Input(2) , action ) 					 //(4)
+	        afterLogin( action ) 								                               //(2)
+	          &&  notVisibleWithoutLoggingIn( action.getUrl() )                                //(3)
+	          &&  EQUAL( Input(2) , action ) 					                               //(4)
 		   , 
 		   different( Output(Input(1), action.position ), Output(Input(2), action.position ) ) //(5)
 		);//end-IMPLIES

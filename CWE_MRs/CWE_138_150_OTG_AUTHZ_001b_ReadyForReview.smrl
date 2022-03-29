@@ -37,6 +37,7 @@ package smrl.mr.owasp{
  *      Or the system shows an error page.
  * 
  */ 
+ 
 MR CWE_138_150_OTG_AUTHZ_001b {
  {
  	var sep="/";                                                //(1)

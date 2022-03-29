@@ -33,8 +33,8 @@ package smrl.mr.owasp{
 MR CWE_90a {
  {
  
- 	for (Action action : Input(1).actions()){                                                                  //(1)
- 		for (var x = 0; x < action.parameters.size; x++){                                                      //(2)
+ 	for (Action action : Input(1).actions()){                                                                   //(1)
+ 		for (var x = 0; x < action.parameters.size; x++){                                                       //(2)
  			
  			var pos = action.getPosition();                                                                     //(3)  
  			var parameterName = action.parameters.get(x).key;                                                   //(4)
@@ -47,7 +47,7 @@ MR CWE_90a {
  				Input(2).actions().get(pos).setParameterValue( x, LDAPInjectionString() )                       //(9)		   
  				,
  			OR(
- 				OR(                                                                                              //(10)
+ 				OR(                                                                                             //(10)
 		    		different( Output(Input(1), pos),Output(Input(2), pos)),               
 		    	     Output(Input(2), pos).hasAlert   
 		    	     ), 

@@ -50,8 +50,8 @@ package smrl.mr.owasp {
  
 MR CWE_792_793_794_795_796_797_L{ 
  { 
-    keepDialogsOpen = true; 
-                                                                                       //(1)      
+    keepDialogsOpen = true;                                                                                    //(1)
+                                                                                          
  	for (Action action : Input(1).actions()){                                                                  //(2)
  		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){                         //(3)			
  			

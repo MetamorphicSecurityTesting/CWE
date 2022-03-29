@@ -40,7 +40,7 @@ package smrl.mr.owasp{
 							.setParameterValue(par, parameterValueUsedByOtherUsers(action, par))    //(5)
 							//TODO: optimization -> return only param_value of this action 
 						, 
-						OR( 							//2nd par of IMPLIES
+						OR( 							                                            //2nd par of IMPLIES
 							Output(Input(2),pos).isError()                                          //(6)
 							, 
 							userCanRetrieveContent( action.user, Output(Input(2),pos) ) 

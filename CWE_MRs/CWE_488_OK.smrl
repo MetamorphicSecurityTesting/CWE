@@ -29,11 +29,11 @@ package smrl.mr.owasp {
 
 MR CWE_488{
 	{
-       for(var x = 0; (x < Input(1).actions().size() ); x++){                                                      //(1)
+       for(var x = 0; (x < Input(1).actions().size() ); x++){                                                  //(1)
 			for (var y = x+1; (isLogin(Input(1).actions().get(x)) && y < Input(1).actions().size()); y++) {    //(2)
 	  			IMPLIES(
 	  				(!isSupervisorOf(User(), Input(1).actions().get(y).user)) &&  
-	  				 userCanRetrieveContent(Input(1), Output(Input(1),y))&&                             //(3)
+	  				 userCanRetrieveContent(Input(1), Output(Input(1),y))&&                                    //(3)
 	  				EQUAL(Input(2), Input(1).actions().get(x)) &&                                              //(5)
 	  				EQUAL(Input(3), changeCredentials(Input(2), User())) &&                                    //(6)
 	  				EQUAL(Input(4), addAction(Input(1), y, Input(3).actions().get(0)))                         //(7)

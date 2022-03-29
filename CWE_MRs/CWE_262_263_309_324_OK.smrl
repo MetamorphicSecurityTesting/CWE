@@ -27,36 +27,29 @@ package smrl.mr.owasp{
  *  
  * 
  * Comments:
- * (1) To keep track of actions that Input(1) can do, two for loops are implemented.
- * (2) Checks if the current action X is doing "log out".
- * (3) Checks that the action-y of the Input(1) is "log in".
- * (4) Verifies that the URL has not been tried before.
- * (5) Creates the follow-up Input by copying the Input(1), named Input(2)
- * (6) Add a wait action to Input(2) that moves time forward for a year i.e. the expected time for reseting the password (password aging).
- * (7) Add a login action to Input(2) to perform a login after a year, which is expected to ask the user to reset the password instead of performing the action.
- * (8) Based on the above description the results should be different; it shall prompt a password update request.
+ * (1) For loop iterates over the Input(1)'s actions.
+ * (2) Checks if the current action x is doing "log in".
+ * (3) Checks that the action-x of the Input(1) does not include any errors.
+ * (4) Creates the follow-up Input by copying the Input(1), named Input(2)
+ * (5) Add a wait action to Input(2) that moves time forward for a year i.e. the expected time for reseting the password (password aging).
+ * (6) Based on the above description the results should be different; it shall prompt a password update request.
  * 
  */ 
 	MR CWE_262_263_309_324 {
 		{
-			for ( var x=0; x < Input(1).actions().size() ; x++ ){
-				//for ( var y=0; y < x ; y++ ){                                                          //(1)
-					 
+			for ( var x=0; x < Input(1).actions().size() ; x++ ){                                      //(1)
+				
 					IMPLIES ( 
-						//isLogout( Input(1).actions().get(x) ) &&                                       //(2)
-						isLogin( Input(1).actions().get(x) ) &&
-						!isError ( Output(Input(1),x+1) )&&                                        //(3)
-					//	notTried(Input(1).actions().get(x).user, Input(1).actions().get(x).url ) &&    //(4)
-						EQUAL ( Input(2) , Input(1) ) &&                                               //(5)				
-						Input(2).addAction ( x, Wait( 60*60*24*30*12*1000) )                      //(6) //60*60*24*30*12*1000
-						//Input(2).addAction ( x, Wait( 60*60*24*30*12*1000) ) 
-						                        
+						isLogin( Input(1).actions().get(x) ) &&                                        //(2)
+						!isError ( Output(Input(1),x+1) )&&                                            //(3)
+						EQUAL ( Input(2) , Input(1) ) &&                                               //(4)				
+						Input(2).addAction ( x, Wait( 60*60*24*30*12*1000) )                           //(5)                        
 						,
-						different ( Output(Input(2),x+2) ,  Output(Input(1),x+1))                        //(8)
+						different ( Output(Input(2),x+2) ,  Output(Input(1),x+1))                      //(6)
+					
 					); //end-IMPLIES
 				} //end-for
 			} //end-for
-		//}
 	} //end-MR
 } //end-package
 
