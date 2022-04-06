@@ -16,6 +16,9 @@ package smrl.mr.owasp{
  * The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure 
  * the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.
  * 
+ * CWE_304:
+ * The software implements an authentication technique, but it skips a step that weakens the technique.
+ * 
  * CWE_319:
  * The software transmits sensitive or security-critical data in cleartext in a communication channel that can be sniffed by unauthorized actors.
  * 
@@ -36,7 +39,7 @@ package smrl.mr.owasp{
  * 
  */
   
-MR CWE_288_287b_300_319_OTG_AUTHN_010 {
+MR CWE_288_287b_300_304_319_OTG_AUTHN_010 {
  { 
     for ( Action action : Input(1).actions() ){                       //(1)
 	    var pos = action.position;                                    //(2)

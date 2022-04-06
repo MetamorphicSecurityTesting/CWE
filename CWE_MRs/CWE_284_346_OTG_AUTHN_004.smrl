@@ -5,7 +5,11 @@ package smrl.mr.owasp {
 
 /**
  * CWE Definition:
+ * CWE_284:
  * The software does not restrict or incorrectly restricts access to a resource from an unauthorized actor.
+ * 
+ * CWE_346:
+ * The software does not properly verify that the source of data or communication is valid.
  * 
  * Idea:
  * Without being authenticated, a user should not be able to access a page 
@@ -20,7 +24,7 @@ package smrl.mr.owasp {
  * 
  * 
  */ 
-MR CWE_284_OTG_AUTHN_004 {
+MR CWE_284_346_OTG_AUTHN_004 {
  {
     for ( Action action : Input(1).actions() ) {	                                           //(1)
 	    

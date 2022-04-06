@@ -16,6 +16,26 @@ package smrl.mr.owasp{
  * incorrectly neutralizes special elements that could be interpreted as escape, meta, or 
  * control character sequences when they are sent to a downstream component.
  * 
+ * CWE_551:
+ * If a web server does not fully parse requested URLs before it examines them for authorization, 
+ * it may be possible for an attacker to bypass authorization protection.
+ * 
+ * CWE_552:
+ * The product makes files or directories accessible to unauthorized actors, even though they 
+ * should not be.
+ * 
+ * CWE_668:
+ * The product exposes a resource to the wrong control sphere, providing unintended actors 
+ * with inappropriate access to the resource.
+ * 
+ * CWE_707:
+ * The product does not ensure or incorrectly ensures that structured messages or data are well-formed 
+ * and that certain security properties are met before being read from an upstream component or sent to 
+ * a downstream component.
+ * 
+ * CWE_921:
+ * The software stores sensitive information in a file system or device that does not have built-in access control.
+ * 
  * Idea:
  * A file path passed in the URL of a request should never enable a 
  * user to access data that is not provided by the user interface.
@@ -38,7 +58,7 @@ package smrl.mr.owasp{
  * 
  */ 
  
-MR CWE_138_150_OTG_AUTHZ_001b {
+MR CWE_138_150_551_552_668_707_921_OTG_AUTHZ_001b {
  {
  	var sep="/";                                                //(1)
  	for ( var par=0; par < 3; par++ ){                          //(2)

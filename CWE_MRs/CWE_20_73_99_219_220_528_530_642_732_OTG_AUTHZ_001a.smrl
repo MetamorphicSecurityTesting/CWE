@@ -5,6 +5,8 @@ package smrl.mr.owasp{
 
 /**
  * CWE Definition:
+ * CWE_20:
+ * The product receives input or data, but it does not validate or incorrectly validates that the input has the properties that are required to process the data safely and correctly.
  * 
  * CWE_73:
  * The software allows user input to control or influence paths or file names that are used in filesystem operations.
@@ -19,8 +21,18 @@ package smrl.mr.owasp{
  * CWE_220:
  * The application stores sensitive data under the FTP server root with insufficient access control, which might make it accessible to untrusted parties.
  * 
+ * CWE_528;
+ * The product generates a core dump file in a directory, archive, or other resource that is stored, transferred, or otherwise made accessible to unauthorized actors.
+ * 
  * CWE_530:
  * A backup file is stored in a directory or archive that is made accessible to unauthorized actors.
+ * 
+ * CWE_642:
+ * The software stores security-critical state information about its users, or the software itself, in a location that is accessible to unauthorized actors.
+ * 
+ * CWE_732:
+ * The product specifies permissions for a security-critical resource in a way that allows that resource to be read or modified by unintended actors.
+ * 
  * 
  * Idea:
  * A file path passed in a parameter should never enable a 
@@ -28,7 +40,7 @@ package smrl.mr.owasp{
  *
  * (1) Iterates over the actions of the Input(1).
  * (2) The second for loop iterates over the parameters of the action.
- * (3) Stores the parameters of the current action in a variable.
+ * (3) Stores the parameters of the current action in a variable.1
  * (4) Creates the follow-up input, named Input(2).
  * (5) Sets the value of a parameter to a random file path.
  * (6) Verifies that the system shows an error page
@@ -36,7 +48,7 @@ package smrl.mr.owasp{
  * 
  * 
  */ 
-MR CWE_73_99_219_220_530_OTG_AUTHZ_001a {
+MR CWE_20_73_99_219_220_528_530_642_732_OTG_AUTHZ_001a {
  {
 	for ( Action action : Input(1).actions() ){                                           //(1)
 		for ( var par=0; par < action.getParameters().size(); par++ ){                    //(2)

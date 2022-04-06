@@ -8,10 +8,8 @@ package smrl.mr.owasp{
 /**
  * CWE Definitions:
  * 
- * CWE-359:
- * The product does not properly prevent a person's private, personal information from being accessed by actors who either 
- * (1) are not explicitly authorized to access the information or (2) do not have the implicit consent of the person about 
- * whom the information is collected.
+ * CWE_312:
+ * The application stores sensitive information in cleartext within a resource that might be accessible to another control sphere.
  * 
  * CWE-313:
  * The application stores sensitive information in cleartext in a file, or on disk. 
@@ -23,6 +21,11 @@ package smrl.mr.owasp{
  * CWE_538:
  * The product places sensitive information into files or directories that are accessible to actors who are allowed to have 
  * access to the files, but not to the sensitive information.
+ * 
+ * CWE-359:
+ * The product does not properly prevent a person's private, personal information from being accessed by actors who either 
+ * (1) are not explicitly authorized to access the information or (2) do not have the implicit consent of the person about 
+ * whom the information is collected.
  * 
  * Idea:
  * when we identify a page that can be accessed only by a user, then it means that the contained information is 
@@ -41,7 +44,7 @@ package smrl.mr.owasp{
  * 
  * 
  */ 
-MR CWE_359_313_532_538 {
+MR CWE_312_313_532_538_359 {
  {
 
  	for (Action action : Input(1).actions()){                                        //(1)	
