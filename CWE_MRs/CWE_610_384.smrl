@@ -45,12 +45,13 @@ package smrl.mr.owasp{
  * (1) The first loop iterates over all the actions of the Input(1).
  * (2) The second loop iterates over all the actions after the x to find an action performed after login.
  * (3) Avoids resetting the browser.
- * (4) Sets the sub-sequence of actions to Input(2), from beginning to the first action after the login.
- * (5) Sets the sub-sequence of actions to Input(3), from the first action after the login till the end.
- * (6) Makes sure that Input(3) starts with a login.
- * (7) Set the same session of Input(2) for the Input(3).
- * (8) The system should assign two different session IDs after the log in for Input(2) and Input(3)
- *     Or the system should invalidate the session of Input(2) therefore the output of Input(3) at 
+ * (4) Filters the actions that initially contain error message. 
+ * (5) Sets the sub-sequence of actions to Input(2), from beginning to the first action after the login.
+ * (6) Sets the sub-sequence of actions to Input(3), from the first action after the login till the end.
+ * (7) Makes sure that Input(3) starts with a login.
+ * (8) Set the same session of Input(2) for the Input(3).
+ * (9) The system should assign two different session IDs after the log in for Input(2) and Input(3)
+ *     And the system should invalidate the session of Input(2) therefore the output of Input(3) at 
  *     position 1 i.e., (the action performed after login) for which we used the session id of Input(2))
  *     should be either an error message or different than the output of Input(1) for the same input.
  *   
@@ -65,14 +66,15 @@ MR CWE_610_384 {
 					setResetBrowserBetweenInputs( false );                                                           //(3)
 					
 					IMPLIES ( 
-						EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, y ) ) ) &&                          //(4)
-						EQUAL ( Input(3) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  && //(5)
-						Input(3).addAction(0,Input(1).actions().get(x)) && 											 //(6) 
-						Input(3).actions().get(1).setSession( Output(Input(2),x).getSession() )                      //(7) 	
+						!isError(Input(1).actions().get(x+1))&&                                                      //(4)
+						EQUAL ( Input(2) , Input ( Input(1).actions().subList(0, y ) ) ) &&                          //(5)
+						EQUAL ( Input(3) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  && //(6)
+						Input(3).addAction(0,Input(1).actions().get(x)) && 											 //(7) 
+						Input(3).actions().get(1).setSession( Output(Input(2),x).getSession() )                      //(8) 	
 						,
-					OR (                                                                                             //(8)
+					OR (                                                                                             //(9)
 						different ( Output(Input(2),x),  Output(Input(3),0)),
-						OR	( 
+						AND	( 
 							   different ( Output(Input(2),x).getSession(),  Output(Input(3),0).getSession())  
 							,  isError(Output(Input(3),1))	))						
 					); //end-IMPLIES
