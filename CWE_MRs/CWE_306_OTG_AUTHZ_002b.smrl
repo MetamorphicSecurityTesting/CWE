@@ -33,6 +33,7 @@ package smrl.mr.owasp {
    *   
    *   	
    */ 
+   
   MR CWE_306_OTG_AUTHZ_002b {
   	{
     	for(var x = 0; x < Input(1).actions().size() ; x++){                                                    //(1)

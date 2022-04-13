@@ -36,10 +36,11 @@ package smrl.mr.owasp{
  * (1) For loop iterates over all actions of the Input(1).
  * (2) Creates a cache of the current status of the log file.
  * (3) Verified that current action follows a login.
- * (4) Verifies that the current action is reserved to the current user (i.e., a follow-up user cannot perform it)
- * (5) Verifies that the current URL leads to some output
- * (6) Verifies that the that new lines generated into the log file when processing the input (6a)
- * 		do not include keywords that appear only in pages of the user and in particular in the page generated for the current action (6b).
+ * (4) Creates a follow-up input, named Input(2).
+ * (5) Verifies that the current action is reserved to the current user (i.e., a follow-up user cannot perform it)
+ * (6) Verifies that the current URL leads to some output
+ * (7) Verifies that the that new lines generated into the log file when processing the input (7a)
+ * 		do not include keywords that appear only in pages of the user and in particular in the page generated for the current action (7b).
  * 
  * 
  * 
@@ -54,13 +55,14 @@ MR CWE_312_313_532_538_359 {
  						
  			IMPLIES(
  				afterLogin(action) &&                                                //(3)
- 				cannotReachThroughGUI(User(),action.url)	&&			             //(4)   
- 				Output(Input(1),action.position).values.size > 0	                 //(5)
+ 				EQUAL(Input(2), Input(1))&&                                          //(4)
+ 				cannotReachThroughGUI(User(),action.url)	&&			             //(5)   
+ 				Output(Input(2),action.position).values.size > 0	                 //(6)
  				, 
  								
 				NOT ( containsAny( 													
-						Log().newLines(initialLog), 								//(6a)
-						Output(Input(1),action.position).values.filter[ e | reservedKeywords(action.user).contains(e) ].toList() //(6b)
+						Log().newLines(initialLog), 								//(7a)
+						Output(Input(2),action.position).values.filter[ e | reservedKeywords(action.user).contains(e) ].toList() //(7b)
 				) )
 				
  			);
