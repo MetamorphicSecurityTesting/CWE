@@ -10,9 +10,14 @@ MR TEST_FIND_SOURCE_INPUT {
  	{
  		   setCollectAllFailures(false);
  		   
+ 		   // add here the relevant information found in the console
+ 		   // could be: urls or actions, at the FAILURE or just above
  		   var toFind = new ArrayList();
  		   toFind.add("http://192.168.56.102:8080/");
  		   toFind.add("http://192.168.56.102:8080/j_acegi_security_check");
+ 		   toFind.add("http://192.168.56.102:8080/computer/slave1/");
+ 		   toFind.add("http://192.168.56.102:8080/computer/slave1/launchSlaveAgent");
+ 		   toFind.add("http://192.168.56.102:8080/computer/slave1/");
  		   
  		   var found = new ArrayList();
  		   
@@ -24,6 +29,7 @@ MR TEST_FIND_SOURCE_INPUT {
  		   System.out.println(toFind);
  		   System.out.println(found);
  		   
+ 		   // comment the following system exit to print everything
  		   if ( toFind.equals(found) ){
     		System.out.println("SOURCE INPUT IDENTIFIED: "+Input(1).getDBid());
     		System.exit(1); //this is brutal..
