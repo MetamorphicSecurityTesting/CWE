@@ -30,8 +30,7 @@ is different in the two cases.
 					IMPLIES (
 							isUserIdParameter(action,par,action.getUser() ) &&
 							( equal ( Input(2), Input(1) ) &&
-									Input(2).actions().get(pos)
-									.setParameterValue(par,User()) ) &&
+							Input(2).actions().get(pos).setParameterValue(par,User()) ) &&
 							equal (Input(3), changeCredentials(Input(1), User()) )
 							,
 							different (Output(Input(2),pos), Output(Input(3),pos)) )
@@ -39,3 +38,11 @@ is different in the two cases.
 			}
 		}
 	}}
+	
+	
+	
+	
+	
+	
+	
+	

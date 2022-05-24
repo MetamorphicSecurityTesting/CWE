@@ -74,7 +74,7 @@ MR CWE_643_652_C {
 	  			 IMPLIES(
 	        		
 	        		  action.isClickOnButton &&                                                                      //(5)
-	        		  //isLogin(action)&&                                                                      
+	        		  isLogin(action)&&                                                                      
 	        		  userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&                               //(6)
 	        		  notTried(action.url, Input(1).actions().get(pos).getElementURL() )  &&                         //(7)
 	        		  !isError(Output(Input(1),pos))		&&													     //(8)							
@@ -82,9 +82,9 @@ MR CWE_643_652_C {
 	        		  Input(2).actions.get(action.position).setUsernameFormInput(x, XQueryInjection())               //(10)   "' or 1=1 or ''='"
 		    , 
 		    		 OR(                                                                                             //(11)                                                               
-		    		isError(Output(Input(2), pos)),                                                       
-		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))   
-		    	     //     
+		    		isError(Output(Input(2), pos)), 
+		    		userCanRetrieveContent(action.getUser(), Output(Input(2),pos))                                                      
+		    	        
 		    	)                                                    
 		);//end-IMPLIES
 	}//end-for

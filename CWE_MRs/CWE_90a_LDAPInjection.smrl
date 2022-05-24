@@ -46,12 +46,11 @@ MR CWE_90a {
  				EQUAL(Input(2), Input(1))&&                                                                     //(8)
  				Input(2).actions().get(pos).setParameterValue( x, LDAPInjectionString() )                       //(9)		   
  				,
- 			OR(
- 				OR(                                                                                             //(10)
-		    		different( Output(Input(1), pos),Output(Input(2), pos)),               
-		    	     Output(Input(2), pos).hasAlert   
-		    	     ), 
-		    	OR( 
+ 			OR(                                                                                                 //(10)
+ 		 	            
+		    	    Output(Input(2), pos).hasAlert   
+		    	   
+		    ,	OR( 
  					isError(Output(Input(2), pos)),
  					userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) 	)));
  		}

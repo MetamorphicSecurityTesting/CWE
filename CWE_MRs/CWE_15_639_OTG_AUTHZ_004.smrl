@@ -36,6 +36,7 @@ package smrl.mr.owasp{
 					var pos = action.getPosition();                                                 //(3)
 					IMPLIES( 
 						EQUAL ( Input(2), Input(1) ) &&	                                            //(4)
+					  	notTried( action.getUser(), action.url)&&
 					  	Input(2).actions().get(pos)		                                            
 							.setParameterValue(par, parameterValueUsedByOtherUsers(action, par))    //(5)
 							//TODO: optimization -> return only param_value of this action 

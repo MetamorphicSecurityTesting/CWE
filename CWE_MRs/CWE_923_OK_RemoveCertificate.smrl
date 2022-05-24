@@ -46,10 +46,9 @@ MR CWE_923 {
 			OR(                                                                        //(9)
 				different( Output(Input(1),pos), Output(Input(2),pos) )               
 			,
-			OR(
-			  userCanRetrieveContent(action.getUser(), Output(Input(2),pos)),
+			
 			  isError(Output(Input(2),pos))
-			  )
+			
 			)
 		);//end-IMPLIES
 	}}//end-for

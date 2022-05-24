@@ -24,8 +24,7 @@ action that does not require a log-in but generates a session).
 				IMPLIES(
 						notAvailableWithoutLoggingIn( action ) &&
 						NOT (NULL(ActionAvailableWithoutLogin().getSession() ) ) &&
-						EQUAL( Input(2) ,
-								Input( ActionAvailableWithoutLogin(), action ) )
+						EQUAL( Input(2) , Input( ActionAvailableWithoutLogin(), action ) )
 						,
 						different (
 								Output( Input(1), action.position ),

@@ -6,7 +6,9 @@ package smrl.mr.owasp {
 /*
  *  
  * CWE Definition:
- * CWE_288: A product requires authentication, but the product has an alternate path or channel that does not require authentication.
+ * CWE_280: The application does not handle or incorrectly handles when it has insufficient privileges 
+ * to access resources or functionality as specified by their permissions. This may cause it to follow 
+ * unexpected code paths that may leave the application in an invalid state.
  * 
  * CWE_755: The software does not handle or incorrectly handles an exceptional condition.
  * 

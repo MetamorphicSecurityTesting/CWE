@@ -21,8 +21,8 @@ package smrl.mr.owasp{
  * (5) Checks if the action submits the form; i.e. the action contains clicking on submit button.
  * (6) Verifies that the URL has not been tried before.
  * (7) Makes sure the action is performed after the login.
- * (8) Creates Input(2) as the follow-up input.
- * (9) Tries to retrieve the file.
+ * (8) Creates Input(2) as the follow-up input from the user that takes the login action and
+ * (9) It sets the URL of the file (to retrieve the file before uploading it), and the action.
  * (10) The system should show a different output.
  * 
  */

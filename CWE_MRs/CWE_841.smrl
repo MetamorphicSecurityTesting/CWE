@@ -58,29 +58,3 @@ MR CWE_841 {
 		}
 	} //end-MR
 } //end-package
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//	The problem is this case brings its own vulnerabilities e.g. the attacker injects the variable in URL that declares a user is verified or not.
