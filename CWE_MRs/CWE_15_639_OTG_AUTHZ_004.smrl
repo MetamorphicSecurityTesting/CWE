@@ -32,13 +32,14 @@ package smrl.mr.owasp{
 	MR CWE_15_639_OTG_AUTHZ_004 {
 		{
 			for ( Action action : Input(1).actions() ){                                             //(1)
-				for ( var par=0; par < action.getParameters().size(); par++ ){                      //(2)
+				for ( var par=0; par < action.getParameters().size() && notTried( action.getUser(), action.url); par++ ){                      //(2)
+				
+				for ( usedValue : parameterValuesUsedByOtherUsers(action, par) ){
 					var pos = action.getPosition();                                                 //(3)
 					IMPLIES( 
 						EQUAL ( Input(2), Input(1) ) &&	                                            //(4)
-					  	notTried( action.getUser(), action.url)&&
 					  	Input(2).actions().get(pos)		                                            
-							.setParameterValue(par, parameterValueUsedByOtherUsers(action, par))    //(5)
+							.setParameterValue(par, usedValue)    //(5)
 							//TODO: optimization -> return only param_value of this action 
 						, 
 						OR( 							                                            //2nd par of IMPLIES
@@ -47,6 +48,7 @@ package smrl.mr.owasp{
 							userCanRetrieveContent( action.user, Output(Input(2),pos) ) 
 						)
 					);//end-IMPLIES
+					}
 				}//end-for
 			}//end-for
 		}
