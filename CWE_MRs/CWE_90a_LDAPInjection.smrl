@@ -41,7 +41,9 @@ MR CWE_90a {
  			
  			IMPLIES(
  				notTried(LDAPInjectionString() + x + parameterName, Input(1).actions().get(pos).getUrl() ) &&   //(5)
- 				! Output(Input(1),pos).hasAlert	&&                                                              //(6)
+ 				! Output(Input(1),pos).hasAlert	&& 
+ 				!isError(Output(Input(1), pos))&&
+ 				NOT(NULL(Output(Input(1), pos)))&&                                                             //(6)
  			    userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&                               //(7)
  				EQUAL(Input(2), Input(1))&&                                                                     //(8)
  				Input(2).actions().get(pos).setParameterValue( x, LDAPInjectionString() )                       //(9)		   

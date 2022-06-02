@@ -47,10 +47,11 @@ MR CWE_290_291{
 	
 	   IMPLIES(
 	          afterLogin(action)                                                        //(3)
-	          &&  userCanRetrieveContent(action.getUser(), Output(Input(1),pos))        //(4)  	 				
+	          &&  userCanRetrieveContent(action.getUser(), Output(Input(1),pos))        //(4)  
+	          &&  Input(1).actions.get(pos).session != null	 				
 	          &&  EQUAL ( Input(2), Input(1) )	                                        //(5)	 
-         	  && Input(2).actions.get(pos).setSession( new CookieSession() )            //(6)
-	    	  && ! sameUrl( action.currentURL, action.elementURL )                      //(7)
+         	  &&  Input(2).actions.get(pos).setSession( new CookieSession() )            //(6)
+	    	  &&  !sameUrl( action.currentURL, action.elementURL )                      //(7)
 		    ,		    
 		   
 		      	OR( isError(Output(Input(2), pos)),

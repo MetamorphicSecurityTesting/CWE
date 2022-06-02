@@ -23,15 +23,14 @@ package smrl.mr.owasp {
  * (5) Checks if the parameter of the action URL has not seen before, to speed up the process.
  * (6) Verifies that the action does not originally contain any alert.
  * (7) Creates the follow-up input by copying the Input(1).
- * (8) Sets the injected URL to the follow-up input.
+ * (8) Sets the injected XSS string as the parameter value of the follow-up input.
  * (9) Checks either the attack was not performed or no effect shall be observed (the effect of the XSS is usually visualized when reaching the page where we inject the XSS)
  *  
  * 
  * 
  */
- 
-MR CWE_79_a_XSSreflected { 
- { 	
+  MR CWE_79_a_XSSreflected { 
+  { 	
  	
  	keepDialogsOpen = true;                                                                 //(1)
  	
@@ -50,11 +49,11 @@ MR CWE_79_a_XSSreflected {
 		    	    Output(Input(2), pos).emptyFile,       
 		    	   ! Output(Input(2), pos).hasAlert  ) 
 		);//end-IMPLIES
-	}//end-for parameter
-   }//end-for action
-  }
-}//end-MR
-}//end-package
+	 }//end-for parameter
+    }//end-for action
+   }
+  }//end-MR
+ }//end-package
 
 
 

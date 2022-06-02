@@ -39,8 +39,7 @@ package smrl.mr.owasp {
 				,
 				( Output(Input(1), pos).redirectURL()===null ||				//(6)
 					Output(Input(2), pos).redirectURL()===null ) ||			
-					NOT(													
-						EQUAL ( 
+					NOT(EQUAL ( 
 							Output(Input(2), pos).redirectURL(), 
 							Output(Input(1), pos).redirectURL()
 						)

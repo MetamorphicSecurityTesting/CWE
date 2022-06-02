@@ -29,7 +29,8 @@ MR CWE_284_346_OTG_AUTHN_004 {
     for ( Action action : Input(1).actions() ) {	                                           //(1)
 	    
 	    IMPLIES( 
-	        afterLogin( action ) 								                               //(2)
+	        afterLogin( action ) 
+	          &&  !isError(Output(Input(1), action.position))								                               //(2)
 	          &&  notVisibleWithoutLoggingIn( action.getUrl() )                                //(3)
 	          &&  EQUAL( Input(2) , action ) 					                               //(4)
 		   , 

@@ -54,7 +54,7 @@ MR CWE_88a {
 		   OR(                                                                                           //(10)
 			   // Assuming that the input sequence continues after 'pos', we may observe the effects of the attack in the following inputs.
                !different(Output(Input(1)).values.subList(pos,Input(1).actions.length),
-               	Output(Input(2)).values.subList(pos,Input(2).actions.length) ) 
+               			  Output(Input(2)).values.subList(pos,Input(2).actions.length) ) 
 
     			, OR(
                 	isError(Output(Input(2), pos))                       

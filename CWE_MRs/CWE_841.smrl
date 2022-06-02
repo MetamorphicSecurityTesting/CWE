@@ -31,19 +31,17 @@ package smrl.mr.owasp{
  * 
  * 
  */ 
-MR CWE_841 {
+ MR CWE_841 {
 		{
 		 
 			for ( var x = 0; x < Input(1).actions().size(); x++ ){                                                       //(1)
 				for ( var y = x+2; isSignup(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++){         //(2)			
 					
 					IMPLIES (
-						// x = signup
-						// y = login 
-						isLogin(Input(1).actions().get(y))&&                                                             //(3)
 						
+						isLogin(Input(1).actions().get(y))&&                                                             //(3)
 						EQUAL ( Input(2) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  &&     //(4)
-						Input(2).addAction(0,Input(1).actions().get(x))   &&                                             //(5)  we start with a sign up
+						Input(2).addAction(0,Input(1).actions().get(x))   &&                                             //(5)                      we start with a sign up
 						Input(2).addAction(0, new ResetSUTAction())                                                      //(6)
 						, 
 					
@@ -57,4 +55,4 @@ MR CWE_841 {
 			} //end-for
 		}
 	} //end-MR
-} //end-package
+ } //end-package

@@ -54,13 +54,14 @@ MR CWE_20_73_99_219_220_528_530_642_732_OTG_AUTHZ_001a {
 		for ( var par=0; par < action.getParameters().size(); par++ ){                    //(2)
 			var pos = action.getPosition();                                               //(3)
 			IMPLIES( 
-				EQUAL( Input(2), Input(1) )	                                              //(4)
-			  	  && Input(2).actions().get(pos).setParameterValue(par, RandomFilePath()) //(5)
+					notTried( Input(1).actions().get(pos).getUrl() ) && 
+					EQUAL( Input(2), Input(1) )	 &&                                             //(4)
+			  		Input(2).actions().get(pos).setParameterValue(par, RandomFilePath()) //(5)
 			    ,
 			    OR( 	                                                                  //(6)
-			      isError( Output(Input(2),pos) ) 	
+			    	isError( Output(Input(2),pos) ) 	
 			      ,
-			      userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) )
+			    	userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) )
 			);//end-IMPLIES
 		}//end-for
 	}//end-for

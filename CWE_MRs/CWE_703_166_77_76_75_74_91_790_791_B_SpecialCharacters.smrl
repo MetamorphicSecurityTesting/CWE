@@ -94,7 +94,7 @@ MR CWE_703_166_78_77_76_75_74_91_790_791_B {
  				,
  				OR(                                                                            //(9)
 		    		isError(Output(Input(2), pos)),                                                      
-		    	     EQUAL(Output(Input(1), pos),Output(Input(2), pos))       
+		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))    
 		    	)
  			);
  		}

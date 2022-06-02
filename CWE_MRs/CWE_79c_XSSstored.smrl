@@ -28,7 +28,7 @@ package smrl.mr.owasp{
  *      the XSS is usually visualized when reaching the page where we inject the XSS).  
  *  
  */ 
-MR CWE_79c_storedXSS {
+MR CWE_79c_storedXSS {  
  {
  	
 	keepDialogsOpen = true;                                                                    //(1)

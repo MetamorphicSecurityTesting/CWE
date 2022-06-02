@@ -31,7 +31,7 @@ package smrl.mr.owasp {
  * 
  */
 
-MR CWE_280_755_OTG_AUTHZ_002e{
+MR CWE_280_755_OTG_AUTHZ_002e{ 
 	{
        for(var x = 0; (x < Input(1).actions().size() ); x++){                                                  //(1)
 			for (var y = x+1; (isLogin(Input(1).actions().get(x)) && y < Input(1).actions().size()); y++) {    //(2)
