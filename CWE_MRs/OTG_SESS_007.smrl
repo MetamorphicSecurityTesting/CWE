@@ -1,35 +1,40 @@
+/**
+ * Authors:
+ * Xuan Phu MAI, xuanphu.mai@uni.lu (First implementation)
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (Maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 package smrl.mr.owasp{
-	/*** After a session timeout the user should not be able to perform an action
-that requires to be logged in.
-	 * This MR iterates over all the actions to find actions executed within a
-session, after login.
-	 *
-	 * The 1st parameter of the operator IMPLIES is a boolean expression with
-three clauses joined with logical conjunction.
-	 * The 1st clause checks that the action is generally not available without
-login. The 2nd clause checks if the session is not null. The 3rd clause checks
-that a session timeout is set. The 4th clause defines a follow-up input where
-the selected action is executed after timeout (usually simulated).
-	 *
-	 * The 2nd parameter of IMPLIES checks if the output of the action generated
-after timeout is different than in the case in which it is executed before the
-timeout.
-	 */
+	
+/*
+ * Definition:
+ * After a session timeout the user should not be able to perform an action that requires to be logged in.
+ * 
+ * Comments:
+ * (1) The loop iterates over all the actions to find actions executed within a session, after login.
+ * (2) Checks that the action is generally not available without login.
+ * (3) Checks if the session is not null.
+ * (4) Checks that a session timeout is set.
+ * (5) Defines a follow-up input where the selected action is executed after timeout (usually simulated).
+ * (6) Checks if the output of the action generated after timeout is different than in the case in which 
+ *     it is executed before the  timeout.
+ * 
+ */
 	MR OTG_SESS_007 {
 		{
-			for ( Action action : Input(1).actions() ){
+			for ( Action action : Input(1).actions() ){                    //(1)
 				IMPLIES (
-						notAvailableWithoutLoggingIn(action) &&
-						NOT ( NULL ( action.session ) ) &&
-						action.session.timeout > 0 &&
-						EQUAL ( Input(2) ,
-								addAction( Input( 1 ),
+						notAvailableWithoutLoggingIn(action) &&            //(2)
+						NOT ( NULL ( action.session ) ) &&                 //(3)
+						action.session.timeout > 0 &&                      //(4)
+						CREATE ( Input(2) ,	addAction( Input( 1 ),
 										action.position,
-										Wait(action.session.timeout) ))
+										Wait(action.session.timeout) ))    //(5)
 						,
-						different (
+						different (                                        //(6)
 								Output( Input(1), action.position ),
 								Output( Input(2), action.position ) ));
 			}
