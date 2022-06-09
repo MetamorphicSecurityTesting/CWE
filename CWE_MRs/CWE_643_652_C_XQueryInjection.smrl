@@ -1,6 +1,11 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
-
 
 package smrl.mr.owasp {
  
@@ -67,8 +72,7 @@ MR CWE_643_652_C {
  	
     for ( Action action : Input(1).actions() ) {                                                                     //(2)
 	  	
-	  	var pos = action.getPosition();                                                                              //(3) 
-	  	//System.out.println("ACTION "+pos+"/"+action.url);														   
+	  	var pos = action.getPosition();                                                                              //(3) 													   
 	  		
 	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){                      //(4)
 	  			 IMPLIES(
@@ -78,8 +82,8 @@ MR CWE_643_652_C {
 	        		  userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&                               //(6)
 	        		  notTried(action.url, Input(1).actions().get(pos).getElementURL() )  &&                         //(7)
 	        		  !isError(Output(Input(1),pos))		&&													     //(8)							
-	       			  EQUAL ( Input(2), Input(1) )	   && 													         //(9)	                                                                        
-	        		  Input(2).actions.get(action.position).setUsernameFormInput(x, XQueryInjection())               //(10)   "' or 1=1 or ''='"
+	       			  CREATE ( Input(2), Input(1) )	   && 													         //(9)	                                                                        
+	        		  Input(2).actions.get(action.position).setUsernameFormInput(x, XQueryInjection())               //(10)  
 		    , 
 		    		 OR(                                                                                             //(11)                                                               
 		    		isError(Output(Input(2), pos)), 
@@ -91,8 +95,3 @@ MR CWE_643_652_C {
  } }
 }//end-MR
 }//end-package
-
-
-
-
-

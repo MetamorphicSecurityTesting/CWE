@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 import  smrl.mr.language.actions.StandardAction;
@@ -66,17 +72,15 @@ MR CWE_643_652_B {
  	for (Action action : Input(1).actions()){                                               //(2)                                          
  		
  		var pos = action.getPosition();                                                     //(3)
- 		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
  		
  		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){      //(4)
  			
- 			
  			IMPLIES(
- 				//We are about to submit a form
+ 			
  				action.isClickOnButton &&                                                   //(5)
  				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&     		//(6)
  				notTried( action.url, Input(1).actions().get(pos).getElementURL() ) &&      //(7)
- 				EQUAL(Input(2), Input(1) )                     &&                           //(8)
+ 				CREATE(Input(2), Input(1) )                     &&                           //(8)
  				Input(2).actions.get(pos).setFormInput(x, XQueryInjection())  			    //(9)       
  				,
 

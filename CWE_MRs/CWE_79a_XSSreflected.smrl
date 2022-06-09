@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 import sun.security.util.Password
@@ -42,7 +48,7 @@ package smrl.mr.owasp {
 			IMPLIES(
 				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&   //(5)
 				! Output(Input(1), pos).hasAlert   &&	 				                    //(6)	 
-				EQUAL( Input(2), Input(1) ) &&					                            //(7)
+				CREATE( Input(2), Input(1) ) &&					                            //(7)
 			  	Input(2).actions().get(pos).setParameterValue(x,XSSInjectionString())       //(8)
 			    ,
 			    OR(                                                                         //(9)

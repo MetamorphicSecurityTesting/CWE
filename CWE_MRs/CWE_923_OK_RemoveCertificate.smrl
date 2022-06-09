@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 
@@ -39,7 +45,7 @@ MR CWE_923 {
 			    notTried(action.url, Input(1).actions().get(pos).getElementURL() )  && //(4) 
 			   afterLogin(action) &&                                                   //(5)
 	           userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&        //(6)
-	           EQUAL ( Input(2), Input(1) ) &&	                                       //(7)
+	           CREATE ( Input(2), Input(1) ) &&	                                       //(7)
 	           Input(2).setUseRemovedCertificate(true)                                 //(8)			
 		              
 			, 

@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 import smrl.mr.crawljax.WebProcessor
@@ -37,11 +43,13 @@ MR CWE_352 {
  		var pos = action.getPosition();                                                              //(3) 
  		
  		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){               //(4)		
+ 			
  			IMPLIES(
+ 				
  					action.isClickOnButton &&                                                        //(5)
  					notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&         //(6)        
  					afterLogin( action )    &&													     //(7)
- 					EQUAL( Input(2), Input( LoginAction(action.user)   ,                             //(8)
+ 					CREATE( Input(2), Input( LoginAction(action.user)   ,                             //(8)
  					RequestUrlAction("file://"+Output(Input(1),pos-1).file.absolutePath),action ) )  //(9)              
  				,
 					different ( Output(Input(1),pos),  Output(Input(2),3) )                          //(10)

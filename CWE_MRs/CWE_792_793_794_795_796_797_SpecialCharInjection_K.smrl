@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 
@@ -55,13 +61,11 @@ MR CWE_792_793_794_795_796_797_K{
 	  	
 	  	var pos = action.getPosition();                                                                                      //(4)
 	  	var value = Input(1).actions().get(pos).getParameterValue(par);                                                      //(5)
-	  	
-	  		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
-	       
+	  		       
 	        IMPLIES(
 	            notTried( Input(1).actions().get(pos).getUrl() ) &&                                                           //(6)
 	            value != Boolean &&                                                                                           //(7)           
- 				EQUAL(Input(2), Input(1))&&  	                                                                              //(8)   			
+ 				CREATE(Input(2), Input(1))&&  	                                                                              //(8)   			
 	    	    Input(2).actions().get(pos).setParameterValue(par, SCInjection_middle(value , SpecialCharacters()))           //(9) 
 	    	      ,  
 		    

@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 
@@ -44,7 +50,7 @@ MR CWE_93a {
 				
 				notTried( action.getUser(), newUrl )		&&	                           //(4)	 					 
 				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&           //(5)
-				EQUAL( Input(2), Input(1) ) &&					                           //(6)
+				CREATE( Input(2), Input(1) ) &&					                           //(6)
 			  	Input(2).actions().get(pos).setUrl( newUrl )                               //(7)
 			    ,
 			  OR(                                                                          //(8)

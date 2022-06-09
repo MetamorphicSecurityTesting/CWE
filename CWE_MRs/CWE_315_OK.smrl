@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 import sun.security.util.Password
@@ -34,7 +40,7 @@ MR CWE_315 {
 		                                                         
 	   IMPLIES(
 	       	  notTried( Input(1).actions().get(pos).getUrl() ) && 						                          
-	          EQUAL ( Input(2), Input(1) )      		    			                                  //(4)
+	          CREATE ( Input(2), Input(1) )      		    			                                  //(4)
 		    ,  
 
 	   FALSE ( Output(Input(2),pos).session.keyValueMappings.values.contains(action.user.password) ));    //(5)

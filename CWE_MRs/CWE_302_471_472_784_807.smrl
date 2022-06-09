@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+ 
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 import java.util.Map.Entry;
@@ -59,7 +65,7 @@ MR CWE_302_471_472_784_807{
       var pos = action.getPosition();                                                               //(2)
       var session = Output( Input(1), pos).session as CookieSession;                                //(3)
       
-      EQUAL( Input(2), changeCredentials(Input(1), User()) )                                        //(4)
+      CREATE( Input(2), changeCredentials(Input(1), User()) )                                        //(4)
       var session2 = Output( Input(2), pos).session as CookieSession;                               //(5)
       var notTried = notTried( action.url, Input(1).actions().get(pos).getElementURL() )            //(6) 
       var mappings = session.keyValueMappings.entrySet;                                             //(7)
@@ -72,7 +78,7 @@ MR CWE_302_471_472_784_807{
       		&& type == Boolean                                                                      //(11)
       		&& cannotReachThroughGUI( User(), action.url )                                         //(12)
       		&& different( Output( Input(1), pos) , Output(Input(2) , pos) )   					   //(13)
-      		&& EQUAL( Input(3), Input(2) )                                                          //(14)
+      		&& CREATE ( Input(3), Input(2) )                                                          //(14)
       		&& Input(3).actions.get(pos).setSession( session2 )                                     //(15)
       		                        
             && session.setCookie(      

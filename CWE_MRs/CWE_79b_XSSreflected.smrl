@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 import  smrl.mr.language.actions.StandardAction;
@@ -6,9 +12,6 @@ import jdk.internal.util.xml.impl.Input
 package smrl.mr.owasp{
 
 /**
- *
- * Webmin case: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8820
- * 
  * CWE Definition:
  * The software does not neutralize or incorrectly neutralizes user-controllable input 
  * before it is placed in output that is used as a web page that is served to other users.
@@ -42,7 +45,7 @@ MR CWE_79b_XSSreflected {
  				action.isClickOnButton &&                                                        //(5)
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&        //(6)
  				! Output(Input(1),pos).hasAlert	&&         										 //(7)                           					          
- 				EQUAL(Input(2), Input(1) )  &&                                                   //(8)
+ 				CREATE(Input(2), Input(1) )  &&                                                   //(8)
  				Input(2).actions.get(pos).setFormInput(x, XSSInjectionString())                  //(9)                                    
  				,
  				OR(                                                                              //(10)

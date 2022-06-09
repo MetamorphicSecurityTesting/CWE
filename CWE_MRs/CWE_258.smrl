@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 import sun.security.util.Password
@@ -36,7 +42,7 @@ MR CWE_258 {
 	       	  action.isClickOnButton &&                                                     //(4)
  			  userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&        		//(5)	
  			  notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) && 		//(6)			
-	          EQUAL ( Input(2), Input(1) )&&	                                            //(7)			    			
+	          CREATE ( Input(2), Input(1) )&&	                                            //(7)			    			
 	    	  Input(2).actions.get(action.position).setFormInputOfType(x, "","password")    //(8)	    	  
 		    , 
 	    	OR( 

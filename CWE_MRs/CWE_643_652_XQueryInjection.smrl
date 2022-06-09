@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 import sun.security.util.Password
@@ -59,13 +65,13 @@ MR CWE_643_652 {
     for ( Action action : Input(1).actions() ) {                                                                   //(1)
 	  	
 	  	var pos = action.getPosition();                                                                            //(2)
-	  	//System.out.println("ACTION "+pos+"/"+action.url);
+	  	
 	   IMPLIES(
 	   	
 	          isLogin(action)                                                                                      //(3)
 	          && userCanRetrieveContent(action.getUser(), Output(Input(1),pos))                                    //(4)                                              
 	          && notTried(action.url)																			   //(5)							
-	          && EQUAL ( Input(2), Input(1) )	                                                                   //(6)
+	          && CREATE ( Input(2), Input(1) )	                                                                   //(6)
 	          && Input(2).actions.get(action.position).setValueForParametersOfType("text", XQueryInjection())      //(7)   "' or 1=1 or ''='"
 	    	  && Input(2).actions.get(action.position).setValueForParametersOfType("password", WeakPassword())     //(8) 
 		    ,  
@@ -79,8 +85,4 @@ MR CWE_643_652 {
  } 
 }//end-MR
 }//end-package
-
-
-
-
 

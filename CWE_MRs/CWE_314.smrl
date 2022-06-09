@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 
@@ -57,13 +63,13 @@ MR CWE_314{
  		 		userCanRetrieveContent(action.getUser(), Output(Input(1),pos))   &&       //(6)
  				notTried( Input(1).actions().get(pos).getUrl() ) &&                       //(7)          
  				
- 				EQUAL(Input(2), Input(1)) &&                                              //(8)
+ 				CREATE(Input(2), Input(1)) &&                                              //(8)
  				Input(2).actions().get(pos).setParameterValue( x, str512 )&&              //(9)
  				
- 				EQUAL(Input(3), Input(1)) &&                                              //(10)
+ 				CREATE(Input(3), Input(1)) &&                                              //(10)
  				Input(3).actions().get(pos).setParameterValue( x, str1024 )&&             //(11)
  				
- 				EQUAL(Input(4), Input(1)) &&                                              //(12)
+ 				CREATE(Input(4), Input(1)) &&                                              //(12)
  				Input(4).actions().get(pos).setParameterValue( x, str2048 )               //(13)
  			                  
  				,

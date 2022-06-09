@@ -1,3 +1,10 @@
+/**
+ * Authors:
+ * Xuan Phu MAI, xuanphu.mai@uni.lu (First implementation)
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (Maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*
 
 package smrl.mr.owasp {
@@ -39,16 +46,16 @@ package smrl.mr.owasp {
     	for(var x = 0; x < Input(1).actions().size() ; x++){                                                    //(1)
 			for (var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++) {     //(2)
 	  			IMPLIES(
-	  				//1st par of IMPLIES including 7 clauses
+	  				
 	  				(!isSupervisorOf(User(), Input(1).actions().get(y).user)) &&                                //(3)
 	  				cannotReachThroughGUI(User(), Input(1).actions().get(y).getUrl()) &&                        //(4)
-	  				EQUAL(Input(2), Input(1).actions().get(x)) &&                                               //(5)
-	  				EQUAL(Input(3), changeCredentials(Input(2), User())) &&                                     //(6)
-	  				EQUAL(Input(4), addAction(Input(1), y, Input(3).actions().get(0))) &&                       //(7)
-					EQUAL(Input(5), addAction(Input(4), y+1, Input(1).actions().get(y))) &&                     //(8)
-					EQUAL(Input(6), addAction(Input(5), y+2, Input(1).actions().get(x) ) )                      //(9)
+	  				CREATE(Input(2), Input(1).actions().get(x)) &&                                               //(5)
+	  				CREATE(Input(3), changeCredentials(Input(2), User())) &&                                     //(6)
+	  				CREATE(Input(4), addAction(Input(1), y, Input(3).actions().get(0))) &&                       //(7)
+					CREATE(Input(5), addAction(Input(4), y+1, Input(1).actions().get(y))) &&                     //(8)
+					CREATE(Input(6), addAction(Input(5), y+2, Input(1).actions().get(x) ) )                      //(9)
 	  				,
-	  				//2nd par of IMPLIES
+	  				
 	  				EQUAL(                                                                                      //(10)
 	  					Output(Input(1), y)
 	  					,

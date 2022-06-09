@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+ 
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 import sun.security.util.Password
@@ -43,23 +49,15 @@ MR CWE_298_599 {
 	   		   isLogin(action) &&                                                       //(3)
 	           notTried( action.url, Input(1).actions().get(pos).getElementURL() )  &&  //(4)
 	           userCanRetrieveContent(action.user, Output(Input(1), pos))&&             //(5)
-	           EQUAL ( Input(2), Input(1) ) &&	                                        //(6)
+	           CREATE ( Input(2), Input(1) ) &&	                                        //(6)
 	           Input(2).setUseOutdatedCertificate(true)                                 //(7)
 		    ,  
 		    OR(                                                                         //(8)
-		    	isError(Output(Input(2), pos))    
-		    	,
-		 
-		    		different ( Output(Input(1),pos),  Output(Input(2),pos))
-		    		
+		    	isError(Output(Input(2), pos))  ,
+		    	different ( Output(Input(1),pos),  Output(Input(2),pos))	
 		    	)   	
 		);//end-IMPLIES
 	}//end-for
  } 
 }//end-MR
 }//end-package
-
-
-
-
-

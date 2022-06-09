@@ -1,3 +1,10 @@
+/**
+ * Authors:
+ * Xuan Phu MAI, xuanphu.mai@uni.lu (First implementation)
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (Maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 
@@ -45,7 +52,7 @@ MR CWE_288_287b_300_304_319_OTG_AUTHN_010 {
 	    var pos = action.position;                                    //(2)
 		IMPLIES(                                                    
 		      afterLogin( action ) &&								  //(3)
-			  EQUAL ( Input(2), Input(1) )&&						  //(4)
+			  CREATE ( Input(2), Input(1) )&&						  //(4)
 			  Input(2).actions().get(pos).setChannel("http") 	      //(5)
 			, 
 			  different( Output(Input(1),pos), Output(Input(2),pos) ) //(6)

@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 import  smrl.mr.language.actions.StandardAction;
@@ -62,7 +68,7 @@ MR CWE_94_96_B {
  				action.isClickOnButton &&                                                      //(5)
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&       //(6)
  				userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&        	   //(7)	  
- 				EQUAL(Input(2), Input(1) )                     &&                              //(8)
+ 				CREATE(Input(2), Input(1) )                     &&                              //(8)
  				Input(2).actions.get(pos).setFormInput(x, StaticInjectionString())  		   //(9)          
  				,
 

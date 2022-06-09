@@ -1,3 +1,10 @@
+/**
+ * Authors:
+ * Xuan Phu MAI, xuanphu.mai@uni.lu (First implementation)
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (Maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 
@@ -38,9 +45,9 @@ MR CWE_280_755_OTG_AUTHZ_002e{
 	  			IMPLIES(
 	  				(!isSupervisorOf(User(), Input(1).actions().get(y).user)) &&                               //(3)
 	  				cannotReachThroughGUI(User(), Input(1).actions().get(y).getUrl()) &&                       //(4)
-	  				EQUAL(Input(2), Input(1).actions().get(x)) &&                                              //(5)
-	  				EQUAL(Input(3), changeCredentials(Input(2), User())) &&                                    //(6)
-	  				EQUAL(Input(4), addAction(Input(1), y, Input(3).actions().get(0)))                         //(7)
+	  				CREATE(Input(2), Input(1).actions().get(x)) &&                                              //(5)
+	  				CREATE(Input(3), changeCredentials(Input(2), User())) &&                                    //(6)
+	  				CREATE(Input(4), addAction(Input(1), y, Input(3).actions().get(0)))                         //(7)
 	  			,	        
              OR(                                                                                               //(8)
 	  					Output(Input(4), y+1).isError()

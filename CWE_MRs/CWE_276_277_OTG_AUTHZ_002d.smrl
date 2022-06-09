@@ -1,3 +1,10 @@
+/**
+ * Authors:
+ * Xuan Phu MAI, xuanphu.mai@uni.lu (First implementation)
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (Maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*
 
 package smrl.mr.owasp {
@@ -43,7 +50,7 @@ package smrl.mr.owasp {
 				IMPLIES(
 					! isAdmin(action.user) &&                                                                               //(7)
 					isFormInputForFilePath( formInput ) &&                                                                  //(8)
-					EQUAL(Input(2), Input(1)) &&                                                                            //(9)
+					CREATE (Input(2), Input(1)) &&                                                                            //(9)
 					updateStringFormInput(Input(2).actions.get(x).getFormInputs().get(i).getAsJsonObject(), randomPath)     //(10)
 					,	
 					OR(                                                                                                     //(11)

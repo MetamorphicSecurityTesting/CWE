@@ -1,3 +1,10 @@
+/**
+ * Authors:
+ * Xuan Phu MAI, xuanphu.mai@uni.lu (First implementation)
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (Maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*
 import smrl.mr.language.Action;
 
@@ -59,7 +66,7 @@ package smrl.mr.owasp {
 	   IMPLIES(
 	   	    (!isSupervisorOf(User(), action.user)) &&						                //(2)
 	        cannotReachThroughGUI( User(), action.url )&&   				                //(3)
-	        EQUAL( Input(2), changeCredentials(Input(1), User()) )                          //(4)
+	        CREATE( Input(2), changeCredentials(Input(1), User()) )                          //(4)
 		 ,
 		 OR(
 		 	isError(Output(Input(1),action.position)), 										//(5)

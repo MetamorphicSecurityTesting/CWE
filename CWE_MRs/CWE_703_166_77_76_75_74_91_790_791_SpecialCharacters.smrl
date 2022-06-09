@@ -81,7 +81,7 @@ MR CWE_703_166_78_77_76_75_74_91_790_791 {
 	        IMPLIES(
 	        	notTried( Input(1).actions().get(pos).getUrl() ) &&                         //(5)
 	        	value != Boolean &&	                                                        //(6)		
-	            EQUAL ( Input(2), Input(1) ) &&		                                        //(7)		    			
+	            CREATE ( Input(2), Input(1) ) &&		                                        //(7)		    			
 	    	    Input(2).actions().get(pos).setParameterValue(par, SpecialCharacters())     //(8)  
 		    
 		    	,OR(                                                                        //(9)

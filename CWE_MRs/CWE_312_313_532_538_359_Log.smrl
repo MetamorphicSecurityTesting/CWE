@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 import java.util.function.Predicate;
@@ -55,8 +61,8 @@ MR CWE_312_313_532_538_359 {
  						
  			IMPLIES(
  				afterLogin(action) &&                                                //(3)
- 				EQUAL(Input(2), Input(1))&&                                          //(4)
- 				cannotReachThroughGUI(User(),action.url)	&&			             //(5)   
+ 				CREATE(Input(2), Input(1)) &&                                          //(4)
+ 				cannotReachThroughGUI(User(),action.url) &&			             //(5)   
  				Output(Input(2),action.position).values.size > 0	                 //(6)
  				, 
  								

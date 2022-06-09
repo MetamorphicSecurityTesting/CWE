@@ -1,3 +1,9 @@
+/**
+ * Authors:
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (First implementation and maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 
@@ -46,7 +52,7 @@ MR CWE_90b {
  				notTried( LDAPInjectionString() + x + action.url, Input(1).actions().get(pos).getElementURL() )  &&  //(6)
  				! Output(Input(1),pos).hasAlert	&&                                                                   //(7)
  				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&                                     //(8)
- 				EQUAL(Input(2), Input(1) )                     &&                                                    //(9)
+ 				CREATE(Input(2), Input(1) )                     &&                                                    //(9)
  				Input(2).actions.get(pos).setFormInput(x, LDAPInjectionString())		                             //(10)              
  				,
 

@@ -1,3 +1,10 @@
+/**
+ * Authors:
+ * Xuan Phu MAI, xuanphu.mai@uni.lu (First implementation)
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (Maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 import smrl.mr.language.Action;
 
@@ -30,9 +37,9 @@ MR CWE_284_346_OTG_AUTHN_004 {
 	    
 	    IMPLIES( 
 	        afterLogin( action ) 
-	          &&  !isError(Output(Input(1), action.position))								                               //(2)
+	          &&  !isError(Output(Input(1), action.position))								   //(2)
 	          &&  notVisibleWithoutLoggingIn( action.getUrl() )                                //(3)
-	          &&  EQUAL( Input(2) , action ) 					                               //(4)
+	          &&  CREATE( Input(2) , action ) 					                               //(4)
 		   , 
 		   different( Output(Input(1), action.position ), Output(Input(2), action.position ) ) //(5)
 		);//end-IMPLIES
