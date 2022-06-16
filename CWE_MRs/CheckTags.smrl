@@ -1,10 +1,37 @@
+/**
+ * Authors:
+ * Xuan Phu MAI, xuanphu.mai@uni.lu (First implementation)
+ * Nazanin Bayati Chaleshtari, n.bayati@uottawa.ca (Maintenance)
+ * Fabrizio Pastore, fabrizio.pastore@uni.lu (Validation)
+ */
+
 import static smrl.mr.language.Operations.*;
 
-package smrl.mr.owasp {
-MR CheckTags { 
-{
-	for ( action1 : Input(1).actions ){
-		for ( action2 : Input(2).actions ){
+/*
+ * Definition:
+ * Inadequate checks on the tags search fields can lead to an access level violation.
+ * 
+ * Comments:
+ * (1) The first loop iterates over all actions of Input(1).
+ * (2) The second loop iterates over all actions of Input(2).
+ * (3) The third for loop iterates over a list of tags, in which the same user is taking actions that are performed after the login (need to be authorized),
+ *     and both Input(1) and Input(2) contain a list of tags.
+ * (4) Stores the tag(i) from the list of tags of Input(1) in a variable.
+ * (5) For loop iterates over the list of tags of Input(2).
+ * (6) Verifies that the tags are the same.
+ * (7) Creates a follow-up input with different credentials as Input(1), named Input(3).
+ * (8) Creates a follow-up input with different credentials as Input(2), named Input(4).
+ * (9) Verifies that an unauthorized user cannot perform the action or they (the follow-up inputs) should have the same tags.
+ * 
+ */
+
+
+
+ package smrl.mr.owasp {
+ MR CheckTags { 
+ {
+	for ( action1 : Input(1).actions ){                                                               //(1)
+		for ( action2 : Input(2).actions ){                                                           //(2)
 
 				for ( var i=0;
 					afterLogin(action1) &&
@@ -13,25 +40,24 @@ MR CheckTags {
 					Output(Input(1), action1.position).containListOfTags() &&  
 					Output(Input(2), action2.position).containListOfTags() &&
 					i<Output(Input(1), action1.position).listsOfTags().size;
-					i++
-				) {
-					var listOfTags1 = Output(Input(1), action1.position).listsOfTags().get(i);
-					for ( listOfTags2 :  Output(Input(2), action2.position).listsOfTags() ) {
+					i++)                                                                              //(3)
+				 {
+					var listOfTags1 = Output(Input(1), action1.position).listsOfTags().get(i);        //(4)
+					for ( listOfTags2 :  Output(Input(2), action2.position).listsOfTags() ) {         //(5)
 						IMPLIES (
-							listOfTags1.equals( listOfTags2 ) &&
-							EQUAL ( Input(3), changeCredentials ( Input(1), User() )) &&
-							EQUAL ( Input(4), changeCredentials ( Input(2), User() ))
+							listOfTags1.equals( listOfTags2 ) &&                                      //(6)
+							CREATE ( Input(3), changeCredentials ( Input(1), User() )) &&             //(7)
+							CREATE ( Input(4), changeCredentials ( Input(2), User() ))                //(8)
 							,
-							(isError(Output(Input(3),action1.position)) ||
+							(isError(Output(Input(3),action1.position)) ||                            //(9)
 							isError(Output(Input(4),action2.position)) ||
 							Output(Input(3),action1.position).listOfTags(listOfTags1.id).equals (  
 								Output(Input(4),action2.position).listOfTags(listOfTags2.id)) )
 						);
 					} //end-For_Tag2
 				} //end-For_tag1
-//			} //End-if
-		} // end-For_action2
-	} //end-For_action1
-} 
-} //end_MR
-} // end-package
+		  } // end-For_action2
+	   } //end-For_action1
+     } 
+   } //end_MR
+ } // end-package
