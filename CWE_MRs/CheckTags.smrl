@@ -1,0 +1,37 @@
+import static smrl.mr.language.Operations.*;
+
+package smrl.mr.owasp {
+MR CheckTags { 
+{
+	for ( action1 : Input(1).actions ){
+		for ( action2 : Input(2).actions ){
+
+				for ( var i=0;
+					afterLogin(action1) &&
+					afterLogin(action2) &&
+					action1.user.isSimilar(action2.user) &&
+					Output(Input(1), action1.position).containListOfTags() &&  
+					Output(Input(2), action2.position).containListOfTags() &&
+					i<Output(Input(1), action1.position).listsOfTags().size;
+					i++
+				) {
+					var listOfTags1 = Output(Input(1), action1.position).listsOfTags().get(i);
+					for ( listOfTags2 :  Output(Input(2), action2.position).listsOfTags() ) {
+						IMPLIES (
+							listOfTags1.equals( listOfTags2 ) &&
+							EQUAL ( Input(3), changeCredentials ( Input(1), User() )) &&
+							EQUAL ( Input(4), changeCredentials ( Input(2), User() ))
+							,
+							(isError(Output(Input(3),action1.position)) ||
+							isError(Output(Input(4),action2.position)) ||
+							Output(Input(3),action1.position).listOfTags(listOfTags1.id).equals (  
+								Output(Input(4),action2.position).listOfTags(listOfTags2.id)) )
+						);
+					} //end-For_Tag2
+				} //end-For_tag1
+//			} //End-if
+		} // end-For_action2
+	} //end-For_action1
+} 
+} //end_MR
+} // end-package
