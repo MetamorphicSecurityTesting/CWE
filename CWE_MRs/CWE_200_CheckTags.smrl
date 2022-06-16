@@ -8,7 +8,11 @@
 import static smrl.mr.language.Operations.*;
 
 /*
- * Definition:
+ * CWE Definition:
+ * The product exposes sensitive information to an actor that is not explicitly authorized 
+ * to have access to that information.
+ * 
+ * Idea:
  * Inadequate checks on the tags search fields can lead to an access level violation.
  * 
  * Comments:
@@ -28,7 +32,7 @@ import static smrl.mr.language.Operations.*;
 
 
  package smrl.mr.owasp {
- MR CheckTags { 
+ MR CWE_200 { 
  {
 	for ( action1 : Input(1).actions ){                                                               //(1)
 		for ( action2 : Input(2).actions ){                                                           //(2)
