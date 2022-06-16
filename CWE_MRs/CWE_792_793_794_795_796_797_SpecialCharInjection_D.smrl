@@ -51,7 +51,6 @@ package smrl.mr.owasp {
  * (10) Sets the new input value which contains special character for the follow-up input.
  * (11) Verifies that the system should show an error page or it would neutralize the input.
  * 
- * 
  */
  
 MR CWE_792_793_794_795_796_797_D{ 
@@ -62,9 +61,6 @@ MR CWE_792_793_794_795_796_797_D{
  			
  			var pos = action.getPosition();                                                                    //(4) 
  			var value1 = Input(1).actions().get(pos).getFormInputs().get(x).getAsJsonObject();                 //(5)
- 			
- 			System.out.println("ACTION "+pos+"/"+Input(1).actions().size());  
- 			System.out.println("value of x:  "+x +"///"+Input(1).actions().get(pos).getFormInputs());
  			
  			IMPLIES(
  				

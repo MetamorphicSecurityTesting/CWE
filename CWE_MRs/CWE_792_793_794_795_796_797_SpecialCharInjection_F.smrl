@@ -62,10 +62,7 @@ MR CWE_792_793_794_795_796_797_F{
  			
  			var pos = action.getPosition();                                                                    //(4) 
  			var value1 = Input(1).actions().get(pos).getFormInputs().get(x).getAsJsonObject();                 //(5)
- 			
- 			System.out.println("ACTION "+pos+"/"+Input(1).actions().size());  
- 			System.out.println("value of x:  "+x +"///"+Input(1).actions().get(pos).getFormInputs());
- 			
+ 				
  			IMPLIES(
  				
  				action.isClickOnButton &&                                                                       //(6) 

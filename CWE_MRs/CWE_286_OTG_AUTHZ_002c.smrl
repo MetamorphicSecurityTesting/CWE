@@ -40,10 +40,12 @@ package smrl.mr.owasp {
   				,
   				OR(                                                                        //(6)
   					isError(Output(Input(1), y)),
-  					different(Output(Input(1), y),Output(Input(2), 1))
-				)
+  					different(Output(Input(1), y),Output(Input(2), 1)))
   			); //end-IMPLIES
 		} //end-for
-    }
-  } //end-MR
-} //end-package
+     }
+   } //end-MR
+  } //end-package
+  
+  
+  

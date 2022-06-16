@@ -26,20 +26,20 @@ package smrl.mr.owasp{
 	
 	MR OTG_SESS_003 {
 		{
-			for( Action signup : Input(1).actions() ){                                  //(1)
-				for ( var i=0;
-						isSignup(signup) && i < Input (2).actions().size; i++ ) {       //(2)
+			for( Action signup : Input(1).actions() ){                                   //(1)
+				for ( var i=0;isSignup(signup) && i < Input (2).actions().size; i++ ) {  //(2)
 					var f = Input (2).actions().get(i);
 					var pos = f.getPosition();
 					IMPLIES (
-							afterLogin ( f ) &&                                         //(3)
-							CREATE (Input (3), addAction ( Input(2), pos+1, signup ))   //(4)
+							afterLogin ( f ) &&                                          //(3)
+							CREATE (Input (3), addAction ( Input(2), pos+1, signup ))    //(4)
 							,
-							different(                                                  //(5)
+							different(                                                   //(5)
 									Output(Input(3), pos).getSession(),
 									Output(Input(3), pos+1).getSession())
 							);//end-IMPLIES
 				}//end-for
 			}//end-for
-		}}//end-MR
-}
+		 }
+	  }//end-MR
+    }//end-package

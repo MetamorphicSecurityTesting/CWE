@@ -52,18 +52,14 @@ package smrl.mr.owasp{
  */
  
   
-MR CWE_94_96_B {
- {
+  MR CWE_94_96_B {
+  {
 	keepDialogsOpen = true;                                                                    //(1)
-
  	for (Action action : Input(1).actions()){                                                  //(2)
  		var pos = action.getPosition();                                                        //(3) 
  		
- 		System.out.println("ACTION "+pos+"/"+Input(1).actions().size());
- 		
  		for (var x = 0; action.containFormInput() && x < action.formInputs.size; x++){         //(4)
- 			
- 			
+ 			 			
  			IMPLIES(
  				action.isClickOnButton &&                                                      //(5)
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&       //(6)
@@ -76,9 +72,10 @@ MR CWE_94_96_B {
 		    		isError(Output(Input(2), pos)),                                                       
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
 		    	)
- 			);
- 		}
- 	}
- 	
-  } }
- }
+ 			);//end-IMPLIES
+	 }//end-for parameter
+    }//end-for action
+   }
+  }//end-MR
+ }//end-package
+

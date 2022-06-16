@@ -37,12 +37,9 @@ package smrl.mr.owasp {
  */
   MR CWE_79_a_XSSreflected { 
   { 	
- 	
- 	keepDialogsOpen = true;                                                                 //(1)
- 	
+ 	keepDialogsOpen = true;                                                                 //(1)	
     for ( Action action : Input(1).actions() ) {                                            //(2)
-	    for ( var x =0; x < action.parameters.size; x++){                                   //(3)
-  			
+	    for ( var x =0; x < action.parameters.size; x++){                                   //(3)	
   			var pos = action.getPosition();                                                 //(4)
 			
 			IMPLIES(
@@ -55,8 +52,8 @@ package smrl.mr.owasp {
 		    	    Output(Input(2), pos).emptyFile,       
 		    	   ! Output(Input(2), pos).hasAlert  ) 
 		);//end-IMPLIES
-	 }//end-for parameter
-    }//end-for action
+	 }//end-for 
+    }//end-for 
    }
   }//end-MR
  }//end-package

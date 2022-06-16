@@ -30,34 +30,34 @@ package smrl.mr.owasp{
  * 
  * (1) The first loop iterates over all the actions of the input sequence. 
  * (2) The second iterates over all the parameters of the action.
- * (3) Stores the parameters of the current action in a variable.
- * (4) Defines the follow-up input. 
- * (5) Sets a parameter value to a random value.
- * (6) Checks if the content of the output is either an error message 
+ * (3) The third loop iterates over all used values by other users.
+ * (4) Stores the parameters of the current action in a variable.
+ * (5) Defines the follow-up input. 
+ * (6) Sets a parameter value to a value that is used by other users.
+ * (7) Checks if the content of the output is either an error message 
  *     Or some content that can be retrieved from the GUI.
- */ 
+ */
+  
 	MR CWE_15_639_OTG_AUTHZ_004 {
 		{
-			for ( Action action : Input(1).actions() ){                                             //(1)
-				for ( var par=0; par < action.getParameters().size() && notTried( action.getUser(), action.url); par++ ){                      //(2)
+			for ( Action action : Input(1).actions() ){                                                                      //(1)
+				for ( var par=0; par < action.getParameters().size() && notTried( action.getUser(), action.url); par++ ){    //(2)
 				
-				for ( usedValue : parameterValuesUsedByOtherUsers(action, par) ){
-					var pos = action.getPosition();                                                 //(3)
+				for ( usedValue : parameterValuesUsedByOtherUsers(action, par) ){                                            //(3)
+					var pos = action.getPosition();                                                                          //(4)
 					IMPLIES( 
-						CREATE ( Input(2), Input(1) ) &&	                                            //(4)
-					  	Input(2).actions().get(pos)		                                            
-							.setParameterValue(par, usedValue)    //(5)
+						CREATE ( Input(2), Input(1) ) &&	                                                                 //(5)
+					  	Input(2).actions().get(pos).setParameterValue(par, usedValue)                                        //(6)
 							
 						, 
-						OR( 							                                            //2nd par of IMPLIES
-							Output(Input(2),pos).isError()                                          //(6)
+						OR( 							                                                                     //(7)
+							Output(Input(2),pos).isError()                                        
 							, 
-							userCanRetrieveContent( action.user, Output(Input(2),pos) ) 
-						)
+							userCanRetrieveContent( action.user, Output(Input(2),pos) ))
 					);//end-IMPLIES
-					}
 				}//end-for
 			}//end-for
+		  }//end-for
 		}
-	}//end-MR
-}
+	  }//end-MR
+    }//end-package

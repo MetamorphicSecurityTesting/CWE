@@ -49,30 +49,31 @@ package smrl.mr.owasp{
  * (1) Iterates over the actions of the Input(1).
  * (2) The second for loop iterates over the parameters of the action.
  * (3) Stores the parameters of the current action in a variable.1
- * (4) Creates the follow-up input, named Input(2).
- * (5) Sets the value of a parameter to a random file path.
- * (6) Verifies that the system shows an error page
+ * (4) To speed up the process, verifies that the URL has not been tried before.
+ * (5) Creates the follow-up input, named Input(2).
+ * (6) Sets the value of a parameter to a random file path.
+ * (7) Verifies that the system shows an error page
  *     Or the returned content is something that the user has the right to access.
  * 
  * 
  */ 
-MR CWE_20_73_99_219_220_528_530_642_732_OTG_AUTHZ_001a {
+ MR CWE_20_73_99_219_220_528_530_642_732_OTG_AUTHZ_001a {
  {
-	for ( Action action : Input(1).actions() ){                                           //(1)
-		for ( var par=0; par < action.getParameters().size(); par++ ){                    //(2)
-			var pos = action.getPosition();                                               //(3)
+	for ( Action action : Input(1).actions() ){                                             //(1)
+		for ( var par=0; par < action.getParameters().size(); par++ ){                      //(2)
+			var pos = action.getPosition();                                                 //(3)
 			IMPLIES( 
-					notTried( Input(1).actions().get(pos).getUrl() ) && 
-					CREATE( Input(2), Input(1) )	 &&                                             //(4)
-			  		Input(2).actions().get(pos).setParameterValue(par, RandomFilePath()) //(5)
+					notTried( Input(1).actions().get(pos).getUrl() ) &&                     //(4)
+					CREATE( Input(2), Input(1) )	 &&                                     //(5)
+			  		Input(2).actions().get(pos).setParameterValue(par, RandomFilePath())    //(6)
 			    ,
-			    OR( 	                                                                  //(6)
+			    OR( 	                                                                    //(7)
 			    	isError( Output(Input(2),pos) ) 	
 			      ,
 			    	userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) )
 			);//end-IMPLIES
 		}//end-for
 	}//end-for
- }
-}//end-MR
-}
+   }
+  }//end-MR
+ }//end-package

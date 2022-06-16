@@ -28,8 +28,8 @@ package smrl.mr.owasp{
  * (3) Stores the parameters of the current action in a variable
  * (4) Iterates over the actions that contain a form input.
  * (5) Checks if the action submits the form; i.e. the action contains clicking on submit button.
- * (7) Verifies that the URL has not been tried before.
- * (6) Filters the dynamic content.
+ * (6) Verifies that the URL has not been tried before.
+ * (7) Filters the dynamic content.
  * (8) Creates Input(2) as the follow-up input.
  * (9) Set the path to a random file as the form input value.
  * (10) The system should show a content that the user has right to access,
@@ -52,7 +52,7 @@ MR CWE_22 {
  				action.isClickOnButton &&                                                       //(5) 
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&       //(6)
  				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&                //(7)
- 				CREATE(Input(2), Input(1) ) &&                                                   //(8)
+ 				CREATE(Input(2), Input(1) ) &&                                                  //(8)
  				Input(2).actions.get(pos).setFormInput(x, "../"+RandomPath())                   //(9)
 
  				,OR(                                                                            //(10)

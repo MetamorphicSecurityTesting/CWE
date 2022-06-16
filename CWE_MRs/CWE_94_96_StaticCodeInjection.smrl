@@ -62,8 +62,7 @@ MR CWE_94_96 {
 		    		 isError(Output(Input(2), pos)),                                                   
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) 
 		    	     )
-		    	
-		    	
+		    		    	
 		);//end-IMPLIES
 	}//end-for
  }

@@ -43,7 +43,7 @@ package smrl.mr.owasp {
 	  		IMPLIES(
 	  			(!isSupervisorOf(User(), action.user)) &&					//(3)
 			  	cannotReachThroughGUI(User(), action.url) &&				//(4)
-			    EQUAL( Input(2), changeCredentials( Input(1), User() ) )	//(5)
+			    CREATE( Input(2), changeCredentials( Input(1), User() ) )	//(5)
 				,
 				( Output(Input(1), pos).redirectURL()===null ||				//(6)
 					Output(Input(2), pos).redirectURL()===null ) ||			
