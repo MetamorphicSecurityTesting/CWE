@@ -11,6 +11,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry exported="true" kind="lib" path="/SMRL_Library/target/classes" sourcepath="/SMRL_Library/src"/>
-	<classpathentry exported="true" kind="lib" path="lib/SMRL.jar"/>
+	<classpathentry kind="lib" path="/SMRL_Library/target/MST-1.0.0-jar-with-dependencies.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
