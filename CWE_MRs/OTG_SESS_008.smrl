@@ -28,12 +28,11 @@ package smrl.mr.owasp{
 	 
 	MR OTG_SESS_008 {
 		{
-			var ActionAvailableWithoutLogin = ActionAvailableWithoutLogin();
 			for ( Action action : Input(1).actions() ){                                        //(1)
 				IMPLIES(
 						notAvailableWithoutLoggingIn( action ) &&                              //(2)
-						NOT (NULL(ActionAvailableWithoutLogin.getSession() ) ) &&            //(3)
-						CREATE( Input(2) , Input( ActionAvailableWithoutLogin, action ) )    //(4)
+						NOT (NULL(ActionAvailableWithoutLogin().getSession() ) ) &&            //(3)
+						CREATE( Input(2) , Input( ActionAvailableWithoutLogin(), action ) )    //(4)
 						,
 						different (                                                            //(5)
 								Output( Input(1), action.position ),

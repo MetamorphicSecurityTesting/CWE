@@ -74,15 +74,16 @@ MR CWE_138_150_551_552_668_707_921_OTG_AUTHZ_001b {
 			var pos = action.getPosition();                     //(4)
 			var newUrl = action.urlPath+sep+RandomFilePath();   //(5)
 			IMPLIES( 
+				notTried( action.getUser(), newUrl )&&
 				!isAdmin(action.user) &&						//(6)
 				afterLogin(action) &&							//(7)
 				CREATE( Input(2), Input(1) ) &&					//(8)
-			  	Input(2).actions().get(pos).setUrl( newUrl ) &&	//(9)
-			  	notTried( action.getUser(), newUrl )			//(10)
+			  	Input(2).actions().get(pos).setUrl( newUrl ) //&&	//(9)
+			 // 	notTried( action.getUser(), newUrl )			//(10)
 			    ,
 			    TRUE ( 	                                        //(11)
 			    	Output(Input(2),pos).noFile() ||	
-				  //  userCanRetrieveContent(	action.getUser(), Output(Input(2),pos).file() ) || 								 
+				    userCanRetrieveContent(	action.getUser(), Output(Input(2),pos).file() ) || 								 
 					Output(Input(2),pos).isError()  	
 				)
 			);//end-IMPLIES

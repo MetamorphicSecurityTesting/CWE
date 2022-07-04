@@ -53,7 +53,7 @@ MR CWE_22 {
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&       //(6)
  				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&                //(7)
  				CREATE(Input(2), Input(1) ) &&                                                  //(8)
- 				Input(2).actions.get(pos).setFormInput(x, "../"+RandomPath())                   //(9)
+ 				Input(2).actions.get(pos).setFormInput(x, "../"+RandomFilePath())                   //(9)
 
  				,OR(                                                                            //(10)
  					 userCanRetrieveContent(action.getUser(), Output(Input(2),pos))
