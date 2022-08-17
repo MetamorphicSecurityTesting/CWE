@@ -50,7 +50,7 @@ package smrl.mr.owasp {
 				IMPLIES(
 					! isAdmin(action.user) &&                                                                               //(7)
 					isFormInputForFilePath( formInput ) &&                                                                  //(8)
-					CREATE (Input(2), Input(1)) &&                                                                            //(9)
+					CREATE (Input(2), Input(1)) &&                                                                          //(9)
 					updateStringFormInput(Input(2).actions.get(x).getFormInputs().get(i).getAsJsonObject(), randomPath)     //(10)
 					,	
 					OR(                                                                                                     //(11)
