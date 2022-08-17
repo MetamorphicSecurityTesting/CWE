@@ -13,8 +13,6 @@ package smrl.mr.owasp{
 
 /**
  *
- * Webmin case: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8820
- * 
  * CWE Definition:
  * CWE_89:
  * The software constructs all or part of an SQL command using externally-influenced input 
@@ -61,7 +59,6 @@ MR CWE_89_943_C {
 	  			 IMPLIES(
 	        		
 	        	  action.isClickOnButton &&                                                                           //(5)
-	        	  isLogin(action) &&
 	        	  userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&                                   //(6)
 	        	  notTried(x+action.url, Input(1).actions().get(pos).getElementURL() )  &&                            //(7)
 	        	  !isError(Output(Input(1),pos))		&&													          //(8) 							
@@ -72,11 +69,10 @@ MR CWE_89_943_C {
  				OR(                                                                                                   //(11)                                                           
 		    		isError(Output(Input(2), pos)),                                                       
 		    	 userCanRetrieveContent(action.getUser(), Output(Input(2),pos))   
-				
 		  		)
- 			);
- 		}
- 	}
- 	
-  } }
- }
+ 			);//end-IMPLIES
+	}//end-for
+  }//end-for
+ } 
+}//end-MR
+}//end-package

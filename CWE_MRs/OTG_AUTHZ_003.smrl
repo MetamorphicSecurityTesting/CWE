@@ -38,9 +38,10 @@ package smrl.mr.owasp{
 							Input(2).actions().get(pos).setParameterValue(par,User()) ) &&   //(6)
 							CREATE (Input(3), changeCredentials(Input(1), User()) )          //(7)
 							,
-							different (Output(Input(2),pos), Output(Input(3),pos)) )         //(8)
-				}
-			}
-		}
-	}}
-	
+							different (Output(Input(2),pos), Output(Input(3),pos))           //(8)
+		);//end-IMPLIES
+	}//end-for
+   }//end-for
+  } 
+ }//end-MR
+}//end-package

@@ -7,6 +7,8 @@
 
 import static smrl.mr.language.Operations.*;
 
+ package smrl.mr.owasp {
+ 	
 /*
  * CWE Definition:
  * The product exposes sensitive information to an actor that is not explicitly authorized 
@@ -30,8 +32,6 @@ import static smrl.mr.language.Operations.*;
  */
 
 
-
- package smrl.mr.owasp {
  MR CWE_200 { 
  {
 	for ( action1 : Input(1).actions ){                                                               //(1)

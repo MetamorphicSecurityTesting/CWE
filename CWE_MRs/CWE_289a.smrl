@@ -42,7 +42,7 @@ MR CWE_289a {
                (!isSupervisorOf(User(), action.user)) &&                              //(4) 
                userCanRetrieveContent(action.getUser(),Output(Input(1) , pos)) &&     //(5)
                cannotReachThroughGUI(User(),action.url) &&                            //(6) 
-               CREATE(Input(2), changeCredentials(Input(1), User())) &&                //(7)
+               CREATE(Input(2), changeCredentials(Input(1), User())) &&               //(7)
                Input(2).actions.get(action.position).setUrl(EncodeUrl(url))           //(8)
                
                

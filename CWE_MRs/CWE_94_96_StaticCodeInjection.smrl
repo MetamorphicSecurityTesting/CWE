@@ -55,7 +55,7 @@ MR CWE_94_96 {
 	   IMPLIES( 
 	   			notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&       //(4)
 	   			userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&              //(5)
-	   			CREATE ( Input(2), Input(1) ) &&                                                //(6)
+	   			CREATE ( Input(2), Input(1) ) &&                                               //(6)
 	   			Input(2).actions().get(pos).setParameterValue( x, StaticInjectionString() )    //(7)				    			
 		    ,  
 		    	OR(                                                                            //(8)
@@ -65,9 +65,7 @@ MR CWE_94_96 {
 		    		    	
 		);//end-IMPLIES
 	}//end-for
- }
- } 
-}//end-MR
+   }//end-for
+  } 
+ }//end-MR
 }//end-package
-
-

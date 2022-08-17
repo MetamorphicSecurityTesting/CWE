@@ -61,8 +61,8 @@ MR CWE_312_313_532_538_359 {
  						
  			IMPLIES(
  				afterLogin(action) &&                                                //(3)
- 				CREATE(Input(2), Input(1)) &&                                          //(4)
- 				cannotReachThroughGUI(User(),action.url) &&			             //(5)   
+ 				CREATE(Input(2), Input(1)) &&                                        //(4)
+ 				cannotReachThroughGUI(User(),action.url) &&			                 //(5)   
  				Output(Input(2),action.position).values.size > 0	                 //(6)
  				, 
  								
@@ -71,9 +71,8 @@ MR CWE_312_313_532_538_359 {
 						Output(Input(2),action.position).values.filter[ e | reservedKeywords(action.user).contains(e) ].toList() //(7b)
 				) )
 				
- 			);
- 		}
- 	}
- 	
-  } 
- }
+ 			); //end-IMPLIES
+  		} //end-for
+    }
+  } //end-MR
+} //end-package

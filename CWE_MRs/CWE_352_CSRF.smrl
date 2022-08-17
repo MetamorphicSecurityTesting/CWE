@@ -49,14 +49,14 @@ MR CWE_352 {
  					action.isClickOnButton &&                                                        //(5)
  					notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&         //(6)        
  					afterLogin( action )    &&													     //(7)
- 					CREATE( Input(2), Input( LoginAction(action.user)   ,                             //(8)
+ 					CREATE( Input(2), Input( LoginAction(action.user)   ,                            //(8)
  					RequestUrlAction("file://"+Output(Input(1),pos-1).file.absolutePath),action ) )  //(9)              
  				,
 					different ( Output(Input(1),pos),  Output(Input(2),3) )                          //(10)
  				
- 			);
- 		}
- 	}
- 	
-  } }
- }
+ 		);//end-IMPLIES
+	  }//end-for
+	}//end-for	
+   }
+  }//end-MR
+ }//end-package

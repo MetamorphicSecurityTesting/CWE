@@ -14,7 +14,7 @@ package smrl.mr.owasp {
  *  
  * CWE Definition:
  * CWE_287:
- * When an actor claims to have a given identity, the software does not prove or insufficiently proves that the claim is correct.
+ * When an actor claims to have a given identity, the software does not prove or insufficiently prove that the claim is correct.
  * 
  * CWE_425:
  * The web application does not adequately enforce appropriate authorization on all restricted URLs, scripts, or files.

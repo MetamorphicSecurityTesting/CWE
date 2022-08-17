@@ -41,10 +41,6 @@ package smrl.mr.owasp {
  *     Or the follow-up input can retrieve the content that has the right to access
  *     Or either the attack was not performed
  * 
- * 
- * Based on real case of vulnerability: https://securitytracker.com/id?1014450
- *
- * 
  */
 
  
@@ -63,13 +59,13 @@ MR CWE_314{
  		 		userCanRetrieveContent(action.getUser(), Output(Input(1),pos))   &&       //(6)
  				notTried( Input(1).actions().get(pos).getUrl() ) &&                       //(7)          
  				
- 				CREATE(Input(2), Input(1)) &&                                              //(8)
+ 				CREATE(Input(2), Input(1)) &&                                             //(8)
  				Input(2).actions().get(pos).setParameterValue( x, str512 )&&              //(9)
  				
- 				CREATE(Input(3), Input(1)) &&                                              //(10)
+ 				CREATE(Input(3), Input(1)) &&                                             //(10)
  				Input(3).actions().get(pos).setParameterValue( x, str1024 )&&             //(11)
  				
- 				CREATE(Input(4), Input(1)) &&                                              //(12)
+ 				CREATE(Input(4), Input(1)) &&                                             //(12)
  				Input(4).actions().get(pos).setParameterValue( x, str2048 )               //(13)
  			                  
  				,
@@ -78,10 +74,9 @@ MR CWE_314{
  						OR(
 		    		 isError(Output(Input(2), pos)),                                                       
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
-		    	     ),	OR(                                                                            
-		    		 //either the attack was not performed
+		    	     ),	
+		    	        OR(                                                                            
 		    		 Output(Input(2), pos).emptyFile,
-		    		     
 		    	    ! Output(Input(2), pos).hasAlert   	)
 		    	)
 		    	
@@ -90,10 +85,9 @@ MR CWE_314{
  						OR(
 		    		 isError(Output(Input(3), pos)),                                                      
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(3),pos))        
-		    	     ),	OR(                                                                            
-		    		 //either the attack was not performed
+		    	     ),	
+		    	        OR(                                                                            
 		    		 Output(Input(3), pos).emptyFile,
-		    		     
 		    	    ! Output(Input(3), pos).hasAlert        
 		    	)
 		    	)),
@@ -101,10 +95,9 @@ MR CWE_314{
  						OR(
 		    		 isError(Output(Input(4), pos)),                                                   
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(4),pos))        
-		    	     ),	OR(                                                                          
-		    		 //either the attack was not performed
+		    	     ),	
+		    	        OR(                                                                          
 		    		 Output(Input(4), pos).emptyFile,
-		    		     
 		    	    ! Output(Input(4), pos).hasAlert        
 		    	)
 		    	))
@@ -113,8 +106,3 @@ MR CWE_314{
 	}
 }//end-MR
 }//end-package
-
-
-
-
-

@@ -94,19 +94,16 @@ MR CWE_703_166_78_77_76_75_74_91_790_791_B {
  				
  				action.isClickOnButton &&                                                      //(5)      
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&       //(6)
- 				CREATE(Input(2), Input(1) )                     &&                              //(7)
+ 				CREATE(Input(2), Input(1) )                     &&                             //(7)
  				Input(2).actions.get(pos).setFormInput(x, SpecialCharacters())                 //(8)
  				,
  				OR(                                                                            //(9)
 		    		isError(Output(Input(2), pos)),                                                      
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))    
 		    	)
- 			);
- 		}
- 	}
- 	
-  } }
- }
-
-
-
+ 			  ); //end-IMPLIES
+			} //end-for
+		} //end-for
+		}
+	} //end-MR
+} //end-package

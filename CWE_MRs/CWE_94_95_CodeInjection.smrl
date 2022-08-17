@@ -19,7 +19,6 @@ package smrl.mr.owasp {
  * 
  * CWE_95 (child of CWE_94): The software receives input from an upstream component, but it does not neutralize or 
  * incorrectly neutralizes code syntax before using the input in a dynamic evaluation call (e.g. "eval").
- * Real case: https://www.exploit-db.com/exploits/6606
  * 
  * Idea:
  * We will try to inject some code as the value of the parameter and the system should not allow the action to be done successfully.
@@ -55,22 +54,16 @@ MR CWE_94_95 {
  				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&               //(6)
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&      //(7)
  				! Output(Input(1),pos).hasAlert					&&                             //(8)       
- 				CREATE(Input(2), Input(1) )                     &&                              //(9)
+ 				CREATE(Input(2), Input(1) )                     &&                             //(9)
  				Input(2).actions.get(pos).setFormInput(x, CodeInjectionString())               //(10)
  				
- 				,
-
- 				OR(                                                                            //(11)
- 				
- 					isError(Output(Input(2), pos))
- 					,
+ 				,OR(                                                                           //(11)
+ 					isError(Output(Input(2), pos))	,
  					userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  )
  					
- 			);
- 		}
- 	}
- 	
-  } 
-
-}//end-MR
+ 			);//end-IMPLIES
+		}//end-for
+ 	  }//end-for
+	}
+ }//end-MR
 }//end-package

@@ -17,18 +17,13 @@ package smrl.mr.owasp {
  * The software uses external input to dynamically construct an XPath expression used to 
  * retrieve data from an XML database, but it does not neutralize or incorrectly neutralizes that input. 
  * This allows an attacker to control the structure of the query.
- * Cases that I have checked for CWE 643:
- * http://projects.webappsec.org/w/page/13247005/XPath%20Injection
- * https://www.exploit-db.com/exploits/10372
  * 
  * 
  * CWE_652:
  * The software uses external input to dynamically construct an XQuery expression used to retrieve data 
  * from an XML database, but it does not neutralize or incorrectly neutralizes that input. This allows 
  * an attacker to control the structure of the query.
- * Real Cases of CWE  652: https://www.securecodewarrior.com/blog/coders-conquer-security-share-learn-series-xquery-injection
- *      https://www.securecodewarrior.com/blog/coders-conquer-security-share-learn-series-xquery-injection
- * 
+ *  
  * OWASP hint:
  * with XPath injection, the first step is to insert a single quote (') in the field to 
  * be tested, introducing a syntax error in the query, and to check whether the application 
@@ -76,9 +71,8 @@ MR CWE_643_652_C {
 	  		
 	  		for (var x = 0; action.containLoginFormInput() && x < action.formInputs.size; x++){                      //(4)
 	  			 IMPLIES(
-	        		
-	        		  action.isClickOnButton &&                                                                      //(5)
-	        		  isLogin(action)&&                                                                      
+	        		      
+	        		  action.isClickOnButton &&                                                                      //(5)                                                                      
 	        		  userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&                               //(6)
 	        		  notTried(action.url, Input(1).actions().get(pos).getElementURL() )  &&                         //(7)
 	        		  !isError(Output(Input(1),pos))		&&													     //(8)							
@@ -90,8 +84,9 @@ MR CWE_643_652_C {
 		    		userCanRetrieveContent(action.getUser(), Output(Input(2),pos))                                                      
 		    	        
 		    	)                                                    
-		);//end-IMPLIES
-	}//end-for
- } }
-}//end-MR
-}//end-package
+		      ); //end-IMPLIES
+  			} //end-for
+		} //end-for
+    }
+  } //end-MR
+} //end-package

@@ -68,7 +68,7 @@ MR CWE_792_793_794_795_796_797_F{
  				action.isClickOnButton &&                                                                       //(6) 
  				value1 != Boolean &&                                                                            //(7)
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&                        //(8)
- 				CREATE(Input(2), Input(1) )     &&                                                               //(9)
+ 				CREATE(Input(2), Input(1) )     &&                                                              //(9)
  				Input(2).actions.get(pos).setFormInput(x,  SCInjection_sides(value1 , SpecialCharacters()))     //(10)              
  				,
 
@@ -76,10 +76,10 @@ MR CWE_792_793_794_795_796_797_F{
 		    		isError(Output(Input(2), pos)),                                                     
 		    	     EQUAL(Output(Input(1), pos),Output(Input(2), pos))       
 		    	)
- 			);
- 		}
- 	}
- 	
-  } }
- }
+ 			);//end-IMPLIES
+	  }//end-for
+	}//end-for
+   } 
+ }//end-MR
+}//end-package
 

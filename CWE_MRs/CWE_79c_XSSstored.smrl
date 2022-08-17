@@ -54,9 +54,9 @@ MR CWE_79c_storedXSS {
 		    		 Output(Input(2), pos).emptyFile,          
 		    	     ! Output(Input(3), pos-1).hasAlert       
 		    	)
- 			);
- 		}
- 	}
- 	
-  } }
- }
+ 			);//end-IMPLIES
+	  }//end-for
+	}//end-for
+   } 
+ }//end-MR
+}//end-package

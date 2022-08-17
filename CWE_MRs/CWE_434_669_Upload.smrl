@@ -22,7 +22,7 @@ package smrl.mr.owasp {
  * imports a resource/behavior from another sphere, in a manner that provides unintended control over that resource.
  * 
  * Idea:
- * For all input entries that accept to upload a file, we will try to upload files with invalid type e.g. file.php or file.exe.
+ * For all input entries that accept to upload a file, we will try to upload files with invalid types e.g. file.php or file.exe.
  * 
  * Comments:
  * (1) It avoids clicking on OK; because dialogs are normally ignored by our framework by clicking on OK.
@@ -54,14 +54,14 @@ MR CWE_434 {
  				action.isClickOnButton &&                                                     //(5)
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&     //(6)
  				! Output(Input(1),pos).hasAlert					&&                            //(7)
- 			    CREATE(Input(2), Input(1) )                     &&                             //(8)
+ 			    CREATE(Input(2), Input(1) )                     &&                            //(8)
  				Input(2).actions.get(pos).setFormInput(x,  FileWithInvalidType())             //(9)
  				,
  				OR( 
  					different( Output(Input(1),pos+1),Output(Input(2),pos+1))                 //(10)
  					,
  					OR(                                                                         
-		    		 //either the attack was not performed
+		    		
 		    		 Output(Input(2), pos+2).emptyFile,
 		    	                
 		    	     ! Output(Input(2), pos+2).hasAlert       
@@ -69,6 +69,6 @@ MR CWE_434 {
  			);//end-IMPLIES
 		}//end-for
 	}//end-for
- }
-}//end-MR
-}
+  }
+ }//end-MR
+}//end-package

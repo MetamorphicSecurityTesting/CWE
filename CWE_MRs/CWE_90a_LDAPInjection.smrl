@@ -34,8 +34,8 @@ package smrl.mr.owasp{
  *      Or The output contains an alert or an error page is shown
  *      Or the follow-up input can retrieve a content that has the right to access 
  * 
- * 
  */ 
+ 
 MR CWE_90a {
  {
  
@@ -47,22 +47,19 @@ MR CWE_90a {
  			
  			IMPLIES(
  				notTried(LDAPInjectionString() + x + parameterName, Input(1).actions().get(pos).getUrl() ) &&   //(5)
- 				! Output(Input(1),pos).hasAlert	&& 
- 				!isError(Output(Input(1), pos))&&
- 				NOT(NULL(Output(Input(1), pos)))&&                                                             //(6)
+ 				NOT(NULL(Output(Input(1), pos)))&&                                                              //(6)
  			    userCanRetrieveContent(action.getUser(), Output(Input(1),pos)) &&                               //(7)
- 				CREATE(Input(2), Input(1))&&                                                                     //(8)
+ 				CREATE(Input(2), Input(1))&&                                                                    //(8)
  				Input(2).actions().get(pos).setParameterValue( x, LDAPInjectionString() )                       //(9)		   
  				,
  			OR(                                                                                                 //(10)
- 		 	            
 		    	    Output(Input(2), pos).hasAlert   
-		    	   
 		    ,	OR( 
  					isError(Output(Input(2), pos)),
- 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) 	)));
- 		}
- 	}
- 	
-  } }
- }
+ 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos))))
+ 		);//end-IMPLIES
+	 }//end-for
+   }//end-for
+  } 
+ }//end-MR
+}//end-package

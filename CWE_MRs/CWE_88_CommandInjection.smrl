@@ -68,6 +68,7 @@ MR CWE_88a {
 			)//end-RHS-OR
 		);//end-IMPLIES
 	}//end-for
- }} 
+   }//end-for
+  } 
 }//end-MR
 }//end-package

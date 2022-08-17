@@ -59,16 +59,10 @@ MR CWE_93a {
 		    	     Output(Input(2), pos).hasAlert), 
 		    	OR( 
  					userCanRetrieveContent(action.getUser(), Output(Input(2),pos)),  
- 					isError(Output(Input(2), pos)))
+ 					isError(Output(Input(2), pos))))
  			  
- 		)	);
-	}//end-for
- }
-  
-}//end-MR
+ 			);//end-IMPLIES
+	  }//end-for
+    }
+  }//end-MR
 }//end-package
-
-
-
-
-

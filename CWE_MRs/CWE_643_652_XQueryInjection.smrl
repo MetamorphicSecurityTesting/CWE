@@ -72,7 +72,7 @@ MR CWE_643_652 {
 	          && userCanRetrieveContent(action.getUser(), Output(Input(1),pos))                                    //(4)                                              
 	          && notTried(action.url)																			   //(5)							
 	          && CREATE ( Input(2), Input(1) )	                                                                   //(6)
-	          && Input(2).actions.get(action.position).setValueForParametersOfType("text", XQueryInjection())      //(7)   "' or 1=1 or ''='"
+	          && Input(2).actions.get(action.position).setValueForParametersOfType("text", XQueryInjection())      //(7)   
 	    	  && Input(2).actions.get(action.position).setValueForParametersOfType("password", WeakPassword())     //(8) 
 		    ,  
 		    OR(                                                                                                    //(9) 

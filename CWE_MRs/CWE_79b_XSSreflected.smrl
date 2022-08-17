@@ -45,16 +45,16 @@ MR CWE_79b_XSSreflected {
  				action.isClickOnButton &&                                                        //(5)
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() )  &&        //(6)
  				! Output(Input(1),pos).hasAlert	&&         										 //(7)                           					          
- 				CREATE(Input(2), Input(1) )  &&                                                   //(8)
+ 				CREATE(Input(2), Input(1) )  &&                                                  //(8)
  				Input(2).actions.get(pos).setFormInput(x, XSSInjectionString())                  //(9)                                    
  				,
  				OR(                                                                              //(10)
 		    	Output(Input(2), pos).emptyFile,        
 		    	! Output(Input(2), pos).hasAlert        
 		    	)
- 			);
- 		}
- 	}
- 	
-  } }
- }
+ 			);//end-IMPLIES
+	  }//end-for
+	}//end-for
+   } 
+ }//end-MR
+}//end-package

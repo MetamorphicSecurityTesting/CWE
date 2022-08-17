@@ -36,8 +36,8 @@ package smrl.mr.owasp{
  *      Or the follow-up input can retrieve a content that has the right to access 
  * 
  * 
- * 
- */ 
+ */
+  
 MR CWE_90b {
  {
  	keepDialogsOpen = true;                                                                                          //(1)
@@ -52,7 +52,7 @@ MR CWE_90b {
  				notTried( LDAPInjectionString() + x + action.url, Input(1).actions().get(pos).getElementURL() )  &&  //(6)
  				! Output(Input(1),pos).hasAlert	&&                                                                   //(7)
  				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&                                     //(8)
- 				CREATE(Input(2), Input(1) )                     &&                                                    //(9)
+ 				CREATE(Input(2), Input(1) )                     &&                                                   //(9)
  				Input(2).actions.get(pos).setFormInput(x, LDAPInjectionString())		                             //(10)              
  				,
 
@@ -61,11 +61,10 @@ MR CWE_90b {
  				,  
 		    	    OR( 
  						userCanRetrieveContent(action.getUser(), Output(Input(2),pos)) ,
- 						isError(Output(Input(2), pos))
- 						))
- 						);
- 		}
- 	}
- 	
-  } }
- }
+ 						isError(Output(Input(2), pos))))
+ 				);//end-IMPLIES
+	 }//end-for
+   }//end-for
+  } 
+ }//end-MR
+}//end-package

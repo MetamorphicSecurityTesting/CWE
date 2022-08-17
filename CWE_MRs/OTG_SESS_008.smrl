@@ -16,28 +16,32 @@ package smrl.mr.owasp{
  * should not enable a user to execute an action that requires to be logged in.
  * 
  * Comments:
- * (1) The first loop iterates over all the actions of the input.
- * (2) Checks that the current action is not available without being logged in.
- * (3) Looks for an action available without being logged-in that generates a session.
- * (4) Defines a follow-up input that executes two actions, the action available without 
+ * (1) Stores the action that is available without a login in a variable.
+ * (2) The first loop iterates over all the actions of the input.
+ * (3) Checks that the current action is not available without being logged in.
+ * (4) Looks for an action available without being logged-in that generates a session.
+ * (5) Defines a follow-up input that executes two actions, the action available without 
  *     being logged in, and the selected action (i.e., the one available only by being logged-in).
- * (5) Checks that the output of the action is different when execute with and without being 
+ * (6) Checks that the output of the action is different when execute with and without being 
  *     logged in (even if after an action that does not require a log-in but generates a session).
  * 
  */
 	 
 	MR OTG_SESS_008 {
 		{
-			var ActionAvailableWithoutLogin = ActionAvailableWithoutLogin();
-			for ( Action action : Input(1).actions() ){                                        //(1)
+			var ActionAvailableWithoutLogin = ActionAvailableWithoutLogin();                   //(1)
+			for ( Action action : Input(1).actions() ){                                        //(2)
 				IMPLIES(
-						notAvailableWithoutLoggingIn( action ) &&                              //(2)
-						NOT (NULL(ActionAvailableWithoutLogin.getSession() ) ) &&            //(3)
-						CREATE( Input(2) , Input( ActionAvailableWithoutLogin, action ) )    //(4)
+						notAvailableWithoutLoggingIn( action ) &&                              //(3)
+						NOT (NULL(ActionAvailableWithoutLogin.getSession() ) ) &&              //(4)
+						CREATE( Input(2) , Input( ActionAvailableWithoutLogin, action ) )      //(5)
 						,
-						different (                                                            //(5)
+						different (                                                            //(6)
 								Output( Input(1), action.position ),
-								Output( Input(2), 1 ) ) );
-			}
-		}}
-}
+								Output( Input(2), 1 ) ) 
+			);//end-IMPLIES
+	}//end-for
+  } 
+ }//end-MR
+}//end-package
+

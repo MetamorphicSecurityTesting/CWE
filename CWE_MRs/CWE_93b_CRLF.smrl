@@ -11,7 +11,7 @@ package smrl.mr.owasp {
  
 /**
  * 
-* CWE Definition:
+ * CWE Definition:
  * The software uses CRLF (carriage return line feeds) as a special element, e.g. to separate lines or records, 
  * but it does not neutralize or incorrectly neutralizes CRLF sequences from inputs.
  * 
@@ -56,26 +56,20 @@ MR CWE_93b {
 				CREATE( Input(2), Input(1) ) &&					                 //(6)
 			  	Input(2).actions().get(pos).setUrl( newUrl ) 	                 //(7)
 			    ,
-			      OR(OR(                                                         //(8)
-		    		 //either the attack was not performed
+			      OR(
+			      	OR(                                                          //(8)
 		    		 Output(Input(2), pos).emptyFile,
-		    		 //or no effect shall be observed (the effect is visualized when reaching the page where we inject the XSS)                  
-		    	     Output(Input(2), pos).hasAlert   
-		    	     ), OR( 
- 					userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  
- 					,
- 					isError(Output(Input(2), pos)))
+		    		 Output(Input(2), pos).hasAlert   
+		    	     ), 
+		    	     OR( 
+ 					 userCanRetrieveContent(action.getUser(), Output(Input(2),pos))  ,
+ 					 isError(Output(Input(2), pos))))
  				
- 		)	);
+ 		);//end-IMPLIES
 	}//end-for
  }//end-for
 		
 		sep=sep+"../";}
   
-}//end-MR
+ }//end-MR
 }//end-package
-
-
-
-
-

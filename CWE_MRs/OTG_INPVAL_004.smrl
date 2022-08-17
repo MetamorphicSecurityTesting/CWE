@@ -33,8 +33,10 @@ package smrl.mr.owasp{
 											action.getParameterName(par),
 											action.getParameterValue(par) ))
 							,
-							equal ( Output(Input(1) ) , Output( Input(2) )))         //(6)
-				}
-			}
-		}}
-}
+							equal ( Output(Input(1) ) , Output( Input(2) ))          //(6)
+				);//end-IMPLIES
+	}//end-for
+   }//end-for
+  } 
+ }//end-MR
+}//end-package

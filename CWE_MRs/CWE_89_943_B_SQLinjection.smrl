@@ -56,16 +56,16 @@ MR CWE_89_943_b {
  				action.isClickOnButton &&                                                      //(5)
  				userCanRetrieveContent(action.getUser(), Output(Input(1),pos))&&               //(6)
  				notTried( x+action.url, Input(1).actions().get(pos).getElementURL() ) &&       //(7)
- 				CREATE(Input(2), Input(1) )                     &&                              //(8)
+ 				CREATE(Input(2), Input(1) )                     &&                             //(8)
  				Input(2).actions.get(pos).setFormInput(x, SQLInjectionString()) 			   //(9)              
  				,
  				OR(                                                                            //(10)
 		    		isError(Output(Input(2), pos)),                                                      
 		    	     userCanRetrieveContent(action.getUser(), Output(Input(2),pos))        
 		    	)
- 			);
- 		}
- 	}
- 	
-  } }
- }
+ 			);//end-IMPLIES
+	}//end-for
+  }//end-for
+ } 
+}//end-MR
+}//end-package

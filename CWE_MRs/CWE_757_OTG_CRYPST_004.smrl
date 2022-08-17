@@ -41,15 +41,15 @@ MR CWE_757_OTG_CRYPST_004_F {
      	( 
      		notTried(action.url) &&                                                                       //(2)
      		isEncrypted( action ) &&                                                                      //(3)
-	   		CREATE ( Input(2) , Input(1) ) &&                                                              //(4)
+	   		CREATE ( Input(2) , Input(1) ) &&                                                             //(4)
 	   		Input(2).setUseWeakEncryption( true ) )                                                       //(5)
 	   		, 
-	   		different ( Output( Input(1), action.position ), Output( Input(2), action.position ) ) )      //(6)
-   } 
- }
-   
-}//end-MR
-}//end-package
+	   		different ( Output( Input(1), action.position ), Output( Input(2), action.position ) )        //(6)
 
+		);//end-IMPLIES
+	  }//end-for
+ 	} 
+  }//end-MR
+}//end-package
 
 

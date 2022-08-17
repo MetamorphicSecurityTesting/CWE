@@ -27,7 +27,7 @@ package smrl.mr.owasp {
    * The software does not properly assign, modify, track, or check privileges for an actor, creating an unintended sphere of control for that actor.
    * 
    * CWE_285:
-   * The software does not perform or incorrectly performs an authorization check when an actor attempts to access a resource or perform an action.
+   * The software does not perform or incorrectly perform an authorization check when an actor attempts to access a resource or perform an action.
    * 
    * CWE_522:
    * The product transmits or stores authentication credentials, but it uses an insecure method that is susceptible to unauthorized interception and/or retrieval.

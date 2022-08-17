@@ -10,7 +10,7 @@ import smrl.mr.language.Action;
 package smrl.mr.owasp {
  
 /*
- * *
+ * 
  * CWE Definition:
  * 
  * CWE_289:
@@ -72,4 +72,4 @@ var sep = "%5C";
 	}//end-for
  }
 }//end-MR
-}
+}//end-package

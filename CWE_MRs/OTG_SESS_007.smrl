@@ -36,17 +36,10 @@ package smrl.mr.owasp{
 						,
 						different (                                        //(6)
 								Output( Input(1), action.position ),
-								Output( Input(2), action.position ) ));
-			}
-		}}
-}
-
-
-
-
-
-
-
-
-
+								Output( Input(2), action.position ) )
+			);//end-IMPLIES
+	}//end-for
+  } 
+ }//end-MR
+}//end-package
 

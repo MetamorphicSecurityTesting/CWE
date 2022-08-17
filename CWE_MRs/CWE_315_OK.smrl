@@ -39,18 +39,13 @@ MR CWE_315 {
 		var pos = action.getPosition();                                                                   //(2)
 		                                                         
 	   IMPLIES(
-	       	  notTried( Input(1).actions().get(pos).getUrl() ) && 						                          
+	       	  notTried( Input(1).actions().get(pos).getUrl() ) && 						                  //(3)       
 	          CREATE ( Input(2), Input(1) )      		    			                                  //(4)
 		    ,  
 
-	   FALSE ( Output(Input(2),pos).session.keyValueMappings.values.contains(action.user.password) ));    //(5)
-
+	   FALSE ( Output(Input(2),pos).session.keyValueMappings.values.contains(action.user.password) )      //(5)
+     );//end-IMPLIES
 	}//end-for
  } 
 }//end-MR
 }//end-package
-
-
-
-
-

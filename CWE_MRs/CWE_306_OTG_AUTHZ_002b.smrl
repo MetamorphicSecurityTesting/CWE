@@ -43,12 +43,12 @@ package smrl.mr.owasp {
    
   MR CWE_306_OTG_AUTHZ_002b { 
   	{
-    	for(var x = 0; x < Input(1).actions().size() ; x++){                                                    //(1)
-			for (var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++) {     //(2)
+    	for(var x = 0; x < Input(1).actions().size() ; x++){                                                     //(1)
+			for (var y = x+1; isLogin(Input(1).actions().get(x)) && (y < Input(1).actions().size()); y++) {      //(2)
 	  			IMPLIES(
 	  				
-	  				(!isSupervisorOf(User(), Input(1).actions().get(y).user)) &&                                //(3)
-	  				cannotReachThroughGUI(User(), Input(1).actions().get(y).getUrl()) &&                        //(4)
+	  				(!isSupervisorOf(User(), Input(1).actions().get(y).user)) &&                                 //(3)
+	  				cannotReachThroughGUI(User(), Input(1).actions().get(y).getUrl()) &&                         //(4)
 	  				CREATE(Input(2), Input(1).actions().get(x)) &&                                               //(5)
 	  				CREATE(Input(3), changeCredentials(Input(2), User())) &&                                     //(6)
 	  				CREATE(Input(4), addAction(Input(1), y, Input(3).actions().get(0))) &&                       //(7)
@@ -56,7 +56,7 @@ package smrl.mr.owasp {
 					CREATE(Input(6), addAction(Input(5), y+2, Input(1).actions().get(x) ) )                      //(9)
 	  				,
 	  				
-	  				EQUAL(                                                                                      //(10)
+	  				EQUAL(                                                                                       //(10)
 	  					Output(Input(1), y)
 	  					,
 	  					Output(Input(6), y+3 )

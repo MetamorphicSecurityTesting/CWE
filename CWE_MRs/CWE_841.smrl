@@ -46,8 +46,8 @@ package smrl.mr.owasp{
 					IMPLIES (
 						
 						isLogin(Input(1).actions().get(y))&&                                                             //(3)
-						CREATE ( Input(2) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  &&     //(4)
-						Input(2).addAction(0,Input(1).actions().get(x))   &&                                             //(5)                      we start with a sign up
+						CREATE ( Input(2) , Input ( Input(1).actions().subList(y, Input(1).actions().size() ) ) )  &&    //(4)
+						Input(2).addAction(0,Input(1).actions().get(x))   &&                                             //(5)                    
 						Input(2).addAction(0, new ResetSUTAction())                                                      //(6)
 						, 
 					

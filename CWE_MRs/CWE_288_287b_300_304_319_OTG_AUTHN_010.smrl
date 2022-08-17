@@ -14,7 +14,7 @@ package smrl.mr.owasp{
  * 
  * CWE Definition:
  * CWE_287: 
- * When an actor claims to have a given identity, the software does not prove or insufficiently proves that the claim is correct.
+ * When an actor claims to have a given identity, the software does not prove or insufficiently prove that the claim is correct.
  * 
  * CWE_288(child of CWE_287): 
  * A product requires authentication, but the product has an alternate path or channel that does not require authentication.
@@ -60,4 +60,4 @@ MR CWE_288_287b_300_304_319_OTG_AUTHN_010 {
 	}//end-for
  }
 }//end-MR
-}
+}//end-package
